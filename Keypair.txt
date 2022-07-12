@@ -1,0 +1,21 @@
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+
+		KeyPair agreementKeyPair;
+		try {
+			agreementKeyPair = KeyPairGenerator.getInstance("X25519", BouncyCastleProvider.PROVIDER_NAME)
+					.generateKeyPair();
+
+			String publicKey = Base64.getEncoder().encodeToString(agreementKeyPair.getPublic().getEncoded());
+			String privateKey = Base64.getEncoder().encodeToString(agreementKeyPair.getPrivate().getEncoded());
+
+			 
+			return key;
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchProviderException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}

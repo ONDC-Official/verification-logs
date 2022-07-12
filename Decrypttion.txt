@@ -1,0 +1,71 @@
+
+import java.nio.charset.StandardCharsets;
+import java.security.KeyFactory;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Security;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+import java.util.Base64;
+
+import javax.crypto.Cipher;
+import javax.crypto.KeyAgreement;
+import javax.crypto.SecretKey;
+
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+ 
+
+public class Decrypt {
+
+
+ public String decrypt(String clientPrivateKey, String proteanPublicKey, String challenge) {
+
+		try {
+			byte[] dataBytes = Base64.getDecoder().decode(proteanPublicKey);
+			PublicKey publicKey = getPublicKey("X25519", dataBytes);
+
+			dataBytes = Base64.getDecoder().decode(clientPrivateKey);
+			PrivateKey privateKey = getPrivateKey("X25519", dataBytes);
+
+			KeyAgreement atServer1 = KeyAgreement.getInstance("X25519", BouncyCastleProvider.PROVIDER_NAME);
+			atServer1.init(privateKey); // Server1 uses its private key to initialize the aggreement object
+			atServer1.doPhase(publicKey, true); // Uses Server2's ppublic Key
+			SecretKey key1 = atServer1.generateSecret(secretKey); // derive secret at server 1.
+			// "TlsPremasterSecret" is the algorithm for
+
+			Cipher cipher2 = Cipher.getInstance("AES", BouncyCastleProvider.PROVIDER_NAME);
+			cipher2.init(Cipher.DECRYPT_MODE, key1); // Same derived key in server 2same as key1
+			byte[] decrypted2 = cipher2.doFinal(Base64.getDecoder().decode(challenge)); // b64 decode the
+																					
+			
+
+			return new String(decrypted2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+
+public PublicKey getPublicKey(String algo, byte[] jceBytes) throws Exception {
+		X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(jceBytes);
+		PublicKey key = KeyFactory.getInstance(algo, BouncyCastleProvider.PROVIDER_NAME)
+				.generatePublic(x509EncodedKeySpec);
+		return key;
+	}
+
+	public PrivateKey getPrivateKey(String algo, byte[] jceBytes) throws Exception {
+		PrivateKey key = KeyFactory.getInstance(algo, BouncyCastleProvider.PROVIDER_NAME)
+				.generatePrivate(new PKCS8EncodedKeySpec(jceBytes));
+		return key;
+	}
+
+}
+
+//the answer should be like
+//{
+//"answer":"Decode challenge"
+//}
