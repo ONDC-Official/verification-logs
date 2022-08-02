@@ -10,7 +10,8 @@ import nacl.hash
 from nacl.bindings import crypto_sign_ed25519_sk_to_seed
 from nacl.signing import SigningKey, VerifyKey
 
-request_body_json = {"context":{"domain":"nic2004:60212","country":"IND","city":"Kochi","action":"search","core_version":"0.9.1","bap_id":"bap.stayhalo.in","bap_uri":"https://8f9f-49-207-209-131.ngrok.io/protocol/","transaction_id":"e6d9f908-1d26-4ff3-a6d1-3af3d3721054","message_id":"a2fe6d52-9fe4-4d1a-9d0b-dccb8b48522d","timestamp":"2022-01-04T09:17:55.971Z","ttl":"P1M"},"message":{"intent":{"fulfillment":{"start":{"location":{"gps":"10.108768, 76.347517"}},"end":{"location":{"gps":"10.102997, 76.353480"}}}}}}
+f = open(os.getenv("REQUEST_BODY_PATH", "signing_and_verification/request_body.json"))
+request_body_json = json.load(f)
 
 
 def hash_message(msg: str):
@@ -62,19 +63,22 @@ def get_filter_dictionary_or_operation(filter_string):
 
 
 def create_authorisation_header(request_body=request_body_json,
-                                created="1641287875", expires="1641291475"):
+                                created=os.getenv("CREATED",  "1641287875"),
+                                expires=os.getenv("EXPIRES",  "1641291475")):
     signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
                                         created=created, expires=expires)
     signature = sign_response(signing_key, private_key=os.getenv("BPP_PRIVATE_KEY"))
 
-    subscriber_id = "buyer-app.ondc.org"
-    unique_key_id = "207"
+    subscriber_id = os.getenv("SUBSCRIBER_ID", "buyer-app.ondc.org")
+    unique_key_id = os.getenv("UNIQUE_KEY_ID", "207")
     header = f'Signature keyId="{subscriber_id}|{unique_key_id}|ed25519",algorithm="ed25519",created=' \
              f'"{created}",expires="{expires}",headers="(created) (expires) digest",signature="{signature}"'
     return header
 
 
-def verify_authorisation_header(auth_header, request_body=request_body_json, created="1641287875", expires="1641291475"):
+def verify_authorisation_header(auth_header, request_body=request_body_json,
+                                created=os.getenv("CREATED", "1641287875"),
+                                expires=os.getenv("EXPIRES", "1641291475")):
     header_parts = get_filter_dictionary_or_operation(auth_header.replace("Signature ", ""))
     signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
                                         created=created, expires=expires)
