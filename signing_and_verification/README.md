@@ -8,23 +8,28 @@ sudo apt install python3-pip
 pip3 install -r requirements.txt
 ```
 
-2. Generate key-pairs
+2. Export request body json path:
+```
+export REQUEST_BODY_PATH=<request-body-jon-path>
+```
+
+3. Generate key-pairs
 ```
 python cryptic_utils.py generate_key_pairs
 ```
 
-3. Export environment variables
+4. Export private and public keys
 ```
 export BPP_PRIVATE_KEY=<private_key>
 export BPP_PUBLIC_KEY=<public_key>
 ```
 
-4. Create authorisation header
+5. Create authorisation header
 ```
 python cryptic_utils.py create_authorisation_header
 ```
 
-5. Verify authorisation header
+6. Verify authorisation header
 ```
 python cryptic_utils.py verify_authorisation_header '<auth_header>'
 ```
