@@ -1,0 +1,146 @@
+Request:
+--------
+{
+  "context": {
+    "transaction_id": "941746f5-164d-492b-989e-276ea8f826bc",
+    "bpp_id": "ondc-preprod.api.flipkart.com",
+    "country": "IND",
+    "city": "std:080",
+    "domain": "nic2004:60232",
+    "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
+    "action": "init",
+    "message_id": "ba30ff11-ce0d-4ac5-840b-53d41a8754ff",
+    "core_version": "1.0.6",
+    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "bap_id": "stagingapigateway.bizom.in/ondc",
+    "timestamp": "2022-08-08T06:31:09.111Z"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "start": {
+            "contact": {
+              "phone": "7984769714",
+              "email": "dumy@gmail.com"
+            },
+            "location": {
+              "address": {
+                "door": "509, 6th Cross Road, 6th block, Koramangala",
+                "city": "Bengaluru",
+                "street": "",
+                "area_code": "560038",
+                "name": "NSTL Chilis",
+                "locality": "",
+                "state": "Karnataka"
+              },
+              "gps": "12.9369208,77.6249452"
+            }
+          },
+          "end": {
+            "contact": {
+              "phone": "7745049011",
+              "email": "vrushali13@mailinator.com"
+            },
+            "location": {
+              "address": {
+                "door": "ffhjv",
+                "country": "IND",
+                "city": "Mumbai",
+                "street": "ffhjv",
+                "area_code": "400034",
+                "name": "vrushali",
+                "state": "Maharashtra",
+                "building": "ffhjv"
+              }
+            }
+          },
+          "id": "fulfillment-1",
+          "type": "Prepaid",
+          "tracking": false
+        }
+      ],
+      "provider": {
+        "id": "flipkart.test"
+      },
+      "payment": {
+        "@ondc/org/cod-settlement_window": "PT2D",
+        "@ondc/org/cod-settlement_details": [
+          {
+            "settlement_ifsc_code": "dummy",
+            "settlement_counterparty": "buyer-app",
+            "settlement_bank_account_no": "123456"
+          }
+        ],
+        "type": "POST-FULFILLMENT"
+      },
+      "items": [
+        {
+          "category_id": "Standard Delivery",
+          "id": "ECONOMY"
+        }
+      ],
+      "billing": {
+        "address": {
+          "door": "ffhjv",
+          "country": "IND",
+          "city": "Mumbai",
+          "street": "ffhjv",
+          "area_code": "400034",
+          "name": "vrushali",
+          "state": "Maharashtra",
+          "building": "ffhjv"
+        },
+        "phone": "7745049011",
+        "name": "vrushali",
+        "email": "vrushali13@mailinator.com"
+      }
+    }
+  }
+}
+
+
+Response:
+---------
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.0.6",
+    "bap_id": "stagingapigateway.bizom.in/ondc",
+    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "bpp_id": "ondc-preprod.api.flipkart.com",
+    "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
+    "transaction_id": "941746f5-164d-492b-989e-276ea8f826bc",
+    "message_id": "ba30ff11-ce0d-4ac5-840b-53d41a8754ff",
+    "timestamp": "2022-08-08T06:31:09.111Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "flipkart.test"
+      },
+      "items": [
+        {
+          "id": "ECONOMY"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "24.0"
+        },
+        "breakup": [
+          {
+            "price": {
+              "currency": "INR",
+              "value": "24.0"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
