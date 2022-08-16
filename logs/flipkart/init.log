@@ -2,98 +2,105 @@ Request:
 --------
 {
   "context": {
-    "transaction_id": "941746f5-164d-492b-989e-276ea8f826bc",
-    "bpp_id": "ondc-preprod.api.flipkart.com",
+    "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "domain": "nic2004:60232",
-    "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
     "action": "init",
-    "message_id": "ba30ff11-ce0d-4ac5-840b-53d41a8754ff",
-    "core_version": "1.0.6",
-    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
-    "bap_id": "stagingapigateway.bizom.in/ondc",
-    "timestamp": "2022-08-08T06:31:09.111Z"
+    "core_version": "1.0.0",
+    "bap_id": "biz.test.enstore.com",
+    "bap_uri": "https://biz.test.enstore.com/ecc/ondc/logistics-bap",
+    "bpp_id": "ondc-preprod.api.flipkart.com",
+    "bpp_uri": "ondc-preprod.api.flipkart.com",
+    "transaction_id": "23200fbe-3dc1-45f8-aee0-0be2f310f529",
+    "message_id": "bb5920c1-ae4f-4afc-849c-bde66ecb355a",
+    "timestamp": "2022-08-16T07:06:41Z",
+    "key": "",
+    "ttl": "PT10S"
   },
   "message": {
     "order": {
-      "fulfillments": [
-        {
-          "start": {
-            "contact": {
-              "phone": "7984769714",
-              "email": "dumy@gmail.com"
-            },
-            "location": {
-              "address": {
-                "door": "509, 6th Cross Road, 6th block, Koramangala",
-                "city": "Bengaluru",
-                "street": "",
-                "area_code": "560038",
-                "name": "NSTL Chilis",
-                "locality": "",
-                "state": "Karnataka"
-              },
-              "gps": "12.9369208,77.6249452"
-            }
-          },
-          "end": {
-            "contact": {
-              "phone": "7745049011",
-              "email": "vrushali13@mailinator.com"
-            },
-            "location": {
-              "address": {
-                "door": "ffhjv",
-                "country": "IND",
-                "city": "Mumbai",
-                "street": "ffhjv",
-                "area_code": "400034",
-                "name": "vrushali",
-                "state": "Maharashtra",
-                "building": "ffhjv"
-              }
-            }
-          },
-          "id": "fulfillment-1",
-          "type": "Prepaid",
-          "tracking": false
-        }
-      ],
       "provider": {
-        "id": "flipkart.test"
-      },
-      "payment": {
-        "@ondc/org/cod-settlement_window": "PT2D",
-        "@ondc/org/cod-settlement_details": [
-          {
-            "settlement_ifsc_code": "dummy",
-            "settlement_counterparty": "buyer-app",
-            "settlement_bank_account_no": "123456"
-          }
-        ],
-        "type": "POST-FULFILLMENT"
+        "id": "flipkart.test",
+        "locations": null
       },
       "items": [
         {
-          "category_id": "Standard Delivery",
-          "id": "ECONOMY"
+          "id": "ECONOMY",
+          "category_id": "Standard Delivery"
         }
       ],
       "billing": {
+        "name": "customer",
         "address": {
-          "door": "ffhjv",
-          "country": "IND",
-          "city": "Mumbai",
-          "street": "ffhjv",
-          "area_code": "400034",
-          "name": "vrushali",
-          "state": "Maharashtra",
-          "building": "ffhjv"
+          "city": "Bengaluru",
+          "door": "East Parade Church",
+          "name": "customer",
+          "state": "Karnataka",
+          "country": "India",
+          "locality": "Mahatma Gandhi Road",
+          "area_code": "560025"
         },
-        "phone": "7745049011",
-        "name": "vrushali",
-        "email": "vrushali13@mailinator.com"
+        "phone": "8151000066",
+        "email": "keerthy@gmail.com"
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "contact": {
+              "email": "keerthy@gmail.com",
+              "phone": "8151000066"
+            },
+            "location": {
+              "gps": "12.974002, 77.613458",
+              "address": {
+                "city": "Bengaluru",
+                "door": "East Parade Church",
+                "name": "customer",
+                "state": "Karnataka",
+                "country": "India",
+                "locality": "Mahatma Gandhi Road",
+                "area_code": "560025"
+              }
+            }
+          },
+          "type": "CoD",
+          "start": {
+            "contact": {
+              "email": "test1@test.com",
+              "phone": "9999999998"
+            },
+            "location": {
+              "gps": "13.0198, 77.64109999999999",
+              "address": {
+                "city": "Bangalore",
+                "name": "BANASWADI",
+                "state": " Karnataka",
+                "country": "India",
+                "building": "Near Police Commisioner Office",
+                "locality": "Near Police Commisioner Office",
+                "area_code": "560043"
+              }
+            }
+          },
+          "contact": {
+            "email": "dash@innobits.com",
+            "phone": "8151000066"
+          },
+          "id": "23200fbe-3dc1-45f8-aee0-0be2f310f529"
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/cod-settlement_window": "PT2D",
+        "@ondc/org/cod-settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
       }
     }
   }
@@ -108,14 +115,16 @@ Response:
     "country": "IND",
     "city": "std:080",
     "action": "on_init",
-    "core_version": "1.0.6",
-    "bap_id": "stagingapigateway.bizom.in/ondc",
-    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "core_version": "1.0.0",
+    "bap_id": "biz.test.enstore.com",
+    "bap_uri": "https://biz.test.enstore.com/ecc/ondc/logistics-bap",
     "bpp_id": "ondc-preprod.api.flipkart.com",
     "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
-    "transaction_id": "941746f5-164d-492b-989e-276ea8f826bc",
-    "message_id": "ba30ff11-ce0d-4ac5-840b-53d41a8754ff",
-    "timestamp": "2022-08-08T06:31:09.111Z"
+    "transaction_id": "23200fbe-3dc1-45f8-aee0-0be2f310f529",
+    "message_id": "bb5920c1-ae4f-4afc-849c-bde66ecb355a",
+    "timestamp": "2022-08-16T07:06:41Z",
+    "key": "",
+    "ttl": "PT10S"
   },
   "message": {
     "order": {
@@ -130,14 +139,24 @@ Response:
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "24.0"
+          "value": "34"
         },
         "breakup": [
           {
             "price": {
               "currency": "INR",
-              "value": "24.0"
-            }
+              "value": "34"
+            },
+            "at_ondcorgitem_id": "ECONOMY",
+            "at_ondcorgtitle_type": "DELIVERY_CHARGE"
+          },
+          {
+            "title": "RTO charges",
+            "price": {
+              "currency": "",
+              "value": ""
+            },
+            "at_ondcorgtitle_type": "RTO_CHARGE"
           }
         ]
       }
