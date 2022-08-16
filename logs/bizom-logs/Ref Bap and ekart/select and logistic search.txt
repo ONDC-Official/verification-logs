@@ -1,0 +1,279 @@
+-------BAP: select----------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "select",
+        "core_version": "0.9.3",
+        "bap_id": "buyer-app-preprod.ondc.org",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+        "transaction_id": "bac9e6a1-75c1-4700-be16-cc3910c99a68",
+        "message_id": "d89dc9cb-1398-4d75-8b77-8ad49d5a90ec",
+        "timestamp": "2022-08-16T10:45:19.350Z",
+        "bpp_id": "stagingapigateway.bizom.in/ondc"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "6",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "provider": {
+                "id": "1",
+                "locations": [
+                    {
+                        "id": null
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "end": {
+                        "location": {
+                            "gps": "12.974002, 77.613458",
+                            "address": {
+                                "area_code": "560042"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+-----------------------BPP: search for logistic-------------------------
+{
+    "context": {
+        "transaction_id": "998494da-a5ea-464e-b068-ba97fb58cf57",
+        "country": "IND",
+        "city": "std:080",
+        "domain": "nic2004:60232",
+        "action": "search",
+        "message_id": "4e86591f-48ac-4372-b2bc-879a79d9f68c",
+        "core_version": "1.0.6",
+        "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+        "bap_id": "stagingapigateway.bizom.in/ondc",
+        "timestamp": "2022-08-16T10:45:19.350Z"
+    },
+    "message": {
+        "intent": {
+            "payment": {
+                "@ondc/org/collection_amount": "0"
+            },
+            "fulfillment": {
+                "start": {
+                    "contact": {
+                        "phone": "7984769714",
+                        "email": "dumy@gmail.com"
+                    },
+                    "location": {
+                        "address": {
+                            "door": "509, 6th Cross Road, 6th block, Koramangala",
+                            "city": "Bengaluru",
+                            "street": "",
+                            "area_code": "560038",
+                            "name": "NSTL Chilis",
+                            "locality": "",
+                            "state": "Karnataka"
+                        },
+                        "id": "locations_id",
+                        "gps": "12.9369208,77.6249452"
+                    }
+                },
+                "end": {
+                    "location": {
+                        "address": {
+                            "area_code": "560042"
+                        },
+                        "gps": "12.974002, 77.613458"
+                    }
+                },
+                "type": "Prepaid"
+            },
+            "category": {
+                "id": "Same Day Delivery"
+            },
+            "@ondc/org/payload_details": {
+                "weight": {
+                    "value": 9.600000381469727,
+                    "unit": "Kilogram"
+                }
+            }
+        }
+    }
+}
+
+-----------------------on_search for logistic---------------------------
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.0.6",
+        "bap_id": "stagingapigateway.bizom.in/ondc",
+        "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+        "bpp_id": "ondc-preprod.api.flipkart.com",
+        "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
+        "transaction_id": "998494da-a5ea-464e-b068-ba97fb58cf57",
+        "message_id": "4e86591f-48ac-4372-b2bc-879a79d9f68c",
+        "timestamp": "2022-08-16T10:45:19.350Z"
+    },
+    "message": {
+        "catalog": {
+            "bpp/descriptor": {
+                "name": "FK Ekart",
+                "short_desc": "FK Ekart",
+                "long_desc": "FK Ekart"
+            },
+            "bpp/providers": [
+                {
+                    "id": "flipkart.test",
+                    "descriptor": {
+                        "name": "FK Ekart",
+                        "short_desc": "FK Ekart",
+                        "long_desc": "FK Ekart"
+                    },
+                    "categories": [
+                        {
+                            "time": {
+                                "duration": "PT1200M"
+                            },
+                            "id": "Standard Delivery"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "ECONOMY",
+                            "descriptor": {
+                                "name": "ECONOMY",
+                                "short_desc": "Upto 5 working days for Delivery",
+                                "long_desc": "Upto 5 working days for Delivery"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "24.0"
+                            },
+                            "matched": false,
+                            "related": false,
+                            "recommended": false,
+                            "category_id": "Standard Delivery"
+                        },
+                        {
+                            "id": "REGULAR",
+                            "descriptor": {
+                                "name": "REGULAR",
+                                "short_desc": "Upto 3 days working for Delivery",
+                                "long_desc": "Upto 3 days working for Delivery"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "24.0"
+                            },
+                            "matched": false,
+                            "related": false,
+                            "recommended": false,
+                            "category_id": "Standard Delivery"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+-----------------------BPP: on_select ----------------------------------
+{
+    "context": {
+        "transaction_id": "bac9e6a1-75c1-4700-be16-cc3910c99a68",
+        "country": "IND",
+        "bpp_id": "stagingapigateway.bizom.in/ondc",
+        "city": "std:080",
+        "message_id": "d89dc9cb-1398-4d75-8b77-8ad49d5a90ec",
+        "core_version": "0.9.3",
+        "bap_id": "buyer-app-preprod.ondc.org",
+        "domain": "nic2004:52110",
+        "bpp_uri": "https://stagingapigateway.bizom.in/ondc",
+        "action": "on_select",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+        "key": "MCowBQYDK2VuAyEAZEI6HvCthb67jqZsOZkhnmoacUlV2ZNmsr45Rgm6PwA=",
+        "timestamp": "2022-08-16T10:45:19.350Z"
+    },
+    "message": {
+        "order": {
+            "fulfillments": [
+                {
+                    "@ondc/org/TAT": "PT1200M",
+                    "@ondc/org/category": "Standard Delivery",
+                    "id": "fulfilment1",
+                    "state": {
+                        "descriptor": {
+                            "name": "serviceable"
+                        }
+                    },
+                    "@ondc/org/provider_name": "FK Ekart",
+                    "tracking": true
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": 6,
+                        "@ondc/org/title_type": "item",
+                        "title": "Mcvities Digestive (96x100g)(Tray Pack,Rs.25,Rs.5 Off) Rs.20",
+                        "price": {
+                            "value": 18,
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "fulfilment1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "24.0"
+                        }
+                    }
+                ],
+                "price": {
+                    "value": "42.00",
+                    "currency": "INR"
+                },
+                "ttl": "P1D"
+            },
+            "provider": {
+                "id": "1"
+            },
+            "items": [
+                {
+                    "@ondc/org/cancellable": true,
+                    "@ondc/org/available_on_cod": true,
+                    "@ondc/org/returnable": false,
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "category_id": "Grocery",
+                    "price": {
+                        "value": "18.39",
+                        "currency": "INR",
+                        "maximum_value": "20.00"
+                    },
+                    "@ondc/org/seller_pickup_return": false,
+                    "@ondc/org/contact_details_consumer_care": "abc@gmail.com",
+                    "id": 6
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,226 @@
+-------------init-------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "init",
+        "transaction_id": "97efb294-770d-4ec7-adba-2907c78a7d27",
+        "message_id": "3132ad61-928a-429d-9e87-921f835f7d99",
+        "core_version": "1.0.0",
+        "timestamp": "2022-08-16T11:14:04.200Z",
+        "bap_id": "www.firstforwardondc.com",
+        "bap_uri": "https://api.plotch.ai/ondc/v1/146622/"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "address": {
+                    "area_code": "401105",
+                    "city": "Thane",
+                    "country": "IN",
+                    "door": "",
+                    "locality": "",
+                    "name": "Test address",
+                    "state": "MAHARASHTRA"
+                },
+                "created_at": "2022-08-16T11:14:03.306Z",
+                "email": "abc126@gmail.com",
+                "name": "TesyBack",
+                "phone": "7207746376",
+                "tax_number": "",
+                "updated_at": "2022-08-16T11:14:03.306Z"
+            },
+            "fulfillments": [
+                {
+                    "end": {
+                        "contact": {
+                            "email": "abc126@gmail.com",
+                            "phone": "7207746376"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "401105",
+                                "city": "Thane",
+                                "country": "IN",
+                                "door": "",
+                                "locality": "",
+                                "name": "Test address",
+                                "state": "MAHARASHTRA"
+                            },
+                            "gps": "12.9715987,77.5945627"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "Tesy Back"
+                        }
+                    },
+                    "id": 1,
+                    "tracking": true,
+                    "type": "Delivery",
+                    "provider_id": "3"
+                }
+            ],
+            "items": [
+                {
+                    "id": "177",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "params": {
+                    "amount": "476.0",
+                    "currency": "INR"
+                },
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "./ondc-collected_by_status": "Assert"
+            },
+            "provider": {
+                "id": "3",
+                "locations": [
+                    {
+                        "gps": "12.9369208,77.6249452",
+                        "id": "locations_id",
+                        "address": {
+                            "city": "Bengaluru",
+                            "door": "509, 6th Cross Road, 6th block, Koramangala",
+                            "name": "NSTL Chilis",
+                            "locality": "",
+                            "area_code": "560038",
+                            "state": "Karnataka",
+                            "street": ""
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+-----------on_init----------------
+{
+    "context": {
+        "transaction_id": "97efb294-770d-4ec7-adba-2907c78a7d27",
+        "country": "IND",
+        "bpp_id": "stagingapigateway.bizom.in/ondc",
+        "city": "std:080",
+        "message_id": "3132ad61-928a-429d-9e87-921f835f7d99",
+        "core_version": "1.0.0",
+        "bap_id": "www.firstforwardondc.com",
+        "domain": "nic2004:52110",
+        "bpp_uri": "https://stagingapigateway.bizom.in/ondc",
+        "action": "on_init",
+        "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
+        "key": "MCowBQYDK2VuAyEAZEI6HvCthb67jqZsOZkhnmoacUlV2ZNmsr45Rgm6PwA=",
+        "timestamp": "2022-08-16T11:14:04.200Z"
+    },
+    "message": {
+        "order": {
+            "fulfillments": [
+                {
+                    "provider_id": "3",
+                    "end": {
+                        "contact": {
+                            "phone": "7207746376",
+                            "email": "abc126@gmail.com"
+                        },
+                        "location": {
+                            "address": {
+                                "country": "IN",
+                                "door": "",
+                                "city": "Thane",
+                                "area_code": "401105",
+                                "locality": "",
+                                "name": "Test address",
+                                "state": "MAHARASHTRA"
+                            },
+                            "gps": "12.9715987,77.5945627"
+                        }
+                    },
+                    "id": 1,
+                    "type": "Delivery",
+                    "tracking": true,
+                    "customer": {
+                        "person": {
+                            "name": "Tesy Back"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": 177,
+                        "price": {
+                            "currency": "INR",
+                            "value": 149
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "LuvIt Cocoa Crush Powder | Baking | Milk Shakes | Cake | Cocoa Powder (190 g)",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "fulfilment1",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery charges"
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "149.00"
+                },
+                "ttl": "P1D"
+            },
+            "provider": {
+                "id": "3"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "params": {
+                    "transaction_id": "some-txn-id",
+                    "mode": "upi",
+                    "amount": "149.00",
+                    "vpa": "bizom@upi"
+                },
+                "uri": "https://stagingapigateway.bizom.in/payment",
+                "tl_method": "http/get",
+                "status": "NOT-PAID"
+            },
+            "items": [
+                {
+                    "quantity": {
+                        "count": 1
+                    },
+                    "id": "177"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "country": "IN",
+                    "door": "",
+                    "city": "Thane",
+                    "area_code": "401105",
+                    "locality": "",
+                    "name": "Test address",
+                    "state": "MAHARASHTRA"
+                },
+                "updated_at": "2022-08-16T11:14:03.306Z",
+                "phone": "7207746376",
+                "tax_number": "",
+                "name": "TesyBack",
+                "created_at": "2022-08-16T11:14:03.306Z",
+                "email": "abc126@gmail.com"
+            }
+        }
+    }
+}
