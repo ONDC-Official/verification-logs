@@ -1,0 +1,119 @@
+-------------------------------BPP search--------------------------
+{
+    "context": {
+        "transaction_id": "3735a581-7920-4efb-9832-d34797f8a18e",
+        "country": "IND",
+        "city": "std:080",
+        "domain": "nic2004:60232",
+        "action": "search",
+        "message_id": "2d1cc27e-ffe9-4773-85e3-3b836406ad24",
+        "core_version": "1.0.6",
+        "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+        "bap_id": "stagingapigateway.bizom.in/ondc",
+        "timestamp": "2022-08-16T08:23:39.482Z"
+    },
+    "message": {
+        "intent": {
+            "payment": {
+                "@ondc/org/collection_amount": "0"
+            },
+            "fulfillment": {
+                "start": {
+                    "contact": {
+                        "phone": "7984769714",
+                        "email": "dumy@gmail.com"
+                    },
+                    "location": {
+                        "address": {
+                            "door": "509, 6th Cross Road, 6th block, Koramangala",
+                            "city": "Bengaluru",
+                            "street": "",
+                            "area_code": "560038",
+                            "name": "NSTL Chilis",
+                            "locality": "",
+                            "state": "Karnataka"
+                        },
+                        "id": "locations_id",
+                        "gps": "12.9369208,77.6249452"
+                    }
+                },
+                "end": {
+                    "location": {
+                        "address": {
+                            "area_code": "560042"
+                        },
+                        "gps": "12.974002, 77.613458"
+                    }
+                },
+                "type": "Prepaid"
+            },
+            "category": {
+                "id": "Same Day Delivery"
+            },
+            "@ondc/org/payload_details": {
+                "weight": {
+                    "value": 9.600000381469727,
+                    "unit": "Kilogram"
+                }
+            }
+        }
+    }
+}
+
+----------------------------Logistic: on_search---------------------------
+{
+    "context": {
+        "transaction_id": "3735a581-7920-4efb-9832-d34797f8a18e",
+        "country": "IND",
+        "bpp_id": "uat.grab.in",
+        "city": "std:080",
+        "domain": "nic2004:60232",
+        "bpp_uri": "https://uat.grab.in/beckn/bpp/",
+        "action": "on_search",
+        "message_id": "2d1cc27e-ffe9-4773-85e3-3b836406ad24",
+        "core_version": "1.0.6",
+        "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+        "bap_id": "stagingapigateway.bizom.in/ondc",
+        "timestamp": "2022-08-16T08:23:39.482Z"
+    },
+    "message": {
+        "catalog": {
+            "bpp/providers": [
+                {
+                    "id": "grab-logistics",
+                    "descriptor": {
+                        "name": "Grab Logistics",
+                        "short_desc": "Grab Logistics",
+                        "long_desc": "Grab Logistics"
+                    },
+                    "categories": [
+                        {
+                            "id": "Same Day Delivery",
+                            "time": {
+                                "duration": "PT45M"
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "category_id": "Same Day Delivery",
+                            "price": {
+                                "currency": "INR",
+                                "value": "80.0"
+                            },
+                            "id": "same-day-delivery",
+                            "descriptor": {
+                                "name": "Same Day Delivery",
+                                "short_desc": "Same Day Delivery",
+                                "long_desc": "Same Day Delivery"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "bpp/descriptor": {
+                "name": "Grab Logistics"
+            }
+        }
+    }
+}
