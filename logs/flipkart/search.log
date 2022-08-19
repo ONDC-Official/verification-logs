@@ -1,184 +1,150 @@
-Request:
---------
 Request
 {
-    "context": {
-        "domain": "nic2004:60232",
-        "country": "IND",
-        "city": "std:080",
-        "action": "search",
-        "core_version": "1.0.0",
-        "bap_id": "biz.test.enstore.com",
-        "bap_uri": "https://biz.test.enstore.com/ecc/ondc/logistics-bap",
-        "bpp_id": "preprod.gateway.ondc.org",
-        "bpp_uri": "https://preprod.gateway.ondc.org",
-        "transaction_id": "1168c039-094b-4f71-99c3-84ee68f3694c",
-        "message_id": "54ebdd74-67a7-4cbf-95a8-afc6e90a34d8",
-        "timestamp": "2022-08-16T06:56:16Z",
-        "key": "",
-        "ttl": "PT10S"
-    },
-    "message": {
-        "intent": {
-            "category": {
-                "id": "Same Day Delivery"
+  "context": {
+    "transaction_id": "83bc883d-6a89-47f5-833a-3965948f0923",
+    "country": "IND",
+    "city": "std:080",
+    "domain": "nic2004:60232",
+    "action": "search",
+    "message_id": "4c0bd426-92b7-45b4-8a3e-88fb5bb228e6",
+    "core_version": "1.0.0",
+    "ttl": "PT1D",
+    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "bap_id": "stagingapigateway.bizom.in/ondc",
+    "timestamp": "2022-08-18T06:04:30.349Z"
+  },
+  "message": {
+    "intent": {
+      "payment": {
+        "@ondc/org/collection_amount": "0"
+      },
+      "fulfillment": {
+        "start": {
+          "person": {
+            "name": "Ram"
+          },
+          "contact": {
+            "phone": "8888888888",
+            "email": "dumy@gmail.com"
+          },
+          "location": {
+            "address": {
+              "door": "509",
+              "city": "Bengaluru",
+              "street": "6th Cross Road",
+              "area_code": "560038",
+              "name": "NSTL Chilis",
+              "locality": "kormangala",
+              "state": "Karnataka"
             },
-            "payment": {
-                "@ondc/org/collection_amount": "750.0"
+            "id": "3",
+            "gps": "12.9369208,77.6249452"
+          }
+        },
+        "end": {
+          "location": {
+            "address": {
+              "area_code": "560042"
             },
-            "@ondc/org/payload_details": {
-                "weight": {
-                    "unit": "Kilogram",
-                    "value": "0.5"
-                },
-                "dimensions": {
-                    "length": {
-                        "unit": "meter",
-                        "value": "1"
-                    },
-                    "breadth": {
-                        "unit": "meter",
-                        "value": "1"
-                    },
-                    "height": {
-                        "unit": "meter",
-                        "value": "1"
-                    }
-                },
-                "category": "Apple Kashmir 1.5 KG",
-                "value": {
-                    "currency": "INR",
-                    "value": "750.0"
-                }
-            },
-            "fulfillment": {
-                "type": "CoD",
-                "contact": {
-                    "email": "dash@innobits.com",
-                    "phone": "8151000066"
-                },
-                "start": {
-                    "location": {
-                        "gps": "13.0198, 77.64109999999999",
-                        "address": {
-                            "name": "BANASWADI",
-                            "city": "Bangalore",
-                            "state": " Karnataka",
-                            "country": "India",
-                            "building": "Near Police Commisioner Office",
-                            "locality": "Near Police Commisioner Office",
-                            "area_code": "560043"
-                        }
-                    },
-                    "contact": {
-                        "phone": "9999999998",
-                        "email": "test1@test.com"
-                    }
-                },
-                "end": {
-                    "location": {
-                        "gps": "12.974002, 77.613458",
-                        "address": {
-                            "door": "East Parade Church",
-                            "name": "customer",
-                            "locality": "Mahatma Gandhi Road",
-                            "city": "Bengaluru",
-                            "state": "Karnataka",
-                            "country": "India",
-                            "area_code": "560025"
-                        }
-                    },
-                    "contact": {
-                        "phone": "9999999999",
-                        "email": "test@test.com"
-                    }
-                }
-            }
+            "gps": "12.974002, 77.613458"
+          }
+        },
+        "type": "Prepaid"
+      },
+      "category": {
+        "id": "Same Day Delivery"
+      },
+      "@ondc/org/payload_details": {
+        "weight": {
+          "value": 0.008999999612569809,
+          "unit": "Kilogram"
+        },
+        "value": {
+          "value": 232.77999877929688,
+          "currency": "INR"
         }
+      }
     }
+  }
 }
 
 
 Response:
----------
 {
-    "context": {
-        "domain": "nic2004:60232",
-        "country": "IND",
-        "city": "std:080",
-        "action": "on_search",
-        "core_version": "1.0.0",
-        "bap_id": "biz.test.enstore.com",
-        "bap_uri": "https://biz.test.enstore.com/ecc/ondc/logistics-bap",
-        "bpp_id": "preprod.gateway.ondc.org",
-        "bpp_uri": "https://preprod.gateway.ondc.org",
-        "transaction_id": "1168c039-094b-4f71-99c3-84ee68f3694c",
-        "message_id": "54ebdd74-67a7-4cbf-95a8-afc6e90a34d8",
-        "timestamp": "2022-08-16T06:56:16Z",
-        "key": "",
-        "ttl": "PT10S"
-    },
-    "message": {
-        "catalog": {
-            "bpp/descriptor": {
-                "name": "FK Ekart",
-                "short_desc": "FK Ekart",
-                "long_desc": "FK Ekart"
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_search",
+    "core_version": "1.0.0",
+    "bap_id": "stagingapigateway.bizom.in/ondc",
+    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "bpp_id": "ondc-preprod.api.flipkart.com",
+    "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
+    "transaction_id": "83bc883d-6a89-47f5-833a-3965948f0923",
+    "message_id": "4c0bd426-92b7-45b4-8a3e-88fb5bb228e6",
+    "timestamp": "2022-08-18T06:04:31.643504Z",
+    "ttl": "PT1D"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "FK Ekart",
+        "short_desc": "FK Ekart",
+        "long_desc": "FK Ekart"
+      },
+      "bpp/providers": [
+        {
+          "id": "flipkart.test",
+          "descriptor": {
+            "name": "FK Ekart",
+            "short_desc": "FK Ekart",
+            "long_desc": "FK Ekart"
+          },
+          "categories": [
+            {
+              "time": {
+                "duration": "PT1200M"
+              },
+              "id": "Standard Delivery"
+            }
+          ],
+          "items": [
+            {
+              "id": "ECONOMY",
+              "descriptor": {
+                "name": "ECONOMY",
+                "short_desc": "Upto 5 working days for Delivery",
+                "long_desc": "Upto 5 working days for Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "24.0"
+              },
+              "matched": false,
+              "related": false,
+              "recommended": false,
+              "category_id": "Standard Delivery"
             },
-            "bpp/providers": [
-                {
-                    "id": "flipkart.test",
-                    "descriptor": {
-                        "name": "FK Ekart",
-                        "short_desc": "FK Ekart",
-                        "long_desc": "FK Ekart"
-                    },
-                    "categories": [
-                        {
-                            "time": {
-                                "duration": "PT1200M"
-                            },
-                            "id": "Standard Delivery"
-                        }
-                    ],
-                    "items": [
-                        {
-                            "id": "ECONOMY",
-                            "descriptor": {
-                                "name": "ECONOMY",
-                                "short_desc": "Upto 5 working days for Delivery",
-                                "long_desc": "Upto 5 working days for Delivery"
-                            },
-                            "price": {
-                                "currency": "INR",
-                                "value": "34"
-                            },
-                            "matched": false,
-                            "related": false,
-                            "recommended": false,
-                            "category_id": "Standard Delivery"
-                        },
-                        {
-                            "id": "REGULAR",
-                            "descriptor": {
-                                "name": "REGULAR",
-                                "short_desc": "Upto 3 days working for Delivery",
-                                "long_desc": "Upto 3 days working for Delivery"
-                            },
-                            "price": {
-                                "currency": "INR",
-                                "value": "34"
-                            },
-                            "matched": false,
-                            "related": false,
-                            "recommended": false,
-                            "category_id": "Standard Delivery"
-                        }
-                    ]
-                }
-            ]
+            {
+              "id": "REGULAR",
+              "descriptor": {
+                "name": "REGULAR",
+                "short_desc": "Upto 3 days working for Delivery",
+                "long_desc": "Upto 3 days working for Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "24.0"
+              },
+              "matched": false,
+              "related": false,
+              "recommended": false,
+              "category_id": "Standard Delivery"
+            }
+          ]
         }
+      ]
     }
+  }
 }
-
-
