@@ -1,197 +1,184 @@
-Request
-----------------------------------
+Request:
 {
- "context": {
-        "domain": "nic2004:60232",
-        "country": "IND",
-        "city": "std:080",
-        "action": "status",
-        "core_version": "1.0.0",
-        "bap_id": "biz.test.enstore.com",
-        "bap_uri": "https://biz.test.enstore.com/ecc/ondc/logistics-bap",
-        "bpp_id": "ondc-preprod.api.flipkart.com",
-        "bpp_uri": "ondc-preprod.api.flipkart.com",
-        "transaction_id": "1168c039-094b-4f71-99c3-84ee68f3694c",
-        "message_id": "4340fd3e-e153-471f-819d-b86d24bde8b7",
-        "timestamp": "2022-08-16T06:56:50Z",
-        "key": "",
-        "ttl": "PT10S"
-    },
-    "message": {
-        "order_id": "1002-8407"
-    }
+  "context": {
+    "transaction_id": "83bc883d-6a89-47f5-833a-3965948f0923",
+    "country": "IND",
+    "city": "std:080",
+    "domain": "nic2004:60232",
+    "action": "status",
+    "message_id": "64a83d97-cf14-419a-9b09-dcb41e5f5573",
+    "core_version": "1.0.0",
+    "ttl": "PT1D",
+    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "bap_id": "stagingapigateway.bizom.in/ondc",
+    "timestamp": "2022-08-18T06:05:37.992Z"
+  },
+  "message": {
+    "order_id": "36yOWvqOlW4apecguNhgPFxmVxl+d+R+eIUryrAo6+U="
+  }
 }
 
-Reponse
---------------------------------------
 
+
+Response:
 {
-    "context": {
-        "domain": "nic2004:60232",
-        "country": "IND",
-        "city": "std:080",
-        "action": "on_status",
-        "core_version": "1.0.0",
-        "bap_id": "biz.test.enstore.com",
-        "bap_uri": "https://biz.test.enstore.com/ecc/ondc/logistics-bap",
-        "bpp_id": "ondc-preprod.api.flipkart.com",
-        "bpp_uri": "ondc-preprod.api.flipkart.com",
-        "transaction_id": "1168c039-094b-4f71-99c3-84ee68f3694c",
-        "message_id": "4340fd3e-e153-471f-819d-b86d24bde8b7",
-        "timestamp": "2022-08-16T06:56:50Z",
-        "key": "",
-        "ttl": "PT10S"
-    },
-    "message": {
-        "order": {
-            "id": "1002-8407",
-            "state": "Created",
-            "provider": {
-                "id": "flipkart.test"
-            },
-            "items": [
-                {
-                    "id": "ECONOMY",
-                    "category_id": "Standard Delivery"
-                }
-            ],
-            "billing": {
-                "tax_number": "29AAACU1901H1ZK"
-            },
-            "fulfillments": [
-                {
-                    "id": "1168c039-094b-4f71-99c3-84ee68f3694c",
-                    "tracking": false,
-                    "contact": {
-                        "phone": "8151000066",
-                        "email": "dash@innobits.com"
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "Order initated,at pickup location"
-                        }
-                    },
-                    "type": "CoD",
-                    "@ondc/org/awb_no": "1227262193237777",
-                    "start": {
-                        "location": {
-                            "gps": "13.0198, 77.64109999999999",
-                            "address": {
-                                "name": "BANASWADI",
-                                "building": "Near Police Commisioner Office",
-                                "locality": "Near Police Commisioner Office",
-                                "city": "Bangalore",
-                                "state": " Karnataka",
-                                "country": "India",
-                                "area_code": "560043"
-                            }
-                        },
-                        "instructions": {
-                            "images": [
-                                "URL or data string as per spec"
-                            ],
-                            "short_desc": "Near Police Commisioner Office",
-                            "long_desc": "Near Police Commisioner Office"
-                        },
-                        "contact": {
-                            "phone": "9999999998",
-                            "email": "test1@test.com"
-                        },
-                        "person": {
-                            "name": "test1@test.com"
-                        }
-                    },
-                    "end": {
-                        "location": {
-                            "gps": "12.974002, 77.613458",
-                            "address": {
-                                "door": "East Parade Church",
-                                "name": "Darshan S",
-                                "locality": "Mahatma Gandhi Road",
-                                "city": "Bengaluru",
-                                "state": "Karnataka",
-                                "country": "India",
-                                "area_code": "560025"
-                            }
-                        },
-                        "instructions": {
-                            "short_desc": "Mahatma Gandhi Road",
-                            "long_desc": "Mahatma Gandhi Road"
-                        },
-                        "contact": {
-                            "phone": "8151000066",
-                            "email": "keerthy@gmail.com"
-                        },
-                        "person": {
-                            "name": "Darshan S"
-                        }
-                    }
-                }
-            ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "34"
-                },
-                "breakup": [
-                    {
-                        "price": {
-                            "currency": "INR",
-                            "value": "34"
-                        },
-                        "at_ondcorgitem_id": "",
-                        "at_ondcorgtitle_type": "DELIVERY_CHARGE"
-                    },
-                    {
-                        "title": "RTO charges",
-                        "price": {
-                            "currency": "",
-                            "value": ""
-                        },
-                        "at_ondcorgtitle_type": "RTO_CHARGE"
-                    }
-                ]
-            },
-            "payment": {
-                "type": "POST-FULFILLMENT"
-            },
-            "@ondc/org/linked_order": {
-                "items": [
-                    {
-                        "category_id": "Grocery",
-                        "quantity": {
-                            "count": "1",
-                            "measure": {
-                                "value": "0.5",
-                                "unit": "Kilogram"
-                            }
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "750.0"
-                        }
-                    }
-                ],
-                "provider": {
-                    "address": {
-                        "name": "BANASWADI",
-                        "street": "BBMP North, No-2, Outer Ring Road, Ramamurthi Nagar Main Rd",
-                        "locality": "Banaswadi, Bengaluru, Karnataka 560043",
-                        "city": "Bangalore",
-                        "state": "Karnataka",
-                        "area_code": "560043"
-                    }
-                },
-                "order": {
-                    "id": "4832c7dd-e73c-4e55-b8e9-18eca8fd3235",
-                    "weight": {
-                        "value": 0.5,
-                        "unit": "Kilogram"
-                    }
-                }
-            }
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.0.0",
+    "bap_id": "stagingapigateway.bizom.in/ondc",
+    "bap_uri": "https://stagingapigateway.bizom.in/ondc",
+    "bpp_id": "ondc-preprod.api.flipkart.com",
+    "bpp_uri": "https://ondc-preprod.api.flipkart.com/",
+    "transaction_id": "83bc883d-6a89-47f5-833a-3965948f0923",
+    "message_id": "64a83d97-cf14-419a-9b09-dcb41e5f5573",
+    "timestamp": "2022-08-18T06:05:38.019117Z",
+    "ttl": "PT1D"
+  },
+  "message": {
+    "order": {
+      "id": "36yOWvqOlW4apecguNhgPFxmVxl+d+R+eIUryrAo6+U=",
+      "state": "Created",
+      "provider": {
+        "id": "flipkart.test",
+        "locations": [
+          {
+            "id": "flipkart.test"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "ECONOMY"
         }
-    },
-    "error": null
+      ],
+      "billing": {
+        "tax_number": "29AAACU1901DUMMY"
+      },
+      "fulfillments": [
+        {
+          "id": "83bc883d-6a89-47f5-833a-3965948f0923",
+          "state": {
+            "descriptor": {
+              "code": "Searching for Agent"
+            }
+          },
+          "tracking": true,
+          "tags": {
+            "@ondc/org/order_ready_to_ship": "Yes"
+          },
+          "type": "Prepaid",
+          "start": {
+            "location": {
+              "id": "3",
+              "gps": "12.9369208,77.6249452",
+              "address": {
+                "door": "509",
+                "name": "NSTL Chilis",
+                "street": "6th Cross Road",
+                "locality": "kormangala",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "area_code": "560038"
+              }
+            },
+            "contact": {
+              "phone": "8888888888",
+              "email": "dumy@gmail.com"
+            },
+            "person": {
+              "name": "Ram"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.981401,77.640981",
+              "address": {
+                "door": "city",
+                "building": "city",
+                "street": "city",
+                "city": "city",
+                "state": "city",
+                "area_code": "560038"
+              }
+            },
+            "contact": {
+              "phone": "9234567898",
+              "email": "dummy@gmail.com"
+            },
+            "person": {
+              "name": "Samarth"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "24.0"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "",
+            "@ondc/org/title_type": "DELIVERY_CHARGE",
+            "price": {
+              "currency": "INR",
+              "value": "24.0"
+            }
+          },
+          {
+            "@ondc/org/title_type": "RTO_CHARGE",
+            "title": "RTO charges",
+            "price": {
+              "currency": "",
+              "value": ""
+            }
+          }
+        ]
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT"
+      },
+      "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "Grocery",
+            "quantity": {
+              "count": "1",
+              "measure": {
+                "value": "0.009",
+                "unit": "Kilogram"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "232"
+            }
+          }
+        ],
+        "provider": {
+          "address": {
+            "door": "509",
+            "name": "NSTL Chilis",
+            "street": "6th Cross Road",
+            "locality": "kormangala",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "area_code": "560038"
+          }
+        },
+        "order": {
+          "id": "731984e9-ae11-40ee-90f2-55419981796f",
+          "weight": {
+            "value": 0.008999999612569809,
+            "unit": "Kilogram"
+          }
+        }
+      }
+    }
+  },
+  "error": null
 }
 
