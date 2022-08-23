@@ -5,12 +5,12 @@
       "country": "IND",
       "city": "std:080",
       "action": "on_init",
-      "core_version": "0.9.3",
+      "core_version": "1.0.0",
       "bap_id": "buyer-app-preprod.ondc.org",
       "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-      "transaction_id": "321f8608-94ec-4711-b3d5-b136f8bdb8c8",
-      "message_id": "accefc13-c399-4bb1-b00f-1ba55befb47a",
-      "timestamp": "2022-08-17T15:58:42.731Z",
+      "transaction_id": "23a989f2-48b5-4e88-a993-b06952a869a1",
+      "message_id": "a06a7e24-0303-4a81-a2ed-178f984795ea",
+      "timestamp": "2022-08-22T15:34:41.337Z",
       "bpp_id": "preprod-ondc.petpooja.in",
       "bpp_uri": "https://preprod-ondc.petpooja.in/fnb/"
     },
@@ -41,8 +41,8 @@
             "city": "Bengaluru",
             "state": "Karnataka",
             "country": "IND",
-            "areaCode": "560076",
-            "area_code": "560076"
+            "areaCode": "560001",
+            "area_code": "560001"
           },
           "phone": "8104203044",
           "name": "Arvind Kumar",
@@ -50,13 +50,17 @@
         },
         "fulfillments": [
           {
+            "id": "",
+            "type": "Delivery",
+            "provider_id": "t0r32oi1",
+            "tracking": true,
             "end": {
               "contact": {
                 "email": "arvind.kumar@petpooja.com",
                 "phone": "8104203044"
               },
               "location": {
-                "gps": "12.898463, 77.600873",
+                "gps": "12.9812430000001, 77.5950340000001",
                 "address": {
                   "door": "new chowk",
                   "name": "Arvind Kumar",
@@ -67,32 +71,11 @@
                   "city": "Bengaluru",
                   "state": "Karnataka",
                   "country": "IND",
-                  "areaCode": "560076",
-                  "area_code": "560076"
+                  "areaCode": "560001",
+                  "area_code": "560001"
                 }
               }
-            },
-            "type": "Delivery",
-            "customer": {
-              "person": {
-                "name": "Arvind Kumar"
-              }
-            },
-            "provider_id": "t0r32oi1"
-          }
-        ],
-        "offers": [
-          {
-            "id": "62872",
-            "descriptor": {
-              "name": "5 % FLAT DISCOUNT"
-            },
-            "item_ids": [
-              
-            ],
-            "category_ids": [
-              "F&b"
-            ]
+            }
           }
         ],
         "quote": {
@@ -118,11 +101,11 @@
               "@ondc/org/title_type": "discount",
               "price": {
                 "currency": "INR",
-                "value": 0
+                "value": "-0"
               }
             },
             {
-              "@ondc/org/item_id": "t0r32oi1-01",
+              "@ondc/org/item_id": "t0r32oi1-32767",
               "title": "Packing charges",
               "@ondc/org/title_type": "packing",
               "price": {
@@ -131,7 +114,7 @@
               }
             },
             {
-              "@ondc/org/item_id": "t0r32oi1-01",
+              "@ondc/org/item_id": "t0r32oi1-32767",
               "title": "Delivery charges",
               "@ondc/org/title_type": "delivery",
               "price": {
@@ -150,32 +133,13 @@
           ]
         },
         "payment": {
-          "type": "POST-FULFILLMENT",
-          "collected_by": "BPP",
-          "@ondc/org/buyer_app_finder_fee_type": "Percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-          "@ondc/org/ondc-withholding_amount": 0,
-          "@ondc/org/ondc-return_window": 0,
-          "@ondc/org/ondc-settlement_basis": "Collection",
-          "@ondc/org/ondc-settlement_window": "PT2D",
-          "./ondc-collected_by_status": "Agree",
-          "@ondc/org/withholding_amount": 0,
-          "@ondc/org/return_window": 0,
-          "@ondc/org/settlement_basis": "Collection",
-          "@ondc/org/settlement_window": "PT2D",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "seller-app",
-              "settlement_phase": "sale-amount",
-              "settlement_type": "neft",
-              "settlement_bank_account_no": "12345678901234",
-              "settlement_ifsc_code": "SBIN0125620"
-            }
-          ]
-        },
-        "add_ons": [
-          
-        ]
+          "params": {
+            "amount": "1",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "type": "POST-FULFILLMENT"
+        }
       }
     }
   },
