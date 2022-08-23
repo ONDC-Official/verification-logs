@@ -4,11 +4,11 @@
       "domain": "nic2004:52110",
       "country": "IND",
       "city": "std:080",
-      "action": "on_init",
+      "action": "on_status",
       "transaction_id": "01d4ce7e-8583-407a-841e-dc199f73bb49",
-      "message_id": "a05fc0ae-1cfa-40ab-abb5-8517b0620629",
+      "message_id": "6304e588-e7b4-47e9-ba26-362cac1f3251",
       "core_version": "1.0.0",
-      "timestamp": "2022-08-23T14:32:06.272Z",
+      "timestamp": "2022-08-23T14:34:48.000Z",
       "bap_id": "www.firstforwardondc.com",
       "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
       "bpp_id": "preprod-ondc.petpooja.in",
@@ -16,11 +16,22 @@
     },
     "message": {
       "order": {
+        "id": "c77ad548-75e7-4f94-b0d8-95c495f20db4",
+        "state": "Shipped",
         "provider": {
-          "id": "t0r32oi1"
-        },
-        "provider_location": {
-          "id": "t0r32oi1"
+          "id": "t0r32oi1",
+          "locations": [
+            {
+              "address": {
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "street": "81 Titenium, Prahladnaagr, Mahatma Gandhi Road",
+                "area_code": "560001"
+              },
+              "id": "t0r32oi1",
+              "gps": "12.974002,77.613458"
+            }
+          ]
         },
         "items": [
           {
@@ -40,24 +51,39 @@
             "name": "Mahatma Gandhi Road, Jayanagar 4th Block",
             "state": "KARNATAKA"
           },
-          "created_at": "2022-08-23T14:32:05.722Z",
+          "created_at": "2022-08-23T14:34:10.390Z",
           "email": "arvind.kumar@petpooja.com",
           "name": "Arvind Kumar",
           "phone": "8104203044",
-          "tax_number": "",
-          "updated_at": "2022-08-23T14:32:05.722Z"
+          "updated_at": "2022-08-23T14:34:10.390Z"
         },
         "fulfillments": [
           {
-            "id": 1,
-            "type": "Delivery",
-            "provider_id": "t0r32oi1",
+            "id": "645af549-5219-4571-a167-ad821ef69c43",
             "tracking": true,
-            "end": {
-              "contact": {
-                "email": "arvind.kumar@petpooja.com",
-                "phone": "8104203044"
+            "start": {
+              "location": {
+                "id": "t0r32oi1-32767",
+                "descriptor": {
+                  "name": "La Pinoz"
+                },
+                "gps": "12.974002,77.613458"
               },
+              "time": {
+                "range": {
+                  "start": "2022-08-23T14:34:10.876Z",
+                  "end": "2022-08-23T13:49:10.876Z"
+                }
+              },
+              "instructions": {
+                "name": "Status for pickup",
+                "short_desc": "Pickup Confirmation Code"
+              },
+              "contact": {
+                "phone": "9099912484"
+              }
+            },
+            "end": {
               "location": {
                 "address": {
                   "area_code": "560011",
@@ -69,6 +95,20 @@
                   "state": "KARNATAKA"
                 },
                 "gps": "12.9715987,77.5945627"
+              },
+              "time": {
+                "range": {
+                  "start": "2022-08-23T14:34:10.876Z",
+                  "end": "2022-08-23T13:49:10.876Z"
+                }
+              },
+              "instructions": {
+                "name": "Status for drop",
+                "short_desc": "Delivery Confirmation Code"
+              },
+              "contact": {
+                "email": "arvind.kumar@petpooja.com",
+                "phone": "8104203044"
               }
             }
           }
@@ -128,12 +168,13 @@
           ]
         },
         "payment": {
-          "./ondc-collected_by_status": "Agree",
-          "type": "POST-FULFILLMENT",
+          "status": "PAID",
+          "type": "ON-ORDER",
           "collected_by": "BAP",
           "params": {
             "amount": "1.0",
-            "currency": "INR"
+            "currency": "INR",
+            "transaction_status": "111614534054"
           },
           "@ondc/org/buyer_app_finder_fee_type": "percent",
           "@ondc/org/buyer_app_finder_fee_amount": 0,
@@ -150,7 +191,9 @@
               "settlement_ifsc_code": "SBIN0125620"
             }
           ]
-        }
+        },
+        "created_at": "2022-08-23T14:34:48.000Z",
+        "updated_at": "2022-08-23T14:34:48.000Z"
       }
     }
   },
