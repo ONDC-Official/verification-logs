@@ -1,0 +1,462 @@
+**********************************
+nStore Logistics BAP LOGS
+
+***********************************
+
+
+Search 
+
+
+********request :  {"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"search","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:10:24.728Z","core_version":"1.0.0"},"message":{"intent":{"category":{"id":"Standard Delivery"},"fulfillment":{"type":"CoD","tracking":true,"start":{"location":{"gps":"13.0275981,77.5068662","address":{"area_code":"560058"}}},"end":{"location":{"gps":"13.0335138,77.5691759","address":{"area_code":"560058"}}}},"payment":{"@ondc/org/collection_amount":"150.0"},"@ondc/org/payload_details":{"weight":{"unit":"Kilogram","value":1},"category":"Misc","value":{"currency":"INR","value":"150.00"}}}}}
+1|ondclogbap  | 19-08 17:40:25.252: ********end_point :  https://preprod.gateway.ondc.org/search
+1|ondclogbap  | 19-08 17:40:25.252: Message :  (created): 1660911025
+1|ondclogbap  | 19-08 17:40:25.252: (expires): 1660971025
+1|ondclogbap  | 19-08 17:40:25.252: digest: BLAKE-512=Yp5MpHvnr6tdXSY1g47dRbMF8BS6NLst7tv60dMyuhT5cVNnIrOfGcJo8uBtX7gx4LXt0M3WUVd5YOA95NYP2g==
+1|ondclogbap  | 19-08 17:40:25.254: header :  {
+1|ondclogbap  | 19-08 17:40:25.254:   headers: {
+1|ondclogbap  | 19-08 17:40:25.255:     'Content-Type': 'application/json',
+1|ondclogbap  | 19-08 17:40:25.255:     authorization: 'Signature keyId="b-ondc-seller-bpp.nlincs.in|a3a8af6d-de20-49f7-8c39-5626d1517fc0|ed25519",algorithm="ed25519",created="1660911025",expires="1660971025",headers="(created) (expires) digest",signature="zWV5q4UpXXivyxpkl7w/B8QS+Q/HY1IPlEiMOhpXfejW+wljlfjgRc7mwdwwMAPWngOKWmdgNVrxIxVAe+6hCQ=="'
+1|ondclogbap  | 19-08 17:40:25.255:   }
+1|ondclogbap  | 19-08 17:40:25.255: }
+1|ondclogbap  | 19-08 17:40:25.288: success data : {
+1|ondclogbap  | 19-08 17:40:25.288:   context: {
+1|ondclogbap  | 19-08 17:40:25.288:     domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:40:25.288:     country: 'IND',
+1|ondclogbap  | 19-08 17:40:25.288:     city: 'std:080',
+1|ondclogbap  | 19-08 17:40:25.288:     action: 'search',
+1|ondclogbap  | 19-08 17:40:25.288:     core_version: '1.0.0',
+1|ondclogbap  | 19-08 17:40:25.288:     bap_id: 'b-ondc-seller-bpp.nlincs.in',
+1|ondclogbap  | 19-08 17:40:25.288:     bap_uri: 'https://b-ondc-seller-bpp.nlincs.in/lbap',
+1|ondclogbap  | 19-08 17:40:25.288:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:40:25.288:     message_id: 'vq9I3LHs6022rumMp2upaSoGcIhZitlE',
+1|ondclogbap  | 19-08 17:40:25.288:     timestamp: '2022-08-19T12:10:24.728Z'
+1|ondclogbap  | 19-08 17:40:25.288:   },
+1|ondclogbap  | 19-08 17:40:25.288:   message: { ack: { status: 'ACK' } }
+1|ondclogbap  | 19-08 17:40:25.288: }
+
+
+
+On_Search Request:
+
+{"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"on_search","core_version":"1.0.0","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:10:26.046Z"},"message":{"catalog":{"bpp/descriptor":{"name":"Shiprocket Inc"},"bpp/providers":[{"id":"103","descriptor":{"name":"Xpressbees Essential Surface","short_desc":"Xpressbees Essential Surface","long_desc":"Xpressbees Essential Surface"},"rating":"4.7","categories":[{"id":"Standard Delivery","time":{"duration":"PT44H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"103","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"104"},"category_id":"Standard Delivery"}]},{"id":"30","descriptor":{"name":"Wow Express 1Kg","short_desc":"Wow Express 1Kg","long_desc":"Wow Express 1Kg"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"30","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"108"},"category_id":"Standard Delivery"}]},{"id":"50","descriptor":{"name":"Wow Express 0.5Kg","short_desc":"Wow Express 0.5Kg","long_desc":"Wow Express 0.5Kg"},"rating":"3.9","categories":[{"id":"Standard Delivery","time":{"duration":"PT119H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"50","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"108"},"category_id":"Standard Delivery"}]},{"id":"164","descriptor":{"name":"Loadshare Surface","short_desc":"Loadshare Surface","long_desc":"Loadshare Surface"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"164","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"118"},"category_id":"Standard Delivery"}]},{"id":"133","descriptor":{"name":"Udaan Surface","short_desc":"Udaan Surface","long_desc":"Udaan Surface"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"133","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"118"},"category_id":"Standard Delivery"}]},{"id":"29","descriptor":{"name":"Amazon Shipping 1Kg","short_desc":"Amazon Shipping 1Kg","long_desc":"Amazon Shipping 1Kg"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"29","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"118"},"category_id":"Standard Delivery"}]},{"id":"128","descriptor":{"name":"Ecom Express Surface 1kg","short_desc":"Ecom Express Surface 1kg","long_desc":"Ecom Express Surface 1kg"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"128","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"118"},"category_id":"Standard Delivery"}]},{"id":"163","descriptor":{"name":"Borzo","short_desc":"Borzo","long_desc":"Borzo"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT24H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"163","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"118"},"category_id":"Standard Delivery"}]},{"id":"32","descriptor":{"name":"Amazon Shipping 2Kg","short_desc":"Amazon Shipping 2Kg","long_desc":"Amazon Shipping 2Kg"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"32","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"194"},"category_id":"Standard Delivery"}]},{"id":"24","descriptor":{"name":"Xpressbees 2kg surface","short_desc":"Xpressbees 2kg surface","long_desc":"Xpressbees 2kg surface"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT54H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"24","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"194"},"category_id":"Standard Delivery"}]},{"id":"139","descriptor":{"name":"Pidge","short_desc":"Pidge","long_desc":"Pidge"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT24H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"139","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"242"},"category_id":"Standard Delivery"}]},{"id":"148","descriptor":{"name":"Milesawayy","short_desc":"Milesawayy","long_desc":"Milesawayy"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT24H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"148","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"242"},"category_id":"Standard Delivery"}]},{"id":"131","descriptor":{"name":"Pidge NDD","short_desc":"Pidge NDD","long_desc":"Pidge NDD"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT48H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"131","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"242"},"category_id":"Standard Delivery"}]},{"id":"167","descriptor":{"name":"Milesawayy NDD","short_desc":"Milesawayy NDD","long_desc":"Milesawayy NDD"},"rating":"4","categories":[{"id":"Standard Delivery","time":{"duration":"PT48H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"167","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"242"},"category_id":"Standard Delivery"}]},{"id":"43","descriptor":{"name":"Delhivery Surface","short_desc":"Delhivery Surface","long_desc":"Delhivery Surface"},"rating":"3","categories":[{"id":"Standard Delivery","time":{"duration":"PT70H"}}],"locations":[{"id":"SR-Location","gps":"28.497590, 77.157570","address":{"street":"Plot No. B, Khasra-360, Sultanpur, MG Road","city":"New Delhi","state":"DL","area_code":"110030"}}],"items":[{"id":"43","descriptor":{"name":"Standard Delivery","short_desc":"Standard Delivery","long_desc":"Standard Delivery"},"price":{"currency":"INR","value":"121.4"},"category_id":"Standard Delivery"}]}]}}}
+1|ondclogbap  | 19-08 17:40:26.167: Inside verify Gateway
+1|ondclogbap  | 19-08 17:40:26.168: x-gateway-authorization :  Signature keyId="preprod.gateway.ondc.org|0739b57d-1dea-419f-ab8e-f5b0f878ca5c|ed25519",algorithm="ed25519", created="1660911026", expires="1661511026", headers="(created) (expires) digest", signature="rdXVb8esIupM1naLBc/+hWa7AmjvUQKjtYn3oSR+tDXBD766ggB8Ln35vde5qBLkdWE/wr+QJIDNxFL359jYCg=="
+1|ondclogbap  | 19-08 17:40:26.169: Lookup logistics partner :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:40:26.169: Request:  {
+1|ondclogbap  | 19-08 17:40:26.169:   domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:40:26.169:   type: 'gateway',
+1|ondclogbap  | 19-08 17:40:26.169:   country: 'IND',
+1|ondclogbap  | 19-08 17:40:26.169:   subscriber_id: 'preprod.gateway.ondc.org'
+1|ondclogbap  | 19-08 17:40:26.169: }
+1|ondclogbap  | 19-08 17:40:26.169: message :  IND|nic2004:60232|gateway|preprod.gateway.ondc.org
+1|ondclogbap  | 19-08 17:40:26.176: Request :  {"sender_subscriber_id":"b-ondc-seller-bpp.nlincs.in","request_id":"a0508e73-7730-4479-bfd0-1d17fbed229c","timestamp":"2022-08-19T12:10:26.176Z","signature":"3ngINVgKV+l6GUZ2kbn/+LX5IKPo6UnmuwYeH9SKQuo7GtPaWPtcvg6I3YSar6JTvQvUaqw86uo92y0jhmGzCA==","search_parameters":{"domain":"nic2004:60232","type":"gateway","country":"IND","subscriber_id":"preprod.gateway.ondc.org"}}
+1|ondclogbap  | 19-08 17:40:26.178: url :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:40:26.224: response :  [{"subscriber_id":"preprod.gateway.ondc.org","city":["std:080"],"country":"IND","valid_from":"2022-07-07T11:57:54.101Z","valid_until":"2023-07-08T11:57:54.101Z","signing_public_key":"Fhjwaka1Za+ld+7Nms7S0C675r24mZoyWVn8JbYTjSs=","encr_public_key":"Fhjwaka1Za+ld+7Nms7S0C675r24mZoyWVn8JbYTjSs=","created":"2022-07-08T13:45:32.545Z","updated":"2022-07-08T13:45:32.545Z","unique_key_id":"0739b57d-1dea-419f-ab8e-f5b0f878ca5c","network_participant":[{"subscriber_url":"/","domain":"nic2004:60232","type":"gateway","msn":false,"city_code":["*"],"seller_on_record":[]}]}]
+1|ondclogbap  | 19-08 17:40:26.224: ********lookup data :  {
+1|ondclogbap  | 19-08 17:40:26.224:   subscriber_id: 'preprod.gateway.ondc.org',
+1|ondclogbap  | 19-08 17:40:26.224:   city: [ 'std:080' ],
+1|ondclogbap  | 19-08 17:40:26.224:   country: 'IND',
+1|ondclogbap  | 19-08 17:40:26.224:   valid_from: '2022-07-07T11:57:54.101Z',
+1|ondclogbap  | 19-08 17:40:26.224:   valid_until: '2023-07-08T11:57:54.101Z',
+1|ondclogbap  | 19-08 17:40:26.224:   signing_public_key: 'Fhjwaka1Za+ld+7Nms7S0C675r24mZoyWVn8JbYTjSs=',
+1|ondclogbap  | 19-08 17:40:26.224:   encr_public_key: 'Fhjwaka1Za+ld+7Nms7S0C675r24mZoyWVn8JbYTjSs=',
+1|ondclogbap  | 19-08 17:40:26.224:   created: '2022-07-08T13:45:32.545Z',
+1|ondclogbap  | 19-08 17:40:26.225:   updated: '2022-07-08T13:45:32.545Z',
+1|ondclogbap  | 19-08 17:40:26.225:   unique_key_id: '0739b57d-1dea-419f-ab8e-f5b0f878ca5c',
+1|ondclogbap  | 19-08 17:40:26.225:   network_participant: [
+1|ondclogbap  | 19-08 17:40:26.225:     {
+1|ondclogbap  | 19-08 17:40:26.225:       subscriber_url: '/',
+1|ondclogbap  | 19-08 17:40:26.225:       domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:40:26.225:       type: 'gateway',
+1|ondclogbap  | 19-08 17:40:26.225:       msn: false,
+1|ondclogbap  | 19-08 17:40:26.225:       city_code: [Array],
+1|ondclogbap  | 19-08 17:40:26.225:       seller_on_record: []
+1|ondclogbap  | 19-08 17:40:26.225:     }
+1|ondclogbap  | 19-08 17:40:26.225:   ]
+1|ondclogbap  | 19-08 17:40:26.225: }
+1|ondclogbap  | 19-08 17:40:26.226: Inside Verify
+1|ondclogbap  | 19-08 17:40:26.227: signature :  rdXVb8esIupM1naLBc/+hWa7AmjvUQKjtYn3oSR+tDXBD766ggB8Ln35vde5qBLkdWE/wr+QJIDNxFL359jYCg==
+1|ondclogbap  | 19-08 17:40:26.227: message :  (created): 1660911026
+1|ondclogbap  | 19-08 17:40:26.227: (expires): 1661511026
+1|ondclogbap  | 19-08 17:40:26.227: digest: BLAKE-512=1ZchlQ+KF1bmZelDMQbSi/xlLMPS40ZnzX+kXXoML8ouco6ydq7k4l8M7koN7ZRozcPUuTDdatlD4XPW6Sns6Q==
+1|ondclogbap  | 19-08 17:40:26.227: publicKey :  Fhjwaka1Za+ld+7Nms7S0C675r24mZoyWVn8JbYTjSs=
+1|ondclogbap  | 19-08 17:40:26.237: Gateway authorization done
+1|ondclogbap  | 19-08 17:40:26.239: verify Gateway Auth :  { status: 1, message: 'Gateway authorization done' }
+1|ondclogbap  | 19-08 17:40:26.241: Inside verify Bap
+1|ondclogbap  | 19-08 17:40:26.241: authorization :  Signature keyId="dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519",algorithm="ed25519", created="1660911026", expires="1663503026", headers="(created) (expires) digest", signature="lqAQ2g6h2UujoC2kv6t7sB353d/isLz6ldG0DRww1hOeluCW1bpPpCRE62JeBH/4vA5hwL8QNXdg6xjZjXGBAw=="
+1|ondclogbap  | 19-08 17:40:26.242: Content :  {
+1|ondclogbap  | 19-08 17:40:26.242:   keyId: 'dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519',
+1|ondclogbap  | 19-08 17:40:26.242:   algorithm: 'ed25519',
+1|ondclogbap  | 19-08 17:40:26.242:   created: '1660911026',
+1|ondclogbap  | 19-08 17:40:26.242:   expires: '1663503026',
+1|ondclogbap  | 19-08 17:40:26.242:   headers: '(created) (expires) digest',
+1|ondclogbap  | 19-08 17:40:26.242:   signature: 'lqAQ2g6h2UujoC2kv6t7sB353d/isLz6ldG0DRww1hOeluCW1bpPpCRE62JeBH/4vA5hwL8QNXdg6xjZjXGBAw==',
+1|ondclogbap  | 19-08 17:40:26.242:   subscriber_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:40:26.242:   unique_key_id: 'f1fa7810-d111-4691-a8e9-2015526bfb55',
+1|ondclogbap  | 19-08 17:40:26.242:   key_algorithm: 'ed25519'
+1|ondclogbap  | 19-08 17:40:26.242: }
+1|ondclogbap  | 19-08 17:40:26.242: Lookup logistics partner :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:40:26.243: Request:  {
+1|ondclogbap  | 19-08 17:40:26.243:   domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:40:26.243:   type: 'sellerApp',
+1|ondclogbap  | 19-08 17:40:26.243:   country: 'IND',
+1|ondclogbap  | 19-08 17:40:26.243:   subscriber_id: 'dev-ondc.shiprocket.in'
+1|ondclogbap  | 19-08 17:40:26.243: }
+1|ondclogbap  | 19-08 17:40:26.249: message :  IND|nic2004:60232|sellerApp|dev-ondc.shiprocket.in
+1|ondclogbap  | 19-08 17:40:26.249: Request :  {"sender_subscriber_id":"b-ondc-seller-bpp.nlincs.in","request_id":"86628abb-a0fd-4d0c-afb5-765c0826dd3b","timestamp":"2022-08-19T12:10:26.247Z","signature":"hnwOdkbzjCVkCHCwHgg3+spa8B3BDjgXNYqC0LUTn99QvkABZa9RDMhdCWIfjLM3w2qgfEsRq5+WCQnieSphBg==","search_parameters":{"domain":"nic2004:60232","type":"sellerApp","country":"IND","subscriber_id":"dev-ondc.shiprocket.in"}}
+1|ondclogbap  | 19-08 17:40:26.249: url :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:40:26.280: response :  [{"subscriber_id":"dev-ondc.shiprocket.in","city":["std:011"],"country":"IND","valid_from":"2022-07-12T23:24:33.178Z","valid_until":"2023-07-12T23:24:33.000Z","signing_public_key":"z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=","encr_public_key":"MCowBQYDK2VuAyEAqMxJEW63k+gBiccoD+xZu6Uuc1Y6A6akSXJ799Grtic=","created":"2022-07-12T17:54:35.246Z","updated":"2022-07-12T17:54:35.246Z","unique_key_id":"f1fa7810-d111-4691-a8e9-2015526bfb55","network_participant":[{"subscriber_url":"/","domain":"nic2004:60232","type":"sellerApp","msn":false,"city_code":["*"],"seller_on_record":[]}]}]
+1|ondclogbap  | 19-08 17:40:26.282: Inside Verify
+1|ondclogbap  | 19-08 17:40:26.283: signature :  lqAQ2g6h2UujoC2kv6t7sB353d/isLz6ldG0DRww1hOeluCW1bpPpCRE62JeBH/4vA5hwL8QNXdg6xjZjXGBAw==
+1|ondclogbap  | 19-08 17:40:26.283: message :  (created): 1660911026
+1|ondclogbap  | 19-08 17:40:26.283: (expires): 1663503026
+1|ondclogbap  | 19-08 17:40:26.284: digest: BLAKE-512=1ZchlQ+KF1bmZelDMQbSi/xlLMPS40ZnzX+kXXoML8ouco6ydq7k4l8M7koN7ZRozcPUuTDdatlD4XPW6Sns6Q==
+1|ondclogbap  | 19-08 17:40:26.284: publicKey :  z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=
+1|ondclogbap  | 19-08 17:40:26.293: bap authorization done
+1|ondclogbap  | 19-08 17:40:26.293: verify BAP Auth :  { status: 1, message: 'authorization done' }
+
+
+
+Init:
+
+{"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"init","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:13:25.594Z","core_version":"1.0.0","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/"},"message":{"order":{"provider":{"id":"133","locations":[{"address":{"area_code":"110030","city":"New Delhi","state":"DL","street":"Plot No. B, Khasra-360, Sultanpur, MG Road"},"id":"SR-Location"}]},"items":[{"id":"133","category_id":"Standard Delivery"}],"billing":{"name":"Balaji Bengaluru Departmental store","phone":"6380531214","email":"testing@nstore.in","tax_number":"","address":{"name":"Balaji Bengaluru Departmental store","building":"2GH4","locality":"1st main road","street":"Shivapura, peenya","city":"Bengaluru","state":"Karnataka","country":"India","area_code":"560058"}},"fulfillments":[{"id":"1","type":"CoD","tracking":true,"contact":{"email":"ssudd@nstore.in"},"start":{"location":{"id":"20354","gps":"13.0275981,77.5068662","address":{"name":"Balaji Bengaluru Departmental store","building":"2GH4","locality":"1st main road","street":"Shivapura, peenya","city":"Bengaluru","state":"Karnataka","country":"India","area_code":"560058"}},"contact":{"phone":"6380531214","email":"testing@nstore.in"}},"end":{"location":{"gps":"13.0335138,77.5691759","address":{"name":"Arunraj","building":"Kaya herbals Arunraj","locality":"","street":"","city":"Bengaluru","state":"Karnataka","country":"","area_code":"560058"}},"contact":{"phone":"9840857465","email":"arunraj@nstore.in"}}}],"payment":{"type":"POST-FULFILLMENT","@ondc/org/cod-settlement_window":"PT2D","@ondc/org/cod-settlement_details":[{"settlement_counterparty":"buyer-app","settlement_type":"upi","upi_address":"nstpl@icici"}]}}}}
+1|ondclogbap  | 19-08 17:43:26.043: ********end_point :  https://dev-ondc.shiprocket.in/init
+1|ondclogbap  | 19-08 17:43:26.045: Message :  (created): 1660911206
+1|ondclogbap  | 19-08 17:43:26.045: (expires): 1660971206
+1|ondclogbap  | 19-08 17:43:26.045: digest: BLAKE-512=y4q6dhuWPzmXC+W6SbvVmPAxO8I0RZJ+ZjykUumNptEB6D1vdYowQdxACrs63jyfWy2snLSLKXxLrii+423sVA==
+1|ondclogbap  | 19-08 17:43:26.047: header :  {
+1|ondclogbap  | 19-08 17:43:26.047:   headers: {
+1|ondclogbap  | 19-08 17:43:26.047:     'Content-Type': 'application/json',
+1|ondclogbap  | 19-08 17:43:26.047:     authorization: 'Signature keyId="b-ondc-seller-bpp.nlincs.in|a3a8af6d-de20-49f7-8c39-5626d1517fc0|ed25519",algorithm="ed25519",created="1660911206",expires="1660971206",headers="(created) (expires) digest",signature="8XjRfrpvp9tqzX6xFKqp52mNq6HaZmshrD6ER4MMPNOm9s1lFdeElBsAUPocE1gi6qET1rUzHC2/r7CkhgXsBw=="'
+1|ondclogbap  | 19-08 17:43:26.047:   }
+1|ondclogbap  | 19-08 17:43:26.047: }
+1|ondclogbap  | 19-08 17:43:26.068: 200
+1|ondclogbap  | 19-08 17:43:26.069: success data : {
+1|ondclogbap  | 19-08 17:43:26.069:   context: {
+1|ondclogbap  | 19-08 17:43:26.069:     domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:43:26.069:     country: 'IND',
+1|ondclogbap  | 19-08 17:43:26.069:     city: 'std:080',
+1|ondclogbap  | 19-08 17:43:26.069:     action: 'init',
+1|ondclogbap  | 19-08 17:43:26.069:     core_version: '1.0.0',
+1|ondclogbap  | 19-08 17:43:26.069:     bap_id: 'b-ondc-seller-bpp.nlincs.in',
+1|ondclogbap  | 19-08 17:43:26.069:     bap_uri: 'https://b-ondc-seller-bpp.nlincs.in/lbap',
+1|ondclogbap  | 19-08 17:43:26.069:     bpp_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:43:26.069:     bpp_uri: 'https://dev-ondc.shiprocket.in/',
+1|ondclogbap  | 19-08 17:43:26.069:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:43:26.069:     message_id: 'vq9I3LHs6022rumMp2upaSoGcIhZitlE',
+1|ondclogbap  | 19-08 17:43:26.069:     timestamp: '2022-08-19T12:13:25.594Z'
+1|ondclogbap  | 19-08 17:43:26.069:   },
+1|ondclogbap  | 19-08 17:43:26.069:   message: { ack: { status: 'ACK' } }
+1|ondclogbap  | 19-08 17:43:26.069: }
+
+
+
+on_Init Request:
+
+{"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"init","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:13:25.594Z","core_version":"1.0.0","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/"},"message":{"order":{"provider":{"id":"133","locations":[{"address":{"area_code":"110030","city":"New Delhi","state":"DL","street":"Plot No. B, Khasra-360, Sultanpur, MG Road"},"id":"SR-Location"}]},"items":[{"id":"133","category_id":"Standard Delivery"}],"billing":{"name":"Balaji Bengaluru Departmental store","phone":"6380531214","email":"testing@nstore.in","tax_number":"","address":{"name":"Balaji Bengaluru Departmental store","building":"2GH4","locality":"1st main road","street":"Shivapura, peenya","city":"Bengaluru","state":"Karnataka","country":"India","area_code":"560058"}},"fulfillments":[{"id":"1","type":"CoD","tracking":true,"contact":{"email":"ssudd@nstore.in"},"start":{"location":{"id":"20354","gps":"13.0275981,77.5068662","address":{"name":"Balaji Bengaluru Departmental store","building":"2GH4","locality":"1st main road","street":"Shivapura, peenya","city":"Bengaluru","state":"Karnataka","country":"India","area_code":"560058"}},"contact":{"phone":"6380531214","email":"testing@nstore.in"}},"end":{"location":{"gps":"13.0335138,77.5691759","address":{"name":"Arunraj","building":"Kaya herbals Arunraj","locality":"","street":"","city":"Bengaluru","state":"Karnataka","country":"","area_code":"560058"}},"contact":{"phone":"9840857465","email":"arunraj@nstore.in"}}}],"payment":{"type":"POST-FULFILLMENT","@ondc/org/cod-settlement_window":"PT2D","@ondc/org/cod-settlement_details":[{"settlement_counterparty":"buyer-app","settlement_type":"upi","upi_address":"nstpl@icici"}]}}}}
+1|ondclogbap  | 19-08 17:43:26.043: ********end_point :  https://dev-ondc.shiprocket.in/init
+1|ondclogbap  | 19-08 17:43:26.045: Message :  (created): 1660911206
+1|ondclogbap  | 19-08 17:43:26.045: (expires): 1660971206
+1|ondclogbap  | 19-08 17:43:26.045: digest: BLAKE-512=y4q6dhuWPzmXC+W6SbvVmPAxO8I0RZJ+ZjykUumNptEB6D1vdYowQdxACrs63jyfWy2snLSLKXxLrii+423sVA==
+1|ondclogbap  | 19-08 17:43:26.047: header :  {
+1|ondclogbap  | 19-08 17:43:26.047:   headers: {
+1|ondclogbap  | 19-08 17:43:26.047:     'Content-Type': 'application/json',
+1|ondclogbap  | 19-08 17:43:26.047:     authorization: 'Signature keyId="b-ondc-seller-bpp.nlincs.in|a3a8af6d-de20-49f7-8c39-5626d1517fc0|ed25519",algorithm="ed25519",created="1660911206",expires="1660971206",headers="(created) (expires) digest",signature="8XjRfrpvp9tqzX6xFKqp52mNq6HaZmshrD6ER4MMPNOm9s1lFdeElBsAUPocE1gi6qET1rUzHC2/r7CkhgXsBw=="'
+1|ondclogbap  | 19-08 17:43:26.047:   }
+1|ondclogbap  | 19-08 17:43:26.047: }
+1|ondclogbap  | 19-08 17:43:26.068: 200
+1|ondclogbap  | 19-08 17:43:26.069: success data : {
+1|ondclogbap  | 19-08 17:43:26.069:   context: {
+1|ondclogbap  | 19-08 17:43:26.069:     domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:43:26.069:     country: 'IND',
+1|ondclogbap  | 19-08 17:43:26.069:     city: 'std:080',
+1|ondclogbap  | 19-08 17:43:26.069:     action: 'init',
+1|ondclogbap  | 19-08 17:43:26.069:     core_version: '1.0.0',
+1|ondclogbap  | 19-08 17:43:26.069:     bap_id: 'b-ondc-seller-bpp.nlincs.in',
+1|ondclogbap  | 19-08 17:43:26.069:     bap_uri: 'https://b-ondc-seller-bpp.nlincs.in/lbap',
+1|ondclogbap  | 19-08 17:43:26.069:     bpp_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:43:26.069:     bpp_uri: 'https://dev-ondc.shiprocket.in/',
+1|ondclogbap  | 19-08 17:43:26.069:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:43:26.069:     message_id: 'vq9I3LHs6022rumMp2upaSoGcIhZitlE',
+1|ondclogbap  | 19-08 17:43:26.069:     timestamp: '2022-08-19T12:13:25.594Z'
+1|ondclogbap  | 19-08 17:43:26.069:   },
+1|ondclogbap  | 19-08 17:43:26.069:   message: { ack: { status: 'ACK' } }
+1|ondclogbap  | 19-08 17:43:26.069: }{"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"on_init","core_version":"1.0.0","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:13:26.285Z"},"message":{"order":{"provider":{"id":"133"},"provider_location":{"id":"SR-Location"},"items":[{"id":"133"}],"quote":{"price":{"currency":"INR","value":"188.0"},"breakup":[{"@ondc/org/item_id":"133","@ondc/org/title_type":"Delivery Charge","price":{"currency":"INR","value":"118"}},{"@ondc/org/title_type":"RTO Charge","title":"RTO Charges","price":{"currency":"INR","value":"70"}}]}}}}
+1|ondclogbap  | 19-08 17:43:26.332: Inside verify Bap
+1|ondclogbap  | 19-08 17:43:26.332: authorization :  Signature keyId="dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519",algorithm="ed25519", created="1660911206", expires="1663503206", headers="(created) (expires) digest", signature="QtTuCpmYeTv0e3RVb8PR+/n078MBB78gSZF4vhx3cjAE8dDiIjar3hwlhz57Md4YKcG+XlKYESzOwF3YqlswAw=="
+1|ondclogbap  | 19-08 17:43:26.332: Content :  {
+1|ondclogbap  | 19-08 17:43:26.332:   keyId: 'dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519',
+1|ondclogbap  | 19-08 17:43:26.332:   algorithm: 'ed25519',
+1|ondclogbap  | 19-08 17:43:26.333:   created: '1660911206',
+1|ondclogbap  | 19-08 17:43:26.333:   expires: '1663503206',
+1|ondclogbap  | 19-08 17:43:26.333:   headers: '(created) (expires) digest',
+1|ondclogbap  | 19-08 17:43:26.333:   signature: 'QtTuCpmYeTv0e3RVb8PR+/n078MBB78gSZF4vhx3cjAE8dDiIjar3hwlhz57Md4YKcG+XlKYESzOwF3YqlswAw==',
+1|ondclogbap  | 19-08 17:43:26.333:   subscriber_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:43:26.333:   unique_key_id: 'f1fa7810-d111-4691-a8e9-2015526bfb55',
+1|ondclogbap  | 19-08 17:43:26.333:   key_algorithm: 'ed25519'
+1|ondclogbap  | 19-08 17:43:26.333: }
+1|ondclogbap  | 19-08 17:43:26.333: Lookup logistics partner :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:43:26.334: Request:  {
+1|ondclogbap  | 19-08 17:43:26.334:   domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:43:26.334:   type: 'sellerApp',
+1|ondclogbap  | 19-08 17:43:26.334:   country: 'IND',
+1|ondclogbap  | 19-08 17:43:26.334:   subscriber_id: 'dev-ondc.shiprocket.in'
+1|ondclogbap  | 19-08 17:43:26.334: }
+1|ondclogbap  | 19-08 17:43:26.334: message :  IND|nic2004:60232|sellerApp|dev-ondc.shiprocket.in
+1|ondclogbap  | 19-08 17:43:26.338: Request :  {"sender_subscriber_id":"b-ondc-seller-bpp.nlincs.in","request_id":"495c8c3e-41bf-41fb-baec-cc3d854257f7","timestamp":"2022-08-19T12:13:26.338Z","signature":"hnwOdkbzjCVkCHCwHgg3+spa8B3BDjgXNYqC0LUTn99QvkABZa9RDMhdCWIfjLM3w2qgfEsRq5+WCQnieSphBg==","search_parameters":{"domain":"nic2004:60232","type":"sellerApp","country":"IND","subscriber_id":"dev-ondc.shiprocket.in"}}
+1|ondclogbap  | 19-08 17:43:26.339: url :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:43:26.386: response :  [{"subscriber_id":"dev-ondc.shiprocket.in","city":["std:011"],"country":"IND","valid_from":"2022-07-12T23:24:33.178Z","valid_until":"2023-07-12T23:24:33.000Z","signing_public_key":"z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=","encr_public_key":"MCowBQYDK2VuAyEAqMxJEW63k+gBiccoD+xZu6Uuc1Y6A6akSXJ799Grtic=","created":"2022-07-12T17:54:35.246Z","updated":"2022-07-12T17:54:35.246Z","unique_key_id":"f1fa7810-d111-4691-a8e9-2015526bfb55","network_participant":[{"subscriber_url":"/","domain":"nic2004:60232","type":"sellerApp","msn":false,"city_code":["*"],"seller_on_record":[]}]}]
+1|ondclogbap  | 19-08 17:43:26.387: Inside Verify
+1|ondclogbap  | 19-08 17:43:26.387: signature :  QtTuCpmYeTv0e3RVb8PR+/n078MBB78gSZF4vhx3cjAE8dDiIjar3hwlhz57Md4YKcG+XlKYESzOwF3YqlswAw==
+1|ondclogbap  | 19-08 17:43:26.387: message :  (created): 1660911206
+1|ondclogbap  | 19-08 17:43:26.387: (expires): 1663503206
+1|ondclogbap  | 19-08 17:43:26.388: digest: BLAKE-512=+kbL81py2jADgnR7QVl8QqeqOPy+nvQCCC5+t0s3zRZuFN6aZyJHROykwi6Bt1LhdFg6fCXvLvIGFJBMlkLJlA==
+1|ondclogbap  | 19-08 17:43:26.388: publicKey :  z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=
+1|ondclogbap  | 19-08 17:43:26.394: bap authorization done
+1|ondclogbap  | 19-08 17:43:26.395: verify BAP auth :  { status: 1, message: 'authorization done' }
+1|ondclogbap  | 19-08 17:43:27.318: Notification sent successfully
+1|ondclogbap  | 19-08 17:43:27.320: b-ondc-seller-bpp.nlincs.in : 17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189  received result from dev-ondc.shiprocket.in:https://dev-ondc.shiprocket.in/
+
+
+
+Confirm Request :
+
+
+{"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"confirm","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:13:28.655Z","core_version":"1.0.0","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/"},"message":{"order":{"id":"17566_222035400006_20354","provider":{"id":"133","locations":[{"id":"SR-Location"}]},"items":[{"id":"133","descriptor":{"long_desc":"Standard Delivery","name":"Standard Delivery","short_desc":"Standard Delivery"},"category_id":"Standard Delivery"}],"@ondc/org/linked_order":{"items":[{"category_id":"Packaged Commodities","descriptor":{"name":"Udhaiyam Toor Dhal 1KG"},"quantity":{"count":"1.0","measure":{"unit":"Kilogram","value":1}},"price":{"currency":"INR","value":"142.86"}}],"order":{"weight":{"unit":"Kilogram","value":1},"id":"d009081b-17d2-4762-9f9e-834a23dcca7b"}},"billing":{"name":"Balaji Bengaluru Departmental store","phone":"6380531214","email":"testing@nstore.in","tax_number":"","address":{"name":"Balaji Bengaluru Departmental store","building":"2GH4","locality":"1st main road","street":"Shivapura, peenya","city":"Bengaluru","state":"Karnataka","area_code":"560058","country":"India"}},"quote":{"price":{"currency":"INR","value":"188.0"},"breakup":[{"@ondc/org/item_id":"133","@ondc/org/title_type":"Delivery Charge","price":{"currency":"INR","value":"118"}},{"@ondc/org/title_type":"RTO Charge","title":"RTO Charges","price":{"currency":"INR","value":"70"}}]},"fulfillments":[{"id":"1","type":"CoD","@ondc/org/awb_no":"222035400006","tracking":true,"contact":{"email":"ssudd@nstore.in"},"start":{"location":{"id":"20354","gps":"13.0275981,77.5068662","address":{"name":"Balaji Bengaluru Departmental store","building":"2GH4","locality":"1st main road","street":"Shivapura, peenya","city":"Bengaluru","state":"Karnataka","area_code":"560058","country":"India"}},"contact":{"phone":"6380531214","email":"testing@nstore.in"}},"end":{"person":{"name":"Arunraj"},"location":{"gps":"13.0335138,77.5691759","address":{"name":"Arunraj","building":"Kaya herbals Arunraj","locality":"","street":"","city":"Bengaluru","state":"Karnataka","area_code":"560058","country":"India"}},"contact":{"phone":"9840857465","email":"arunraj@nstore.in"}}}],"payment":{"@ondc/org/collection_amount":"150.0"}}}}
+1|ondclogbap  | 19-08 17:43:28.981: ********end_point :  https://dev-ondc.shiprocket.in/confirm
+1|ondclogbap  | 19-08 17:43:28.982: Message :  (created): 1660911208
+1|ondclogbap  | 19-08 17:43:28.982: (expires): 1660971208
+1|ondclogbap  | 19-08 17:43:28.982: digest: BLAKE-512=Thh3iDnzx2Ikof/zvMmm0nlIoU5HjSsGXc8OPpDK2AHmaBmuOqDXJLNo2KtWLk0o7Og767GlgUYUAFxcXlLkqQ==
+1|ondclogbap  | 19-08 17:43:28.984: header :  {
+1|ondclogbap  | 19-08 17:43:28.984:   headers: {
+1|ondclogbap  | 19-08 17:43:28.984:     'Content-Type': 'application/json',
+1|ondclogbap  | 19-08 17:43:28.984:     authorization: 'Signature keyId="b-ondc-seller-bpp.nlincs.in|a3a8af6d-de20-49f7-8c39-5626d1517fc0|ed25519",algorithm="ed25519",created="1660911208",expires="1660971208",headers="(created) (expires) digest",signature="urEPTDBBGoIvVVhA7PR9EPNdKwVopx4OPg3Ng5tSSgfbBr2GnmazVbHTA8C4+eDfYnYfug20ho8k9Vog4A1oDw=="'
+1|ondclogbap  | 19-08 17:43:28.984:   }
+1|ondclogbap  | 19-08 17:43:28.984: }
+1|ondclogbap  | 19-08 17:43:28.993: success data : {
+1|ondclogbap  | 19-08 17:43:28.993:   context: {
+1|ondclogbap  | 19-08 17:43:28.993:     domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:43:28.993:     country: 'IND',
+1|ondclogbap  | 19-08 17:43:28.994:     city: 'std:080',
+1|ondclogbap  | 19-08 17:43:28.994:     action: 'confirm',
+1|ondclogbap  | 19-08 17:43:28.994:     core_version: '1.0.0',
+1|ondclogbap  | 19-08 17:43:28.994:     bap_id: 'b-ondc-seller-bpp.nlincs.in',
+1|ondclogbap  | 19-08 17:43:28.994:     bap_uri: 'https://b-ondc-seller-bpp.nlincs.in/lbap',
+1|ondclogbap  | 19-08 17:43:28.994:     bpp_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:43:28.994:     bpp_uri: 'https://dev-ondc.shiprocket.in/',
+1|ondclogbap  | 19-08 17:43:28.994:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:43:28.994:     message_id: 'vq9I3LHs6022rumMp2upaSoGcIhZitlE',
+1|ondclogbap  | 19-08 17:43:28.994:     timestamp: '2022-08-19T12:13:28.655Z'
+1|ondclogbap  | 19-08 17:43:28.994:   },
+1|ondclogbap  | 19-08 17:43:28.994:   message: { ack: { status: 'ACK' } }
+1|ondclogbap  | 19-08 17:43:28.994: }
+
+
+On_Confirm Request :
+
+{"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"on_confirm","core_version":"1.0.0","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"vq9I3LHs6022rumMp2upaSoGcIhZitlE","timestamp":"2022-08-19T12:13:30.459Z"},"message":{"order":{"id":"17566_222035400006_20354","state":"Created","provider":{"id":"133","locations":[{"id":"SR-Location"}]},"items":[{"id":"133","category_id":"Standard Delivery"}],"fulfillments":[{"id":"1","type":"CoD","@ondc/org/ebnexpirydate":"2022-09-19T12:13:30.459Z","tracking":false}],"quote":{"price":{"currency":"INR","value":"188.0"},"breakup":[{"@ondc/org/item_id":"133","@ondc/org/title_type":"Delivery Charge","price":{"currency":"INR","value":"118"}},{"@ondc/org/title_type":"RTO Charge","title":"RTO Charges","price":{"currency":"INR","value":"70"}}]}}}}
+1|ondclogbap  | 19-08 17:43:30.478: Inside verify Bap
+1|ondclogbap  | 19-08 17:43:30.478: authorization :  Signature keyId="dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519",algorithm="ed25519", created="1660911210", expires="1663503210", headers="(created) (expires) digest", signature="qAi9SiVWdi6VLYPjZ0LuVwzKcBhgaTrXtai+epAk/fHNy7c6NobVC4dcrbbI7pAodU+yg4fxTFeFUpAc1u9uAQ=="
+1|ondclogbap  | 19-08 17:43:30.478: Content :  {
+1|ondclogbap  | 19-08 17:43:30.478:   keyId: 'dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519',
+1|ondclogbap  | 19-08 17:43:30.478:   algorithm: 'ed25519',
+1|ondclogbap  | 19-08 17:43:30.478:   created: '1660911210',
+1|ondclogbap  | 19-08 17:43:30.478:   expires: '1663503210',
+1|ondclogbap  | 19-08 17:43:30.478:   headers: '(created) (expires) digest',
+1|ondclogbap  | 19-08 17:43:30.478:   signature: 'qAi9SiVWdi6VLYPjZ0LuVwzKcBhgaTrXtai+epAk/fHNy7c6NobVC4dcrbbI7pAodU+yg4fxTFeFUpAc1u9uAQ==',
+1|ondclogbap  | 19-08 17:43:30.478:   subscriber_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:43:30.478:   unique_key_id: 'f1fa7810-d111-4691-a8e9-2015526bfb55',
+1|ondclogbap  | 19-08 17:43:30.478:   key_algorithm: 'ed25519'
+1|ondclogbap  | 19-08 17:43:30.478: }
+1|ondclogbap  | 19-08 17:43:30.478: Lookup logistics partner :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:43:30.478: Request:  {
+1|ondclogbap  | 19-08 17:43:30.478:   domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:43:30.479:   type: 'sellerApp',
+1|ondclogbap  | 19-08 17:43:30.479:   country: 'IND',
+1|ondclogbap  | 19-08 17:43:30.479:   subscriber_id: 'dev-ondc.shiprocket.in'
+1|ondclogbap  | 19-08 17:43:30.479: }
+1|ondclogbap  | 19-08 17:43:30.479: message :  IND|nic2004:60232|sellerApp|dev-ondc.shiprocket.in
+1|ondclogbap  | 19-08 17:43:30.481: Request :  {"sender_subscriber_id":"b-ondc-seller-bpp.nlincs.in","request_id":"d0d4e8c9-98f1-4178-8fe2-e002cae96102","timestamp":"2022-08-19T12:13:30.481Z","signature":"hnwOdkbzjCVkCHCwHgg3+spa8B3BDjgXNYqC0LUTn99QvkABZa9RDMhdCWIfjLM3w2qgfEsRq5+WCQnieSphBg==","search_parameters":{"domain":"nic2004:60232","type":"sellerApp","country":"IND","subscriber_id":"dev-ondc.shiprocket.in"}}
+1|ondclogbap  | 19-08 17:43:30.482: url :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:43:30.528: response :  [{"subscriber_id":"dev-ondc.shiprocket.in","city":["std:011"],"country":"IND","valid_from":"2022-07-12T23:24:33.178Z","valid_until":"2023-07-12T23:24:33.000Z","signing_public_key":"z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=","encr_public_key":"MCowBQYDK2VuAyEAqMxJEW63k+gBiccoD+xZu6Uuc1Y6A6akSXJ799Grtic=","created":"2022-07-12T17:54:35.246Z","updated":"2022-07-12T17:54:35.246Z","unique_key_id":"f1fa7810-d111-4691-a8e9-2015526bfb55","network_participant":[{"subscriber_url":"/","domain":"nic2004:60232","type":"sellerApp","msn":false,"city_code":["*"],"seller_on_record":[]}]}]
+1|ondclogbap  | 19-08 17:43:30.529: Inside Verify
+1|ondclogbap  | 19-08 17:43:30.529: signature :  qAi9SiVWdi6VLYPjZ0LuVwzKcBhgaTrXtai+epAk/fHNy7c6NobVC4dcrbbI7pAodU+yg4fxTFeFUpAc1u9uAQ==
+1|ondclogbap  | 19-08 17:43:30.529: message :  (created): 1660911210
+1|ondclogbap  | 19-08 17:43:30.529: (expires): 1663503210
+1|ondclogbap  | 19-08 17:43:30.529: digest: BLAKE-512=mPMc7YER4UAL3Mv9V34QNixCwr6ijvUiSGH/08LGYpt2TNdYW+xDlSyGzzydgPB8UGmx/tZwy4x612bDpNuONQ==
+1|ondclogbap  | 19-08 17:43:30.529: publicKey :  z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=
+1|ondclogbap  | 19-08 17:43:30.535: bap authorization done
+1|ondclogbap  | 19-08 17:43:30.535: verify BAP auth :  { status: 1, message: 'authorization done' }
+1|ondclogbap  | 19-08 17:43:30.768: Update Shipment success : {
+1|ondclogbap  | 19-08 17:43:30.769:   statusCode: 201,
+1|ondclogbap  | 19-08 17:43:30.769:   message: 'success',
+1|ondclogbap  | 19-08 17:43:30.769:   data: {
+1|ondclogbap  | 19-08 17:43:30.769:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:43:30.769:     unit_key: 20354,
+1|ondclogbap  | 19-08 17:43:30.769:     delivery_partner: 'ondc',
+1|ondclogbap  | 19-08 17:43:30.769:     invoice_number: '222035400006',
+1|ondclogbap  | 19-08 17:43:30.769:     bpp_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:43:30.769:     bpp_uri: 'https://dev-ondc.shiprocket.in/',
+1|ondclogbap  | 19-08 17:43:30.769:     shipment_order: {
+1|ondclogbap  | 19-08 17:43:30.769:       id: '17566_222035400006_20354',
+1|ondclogbap  | 19-08 17:43:30.769:       state: 'Created',
+1|ondclogbap  | 19-08 17:43:30.769:       provider: [Object],
+1|ondclogbap  | 19-08 17:43:30.769:       items: [Array],
+1|ondclogbap  | 19-08 17:43:30.769:       fulfillments: [Array],
+1|ondclogbap  | 19-08 17:43:30.769:       quote: [Object]
+1|ondclogbap  | 19-08 17:43:30.769:     },
+1|ondclogbap  | 19-08 17:43:30.769:     shipment_amount: '188.0',
+1|ondclogbap  | 19-08 17:43:30.769:     payment_mode: 'cash',
+1|ondclogbap  | 19-08 17:43:30.769:     tracking: { tl_method: 'http/get', url: '', status: '' },
+1|ondclogbap  | 19-08 17:43:30.769:     meta: { unit_key: 20354, delivery_partner: 'ondc' }
+1|ondclogbap  | 19-08 17:43:30.769:   }
+1|ondclogbap  | 19-08 17:43:30.769: }
+
+
+
+
+
+
+
+Status Request:
+request :  {"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"status","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"DMiJHHA1GM4MzbJ9DVrczWvmQ8Q0hs20","timestamp":"2022-08-19T12:19:22.703Z","core_version":"1.0.0","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/"},"message":{"order_id":"17566_222035400006_20354","callback_url":"https://b-ondc-seller-bpp.nlincs.in/lbap/on_track"}}
+1|ondclogbap  | 19-08 17:49:22.705: ********end_point :  https://dev-ondc.shiprocket.in/status
+1|ondclogbap  | 19-08 17:49:22.705: Message :  (created): 1660911562
+1|ondclogbap  | 19-08 17:49:22.705: (expires): 1660971562
+1|ondclogbap  | 19-08 17:49:22.705: digest: BLAKE-512=oQSm/dTX1XKpEdBP42/KHmzEMtZ9VZiECH1ZS9daL5ubCBY2wEScyLCqPW9LkQ5de1k7uvuGPfDfFLXY5ZCqtQ==
+1|ondclogbap  | 19-08 17:49:22.717: header :  {
+1|ondclogbap  | 19-08 17:49:22.717:   headers: {
+1|ondclogbap  | 19-08 17:49:22.717:     'Content-Type': 'application/json',
+1|ondclogbap  | 19-08 17:49:22.717:     authorization: 'Signature keyId="b-ondc-seller-bpp.nlincs.in|a3a8af6d-de20-49f7-8c39-5626d1517fc0|ed25519",algorithm="ed25519",created="1660911562",expires="1660971562",headers="(created) (expires) digest",signature="CjxOISJVvhNLrvw37VdrGxXs6MXZOg1Ry5v3zKWaNikPYfaZGnxMHfqCnlPkX+mqXjcwrWwVuKpMYUcmz8Q7Cw=="'
+1|ondclogbap  | 19-08 17:49:22.718:   }
+1|ondclogbap  | 19-08 17:49:22.718: }
+1|ondclogbap  | 19-08 17:49:22.731: success data : {
+1|ondclogbap  | 19-08 17:49:22.731:   context: {
+1|ondclogbap  | 19-08 17:49:22.732:     domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:49:22.732:     country: 'IND',
+1|ondclogbap  | 19-08 17:49:22.732:     city: 'std:080',
+1|ondclogbap  | 19-08 17:49:22.732:     action: 'status',
+1|ondclogbap  | 19-08 17:49:22.732:     core_version: '1.0.0',
+1|ondclogbap  | 19-08 17:49:22.732:     bap_id: 'b-ondc-seller-bpp.nlincs.in',
+1|ondclogbap  | 19-08 17:49:22.732:     bap_uri: 'https://b-ondc-seller-bpp.nlincs.in/lbap',
+1|ondclogbap  | 19-08 17:49:22.732:     bpp_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:49:22.732:     bpp_uri: 'https://dev-ondc.shiprocket.in/',
+1|ondclogbap  | 19-08 17:49:22.732:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:49:22.732:     message_id: 'DMiJHHA1GM4MzbJ9DVrczWvmQ8Q0hs20',
+1|ondclogbap  | 19-08 17:49:22.732:     timestamp: '2022-08-19T12:19:22.703Z'
+1|ondclogbap  | 19-08 17:49:22.732:   },
+1|ondclogbap  | 19-08 17:49:22.732:   message: { ack: { status: 'ACK' } }
+1|ondclogbap  | 19-08 17:49:22.732: }
+
+
+
+
+On_Status Request:
+
+ {"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"on_status","core_version":"1.0.0","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"DMiJHHA1GM4MzbJ9DVrczWvmQ8Q0hs20","timestamp":"2022-08-19T12:19:23.709Z"},"message":{"order":{"id":"17566_222035400006_20354","state":"Created","provider":{"id":"133","locations":[{"id":"SR-Location"}]},"items":[{"id":"133","category_id":"Standard Delivery"}],"fulfillments":[{"type":"CoD","@ondc/org/awb_no":"","@ondc/org/ebnexpirydate":"","state":{"descriptor":{"code":"At pickup location"}},"tracking":false,"agent":{"phone":"","name":""},"vehicle":{"category":"","size":"","registration":""},"start":{"time":{"range":{"start":"2022-08-19T12:19:23.709Z","end":"2022-08-19T12:19:23.709Z"}}},"end":{"time":{"range":{"start":"2022-08-20T12:19:23.709Z","end":"2022-08-20T12:19:23.709Z"}},"instructions":{"images":["URL of POD"]}}}]}}}
+1|ondclogbap  | 19-08 17:49:23.736: Inside verify Bap
+1|ondclogbap  | 19-08 17:49:23.736: authorization :  Signature keyId="dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519",algorithm="ed25519", created="1660911563", expires="1663503563", headers="(created) (expires) digest", signature="7NEUgAhmQA+mwu3OYxSlLKAk2Skg8uDxWuxcAAIteHxPSkiXy3iRmvkGqGq9CZcaQYodlDwPbxqk7ZaigdPgAA=="
+1|ondclogbap  | 19-08 17:49:23.736: Content :  {
+1|ondclogbap  | 19-08 17:49:23.736:   keyId: 'dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519',
+1|ondclogbap  | 19-08 17:49:23.736:   algorithm: 'ed25519',
+1|ondclogbap  | 19-08 17:49:23.736:   created: '1660911563',
+1|ondclogbap  | 19-08 17:49:23.736:   expires: '1663503563',
+1|ondclogbap  | 19-08 17:49:23.736:   headers: '(created) (expires) digest',
+1|ondclogbap  | 19-08 17:49:23.736:   signature: '7NEUgAhmQA+mwu3OYxSlLKAk2Skg8uDxWuxcAAIteHxPSkiXy3iRmvkGqGq9CZcaQYodlDwPbxqk7ZaigdPgAA==',
+1|ondclogbap  | 19-08 17:49:23.736:   subscriber_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:49:23.736:   unique_key_id: 'f1fa7810-d111-4691-a8e9-2015526bfb55',
+1|ondclogbap  | 19-08 17:49:23.736:   key_algorithm: 'ed25519'
+1|ondclogbap  | 19-08 17:49:23.736: }
+1|ondclogbap  | 19-08 17:49:23.737: Lookup logistics partner :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:49:23.737: Request:  {
+1|ondclogbap  | 19-08 17:49:23.737:   domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:49:23.737:   type: 'sellerApp',
+1|ondclogbap  | 19-08 17:49:23.737:   country: 'IND',
+1|ondclogbap  | 19-08 17:49:23.737:   subscriber_id: 'dev-ondc.shiprocket.in'
+1|ondclogbap  | 19-08 17:49:23.737: }
+1|ondclogbap  | 19-08 17:49:23.737: message :  IND|nic2004:60232|sellerApp|dev-ondc.shiprocket.in
+1|ondclogbap  | 19-08 17:49:23.739: Request :  {"sender_subscriber_id":"b-ondc-seller-bpp.nlincs.in","request_id":"8e747d02-71f7-424a-9dfc-5fc77a586fa6","timestamp":"2022-08-19T12:19:23.739Z","signature":"hnwOdkbzjCVkCHCwHgg3+spa8B3BDjgXNYqC0LUTn99QvkABZa9RDMhdCWIfjLM3w2qgfEsRq5+WCQnieSphBg==","search_parameters":{"domain":"nic2004:60232","type":"sellerApp","country":"IND","subscriber_id":"dev-ondc.shiprocket.in"}}
+1|ondclogbap  | 19-08 17:49:23.740: url :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:49:23.786: response :  [{"subscriber_id":"dev-ondc.shiprocket.in","city":["std:011"],"country":"IND","valid_from":"2022-07-12T23:24:33.178Z","valid_until":"2023-07-12T23:24:33.000Z","signing_public_key":"z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=","encr_public_key":"MCowBQYDK2VuAyEAqMxJEW63k+gBiccoD+xZu6Uuc1Y6A6akSXJ799Grtic=","created":"2022-07-12T17:54:35.246Z","updated":"2022-07-12T17:54:35.246Z","unique_key_id":"f1fa7810-d111-4691-a8e9-2015526bfb55","network_participant":[{"subscriber_url":"/","domain":"nic2004:60232","type":"sellerApp","msn":false,"city_code":["*"],"seller_on_record":[]}]}]
+1|ondclogbap  | 19-08 17:49:23.788: Inside Verify
+1|ondclogbap  | 19-08 17:49:23.788: signature :  7NEUgAhmQA+mwu3OYxSlLKAk2Skg8uDxWuxcAAIteHxPSkiXy3iRmvkGqGq9CZcaQYodlDwPbxqk7ZaigdPgAA==
+1|ondclogbap  | 19-08 17:49:23.789: message :  (created): 1660911563
+1|ondclogbap  | 19-08 17:49:23.789: (expires): 1663503563
+1|ondclogbap  | 19-08 17:49:23.789: digest: BLAKE-512=P+z3oydjcNCUdt4+v8XDQIGBAoqYhN5Ljo12PiKER4rhKau+BmO60iw4znEt4OxUbViIN/3J3STZIcWLT1jLwQ==
+1|ondclogbap  | 19-08 17:49:23.789: publicKey :  z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=
+1|ondclogbap  | 19-08 17:49:23.795: bap authorization done
+1|ondclogbap  | 19-08 17:49:23.795: verify BAP auth :  { status: 1, message: 'authorization done' }
+
+
+
+
+Track Request:
+
+request :  {"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"track","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"DMiJHHA1GM4MzbJ9DVrczWvmQ8Q0hs20","timestamp":"2022-08-19T12:19:24.031Z","core_version":"1.0.0","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/"},"message":{"order_id":"17566_222035400006_20354","callback_url":"https://b-ondc-seller-bpp.nlincs.in/lbap/on_track"}}
+1|ondclogbap  | 19-08 17:49:24.032: ********end_point :  https://dev-ondc.shiprocket.in/track
+1|ondclogbap  | 19-08 17:49:24.032: Message :  (created): 1660911564
+1|ondclogbap  | 19-08 17:49:24.032: (expires): 1660971564
+1|ondclogbap  | 19-08 17:49:24.032: digest: BLAKE-512=rKFEp2c2c/jeI/piDGe9Brdl6/BN59km8PiDOLdujqsyfTk/3Tbz4NLBVMo48DEzYDG/fXbNNVpmur/q7rhunw==
+1|ondclogbap  | 19-08 17:49:24.034: header :  {
+1|ondclogbap  | 19-08 17:49:24.034:   headers: {
+1|ondclogbap  | 19-08 17:49:24.034:     'Content-Type': 'application/json',
+1|ondclogbap  | 19-08 17:49:24.034:     authorization: 'Signature keyId="b-ondc-seller-bpp.nlincs.in|a3a8af6d-de20-49f7-8c39-5626d1517fc0|ed25519",algorithm="ed25519",created="1660911564",expires="1660971564",headers="(created) (expires) digest",signature="YEcaLWdx1DMCjTtuvn7YGHv0YPEROqkKuAl7YvDVT2mFmPFdbAbGV8OgwxjrfH6GGwOmTLycC6UUwXRqo8gyDA=="'
+1|ondclogbap  | 19-08 17:49:24.034:   }
+1|ondclogbap  | 19-08 17:49:24.034: }
+1|ondclogbap  | 19-08 17:49:24.042: success data : {
+1|ondclogbap  | 19-08 17:49:24.042:   context: {
+1|ondclogbap  | 19-08 17:49:24.042:     domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:49:24.042:     country: 'IND',
+1|ondclogbap  | 19-08 17:49:24.042:     city: 'std:080',
+1|ondclogbap  | 19-08 17:49:24.042:     action: 'track',
+1|ondclogbap  | 19-08 17:49:24.042:     core_version: '1.0.0',
+1|ondclogbap  | 19-08 17:49:24.042:     bap_id: 'b-ondc-seller-bpp.nlincs.in',
+1|ondclogbap  | 19-08 17:49:24.042:     bap_uri: 'https://b-ondc-seller-bpp.nlincs.in/lbap',
+1|ondclogbap  | 19-08 17:49:24.042:     bpp_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:49:24.042:     bpp_uri: 'https://dev-ondc.shiprocket.in/',
+1|ondclogbap  | 19-08 17:49:24.042:     transaction_id: '17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189',
+1|ondclogbap  | 19-08 17:49:24.042:     message_id: 'DMiJHHA1GM4MzbJ9DVrczWvmQ8Q0hs20',
+1|ondclogbap  | 19-08 17:49:24.042:     timestamp: '2022-08-19T12:19:24.031Z'
+1|ondclogbap  | 19-08 17:49:24.042:   },
+1|ondclogbap  | 19-08 17:49:24.042:   message: { ack: { status: 'ACK' } }
+1|ondclogbap  | 19-08 17:49:24.042: }
+
+
+
+
+On_Track Request :
+
+on_track {"context":{"domain":"nic2004:60232","country":"IND","city":"std:080","action":"on_track","core_version":"1.0.0","bap_id":"b-ondc-seller-bpp.nlincs.in","bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap","bpp_id":"dev-ondc.shiprocket.in","bpp_uri":"https://dev-ondc.shiprocket.in/","transaction_id":"17566_222035400006_20354_00000000-3683-d416-ffff-ffff9abaa189","message_id":"DMiJHHA1GM4MzbJ9DVrczWvmQ8Q0hs20","timestamp":"2022-08-19T12:19:24.924Z"},"message":{"tracking":{"status":"inactive"}}}
+1|ondclogbap  | 19-08 17:49:24.943: Inside verify Bap
+1|ondclogbap  | 19-08 17:49:24.943: authorization :  Signature keyId="dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519",algorithm="ed25519", created="1660911564", expires="1663503564", headers="(created) (expires) digest", signature="pGad21DItCVNlK/y1V7uvJc0NJwQozI7ITpauIdr+GF8voLif6JhlR8p52pwubMWnusj8dQVa/yExMYBhIpsDw=="
+1|ondclogbap  | 19-08 17:49:24.944: Content :  {
+1|ondclogbap  | 19-08 17:49:24.944:   keyId: 'dev-ondc.shiprocket.in|f1fa7810-d111-4691-a8e9-2015526bfb55|ed25519',
+1|ondclogbap  | 19-08 17:49:24.944:   algorithm: 'ed25519',
+1|ondclogbap  | 19-08 17:49:24.944:   created: '1660911564',
+1|ondclogbap  | 19-08 17:49:24.944:   expires: '1663503564',
+1|ondclogbap  | 19-08 17:49:24.944:   headers: '(created) (expires) digest',
+1|ondclogbap  | 19-08 17:49:24.944:   signature: 'pGad21DItCVNlK/y1V7uvJc0NJwQozI7ITpauIdr+GF8voLif6JhlR8p52pwubMWnusj8dQVa/yExMYBhIpsDw==',
+1|ondclogbap  | 19-08 17:49:24.944:   subscriber_id: 'dev-ondc.shiprocket.in',
+1|ondclogbap  | 19-08 17:49:24.944:   unique_key_id: 'f1fa7810-d111-4691-a8e9-2015526bfb55',
+1|ondclogbap  | 19-08 17:49:24.944:   key_algorithm: 'ed25519'
+1|ondclogbap  | 19-08 17:49:24.944: }
+1|ondclogbap  | 19-08 17:49:24.944: Lookup logistics partner :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:49:24.945: Request:  {
+1|ondclogbap  | 19-08 17:49:24.945:   domain: 'nic2004:60232',
+1|ondclogbap  | 19-08 17:49:24.945:   type: 'sellerApp',
+1|ondclogbap  | 19-08 17:49:24.945:   country: 'IND',
+1|ondclogbap  | 19-08 17:49:24.945:   subscriber_id: 'dev-ondc.shiprocket.in'
+1|ondclogbap  | 19-08 17:49:24.945: }
+1|ondclogbap  | 19-08 17:49:24.946: message :  IND|nic2004:60232|sellerApp|dev-ondc.shiprocket.in
+1|ondclogbap  | 19-08 17:49:24.950: Request :  {"sender_subscriber_id":"b-ondc-seller-bpp.nlincs.in","request_id":"e1abcb1a-e762-4aab-84ae-8e2493b2ebc7","timestamp":"2022-08-19T12:19:24.950Z","signature":"hnwOdkbzjCVkCHCwHgg3+spa8B3BDjgXNYqC0LUTn99QvkABZa9RDMhdCWIfjLM3w2qgfEsRq5+WCQnieSphBg==","search_parameters":{"domain":"nic2004:60232","type":"sellerApp","country":"IND","subscriber_id":"dev-ondc.shiprocket.in"}}
+1|ondclogbap  | 19-08 17:49:24.951: url :  https://preprod.registry.ondc.org/ondc/vlookup
+1|ondclogbap  | 19-08 17:49:24.980: response :  [{"subscriber_id":"dev-ondc.shiprocket.in","city":["std:011"],"country":"IND","valid_from":"2022-07-12T23:24:33.178Z","valid_until":"2023-07-12T23:24:33.000Z","signing_public_key":"z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=","encr_public_key":"MCowBQYDK2VuAyEAqMxJEW63k+gBiccoD+xZu6Uuc1Y6A6akSXJ799Grtic=","created":"2022-07-12T17:54:35.246Z","updated":"2022-07-12T17:54:35.246Z","unique_key_id":"f1fa7810-d111-4691-a8e9-2015526bfb55","network_participant":[{"subscriber_url":"/","domain":"nic2004:60232","type":"sellerApp","msn":false,"city_code":["*"],"seller_on_record":[]}]}]
+1|ondclogbap  | 19-08 17:49:24.980: Inside Verify
+1|ondclogbap  | 19-08 17:49:24.981: signature :  pGad21DItCVNlK/y1V7uvJc0NJwQozI7ITpauIdr+GF8voLif6JhlR8p52pwubMWnusj8dQVa/yExMYBhIpsDw==
+1|ondclogbap  | 19-08 17:49:24.981: message :  (created): 1660911564
+1|ondclogbap  | 19-08 17:49:24.981: (expires): 1663503564
+1|ondclogbap  | 19-08 17:49:24.981: digest: BLAKE-512=svHpAVRFVWeG/ECnGchr3nn6SD2ttJ8NsKLUI01hwI+jsRE8gfQc5CqK4M9l0dLW8MqSSx65Falb0nmb3iFTJg==
+1|ondclogbap  | 19-08 17:49:24.981: publicKey :  z6019Zev9Bw6BsIRJfVU278qbgf+1k1ouwZ2IX020j8=
+1|ondclogbap  | 19-08 17:49:24.988: bap authorization done
+1|ondclogbap  | 19-08 17:49:24.989: verify BAP auth :  { status: 1, message: 'authorization done' }
+
