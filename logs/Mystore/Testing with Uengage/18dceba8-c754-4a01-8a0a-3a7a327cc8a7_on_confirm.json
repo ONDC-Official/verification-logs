@@ -1,23 +1,25 @@
 {
   "request": {
     "context": {
-      "action": "on_init",
+      "action": "on_confirm",
       "bap_id": "beta.mystore.in",
       "bap_uri": "https://beta.mystore.in/ondc/1.0/",
       "city": "std:080",
       "core_version": "1.0.0",
       "country": "IND",
       "domain": "nic2004:52110",
-      "message_id": "b42d5609-f6c0-4a21-9a40-7ac9f26e27a3",
-      "timestamp": "2022-08-18T05:07:39.651Z",
-      "transaction_id": "f173cb48-b6e5-4dc1-a8b8-4637e5068be7",
+      "message_id": "1953368e-9322-4c37-aa81-abb008fc994a",
+      "timestamp": "2022-08-25T06:22:36Z",
+      "transaction_id": "18dceba8-c754-4a01-8a0a-3a7a327cc8a7",
       "bpp_id": "ondc.uengage.in",
       "bpp_uri": "https://ondc.uengage.in/ondc/on_search",
       "key": "MCowBQYDK2VuAyEAsosm57w/ca5Ghk1GmVu+YAB74Evs0RyKua4e0rXYzVA=",
-      "ttl": "P60M"
+      "ttl": "PT60M"
     },
     "message": {
       "order": {
+        "id": "6307152b34d2f6361d7c6089",
+        "state": "Created",
         "provider": {
           "id": "89",
           "locations": [
@@ -29,37 +31,21 @@
         "items": [
           {
             "quantity": {
-              "selected": {
-                "count": 1
-              }
+              "count": "1"
             },
             "id": "2246385",
-            "price": {
-              "currency": "INR",
-              "value": 160
-            },
-            "matched": true,
-            "@ondc/org/returnable": false,
-            "@ondc/org/seller_pickup_return": false,
-            "@ondc/org/return_window": "D3D",
-            "@ondc/org/cancellable": false,
-            "@ondc/org/available_on_cod": true,
-            "@ondc/org/time_to_ship": "M30M",
-            "category_id": "F&B"
+            "fulfillment_id": "89-1"
           }
         ],
         "add_ons": [],
         "offers": [],
         "billing": {
           "address": {
-            "door": "test",
-            "name": "test",
             "locality": null,
             "ward": null,
             "city": "delhi",
             "state": "Delhi",
-            "country": "IND",
-            "area_code": "110085"
+            "country": "IND"
           },
           "phone": "+919999999999",
           "name": "test",
@@ -67,12 +53,34 @@
         },
         "fulfillments": [
           {
+            "id": "89-1",
+            "type": "Delivery",
+            "tracking": true,
+            "start": {
+              "location": {
+                "id": 7090,
+                "descriptor": {
+                  "name": ""
+                },
+                "gps": "28.467185,77.081495"
+              },
+              "time": {
+                "range": {
+                  "start": "2022-08-25T06:22:36Z",
+                  "end": "2022-08-25T07:07:36Z"
+                }
+              },
+              "contact": {
+                "phone": "+919718345112",
+                "email": "hani@uengage.in"
+              }
+            },
             "end": {
               "contact": {
-                "email": "ayush.sharma@hippoinnovations.com",
                 "phone": "+919999999999"
               },
               "location": {
+                "gps": "12.9715990,77.5945630",
                 "address": {
                   "door": "test",
                   "name": "test",
@@ -82,11 +90,15 @@
                   "state": "Delhi",
                   "country": "IND",
                   "area_code": "110085"
-                },
-                "gps": "28.3913822,77.0511932"
+                }
+              },
+              "time": {
+                "range": {
+                  "start": "2022-08-25T06:22:36Z",
+                  "end": "2022-08-25T07:07:36Z"
+                }
               }
             },
-            "type": "Delivery",
             "customer": {
               "person": {
                 "name": "test"
@@ -104,6 +116,9 @@
             {
               "@ondc/org/item_id": "2246385",
               "@ondc/org/title_type": "item",
+              "@ondc/org/item_quantity": {
+                "count": 1
+              },
               "title": "Exotic Tikka Pizza-Regular (serves 1, 17.7 Cm)",
               "price": {
                 "currency": "INR",
@@ -111,7 +126,6 @@
               }
             },
             {
-              "@ondc/org/item_id": "1232",
               "@ondc/org/title_type": "tax",
               "title": "Tax",
               "price": {
@@ -120,7 +134,6 @@
               }
             },
             {
-              "@ondc/org/item_id": "1234",
               "@ondc/org/title_type": "delivery",
               "title": "Delivery Charges",
               "price": {
@@ -129,7 +142,6 @@
               }
             },
             {
-              "@ondc/org/item_id": "1235",
               "@ondc/org/title_type": "packing",
               "title": "Packaging  Charges",
               "price": {
@@ -137,38 +149,53 @@
                 "value": "50"
               }
             }
-          ],
-          "ttl": "PT60M"
+          ]
         },
         "payment": {
+          "params": {
+            "currency": "INR",
+            "transaction_id": "TXN-RQlmjb766",
+            "transaction_status": "Pending",
+            "amount": "268.0000"
+          },
+          "status": "PAID",
           "type": "ON-ORDER",
           "collected_by": "BAP",
-          "ondcorgbuyer_app_finder_fee_type": "Percent",
-          "ondcorgbuyer_app_finder_fee_amount": 0,
-          "ondcorgondc-withholding_amount": 0,
-          "ondcorgondc-return_window": 0,
-          "ondcorgondc-settlement_basis": "Collection",
-          "ondcorgondc-settlement_window": "PT2D"
-        }
+          "ondcorgsettlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "upi_address": "uengage@oksbi",
+              "settlement_bank_account_no": "1234567890",
+              "settlement_ifsc_code": "1234567890",
+              "beneficiary_name": "uengage",
+              "bank_name": "hdfc",
+              "branch_name": "panchkula"
+            }
+          ]
+        },
+        "created_at": "2022-08-25T06:22:35.384Z",
+        "updated_at": "2022-08-25T06:22:36Z"
       }
     }
   },
   "response": {
     "context": {
-      "action": "on_init",
+      "action": "on_confirm",
       "bap_id": "beta.mystore.in",
       "bap_uri": "https://beta.mystore.in/ondc/1.0/",
       "city": "std:080",
       "core_version": "1.0.0",
       "country": "IND",
       "domain": "nic2004:52110",
-      "message_id": "b42d5609-f6c0-4a21-9a40-7ac9f26e27a3",
-      "timestamp": "2022-08-18T05:07:39.651Z",
-      "transaction_id": "f173cb48-b6e5-4dc1-a8b8-4637e5068be7",
+      "message_id": "1953368e-9322-4c37-aa81-abb008fc994a",
+      "timestamp": "2022-08-25T06:22:36Z",
+      "transaction_id": "18dceba8-c754-4a01-8a0a-3a7a327cc8a7",
       "bpp_id": "ondc.uengage.in",
       "bpp_uri": "https://ondc.uengage.in/ondc/on_search",
       "key": "MCowBQYDK2VuAyEAsosm57w/ca5Ghk1GmVu+YAB74Evs0RyKua4e0rXYzVA=",
-      "ttl": "P60M"
+      "ttl": "PT60M"
     },
     "message": {
       "ack": {
