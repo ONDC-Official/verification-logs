@@ -1,0 +1,177 @@
+ 
+Request : {
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "init",
+    "bap_id": "b-ondc-seller-bpp.nlincs.in",
+    "bap_uri": "https://b-ondc-seller-bpp.nlincs.in/lbap",
+    "transaction_id": "17604_222035400010_20354_00000000-618f-ae19-0000-00005075e30c",
+    "message_id": "95YCzNs48o4tkEoVLWUJNLs7h117y5H1",
+    "timestamp": "2022-08-24T09:28:40.640Z",
+    "core_version": "1.0.0",
+    "bpp_id": "dev-ondc.shiprocket.in",
+    "bpp_uri": "https://dev-ondc.shiprocket.in/"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "133",
+        "locations": [
+          {
+            "address": {
+              "area_code": "110030",
+              "city": "New Delhi",
+              "state": "DL",
+              "street": "Plot No. B, Khasra-360, Sultanpur, MG Road"
+            },
+            "id": "SR-Location"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "133",
+          "category_id": "Standard Delivery"
+        }
+      ],
+      "billing": {
+        "name": "Balaji Bengaluru Departmental store",
+        "phone": "6380531214",
+        "email": "testing@nstore.in",
+        "tax_number": "",
+        "address": {
+          "name": "Balaji Bengaluru Departmental store",
+          "building": "2GH4",
+          "locality": "1st main road",
+          "street": "Shivapura, peenya",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "area_code": "560058"
+        }
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "CoD",
+          "tracking": true,
+          "contact": {
+            "email": "ssudd@nstore.in"
+          },
+          "start": {
+            "location": {
+              "id": "20354",
+              "gps": "13.0275981,77.5068662",
+              "address": {
+                "name": "Balaji Bengaluru Departmental store",
+                "building": "2GH4",
+                "locality": "1st main road",
+                "street": "Shivapura, peenya",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560058"
+              }
+            },
+            "contact": {
+              "phone": "6380531214",
+              "email": "testing@nstore.in"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "13.0335138,77.5691759",
+              "address": {
+                "name": "Arunraj",
+                "building": "Kaya herbals Arunraj",
+                "locality": "",
+                "street": "",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "",
+                "area_code": "560058"
+              }
+            },
+            "contact": {
+              "phone": "9840857465",
+              "email": "arunraj@nstore.in"
+            }
+          }
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/cod-settlement_window": "PT2D",
+        "@ondc/org/cod-settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "upi",
+            "upi_address": "nstpl@icici"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+Response : 
+
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.0.0",
+    "bap_id": "b-ondc-seller-bpp.nlincs.in",
+    "bap_uri": "https://b-ondc-seller-bpp.nlincs.in/lbap",
+    "bpp_id": "dev-ondc.shiprocket.in",
+    "bpp_uri": "https://dev-ondc.shiprocket.in/",
+    "transaction_id": "17604_222035400010_20354_00000000-618f-ae19-0000-00005075e30c",
+    "message_id": "95YCzNs48o4tkEoVLWUJNLs7h117y5H1",
+    "timestamp": "2022-08-24T09:28:41.132Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "133"
+      },
+      "provider_location": {
+        "id": "SR-Location"
+      },
+      "items": [
+        {
+          "id": "133"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "188.0"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "133",
+            "@ondc/org/title_type": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "118"
+            }
+          },
+          {
+            "@ondc/org/title_type": "RTO Charge",
+            "title": "RTO Charges",
+            "price": {
+              "currency": "INR",
+              "value": "70"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
