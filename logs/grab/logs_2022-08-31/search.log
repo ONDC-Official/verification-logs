@@ -1,0 +1,117 @@
+Request:
+----------
+{
+	"context": {
+		"transaction_id": "b5b364a6-7bf7-4a02-90fe-000a92cc2aa0",
+		"country": "IND",
+		"city": "std:080",
+		"domain": "nic2004:60232",
+		"action": "search",
+		"message_id": "63238e86-525d-4836-b54a-b24de07f3747",
+		"core_version": "1.0.0",
+		"ttl": "PT30S",
+		"bap_uri": "https://stagingapigateway.bizom.in/ondc",
+		"bap_id": "stagingapigateway.bizom.in/ondc",
+		"timestamp": "2022-08-30T09:54:31.144Z"
+	},
+	"message": {
+		"intent": {
+			"payment": {
+				"@ondc/org/collection_amount": "0"
+			},
+			"fulfillment": {
+				"start": {
+					"location": {
+						"gps": "12.9369208,77.6249452",
+						"address": {
+							"area_code": "560038"
+						}
+					}
+				},
+				"end": {
+					"location": {
+						"address": {
+							"area_code": "560042"
+						},
+						"gps": "12.974002, 77.613458"
+					}
+				},
+				"type": "Prepaid"
+			},
+			"category": {
+				"id": "Same Day Delivery"
+			},
+			"@ondc/org/payload_details": {
+				"weight": {
+					"value": 0.34424999356269839,
+					"unit": "Kilogram"
+				},
+				"category": "Grocery",
+				"value": {
+					"value": 204.97000122070313,
+					"currency": "INR"
+				}
+			}
+		}
+	}
+}
+
+Response:
+----------
+{
+	"context": {
+		"transaction_id": "b5b364a6-7bf7-4a02-90fe-000a92cc2aa0",
+		"country": "IND",
+		"city": "std:080",
+		"domain": "nic2004:60232",
+		"action": "on_search",
+		"message_id": "63238e86-525d-4836-b54a-b24de07f3747",
+		"core_version": "1.0.0",
+		"ttl": "PT30S",
+		"bap_uri": "https://stagingapigateway.bizom.in/ondc",
+		"bap_id": "stagingapigateway.bizom.in/ondc",
+		"timestamp": "2022-08-30T09:54:33.000Z",
+		"bpp_id": "uat.grab.in",
+		"bpp_uri": "https://uat.grab.in/beckn/bpp/"
+	},
+	"message": {
+		"catalog": {
+			"bpp/descriptor": {
+				"name": "Grab Logistics"
+			},
+			"bpp/providers": [
+				{
+					"id": "grab-logistics",
+					"descriptor": {
+						"name": "Grab Logistics",
+						"short_desc": "Grab Logistics",
+						"long_desc": "Grab Logistics"
+					},
+					"items": [
+						{
+							"id": "same-day-delivery",
+							"category_id": "Same Day Delivery",
+							"descriptor": {
+								"name": "Same Day Delivery",
+								"short_desc": "Same Day Delivery",
+								"long_desc": "Same Day Delivery"
+							},
+							"price": {
+								"currency": "INR",
+								"value": "80.0"
+							}
+						}
+					],
+					"categories": [
+						{
+							"id": "Same Day Delivery",
+							"time": {
+								"duration": "PT45M"
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}
