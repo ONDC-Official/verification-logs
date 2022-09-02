@@ -1,0 +1,137 @@
+Request Body Details: 
+
+ {
+  "context": {
+    "city": "std:080",
+    "action": "select",
+    "bap_id": "beta.mystore.in",
+    "bpp_id": "biz.test.enstore.com",
+    "domain": "nic2004:52110",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_uri": "https://biz.test.enstore.com/ecc/ondc/retail-bpp",
+    "country": "IND",
+    "timestamp": "2022-09-02T11:58:53.891Z",
+    "message_id": "e5b561da-7413-428e-aa1a-6ee11a2f2023",
+    "core_version": "1.0.0",
+    "transaction_id": "ad92bd72-c2ad-4cd6-9147-02c237a6e986"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "14",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "provider": {
+        "id": "1000:1001",
+        "locations": [
+          {
+            "id": "1000:1001"
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "location": {
+              "gps": "13.0137778,77.6523889"
+            }
+          }
+        }
+      ]
+    }
+  }
+} 
+
+
+ Response Details: 
+
+ {
+  "context": {
+    "city": "std:080",
+    "action": "on_select",
+    "bap_id": "beta.mystore.in",
+    "bpp_id": "biz.test.enstore.com",
+    "domain": "nic2004:52110",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_uri": "https://biz.test.enstore.com/ecc/ondc/retail-bpp",
+    "country": "IND",
+    "timestamp": "2022-09-02T11:58:54.296Z",
+    "message_id": "e5b561da-7413-428e-aa1a-6ee11a2f2023",
+    "core_version": "1.0.0",
+    "transaction_id": "ad92bd72-c2ad-4cd6-9147-02c237a6e986"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "14",
+          "fulfillment_id": "F:1001"
+        }
+      ],
+      "quote": {
+        "ttl": "PT1H",
+        "price": {
+          "value": "360.0",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "item": {
+              "count": 1,
+              "quantity": {
+                "maximum": {
+                  "count": 2976.0
+                },
+                "available": {
+                  "count": 2976.0
+                }
+              }
+            },
+            "price": {
+              "value": "256.0",
+              "currency": "INR"
+            },
+            "title": "Apple Kashmir 1.5 KG",
+            "@ondc/org/item_id": "14",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": "1"
+            }
+          },
+          {
+            "price": {
+              "value": "104",
+              "currency": "INR"
+            },
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery"
+          }
+        ]
+      },
+      "provider": {
+        "id": "1000:1001"
+      },
+      "fulfillments": [
+        {
+          "id": "F:1001",
+          "state": {
+            "descriptor": {
+              "name": "Serviceable"
+            }
+          },
+          "tracking": true,
+          "@ondc/org/TAT": "PT120M",
+          "@ondc/org/category": "Same Day Delivery",
+          "@ondc/org/provider_name": "Shiprocket"
+        }
+      ],
+      "provider_location": {
+        "id": "1000:1001"
+      }
+    }
+  }
+} 
