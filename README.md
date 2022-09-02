@@ -7,9 +7,9 @@ Configuration settings for ONDC Pre-Production Environment
 
 2. Registry end point
 
-`https://preprod.registry.ondc.org/subscribe`
+`https://preprod.registry.ondc.org/ondc/subscribe`
 
-`https://preprod.registry.ondc.org/lookup`
+`https://preprod.registry.ondc.org/ondc/lookup`
 
 3. Gateway end point
 
