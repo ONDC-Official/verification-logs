@@ -1,26 +1,40 @@
-Request from: buyer-app-preprod.ondc.org
-------------------------------------------
+Request from: www.firstforwardondc.com
+--------------------------------------
 {
        "context": {
               "domain": "nic2004:52110",
+              "action": "select",
               "country": "IND",
               "city": "std:080",
-              "action": "select",
               "core_version": "1.0.0",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "40d2ed96-e2b8-45e3-ab47-a887789b3cfa",
-              "timestamp": "2022-08-30T11:34:59.833Z",
-              "bpp_id": "ondc.evitalrx.in"
+              "bpp_id": "ondc.evitalrx.in",
+              "bpp_uri": "https://ondc.evitalrx.in/",
+              "bap_id": "www.firstforwardondc.com",
+              "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
+              "transaction_id": "482798e8-152c-40a5-9084-baba2e25fc28",
+              "message_id": "7ba49017-bcd6-47e2-8922-414384ede52a",
+              "timestamp": "2022-09-06T12:32:13.113Z",
+              "ttl": "PT30S"
        },
        "message": {
               "order": {
+                     "fulfillments": [
+                            {
+                                   "end": {
+                                          "location": {
+                                                 "gps": "23.022505,72.5713621",
+                                                 "address": {
+                                                        "area_code": "382352"
+                                                 }
+                                          }
+                                   }
+                            }
+                     ],
                      "items": [
                             {
                                    "id": "8XlTP5Mglr1MTvN3AwE7Aw==",
                                    "quantity": {
-                                          "count": 6
+                                          "count": 1
                                    }
                             }
                      ],
@@ -28,35 +42,22 @@ Request from: buyer-app-preprod.ondc.org
                             "id": "caaW7GcXGRvkJ93wd0O5XQ==",
                             "locations": [
                                    {
-                                          "id": null
+                                          "id": "caaW7GcXGRvkJ93wd0O5XQ=="
                                    }
                             ]
-                     },
-                     "fulfillments": [
-                            {
-                                   "end": {
-                                          "location": {
-                                                 "gps": "23.018652, 72.5977130000001",
-                                                 "address": {
-                                                        "area_code": "380022"
-                                                 }
-                                          }
-                                   }
-                            }
-                     ]
+                     }
               }
        }
 }
-
-Response to: buyer-app-preprod.ondc.org
----------------------------------------
+Response to: www.firstforwardondc.com
+-------------------------------------
 {
        "context": {
               "action": "on_select",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "40d2ed96-e2b8-45e3-ab47-a887789b3cfa",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+              "transaction_id": "482798e8-152c-40a5-9084-baba2e25fc28",
+              "message_id": "7ba49017-bcd6-47e2-8922-414384ede52a",
+              "bap_id": "www.firstforwardondc.com",
+              "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
               "domain": "nic2004:52110",
               "country": "IND",
               "city": "std:080",
@@ -65,7 +66,7 @@ Response to: buyer-app-preprod.ondc.org
               "bpp_uri": "https://ondc.evitalrx.in/",
               "ttl": "P1H",
               "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-08-30T11:35:00.320Z"
+              "timestamp": "2022-09-06T12:32:28.962Z"
        },
        "message": {
               "order": {
@@ -99,6 +100,7 @@ Response to: buyer-app-preprod.ondc.org
                      },
                      "items": [
                             {
+                                   "fulfillment_id": "1",
                                    "id": "8XlTP5Mglr1MTvN3AwE7Aw==",
                                    "price": {
                                           "currency": "INR",
@@ -106,7 +108,21 @@ Response to: buyer-app-preprod.ondc.org
                                    },
                                    "quantity": {
                                           "selected": {
-                                                 "count": 6
+                                                 "count": 1
+                                          }
+                                   }
+                            }
+                     ],
+                     "fulfillments": [
+                            {
+                                   "id": "1",
+                                   "@ondc/org/provider_name": "Jay Patel",
+                                   "tracking": false,
+                                   "@ondc/org/category": "Immediate Delivery",
+                                   "@ondc/org/TAT": "PT1D",
+                                   "state": {
+                                          "descriptor": {
+                                                 "name": "Serviceable"
                                           }
                                    }
                             }
@@ -114,19 +130,38 @@ Response to: buyer-app-preprod.ondc.org
                      "quote": {
                             "price": {
                                    "currency": "INR",
-                                   "value": 600
+                                   "value": 200
                             },
                             "breakup": [
                                    {
                                           "@ondc/org/item_id": "8XlTP5Mglr1MTvN3AwE7Aw==",
                                           "@ondc/org/item_quantity": {
-                                                 "count": 6
+                                                 "count": 1
                                           },
                                           "title": "Navratna Oil",
+                                          "item": {
+                                                 "quantity": {
+                                                        "available": {
+                                                               "count": 74
+                                                        },
+                                                        "maximum": {
+                                                               "count": 148
+                                                        }
+                                                 },
+                                                 "count": 1
+                                          },
                                           "@ondc/org/title_type": "item",
                                           "price": {
                                                  "currency": "INR",
-                                                 "value": 600
+                                                 "value": 100
+                                          }
+                                   },
+                                   {
+                                          "title": "Delivery Charge",
+                                          "@ondc/org/title_type": "delivery",
+                                          "price": {
+                                                 "currency": "INR",
+                                                 "value": 100
                                           }
                                    }
                             ],
