@@ -1,17 +1,18 @@
- Request from: buyer-app-preprod.ondc.org
-------------------------------------------
+Request from: www.firstforwardondc.com
+--------------------------------------
 {
        "context": {
               "domain": "nic2004:52110",
+              "action": "search",
               "country": "IND",
               "city": "std:080",
-              "action": "search",
               "core_version": "1.0.0",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "7e904cb9-7a71-472a-b154-5dbb9cf0393a",
-              "timestamp": "2022-08-30T11:32:03.449Z"
+              "bap_id": "www.firstforwardondc.com",
+              "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
+              "transaction_id": "57425546-a7cd-470b-839e-3dd07649a68d",
+              "message_id": "7d58d2c4-3746-4d7a-b133-107ec039ae69",
+              "timestamp": "2022-09-06T12:30:06.476Z",
+              "ttl": "PT30S"
        },
        "message": {
               "intent": {
@@ -23,26 +24,27 @@
                      "fulfillment": {
                             "end": {
                                    "location": {
-                                          "gps": "23.018652,72.5977130000001"
+                                          "gps": "23.022505,72.5713621"
                                    }
                             }
                      },
                      "payment": {
-                            "@ondc/org/buyer_app_finder_fee_type": "Percent",
-                            "@ondc/org/buyer_app_finder_fee_amount": 3
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3"
                      }
               }
        }
 }
-Response to: buyer-app-preprod.ondc.org
----------------------------------------
+
+Response to: www.firstforwardondc.com
+-------------------------------------
 {
        "context": {
               "action": "on_search",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "7e904cb9-7a71-472a-b154-5dbb9cf0393a",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+              "transaction_id": "57425546-a7cd-470b-839e-3dd07649a68d",
+              "message_id": "7d58d2c4-3746-4d7a-b133-107ec039ae69",
+              "bap_id": "www.firstforwardondc.com",
+              "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
               "domain": "nic2004:52110",
               "country": "IND",
               "city": "std:080",
@@ -51,10 +53,16 @@ Response to: buyer-app-preprod.ondc.org
               "bpp_uri": "https://ondc.evitalrx.in/",
               "ttl": "P1H",
               "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-08-30T11:32:03.864Z"
+              "timestamp": "2022-09-06T12:30:08.210Z"
        },
        "message": {
               "catalog": {
+                     "bpp/fulfillments": [
+                            {
+                                   "id": "1",
+                                   "type": "Delivery"
+                            }
+                     ],
                      "bpp/descriptor": {
                             "name": "eVitalRx",
                             "symbol": "https://www.evitalrx.in/assets/images/eVitalRx_logo.png",
@@ -86,7 +94,7 @@ Response to: buyer-app-preprod.ondc.org
                                                         "short_desc": "1 Bottle -  -  -",
                                                         "long_desc": "",
                                                         "images": [
-                                                               "https://d1tu4pmhr82np8.cloudfront.net/storage/medicines/thumb/62e22985c7f86.jpg",
+                                                               "https://d1tu4pmhr82np8.cloudfront.net/storage/medicines/62e22985c7f86.jpg",
                                                                "https://d1tu4pmhr82np8.cloudfront.net/storage/medicines/62e22985c7f86.jpg"
                                                         ]
                                                  },
@@ -95,18 +103,32 @@ Response to: buyer-app-preprod.ondc.org
                                                         "value": 100,
                                                         "maximum_value": 100
                                                  },
-                                                 "category_id": "Grocery",
-                                                 "fulfillment_id": "caaW7GcXGRvkJ93wd0O5XQ==",
+                                                 "category_id": "Packaged Commodities",
+                                                 "fulfillment_id": "1",
                                                  "location_id": "caaW7GcXGRvkJ93wd0O5XQ==",
                                                  "matched": true,
                                                  "@ondc/org/returnable": false,
                                                  "@ondc/org/cancellable": false,
+                                                 "@ondc/org/available_on_cod": true,
+                                                 "@ondc/org/time_to_ship": "PT1D",
                                                  "@ondc/org/contact_details_consumer_care": "+919998931162,+919998931162",
                                                  "@ondc/org/statutory_reqs_packaged_commodities": {
                                                         "manufacturer_or_packer_name": "Emami Ltd",
                                                         "manufacturer_or_packer_address": "India",
                                                         "net_quantity_or_measure_of_commodity_in_pkg": "1 Bottle -  -  -",
                                                         "imported_product_country_of_origin": "India"
+                                                 }
+                                          }
+                                   ],
+                                   "locations": [
+                                          {
+                                                 "id": "caaW7GcXGRvkJ93wd0O5XQ==",
+                                                 "gps": "23.0179652,72.5677348",
+                                                 "address": {
+                                                        "street": "Shop No. 07, Sharda Complex ., Ahmedabad",
+                                                        "city": "Ahmedabad",
+                                                        "area_code": "382330",
+                                                        "state": "Gujarat"
                                                  }
                                           }
                                    ],
@@ -118,6 +140,7 @@ Response to: buyer-app-preprod.ondc.org
               }
        }
 }
+
 
 Request from: beta.mystore.in
 ------------------------------
