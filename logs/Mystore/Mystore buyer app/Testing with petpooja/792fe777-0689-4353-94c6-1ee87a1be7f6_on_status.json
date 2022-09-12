@@ -5,28 +5,32 @@
       "country": "IND",
       "city": "std:080",
       "core_version": "1.0.0",
-      "action": "on_init",
+      "action": "on_status",
       "bap_id": "beta.mystore.in",
       "bap_uri": "https://beta.mystore.in/ondc/1.0/",
       "bpp_id": "preprod-ondc.petpooja.in",
       "bpp_uri": "https://preprod-ondc.petpooja.in/fnb/",
-      "transaction_id": "422e60ca-8b7b-4a35-ba52-49c4ae789803",
-      "message_id": "93bc875d-4e68-43e9-93b7-cde27c48942d",
-      "timestamp": "2022-09-07T11:04:10.316Z",
+      "transaction_id": "792fe777-0689-4353-94c6-1ee87a1be7f6",
+      "message_id": "70ff2911-c912-4242-b9d6-74d4a2e27379",
+      "timestamp": "2022-09-12T13:15:41.948Z",
       "ttl": "PT30S"
     },
     "message": {
       "order": {
+        "id": "631f309f0a2d3904ebd74c29",
+        "state": "Created",
         "provider": {
-          "id": "t0r32oi1"
-        },
-        "provider_location": {
-          "id": "t0r32oi1"
+          "id": "t0r32oi1",
+          "locations": [
+            {
+              "id": "t0r32oi1"
+            }
+          ]
         },
         "items": [
           {
             "fulfillment_id": "t0r32oi1-32767",
-            "id": "119626786",
+            "id": "119626786A4550726",
             "quantity": {
               "count": 1
             }
@@ -35,24 +39,43 @@
         "billing": {
           "name": "test",
           "address": {
-            "door": "test",
-            "name": "test",
-            "locality": "test",
             "city": "delhi",
             "state": "Delhi",
-            "country": "IN",
-            "area_code": "110085"
+            "country": "IN"
           },
           "email": "ayush.sharma@hippoinnovations.com",
           "phone": "+919999999999",
-          "created_at": "2022-09-07T09:05:01.863Z",
-          "updated_at": "2022-09-07T11:04:03.876Z"
+          "created_at": "2022-09-12T13:14:08.673Z",
+          "updated_at": "2022-09-12T13:14:08.673Z"
         },
         "fulfillments": [
           {
             "id": "t0r32oi1-32767",
-            "type": "Delivery",
             "tracking": true,
+            "type": "Delivery",
+            "@ondc/org/provider_name": "La Pinoz",
+            "start": {
+              "location": {
+                "id": "t0r32oi1",
+                "descriptor": {
+                  "name": "La Pinoz"
+                },
+                "gps": "12.974002,77.613458"
+              },
+              "time": {
+                "range": {
+                  "start": "2022-09-12T13:54:08.673Z",
+                  "end": "2022-09-12T14:04:08.000Z"
+                }
+              },
+              "contact": {
+                "phone": "8104203044"
+              },
+              "instructions": {
+                "name": "Status for pickup",
+                "short_desc": "Use orderID for pickup"
+              }
+            },
             "end": {
               "location": {
                 "gps": "12.9715990,77.5945630",
@@ -66,15 +89,30 @@
                   "area_code": "110085"
                 }
               },
+              "time": {
+                "range": {
+                  "start": "2022-09-12T14:09:08.000Z",
+                  "end": "2022-09-12T14:19:08.000Z"
+                }
+              },
               "contact": {
                 "phone": "+919999999999",
                 "email": "ayush.sharma@hippoinnovations.com"
               },
-              "time": {
-                "range": {
-                  "start": "2022-09-07T11:04:08.406Z",
-                  "end": "2022-09-21T11:04:08.406Z"
-                }
+              "instructions": {
+                "name": "Status for drop",
+                "short_desc": "Leave at the door/Handover"
+              }
+            },
+            "customer": {
+              "person": {
+                "name": "test"
+              }
+            },
+            "state": {
+              "descriptor": {
+                "name": "Serviceable",
+                "code": "Serviceable"
               }
             }
           }
@@ -82,19 +120,19 @@
         "quote": {
           "price": {
             "currency": "INR",
-            "value": "21.02"
+            "value": "105.00"
           },
           "breakup": [
             {
-              "@ondc/org/item_id": "119626786",
+              "@ondc/org/item_id": "119626786A4550726",
               "@ondc/org/item_quantity": {
                 "count": 1
               },
-              "title": "Capsicum Pizza",
+              "title": "Capsicum Pizza Personal Giant Slice (22.5 CM) (Cheezy-7)",
               "@ondc/org/title_type": "item",
               "price": {
                 "currency": "INR",
-                "value": "10.00"
+                "value": "60.00"
               }
             },
             {
@@ -103,7 +141,7 @@
               "@ondc/org/title_type": "packing",
               "price": {
                 "currency": "INR",
-                "value": "5.00"
+                "value": "0.00"
               }
             },
             {
@@ -112,7 +150,7 @@
               "@ondc/org/title_type": "delivery",
               "price": {
                 "currency": "INR",
-                "value": "5.00"
+                "value": "40.00"
               }
             },
             {
@@ -120,15 +158,20 @@
               "@ondc/org/title_type": "tax",
               "price": {
                 "currency": "INR",
-                "value": "1.02"
+                "value": "5.00"
               }
             }
           ]
         },
         "payment": {
-          "@ondc/org/collected_by_status": "Agree",
+          "status": "PAID",
           "type": "ON-ORDER",
           "collected_by": "BAP",
+          "params": {
+            "transaction_id": "TXN-2a4QNc586",
+            "amount": "105.0000",
+            "currency": "INR"
+          },
           "@ondc/org/buyer_app_finder_fee_type": "percent",
           "@ondc/org/buyer_app_finder_fee_amount": "3",
           "@ondc/org/withholding_amount": "0.0",
@@ -144,7 +187,8 @@
               "settlement_ifsc_code": "UTIB0002503"
             }
           ]
-        }
+        },
+        "created_at": "2022-09-12T13:14:07.248Z"
       }
     }
   },
@@ -154,14 +198,14 @@
       "country": "IND",
       "city": "std:080",
       "core_version": "1.0.0",
-      "action": "on_init",
+      "action": "on_status",
       "bap_id": "beta.mystore.in",
       "bap_uri": "https://beta.mystore.in/ondc/1.0/",
       "bpp_id": "preprod-ondc.petpooja.in",
       "bpp_uri": "https://preprod-ondc.petpooja.in/fnb/",
-      "transaction_id": "422e60ca-8b7b-4a35-ba52-49c4ae789803",
-      "message_id": "93bc875d-4e68-43e9-93b7-cde27c48942d",
-      "timestamp": "2022-09-07T11:04:10.316Z",
+      "transaction_id": "792fe777-0689-4353-94c6-1ee87a1be7f6",
+      "message_id": "70ff2911-c912-4242-b9d6-74d4a2e27379",
+      "timestamp": "2022-09-12T13:15:41.948Z",
       "ttl": "PT30S"
     },
     "message": {
