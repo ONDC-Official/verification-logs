@@ -1,0 +1,85 @@
+Request from: beta.mystore.in
+-----------------------------
+{
+       "context": {
+              "domain": "nic2004:52110",
+              "country": "IND",
+              "city": "std:080",
+              "core_version": "1.0.0",
+              "action": "update",
+              "bap_id": "beta.mystore.in",
+              "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+              "bpp_id": "ondc.evitalrx.in",
+              "bpp_uri": "https://ondc.evitalrx.in",
+              "transaction_id": "933b107b-8b82-4ba8-9270-d99a717cf8db",
+              "message_id": "78c28a47-934f-403a-9edc-67e50f088302",
+              "timestamp": "2022-09-12T13:45:51.343Z"
+       },
+       "message": {
+              "update_target": "item",
+              "order": {
+                     "id": "631f2355573212fdfb6730b7",
+                     "state": "Delivered",
+                     "provider": {
+                            "id": "qQ3TOg16xWBhzf6q1K4J4w==",
+                            "locations": []
+                     },
+                     "items": [
+                            {
+                                   "id": "AqJYiVJl2Bjn00KMtwdkTQ==",
+                                   "quantity": {
+                                          "count": 5
+                                   },
+                                   "tags": {
+                                          "update_type": "return",
+                                          "reason_code": "003",
+                                          "ttl_approval": "PT24H",
+                                          "ttl_reverseqc": "P3D"
+                                   }
+                            }
+                     ],
+                     "payment": {
+                            "@ondc/org/settlement_details": [
+                                   {
+                                          "settlement_counterparty": "buyer",
+                                          "settlement_phase": "refund",
+                                          "settlement_type": "upi",
+                                          "settlement_amount": "1000",
+                                          "settlement_timestamp": "2022-07-28T18:01:53.000Z"
+                                   }
+                            ]
+                     }
+              }
+       }
+}
+
+Response to: beta.mystore.in
+----------------------------
+{
+       "context": {
+              "action": "on_update",
+              "transaction_id": "933b107b-8b82-4ba8-9270-d99a717cf8db",
+              "message_id": "78c28a47-934f-403a-9edc-67e50f088302",
+              "bap_id": "beta.mystore.in",
+              "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+              "domain": "nic2004:52110",
+              "country": "IND",
+              "city": "std:080",
+              "core_version": "1.0.0",
+              "bpp_id": "ondc.evitalrx.in",
+              "bpp_uri": "https://ondc.evitalrx.in/",
+              "ttl": "PT30S",
+              "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
+              "timestamp": "2022-09-12T13:45:51.467Z"
+       },
+       "message": {
+              "ack": {
+                     "status": "NACK"
+              }
+       },
+       "error": {
+              "code": "50002",
+              "message": "Updation not possible",
+              "type": "POLICY-ERROR"
+       }
+}
