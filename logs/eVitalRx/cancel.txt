@@ -1,99 +1,67 @@
-Note: Cancel is not supported by plotch, and some error in mystore now, So previous logs are submitted.
-Request from: buyer-app-preprod.ondc.org
+
+// 1 and 2 buyer apps don't call /cancel API, because it is mentioned in the search that order items are not cancellable.
+1. Request from: www.firstforwardondc.com
+-----------------------------------------
+
+1. Response to: www.firstforwardondc.com
+----------------------------------------
+
+
+2. Request from: www.spiceonline.in
+---------------------------------
+
+2. Response to: www.spiceonline.in
+--------------------------------
+
+
+3. Request from: buyer-app-preprod.ondc.org
+-------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "cancel",
+        "core_version": "1.0.0",
+        "bap_id": "buyer-app-preprod.ondc.org",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+        "transaction_id": "6a3671c4-558a-4357-ab3a-05fe6446b20e",
+        "message_id": "3ed0f9fe-4368-425d-ac2d-d852b9d746cf",
+        "timestamp": "2022-09-13T12:05:28.727Z",
+        "bpp_id": "ondc.evitalrx.in"
+    },
+    "message": {
+        "order_id": "8f8ebbb0-30a5-4ba3-ae8b-55ed00a3d15e",
+        "cancellation_reason_id": "001"
+    }
+}
+
+3. Response to: buyer-app-preprod.ondc.org
 ------------------------------------------
 {
-       "context": {
-              "domain": "nic2004:52110",
-              "country": "IND",
-              "city": "std:080",
-              "action": "cancel",
-              "core_version": "1.0.0",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "d22f7b54-dac6-47a4-8be2-0bcb8f09b4ef",
-              "timestamp": "2022-08-30T11:50:07.398Z",
-              "bpp_id": "ondc.evitalrx.in"
-       },
-       "message": {
-              "order_id": "4665ac97-6770-440e-bc1c-5400c5c11e50",
-              "cancellation_reason_id": "001"
-       }
-}
-Response to: buyer-app-preprod.ondc.org
----------------------------------------
-{
-       "context": {
-              "action": "on_cancel",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "d22f7b54-dac6-47a4-8be2-0bcb8f09b4ef",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-              "domain": "nic2004:52110",
-              "country": "IND",
-              "city": "std:080",
-              "core_version": "0.9.3",
-              "bpp_id": "ondc.evitalrx.in",
-              "bpp_uri": "https://ondc.evitalrx.in/",
-              "ttl": "P1H",
-              "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-08-30T11:50:07.590Z"
-       },
-       "message": {
-              "order": {
-                     "id": "4665ac97-6770-440e-bc1c-5400c5c11e50",
-                     "state": "Cancelled"
-              }
-       }
-}
-
-Request from: beta.mystore.in
-------------------------------
-{
-       "context": {
-              "domain": "nic2004:52110",
-              "country": "IND",
-              "city": "std:080",
-              "core_version": "1.0.0",
-              "action": "cancel",
-              "bap_id": "beta.mystore.in",
-              "bap_uri": "https://beta.mystore.in/ondc/1.0/",
-              "bpp_id": "ondc.evitalrx.in",
-              "bpp_uri": "https://ondc.evitalrx.in",
-              "transaction_id": "405415d4-d9d0-433a-aecc-bc5363c31080",
-              "message_id": "f4006490-7f3f-4374-9f57-82502c79db64",
-              "timestamp": "2022-08-30T12:16:04.251Z"
-       },
-       "message": {
-              "order_id": "630dfee220f6597d0746d1a9",
-              "cancellation_reason_id": "003"
-       }
-}
-
-Response to: beta.mystore.in
------------------------------
-
-{
-       "context": {
-              "action": "on_cancel",
-              "transaction_id": "405415d4-d9d0-433a-aecc-bc5363c31080",
-              "message_id": "f4006490-7f3f-4374-9f57-82502c79db64",
-              "bap_id": "beta.mystore.in",
-              "bap_uri": "https://beta.mystore.in/ondc/1.0/",
-              "domain": "nic2004:52110",
-              "country": "IND",
-              "city": "std:080",
-              "core_version": "0.9.3",
-              "bpp_id": "ondc.evitalrx.in",
-              "bpp_uri": "https://ondc.evitalrx.in/",
-              "ttl": "P1H",
-              "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-08-30T12:16:04.452Z"
-       },
-       "message": {
-              "order": {
-                     "id": "630dfee220f6597d0746d1a9",
-                     "state": "Cancelled"
-              }
-       }
+    "context": {
+        "action": "on_cancel",
+        "transaction_id": "6a3671c4-558a-4357-ab3a-05fe6446b20e",
+        "message_id": "3ed0f9fe-4368-425d-ac2d-d852b9d746cf",
+        "bap_id": "buyer-app-preprod.ondc.org",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "bpp_id": "ondc.evitalrx.in",
+        "bpp_uri": "https://ondc.evitalrx.in/",
+        "ttl": "PT30S",
+        "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
+        "timestamp": "2022-09-13T12:05:28.963Z"
+    },
+    "message": {
+        "order": {
+            "id": "8f8ebbb0-30a5-4ba3-ae8b-55ed00a3d15e",
+            "state": "Cancelled",
+            "tags": {
+                "cancellation_reason_id": "001"
+            }
+        }
+    }
 }

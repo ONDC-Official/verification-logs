@@ -1,5 +1,5 @@
-Request from: www.firstforwardondc.com
--------------------------------------
+1. Request from: www.firstforwardondc.com
+-----------------------------------------
 {
        "context": {
               "domain": "nic2004:52110",
@@ -11,33 +11,33 @@ Request from: www.firstforwardondc.com
               "bpp_uri": "https://ondc.evitalrx.in/",
               "bap_id": "www.firstforwardondc.com",
               "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
-              "transaction_id": "4ceafd03-5b6d-4d8c-a2c2-3577dd4c3ad1",
-              "message_id": "329fbe9a-1332-4efb-b345-25b40fffea2e",
-              "timestamp": "2022-09-07T11:38:50.469Z",
+              "transaction_id": "496b11e4-fb81-470e-a918-48d9b1339b53",
+              "message_id": "72c4a2a4-2ab6-444f-9c83-a84c95da01fd",
+              "timestamp": "2022-09-13T09:56:25.437Z",
               "ttl": "PT30S"
        },
        "message": {
-              "ref_id": "4ceafd03-5b6d-4d8c-a2c2-3577dd4c3ad1"
+              "ref_id": "496b11e4-fb81-470e-a918-48d9b1339b53"
        }
 }
-Response to: www.firstforwardondc.com
--------------------------------------
+1. Response to: www.firstforwardondc.com
+----------------------------------------
 {
        "context": {
               "action": "on_support",
-              "transaction_id": "4ceafd03-5b6d-4d8c-a2c2-3577dd4c3ad1",
-              "message_id": "329fbe9a-1332-4efb-b345-25b40fffea2e",
+              "transaction_id": "496b11e4-fb81-470e-a918-48d9b1339b53",
+              "message_id": "72c4a2a4-2ab6-444f-9c83-a84c95da01fd",
               "bap_id": "www.firstforwardondc.com",
               "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
               "domain": "nic2004:52110",
               "country": "IND",
               "city": "std:080",
-              "core_version": "0.9.3",
+              "core_version": "1.0.0",
               "bpp_id": "ondc.evitalrx.in",
               "bpp_uri": "https://ondc.evitalrx.in/",
               "ttl": "PT30S",
               "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-09-07T11:38:50.748Z"
+              "timestamp": "2022-09-13T09:56:25.716Z"
        },
        "message": {
               "phone": "9998931162",
@@ -46,10 +46,16 @@ Response to: www.firstforwardondc.com
        }
 }
 
+// Error in the /support API call from the buyer side.
+2. Request from: www.spiceonline.in
+---------------------------------
+
+2. Response to: www.spiceonline.in
+--------------------------------
 
 
-Request from: buyer-app-preprod.ondc.org
-------------------------------------------
+3. Request from: buyer-app-preprod.ondc.org
+-------------------------------------------
 {
        "context": {
               "domain": "nic2004:52110",
@@ -59,38 +65,44 @@ Request from: buyer-app-preprod.ondc.org
               "core_version": "1.0.0",
               "bap_id": "buyer-app-preprod.ondc.org",
               "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "a14097bd-339f-4e67-94c0-83b98cb62c3f",
-              "timestamp": "2022-08-30T11:47:26.155Z",
+              "transaction_id": "6a3671c4-558a-4357-ab3a-05fe6446b20e",
+              "message_id": "c65c0d08-97a1-4fbf-95a0-6d02affc5cf5",
+              "timestamp": "2022-09-13T11:56:23.489Z",
               "bpp_id": "ondc.evitalrx.in"
        },
        "message": {
-              "ref_id": "4665ac97-6770-440e-bc1c-5400c5c11e50"
+              "ref_id": "8f8ebbb0-30a5-4ba3-ae8b-55ed00a3d15e"
        }
 }
 
-Response to: buyer-app-preprod.ondc.org
----------------------------------------
+// buyer-app-preprod.ondc.org is sending order_id in the body.message.ref_id, as per latest contract transaction_id should be passed in the ref_id, returning NACK.
+3. Response to: buyer-app-preprod.ondc.org
+------------------------------------------
 {
        "context": {
               "action": "on_support",
-              "transaction_id": "cbdcca6b-375f-408b-b667-99b3b6ca5676",
-              "message_id": "a14097bd-339f-4e67-94c0-83b98cb62c3f",
+              "transaction_id": "6a3671c4-558a-4357-ab3a-05fe6446b20e",
+              "message_id": "c65c0d08-97a1-4fbf-95a0-6d02affc5cf5",
               "bap_id": "buyer-app-preprod.ondc.org",
               "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
               "domain": "nic2004:52110",
               "country": "IND",
               "city": "std:080",
-              "core_version": "0.9.3",
+              "core_version": "1.0.0",
               "bpp_id": "ondc.evitalrx.in",
               "bpp_uri": "https://ondc.evitalrx.in/",
-              "ttl": "P1H",
+              "ttl": "PT30S",
               "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-08-30T11:47:26.296Z"
+              "timestamp": "2022-09-13T11:56:23.669Z"
        },
        "message": {
-              "phone": "9998931162",
-              "email": "sano.raumil@gmail.com",
-              "uri": ""
+              "ack": {
+                     "status": "NACK"
+              }
+       },
+       "error": {
+              "code": 30000,
+              "message": "Invalid request error",
+              "type": "CORE-ERROR"
        }
 }
