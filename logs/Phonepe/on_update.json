@@ -9,17 +9,17 @@
     "bap_uri": "https://shopping-api-testing.phonepe.com/apis/ondcConnector/bpp/callback/v1",
     "bpp_uri": "https://biz.test.enstore.com/ecc/ondc/retail-bpp",
     "country": "IND",
-    "timestamp": "2022-09-15T05:12:11.232Z",
-    "message_id": "8d24d39d-bb02-418c-a0c6-6eb02dc6f85e",
+    "timestamp": "2022-09-19T15:44:58.055Z",
+    "message_id": "471ec0ff-3a22-4687-a0fe-ad6584e5ad35",
     "core_version": "1.0.0",
-    "transaction_id": "C2209151036467594270796"
+    "transaction_id": "C2209192104194594518328"
   },
   "message": {
     "order": {
-      "id": "OD2209151039452978678684",
+      "id": "OD2209192105244233474016",
       "items": [
         {
-          "id": "14",
+          "id": "16",
           "tags": {
             "status": "Return_Approved"
           },
@@ -29,7 +29,53 @@
           "fulfillment_id": "F:1001:1"
         }
       ],
+      "quote": {
+        "ttl": "PT1H",
+        "price": {
+          "value": "322.58",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "item": {
+              "price": {
+                "value": "103.0",
+                "currency": "INR"
+              }
+            },
+            "price": {
+              "value": "206.0",
+              "currency": "INR"
+            },
+            "title": "Apple Washington 1 KG",
+            "@ondc/org/item_id": "16",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": "2.0"
+            }
+          },
+          {
+            "price": {
+              "value": "57.68",
+              "currency": "INR"
+            },
+            "title": "Tax",
+            "@ondc/org/title_type": "tax"
+          },
+          {
+            "price": {
+              "value": "58.90",
+              "currency": "INR"
+            },
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery"
+          }
+        ]
+      },
+      "state": "Created",
       "billing": {
+        "name": "aa",
+        "phone": "8208499948",
         "address": {
           "city": "Bengaluru",
           "state": "Karnataka",
@@ -38,12 +84,20 @@
         }
       },
       "provider": {
-        "id": "1000:1001"
+        "id": "1000:1001",
+        "locations": [
+          {
+            "id": "L:1000:1001"
+          }
+        ]
       },
       "fulfillments": [
         {
           "id": "F:1001:1",
           "end": {
+            "contact": {
+              "phone": "8208499948"
+            },
             "location": {
               "gps": "13.006506, 77.646074",
               "address": {
@@ -51,12 +105,32 @@
                 "state": "Karnataka",
                 "locality": "Banaswadi",
                 "area_code": "560043"
-              },
-              "descriptor": {}
+              }
             }
           },
           "type": "Reverse QC",
-          "rating": 0
+          "tracking": false,
+          "provider_id": "biz.test.enstore.com"
+        },
+        {
+          "id": "F:1001:2",
+          "end": {
+            "contact": {
+              "phone": "8208499948"
+            },
+            "location": {
+              "gps": "13.006506, 77.646074",
+              "address": {
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "locality": "Banaswadi",
+                "area_code": "560043"
+              }
+            }
+          },
+          "type": "Delivery",
+          "tracking": false,
+          "provider_id": "biz.test.enstore.com"
         }
       ]
     }
