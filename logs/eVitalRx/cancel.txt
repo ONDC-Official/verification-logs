@@ -1,10 +1,57 @@
-
-// 1 and 2 buyer apps don't call /cancel API, because it is mentioned in the search that order items are not cancellable.
 1. Request from: www.firstforwardondc.com
 -----------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "action": "cancel",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "bpp_id": "https://ondc.evitalrx.in/",
+        "bpp_uri": "https://ondc.evitalrx.in/",
+        "bap_id": "www.firstforwardondc.com",
+        "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
+        "transaction_id": "26de3eea-5149-4b86-b2d8-48858cb31c98",
+        "message_id": "3ecef106-7563-47ef-b6af-9fbeaf45ffb4",
+        "timestamp": "2022-09-19T12:42:08.283Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order_id": "6a8a2e1f-0651-4012-9dea-e6aea3b6720d",
+        "cancellation_reason_id": "002"
+    }
+}
+
 
 1. Response to: www.firstforwardondc.com
 ----------------------------------------
+{
+    "context": {
+        "action": "on_cancel",
+        "transaction_id": "26de3eea-5149-4b86-b2d8-48858cb31c98",
+        "message_id": "3ecef106-7563-47ef-b6af-9fbeaf45ffb4",
+        "bap_id": "www.firstforwardondc.com",
+        "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "bpp_id": "ondc.evitalrx.in",
+        "bpp_uri": "https://ondc.evitalrx.in/",
+        "ttl": "PT30S",
+        "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
+        "timestamp": "2022-09-19T12:42:10.159Z"
+    },
+    "message": {
+        "order": {
+            "id": "6a8a2e1f-0651-4012-9dea-e6aea3b6720d",
+            "state": "Cancelled",
+            "tags": {
+                "cancellation_reason_id": "002"
+            }
+        }
+    }
+}
 
 
 2. Request from: www.spiceonline.in
