@@ -11,15 +11,16 @@
               "bpp_uri": "https://ondc.evitalrx.in/",
               "bap_id": "www.firstforwardondc.com",
               "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
-              "transaction_id": "26de3eea-5149-4b86-b2d8-48858cb31c98",
-              "message_id": "a4432170-cc77-4909-9523-d45c96418960",
-              "timestamp": "2022-09-19T11:48:28.390Z",
+              "transaction_id": "aa0a89b2-3772-4bf2-8652-d21d30862d30",
+              "message_id": "d2e2db43-1580-45a8-bc18-c36200ba493a",
+              "timestamp": "2022-09-22T07:42:22.308Z",
               "ttl": "PT30S"
        },
        "message": {
-              "ref_id": "26de3eea-5149-4b86-b2d8-48858cb31c98"
+              "ref_id": "aa0a89b2-3772-4bf2-8652-d21d30862d30"
        }
 }
+
 
 
 1. Response to: www.firstforwardondc.com
@@ -27,8 +28,8 @@
 {
        "context": {
               "action": "on_support",
-              "transaction_id": "26de3eea-5149-4b86-b2d8-48858cb31c98",
-              "message_id": "a4432170-cc77-4909-9523-d45c96418960",
+              "transaction_id": "aa0a89b2-3772-4bf2-8652-d21d30862d30",
+              "message_id": "d2e2db43-1580-45a8-bc18-c36200ba493a",
               "bap_id": "www.firstforwardondc.com",
               "bap_uri": "https://api.plotch.ai/ondc/v1/146622/",
               "domain": "nic2004:52110",
@@ -39,7 +40,7 @@
               "bpp_uri": "https://ondc.evitalrx.in/",
               "ttl": "PT30S",
               "key": "IRhD+bmmOQNVyXKziYzr0jMDkeAzS3y3Vx6oqiEA3eQ=",
-              "timestamp": "2022-09-19T11:48:28.653Z"
+              "timestamp": "2022-09-22T07:42:22.600Z"
        },
        "message": {
               "phone": "9998931162",
@@ -47,46 +48,10 @@
               "uri": ""
        }
 }
+
 // Error in the /support API call from the buyer side.
 2. Request from: www.spiceonline.in
 ---------------------------------
 
 2. Response to: www.spiceonline.in
 --------------------------------
-
-
-3. Request from: buyer-app-preprod.ondc.org
--------------------------------------------
-{
-       "context": {
-              "domain": "nic2004:52110",
-              "country": "IND",
-              "city": "std:080",
-              "action": "support",
-              "core_version": "1.0.0",
-              "bap_id": "buyer-app-preprod.ondc.org",
-              "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-              "transaction_id": "6a3671c4-558a-4357-ab3a-05fe6446b20e",
-              "message_id": "c65c0d08-97a1-4fbf-95a0-6d02affc5cf5",
-              "timestamp": "2022-09-13T11:56:23.489Z",
-              "bpp_id": "ondc.evitalrx.in"
-       },
-       "message": {
-              "ref_id": "8f8ebbb0-30a5-4ba3-ae8b-55ed00a3d15e"
-       }
-}
-// buyer-app-preprod.ondc.org is sending order_id in the body.message.ref_id, as per latest contract transaction_id should be passed in the ref_id, returning NACK.
-3. Response: 
--------------
-{
-       "message": {
-              "ack": {
-                     "status": "NACK"
-              }
-       },
-       "error": {
-              "code": 30000,
-              "message": "Invalid request error",
-              "type": "CORE-ERROR"
-       }
-}
