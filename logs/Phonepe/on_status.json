@@ -9,35 +9,32 @@
     "bap_uri": "https://shopping-api-testing.phonepe.com/apis/ondcConnector/bpp/callback/v1",
     "bpp_uri": "https://biz.test.enstore.com/ecc/ondc/retail-bpp",
     "country": "IND",
-    "timestamp": "2022-09-15T05:12:11.638Z",
-    "message_id": "993025d9-a44a-4cc8-b1dd-427879525d43",
+    "timestamp": "2022-09-21T14:45:48.779Z",
+    "message_id": "STAM2207131438502516112124214",
     "core_version": "1.0.0",
-    "transaction_id": "C2209151036467594270796"
+    "transaction_id": "C2209212001501748418589"
   },
   "message": {
     "order": {
-      "id": "OD2209151039452978678684",
+      "id": "OD2209212004211317640071",
       "items": [
         {
           "id": "14",
-          "tags": {
-            "status": "Return_Approved"
-          },
           "quantity": {
-            "count": 1.0
+            "count": 3
           },
           "fulfillment_id": "F:1001:1"
         }
       ],
       "quote": {
         "price": {
-          "value": "146",
+          "value": "121.13",
           "currency": "INR"
         },
         "breakup": [
           {
             "price": {
-              "value": "93",
+              "value": "108.15",
               "currency": "INR"
             },
             "title": "Apple Kashmir 1.5 KG",
@@ -49,24 +46,26 @@
           },
           {
             "price": {
-              "value": "42",
-              "currency": "INR"
-            },
-            "title": "Delivery charges",
-            "@ondc/org/title_type": "delivery"
-          },
-          {
-            "price": {
-              "value": "11",
+              "value": "12.98",
               "currency": "INR"
             },
             "title": "Tax",
             "@ondc/org/title_type": "tax"
+          },
+          {
+            "price": {
+              "value": "0.00",
+              "currency": "INR"
+            },
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery"
           }
         ]
       },
-      "state": "Packed",
+      "state": "Created",
       "billing": {
+        "name": "aa",
+        "phone": "8208499948",
         "address": {
           "city": "Bengaluru",
           "state": "Karnataka",
@@ -76,7 +75,11 @@
       },
       "payment": {
         "type": "ON-ORDER",
-        "collected_by": "BAP",
+        "params": {
+          "amount": "121.13",
+          "transaction_id": "OMT2209212004211317640221",
+          "transaction_status": "CREATED"
+        },
         "@ondc/org/return_window": "0.0",
         "@ondc/org/settlement_basis": "Collection",
         "@ondc/org/settlement_window": "P2D",
@@ -93,7 +96,7 @@
           }
         ],
         "@ondc/org/withholding_amount": "0.0",
-        "@ondc/org/buyer_app_finder_fee_type": "Amount",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3"
       },
       "provider": {
@@ -103,6 +106,9 @@
         {
           "id": "F:1001:1",
           "end": {
+            "contact": {
+              "phone": "8208499948"
+            },
             "location": {
               "gps": "13.006506, 77.646074",
               "address": {
@@ -110,18 +116,19 @@
                 "state": "Karnataka",
                 "locality": "Banaswadi",
                 "area_code": "560043"
-              },
-              "descriptor": {}
+              }
             }
           },
           "type": "Delivery",
           "state": {
             "descriptor": {
               "code": "Serviceable",
-              "name": "Packed"
+              "name": "Created"
             }
           },
-          "rating": 0
+          "tracking": false,
+          "provider_id": "1000:1001",
+          "@ondc/org/TAT": "PT120M"
         }
       ]
     }
