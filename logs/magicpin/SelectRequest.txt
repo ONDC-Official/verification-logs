@@ -1,0 +1,160 @@
+Got SELECT Request From buyer-app-preprod.ondc.org
+-------------------------------------------------
+{
+   "context": {
+       "domain": "nic2004:52110",
+       "country": "IND",
+       "city": "std:080",
+       "action": "select",
+       "core_version": "1.0.0",
+       "bap_id": "buyer-app-preprod.ondc.org",
+       "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+       "transaction_id": "87cccb5a-23f8-4067-922c-117907534cc6",
+       "message_id": "a8d7d22b-f495-478f-ad63-914dadfbf6fa",
+       "timestamp": "2022-09-27T09:50:47.052Z",
+       "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc"
+   },
+   "message": {
+       "order": {
+           "items": [
+               {
+                   "id": "1018764_2877721",
+                   "quantity": {
+                       "count": 1
+                   }
+               }
+           ],
+           "provider": {
+               "id": "2877721",
+               "locations": [
+                   {
+                       "id": "2877721"
+                   }
+               ]
+           },
+           "fulfillments": [
+               {
+                   "end": {
+                       "location": {
+                           "gps": "28.51606, 77.203128",
+                           "address": {
+                               "area_code": "110030"
+                           }
+                       }
+                   }
+               }
+           ]
+       }
+   }
+}
+
+
+
+Send ON_SELECT Request To buyer-app-preprod.ondc.org
+-------------------------------------------------
+{
+   "context": {
+       "domain": "nic2004:52110",
+       "country": "IND",
+       "city": "std:080",
+       "action": "on_select",
+       "core_version": "1.0.0",
+       "bap_id": "buyer-app-preprod.ondc.org",
+       "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+       "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+       "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/",
+       "transaction_id": "87cccb5a-23f8-4067-922c-117907534cc6",
+       "message_id": "a8d7d22b-f495-478f-ad63-914dadfbf6fa",
+       "timestamp": "2022-09-27T15:20:47.267Z",
+       "key": "Iafh/LuKvNFJ9U7IoeW4CDlqB64RG8w6qqRmbcswz3w=",
+       "ttl": "PT30S"
+   },
+   "message": {
+       "order": {
+           "provider": {
+               "id": "2877721"
+           },
+           "items": [
+               {
+                   "id": "1018764_2877721",
+                   "price": {
+                       "currency": "INR",
+                       "value": "340"
+                   },
+                   "category_id": "",
+                   "fulfillment_id": "Fulfillment1",
+                   "location_id": "2877721",
+                   "matched": true,
+                   "quantity": {
+                       "selected": {
+                           "count": 1
+                       }
+                   }
+               }
+           ],
+           "fulfillments": [
+               {
+                   "id": "Fulfillment1",
+                   "@ondc/org/category": "Immediate Delivery",
+                   "@ondc/org/TAT": "PT55M",
+                   "@ondc/org/provider_name": "MAGICPIN",
+                   "state": {
+                       "descriptor": {
+                           "name": "Serviceable"
+                       }
+                   }
+               }
+           ],
+           "quote": {
+               "price": {
+                   "currency": "INR",
+                   "value": "387"
+               },
+               "breakup": [
+                   {
+                       "@ondc/org/item_quantity": {
+                           "count": 1
+                       },
+                       "@ondc/org/title_type": "item",
+                       "title": "Milk Cake",
+                       "price": {
+                           "currency": "INR",
+                           "value": "340"
+                       }
+                   },
+                   {
+                       "title": "Packaging Charge",
+                       "price": {
+                           "currency": "INR",
+                           "value": "30"
+                       }
+                   },
+                   {
+                       "@ondc/org/title_type": "tax",
+                       "title": "Tax",
+                       "price": {
+                           "currency": "INR",
+                           "value": "17"
+                       }
+                   },
+                   {
+                       "@ondc/org/title_type": "delivery",
+                       "title": "Delivery Charge",
+                       "price": {
+                           "currency": "INR",
+                           "value": "0"
+                       }
+                   },
+                   {
+                       "title": "Convenience Fee",
+                       "price": {
+                           "currency": "INR",
+                           "value": "0"
+                       }
+                   }
+               ],
+               "ttl": "PT30S"
+           }
+       }
+   }
+}
