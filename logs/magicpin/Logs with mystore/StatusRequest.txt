@@ -1,0 +1,183 @@
+Got STATUS Request From Mystore
+-------------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "action": "status",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc",
+        "transaction_id": "41979d80-05a2-4902-b14d-c9cdaab3a5a8",
+        "message_id": "1425519d-93c0-4f5b-856e-1bc2a2472948",
+        "timestamp": "2022-09-29T12:13:51.360Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order_id": "63358b96b144c13e95926331"
+    }
+}
+
+
+Send ON_STATUS Request Mystore
+-------------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_status",
+        "core_version": "1.0.0",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/",
+        "transaction_id": "41979d80-05a2-4902-b14d-c9cdaab3a5a8",
+        "message_id": "1425519d-93c0-4f5b-856e-1bc2a2472948",
+        "timestamp": "2022-09-29T12:13:51.560Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "63358b96b144c13e95926331",
+            "state": "Accepted",
+            "provider": {
+                "id": "34221053"
+            },
+            "items": [
+                {
+                    "id": "1466560_34221053",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "category_id": ""
+                }
+            ],
+            "billing": {
+                "name": "Tarosh",
+                "address": {
+                    "name": "ABC Test",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "IN",
+                    "area_code": "110030"
+                },
+                "email": "tarosh.mathuria@magicpin.in",
+                "phone": "+919958450299",
+                "created_at": "2022-09-29T12:12:07.865Z",
+                "updated_at": "2022-09-29T12:12:07.865Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Prepaid",
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "id": "34221053",
+                            "descriptor": {
+                                "name": "Great Indian Khichdi by EatFit",
+                                "symbol": "https://lh3.googleusercontent.com/4KsQ1KdeDkCY1lsZHsKwzUQyrfcfHb2tOirPUCGObJF0rm0OROHDg8qQpkGeqOFzRqUkDMHOMD1j_y5SFZSEGdIaVew913OV8zDcOkhK=s750"
+                            },
+                            "gps": "28.52470564,77.19113708",
+                            "address": {
+                                "name": "Great Indian Khichdi by EatFit",
+                                "locality": "Geetanjali Enclave",
+                                "city": "New Delhi",
+                                "state": "New Delhi",
+                                "country": "India",
+                                "area_code": "110030"
+                            }
+                        },
+                        "contact": {
+                            "phone": "8080808080"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "28.5152695,77.2039677",
+                            "address": {
+                                "name": "ABC Test",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "IN",
+                                "area_code": "110030"
+                            }
+                        },
+                        "contact": {
+                            "phone": "+919958450299",
+                            "email": "tarosh.mathuria@magicpin.in"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "158.1"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Banana Walnut Cake",
+                        "price": {
+                            "currency": "INR",
+                            "value": "70"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "packing",
+                        "title": "Restaurant Packaging Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "24"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "tax",
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "16.1"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "48"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "PT30S"
+            },
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/settlement_window": "PT2D",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "upi_address": "dummy@paytm"
+                    }
+                ]
+            },
+            "created_at": "2022-09-29T12:12:07.865Z",
+            "updated_at": "2022-09-29T12:13:27.867Z"
+        }
+    }
+}
