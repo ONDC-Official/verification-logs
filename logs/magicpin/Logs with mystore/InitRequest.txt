@@ -1,0 +1,224 @@
+Got INIT Request From Mystore
+-------------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "action": "init",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc",
+        "transaction_id": "41979d80-05a2-4902-b14d-c9cdaab3a5a8",
+        "message_id": "7676646f-a1cb-42d4-87e6-fa0da8edec95",
+        "timestamp": "2022-09-29T12:12:02.127Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "34221053",
+                "locations": [
+                    {
+                        "id": "34221053"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "1466560_34221053",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "1"
+                }
+            ],
+            "billing": {
+                "name": "Tarosh",
+                "address": {
+                    "name": "ABC Test",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "IN",
+                    "area_code": "110030"
+                },
+                "email": "tarosh.mathuria@magicpin.in",
+                "phone": "+919958450299"
+            },
+            "fulfillments": [
+                {
+                    "type": "Delivery",
+                    "tracking": false,
+                    "end": {
+                        "location": {
+                            "gps": "28.5152695,77.2039677",
+                            "address": {
+                                "name": "ABC Test",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "IN",
+                                "area_code": "110030"
+                            }
+                        },
+                        "contact": {
+                            "phone": "+919958450299",
+                            "email": "tarosh.mathuria@magicpin.in"
+                        }
+                    },
+                    "id": "1"
+                }
+            ],
+            "payment": {
+                "collected_by": "BAP",
+                "@ondc/org/collected_by_status": "Assert",
+                "type": "ON-ORDER"
+            }
+        }
+    }
+}
+
+
+Send ON_INIT Request To Mystore
+-------------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.0.0",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/",
+        "transaction_id": "41979d80-05a2-4902-b14d-c9cdaab3a5a8",
+        "message_id": "7676646f-a1cb-42d4-87e6-fa0da8edec95",
+        "timestamp": "2022-09-29T12:12:02.355Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "34221053"
+            },
+            "items": [
+                {
+                    "id": "1466560_34221053",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "1"
+                }
+            ],
+            "billing": {
+                "name": "Tarosh",
+                "address": {
+                    "name": "ABC Test",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "IN",
+                    "area_code": "110030"
+                },
+                "email": "tarosh.mathuria@magicpin.in",
+                "phone": "+919958450299",
+                "created_at": "2022-09-29T12:12:02.355Z",
+                "updated_at": "2022-09-29T12:12:02.355Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "end": {
+                        "location": {
+                            "gps": "28.5152695,77.2039677",
+                            "address": {
+                                "name": "ABC Test",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "IN",
+                                "area_code": "110030"
+                            }
+                        },
+                        "contact": {
+                            "phone": "+919958450299",
+                            "email": "tarosh.mathuria@magicpin.in"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "158.1"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Banana Walnut Cake",
+                        "price": {
+                            "currency": "INR",
+                            "value": "70"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "packing",
+                        "title": "Restaurant Packaging Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "24"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "tax",
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "16.1"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "48"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "PT30S"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/collected_by_status": "Agree",
+                "@ondc/org/buyer_app_finder_fee_type": "Percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/withholding_amount": "0.0",
+                "@ondc/org/return_window": "0",
+                "@ondc/org/settlement_basis": "Collection",
+                "@ondc/org/settlement_window": "PT2D",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "upi_address": "dummy@paytm"
+                    }
+                ]
+            }
+        }
+    }
+}

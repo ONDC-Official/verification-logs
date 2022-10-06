@@ -90,16 +90,8 @@ def generate_key_pairs():
     signing_key = SigningKey.generate()
     private_key = base64.b64encode(signing_key._signing_key).decode()
     public_key = base64.b64encode(bytes(signing_key.verify_key)).decode()
-    return private_key, public_key
+    return {"private_key": private_key, "public_key": public_key}
 
 
 if __name__ == '__main__':
-    request_body1 = {"context":{"domain":"nic2004:60212","country":"IND","city":"Kochi","action":"search","core_version":"0.9.1","bap_id":"bap.stayhalo.in","bap_uri":"https://8f9f-49-207-209-131.ngrok.io/protocol/","transaction_id":"e6d9f908-1d26-4ff3-a6d1-3af3d3721054","message_id":"a2fe6d52-9fe4-4d1a-9d0b-dccb8b48522d","timestamp":"2022-01-04T09:17:55.971Z","ttl":"P1M"},"message":{"intent":{"fulfillment":{"start":{"location":{"gps":"10.108768, 76.347517"}},"end":{"location":{"gps":"10.102997, 76.353480"}}}}}}
-    # os.environ["BPP_PRIVATE_KEY"] = "lP3sHA+9gileOkXYJXh4Jg8tK0gEEMbf9yCPnFpbldhrAY+NErqL9WD+Vav7TE5tyVXGXBle9ONZi2W7o144eQ=="
-    # os.environ["BPP_PUBLIC_KEY"] = "awGPjRK6i/Vg/lWr+0xObclVxlwZXvTjWYtlu6NeOHk="
-    # private_key1, public_key1 = generate_key_pairs()
-    # os.environ["BPP_PRIVATE_KEY"] = private_key1
-    # os.environ["BPP_PUBLIC_KEY"] = public_key1
-    # auth_header = create_authorisation_header(request_body1)
-    # print(verify_authorisation_header(auth_header, request_body1))
     fire.Fire()
