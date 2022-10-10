@@ -1,0 +1,179 @@
+{
+  "_id": {
+    "$oid": "6344197c54e61494687f1433"
+  },
+  "transaction_id": "426281de-010b-4d23-8fb1-77661e37be68",
+  "store": {
+    "$oid": "62b42dc426b83e2a358464e2"
+  },
+  "action": "on_init",
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.0.0",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "transaction_id": "426281de-010b-4d23-8fb1-77661e37be68",
+    "message_id": "2d28e536-5681-4c70-a408-e17b5e0f1e36",
+    "timestamp": "2022-10-10T13:09:15.986Z",
+    "bpp_id": "ondc.niveashop.in",
+    "bpp_uri": "https://ondc.niveashop.in/api"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "62b42dc426b83e2a358464e2",
+        "descriptor": {
+          "name": "Nivea Shop"
+        }
+      },
+      "provider_location": {
+        "id": "62b42dc426b83e2a358464e2"
+      },
+      "items": [
+        {
+          "id": "43001177440483",
+          "fulfillment_id": "Fulfillment1",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "330"
+        },
+        "breakup": [
+          {
+            "title": "Body Lotion - Oil in Lotion Cherry Blossom & Jojoba Oil - 400ml",
+            "@ondc/org/item_id": "43001177440483",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "255.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Fulfillment1",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "75.0"
+            }
+          }
+        ],
+        "ttl": "P24H"
+      },
+      "fulfillments": [
+        {
+          "id": "Fulfillment1",
+          "type": "Delivery",
+          "provider_id": "ondc-nivea",
+          "tracking": false,
+          "end": {
+            "location": {
+              "address": {
+                "door": "modi kirana",
+                "building": "modi kirana",
+                "name": "agam.dubey",
+                "locality": "Agam Dubey",
+                "city": "Bilaspur",
+                "country": "IND",
+                "area_code": "495001",
+                "street": "my street"
+              },
+              "gps": "22.0884760000001, 82.1389140000001"
+            },
+            "contact": {
+              "phone": "9399452347",
+              "email": "agam.dubey@schbang.com"
+            }
+          },
+          "customer": {
+            "contact": {
+              "phone": "9399452347",
+              "email": "agam.dubey@schbang.com"
+            },
+            "person": {
+              "name": "agam.dubey"
+            }
+          }
+        }
+      ],
+      "payment": {
+        "type": "ON-ORDER",
+        "status": "NOT-PAID",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/withholding_amount": "0.0",
+        "@ondc/org/return_window": "0",
+        "@ondc/org/settlement_basis": "Collection",
+        "@ondc/org/settlement_window": "P2D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "9908112021",
+            "settlement_ifsc_code": "KKBK0000261"
+          }
+        ],
+        "params": {
+          "amount": "330",
+          "currency": "INR"
+        }
+      },
+      "created_at": "2022-10-10T13:09:15.986Z",
+      "billing": {
+        "name": "Agam Dubey",
+        "address": {
+          "door": "modi kirana",
+          "building": "modi kirana",
+          "name": "Agam Dubey",
+          "locality": "Agam Dubey",
+          "city": "Bilaspur",
+          "country": "IND",
+          "area_code": "495001",
+          "street": "my street"
+        },
+        "phone": "9399452347",
+        "email": "agam.dubey@schbang.com",
+        "tax_number": "",
+        "created_at": "2022-10-10T13:09:15.986Z",
+        "updated_at": "2022-10-10T13:09:15.986Z"
+      },
+      "update_at": "2022-10-10T13:09:15.986Z"
+    }
+  },
+  "response": {
+    "context": null,
+    "message": {
+      "ack": {
+        "status": "ACK"
+      }
+    }
+  },
+  "signature": {
+    "header": "Signature keyId=\"ondc.niveashop.in|c4e02f71-f240-4ae2-94d4-42fc96a706df|ed25519\",algorithm=\"ed25519\",created=\"1665407355\",expires=\"1665493755\",headers=\"(created) (expires) digest\",signature=\"vK0+LQxT79JlPKuAGMiC/10q5GM5AeWHTxq52aM4tl8aOeQVck5qBfmE/3t+mxPm5izCXiCL6eslC6t7SpsnDQ==\"",
+    "signing_string": "(created): 1665407355\n(expires): 1665493755\ndigest: BLAKE-512=HBRx/Vfu+d+xvXZ6z5eWA/MylmD1ZoEEBUvDczRenYwKMDav/gKaITxsIgjKB1L2hSZy5yOhE2b97aRllegQmA=="
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665407356186"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665407356186"
+    }
+  },
+  "__v": 0
+}
