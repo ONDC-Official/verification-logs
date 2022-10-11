@@ -1,0 +1,234 @@
+{
+  "context": {
+    "transaction_id": "efec274e-75c7-466c-8656-0add6a39dc24",
+    "country": "IND",
+    "bpp_id": "commerce.zoho.in/ondc/60016159166",
+    "city": "std:080",
+    "domain": "nic2004:52110",
+    "action": "init",
+    "message_id": "a4bbd5e0-7ba7-4c38-aab6-33cb02113d3f",
+    "core_version": "1.0.0",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "timestamp": "2022-10-11T07:24:12.445Z"
+  },
+  "message": {
+    "order": {
+      "offers": [],
+      "fulfillments": [
+        {
+          "provider_id": "60016159166",
+          "end": {
+            "contact": {
+              "phone": "9094000782",
+              "email": "xxx@nd.adh"
+            },
+            "location": {
+              "address": {
+                "door": "test",
+                "country": "IND",
+                "areaCode": "560072",
+                "city": "Bengaluru",
+                "street": "test",
+                "area_code": "560072",
+                "name": "XXX",
+                "locality": null,
+                "ward": null,
+                "state": "Karnataka",
+                "building": "test"
+              },
+              "gps": "12.961651, 77.513899"
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
+      "provider": {
+        "locations": [
+          {
+            "id": "984429000000014150"
+          }
+        ],
+        "id": "60016159166"
+      },
+      "add_ons": [],
+      "payment": {
+        "@ondc/org/ondc-settlement_basis": "Collection",
+        "@ondc/org/ondc-settlement_window": "PT2D",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "collected_by": "BPP",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/ondc-withholding_amount": 0,
+        "@ondc/org/ondc-return_window": 0,
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+      },
+      "items": [
+        {
+          "quantity": {
+            "count": 1
+          },
+          "id": "984429000000015017"
+        }
+      ],
+      "billing": {
+        "address": {
+          "door": "test",
+          "country": "IND",
+          "areaCode": "560072",
+          "city": "Bengaluru",
+          "street": "test",
+          "area_code": "560072",
+          "name": "XXX",
+          "locality": null,
+          "ward": null,
+          "state": "Karnataka",
+          "building": "test"
+        },
+        "phone": "9094000782",
+        "name": "XXX",
+        "email": "xxx@nd.adh"
+      }
+    }
+  }
+}
+
+Response:
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.0.0",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_id": "commerce.zoho.in/ondc/60016159166",
+    "bpp_uri": "https://commerce.zoho.in/ondc/60016159166",
+    "transaction_id": "efec274e-75c7-466c-8656-0add6a39dc24",
+    "message_id": "a4bbd5e0-7ba7-4c38-aab6-33cb02113d3f",
+    "timestamp": "2022-10-11T07:24:32.285Z"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "984429000000015017",
+          "fulfillment_id": "984429000000179001",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "billing": {
+        "name": "XXX  ",
+        "address": {
+          "name": "XXX",
+          "locality": "test, XXX, test, ",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "area_code": "560072"
+        },
+        "email": "***",
+        "phone": "9094000782",
+        "created_at": "2022-10-11T12:54:32.278Z",
+        "updated_at": "2022-10-11T12:54:32.278Z"
+      },
+      "fulfillments": [
+        {
+          "id": "984429000000179001",
+          "type": "Delivery",
+          "tracking": true,
+          "provider_id": "60016159166",
+          "end": {
+            "location": {
+              "gps": "12.961651, 77.513899",
+              "address": {
+                "name": "XXX",
+                "locality": "test, XXX, test, ",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560072",
+                "latitude": "12.961651",
+                "longitude": " 77.513899"
+              }
+            },
+            "contact": {
+              "phone": "9094000782",
+              "email": "***"
+            }
+          }
+        }
+      ],
+      "provider": {
+        "id": "60016159166",
+        "ttl": "P1D",
+        "locations": [
+          {
+            "id": "984429000000014150"
+          }
+        ]
+      },
+      "provider_location": {
+        "id": "984429000000014150"
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "206.00"
+        },
+        "ttl": "P1D",
+        "breakup": [
+          {
+            "title": "Coffee powder",
+            "@ondc/org/item_id": "984429000000015017",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            }
+          },
+          {
+            "title": "Shipping Charge",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "40.00"
+            }
+          },
+          {
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "6.00"
+            }
+          }
+        ]
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_window": "PT24H",
+        "@ondc/org/settlement_basis": "Delivery",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "12345",
+            "settlement_ifsc_code": "IDIB000M240",
+            "beneficiary_address": "",
+            "branch_name": "XYZ Branch",
+            "bank_name": "Indian Bank"
+          }
+        ]
+      }
+    }
+  }
+}
