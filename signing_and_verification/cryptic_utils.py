@@ -67,7 +67,7 @@ def create_authorisation_header(request_body=request_body_json,
                                 expires=os.getenv("EXPIRES",  "1641291475")):
     signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
                                         created=created, expires=expires)
-    signature = sign_response(signing_key, private_key=os.getenv("BPP_PRIVATE_KEY"))
+    signature = sign_response(signing_key, private_key=os.getenv("PRIVATE_KEY"))
 
     subscriber_id = os.getenv("SUBSCRIBER_ID", "buyer-app.ondc.org")
     unique_key_id = os.getenv("UNIQUE_KEY_ID", "207")
@@ -84,7 +84,7 @@ def verify_authorisation_header(auth_header, request_body):
     if created <= current_timestamp <= expires:
         signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
                                             created=created, expires=expires)
-        return verify_response(header_parts['signature'], signing_key, public_key=os.getenv("BPP_PUBLIC_KEY"))
+        return verify_response(header_parts['signature'], signing_key, public_key=os.getenv("PUBLIC_KEY"))
     else:
         return False
 
