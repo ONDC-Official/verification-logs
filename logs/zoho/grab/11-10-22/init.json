@@ -1,0 +1,252 @@
+Request:
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "init",
+    "core_version": "1.0.0",
+    "bap_id": "commerce.zoho.in/ondc/60016159166",
+    "bap_uri": "https://commerce.zoho.in/ondc/60016159166",
+    "bpp_id": "uat.grab.in",
+    "bpp_uri": "https://uat.grab.in/beckn/bpp/",
+    "transaction_id": "2-dd41b389af4ab29f53bae0dd663adcdddd5296ee04b934d6c5866aec520fedf45bc64be14dd0028519b7bdba2c4afe0b",
+    "message_id": "50be07a4-71b8-4708-8f49-7db8fd02264d",
+    "timestamp": "2022-10-11T09:01:04.951Z"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "standard-delivery",
+          "category_id": "Standard Delivery"
+        }
+      ],
+      "billing": {
+        "name": "XYZ  ",
+        "address": {
+          "name": "XYZ",
+          "locality": "yyy, XYZ, xxx, ",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "area_code": "560072"
+        },
+        "email": "***",
+        "phone": "9941335554",
+        "tax_number": "33AAAAA0000A1Z5"
+      },
+      "fulfillments": [
+        {
+          "id": "984429000000180032",
+          "type": "CoD",
+          "start": {
+            "location": {
+              "gps": "12.9628,77.5759",
+              "address": {
+                "name": "saraladevi",
+                "building": "Ar Complex",
+                "street": "AR Street, Adayar",
+                "city": "Bangalore",
+                "state": "Tamil Nadu",
+                "country": "India",
+                "area_code": "560002"
+              }
+            },
+            "contact": {
+              "phone": "93897981273",
+              "email": "***"
+            },
+            "person": {
+              "name": "saraladevi"
+            }
+          },
+          "customer": {
+            "person": {
+              "name": "XYZ  "
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.961651, 77.513899",
+              "address": {
+                "name": "XYZ",
+                "locality": "yyy, XYZ, xxx, ",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560072"
+              }
+            },
+            "contact": {
+              "phone": "9941335554",
+              "email": "***"
+            },
+            "person": {
+              "name": "XYZ  "
+            }
+          }
+        }
+      ],
+      "provider": {
+        "id": "grab-logistics",
+        "ttl": "P1D"
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/collection_amount": "246.00",
+        "@ondc/org/settlement_window": "PT2D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "12345",
+            "settlement_ifsc_code": "IDIB000M240",
+            "beneficiary_address": "",
+            "branch_name": "XYZ Branch",
+            "bank_name": "Indian Bank"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+Response:
+{
+  "context": {
+    "transaction_id": "2-dd41b389af4ab29f53bae0dd663adcdddd5296ee04b934d6c5866aec520fedf45bc64be14dd0028519b7bdba2c4afe0b",
+    "country": "IND",
+    "bpp_id": "uat.grab.in",
+    "city": "std:080",
+    "domain": "nic2004:60232",
+    "bpp_uri": "https://uat.grab.in/beckn/bpp/",
+    "action": "on_init",
+    "message_id": "50be07a4-71b8-4708-8f49-7db8fd02264d",
+    "core_version": "1.0.0",
+    "bap_uri": "https://commerce.zoho.in/ondc/60016159166",
+    "bap_id": "commerce.zoho.in/ondc/60016159166",
+    "timestamp": "2022-10-11T09:01:05.283Z"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "start": {
+            "person": {
+              "name": "saraladevi"
+            },
+            "contact": {
+              "phone": "93897981273",
+              "email": "saraladevi.csc+in@zohotest.com"
+            },
+            "location": {
+              "address": {
+                "country": "India",
+                "city": "Bangalore",
+                "street": "AR Street, Adayar",
+                "area_code": "560002",
+                "name": "saraladevi",
+                "state": "Tamil Nadu",
+                "building": "Ar Complex"
+              },
+              "gps": "12.9628,77.5759"
+            }
+          },
+          "end": {
+            "person": {
+              "name": "XYZ  "
+            },
+            "contact": {
+              "phone": "9941335554",
+              "email": "xyz@ahd.ahsd"
+            },
+            "location": {
+              "address": {
+                "country": "India",
+                "city": "Bengaluru",
+                "area_code": "560072",
+                "name": "XYZ",
+                "state": "Karnataka",
+                "locality": "yyy, XYZ, xxx, "
+              },
+              "gps": "12.961651, 77.513899"
+            }
+          },
+          "id": "984429000000180032",
+          "type": "CoD",
+          "customer": {
+            "person": {
+              "name": "XYZ  "
+            }
+          }
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "standard-delivery",
+            "price": {
+              "currency": "INR",
+              "value": "30.0"
+            },
+            "@ondc/org/title_type": "Delivery Charge"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "10.0"
+            },
+            "@ondc/org/title_type": "RTO Charge",
+            "title": "RTO charges"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "40.0"
+        }
+      },
+      "provider": {
+        "id": "grab-logistics",
+        "ttl": "P1D"
+      },
+      "payment": {
+        "@ondc/org/settlement_window": "PT2D",
+        "@ondc/org/collection_amount": "246.00",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/settlement_details": [
+          {
+            "beneficiary_address": "",
+            "settlement_counterparty": "buyer-app",
+            "branch_name": "XYZ Branch",
+            "bank_name": "Indian Bank",
+            "settlement_ifsc_code": "IDIB000M240",
+            "settlement_bank_account_no": "12345",
+            "settlement_type": "neft"
+          }
+        ]
+      },
+      "items": [
+        {
+          "category_id": "Standard Delivery",
+          "id": "standard-delivery"
+        }
+      ],
+      "billing": {
+        "address": {
+          "country": "India",
+          "city": "Bengaluru",
+          "area_code": "560072",
+          "name": "XYZ",
+          "state": "Karnataka",
+          "locality": "yyy, XYZ, xxx, "
+        },
+        "phone": "9941335554",
+        "tax_number": "33AAAAA0000A1Z5",
+        "name": "XYZ  ",
+        "email": "xyz@ahd.ahsd"
+      }
+    }
+  }
+}
