@@ -1,17 +1,18 @@
-Request:
 {
   "context": {
-    "transaction_id": "efec274e-75c7-466c-8656-0add6a39dc24",
-    "country": "IND",
-    "bpp_id": "commerce.zoho.in/ondc/60016159166",
-    "city": "std:080",
-    "domain": "nic2004:52110",
     "action": "select",
-    "message_id": "f5208110-520a-4768-bdf7-cbca1f11b963",
+    "bap_id": "beta.mystore.in",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_id": "commerce.zoho.in/ondc/60016159166",
+    "bpp_uri": "https://commerce.zoho.in/ondc/60016159166",
+    "city": "std:080",
     "core_version": "1.0.0",
-    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-    "bap_id": "buyer-app-preprod.ondc.org",
-    "timestamp": "2022-10-11T07:23:28.307Z"
+    "country": "IND",
+    "domain": "nic2004:52110",
+    "message_id": "4d8671b2-3331-4a87-9a8a-13b534a9baaa",
+    "timestamp": "2022-10-17T05:34:37.412Z",
+    "transaction_id": "8663afc7-5bf2-41ad-b1bb-89ac526730c8",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
@@ -22,27 +23,35 @@ Request:
               "address": {
                 "area_code": "560001"
               },
-              "gps": "12.96774, 77.588913"
+              "gps": "12.971599,77.594563"
             }
           }
         }
       ],
-      "provider": {
-        "locations": [
-          {
-            "id": "984429000000014150"
-          }
-        ],
-        "id": "60016159166"
-      },
       "items": [
         {
+          "id": "984429000000015017",
           "quantity": {
             "count": 1
-          },
-          "id": "984429000000015017"
+          }
         }
-      ]
+      ],
+      "provider": {
+        "id": "60016159166",
+        "locations": [
+          {
+            "city": {
+              "code": "Bangalore",
+              "name": "Bangalore"
+            },
+            "country": {
+              "code": "IN",
+              "name": "India"
+            },
+            "id": "984429000000014150"
+          }
+        ]
+      }
     }
   }
 }
@@ -55,32 +64,32 @@ Response:
     "city": "std:080",
     "action": "on_select",
     "core_version": "1.0.0",
-    "bap_id": "buyer-app-preprod.ondc.org",
-    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bap_id": "beta.mystore.in",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
     "bpp_id": "commerce.zoho.in/ondc/60016159166",
     "bpp_uri": "https://commerce.zoho.in/ondc/60016159166",
-    "transaction_id": "efec274e-75c7-466c-8656-0add6a39dc24",
-    "message_id": "f5208110-520a-4768-bdf7-cbca1f11b963",
-    "timestamp": "2022-10-11T07:23:30.596Z"
+    "transaction_id": "8663afc7-5bf2-41ad-b1bb-89ac526730c8",
+    "message_id": "4d8671b2-3331-4a87-9a8a-13b534a9baaa",
+    "timestamp": "2022-10-17T05:34:45.516Z"
   },
   "message": {
     "order": {
       "items": [
         {
           "id": "984429000000015017",
-          "fulfillment_id": "984429000000179001"
+          "fulfillment_id": "984429000000205023"
         }
       ],
       "fulfillments": [
         {
-          "id": "984429000000179001",
+          "id": "984429000000205023",
           "type": "Delivery",
           "state": {
             "descriptor": {
               "name": "Serviceable"
             }
           },
-          "tracking": false,
+          "tracking": true,
           "@ondc/org/category": "Standard Delivery",
           "provider_id": "60016159166",
           "@ondc/org/TAT": "PT30M"
@@ -98,7 +107,7 @@ Response:
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "200.00"
+          "value": "240.00"
         },
         "ttl": "P1D",
         "breakup": [
@@ -121,6 +130,14 @@ Response:
             "price": {
               "currency": "INR",
               "value": "200.00"
+            }
+          },
+          {
+            "title": "Shipping Charge",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "40.00"
             }
           }
         ]
