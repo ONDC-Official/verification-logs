@@ -59,64 +59,59 @@
 Response:
 {
   "context": {
-    "domain": "nic2004:52110",
-    "country": "IND",
-    "city": "std:080",
     "action": "on_select",
-    "core_version": "1.0.0",
     "bap_id": "beta.mystore.in",
     "bap_uri": "https://beta.mystore.in/ondc/1.0/",
     "bpp_id": "commerce.zoho.in/ondc/60016159166",
     "bpp_uri": "https://commerce.zoho.in/ondc/60016159166",
-    "transaction_id": "5ad90c03-0c0c-4892-b344-3e9ca5f89323",
+    "city": "std:080",
+    "core_version": "1.0.0",
+    "country": "IND",
+    "domain": "nic2004:52110",
     "message_id": "1772b6a0-208d-4508-896b-7d8dac2f913f",
-    "timestamp": "2022-10-17T15:13:05.648Z"
+    "timestamp": "2022-10-17T15:13:05.648Z",
+    "transaction_id": "5ad90c03-0c0c-4892-b344-3e9ca5f89323"
   },
   "message": {
     "order": {
-      "items": [
-        {
-          "id": "984429000000015017",
-          "fulfillment_id": "984429000000208075"
-        }
-      ],
       "fulfillments": [
         {
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "PT30M",
           "id": "984429000000208075",
-          "type": "Delivery",
+          "provider_id": "60016159166",
           "state": {
             "descriptor": {
               "name": "Serviceable"
             }
           },
           "tracking": true,
-          "@ondc/org/category": "Standard Delivery",
-          "provider_id": "60016159166",
-          "@ondc/org/TAT": "PT30M"
+          "type": "Delivery"
+        }
+      ],
+      "items": [
+        {
+          "fulfillment_id": "984429000000208075",
+          "id": "984429000000015017"
         }
       ],
       "provider": {
         "id": "60016159166",
-        "ttl": "P1D",
         "locations": [
           {
             "id": "984429000000014150"
           }
-        ]
+        ],
+        "ttl": "P1D"
       },
       "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "240.00"
-        },
-        "ttl": "P1D",
         "breakup": [
           {
-            "title": "Coffee powder",
             "@ondc/org/item_id": "984429000000015017",
             "@ondc/org/item_quantity": {
               "count": 1
             },
+            "@ondc/org/title_type": "item",
             "item": {
               "price": {
                 "currency": "INR",
@@ -126,21 +121,26 @@ Response:
                 "count": 1
               }
             },
-            "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
               "value": "200.00"
-            }
+            },
+            "title": "Coffee powder"
           },
           {
-            "title": "Shipping Charge",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
               "value": "40.00"
-            }
+            },
+            "title": "Shipping Charge"
           }
-        ]
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "240.00"
+        },
+        "ttl": "P1D"
       }
     }
   }
