@@ -1,20 +1,90 @@
-Request:
 {
   "context": {
-    "transaction_id": "efec274e-75c7-466c-8656-0add6a39dc24",
+    "transaction_id": "b7521ddc-55b5-45f5-9d50-8addf4999b38",
     "country": "IND",
     "bpp_id": "commerce.zoho.in/ondc/60016159166",
     "city": "std:080",
     "domain": "nic2004:52110",
-    "action": "status",
-    "message_id": "657e0da3-026a-4056-b045-e713d9390111",
+    "action": "init",
+    "message_id": "311db349-8922-41f3-ab28-fab9d26471fe",
     "core_version": "1.0.0",
     "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
     "bap_id": "buyer-app-preprod.ondc.org",
-    "timestamp": "2022-10-11T07:37:22.874Z"
+    "timestamp": "2022-10-17T05:18:47.637Z"
   },
   "message": {
-    "order_id": "984429000000179013"
+    "order": {
+      "offers": [],
+      "fulfillments": [
+        {
+          "provider_id": "60016159166",
+          "end": {
+            "contact": {
+              "phone": "9941335554",
+              "email": "xyz@ahd.ahsd"
+            },
+            "location": {
+              "address": {
+                "door": "yyy",
+                "country": "IND",
+                "areaCode": "560072",
+                "city": "Bengaluru",
+                "street": "xxx",
+                "area_code": "560072",
+                "name": "XYZ",
+                "state": "Karnataka",
+                "building": "yyy"
+              },
+              "gps": "12.961651, 77.513899"
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
+      "provider": {
+        "locations": [
+          {
+            "id": "984429000000014150"
+          }
+        ],
+        "id": "60016159166"
+      },
+      "add_ons": [],
+      "payment": {
+        "@ondc/org/ondc-settlement_basis": "Collection",
+        "@ondc/org/ondc-settlement_window": "PT2D",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "collected_by": "BPP",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/ondc-withholding_amount": 0,
+        "@ondc/org/ondc-return_window": 0,
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+      },
+      "items": [
+        {
+          "quantity": {
+            "count": 1
+          },
+          "id": "984429000000015017"
+        }
+      ],
+      "billing": {
+        "address": {
+          "door": "yyy",
+          "country": "IND",
+          "areaCode": "560072",
+          "city": "Bengaluru",
+          "street": "xxx",
+          "area_code": "560072",
+          "name": "XYZ",
+          "state": "Karnataka",
+          "building": "yyy"
+        },
+        "phone": "9941335554",
+        "name": "XYZ",
+        "email": "xyz@ahd.ahsd"
+      }
+    }
   }
 }
 
@@ -24,97 +94,65 @@ Response:
     "domain": "nic2004:52110",
     "country": "IND",
     "city": "std:080",
-    "action": "on_status",
+    "action": "on_init",
     "core_version": "1.0.0",
     "bap_id": "buyer-app-preprod.ondc.org",
     "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
     "bpp_id": "commerce.zoho.in/ondc/60016159166",
     "bpp_uri": "https://commerce.zoho.in/ondc/60016159166",
-    "transaction_id": "efec274e-75c7-466c-8656-0add6a39dc24",
-    "message_id": "657e0da3-026a-4056-b045-e713d9390111",
-    "timestamp": "2022-10-11T07:37:23.729Z"
+    "transaction_id": "b7521ddc-55b5-45f5-9d50-8addf4999b38",
+    "message_id": "311db349-8922-41f3-ab28-fab9d26471fe",
+    "timestamp": "2022-10-17T05:18:50.579Z"
   },
   "message": {
     "order": {
-      "id": "984429000000179013",
-      "state": "Accepted",
       "items": [
         {
           "id": "984429000000015017",
-          "fulfillment_id": "984429000000179001"
+          "fulfillment_id": "984429000000205001",
+          "quantity": {
+            "count": 1
+          }
         }
       ],
       "billing": {
-        "name": "XXX  ",
+        "name": "XYZ  ",
         "address": {
-          "name": "XXX",
-          "locality": "test, XXX, test, ",
+          "name": "XYZ",
+          "locality": " XYZ, xxx",
           "city": "Bengaluru",
           "state": "Karnataka",
           "country": "India",
-          "area_code": "560072"
+          "area_code": "560072",
+          "door": "yyy"
         },
-        "email": "***",
-        "phone": "9094000782",
-        "created_at": "2022-10-11T13:07:23.661Z",
-        "updated_at": "2022-10-11T13:07:23.661Z"
+        "email": "xyz@ahd.ahsd",
+        "phone": "9941335554",
+        "created_at": "2022-10-17T10:48:50.572Z",
+        "updated_at": "2022-10-17T10:48:50.572Z"
       },
       "fulfillments": [
         {
-          "id": "984429000000179001",
+          "id": "984429000000205001",
           "type": "Delivery",
-          "state": {
-            "descriptor": {
-              "name": "Serviceable"
-            }
-          },
-          "start": {
-            "location": {
-              "id": "984429000000014150",
-              "gps": "12.962800,77.575900",
-              "address": {
-                "name": "saraladevi",
-                "building": "Ar Complex",
-                "street": "AR Street, Adayar",
-                "city": "Bangalore",
-                "state": "TN",
-                "country": "India",
-                "area_code": "560002"
-              },
-              "city": {
-                "name": "Bangalore",
-                "code": "Bangalore"
-              },
-              "country": {
-                "name": "India",
-                "code": "IN"
-              }
-            },
-            "contact": {
-              "phone": "93897981273",
-              "email": "***"
-            }
-          },
           "tracking": true,
-          "@ondc/org/provider_name": "Grab Logistics - Standard Delivery via Grab Log...",
           "provider_id": "60016159166",
           "end": {
             "location": {
-              "gps": "12.961651,77.513899",
+              "gps": "12.961651, 77.513899",
               "address": {
-                "name": "XXX",
-                "locality": "test, XXX, test, ",
+                "name": "XYZ",
+                "locality": " XYZ, xxx",
                 "city": "Bengaluru",
                 "state": "Karnataka",
                 "country": "India",
                 "area_code": "560072",
-                "latitude": "12.961651",
-                "longitude": "77.513899"
+                "door": "yyy"
               }
             },
             "contact": {
-              "phone": "9094000782",
-              "email": "***"
+              "phone": "9941335554",
+              "email": "xyz@ahd.ahsd"
             }
           }
         }
@@ -134,7 +172,7 @@ Response:
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "246.00"
+          "value": "240.00"
         },
         "ttl": "P1D",
         "breakup": [
@@ -143,16 +181,6 @@ Response:
             "@ondc/org/item_id": "984429000000015017",
             "@ondc/org/item_quantity": {
               "count": 1
-            },
-            "item": {
-              "id": "984429000000015017",
-              "price": {
-                "currency": "INR",
-                "value": "200.00"
-              },
-              "quantity": {
-                "count": 1
-              }
             },
             "@ondc/org/title_type": "item",
             "price": {
@@ -167,24 +195,11 @@ Response:
               "currency": "INR",
               "value": "40.00"
             }
-          },
-          {
-            "title": "Tax",
-            "@ondc/org/title_type": "tax",
-            "price": {
-              "currency": "INR",
-              "value": "6.00"
-            }
           }
         ]
       },
       "payment": {
-        "params": {
-          "amount": "246.0",
-          "currency": "INR"
-        },
         "type": "ON-ORDER",
-        "status": "NOT-PAID",
         "collected_by": "BAP",
         "@ondc/org/settlement_window": "PT24H",
         "@ondc/org/settlement_basis": "Delivery",
@@ -201,9 +216,7 @@ Response:
             "bank_name": "Indian Bank"
           }
         ]
-      },
-      "created_at": "2022-10-11T12:54:37+0530",
-      "updated_at": "2022-10-11T13:06:09+0530"
+      }
     }
   }
 }
