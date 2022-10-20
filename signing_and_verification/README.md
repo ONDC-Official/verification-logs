@@ -27,8 +27,8 @@ python cryptic_utils.py generate_key_pairs
 
 4. Export private and public keys
 ```
-export BPP_PRIVATE_KEY=<private_key>
-export BPP_PUBLIC_KEY=<public_key>
+export PRIVATE_KEY=<private_key>
+export PUBLIC_KEY=<public_key>
 ```
 
 5. Create authorisation header

@@ -76,15 +76,19 @@ def create_authorisation_header(request_body=request_body_json,
     return header
 
 
-def verify_authorisation_header(auth_header, request_body):
+def verify_authorisation_header(auth_header, request_body_str, public_key=os.getenv("PUBLIC_KEY")):
+    # `request_body_str` should request.data i.e. raw data string
+
+    # `public_key` is sender's public key
+    # i.e. if Seller is verifying Buyer's request, then seller will first do lookup for buyer-app
+    # and will verify the request using buyer-app's public-key
     header_parts = get_filter_dictionary_or_operation(auth_header.replace("Signature ", ""))
     created = int(header_parts['created'])
     expires = int(header_parts['expires'])
     current_timestamp = int(datetime.datetime.now().timestamp())
     if created <= current_timestamp <= expires:
-        signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
-                                            created=created, expires=expires)
-        return verify_response(header_parts['signature'], signing_key, public_key=os.getenv("PUBLIC_KEY"))
+        signing_key = create_signing_string(hash_message(request_body_str), created=created, expires=expires)
+        return verify_response(header_parts['signature'], signing_key, public_key=public_key)
     else:
         return False
 
