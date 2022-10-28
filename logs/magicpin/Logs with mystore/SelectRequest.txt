@@ -1,0 +1,156 @@
+Got SELECT Request From Mystore
+-------------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "action": "select",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc",
+        "transaction_id": "2d11584f-260a-4dfe-a539-3b8b794013b7",
+        "message_id": "0a846569-968a-4735-a8d9-fd0f97d84d84",
+        "timestamp": "2022-10-19T06:16:13.055Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "12568000",
+                "locations": [
+                    {
+                        "id": "12568000"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "1953557_12568000",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "end": {
+                        "location": {
+                            "gps": "28.528842,77.222557",
+                            "address": {
+                                "area_code": "110017"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+
+Send ON_SELECT Request To Mystore
+-------------------------------------------------
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.0.0",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/",
+        "transaction_id": "2d11584f-260a-4dfe-a539-3b8b794013b7",
+        "message_id": "0a846569-968a-4735-a8d9-fd0f97d84d84",
+        "timestamp": "2022-10-19T06:16:13.481Z",
+        "key": "Iafh/LuKvNFJ9U7IoeW4CDlqB64RG8w6qqRmbcswz3w=",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "12568000"
+            },
+            "items": [
+                {
+                    "id": "1953557_12568000",
+                    "fulfillment_id": "1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "Fulfillment1",
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/TAT": "PT41M",
+                    "@ondc/org/provider_name": "MAGICPIN",
+                    "state": {
+                        "descriptor": {
+                            "name": "Serviceable"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "135.01999999999998"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "1953557_12568000",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Strawberry Cheese Cake",
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "10"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "89"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "89"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "tax",
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "16.02"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "PT30S"
+            }
+        }
+    }
+}

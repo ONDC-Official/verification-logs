@@ -67,7 +67,7 @@ def create_authorisation_header(request_body=request_body_json,
                                 expires=os.getenv("EXPIRES",  "1641291475")):
     signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
                                         created=created, expires=expires)
-    signature = sign_response(signing_key, private_key=os.getenv("BPP_PRIVATE_KEY"))
+    signature = sign_response(signing_key, private_key=os.getenv("PRIVATE_KEY"))
 
     subscriber_id = os.getenv("SUBSCRIBER_ID", "buyer-app.ondc.org")
     unique_key_id = os.getenv("UNIQUE_KEY_ID", "207")
@@ -76,30 +76,29 @@ def create_authorisation_header(request_body=request_body_json,
     return header
 
 
-def verify_authorisation_header(auth_header, request_body=request_body_json,
-                                created=os.getenv("CREATED", "1641287875"),
-                                expires=os.getenv("EXPIRES", "1641291475")):
-    header_parts = get_filter_dictionary_or_operation(auth_header.replace("Signature ", ""))
-    signing_key = create_signing_string(hash_message(json.dumps(request_body, separators=(',', ':'))),
-                                        created=created, expires=expires)
+def verify_authorisation_header(auth_header, request_body_str, public_key=os.getenv("PUBLIC_KEY")):
+    # `request_body_str` should request.data i.e. raw data string
 
-    return verify_response(header_parts['signature'], signing_key, public_key=os.getenv("BPP_PUBLIC_KEY"))
+    # `public_key` is sender's public key
+    # i.e. if Seller is verifying Buyer's request, then seller will first do lookup for buyer-app
+    # and will verify the request using buyer-app's public-key
+    header_parts = get_filter_dictionary_or_operation(auth_header.replace("Signature ", ""))
+    created = int(header_parts['created'])
+    expires = int(header_parts['expires'])
+    current_timestamp = int(datetime.datetime.now().timestamp())
+    if created <= current_timestamp <= expires:
+        signing_key = create_signing_string(hash_message(request_body_str), created=created, expires=expires)
+        return verify_response(header_parts['signature'], signing_key, public_key=public_key)
+    else:
+        return False
 
 
 def generate_key_pairs():
     signing_key = SigningKey.generate()
     private_key = base64.b64encode(signing_key._signing_key).decode()
     public_key = base64.b64encode(bytes(signing_key.verify_key)).decode()
-    return private_key, public_key
+    return {"private_key": private_key, "public_key": public_key}
 
 
 if __name__ == '__main__':
-    request_body1 = {"context":{"domain":"nic2004:60212","country":"IND","city":"Kochi","action":"search","core_version":"0.9.1","bap_id":"bap.stayhalo.in","bap_uri":"https://8f9f-49-207-209-131.ngrok.io/protocol/","transaction_id":"e6d9f908-1d26-4ff3-a6d1-3af3d3721054","message_id":"a2fe6d52-9fe4-4d1a-9d0b-dccb8b48522d","timestamp":"2022-01-04T09:17:55.971Z","ttl":"P1M"},"message":{"intent":{"fulfillment":{"start":{"location":{"gps":"10.108768, 76.347517"}},"end":{"location":{"gps":"10.102997, 76.353480"}}}}}}
-    # os.environ["BPP_PRIVATE_KEY"] = "lP3sHA+9gileOkXYJXh4Jg8tK0gEEMbf9yCPnFpbldhrAY+NErqL9WD+Vav7TE5tyVXGXBle9ONZi2W7o144eQ=="
-    # os.environ["BPP_PUBLIC_KEY"] = "awGPjRK6i/Vg/lWr+0xObclVxlwZXvTjWYtlu6NeOHk="
-    # private_key1, public_key1 = generate_key_pairs()
-    # os.environ["BPP_PRIVATE_KEY"] = private_key1
-    # os.environ["BPP_PUBLIC_KEY"] = public_key1
-    # auth_header = create_authorisation_header(request_body1)
-    # print(verify_authorisation_header(auth_header, request_body1))
     fire.Fire()

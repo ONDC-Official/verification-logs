@@ -1,0 +1,142 @@
+[
+    {
+        "body": {
+            "context": {
+                "domain": "nic2004:52110",
+                "country": "IND",
+                "city": "std:080",
+                "action": "update",
+                "core_version": "1.0.0",
+                "bap_id": "cloud-adaptor.proteantech.in/kotak",
+                "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
+                "bpp_id": "preprod.thesellerapp.com",
+                "bpp_uri": "https://preprod.thesellerapp.com/v1",
+                "transaction_id": "131147681290495920",
+                "message_id": "034fc0be-6e41-49db-afb1-9a25bc5215ee",
+                "timestamp": "2022-09-27T16:58:19.980Z",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "K40A50EAC",
+                    "state": "Completed",
+                    "payment": {
+                        "@ondc/org/settlement_details": [
+                            {
+                                "settlement_counterparty": "ENS Medicos",
+                                "settlement_phase": "sale-amount",
+                                "settlement_type": "upi",
+                                "upi_address": "1213123",
+                                "settlement_bank_account_no": "SBIN121212133",
+                                "settlement_ifsc_code": "SBIN00020",
+                                "beneficiary_name": "1213123",
+                                "bank_name": "SBI",
+                                "branch_name": "SBI NOIDA"
+                            }
+                        ]
+                    },
+                    "provider": {
+                        "id": "bbac0c0b-e807-440e-b7d4-c5cb827758e7",
+                        "items": [
+                            {
+                                "id": "d43882da-431f-405f-aac3-f805dbad41e1",
+                                "quantity": {
+                                    "count": 1
+                                },
+                                "tags": {
+                                    "image": "https://ondc-marketplace.s3.amazonaws.com/images/e8c0c564-98cc-4382-99ae-e36cd31af4b5.jpg",
+                                    "update_type": "return",
+                                    "reason_code": "002",
+                                    "ttl_approval": "PT24H",
+                                    "ttl_reverseqc": "P3D"
+                                },
+                                "returnable": false,
+                                "cancelable": false
+                            }
+                        ]
+                    }
+                },
+                "update_target": "item"
+            }
+        },
+        "header": "Signature keyId=\"cloud-adaptor.proteantech.in/kotak|96c0c288-8086-4b1f-b471-9ba6a0315422|ed25519\",algorithm=\"ed25519\", created=\"1664297900\", expires=\"1664897900\", headers=\"(created) (expires) digest\", signature=\"RfLa/18L6KmN9CI4ipjXRDdI1ZYdEzUSWb3T5CDDdEiVrpfMK8Zt3cv0h4F/IEzJAavzHC9A2rDAAYJ+JEy+Cg==\"",
+        "response": {
+            "context": {
+                "domain": "nic2004:52110",
+                "country": "IND",
+                "city": "std:080",
+                "action": "on_update",
+                "core_version": "1.0.0",
+                "bap_id": "cloud-adaptor.proteantech.in/kotak",
+                "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
+                "bpp_id": "preprod.thesellerapp.com",
+                "bpp_uri": "https://preprod.thesellerapp.com/v1",
+                "transaction_id": "131147681290495920",
+                "message_id": "034fc0be-6e41-49db-afb1-9a25bc5215ee",
+                "timestamp": "2022-09-27T16:58:20.637Z",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "K40A50EAC",
+                    "items": [
+                        {
+                            "id": "d43882da-431f-405f-aac3-f805dbad41e1",
+                            "fulfillment_id": "d43882da-431f-405f-aac3-f805dbad41e1",
+                            "quantity": {
+                                "count": 1
+                            },
+                            "tags": {
+                                "approve": "yes",
+                                "status": "Return_Approved"
+                            }
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "230"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "d43882da-431f-405f-aac3-f805dbad41e1",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "230"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "d43882da-431f-405f-aac3-f805dbad41e1",
+                            "type": "Reverse QC",
+                            "start": {
+                                "time": {
+                                    "range": {
+                                        "start": "2022-06-14T10:00:00.000Z",
+                                        "end": "2022-06-14T10:30:00.000Z"
+                                    }
+                                },
+                                "instructions": {
+                                    "short_desc": "return accepted",
+                                    "long_desc": "return accepted",
+                                    "images": [
+                                        "https://thesellerapp.com"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "resheader": "Signature keyId=\"preprod.thesellerapp.com|2a5a6cce-2e82-11ed-a261-0242ac120002|ed25519\",algorithm=\"ed25519\",created=\"1664297900\",expires=\"1664301500\",headers=\"(created) (expires) digest\",signature=\"iPNqmZ5NxAnmcZkTj9ih5BklBp6UWXnjB3sp0uoUMjALursMgql2mJmlNlFWZ35nQuDtfAmRO5rgQGct9u3/DQ==\"",
+        "error": "0"
+    }
+]

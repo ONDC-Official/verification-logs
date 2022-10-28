@@ -1,194 +1,201 @@
 {
-    "_id": {
-      "$oid": "6331667ca0006e42f23fad4e"
-    },
-    "transaction_id": "792add37-089f-4c5e-85d8-68c2ba7acbcb",
-    "store": {
-      "$oid": "62b42dc426b83e2a358464e2"
-    },
+  "_id": {
+    "$oid": "634d63f5a655f79ad8a0bf75"
+  },
+  "transaction_id": "24e28be2-dda3-4c9e-915c-b778b975eeee",
+  "store": {
+    "$oid": "62b42dc426b83e2a358464e2"
+  },
+  "action": "on_status",
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "1.0.0",
     "action": "on_status",
+    "bap_id": "beta.mystore.in",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_id": "ondc.niveashop.in",
+    "bpp_uri": "https://ondc.niveashop.in/api",
+    "transaction_id": "24e28be2-dda3-4c9e-915c-b778b975eeee",
+    "message_id": "9ae22361-8865-440e-b310-712594124580",
+    "timestamp": "2022-10-17T14:17:25.807Z",
+    "ttl": "PT30S"
+  },
+    "message": {
+      "order": {
+        "id": "634d63dec399be96a53d1065",
+        "state": "Accepted",
+        "provider": {
+          "id": "62b42dc426b83e2a358464e2",
+          "locations": [
+            {
+              "id": "nivea-store-location-1"
+            }
+          ]
+        },
+        "items": [
+          {
+            "id": "43001177440483",
+            "fulfillment_id": "Fulfillment1",
+            "quantity": {
+              "count": 1
+            }
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "330.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "43001177440483",
+              "@ondc/org/item_quantity": {
+                "count": 1
+              },
+              "title": "Body Lotion - Oil in Lotion Cherry Blossom & Jojoba Oil - 400ml",
+              "@ondc/org/title_type": "item",
+              "price": {
+                "currency": "INR",
+                "value": "255.00"
+              }
+            },
+            {
+              "title": "Delivery charges",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "75.0"
+              }
+            }
+          ],
+          "ttl": "PT24H"
+        },
+        "billing": {
+          "name": "Agam",
+          "address": {
+            "name": "test address",
+            "locality": "test address",
+            "city": "Bilaspur",
+            "state": "Chhattisgarh",
+            "country": "India",
+            "area_code": "495001"
+          },
+          "phone": "+919399452347",
+          "email": "agam.dubey@schbang.com",
+          "created_at": "2022-10-17T14:17:25.801Z",
+          "updated_at": "2022-10-17T14:17:25.801Z"
+        },
+        "fulfillments": [
+          {
+            "id": "Fulfillment1",
+            "type": "Delivery",
+            "@ondc/org/provider_name": "Nivea Shop",
+            "provider_id": "ondc.niveashop.in",
+            "tracking": true,
+            "state": {
+              "descriptor": {
+                "name": "Pending",
+                "code": "Pending"
+              }
+            },
+            "start": {
+              "location": {
+                "descriptor": {
+                  "name": "ANS Compound",
+                  "images": [
+                    "https://cdn.shopify.com/s/files/1/0481/5621/3409/files/new-nivea-logo-200-150_e8433df7-ec18-4373-b833-2868d736d1eb_200x150.png?v=1643998222"
+                  ]
+                },
+                "gps": "18.9596,72.8496"
+              },
+              "contact": {
+                "phone": "+91(0)2262487999",
+                "email": "care@beiersdorf.com"
+              }
+            },
+            "end": {
+              "location": {
+                "address": {
+                  "name": "test address",
+                  "locality": "test address",
+                  "city": "Bilaspur",
+                  "state": "Chhattisgarh",
+                  "country": "India",
+                  "area_code": "495001"
+                },
+                "gps": "22.097191,82.129388"
+              },
+              "contact": {
+                "phone": "+919399452347",
+                "email": "agam.dubey@schbang.com"
+              }
+            }
+          }
+        ],
+        "payment": {
+          "type": "ON-ORDER",
+          "status": "PAID",
+          "params": {
+            "amount": "330.00",
+            "currency": "INR"
+          },
+          "collected_by": "BAP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3",
+          "@ondc/org/withholding_amount": "0.0",
+          "@ondc/org/return_window": "0",
+          "@ondc/org/settlement_basis": "Collection",
+          "@ondc/org/settlement_window": "P2D",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_status": "NOT-PAID",
+              "settlement_type": "neft",
+              "settlement_bank_account_no": "9908112021",
+              "settlement_ifsc_code": "KKBK0000261"
+            }
+          ]
+        }
+      }
+    },
+  "response": {
     "context": {
       "domain": "nic2004:52110",
       "country": "IND",
       "city": "std:080",
-      "core_version": "0.9.3",
+      "core_version": "1.0.0",
       "action": "on_status",
       "bap_id": "beta.mystore.in",
       "bap_uri": "https://beta.mystore.in/ondc/1.0/",
       "bpp_id": "ondc.niveashop.in",
       "bpp_uri": "https://ondc.niveashop.in/api",
-      "transaction_id": "792add37-089f-4c5e-85d8-68c2ba7acbcb",
-      "message_id": "8704d7e4-fefc-4df0-9301-442463e5e02c",
-      "timestamp": "2022-09-26T08:44:44.362Z",
+      "transaction_id": "24e28be2-dda3-4c9e-915c-b778b975eeee",
+      "message_id": "9ae22361-8865-440e-b310-712594124580",
+      "timestamp": "2022-10-17T14:17:25.807Z",
       "ttl": "PT30S"
     },
     "message": {
-      "context": {
-        "domain": "nic2004:52110",
-        "country": "IND",
-        "city": "std:080",
-        "core_version": "0.9.3",
-        "action": "on_status",
-        "bap_id": "beta.mystore.in",
-        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
-        "bpp_id": "ondc.niveashop.in",
-        "bpp_uri": "https://ondc.niveashop.in/api",
-        "transaction_id": "792add37-089f-4c5e-85d8-68c2ba7acbcb",
-        "message_id": "8704d7e4-fefc-4df0-9301-442463e5e02c",
-        "timestamp": "2022-09-26T08:44:44.362Z",
-        "ttl": "PT30S"
-      },
-      "message": {
-        "order": {
-          "id": "63316624411ac79e9719f4a5",
-          "state": "Created",
-          "items": [
-            {
-              "id": "43001177440483",
-              "quantity": {
-                "count": 1
-              }
-            }
-          ],
-          "quote": {
-            "price": {
-              "currency": "INR",
-              "value": "405"
-            },
-            "breakup": [
-              {
-                "title": "Body Lotion - Oil in Lotion Cherry Blossom & Jojoba Oil - 400ml",
-                "price": {
-                  "currency": "INR",
-                  "value": "255.00",
-                  "@ondc/org/item_quantity": {
-                    "count": 1
-                  }
-                }
-              },
-              {
-                "@ondc/org/item_id": "Fulfillment1",
-                "title": "Delivery charges",
-                "@ondc/org/title_type": "delivery",
-                "price": {
-                  "currency": "INR",
-                  "value": "75.0"
-                }
-              }
-            ],
-            "ttl": "P24H"
-          },
-          "billing": {
-            "name": "agam.dubey",
-            "address": {
-              "door": "undefined",
-              "building": "undefined",
-              "name": "agam.dubey",
-              "locality": "test address",
-              "city": "Bilaspur",
-              "country": "India",
-              "area_code": "495001",
-              "street": "undefined"
-            },
-            "phone": "+919399452347",
-            "email": "agam.dubey@schbang.com",
-            "tax_number": "",
-            "created_at": "2022-09-26T08:44:44.361Z",
-            "updated_at": "2022-09-26T08:44:44.361Z"
-          },
-          "fulfillments": [
-            {
-              "id": "Fulfillment1",
-              "type": "Delivery",
-              "provider_id": "ondc-nivea",
-              "tracking": false,
-              "end": {
-                "location": {
-                  "address": {
-                    "door": "undefined",
-                    "building": "undefined",
-                    "name": "Agam",
-                    "locality": "test address",
-                    "city": "Bilaspur",
-                    "country": "India",
-                    "area_code": "495001",
-                    "street": "undefined"
-                  }
-                },
-                "contact": {
-                  "phone": "+919399452347",
-                  "email": "agam.dubey@schbang.com"
-                }
-              },
-              "customer": {
-                "contact": {
-                  "phone": "+919399452347",
-                  "email": "agam.dubey@schbang.com"
-                },
-                "person": {
-                  "name": "Agam"
-                }
-              }
-            }
-          ],
-          "payment": {
-            "type": "ON-ORDER",
-            "status": "NOT-PAID",
-            "params": {
-              "amount": "405",
-              "currency": "INR"
-            },
-            "collected_by": "BAP",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "seller-app",
-                "settlement_phase": "sale-amount",
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "9908112021",
-                "settlement_ifsc_code": "KKBK0000261"
-              }
-            ],
-            "@ondc/org/collected_by_status": "Agree",
-            "@ondc/org/settlement_basis": "Collection"
-          }
-        }
+      "ack": {
+        "status": "ACK"
       }
-    },
-    "response": {
-      "context": {
-        "domain": "nic2004:52110",
-        "country": "IND",
-        "city": "std:080",
-        "core_version": "0.9.3",
-        "action": "on_status",
-        "bap_id": "beta.mystore.in",
-        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
-        "bpp_id": "ondc.niveashop.in",
-        "bpp_uri": "https://ondc.niveashop.in/api",
-        "transaction_id": "792add37-089f-4c5e-85d8-68c2ba7acbcb",
-        "message_id": "8704d7e4-fefc-4df0-9301-442463e5e02c",
-        "timestamp": "2022-09-26T08:44:44.362Z",
-        "ttl": "PT30S"
-      },
-      "message": {
-        "ack": {
-          "status": "ACK"
-        }
-      }
-    },
-    "signature": {
-      "header": "Signature keyId=\"ondc.niveashop.in|c4e02f71-f240-4ae2-94d4-42fc96a706df|ed25519\",algorithm=\"ed25519\",created=\"1664181884\",expires=\"1664268284\",headers=\"(created) (expires) digest\",signature=\"K8T4/Q9PVFFQ2+KERK4oQAMD6H6+uTgrBdVpXsqeb4jkNAT0QssNodLFCDM91Uc9dUZ3VgN/O5mXsFdjajvlDA==\"",
-      "signing_string": "(created): 1664181884\n(expires): 1664268284\ndigest: BLAKE-512=Dmp4nmltophnNDebicRR71X/e/ae3RswAxqtUQMoh01Hm5iyzHfUf5q16EukKGwo9Tf04aIHFKRv5z/YI9ER2A=="
-    },
-    "createdAt": {
-      "$date": {
-        "$numberLong": "1664181884570"
-      }
-    },
-    "updatedAt": {
-      "$date": {
-        "$numberLong": "1664181884570"
-      }
-    },
-    "__v": 0
-  }
+    }
+  },
+  "signature": {
+    "header": "Signature keyId=\"ondc.niveashop.in|c4e02f71-f240-4ae2-94d4-42fc96a706df|ed25519\",algorithm=\"ed25519\",created=\"1666016245\",expires=\"1666102645\",headers=\"(created) (expires) digest\",signature=\"XuAq7v+izAQZCYdJC8hGsFWE2pRXdLqx1E9U4sqBEO2x+sR9mjQwLgh8liXfZdBgEH5F5ZxRmn9QcxtE2Jh4Dw==\"",
+    "signing_string": "(created): 1666016245\n(expires): 1666102645\ndigest: BLAKE-512=aVB7LzaaMRkhfq8XEsDSjrTz3dwy0NZ0A0zk3cIOwW8MamuuPsKORHDc5oVPRj5iKkWjb2IJWFGpnAAzbZsKGw=="
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666016246000"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666016246000"
+    }
+  },
+  "__v": 0
+}
