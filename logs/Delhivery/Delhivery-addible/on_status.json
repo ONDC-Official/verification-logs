@@ -1,0 +1,111 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.0.11",
+    "transaction_id": "f408250d-9dc3-453f-ac6a-a2e857e8e2db",
+    "bap_id": "preprod-ondc.addble.com",
+    "bap_uri": "https://preprod-ondc.addble.com/",
+    "message_id": "921aed2b-0d69-4e61-a481-dcda1a11b22b",
+    "timestamp": "2022-10-26T14:52:06Z",
+    "bpp_id": "ondc-dev.delhivery.com",
+    "bpp_uri": "https://ondc-dev.delhivery.com/delhivery/v1/"
+  },
+  "message": {
+    "order": {
+      "id": "2022-09-25-127803",
+      "state": "In-progress",
+      "provider": {
+        "id": "Delhivery"
+      },
+      "items": [
+        {
+          "id": "6f5d558f-abd4-4320-90ae-8a68f8de32d9",
+          "category_id": "Express Delivery"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "0.50"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "6f5d558f-abd4-4320-90ae-8a68f8de32d9",
+            "@ondc/org/title_type": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "0.25"
+            }
+          },
+          {
+            "title": "RTO charges",
+            "@ondc/org/title_type": "RTO Charge",
+            "price": {
+              "currency": "INR",
+              "value": "0.25"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "CoD",
+          "@ondc/org/awb_no": "4220075923410",
+          "state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "name": "Order picked up"
+            }
+          },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2022-10-25T16:39:25.430Z",
+                "end": "2022-10-25T16:39:25.430Z"
+              }
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2022-10-27T23:59:59.000Z",
+                "end": "2022-10-27T23:59:59.000Z"
+              }
+            }
+          },
+          "@ondc/org/ewaybillno": ""
+        }
+      ],
+      "payments": {
+        "@ondc/org/ondc-withholding_amount": "0",
+        "@ondc/org/ondc-settlement_basis": "Collection",
+        "@ondc/org/ondc-return_window": "2",
+        "created_at": "2022-10-25T16:13:59Z",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "upi_address": "test@okicici",
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi"
+          }
+        ],
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/settlement_window_status": "Agree",
+        "params": {
+          "amount": "270.17",
+          "currency": "INR"
+        },
+        "@ondc/org/ondc-settlement_window": "PT48H",
+        "status": "NOT-PAID",
+        "collected_by": "BPP",
+        "updated_at": "2022-10-25T16:13:59Z"
+      }
+    }
+  }
+}
