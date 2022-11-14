@@ -1,0 +1,164 @@
+----------SELECT request from Mystore----------
+
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "action": "select",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc",
+        "transaction_id": "d46bd3f2-b17c-4d55-9cc5-279dc3492ad3",
+        "message_id": "0beeb95d-bae2-49d9-afae-61dd209f9f2f",
+        "timestamp": "2022-11-14T10:15:43.317Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "191983",
+                "locations": [
+                    {
+                        "id": "191983"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "1953377_191983",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "end": {
+                        "location": {
+                            "gps": "28.5176111,77.1793611",
+                            "address": {
+                                "area_code": "110030"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+----------ON_SELECT request to Mystore----------
+
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.0.0",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc",
+        "transaction_id": "d46bd3f2-b17c-4d55-9cc5-279dc3492ad3",
+        "message_id": "0beeb95d-bae2-49d9-afae-61dd209f9f2f",
+        "timestamp": "2022-11-14T10:15:44.633Z",
+        "key": "Iafh/LuKvNFJ9U7IoeW4CDlqB64RG8w6qqRmbcswz3w=",
+        "ttl": "P1D"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "191983"
+            },
+            "items": [
+                {
+                    "id": "1953377_191983",
+                    "fulfillment_id": "Fulfillment1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "Fulfillment1",
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/TAT": "PT36M",
+                    "@ondc/org/provider_name": "MAGICPIN",
+                    "state": {
+                        "descriptor": {
+                            "name": "Serviceable"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "142"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "1953377_191983",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Summer Drink",
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "10"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "56.1"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "56.1"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment1",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packaging Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "6.6"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "tax",
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3.3"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "76"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            }
+        }
+    }
+}
