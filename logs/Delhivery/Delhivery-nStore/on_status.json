@@ -1,110 +1,105 @@
 {
-  "context": {
-    "domain": "nic2004:60232",
-    "country": "IND",
-    "city": "std:080",
-    "action": "on_status",
-    "bap_id": "b-ondc-seller-bpp.nlincs.in",
-    "bap_uri": "https://b-ondc-seller-bpp.nlincs.in/lbap",
-    "transaction_id": "18827_222035400092_20354_00000000-0f68-4f38-0000-000071c5c218_sCd2be",
-    "message_id": "o9ZcbUzByMxI22NhSBI2DSi1irYcjuwj",
-    "timestamp": "2022-11-16T07:55:09.432Z",
-    "core_version": "1.0.0",
-    "ttl": "PT30S",
-    "bpp_id": "ondc-dev.delhivery.com",
-    "bpp_uri": "https://ondc-dev.delhivery.com/delhivery/v1/"
+  "context":{
+     "domain":"nic2004:60232",
+     "country":"IND",
+     "city":"std:080",
+     "action":"on_status",
+     "core_version":"1.0.0",
+     "bap_id":"b-ondc-seller-bpp.nlincs.in",
+     "bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap",
+     "transaction_id":"19282_222035400117_20354_00000000-3683-d416-ffff-ffff9abaa189_iJY5lZ",
+     "message_id":"4a356d21-cf19-42f7-bc7b-e3c3e67c2456",
+     "timestamp":"2022-11-25T05:15:44.810Z",
+     "bpp_id":"ondc-dev.delhivery.com",
+     "bpp_uri":"https://ondc-dev.delhivery.com/delhivery/v1/"
   },
-  "message": {
-    "order": {
-      "id": "18828_222035400093_203",
-      "state": "Accepted",
-      "provider": {
-        "id": "Delhivery"
-      },
-      "items": [
-        {
-          "id": "b2e89cc9-0970-46d2-91eb-0ed029907f04",
-          "category_id": "Standard Delivery"
-        }
-      ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "171.10"
+  "message":{
+     "order":{
+        "id":"19282_222035400117_20354_iJY5lZ",
+        "state":"Accepted",
+        "provider":{
+           "id":"Delhivery"
         },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "b2e89cc9-0970-46d2-91eb-0ed029907f04",
-            "@ondc/org/title_type": "Delivery Charge",
-            "price": {
-              "currency": "INR",
-              "value": "70.8"
-            }
-          },
-          {
-            "title": "RTO charges",
-            "@ondc/org/title_type": "RTO Charge",
-            "price": {
-              "currency": "INR",
-              "value": "100.3"
-            }
-          }
-        ]
-      },
-      "fulfillments": [
-        {
-          "id": "1",
-          "type": "Prepaid",
-          "@ondc/org/awb_no": "352026689400",
-          "state": {
-            "descriptor": {
-              "code": "Pending",
-              "name": "Pending"
-            }
-          },
-          "start": {
-            "time": {
-              "range": {
-                "start": "",
-                "end": ""
-              }
-            }
-          },
-          "end": {
-            "time": {
-              "range": {
-                "start": "",
-                "end": ""
-              }
-            }
-          },
-          "@ondc/org/ewaybillno": ""
-        }
-      ],
-      "payments": {
-        "params": {
-          
-        },
-        "created_at": "2022-11-16T12:53:39Z",
-        "@ondc/org/settlement_details": [
-          {
-            "beneficiary_name": "DELHIVERY LIMITED",
-            "settlement_status": "NOT-PAID",
-            "settlement_counterparty": "seller-app",
-            "settlement_phase": "sale-amount",
-            "branch_name": "DLF GALERIA",
-            "bank_name": "HDFC BANK",
-            "settlement_ifsc_code": "IFSCTEST1234",
-            "settlement_bank_account_no": "ACCTEST1234",
-            "settlement_type": "neft"
-          }
+        "items":[
+           {
+              "id":"c95a98ef-a811-4aa9-822d-334d00d2462f",
+              "category_id":"Standard Delivery"
+           }
         ],
-        "type": "POST-FULFILLMENT",
-        "@ondc/org/ondc-settlement_window": "",
-        "status": "PAID",
-        "updated_at": "2022-11-16T12:53:39Z",
-        "@ondc/org/settlement_window_status": "Agree"
-      }
-    }
+        "quote":{
+           "price":{
+              "currency":"INR",
+              "value":"0.50"
+           },
+           "breakup":[
+              {
+                 "@ondc/org/item_id":"c95a98ef-a811-4aa9-822d-334d00d2462f",
+                 "@ondc/org/title_type":"Delivery Charge",
+                 "price":{
+                    "currency":"INR",
+                    "value":"0.25"
+                 }
+              },
+              {
+                 "title":"RTO charges",
+                 "@ondc/org/title_type":"RTO Charge",
+                 "price":{
+                    "currency":"INR",
+                    "value":"0.25"
+                 }
+              }
+           ]
+        },
+        "fulfillments":[
+           {
+              "id":"1",
+              "type":"CoD",
+              "@ondc/org/awb_no":"352026709685",
+              "state":{
+                 "descriptor":{
+                    "code":"Pending",
+                    "name":"Pending"
+                 }
+              },
+              "start":{
+                 "time":{
+                    "range":{
+                       "start":"",
+                       "end":""
+                    }
+                 }
+              },
+              "end":{
+                 "time":{
+                    "range":{
+                       "start":"",
+                       "end":""
+                    }
+                 }
+              },
+              "@ondc/org/ewaybillno":""
+           }
+        ],
+        "payments":{
+           "collected_by":"BPP",
+           "params":{
+              
+           },
+           "status":"NOT-PAID",
+           "type":"POST-FULFILLMENT",
+           "@ondc/org/settlement_details":[
+              {
+                 "beneficiary_name":"NSTORE TECHNOLOGIES PRIVATE LIMITED",
+                 "settlement_counterparty":"seller-app",
+                 "branch_name":"CHENNAI - SANTHOME",
+                 "bank_name":"ICICI BANK LTD",
+                 "settlement_ifsc_code":"ICIC0000212",
+                 "settlement_bank_account_no":"021205008922",
+                 "settlement_type":"neft"
+              }
+           ],
+           "@ondc/org/settlement_window_status":"Agree"
+        }
+     }
   }
 }
