@@ -1,0 +1,305 @@
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger 
+0|bpp  | { context:
+0|bpp  |    { domain: 'nic2004:52110',
+0|bpp  |      country: 'IND',
+0|bpp  |      city: 'std:080',
+0|bpp  |      action: 'search',
+0|bpp  |      core_version: '1.0.0',
+0|bpp  |      bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |      bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |      transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |      message_id: '4b90325a-79ea-486e-8e80-280d6a446dbd',
+0|bpp  |      timestamp: '2022-11-23T14:36:20.759Z',
+0|bpp  |      ttl: 'PT30S' },
+0|bpp  |   message:
+0|bpp  |    { intent: { item: [Object], fulfillment: [Object], payment: [Object] } } }
+0|bpp  | Sent '{"id":"d86075c9-2ea3-5fa5-816a-4cb1dd8b134e","api":"search","callback":"on_search","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"search","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4b90325a-79ea-486e-8e80-280d6a446dbd","timestamp":"2022-11-23T14:36:20.759Z","ttl":"PT30S"},"message":{"intent":{"item":{"descriptor":{"name":"Watermelon"}},"fulfillment":{"type":"Delivery","end":{"location":{"gps":"12.96774,77.588913"}}},"payment":{"@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0"}}}}}'
+0|bpp  | search responded the ACK
+0|bpp  | Received '{"id":"d86075c9-2ea3-5fa5-816a-4cb1dd8b134e","api":"search","callback":"on_search","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"search","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4b90325a-79ea-486e-8e80-280d6a446dbd","timestamp":"2022-11-23T14:36:20.759Z","ttl":"PT30S"},"message":{"intent":{"item":{"descriptor":{"name":"Watermelon"}},"fulfillment":{"type":"Delivery","end":{"location":{"gps":"12.96774,77.588913"}}},"payment":{"@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0"}}}}}'
+0|bpp  | { id: 'd86075c9-2ea3-5fa5-816a-4cb1dd8b134e',
+0|bpp  |   api: 'search',
+0|bpp  |   callback: 'on_search',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         action: 'search',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |         bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |         transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |         message_id: '4b90325a-79ea-486e-8e80-280d6a446dbd',
+0|bpp  |         timestamp: '2022-11-23T14:36:20.759Z',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message: { intent: [Object] } } }
+0|bpp  | on_search
+0|bpp  | {"intent":{"item":{"descriptor":{"name":"Watermelon"}},"fulfillment":{"type":"Delivery","end":{"location":{"gps":"12.96774,77.588913"}}},"payment":{"@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0"}}}
+0|bpp  | Watermelon 44f1a436-8eb8-5bb7-93e7-39e2324efcb7 12.96774 12.96774 10 1 true
+0|bpp  | query vsearchProductInStore ($first:Int $offset:Int $searchStr:String! $storeId:ID!) { vsearchProductInStore(first:$first offset:$offset searchStr:$searchStr storeId:$storeId) { id name price onSalePrice imageUrl store { id name images geoLat geoLong } } }
+0|bpp  | Got search for Watermelon
+0|bpp  | [ { id: 'fea40eec-fa72-4230-9e5d-40eb606e70db',
+0|bpp  |     name: 'Watermelon',
+0|bpp  |     price: '100',
+0|bpp  |     onSalePrice: '100',
+0|bpp  |     imageUrl:
+0|bpp  |      'https://storage.googleapis.com/nearshop_live/44f1a436-8eb8-5bb7-93e7-39e2324efcb7/raw/1661239772681_Watermelon.png',
+0|bpp  |     store:
+0|bpp  |      { id: '44f1a436-8eb8-5bb7-93e7-39e2324efcb7',
+0|bpp  |        name: 'iFresh Nearshop',
+0|bpp  |        images: [Array],
+0|bpp  |        geoLat: 0,
+0|bpp  |        geoLong: 0 } } ]
+0|bpp  | https://preprod.gateway.ondc.org/on_search
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_search","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4b90325a-79ea-486e-8e80-280d6a446dbd","timestamp":"2022-11-23T14:36:20.759Z","ttl":"PT30S","bpp_id":"api.staging.nearshop.in/bpp/api/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1"},"message":{"catalog":{"bpp/descriptor":{"name":"iFresh Nearshop","images":["https://storage.googleapis.com/nearshop_live/afe44f35-fb0c-527b-8a80-a1b0b839197e/storeImage_1656501892241_1656501890385.png"],"symbol":"https://storage.googleapis.com/nearshop_live/afe44f35-fb0c-527b-8a80-a1b0b839197e/storeImage_1656501892241_1656501890385.png","long_desc":"iFresh Nearshop","short_desc":"iFresh Nearshop"},"bpp/providers":[{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","descriptor":{"name":"iFresh Nearshop","images":["https://storage.googleapis.com/nearshop_live/https://storage.googleapis.com/nearshop_live/images/alpha/D.png"],"symbol":"https://storage.googleapis.com/nearshop_live/https://storage.googleapis.com/nearshop_live/images/alpha/D.png","long_desc":"iFresh Nearshop","short_desc":"iFresh Nearshop"},"@ondc/org/fssai_license_no":"ABCDEFGH","ttl":"P4D","locations":[{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location","gps":"0, 0","address":{"street":"Hebbal","city":"Bengaluru","area_code":"560076","state":"KA"}}],"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","descriptor":{"name":"Watermelon","short_desc":"Watermelon","images":["https://storage.googleapis.com/nearshop_live/44f1a436-8eb8-5bb7-93e7-39e2324efcb7/raw/1661239772681_Watermelon.png"],"symbol":"https://storage.googleapis.com/nearshop_live/44f1a436-8eb8-5bb7-93e7-39e2324efcb7/raw/1661239772681_Watermelon.png"},"price":{"currency":"INR","value":"105.90"},"category_id":"","fulfillment_id":"","location_id":"EOKJBqid0zecXCvyQBCR","@ondc/org/returnable":false,"@ondc/org/cancellable":false,"@ondc/org/seller_pickup_return":false,"@ondc/org/available_on_cod":true,"@ondc/org/contact_details_consumer_care":"Nearshop , Jakkur, Bangalore 560064"}]}]}}}
+0|bpp  | (created): 1669214181
+0|bpp  | (expires): 1669232181
+0|bpp  | digest: BLAKE-512=o0cx/Wu59mWOSaklQ9w7bDpBvNPu41RPanveK5OcZEw6VONEl6/PD2XpCXkHXZKXNb85fYMIRhE2JKE674MDHA==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214181",expires="1669232181",headers="(created) (expires) digest",signature="rSMwFXYIHNLJlAJc07i4TRIUqclztX84OJs5qMOR6BMLw2NkWOi3glCMlt9tRKKpwlq3ZYlnyRM065+tYjrUCA=="
+0|bpp  | { context:
+0|bpp  |    { domain: 'nic2004:52110',
+0|bpp  |      country: 'IND',
+0|bpp  |      city: 'std:080',
+0|bpp  |      action: 'on_search',
+0|bpp  |      core_version: '1.0.0',
+0|bpp  |      bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |      bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |      bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |      bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |      transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |      message_id: '4b90325a-79ea-486e-8e80-280d6a446dbd',
+0|bpp  |      timestamp: '2022-11-23T14:36:20.759Z',
+0|bpp  |      ttl: 'PT30S' },
+0|bpp  |   message: { ack: { status: 'ACK' } } }
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger 
+0|bpp  | { context:
+0|bpp  |    { domain: 'nic2004:52110',
+0|bpp  |      country: 'IND',
+0|bpp  |      city: 'std:080',
+0|bpp  |      action: 'select',
+0|bpp  |      core_version: '1.0.0',
+0|bpp  |      bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |      bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |      bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |      transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |      message_id: 'd0e3a326-8433-4aa5-94d8-d7e09bfc8362',
+0|bpp  |      timestamp: '2022-11-23T14:36:29.067Z',
+0|bpp  |      bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |      ttl: 'PT30S' },
+0|bpp  |   message:
+0|bpp  |    { order:
+0|bpp  |       { items: [Array], provider: [Object], fulfillments: [Array] } } }
+0|bpp  | Sent '{"id":"8c097bac-240b-52c9-b8fb-702c1ec14f97","api":"select","callback":"on_select","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"select","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"d0e3a326-8433-4aa5-94d8-d7e09bfc8362","timestamp":"2022-11-23T14:36:29.067Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"location":{"gps":"12.96774, 77.588913","address":{"area_code":"560001"}}}}]}}}}'
+0|bpp  | Received '{"id":"8c097bac-240b-52c9-b8fb-702c1ec14f97","api":"select","callback":"on_select","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"select","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"d0e3a326-8433-4aa5-94d8-d7e09bfc8362","timestamp":"2022-11-23T14:36:29.067Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"location":{"gps":"12.96774, 77.588913","address":{"area_code":"560001"}}}}]}}}}'
+0|bpp  | { id: '8c097bac-240b-52c9-b8fb-702c1ec14f97',
+0|bpp  |   api: 'select',
+0|bpp  |   callback: 'on_select',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         action: 'select',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |         bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |         bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |         message_id: 'd0e3a326-8433-4aa5-94d8-d7e09bfc8362',
+0|bpp  |         timestamp: '2022-11-23T14:36:29.067Z',
+0|bpp  |         bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message: { order: [Object] } } }
+0|bpp  | on_select message below -----
+0|bpp  | {"order":{"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"location":{"gps":"12.96774, 77.588913","address":{"area_code":"560001"}}}}]}}
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_select
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_select","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"d0e3a326-8433-4aa5-94d8-d7e09bfc8362","timestamp":"2022-11-23T14:36:29.067Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","descriptor":{"name":"iFresh Nearshop","short_desc":"iFresh Fruits and Vegitable shop","images":["https://storage.googleapis.com/nearshop_live/https://storage.googleapis.com/nearshop_live/images/alpha/D.png"]},"locations":[{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location","gps":"0, 0","address":{"area_code":"739430","building":"Building","country":"IND","door":"Hennur","locality":"BLR","name":"iFresh Nearshop","state":"Karnataka%20","street":"BLR"},"city":{"name":"BLR","code":"BLR"},"country":{"name":"IND","code":"IND"}}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","price":{"currency":"INR","value":"105.90"},"quantity":{"selected":{"count":1}}}],"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"88.84576271186441"}},{"title":"Tax","price":{"currency":"INR","value":"16.154237288135597"}}],"ttl":"P4D"},"provider_location":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location"}}}}
+0|bpp  | (created): 1669214189
+0|bpp  | (expires): 1669232189
+0|bpp  | digest: BLAKE-512=EKEwpb/zNYG097f8QL8sWJVEt8M84LZrgx9jm9a9Y4TJ5WbVWRsq4lRQYjbec8dO5xY8U5s/5rmUyIcXH6NLnw==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214189",expires="1669232189",headers="(created) (expires) digest",signature="09EZBNii3ZgeNcYqSiYFDyu7AHueQrNWUVNgRTEy/3hKrF4cIgYFV5fIWjhyUSd3iU/r4VTpz4D592Hp2p+xDg=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"init","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4259db9b-0687-458f-a1f6-2268bae7ce61","timestamp":"2022-11-23T14:36:36.454Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"add_ons":[],"offers":[],"billing":{"address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"}}},"type":"Delivery","provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"type":"POST-FULFILLMENT","collected_by":"BPP","@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0","@ondc/org/ondc-withholding_amount":0,"@ondc/org/ondc-return_window":0,"@ondc/org/ondc-settlement_basis":"Collection","@ondc/org/ondc-settlement_window":"P2D"}}}}
+0|bpp  | Sent '{"id":"d99cd5a5-11a2-53d6-92a3-c5bfe7212340","api":"init","callback":"on_init","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"init","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4259db9b-0687-458f-a1f6-2268bae7ce61","timestamp":"2022-11-23T14:36:36.454Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"add_ons":[],"offers":[],"billing":{"address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"}}},"type":"Delivery","provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"type":"POST-FULFILLMENT","collected_by":"BPP","@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0","@ondc/org/ondc-withholding_amount":0,"@ondc/org/ondc-return_window":0,"@ondc/org/ondc-settlement_basis":"Collection","@ondc/org/ondc-settlement_window":"P2D"}}}}}'
+0|bpp  | Received '{"id":"d99cd5a5-11a2-53d6-92a3-c5bfe7212340","api":"init","callback":"on_init","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"init","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4259db9b-0687-458f-a1f6-2268bae7ce61","timestamp":"2022-11-23T14:36:36.454Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"add_ons":[],"offers":[],"billing":{"address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"}}},"type":"Delivery","provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"type":"POST-FULFILLMENT","collected_by":"BPP","@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0","@ondc/org/ondc-withholding_amount":0,"@ondc/org/ondc-return_window":0,"@ondc/org/ondc-settlement_basis":"Collection","@ondc/org/ondc-settlement_window":"P2D"}}}}}'
+0|bpp  | { id: 'd99cd5a5-11a2-53d6-92a3-c5bfe7212340',
+0|bpp  |   api: 'init',
+0|bpp  |   callback: 'on_init',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         action: 'init',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |         bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |         bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |         message_id: '4259db9b-0687-458f-a1f6-2268bae7ce61',
+0|bpp  |         timestamp: '2022-11-23T14:36:36.454Z',
+0|bpp  |         bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message: { order: [Object] } } }
+0|bpp  | on_init message below ----- undefined
+0|bpp  | {"order":{"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"add_ons":[],"offers":[],"billing":{"address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"}}},"type":"Delivery","provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"type":"POST-FULFILLMENT","collected_by":"BPP","@ondc/org/buyer_app_finder_fee_type":"Percent","@ondc/org/buyer_app_finder_fee_amount":"3.0","@ondc/org/ondc-withholding_amount":0,"@ondc/org/ondc-return_window":0,"@ondc/org/ondc-settlement_basis":"Collection","@ondc/org/ondc-settlement_window":"P2D"}}}
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_init
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_init","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"4259db9b-0687-458f-a1f6-2268bae7ce61","timestamp":"2022-11-23T14:36:36.454Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"105.90"}}],"ttl":"P4D"},"billing":{"address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com","tax_number":"4145a6f4-faf8-58bf-a215-d0e103189481","created_at":"2022-11-23T14:36:36.497Z","updated_at":"2022-11-23T14:36:36.497Z"},"fulfillment":{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064","name":"sumit kumar"}}},"type":"Delivery","provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"},"payment":{"collected_by":"BPP","./ondc-collected_by_status":"Assert","uri":"http://dummy.pay.ui/ahdasg1312","tl_method":"upi","type":"POST-FULFILLMENT","status":"NOT-PAID","params":{"amount":"105","currency":"INR"}}}}}
+0|bpp  | (created): 1669214196
+0|bpp  | (expires): 1669232196
+0|bpp  | digest: BLAKE-512=OC2B2HsziZox1jeUQNPOL5y8fw4uXsN+GgDxp/w6PvtnsHBIsw8fitTCcaAHmCMDDm50naMi4Y3ECcoGgNyYCw==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214196",expires="1669232196",headers="(created) (expires) digest",signature="TGJHxpfJZuEI71wHfesn4IpGxZWvgBp8D/XdmQiJ2SVPVoce//tZZPBF+6ZD9Eg0kdWmcjwd0UzRJnfvosVCAA=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger 
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"confirm","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"90dc232e-78d1-4512-ac51-20bac043e46f","timestamp":"2022-11-23T14:36:43.101Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"id":"2022-10-23-776842","state":"Created","billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"addOns":[],"offers":[],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"105.90"}}],"ttl":"P4D"}}}}
+0|bpp  | here -----
+0|bpp  | {"id":"84128cbf-9102-583a-bbc3-d01ea27dc22c","api":"confirm","callback":"on_confirm","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"confirm","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"90dc232e-78d1-4512-ac51-20bac043e46f","timestamp":"2022-11-23T14:36:43.101Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"id":"2022-10-23-776842","state":"Created","billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"addOns":[],"offers":[],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"105.90"}}],"ttl":"P4D"}}}}}
+0|bpp  | Sent '{"id":"84128cbf-9102-583a-bbc3-d01ea27dc22c","api":"confirm","callback":"on_confirm","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"confirm","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"90dc232e-78d1-4512-ac51-20bac043e46f","timestamp":"2022-11-23T14:36:43.101Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"id":"2022-10-23-776842","state":"Created","billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"addOns":[],"offers":[],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"105.90"}}],"ttl":"P4D"}}}}}'
+0|bpp  | Received '{"id":"84128cbf-9102-583a-bbc3-d01ea27dc22c","api":"confirm","callback":"on_confirm","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"confirm","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"90dc232e-78d1-4512-ac51-20bac043e46f","timestamp":"2022-11-23T14:36:43.101Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"id":"2022-10-23-776842","state":"Created","billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"addOns":[],"offers":[],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"105.90"}}],"ttl":"P4D"}}}}}'
+0|bpp  | { id: '84128cbf-9102-583a-bbc3-d01ea27dc22c',
+0|bpp  |   api: 'confirm',
+0|bpp  |   callback: 'on_confirm',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         action: 'confirm',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |         bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |         bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |         message_id: '90dc232e-78d1-4512-ac51-20bac043e46f',
+0|bpp  |         timestamp: '2022-11-23T14:36:43.101Z',
+0|bpp  |         bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message: { order: [Object] } } }
+0|bpp  | on_confirm message below -----
+0|bpp  | {"order":{"id":"2022-10-23-776842","state":"Created","billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":null}]},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"addOns":[],"offers":[],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"quote":{"price":{"currency":"INR","value":"105"},"breakup":[{"title":"Watermelon","price":{"currency":"INR","value":"105.90"}}],"ttl":"P4D"}}}
+0|bpp  | Order created successfully ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb
+0|bpp  | 794c571f-6343-4eb7-ba2b-50a00c0bbedd
+0|bpp  | ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_confirm
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_confirm","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"90dc232e-78d1-4512-ac51-20bac043e46f","timestamp":"2022-11-23T14:36:43.101Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"state":"Created","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"9f6cdf7d-dd47-50bc-a7d1-5a8088e3a97c"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"addOns":[],"offers":[],"documents":[],"id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"},"state":"Created"}}
+0|bpp  | (created): 1669214204
+0|bpp  | (expires): 1669232204
+0|bpp  | digest: BLAKE-512=mr3RdaD6ZNdO8Ggpec3ovTkLS/jkYIK2VHCj02QO/Am3SMxg/Cp4ZFeu2NZjMaIJcdEBMuWuhdhK8sfqlju3dA==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214204",expires="1669232204",headers="(created) (expires) digest",signature="t+J9ZGHNnrkB9ylq11Zv2qzofo8H7PfETNR7w72+MipI0s7VqdeKW6zUxTw3clLgmZO6Q7BPwX9HesvNAVlPDg=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"}}
+0|bpp  | Sent '{"id":"f7bda424-839c-5fe4-9bd5-f6b66dad6253","api":"status","callback":"on_status","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"}}}'
+0|bpp  | Received '{"id":"f7bda424-839c-5fe4-9bd5-f6b66dad6253","api":"status","callback":"on_status","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"}}}'
+0|bpp  | { id: 'f7bda424-839c-5fe4-9bd5-f6b66dad6253',
+0|bpp  |   api: 'status',
+0|bpp  |   callback: 'on_status',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         action: 'status',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |         bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |         bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |         message_id: '094783e4-4927-49bd-9f15-8131761a5dee',
+0|bpp  |         timestamp: '2022-11-23T14:36:52.885Z',
+0|bpp  |         bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message: { order_id: 'ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb' } } }
+0|bpp  | on_status message below -----
+0|bpp  | {"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"}
+0|bpp  | query{
+0|bpp  | 		SettlementData(filter:{order: {id: "ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"}}){
+0|bpp  | 			id settlementDetails settlementBy isSettled settledDetails order { id } 
+0|bpp  | 		}
+0|bpp  | 	  }
+0|bpp  | { data: { SettlementData: [ [Object] ] } }
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_status
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"state":"Created","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"9f6cdf7d-dd47-50bc-a7d1-5a8088e3a97c"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"addOns":[],"offers":[],"documents":[],"id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"},"state":"Created"}}
+0|bpp  | (created): 1669214216
+0|bpp  | (expires): 1669232216
+0|bpp  | digest: BLAKE-512=3vUIguJzsGJYWOYRCPlWCqA4PoGoFbOCNEriF8ijGRtI7MIix20aN+LOdHM00+r/+SDlK9CM/xJ2hp7+CpCgQQ==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214216",expires="1669232216",headers="(created) (expires) digest",signature="sEUg7zCdiaIGXMm0AHBQlzh1N9jHvrgN2nPYSkC+s5LCBRzVjeZd+C4EtmSCmEEp/BGikiOiUGMKnowiCkwXDw=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_status
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"state":"Created","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"9f6cdf7d-dd47-50bc-a7d1-5a8088e3a97c"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"addOns":[],"offers":[],"documents":[],"id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"},"state":"Created"}}
+0|bpp  | (created): 1669214231
+0|bpp  | (expires): 1669232231
+0|bpp  | digest: BLAKE-512=3vUIguJzsGJYWOYRCPlWCqA4PoGoFbOCNEriF8ijGRtI7MIix20aN+LOdHM00+r/+SDlK9CM/xJ2hp7+CpCgQQ==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214231",expires="1669232231",headers="(created) (expires) digest",signature="v7MdewCsas07/KYduk0AdN4VOOxdMtHEocJtKQkBgP+SahykS6/x6ib5GEztLATO2U6wx/MCR8NcIh4SS00AAw=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_status
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"state":"Created","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"9f6cdf7d-dd47-50bc-a7d1-5a8088e3a97c"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"addOns":[],"offers":[],"documents":[],"id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"},"state":"Created"}}
+0|bpp  | (created): 1669214246
+0|bpp  | (expires): 1669232246
+0|bpp  | digest: BLAKE-512=3vUIguJzsGJYWOYRCPlWCqA4PoGoFbOCNEriF8ijGRtI7MIix20aN+LOdHM00+r/+SDlK9CM/xJ2hp7+CpCgQQ==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214246",expires="1669232246",headers="(created) (expires) digest",signature="vZEvz32FUQTUMCcqulkW9L1qdSq5CYcoQoBEvV40kxp60viAB2N0lbu5UCZ8cq5laqLwgRFJWo3+qUlER6QODQ=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+
+
+
+
+
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_status
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_status","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"094783e4-4927-49bd-9f15-8131761a5dee","timestamp":"2022-11-23T14:36:52.885Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"state":"Created","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"9f6cdf7d-dd47-50bc-a7d1-5a8088e3a97c"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"addOns":[],"offers":[],"documents":[],"id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"},"state":"Created"}}
+0|bpp  | (created): 1669214261
+0|bpp  | (expires): 1669232261
+0|bpp  | digest: BLAKE-512=3vUIguJzsGJYWOYRCPlWCqA4PoGoFbOCNEriF8ijGRtI7MIix20aN+LOdHM00+r/+SDlK9CM/xJ2hp7+CpCgQQ==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214261",expires="1669232261",headers="(created) (expires) digest",signature="Czv6nFnvFAtYT57ur8JD4gwSeDwfRl2FnVkny5LZThCPptQNgOTHo6XUihJinWr5cZZ8vaPZS1mBhU4SQRUPAg=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } } }
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"cancel","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"2f32bbdd-a7b4-44d3-938d-a5012695637b","timestamp":"2022-11-23T14:37:50.527Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb","cancellation_reason_id":"001"}}
+0|bpp  | Sent '{"id":"e8dc5474-80d2-53a7-89f8-68c064539cc8","api":"cancel","callback":"on_cancel","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"cancel","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"2f32bbdd-a7b4-44d3-938d-a5012695637b","timestamp":"2022-11-23T14:37:50.527Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb","cancellation_reason_id":"001"}}}'
+0|bpp  | Received '{"id":"e8dc5474-80d2-53a7-89f8-68c064539cc8","api":"cancel","callback":"on_cancel","payload":{"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"cancel","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"2f32bbdd-a7b4-44d3-938d-a5012695637b","timestamp":"2022-11-23T14:37:50.527Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb","cancellation_reason_id":"001"}}}'
+0|bpp  | { id: 'e8dc5474-80d2-53a7-89f8-68c064539cc8',
+0|bpp  |   api: 'cancel',
+0|bpp  |   callback: 'on_cancel',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         action: 'cancel',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         bap_id: 'buyer-app-preprod.ondc.org',
+0|bpp  |         bap_uri: 'https://buyer-app-preprod.ondc.org/protocol/v1',
+0|bpp  |         bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         transaction_id: '794c571f-6343-4eb7-ba2b-50a00c0bbedd',
+0|bpp  |         message_id: '2f32bbdd-a7b4-44d3-938d-a5012695637b',
+0|bpp  |         timestamp: '2022-11-23T14:37:50.527Z',
+0|bpp  |         bpp_id: 'api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message:
+0|bpp  |       { order_id: 'ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb',
+0|bpp  |         cancellation_reason_id: '001' } } }
+0|bpp  | on_cancel message below -----
+0|bpp  | {"order_id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb","cancellation_reason_id":"001"}
+0|bpp  | https://buyer-app-preprod.ondc.org/protocol/v1/on_cancel
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","action":"on_cancel","core_version":"1.0.0","bap_id":"buyer-app-preprod.ondc.org","bap_uri":"https://buyer-app-preprod.ondc.org/protocol/v1","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"794c571f-6343-4eb7-ba2b-50a00c0bbedd","message_id":"2f32bbdd-a7b4-44d3-938d-a5012695637b","timestamp":"2022-11-23T14:37:50.527Z","bpp_id":"api.staging.nearshop.in/bpp/api/v1","ttl":"PT30S"},"message":{"order":{"state":"Cancelled","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"9f6cdf7d-dd47-50bc-a7d1-5a8088e3a97c"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"},"phone":"9898989898","name":"sumit kumar","email":"sumitait5219@gmail.com"},"fulfillments":[{"end":{"contact":{"email":"sumitait5219@gmail.com","phone":"9898989898"},"person":{"name":"sumit kumar"},"location":{"gps":"13.119769, 77.588122","address":{"door":"ABC","name":"sumit kumar","building":"ABC","street":"ABC street","city":"Bengaluru","state":"Karnataka","country":"IND","area_code":"560064"}}},"type":"Delivery","customer":{"person":{"name":"sumit kumar"}},"provider_id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7"}],"payment":{"params":{"amount":"105","currency":"INR"},"status":"NOT-PAID","type":"POST-FULFILLMENT","collected_by":"BPP"},"addOns":[],"offers":[],"documents":[],"id":"ce3bc8a9-23ce-418d-a253-9b4cc67dd5eb"},"state":"Cancelled"}}
+0|bpp  | (created): 1669214273
+0|bpp  | (expires): 1669232273
+0|bpp  | digest: BLAKE-512=o9sBpUtOQ5+b1PCcNSJMdA/u5oh0leJ+Rq64LBCR3Xt2o8l1L4AcIFybjIUzaBqdwCEapHWntnu4P0t7872c1g==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1669214273",expires="1669232273",headers="(created) (expires) digest",signature="s370hMVWKy1cOyXY1izwyP+R/Py1YLWnVoel3GmYGn5QTiWgraigmx/QsHRwtV1hTYlzPl9gm/HzWgJAK18uBQ=="
+0|bpp  | { context: null, message: { ack: { status: 'ACK' } }
