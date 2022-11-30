@@ -1,55 +1,101 @@
 request = {
-    "context": {
-        "domain": "nic2004:52110",
-        "country": "IND",
-        "city": "std:080",
-        "core_version": "1.0.0",
-        "action": "status",
-        "bap_id": "beta.mystore.in",
-        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
-        "bpp_id": "buy.sellmore.app",
-        "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp",
-        "transaction_id": "abd00f8c-a984-40fc-8054-e1d6a23a2d97",
-        "message_id": "fa4d9aa7-3fd2-434d-b87c-de76efea3677",
-        "timestamp": "2022-11-25T15:20:57.500Z",
-        "ttl": "PT30S"
-    },
-    "message": {
-        "order_id": "6380bf675db152bfe915f717"
-    }
+	"context": {
+		"city": "std:080",
+		"domain": "nic2004:52110",
+		"bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp",
+		"core_version": "1.0.0",
+		"country": "IND",
+		"bap_id": "beta.mystore.in",
+		"bpp_id": "buy.sellmore.app",
+		"timestamp": "2022-11-30T13:44:34.181Z",
+		"action": "status",
+		"bap_uri": "https://beta.mystore.in/ondc/1.0/",
+		"message_id": "c260c56d-cda5-4cb9-bd8d-e9e5ec1e5e76",
+		"transaction_id": "e7d099ed-f1b5-4890-bc3c-ccd12d441b17"
+	},
+	"message": {
+		"order_id": "638758b41598b445216cd337"
+	}
 }
-
 response = {
   "context": {
-    "domain": "nic2004:52110",
-    "country": "IND",
-    "city": "std:080",
     "action": "on_status",
-    "core_version": "1.0.0",
-    "transaction_id": "abd00f8c-a984-40fc-8054-e1d6a23a2d97",
-    "message_id": "d17e165e-f19b-41f8-b1d1-6e36619f66b1",
-    "timestamp": "2022-11-25T15:20:58.063Z",
     "bap_id": "beta.mystore.in",
     "bap_uri": "https://beta.mystore.in/ondc/1.0/",
     "bpp_id": "buy.sellmore.app",
-    "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp/"
+    "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp/",
+    "city": "std:080",
+    "core_version": "1.0.0",
+    "country": "IND",
+    "domain": "nic2004:52110",
+    "message_id": "c260c56d-cda5-4cb9-bd8d-e9e5ec1e5e76",
+    "timestamp": "2022-11-30T13:44:34.348Z",
+    "transaction_id": "e7d099ed-f1b5-4890-bc3c-ccd12d441b17"
   },
   "message": {
     "order": {
-      "id": "6380bf675db152bfe915f717",
-      "state": "Completed",
-      "provider": {
-        "id": "111863",
-        "locations": [
-          {
-            "id": "148273"
-          }
-        ]
+      "billing": {
+        "address": {
+          "area_code": "560016",
+          "city": "Bengaluru",
+          "country": "IN",
+          "name": "560016 Bengaluru Bengaluru Urban",
+          "state": "Karnataka"
+        },
+        "email": "vikram.acharya@craftsvilla.com",
+        "name": "Trest usery",
+        "phone": "+917207746376"
       },
+      "created_at": "2022-11-30T13:20:52.787Z",
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "P4D",
+          "@ondc/org/category": "Immediate Delivery",
+          "@ondc/org/provider_name": "Innoviti",
+          "end": {
+            "contact": {
+              "phone": "+917207746376"
+            },
+            "location": {
+              "address": {
+                "area_code": "560016",
+                "city": "Bengaluru",
+                "country": "IN",
+                "name": "560016 Bengaluru Bengaluru Urban",
+                "state": "Karnataka"
+              },
+              "gps": "13.01659,77.68040"
+            }
+          },
+          "id": 1,
+          "start": {
+            "contact": {
+              "email": "growth@plotch.ai",
+              "phone": "7738638938"
+            },
+            "location": {
+              "descriptor": {
+                "images": [],
+                "name": "Innoviti"
+              },
+              "gps": "13.0306162,77.667275"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered",
+              "name": "Order delivered"
+            }
+          },
+          "tracking": false,
+          "type": "Delivery"
+        }
+      ],
+      "id": "638758b41598b445216cd337",
       "items": [
         {
-          "id": "42673279.0",
           "fulfillment_id": "Fulfillment1",
+          "id": "42673279.0",
           "quantity": {
             "count": 1
           },
@@ -58,99 +104,92 @@ response = {
           }
         }
       ],
-      "billing": {
-        "name": "Trest usery",
-        "address": {
-          "name": "560016 Bengaluru Bengaluru Urban",
-          "city": "Bengaluru",
-          "state": "Karnataka",
-          "country": "IN",
-          "area_code": "560016"
-        },
-        "email": "vikram.acharya@craftsvilla.com",
-        "phone": "+917207746376"
-      },
-      "fulfillments": [
-        {
-          "id": 1,
-          "@ondc/org/provider_name": "Innoviti",
-          "type": "Delivery",
-          "tracking": false,
-          "@ondc/org/category": "Immediate Delivery",
-          "@ondc/org/TAT": "P4D",
-          "state": {
-            "descriptor": {
-              "name": "Order delivered",
-              "code": "Order-delivered"
-            }
-          },
-          "start": {
-            "location": {
-              "descriptor": {
-                "name": "Innoviti",
-                "images": []
-              },
-              "gps": "13.0306162,77.667275"
-            },
-            "contact": {
-              "phone": "7738638938",
-              "email": "growth@plotch.ai"
-            }
-          },
-          "end": {
-            "location": {
-              "gps": "",
-              "address": {
-                "name": "560016 Bengaluru Bengaluru Urban",
-                "city": "Bengaluru",
-                "state": "Karnataka",
-                "country": "IN",
-                "area_code": "560016"
-              }
-            },
-            "contact": {
-              "phone": "+917207746376"
-            }
-          }
-        }
-      ],
-      "quote": {
-        "name": "Trest usery",
-        "address": {
-          "name": "560016 Bengaluru Bengaluru Urban",
-          "city": "Bengaluru",
-          "state": "Karnataka",
-          "country": "IN",
-          "area_code": "560016"
-        },
-        "email": "vikram.acharya@craftsvilla.com",
-        "phone": "+917207746376"
-      },
       "payment": {
-        "type": "ON-ORDER",
-        "collected_by": "BAP",
-        "@ondc/org/buyer_app_finder_fee_type": "fixed",
         "@ondc/org/buyer_app_finder_fee_amount": "3",
-        "@ondc/org/withholding_amount": "0.00",
+        "@ondc/org/buyer_app_finder_fee_type": "fixed",
         "@ondc/org/return_window": "0",
         "@ondc/org/settlement_basis": "Collection",
-        "@ondc/org/settlement_window": "P2D",
         "@ondc/org/settlement_details": [
           {
+            "bank_name": "ICICI",
+            "beneficiary_name": "Innoviti",
+            "branch_name": "Dahisar",
+            "settlement_bank_account_no": "123121311",
             "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "ICICI0001",
             "settlement_phase": "sale-amount",
             "settlement_type": "neft",
-            "upi_address": "innovi@okicici",
-            "settlement_bank_account_no": "123121311",
-            "settlement_ifsc_code": "ICICI0001",
-            "beneficiary_name": "Innoviti",
-            "bank_name": "ICICI",
-            "branch_name": "Dahisar"
+            "upi_address": "innovi@okicici"
+          }
+        ],
+        "@ondc/org/settlement_window": "P2D",
+        "@ondc/org/withholding_amount": "0.00",
+        "collected_by": "BAP",
+        "type": "ON-ORDER"
+      },
+      "provider": {
+        "id": "111863",
+        "locations": [
+          {
+            "id": "148273"
           }
         ]
       },
-      "created_at": "2022-11-25T15:19:38.619Z",
-      "updated_at": "2022-11-25T15:19:38.619Z"
+      "quote": {
+        "price": {
+          "breakup": [
+            {
+              "@ondc/org/item_id": "42673279",
+              "@ondc/org/item_quantity": {
+                "count": 1
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": 100
+                },
+                "quantity": {
+                  "available": {
+                    "count": "100"
+                  },
+                  "maximum": {
+                    "count": "100"
+                  }
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": 100
+              },
+              "title": "Ciba Spices updated"
+            },
+            {
+              "@ondc/org/item_id": "1",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": 23
+              },
+              "title": "Delivery charges"
+            },
+            {
+              "@ondc/org/item_id": "1",
+              "@ondc/org/title_type": "packing",
+              "price": {
+                "currency": "INR",
+                "value": 25
+              },
+              "title": "Packing charges"
+            }
+          ],
+          "currency": "INR",
+          "value": "148.0"
+        },
+        "ttl": "P1D"
+      },
+      "state": "Completed",
+      "updated_at": "2022-11-30T13:44:34.348Z"
     }
   }
 }
