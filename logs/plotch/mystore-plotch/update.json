@@ -1,0 +1,104 @@
+request = {
+    "context": {
+        "domain": "nic2004:52110",
+        "action": "update",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "buy.sellmore.app",
+        "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp",
+        "transaction_id": "43afbfed-ee8d-43d9-8992-66a4595acf19",
+        "message_id": "9653a4f2-79b6-4a06-b5f6-1196d4679cb6",
+        "timestamp": "2022-12-05T11:21:04.483Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "update_target": "item",
+        "order": {
+            "id": "638dbaa16d7852ee548e5eba",
+            "state": "Created",
+            "provider": {
+                "id": "111863"
+            },
+            "items": [
+                {
+                    "id": "42739746",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": {
+                        "update_type": "cancel",
+                        "reason_code": "005"
+                    }
+                }
+            ],
+            "payment": {
+                "@ondc/org/settlement_details": []
+            }
+        }
+    }
+}
+
+
+response = {
+  "context": {
+    "domain": "nic2004:52110",
+    "action": "on_update",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "1.0.0",
+    "bap_id": "beta.mystore.in",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_id": "buy.sellmore.app",
+    "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp",
+    "transaction_id": "43afbfed-ee8d-43d9-8992-66a4595acf19",
+    "message_id": "9653a4f2-79b6-4a06-b5f6-1196d4679cb6",
+    "timestamp": "2022-12-05T11:21:44.483Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "638dbaa16d7852ee548e5eba",
+      "state": "Created",
+      "items": [
+        {
+          "id": "42739746",
+          "fulfillment_id": "Fulfillment1-ReverseQC",
+          "quantity": {
+            "count": "1"
+          },
+          "tags": {
+            "status": "Cancelled"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "101"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "42739746",
+            "@ondc/org/item_quantity": {
+              "count": "1"
+            },
+            "price": {
+              "currency": "INR",
+              "value": "101"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "101"
+              }
+            }
+          }
+        ]
+      },
+      "fulfillments": []
+    }
+  }
+}
