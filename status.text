@@ -1,0 +1,51 @@
+0|bpp  | { id: '0748e9b0-2c47-5215-a934-cfd68b89e68e',
+0|bpp  |   api: 'status',
+0|bpp  |   callback: 'on_status',
+0|bpp  |   payload:
+0|bpp  |    { context:
+0|bpp  |       { domain: 'nic2004:52110',
+0|bpp  |         country: 'IND',
+0|bpp  |         city: 'std:080',
+0|bpp  |         core_version: '1.0.0',
+0|bpp  |         action: 'status',
+0|bpp  |         bap_id: 'beta.mystore.in',
+0|bpp  |         bap_uri: 'https://beta.mystore.in/ondc/1.0/',
+0|bpp  |         bpp_id: 'api.staging.nearshop.in',
+0|bpp  |         bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |         transaction_id: 'be800e7b-3665-4362-8829-380e704296b1',
+0|bpp  |         message_id: '0b10ea50-e777-483e-bc61-01cea1b4055f',
+0|bpp  |         timestamp: '2022-12-13T10:20:23.301Z',
+0|bpp  |         ttl: 'PT30S' },
+0|bpp  |      message: { order_id: '59276a22-e058-444c-91d9-abe705ffc444' } } }
+0|bpp  | on_status message below -----
+0|bpp  | {"order_id":"59276a22-e058-444c-91d9-abe705ffc444"}
+0|bpp  | query{
+0|bpp  | 		SettlementData(filter:{order: {id: "59276a22-e058-444c-91d9-abe705ffc444"}}){
+0|bpp  | 			id settlementDetails settlementBy isSettled settledDetails order { id } 
+0|bpp  | 		}
+0|bpp  | 	  }
+0|bpp  | { data: { SettlementData: [ [Object] ] } }
+0|bpp  | ...Going to send on_status for order ids to BAP
+0|bpp  | on_status_trigger 59276a22-e058-444c-91d9-abe705ffc444
+0|bpp  | https://beta.mystore.in/ondc/1.0/on_status
+0|bpp  | {"context":{"domain":"nic2004:52110","country":"IND","city":"std:080","core_version":"1.0.0","action":"on_status","bap_id":"beta.mystore.in","bap_uri":"https://beta.mystore.in/ondc/1.0/","bpp_id":"api.staging.nearshop.in","bpp_uri":"https://api.staging.nearshop.in/bpp/api/v1","transaction_id":"be800e7b-3665-4362-8829-380e704296b1","message_id":"0b10ea50-e777-483e-bc61-01cea1b4055f","timestamp":"2022-12-13T10:20:23.301Z","ttl":"PT30S"},"message":{"order":{"state":"Created","provider":{"id":"44f1a436-8eb8-5bb7-93e7-39e2324efcb7","locations":[{"id":"db076df3-54c7-56bf-950f-bac9a89aeee9"}]},"items":[{"id":"fea40eec-fa72-4230-9e5d-40eb606e70db","quantity":{"count":1}}],"billing":{"name":"Sumit Kumar","address":{"name":"Chokkanahalli ","city":"Bengaluru","state":"Karnataka","country":"IN","area_code":"560064"},"email":"sumitait5219@gmail.com","phone":"+919886394142"},"fulfillments":[{"type":"Delivery","tracking":false,"end":{"location":{"gps":"13.0866293,77.6224448","address":{"name":"Chokkanahalli ","city":"Bengaluru","state":"Karnataka","country":"IN","area_code":"560064"}},"contact":{"phone":"+919886394142","email":"sumitait5219@gmail.com"}},"id":"Fulfillment1"}],"payment":{"./ondc-collected_by_status":"Assert","uri":"upi://pay?pa=i25@DBS&amp;pn=Ronit&amp;&tr=123456789&amp;cu=INR&amp;am=1","tl_method":"upi","params":{"transaction_id":"TXN-kjRk6k977","amount":"105.0000","currency":"INR"},"type":"ON-ORDER","status":"PAID","collected_by":"BAP"},"addOns":[],"offers":[],"documents":[{"url":"","label":""}],"id":"59276a22-e058-444c-91d9-abe705ffc444"},"state":"Created"}}
+0|bpp  | (created): 1670926828
+0|bpp  | (expires): 1670944828
+0|bpp  | digest: BLAKE-512=Pn1cL0HSx4/4RIen5XBLaqhhQKEAgyZQsdDz1B7H8vdsrRa7e3LaEvMl5Qb93L3psS4PbyMqCtZp1WZNj0ncEw==
+0|bpp  | true
+0|bpp  | Signature keyId="api.staging.nearshop.in|3203ad9a-b20f-4dad-a741-0e347ec9f4d5|ed25519",algorithm="ed25519",created="1670926828",expires="1670944828",headers="(created) (expires) digest",signature="JT11amwKlaAVurp8ukEY7EQ4V+jj/eCrCe3anYx+XYL7j7kKWQsAgphDdKqzYu500c1tQfOLQxEN4KgT7Jl3Aw=="
+0|bpp  | { context:
+0|bpp  |    { domain: 'nic2004:52110',
+0|bpp  |      country: 'IND',
+0|bpp  |      city: 'std:080',
+0|bpp  |      core_version: '1.0.0',
+0|bpp  |      action: 'on_status',
+0|bpp  |      bap_id: 'beta.mystore.in',
+0|bpp  |      bap_uri: 'https://beta.mystore.in/ondc/1.0/',
+0|bpp  |      bpp_id: 'api.staging.nearshop.in',
+0|bpp  |      bpp_uri: 'https://api.staging.nearshop.in/bpp/api/v1',
+0|bpp  |      transaction_id: 'be800e7b-3665-4362-8829-380e704296b1',
+0|bpp  |      message_id: '0b10ea50-e777-483e-bc61-01cea1b4055f',
+0|bpp  |      timestamp: '2022-12-13T10:20:23.301Z',
+0|bpp  |      ttl: 'PT30S' },
+0|bpp  |   message: { ack: { status: 'ACK' } } }
