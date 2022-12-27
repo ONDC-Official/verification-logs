@@ -1,0 +1,101 @@
+/** Request **/
+{
+  "context": {
+    "ttl": "PT30S",
+    "city": "std:080",
+    "action": "update",
+    "bap_id": "ondc.indiastack.cloud",
+    "bpp_id": "kitchens-at.com",
+    "domain": "nic2004:52110",
+    "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/",
+    "bpp_uri": "https://kitchens-at.com/ondc_preprod/Retailer/",
+    "country": "IND",
+    "timestamp": "2022-12-21T10:57:57.819Z",
+    "message_id": "8407ce30-959d-4967-890b-bb106ba40d34",
+    "core_version": "1.0.0",
+    "transaction_id": "f1ef09ed-460d-4ec1-86d5-e4c7dd666edf"
+  },
+  "message": {
+    "order": {
+      "id": "fafe101f-2dfb-43ef-83b2-eade51754a86",
+      "items": [
+        {
+          "id": "2742_50582",
+          "tags": {
+            "reason_code": "003",
+            "update_type": "cancel"
+          },
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "state": "Created",
+      "payment": {
+        "@ondc/org/settlement_details": [
+          
+        ]
+      },
+      "provider": {
+        "id": "2742"
+      }
+    },
+    "update_target": "item"
+  }
+}
+
+/** Response **/
+{
+  "context": {
+    "ttl": "PT30S",
+    "city": "std:080",
+    "action": "on_update",
+    "bap_id": "ondc.indiastack.cloud",
+    "bpp_id": "kitchens-at.com",
+    "domain": "nic2004:52110",
+    "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/",
+    "bpp_uri": "https://kitchens-at.com/ondc_preprod/Retailer/",
+    "country": "IND",
+    "timestamp": "2022-12-21T10:57:58.000Z",
+    "message_id": "8407ce30-959d-4967-890b-bb106ba40d34",
+    "core_version": "1.0.0",
+    "transaction_id": "f1ef09ed-460d-4ec1-86d5-e4c7dd666edf"
+  },
+  "message": {
+    "order": {
+      "id": "fafe101f-2dfb-43ef-83b2-eade51754a86",
+      "items": [
+        {
+          "id": "2742_50582",
+          "tags": {
+            "status": "Cancelled"
+          },
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "229",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "item": {
+              "price": {
+                "value": "229",
+                "currency": "INR"
+              }
+            },
+            "@ondc/org/item_id": "2742_50582",
+            "@ondc/org/item_quantity": {
+              "count": "1"
+            }
+          }
+        ]
+      },
+      "state": "Created"
+    }
+  }
+}

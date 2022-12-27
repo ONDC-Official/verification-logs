@@ -1,0 +1,200 @@
+/*** Request **/
+{
+  "context": {
+    "ttl": "PT30S",
+    "city": "std:080",
+    "action": "select",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bpp_id": "kitchens-at.com",
+    "domain": "nic2004:52110",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_uri": "https://kitchens-at.com/ondc_preprod/Retailer/",
+    "country": "IND",
+    "timestamp": "2022-12-13T08:43:30.987Z",
+    "message_id": "88278e41-5e71-4a02-9f18-fa396a5f1d0a",
+    "core_version": "1.0.0",
+    "transaction_id": "510c7e30-e253-42ee-9d65-8ab3216e420d"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "2026_39720",
+          "quantity": {
+            "count": 1
+          }
+        },
+        {
+          "id": "2026_39723",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "provider": {
+        "id": "2026",
+        "locations": [
+          {
+            "id": "2026_location"
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "location": {
+              "gps": "12.8911200000001, 77.581959",
+              "address": {
+                "area_code": "560078"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+/**** Response ***/
+{
+  "context": {
+    "ttl": "PT30S",
+    "city": "std:080",
+    "action": "on_select",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bpp_id": "kitchens-at.com",
+    "domain": "nic2004:52110",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_uri": "https://kitchens-at.com/ondc_preprod/Retailer/",
+    "country": "IND",
+    "timestamp": "2022-12-13T08:43:30.987Z",
+    "message_id": "88278e41-5e71-4a02-9f18-fa396a5f1d0a",
+    "core_version": "1.0.0",
+    "transaction_id": "510c7e30-e253-42ee-9d65-8ab3216e420d"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "2026_39720",
+          "price": {
+            "value": "159.6",
+            "currency": "INR"
+          },
+          "quantity": {
+            "count": 1
+          }
+        },
+        {
+          "id": "2026_39723",
+          "price": {
+            "value": "119.7",
+            "currency": "INR"
+          },
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "quote": {
+        "ttl": "PT2S",
+        "price": {
+          "value": "286.3",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "price": {
+              "value": "152",
+              "currency": "INR"
+            },
+            "title": "Chicken Biriyani [QTR]",
+            "@ondc/org/item_id": "2026_39720",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            }
+          },
+          {
+            "price": {
+              "value": "7.6",
+              "currency": "INR"
+            },
+            "title": "Tax",
+            "@ondc/org/item_id": "2026_39720",
+            "@ondc/org/title_type": "tax"
+          },
+          {
+            "price": {
+              "value": "114",
+              "currency": "INR"
+            },
+            "title": "Egg Biriyani [HALF]",
+            "@ondc/org/item_id": "2026_39723",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            }
+          },
+          {
+            "price": {
+              "value": "5.7",
+              "currency": "INR"
+            },
+            "title": "Tax",
+            "@ondc/org/item_id": "2026_39723",
+            "@ondc/org/title_type": "tax"
+          },
+          {
+            "price": {
+              "value": "10",
+              "currency": "INR"
+            },
+            "title": "Packaging Charge",
+            "@ondc/org/item_id": "123",
+            "@ondc/org/title_type": "packing"
+          },
+          {
+            "price": {
+              "value": "-20",
+              "currency": "INR"
+            },
+            "title": "Discounts",
+            "@ondc/org/title_type": "discount"
+          },
+          {
+            "price": {
+              "value": "17",
+              "currency": "INR"
+            },
+            "title": "Delivery Charge",
+            "@ondc/org/item_id": "123",
+            "@ondc/org/title_type": "delivery"
+          }
+        ]
+      },
+      "provider": {
+        "id": "2026",
+        "locations": [
+          {
+            "id": "2026_location"
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "123",
+          "state": {
+            "descriptor": {
+              "name": "Serviceable"
+            }
+          },
+          "tracking": false,
+          "@ondc/org/TAT": "PT45M",
+          "@ondc/org/category": "Immediate Delivery",
+          "@ondc/org/provider_name": "k@"
+        }
+      ]
+    }
+  }
+}
