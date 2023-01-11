@@ -3,21 +3,23 @@
     "domain": "nic2004:52110",
     "country": "IND",
     "city": "std:080",
-    "action": "confirm",
+    "action": "on_init",
     "core_version": "1.0.0",
     "bap_id": "ondc.eunimart.com",
     "bap_uri": "https://ondc.eunimart.com/api/v1/ondc/bap/eunimart_bap/",
     "transaction_id": "488dcae2-8a01-4d48-ab15-94754f105f92",
-    "ttl": "P1M",
-    "message_id": "5e38b41b-1408-4aae-bec9-660df6dc6b4d",
-    "timestamp": "2023-01-09T14:09:30.528Z",
+    "ttl": "PT30S",
+    "message_id": "d27115ce-3447-466f-9918-ec7a51e16b3f",
+    "timestamp": "2023-01-09T14:08:55.888Z",
     "bpp_id": "b-ondc-seller-bpp.nlincs.in",
     "bpp_uri": "https://b-ondc-seller-bpp.nlincs.in/bpp"
   },
   "message": {
     "order": {
-      "id": "c5da6ea7-3b2e-46e8-8c10-bf1ac422d5dc",
-      "state": "Created",
+      "provider": { "id": "20257" },
+      "items": [
+        { "fulfillment_id": "20257", "id": "1102", "quantity": { "count": 1 } }
+      ],
       "billing": {
         "address": {
           "door": "Address Line 1 *",
@@ -36,28 +38,6 @@
         "created_at": "2023-01-09T14:08:55.888Z",
         "updated_at": "2023-01-09T14:08:55.888Z"
       },
-      "delivery_info": {
-        "address": {
-          "door": "Address Line 1 *",
-          "building": "Address Line 2 *",
-          "street": "",
-          "city": "Hyderabad",
-          "state": "Telangana",
-          "country": "",
-          "areaCode": "500076",
-          "name": "Sridhar",
-          "area_code": "500076"
-        },
-        "phone": "9999999999",
-        "name": "Sridhar",
-        "email": "sri@test.com",
-        "created_at": "2023-01-09T14:08:55.888Z",
-        "updated_at": "2023-01-09T14:08:55.888Z"
-      },
-      "items": [
-        { "id": "1102", "quantity": { "count": 1 }, "fulfillment_id": "20257" }
-      ],
-      "provider": { "id": "20257", "locations": [{ "id": "20257" }] },
       "fulfillments": [
         {
           "id": "20257",
@@ -82,32 +62,6 @@
           "tracking": false
         }
       ],
-      "addOns": [],
-      "offers": [],
-      "payment": {
-        "params": { "currency": "INR" },
-        "status": "NOT-PAID",
-        "type": "PRE-FULFILLMENT",
-        "collected_by": "BPP",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "buyer-app",
-            "settlement_phase": "sale-amount",
-            "settlement_type": "upi",
-            "upi_address": "gft@oksbi",
-            "settlement_bank_account_no": "XXXXXXXXXX",
-            "settlement_ifsc_code": "XXXXXXXXX",
-            "beneficiary_name": "xxxxx",
-            "bank_name": "xxxx",
-            "branch_name": "xxxx"
-          }
-        ],
-        "@ondc/org/withholding_amount": "0.0",
-        "@ondc/org/return_window": 0,
-        "@ondc/org/settlement_basis": "Collection",
-        "@ondc/org/settlement_window": "PT2D"
-      },
-      "documents": [{ "url": "", "label": "Invoice" }],
       "quote": {
         "price": { "currency": "INR", "value": "1.00" },
         "breakup": [
@@ -123,6 +77,23 @@
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": { "currency": "INR", "value": "0.00" }
+          }
+        ]
+      },
+      "payment": {
+        "collected_by": "BAP",
+        "@ondc/org/collected_by_status": "Agree",
+        "type": "ON-ORDER",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "021205008922",
+            "settlement_ifsc_code": "ICIC0000212",
+            "beneficiary_name": "NSTORE TECHNOLOGIES PRIVATE LIMITED",
+            "bank_name": "ICICI BANK LTD",
+            "branch_name": "CHENNAI - SANTHOME"
           }
         ]
       }
