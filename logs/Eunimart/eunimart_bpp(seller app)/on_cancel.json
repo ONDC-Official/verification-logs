@@ -1,0 +1,109 @@
+{
+    "context": {
+      "domain": "nic2004:52110",
+      "action": "on_cancel",
+      "country": "IND",
+      "city": "std:040",
+      "core_version": "1.0.0",
+      "bpp_id": "ondc.eunimart.com",
+      "bpp_uri": "https://ondc.eunimart.com/api/v1/ondc/bpp/eunimart_bpp/",
+      "bap_id": "ondc.indiastack.cloud",
+      "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/",
+      "transaction_id": "4b4227c0-db28-40a1-be5f-0003bdab4188",
+      "message_id": "a82bce49-d0dc-4cc6-b6ad-ba53cb58b121",
+      "timestamp": "2023-01-12T04:25:16.789Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "id": "d8a39f31-3a1f-4671-9021-47892576b0c6",
+        "state": "Cancelled",
+        "tags": {
+          "cancellation_reason_id": "002"
+        },
+        "fulfillments": [
+          {
+            "id": "3a1f",
+            "state": {
+              "descriptor": {
+                "code": "Cancelled",
+                "name": "Cancelled"
+              }
+            },
+            "tags": [
+              {
+                "code": "rto",
+                "list": [
+                  {
+                    "code": "retry_count",
+                    "value": "3"
+                  },
+                  {
+                    "code": "rto_id",
+                    "value": "3a1f-RTO"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "Fulfillment1-RTO",
+            "type": "RTO",
+            "state": {
+              "descriptor": {
+                "code": "RTO-Initiated",
+                "name": "RTO Initiated"
+              }
+            },
+            "start": {
+              "time": {
+                "range": {
+                  "start": "2022-06-13T10:00:00.000Z",
+                  "end": "2022-12-04T10:30:00.000Z"
+                }
+              }
+            }
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "969.0"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "QIXT84MBsSo6iBSYR5P8",
+              "@ondc/org/title_type": "item",
+              "price": {
+                "currency": "INR",
+                "value": "899.0"
+              }
+            },
+            {
+              "@ondc/org/item_id": "Fulfillment1",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "50.0"
+              }
+            },
+            {
+              "title": "Fulfillment1-RTO",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "20.0"
+              }
+            }
+          ],
+          "cancellation": {
+            "time": "2022-12-04T10:00:00.000Z",
+            "cancelled_by": "shiprocket.com/ondc",
+            "reason": {
+              "id": "013"
+            }
+          }
+        }
+      }
+    }
+  }
