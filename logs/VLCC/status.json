@@ -1,5 +1,5 @@
 {
-  "_id": { "$oid": "63bfff2573464641c46eb346" },
+  "_id": { "$oid": "63c596c3e1c6fce0cca4d720" },
   "body": {
     "context": {
       "domain": "nic2004:52110",
@@ -7,34 +7,37 @@
       "city": "std:080",
       "action": "status",
       "core_version": "1.0.0",
-      "bap_id": "buyer-app-preprod.ondc.org",
-      "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-      "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-      "transaction_id": "d629dfc3-2024-461d-a6ba-782fae0cc6a6",
-      "message_id": "9d92201f-103a-459d-ada3-b211a643e268",
-      "timestamp": "2023-01-12T12:41:56.130Z",
+      "bap_id": "cloud-adaptor.proteantech.in/kotak",
+      "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
       "bpp_id": "vlccpreprod.thesellerapp.com",
+      "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
+      "transaction_id": "773780067161386000",
+      "message_id": "6b9f5df3-9623-41c4-bdb9-af508adf4c62",
+      "timestamp": "2023-01-16T18:26:07.487Z",
       "ttl": "PT30S"
     },
-    "message": { "order_id": "2023-00-12-468461" }
+    "message": { "order_id": "K26CD07FA" }
   },
   "header": {
     "host": "vlccpreprod.thesellerapp.com",
     "connection": "close",
-    "user-agent": "python-requests/2.23.0",
-    "accept-encoding": "gzip, deflate",
-    "accept": "*/*",
-    "authorization": "Signature keyId=\"buyer-app-preprod.ondc.org|96c81878-f327-457e-8835-5b35bb20f099|ed25519\",algorithm=\"ed25519\",created=\"1673527076\",expires=\"1673530676\",headers=\"(created) (expires) digest\",signature=\"j6WbPoSmJfwhp7sKOtdRrFs5lxPQG6dUUW6zycmXTkSVbZabWoT1J09Rg6HDvN9/79OPub1KE78pcODuuJwNDQ==\"",
+    "user-agent": "ReactorNetty/1.0.19",
     "content-type": "application/json",
-    "x-request-id": "ca0ff142-70c7-4894-8385-e374f3cd97d8",
-    "x-forwarded-for": "65.0.80.129",
+    "accept": "application/json",
+    "authorization": "Signature keyId=\"cloud-adaptor.proteantech.in/kotak|96c0c288-8086-4b1f-b471-9ba6a0315422|ed25519\",algorithm=\"ed25519\", created=\"1673893567\", expires=\"1674493567\", headers=\"(created) (expires) digest\", signature=\"j1WA552HXkl0mAWfca4cQPOinmRoONEaJjQOE5LSpvGv9mBPH3vItJQA1BfrdZBRHzw1pL+BkmIR29dr8OMHDw==\"",
+    "x-b3-traceid": "d1dbeb33a7419403",
+    "x-b3-spanid": "79bb7a1fce9b131f",
+    "x-b3-parentspanid": "644ef9d4f6032410",
+    "x-b3-sampled": "0",
+    "x-request-id": "52d0af72-967c-433b-8c74-bf8962cd24c1",
+    "x-forwarded-for": "203.199.101.252",
     "x-forwarded-proto": "https",
     "x-forwarded-port": "443",
     "via": "1.1 vegur",
     "connect-time": "0",
-    "x-request-start": "1673527076795",
+    "x-request-start": "1673893570430",
     "total-route-time": "0",
-    "content-length": "513"
+    "content-length": "512"
   },
   "response": {
     "context": {
@@ -43,49 +46,58 @@
       "city": "std:080",
       "action": "on_status",
       "core_version": "1.0.0",
-      "bap_id": "buyer-app-preprod.ondc.org",
-      "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-      "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-      "transaction_id": "d629dfc3-2024-461d-a6ba-782fae0cc6a6",
-      "message_id": "9d92201f-103a-459d-ada3-b211a643e268",
-      "timestamp": "2023-01-12T12:41:59.797Z",
+      "bap_id": "cloud-adaptor.proteantech.in/kotak",
+      "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
       "bpp_id": "vlccpreprod.thesellerapp.com",
+      "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
+      "transaction_id": "773780067161386000",
+      "message_id": "6b9f5df3-9623-41c4-bdb9-af508adf4c62",
+      "timestamp": "2023-01-16T18:26:10.433Z",
       "ttl": "PT30S"
     },
     "message": {
       "order": {
-        "state": "Completed",
+        "state": "Created",
         "provider": {
           "id": "6a67b112-8361-11ed-a1eb-0242ac120002",
           "locations": [{ "id": "65426587829" }]
         },
         "fulfillment_id": "Fulfillment1",
-        "items": [{ "id": "39909477843023", "quantity": { "count": 1 } }],
+        "items": [
+          {
+            "id": "39967064293455",
+            "quantity": { "count": 1 },
+            "returnable": false,
+            "cancelable": false,
+            "fulfillment_id": "Fulfillment1"
+          }
+        ],
         "billing": {
+          "name": "Harish Harish",
           "address": {
-            "door": "",
-            "name": "Harish",
-            "building": "",
-            "street": "A133 Noida sector 63",
-            "ward": "",
-            "city": "Noida",
-            "state": "Uttar Pradesh",
+            "name": "Harish Harish Post Office Main Road, Kadugodi, Bengaluru, Karnataka. Pin-560067 (India)",
+            "locality": "Kadugodi",
+            "city": "Bengaluru",
+            "state": "Karnataka",
             "country": "IND",
-            "area_code": "201301"
+            "same_as_delivery": false,
+            "door": "bvn",
+            "area_code": "560067"
           },
+          "email": "Kotak.harish@gmail.com",
           "phone": "6393245616",
-          "name": "Harish",
-          "email": "harish.maurya@ens.enterprises"
+          "created_at": "2022-12-24T19:55:36",
+          "updated_at": "2022-12-24T19:55:36"
         },
         "quote": {
-          "price": { "currency": "INR", "value": "155" },
+          "price": { "currency": "INR", "value": "520" },
           "breakup": [
             {
-              "@ondc/org/item_id": "39909477843023",
+              "@ondc/org/item_id": "39967064293455",
               "@ondc/org/item_quantity": { "count": 1 },
-              "title": "ayurveda natural fairness chandan kesar face wash100ml",
+              "title": "pro radiance brightening night cream 50gm",
               "@ondc/org/title_type": "item",
-              "price": { "currency": "INR", "value": "125" }
+              "price": { "currency": "INR", "value": 490 }
             },
             {
               "title": "Delivery charges",
@@ -95,10 +107,33 @@
           ]
         },
         "payment": {
-          "params": { "amount": "155", "currency": "INR" },
-          "status": "NOT-PAID",
-          "type": "POST-FULFILLMENT",
-          "collected_by": "BPP"
+          "params": {
+            "amount": "520",
+            "currency": "INR",
+            "transaction_id": "773780067161386000",
+            "@ondc/org/buyer_app_finder_fee_type": "Percent",
+            "@ondc/org/withholding_amount": "0",
+            "@ondc/org/return_window": "0",
+            "@ondc/org/settlement_basis": "0",
+            "@ondc/org/settlement_window": "P2D"
+          },
+          "type": "ON-ORDER",
+          "status": "PAID",
+          "collected_by": "BAP",
+          "@ondc/org/collected_by_status": "Agree",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "VLCC PERSONAL CARE PRIVATE LIMITED",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "neft",
+              "upi_address": "",
+              "settlement_bank_account_no": "533435045860",
+              "settlement_ifsc_code": "ICIC0054321",
+              "beneficiary_name": "VLCC PERSONAL CARE PRIVATE LIMITED",
+              "bank_name": "ICICI BANK",
+              "branch_name": "Gurugram  Chembur branch"
+            }
+          ]
         },
         "fulfillments": [
           {
@@ -119,12 +154,12 @@
             }
           }
         ],
-        "id": "2023-00-12-468461"
+        "id": "K26CD07FA"
       }
     }
   },
-  "resheader": "Signature keyId=\"vlccpreprod.thesellerapp.com|a9fbc9c1-06cc-49f6-b0d3-e3625b66924f|ed25519\",algorithm=\"ed25519\",created=\"1673527076\",expires=\"1673530676\",headers=\"(created) (expires) digest\",signature=\"Gmw2ywjLj/Bn+vFfkqnzHSyJx1A1cMY6P7c6dgXi3zi4jolZjegLiugL7I1/8UBzqD/0/kQ1UlWMZqLMd7fNBQ==\"",
-  "createdAt": { "$date": { "$numberLong": "1673527077763" } },
-  "updatedAt": { "$date": { "$numberLong": "1673527077763" } },
+  "resheader": "Signature keyId=\"vlccpreprod.thesellerapp.com|a9fbc9c1-06cc-49f6-b0d3-e3625b66924f|ed25519\",algorithm=\"ed25519\",created=\"1673893570\",expires=\"1673897170\",headers=\"(created) (expires) digest\",signature=\"KPNpg3EdES4aiJEc3dWC33b4kYJGKFEcTClckUeC/MYVAJNS8AzcXzeuFoaBU4q+EQcOQiI4W9O04U1PYaKtCw==\"",
+  "createdAt": { "$date": { "$numberLong": "1673893571278" } },
+  "updatedAt": { "$date": { "$numberLong": "1673893571278" } },
   "__v": 0
 }
