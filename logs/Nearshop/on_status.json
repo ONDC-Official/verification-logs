@@ -9,19 +9,19 @@
         "bap_uri": "https://beta.mystore.in/ondc/1.0/",
         "bpp_id": "api.staging.nearshop.in",
         "bpp_uri": "https://api.staging.nearshop.in/bpp/api/v1",
-        "transaction_id": "5f6f050d-112e-44da-ab11-f76b6d1c187d",
-        "message_id": "19ee708d-e474-4267-b996-3f2c8d508559",
-        "timestamp": "2023-01-12T15:46:39.528Z",
+        "transaction_id": "bc4e2778-cb51-4b56-b676-7a9850cf60ee",
+        "message_id": "c474053b-14ee-4219-af4c-889f52d7e373",
+        "timestamp": "2023-01-18T10:50:30.712Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "state": "Created",
+            "state": "Accepted",
             "provider": {
                 "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
                 "locations": [
                     {
-                        "id": "ee3b8ed9-d673-5cea-bf7c-da193521bfb8"
+                        "id": "24b0e818-737e-52da-956e-3a710a3b412b"
                     }
                 ]
             },
@@ -41,7 +41,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "210"
+                    "value": "240"
                 },
                 "breakup": [
                     {
@@ -55,77 +55,96 @@
                             "currency": "INR",
                             "value": "210"
                         }
+                    },
+                    {
+                        "@ondc/org/item_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
+                        }
                     }
                 ],
                 "ttl": "P4D"
             },
             "billing": {
-                "name": "Sumit Kumar",
                 "address": {
-                    "name": "Chokkanahalli ",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
+                    "area_code": "560064",
+                    "city": "Bangalore",
                     "country": "IN",
-                    "area_code": "560064"
+                    "door": "ABC Street, ABC",
+                    "locality": "ABC Street, ABC",
+                    "name": "ABC Street, ABC",
+                    "state": "KARNATAKA"
                 },
+                "created_at": "2023-01-18T10:50:23.078Z",
                 "email": "sumitait5219@gmail.com",
-                "phone": "+919886394142"
+                "name": "SumitKumar",
+                "phone": "9886394142",
+                "updated_at": "2023-01-18T10:50:23.078Z"
             },
             "fulfillments": [
                 {
-                    "type": "Delivery",
-                    "tracking": false,
                     "end": {
-                        "location": {
-                            "gps": "13.0866293,77.6224448",
-                            "address": {
-                                "name": "Chokkanahalli ",
-                                "city": "Bengaluru",
-                                "state": "Karnataka",
-                                "country": "IN",
-                                "area_code": "560064"
-                            }
-                        },
                         "contact": {
-                            "phone": "+919886394142",
-                            "email": "sumitait5219@gmail.com"
+                            "email": "sumitait5219@gmail.com",
+                            "phone": "9886394142"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "560064",
+                                "city": "Bangalore",
+                                "country": "IN",
+                                "door": "",
+                                "locality": "",
+                                "name": "ABC Street, ABC",
+                                "state": "KARNATAKA"
+                            },
+                            "gps": "12.9159993,77.6195245"
+                        },
+                        "person": {
+                            "name": "Sumit Kumar"
                         }
                     },
                     "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                    "tracking": false,
+                    "type": "Delivery",
+                    "provider_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
                     "state": {
                         "descriptor": {
-                            "name": "Serviceable"
+                            "name": "Pending"
                         }
                     }
                 }
             ],
             "payment": {
-                "@ondc/org/buyer_app_finder_fee_amount": "0",
-                "@ondc/org/withholding_amount": "0.0",
-                "@ondc/org/return_window": "0",
-                "@ondc/org/settlement_basis": "Collection",
-                "@ondc/org/settlement_window": "P2D",
+                "type": "ON-ORDER",
+                "params": {
+                    "amount": "240",
+                    "currency": "INR",
+                    "transaction_id": "order_L5c4pdcH9Cjkig"
+                },
+                "status": "PAID",
+                "collected_by": "BAP",
+                "time": {
+                    "timestamp": "2023-01-18T10:50:23.078Z"
+                },
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
                 "@ondc/org/settlement_details": [
                     {
+                        "settlement_ifsc_code": "UTIB0000234",
+                        "beneficiary_name": "Nearshop Pvt Ltd",
+                        "settlement_bank_account_no": "810030027666312",
+                        "bank_name": "Axis Bank",
+                        "settlement_type": "neft",
+                        "branch_name": "Jakkur",
                         "settlement_counterparty": "seller-app",
                         "settlement_phase": "sale-amount",
-                        "settlement_type": "neft",
-                        "settlement_bank_account_no": "810030027666312",
-                        "settlement_ifsc_code": "UTIB0000234",
-                        "settlement_status": "NOT-PAID",
-                        "beneficiary_name": "Nearshop Pvt Ltd",
-                        "bank_name": "Axis Bank",
-                        "branch_name": "Jakkur"
+                        "settlement_status": "NOT-PAID"
                     }
-                ],
-                "params": {
-                    "transaction_id": "TXN-zR36Bm847",
-                    "amount": "260.0000",
-                    "currency": "INR"
-                },
-                "type": "ON-ORDER",
-                "status": "PAID",
-                "collected_by": "BAP"
+                ]
             },
             "addOns": [],
             "offers": [],
@@ -135,7 +154,7 @@
                     "label": ""
                 }
             ],
-            "id": "63c02b4a64e8513f8c9cd2a0"
+            "id": "8133ef4e-8b78-437f-a2b4-1fd10fa5900e"
         }
     }
 }
