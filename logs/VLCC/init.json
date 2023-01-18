@@ -1,5 +1,5 @@
 {
-  "_id": { "$oid": "63c53b08924f46510f2d5239" },
+  "_id": { "$oid": "63c77d65f2678c85408da7ed" },
   "body": {
     "context": {
       "domain": "nic2004:52110",
@@ -7,75 +7,75 @@
       "city": "std:080",
       "action": "init",
       "core_version": "1.0.0",
-      "bap_id": "cloud-adaptor.proteantech.in/kotak",
-      "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
-      "bpp_id": "vlccpreprod.thesellerapp.com",
+      "bap_id": "buyer-app-preprod.ondc.org",
+      "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
       "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-      "transaction_id": "773780067161386000",
-      "message_id": "715849268251102200",
-      "timestamp": "2023-01-16T11:54:47.772Z",
+      "transaction_id": "309c2cce-a9e5-4527-af36-17961f5d038b",
+      "message_id": "1975fcdf-0501-4f42-912c-d6867571fefe",
+      "timestamp": "2023-01-18T05:02:28.534Z",
+      "bpp_id": "vlccpreprod.thesellerapp.com",
       "ttl": "PT30S"
     },
     "message": {
       "order": {
-        "items": [
-          {
-            "id": "39967064293455",
-            "quantity": { "count": 1 },
-            "returnable": false,
-            "cancelable": false,
-            "fulfillment_id": "Fulfillment1"
-          }
-        ],
-        "billing": {
-          "name": "Harish Harish",
-          "address": {
-            "name": "Harish Harish Post Office Main Road, Kadugodi, Bengaluru, Karnataka. Pin-560067 (India)",
-            "locality": "Kadugodi",
-            "city": "Bengaluru",
-            "state": "Karnataka",
-            "country": "IND",
-            "same_as_delivery": false,
-            "door": "",
-            "area_code": "560067",
-            "building": "",
-            "ward": ""
-          },
-          "email": "Kotak.harish@gmail.com",
-          "phone": "6393245616",
-          "created_at": "2022-12-24T19:55:36",
-          "updated_at": "2022-12-24T19:55:36"
-        },
-        "fulfillments": [
-          {
-            "id": "Fulfillment1",
-            "tracking": true,
-            "end": {
-              "location": {
-                "gps": "12.9977050000001,77.7599290000001",
-                "address": {
-                  "name": "hjbnm",
-                  "locality": "Kadugodi",
-                  "city": "Bengaluru",
-                  "state": "Karnataka",
-                  "country": "IND",
-                  "same_as_delivery": false,
-                  "door": "",
-                  "area_code": "560067",
-                  "building": "",
-                  "ward": ""
-                }
-              },
-              "contact": {
-                "phone": "6393245616",
-                "email": "Kotak.harish@gmail.com"
-              }
-            }
-          }
-        ],
         "provider": {
           "id": "6a67b112-8361-11ed-a1eb-0242ac120002",
           "locations": [{ "id": "65426587829" }]
+        },
+        "items": [{ "id": "39967064293455", "quantity": { "count": 1 } }],
+        "add_ons": [],
+        "offers": [],
+        "billing": {
+          "address": {
+            "door": "",
+            "building": "",
+            "street": "A133 Noida sector 63",
+            "city": "Noida",
+            "state": "Uttar Pradesh",
+            "country": "IND",
+            "area_code": "201301",
+            "name": "Harish",
+            "ward": ""
+          },
+          "phone": "6393245616",
+          "name": "Harish",
+          "email": "harish.maurya@ens.enterprises"
+        },
+        "fulfillments": [
+          {
+            "end": {
+              "contact": {
+                "email": "harish.maurya@ens.enterprises",
+                "phone": "6393245616"
+              },
+              "location": {
+                "gps": "28.574981, 77.320812",
+                "address": {
+                  "door": "",
+                  "building": "",
+                  "street": "A133 Noida sector 63",
+                  "city": "Noida",
+                  "state": "Uttar Pradesh",
+                  "country": "IND",
+                  "area_code": "201301",
+                  "name": "Harish",
+                  "ward": ""
+                }
+              }
+            },
+            "type": "Delivery",
+            "provider_id": "6a67b112-8361-11ed-a1eb-0242ac120002"
+          }
+        ],
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "Percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+          "@ondc/org/ondc-withholding_amount": 0,
+          "@ondc/org/ondc-return_window": 0,
+          "@ondc/org/ondc-settlement_basis": "Collection",
+          "@ondc/org/ondc-settlement_window": "P2D"
         }
       }
     }
@@ -83,23 +83,20 @@
   "header": {
     "host": "vlccpreprod.thesellerapp.com",
     "connection": "close",
-    "user-agent": "ReactorNetty/1.0.19",
+    "user-agent": "python-requests/2.23.0",
+    "accept-encoding": "gzip, deflate",
+    "accept": "*/*",
+    "authorization": "Signature keyId=\"buyer-app-preprod.ondc.org|96c81878-f327-457e-8835-5b35bb20f099|ed25519\",algorithm=\"ed25519\",created=\"1674018148\",expires=\"1674021748\",headers=\"(created) (expires) digest\",signature=\"XRMAJTz0zrkQ/OE0Ni7k61HCF+M5l8VclzSMMzGBXhplwVZXCuqewSY7bz32l30Rp0Vuav0eI3BgfEldUa5mAQ==\"",
     "content-type": "application/json",
-    "accept": "application/json",
-    "authorization": "Signature keyId=\"cloud-adaptor.proteantech.in/kotak|96c0c288-8086-4b1f-b471-9ba6a0315422|ed25519\",algorithm=\"ed25519\", created=\"1673870087\", expires=\"1674470087\", headers=\"(created) (expires) digest\", signature=\"iZY0/3pddfG8H5xc5a4hSriHNM9m58Ah9xWM9HFWdUztyTRFdfD9tmvzFEkBJ+lQQoWSpw3Qw1rRqQA2ftLQDA==\"",
-    "x-b3-traceid": "c146a1153aa5f553",
-    "x-b3-spanid": "a0e72fe325c0cb89",
-    "x-b3-parentspanid": "dd5b53d8118587bd",
-    "x-b3-sampled": "0",
-    "x-request-id": "5a5be106-c43a-4a8a-bf46-0aa6038a123e",
-    "x-forwarded-for": "203.199.101.252",
+    "x-request-id": "8a915126-8a12-4a17-a83b-d318d85a7a9c",
+    "x-forwarded-for": "65.0.80.129",
     "x-forwarded-proto": "https",
     "x-forwarded-port": "443",
     "via": "1.1 vegur",
     "connect-time": "0",
-    "x-request-start": "1673870087972",
+    "x-request-start": "1674018149080",
     "total-route-time": "0",
-    "content-length": "1457"
+    "content-length": "1614"
   },
   "response": {
     "context": {
@@ -108,72 +105,60 @@
       "city": "std:080",
       "action": "on_init",
       "core_version": "1.0.0",
-      "bap_id": "cloud-adaptor.proteantech.in/kotak",
-      "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
-      "bpp_id": "vlccpreprod.thesellerapp.com",
+      "bap_id": "buyer-app-preprod.ondc.org",
+      "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
       "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-      "transaction_id": "773780067161386000",
-      "message_id": "715849268251102200",
-      "timestamp": "2023-01-16T11:54:47.976Z",
+      "transaction_id": "309c2cce-a9e5-4527-af36-17961f5d038b",
+      "message_id": "1975fcdf-0501-4f42-912c-d6867571fefe",
+      "timestamp": "2023-01-18T05:02:29.082Z",
+      "bpp_id": "vlccpreprod.thesellerapp.com",
       "ttl": "PT30S"
     },
     "message": {
       "order": {
         "provider": { "id": "6a67b112-8361-11ed-a1eb-0242ac120002" },
         "provider_location": { "id": "65426587829" },
-        "items": [
-          {
-            "id": "39967064293455",
-            "quantity": { "count": 1 },
-            "returnable": false,
-            "cancelable": false,
-            "fulfillment_id": "Fulfillment1"
-          }
-        ],
+        "items": [{ "id": "39967064293455", "quantity": { "count": "1" } }],
         "billing": {
-          "name": "Harish Harish",
           "address": {
-            "name": "Harish Harish Post Office Main Road, Kadugodi, Bengaluru, Karnataka. Pin-560067 (India)",
-            "locality": "Kadugodi",
-            "city": "Bengaluru",
-            "state": "Karnataka",
-            "country": "IND",
-            "same_as_delivery": false,
             "door": "",
-            "area_code": "560067",
             "building": "",
+            "street": "A133 Noida sector 63",
+            "city": "Noida",
+            "state": "Uttar Pradesh",
+            "country": "IND",
+            "area_code": "201301",
+            "name": "Harish",
             "ward": ""
           },
-          "email": "Kotak.harish@gmail.com",
           "phone": "6393245616",
-          "created_at": "2022-12-24T19:55:36",
-          "updated_at": "2022-12-24T19:55:36"
+          "name": "Harish",
+          "email": "harish.maurya@ens.enterprises"
         },
         "fulfillments": [
           {
-            "id": "Fulfillment1",
-            "tracking": true,
             "end": {
+              "contact": {
+                "email": "harish.maurya@ens.enterprises",
+                "phone": "6393245616"
+              },
               "location": {
-                "gps": "12.9977050000001,77.7599290000001",
+                "gps": "28.574981, 77.320812",
                 "address": {
-                  "name": "hjbnm",
-                  "locality": "Kadugodi",
-                  "city": "Bengaluru",
-                  "state": "Karnataka",
-                  "country": "IND",
-                  "same_as_delivery": false,
                   "door": "",
-                  "area_code": "560067",
                   "building": "",
+                  "street": "A133 Noida sector 63",
+                  "city": "Noida",
+                  "state": "Uttar Pradesh",
+                  "country": "IND",
+                  "area_code": "201301",
+                  "name": "Harish",
                   "ward": ""
                 }
-              },
-              "contact": {
-                "phone": "6393245616",
-                "email": "Kotak.harish@gmail.com"
               }
-            }
+            },
+            "type": "Delivery",
+            "provider_id": "6a67b112-8361-11ed-a1eb-0242ac120002"
           }
         ],
         "quote": {
@@ -181,21 +166,22 @@
           "breakup": [
             {
               "@ondc/org/item_id": "39967064293455",
-              "@ondc/org/item_quantity": { "count": 1 },
+              "@ondc/org/item_quantity": { "count": "1" },
               "title": "pro radiance brightening night cream 50gm",
               "@ondc/org/title_type": "item",
-              "price": { "currency": "INR", "value": 490 }
+              "price": { "currency": "INR", "value": "490" }
             },
             {
               "title": "Delivery charges",
+              "@ondc/org/item_id": "Fulfillment1",
               "@ondc/org/title_type": "delivery",
               "price": { "currency": "INR", "value": "30" }
             }
           ]
         },
         "payment": {
-          "type": "ON-ORDER",
-          "collected_by": "BAP",
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BPP",
           "@ondc/org/buyer_app_finder_fee_type": "Percent",
           "@ondc/org/buyer_app_finder_fee_amount": "3.0",
           "@ondc/org/withholding_amount": "0.0",
@@ -219,8 +205,8 @@
       }
     }
   },
-  "resheader": "Signature keyId=\"vlccpreprod.thesellerapp.com|a9fbc9c1-06cc-49f6-b0d3-e3625b66924f|ed25519\",algorithm=\"ed25519\",created=\"1673870088\",expires=\"1673873688\",headers=\"(created) (expires) digest\",signature=\"FgLI9KR0E42gP8ttEA7RF9NISl9VIckVWkDSV5MTBMcDbQmtgTpwDv8fSeTC6jy1Xsihg6IHYZgx0iZG2FZ4CA==\"",
-  "createdAt": { "$date": { "$numberLong": "1673870088434" } },
-  "updatedAt": { "$date": { "$numberLong": "1673870088434" } },
+  "resheader": "Signature keyId=\"vlccpreprod.thesellerapp.com|a9fbc9c1-06cc-49f6-b0d3-e3625b66924f|ed25519\",algorithm=\"ed25519\",created=\"1674018149\",expires=\"1674021749\",headers=\"(created) (expires) digest\",signature=\"7PZNOXcZp9XtknI72ZnYHWMSRQZnhPbpGIdw0SktjQ9oXjU7SWIn7mVwudzB8APnr4Y71aQFDQHqhzKxQZ+xCA==\"",
+  "createdAt": { "$date": { "$numberLong": "1674018149457" } },
+  "updatedAt": { "$date": { "$numberLong": "1674018149457" } },
   "__v": 0
 }
