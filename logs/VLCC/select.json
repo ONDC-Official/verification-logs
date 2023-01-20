@@ -1,53 +1,58 @@
 {
-  "_id": { "$oid": "63c53b07924f46510f2d5236" },
+  "_id": { "$oid": "63c77d3df2678c85408da7ea" },
   "body": {
     "context": {
       "domain": "nic2004:52110",
       "country": "IND",
       "city": "std:080",
       "action": "select",
-      "timestamp": "2023-01-16T11:54:47.311Z",
-      "ttl": "PT30S",
       "core_version": "1.0.0",
-      "bap_id": "cloud-adaptor.proteantech.in/kotak",
-      "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
-      "bpp_id": "vlccpreprod.thesellerapp.com",
+      "bap_id": "buyer-app-preprod.ondc.org",
+      "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
       "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-      "transaction_id": "773780067161386000",
-      "message_id": "715849268251102200"
+      "transaction_id": "309c2cce-a9e5-4527-af36-17961f5d038b",
+      "message_id": "7218bb39-ee00-4c43-800f-6203e78c38a4",
+      "timestamp": "2023-01-18T05:01:48.046Z",
+      "bpp_id": "vlccpreprod.thesellerapp.com",
+      "ttl": "PT30S"
     },
     "message": {
       "order": {
         "items": [{ "id": "39967064293455", "quantity": { "count": 1 } }],
-        "fulfillments": [{}],
         "provider": {
           "id": "6a67b112-8361-11ed-a1eb-0242ac120002",
-          "locations": [{ "id": "65426587829" }],
-          "open": false
-        }
+          "locations": [{ "id": "65426587829" }]
+        },
+        "fulfillments": [
+          {
+            "end": {
+              "location": {
+                "gps": "12.96774, 77.588913",
+                "address": { "area_code": "560001" }
+              }
+            }
+          }
+        ]
       }
     }
   },
   "header": {
     "host": "vlccpreprod.thesellerapp.com",
     "connection": "close",
-    "user-agent": "ReactorNetty/1.0.19",
+    "user-agent": "python-requests/2.23.0",
+    "accept-encoding": "gzip, deflate",
+    "accept": "*/*",
+    "authorization": "Signature keyId=\"buyer-app-preprod.ondc.org|96c81878-f327-457e-8835-5b35bb20f099|ed25519\",algorithm=\"ed25519\",created=\"1674018108\",expires=\"1674021708\",headers=\"(created) (expires) digest\",signature=\"z9Pgamo0AierNtBwY5Kp7KOuGEYbsseMcaAU/TxM3VIsoklV5G2jeSaioGXXt08w5A72sAnl/JPYGvFE3WefAg==\"",
     "content-type": "application/json",
-    "accept": "application/json",
-    "authorization": "Signature keyId=\"cloud-adaptor.proteantech.in/kotak|96c0c288-8086-4b1f-b471-9ba6a0315422|ed25519\",algorithm=\"ed25519\", created=\"1673870087\", expires=\"1674470087\", headers=\"(created) (expires) digest\", signature=\"dqRGQapx8J2Vm5KTVkbnHVIwqaW6i3j2gUoQjOQkHHhY7/GRXK6oEB6/tvHBhUQr+dLLGIFAybCTLMcR4VE9BA==\"",
-    "x-b3-traceid": "1ba472c6b280ff14",
-    "x-b3-spanid": "8e358b012110c5e3",
-    "x-b3-parentspanid": "0e2caddc4ddb0a36",
-    "x-b3-sampled": "0",
-    "x-request-id": "80285f6d-e2db-4151-889d-fdc92dfeee40",
-    "x-forwarded-for": "203.199.101.252",
+    "x-request-id": "7a52d3ae-aaaf-4924-9aee-8b14eef4f1e3",
+    "x-forwarded-for": "65.0.80.129",
     "x-forwarded-proto": "https",
     "x-forwarded-port": "443",
     "via": "1.1 vegur",
     "connect-time": "0",
-    "x-request-start": "1673870087470",
+    "x-request-start": "1674018108704",
     "total-route-time": "0",
-    "content-length": "696"
+    "content-length": "742"
   },
   "response": {
     "context": {
@@ -55,15 +60,15 @@
       "country": "IND",
       "city": "std:080",
       "action": "on_select",
-      "timestamp": "2023-01-16T11:54:47.474Z",
-      "ttl": "PT30S",
       "core_version": "1.0.0",
-      "bap_id": "cloud-adaptor.proteantech.in/kotak",
-      "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/buyer-v4/buyer/adaptor",
-      "bpp_id": "vlccpreprod.thesellerapp.com",
+      "bap_id": "buyer-app-preprod.ondc.org",
+      "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
       "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-      "transaction_id": "773780067161386000",
-      "message_id": "715849268251102200"
+      "transaction_id": "309c2cce-a9e5-4527-af36-17961f5d038b",
+      "message_id": "7218bb39-ee00-4c43-800f-6203e78c38a4",
+      "timestamp": "2023-01-18T05:01:48.709Z",
+      "bpp_id": "vlccpreprod.thesellerapp.com",
+      "ttl": "PT30S"
     },
     "message": {
       "order": {
@@ -84,10 +89,10 @@
           "breakup": [
             {
               "@ondc/org/item_id": "39967064293455",
-              "@ondc/org/item_quantity": { "count": 1 },
+              "@ondc/org/item_quantity": { "count": "1" },
               "title": "pro radiance brightening night cream 50gm",
               "@ondc/org/title_type": "item",
-              "price": { "currency": "INR", "value": 490 }
+              "price": { "currency": "INR", "value": "490" }
             },
             {
               "@ondc/org/item_id": "Fulfillment1",
@@ -101,8 +106,8 @@
       }
     }
   },
-  "resheader": "Signature keyId=\"vlccpreprod.thesellerapp.com|a9fbc9c1-06cc-49f6-b0d3-e3625b66924f|ed25519\",algorithm=\"ed25519\",created=\"1673870087\",expires=\"1673873687\",headers=\"(created) (expires) digest\",signature=\"XVSE6qa4mF41ZwqtfMI6f5wA6+2TAe46q1TNvza2SDXv/OVRErC+6NkCr5di3jdX7qEWxa4ceE8mWUtLHS6nAw==\"",
-  "createdAt": { "$date": { "$numberLong": "1673870087813" } },
-  "updatedAt": { "$date": { "$numberLong": "1673870087813" } },
+  "resheader": "Signature keyId=\"vlccpreprod.thesellerapp.com|a9fbc9c1-06cc-49f6-b0d3-e3625b66924f|ed25519\",algorithm=\"ed25519\",created=\"1674018109\",expires=\"1674021709\",headers=\"(created) (expires) digest\",signature=\"xq8fWkP2TepMBLWuMDnx6nMipvmvigI34cmYFQdyDdYSVtQE5LySGQFTtN0fLx9UX8ChB+mjPl5Fhy90dsTzAA==\"",
+  "createdAt": { "$date": { "$numberLong": "1674018109200" } },
+  "updatedAt": { "$date": { "$numberLong": "1674018109200" } },
   "__v": 0
 }
