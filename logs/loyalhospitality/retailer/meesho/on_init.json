@@ -1,23 +1,21 @@
-/** Response **/
 {
   "context": {
     "ttl": "PT30S",
     "city": "std:080",
-    "action": "on_status",
+    "action": "on_init",
     "bap_id": "ondc.indiastack.cloud",
     "bpp_id": "kitchens-at.com",
     "domain": "nic2004:52110",
     "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/",
     "bpp_uri": "https://kitchens-at.com/ondc_preprod/Retailer/",
     "country": "IND",
-    "timestamp": "2023-01-19T15:22:02.000Z",
-    "message_id": "c270effe-c147-476f-b32a-ac641e84f95e",
+    "timestamp": "2023-01-19T15:20:09.000Z",
+    "message_id": "1d9dcb38-700a-481b-9b5e-2986e5f66fc9",
     "core_version": "1.0.0",
     "transaction_id": "519c1ca6-e278-4b3d-a376-b35c5303747b"
   },
   "message": {
     "order": {
-      "id": "585e5957-461b-4e1c-ade5-22eee12cb36f",
       "items": [
         {
           "id": "2067_72978",
@@ -103,7 +101,6 @@
           }
         ]
       },
-      "state": "Accepted",
       "billing": {
         "name": "PrasannaP",
         "email": "prasanna@loyalhospitality.in",
@@ -117,20 +114,14 @@
           "locality": "#12",
           "area_code": "560078"
         },
-        "created_at": "2023-01-19T15:20:23.681Z",
-        "updated_at": "2023-01-19T15:20:23.681Z"
+        "created_at": "2023-01-19T15:20:08.738Z",
+        "tax_number": "",
+        "updated_at": "2023-01-19T15:20:08.738Z"
       },
       "payment": {
-        "time": {
-          "timestamp": "2023-01-19T15:20:23.681Z"
-        },
+        "uri": "",
         "type": "ON-ORDER",
-        "params": {
-          "amount": "537.2",
-          "currency": "INR",
-          "transaction_id": "order_L65D6FJF6DZsdw"
-        },
-        "status": "PAID",
+        "status": "NOT-PAID",
         "collected_by": "BAP",
         "@ondc/org/settlement_details": [
           {
@@ -141,8 +132,11 @@
             "settlement_counterparty": "seller-app"
           }
         ],
-        "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3"
+        "@ondc/org/collected_by_status": "Agree",
+        "@ondc/org/return_window_status": "Agree",
+        "@ondc/org/settlement_basis_status": "Agree",
+        "@ondc/org/settlement_window_status": "Agree",
+        "@ondc/org/withholding_amount_status": "Agree"
       },
       "provider": {
         "id": "2067",
@@ -167,11 +161,11 @@
               "gps": "12.898773,77.5764094",
               "address": {
                 "city": "Bangalore",
-                "door": "",
+                "door": "-",
                 "name": "#12",
                 "state": "KARNATAKA",
                 "country": "IN",
-                "locality": "",
+                "locality": "-",
                 "area_code": "560078"
               }
             }
@@ -183,8 +177,6 @@
               "phone": "9632080103"
             },
             "location": {
-              "id": "2067_location",
-              "gps": "12.893308,77.586124",
               "address": {
                 "city": "bangalore",
                 "door": "35/4",
@@ -196,23 +188,15 @@
                 "locality": "Puttenahalli",
                 "area_code": "560078"
               }
-            },
-            "instructions": {
-              "name": "Pickup OTP",
-              "short_desc": "OTP is 4825"
-            }
-          },
-          "state": {
-            "descriptor": {
-              "code": "Pending",
-              "name": "Pending"
             }
           },
           "tracking": true,
-          "provider_id": "2067",
-          "@ondc/org/provider_name": "k@"
+          "provider_id": "2067"
         }
-      ]
+      ],
+      "provider_location": {
+        "id": "2067_Location"
+      }
     }
   }
 }
