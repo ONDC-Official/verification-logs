@@ -1,44 +1,41 @@
 {
-    "body": {
+    "response": {
         "context": {
           "domain": "nic2004:52110",
           "country": "IND",
           "city": "std:080",
-          "action": "confirm",
+          "action": "on_init",
           "core_version": "1.0.0",
           "bap_id": "buyer-app-preprod.ondc.org",
           "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
           "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-          "transaction_id": "309c2cce-a9e5-4527-af36-17961f5d038b",
-          "message_id": "2f3bc2e9-5e88-4d82-8f16-2d339cd2dc7d",
-          "timestamp": "2023-01-18T05:03:16.594Z",
+          "transaction_id": "aaad77a1-728e-43dc-ae25-09451851967b",
+          "message_id": "fb17d34e-88af-420a-a91c-4c4a20206742",
+          "timestamp": "2023-01-24T07:45:31.539Z",
           "bpp_id": "vlccpreprod.thesellerapp.com",
           "ttl": "PT30S"
         },
         "message": {
           "order": {
-            "id": "2023-00-18-674865",
-            "state": "Created",
+            "provider": { "id": "6a67b112-8361-11ed-a1eb-0242ac120002" },
+            "provider_location": { "id": "65426587829" },
+            "items": [{ "id": "39967064293455", "quantity": { "count": "1" } }],
             "billing": {
               "address": {
-                "door": "",
-                "name": "Harish",
-                "building": "",
-                "street": "A133 Noida sector 63",
-                "ward": "",
-                "city": "Noida",
+                "street": "Test",
+                "locality": "Test",
+                "city": "Lucknow",
                 "state": "Uttar Pradesh",
                 "country": "IND",
-                "area_code": "201301"
+                "area_code": "226001",
+                "name": "Test",
+                "door": "",
+                "building": "",
+                "ward": ""
               },
-              "phone": "6393245616",
-              "name": "Harish",
+              "phone": "6393565656",
+              "name": "Test",
               "email": "harish.maurya@ens.enterprises"
-            },
-            "items": [{ "id": "39967064293455", "quantity": { "count": "1" } }],
-            "provider": {
-              "id": "6a67b112-8361-11ed-a1eb-0242ac120002",
-              "locations": [{ "id": "65426587829" }]
             },
             "fulfillments": [
               {
@@ -47,7 +44,6 @@
                     "email": "harish.maurya@ens.enterprises",
                     "phone": "6393245616"
                   },
-                  "person": { "name": "Harish" },
                   "location": {
                     "gps": "28.574981, 77.320812",
                     "address": {
@@ -55,6 +51,7 @@
                       "name": "Harish",
                       "building": "",
                       "street": "A133 Noida sector 63",
+                      "locality": "Test",
                       "ward": "",
                       "city": "Noida",
                       "state": "Uttar Pradesh",
@@ -64,22 +61,9 @@
                   }
                 },
                 "type": "Delivery",
-                "customer": { "person": { "name": "Harish" } },
                 "provider_id": "6a67b112-8361-11ed-a1eb-0242ac120002"
               }
             ],
-            "addOns": [],
-            "offers": [],
-            "payment": {
-              "params": {
-                "amount": "520",
-                "currency": "INR",
-                "transaction_id": "ONDC-309c2cce-a9e5-4527-af36-17961f5d038b-1"
-              },
-              "status": "PAID",
-              "type": "ON-ORDER",
-              "collected_by": "BAP"
-            },
             "quote": {
               "price": { "currency": "INR", "value": "520" },
               "breakup": [
@@ -95,6 +79,29 @@
                   "@ondc/org/item_id": "Fulfillment1",
                   "@ondc/org/title_type": "delivery",
                   "price": { "currency": "INR", "value": "30" }
+                }
+              ]
+            },
+            "payment": {
+              "type": "POST-FULFILLMENT",
+              "collected_by": "BPP",
+              "@ondc/org/buyer_app_finder_fee_type": "Percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/withholding_amount": "0.0",
+              "@ondc/org/return_window": "0.0",
+              "@ondc/org/settlement_basis": "Collection",
+              "@ondc/org/settlement_window": "P2D",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "buyer-app",
+                  "settlement_phase": "sale-amount",
+                  "settlement_type": "neft",
+                  "upi_address": "",
+                  "settlement_bank_account_no": "533435045860",
+                  "settlement_ifsc_code": "ICIC0054321",
+                  "beneficiary_name": "VLCC PERSONAL CARE PRIVATE LIMITED",
+                  "bank_name": "ICICI BANK",
+                  "branch_name": "Gurugram  Chembur branch"
                 }
               ]
             }
