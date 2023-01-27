@@ -1,111 +1,109 @@
 {
-    "response": {
-        "context": {
-          "domain": "nic2004:52110",
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.0.0",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
+    "transaction_id": "8bdd2a28-9b93-46fb-9870-05c7273d761f",
+    "message_id": "fe35c023-4cd5-461a-a52b-80fafcf92b1c",
+    "timestamp": "2023-01-27T05:27:53.599Z",
+    "bpp_id": "vlccpreprod.thesellerapp.com",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "6a67b112-8361-11ed-a1eb-0242ac120002" },
+      "provider_location": { "id": "65426587829" },
+      "items": [{ "id": "39967064293455", "quantity": { "count": 1 } }],
+      "billing": {
+        "address": {
+          "street": "Test",
+          "locality": "Test",
+          "city": "Lucknow",
+          "state": "Uttar Pradesh",
           "country": "IND",
-          "city": "std:080",
-          "action": "on_init",
-          "core_version": "1.0.0",
-          "bap_id": "buyer-app-preprod.ondc.org",
-          "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-          "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-          "transaction_id": "6dc34ca2-fea1-4306-887f-0c009c266916",
-          "message_id": "99132429-545b-4195-a9ee-4fc62f675563",
-          "timestamp": "2023-01-25T11:46:32.539A",
-          "bpp_id": "vlccpreprod.thesellerapp.com",
-          "ttl": "PT30S"
+          "area_code": "226001",
+          "name": "Test",
+          "door": "",
+          "building": "",
+          "ward": ""
         },
-        "message": {
-          "order": {
-            "provider": { "id": "6a67b112-8361-11ed-a1eb-0242ac120002" },
-            "provider_location": { "id": "65426587829" },
-            "items": [{ "id": "39967064293455", "quantity": { "count": 1 } }],
-            "billing": {
+        "phone": "6393565656",
+        "name": "Test",
+        "email": "harish.maurya@ens.enterprises"
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "contact": {
+              "email": "harish.maurya@ens.enterprises",
+              "phone": "6393245616"
+            },
+            "location": {
+              "gps": "28.574981, 77.320812",
               "address": {
-                "street": "Test",
+                "door": "",
+                "name": "Harish",
+                "building": "",
+                "street": "A133 Noida sector 63",
                 "locality": "Test",
-                "city": "Lucknow",
+                "ward": "",
+                "city": "Noida",
                 "state": "Uttar Pradesh",
                 "country": "IND",
-                "area_code": "226001",
-                "name": "Test",
-                "door": "",
-                "building": "",
-                "ward": ""
-              },
-              "phone": "6393565656",
-              "name": "Test",
-              "email": "harish.maurya@ens.enterprises"
-            },
-            "fulfillments": [
-              {
-                "end": {
-                  "contact": {
-                    "email": "harish.maurya@ens.enterprises",
-                    "phone": "6393245616"
-                  },
-                  "location": {
-                    "gps": "28.574981, 77.320812",
-                    "address": {
-                      "door": "",
-                      "name": "Harish",
-                      "building": "",
-                      "street": "A133 Noida sector 63",
-                      "locality": "Test",
-                      "ward": "",
-                      "city": "Noida",
-                      "state": "Uttar Pradesh",
-                      "country": "IND",
-                      "area_code": "201301"
-                    }
-                  }
-                },
-                "type": "Delivery",
-                "provider_id": "6a67b112-8361-11ed-a1eb-0242ac120002"
+                "area_code": "201301"
               }
-            ],
-            "quote": {
-              "price": { "currency": "INR", "value": "520" },
-              "breakup": [
-                {
-                  "@ondc/org/item_id": "39967064293455",
-                  "@ondc/org/item_quantity": { "count": "1" },
-                  "title": "pro radiance brightening night cream 50gm",
-                  "@ondc/org/title_type": "item",
-                  "price": { "currency": "INR", "value": "490" }
-                },
-                {
-                  "title": "Delivery charges",
-                  "@ondc/org/item_id": "Fulfillment1",
-                  "@ondc/org/title_type": "delivery",
-                  "price": { "currency": "INR", "value": "30" }
-                }
-              ]
-            },
-            "payment": {
-              "type": "POST-FULFILLMENT",
-              "collected_by": "BPP",
-              "@ondc/org/buyer_app_finder_fee_type": "Percent",
-              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-              "@ondc/org/withholding_amount": "0.0",
-              "@ondc/org/return_window": "0.0",
-              "@ondc/org/settlement_basis": "Collection",
-              "@ondc/org/settlement_window": "P2D",
-              "@ondc/org/settlement_details": [
-                {
-                  "settlement_counterparty": "buyer-app",
-                  "settlement_phase": "sale-amount",
-                  "settlement_type": "neft",
-                  "upi_address": "",
-                  "settlement_bank_account_no": "533435045860",
-                  "settlement_ifsc_code": "ICIC0054321",
-                  "beneficiary_name": "VLCC PERSONAL CARE PRIVATE LIMITED",
-                  "bank_name": "ICICI BANK",
-                  "branch_name": "Gurugram  Chembur branch"
-                }
-              ]
             }
-          }
+          },
+          "type": "Delivery",
+          "provider_id": "6a67b112-8361-11ed-a1eb-0242ac120002"
         }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "520" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "39967064293455",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "title": "pro radiance brightening night cream 50gm",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "490" }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "30" }
+          }
+        ]
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BPP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/withholding_amount": "0.0",
+        "@ondc/org/return_window": "0.0",
+        "@ondc/org/settlement_basis": "Collection",
+        "@ondc/org/settlement_window": "P2D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "upi_address": "",
+            "settlement_bank_account_no": "533435045860",
+            "settlement_ifsc_code": "ICIC0054321",
+            "beneficiary_name": "VLCC PERSONAL CARE PRIVATE LIMITED",
+            "bank_name": "ICICI BANK",
+            "branch_name": "Gurugram  Chembur branch"
+          }
+        ]
       }
+    }
+  }
 }
