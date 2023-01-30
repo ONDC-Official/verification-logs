@@ -1,37 +1,34 @@
 {
     "context": {
         "domain": "nic2004:52110",
+        "action": "on_cancel",
         "country": "IND",
         "city": "std:080",
-        "action": "on_status",
         "core_version": "1.0.0",
-        "transaction_id": "0ec37b1c-133b-412b-998e-b453fb18b033",
-        "message_id": "bf81f349-122c-4fa3-b00d-012b5289a919",
-        "timestamp": "2023-01-29T08:02:45.742Z",
         "bpp_id": "api.staging.nearshop.in",
         "bpp_uri": "https://api.staging.nearshop.in/bpp/api/v1",
         "bap_id": "ondc.indiastack.cloud",
-        "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/"
+        "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/",
+        "transaction_id": "1c74a024-a736-453a-90d0-c5a8b927525f",
+        "message_id": "b5dd4ef5-0d2d-44d1-903e-c30728f99f96",
+        "timestamp": "2023-01-30T15:45:09.140Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "state": "Accepted",
+            "state": "Cancelled",
             "provider": {
                 "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
                 "locations": [
                     {
-                        "id": "8b2d2ad1-41ca-55fe-b21b-ba8a86979bd5"
+                        "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location"
                     }
                 ]
             },
             "items": [
                 {
-                    "id": "184ac88f-0c41-419d-be32-994879631e18",
+                    "id": "fea40eec-fa72-4230-9e5d-40eb606e70db",
                     "fulfillment_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                    "price": {
-                        "currency": "INR",
-                        "value": "31"
-                    },
                     "quantity": {
                         "count": 1
                     }
@@ -40,19 +37,28 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "31"
+                    "value": "135"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "184ac88f-0c41-419d-be32-994879631e18",
+                        "@ondc/org/item_id": "fea40eec-fa72-4230-9e5d-40eb606e70db",
                         "@ondc/org/item_quantity": {
                             "count": 1
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "Gobi | Cauliflower",
+                        "title": "Watermelon",
                         "price": {
                             "currency": "INR",
-                            "value": "31"
+                            "value": "105"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
                         }
                     }
                 ],
@@ -68,11 +74,11 @@
                     "name": "ABC Street, ABC",
                     "state": "KARNATAKA"
                 },
-                "created_at": "2023-01-16T21:52:40",
+                "created_at": "2023-01-30T15:44:48.929Z",
                 "email": "sumitait5219@gmail.com",
                 "name": "SumitKumar",
                 "phone": "9886394142",
-                "updated_at": "2023-01-16T21:52:40"
+                "updated_at": "2023-01-30T15:44:48.929Z"
             },
             "fulfillments": [
                 {
@@ -91,7 +97,7 @@
                                 "name": "ABC Street, ABC",
                                 "state": "KARNATAKA"
                             },
-                            "gps": "13.0866363,77.6225953"
+                            "gps": "12.9159993,77.6195245"
                         },
                         "person": {
                             "name": "Sumit Kumar"
@@ -109,19 +115,19 @@
                 }
             ],
             "payment": {
-                "type": "POST-FULFILLMENT",
+                "type": "ON-ORDER",
                 "params": {
-                    "amount": "31",
-                    "currency": "INR"
+                    "amount": "135",
+                    "currency": "INR",
+                    "transaction_id": "order_LARVKyWNagNm4m"
                 },
-                "status": "NOT-PAID",
-                "collected_by": "BPP",
-                "@ondc/org/withholding_amount": "0.0",
-                "@ondc/org/return_window": "0",
+                "status": "PAID",
+                "collected_by": "BAP",
+                "time": {
+                    "timestamp": "2023-01-30T15:44:48.929Z"
+                },
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_basis": "P2D",
-                "@ondc/org/settlement_window": "P2D",
                 "@ondc/org/settlement_details": [
                     {
                         "settlement_ifsc_code": "UTIB0000234",
@@ -138,8 +144,24 @@
             },
             "addOns": [],
             "offers": [],
-            "documents": [],
-            "id": "c6d59281-9315-4026-b3b1-6a6b0c77c7f0"
+            "documents": [
+                {
+                    "url": "",
+                    "label": ""
+                }
+            ],
+            "created_at": "2023-01-30T15:44:48.929Z",
+            "updated_at": "2023-01-30T15:44:49.168Z",
+            "id": "bb5bc364-5634-42c3-8032-5fe3644d9130",
+            "cancellation": {
+                "cancelled_by": "ondc.indiastack.cloud",
+                "reason": {
+                    "id": "001"
+                }
+            },
+            "tags": {
+                "cancellation_reason_id": "001"
+            }
         }
     }
 }
