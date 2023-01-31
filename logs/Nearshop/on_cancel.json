@@ -1,145 +1,64 @@
 {
     "context": {
         "domain": "nic2004:52110",
+        "action": "on_cancel",
         "country": "IND",
         "city": "std:080",
-        "action": "on_status",
         "core_version": "1.0.0",
-        "transaction_id": "0ec37b1c-133b-412b-998e-b453fb18b033",
-        "message_id": "bf81f349-122c-4fa3-b00d-012b5289a919",
-        "timestamp": "2023-01-29T08:02:45.742Z",
         "bpp_id": "api.staging.nearshop.in",
         "bpp_uri": "https://api.staging.nearshop.in/bpp/api/v1",
         "bap_id": "ondc.indiastack.cloud",
-        "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/"
+        "bap_uri": "https://ondc.indiastack.cloud/ondc/v1/163525/",
+        "transaction_id": "11d076d2-8a5d-4ae3-bb26-c8e61efeb384",
+        "message_id": "796029fc-8617-42d2-a385-ceba4346e806",
+        "timestamp": "2023-01-31T08:21:39.130Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "state": "Accepted",
-            "provider": {
-                "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                "locations": [
-                    {
-                        "id": "8b2d2ad1-41ca-55fe-b21b-ba8a86979bd5"
-                    }
-                ]
-            },
-            "items": [
-                {
-                    "id": "184ac88f-0c41-419d-be32-994879631e18",
-                    "fulfillment_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                    "price": {
-                        "currency": "INR",
-                        "value": "31"
-                    },
-                    "quantity": {
-                        "count": 1
-                    }
-                }
-            ],
+            "state": "Cancelled",
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "31"
+                    "value": "135"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "184ac88f-0c41-419d-be32-994879631e18",
+                        "@ondc/org/item_id": "fea40eec-fa72-4230-9e5d-40eb606e70db",
                         "@ondc/org/item_quantity": {
                             "count": 1
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "Gobi | Cauliflower",
+                        "title": "Watermelon",
                         "price": {
                             "currency": "INR",
-                            "value": "31"
+                            "value": "105"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
                         }
                     }
                 ],
                 "ttl": "P4D"
             },
-            "billing": {
-                "address": {
-                    "area_code": "560064",
-                    "city": "Bangalore",
-                    "country": "IN",
-                    "door": "ABC Street, ABC",
-                    "locality": "ABC Street, ABC",
-                    "name": "ABC Street, ABC",
-                    "state": "KARNATAKA"
-                },
-                "created_at": "2023-01-16T21:52:40",
-                "email": "sumitait5219@gmail.com",
-                "name": "SumitKumar",
-                "phone": "9886394142",
-                "updated_at": "2023-01-16T21:52:40"
-            },
-            "fulfillments": [
-                {
-                    "end": {
-                        "contact": {
-                            "email": "sumitait5219@gmail.com",
-                            "phone": "9886394142"
-                        },
-                        "location": {
-                            "address": {
-                                "area_code": "560064",
-                                "city": "Bangalore",
-                                "country": "IN",
-                                "door": "",
-                                "locality": "",
-                                "name": "ABC Street, ABC",
-                                "state": "KARNATAKA"
-                            },
-                            "gps": "13.0866363,77.6225953"
-                        },
-                        "person": {
-                            "name": "Sumit Kumar"
-                        }
-                    },
-                    "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                    "tracking": false,
-                    "type": "Delivery",
-                    "provider_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                    "state": {
-                        "descriptor": {
-                            "name": "Pending"
-                        }
-                    }
+            "created_at": "2023-01-31T08:21:14.395Z",
+            "updated_at": "2023-01-31T08:21:14.639Z",
+            "id": "ad303296-e444-4b16-ab1b-5f73bac1c577",
+            "cancellation": {
+                "cancelled_by": "ondc.indiastack.cloud",
+                "reason": {
+                    "id": "001"
                 }
-            ],
-            "payment": {
-                "type": "POST-FULFILLMENT",
-                "params": {
-                    "amount": "31",
-                    "currency": "INR"
-                },
-                "status": "NOT-PAID",
-                "collected_by": "BPP",
-                "@ondc/org/withholding_amount": "0.0",
-                "@ondc/org/return_window": "0",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_basis": "P2D",
-                "@ondc/org/settlement_window": "P2D",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_ifsc_code": "UTIB0000234",
-                        "beneficiary_name": "Nearshop Pvt Ltd",
-                        "settlement_bank_account_no": "810030027666312",
-                        "bank_name": "Axis Bank",
-                        "settlement_type": "neft",
-                        "branch_name": "Jakkur",
-                        "settlement_counterparty": "seller-app",
-                        "settlement_phase": "sale-amount",
-                        "settlement_status": "NOT-PAID"
-                    }
-                ]
             },
-            "addOns": [],
-            "offers": [],
-            "documents": [],
-            "id": "c6d59281-9315-4026-b3b1-6a6b0c77c7f0"
+            "tags": {
+                "cancellation_reason_id": "001"
+            }
         }
     }
 }
