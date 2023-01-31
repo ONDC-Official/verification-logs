@@ -4,30 +4,40 @@
       "domain": "nic2004:52110",
       "country": "IND",
       "city": "std:080",
-      "action": "on_init",
+      "action": "on_update",
       "core_version": "1.0.0",
       "bap_id": "buyer-app.ondc.org",
-      "bap_uri": "https://725b-2402-e280-3e33-24e-4bf-2eef-71f2-dc8.in.ngrok.io/protocol/v1",
+      "bap_uri": "https://afe4-2402-e280-3e33-24e-4bf-2eef-71f2-dc8.in.ngrok.io/protocol/v1",
       "bpp_id": "preprod-jajee-bpp.shopalyst.com",
       "bpp_uri": "https://preprod-jajee-bpp.shopalyst.com/jajee",
-      "transaction_id": "82faa67f-a2bc-47e5-9dcd-bbeffa0c84d3",
-      "message_id": "61c2a3bc-5a3a-4e7b-937e-fe591b47a74f",
-      "timestamp": "2023-01-31T08:07:18.653Z"
+      "transaction_id": "75b8bf04-eab8-49f7-b08c-03497afa1c51",
+      "message_id": "db6c42bd-9ea8-460b-9fe4-24fac4156a50",
+      "timestamp": "2023-01-30T13:28:04.444Z"
     },
     "message": {
       "order": {
+        "id": "2023-00-30-911827",
+        "state": "Completed",
         "provider": {
           "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
-          "descriptor": {
-            "name": "M/s Parasram Jajee"
-          }
-        },
-        "provider_location": {
-          "id": "5692eae837b7a1d2b7ebd8e6bd251b51"
+          "locations": [
+            {
+              "id": "5692eae837b7a1d2b7ebd8e6bd251b51"
+            }
+          ]
         },
         "items": [
           {
             "id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035371267_default",
+            "quantity": {
+              "count": 1
+            },
+            "tags": {
+              "status": "Return_Initiated"
+            }
+          },
+          {
+            "id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035404035_default",
             "fulfillment_id": "5692eae837b7a1d2b7ebd8e6bd251b51",
             "quantity": {
               "count": 1
@@ -37,26 +47,20 @@
         "quote": {
           "price": {
             "currency": "INR",
-            "value": "140.00"
+            "value": "420.00"
           },
           "breakup": [
             {
-              "title": "ALMONDS/BADAM - 100G",
-              "price": {
-                "currency": "INR",
-                "value": "120.00"
-              },
-              "@ondc/org/item_id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035371267_default",
+              "@ondc/org/item_id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035404035_default",
               "item": {
                 "price": {
                   "currency": "INR",
-                  "value": "120.00"
+                  "value": "280.00"
                 }
               },
               "@ondc/org/item_quantity": {
                 "count": 1
-              },
-              "@ondc/org/title_type": "item"
+              }
             },
             {
               "title": "Delivery Charges",
@@ -67,8 +71,7 @@
               "@ondc/org/item_id": "5692eae837b7a1d2b7ebd8e6bd251b51",
               "@ondc/org/title_type": "delivery"
             }
-          ],
-          "ttl": "PT15M"
+          ]
         },
         "billing": {
           "name": "Akshay",
@@ -83,14 +86,31 @@
             "area_code": "411041"
           },
           "email": "akshay+1@wemotiveforge.com",
-          "phone": "8983796134"
+          "phone": "8983796134",
+          "created_at": "2023-01-30T13:22:28.672Z",
+          "updated_at": "2023-01-30T13:22:28.672Z"
         },
         "fulfillments": [
           {
             "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
             "type": "Delivery",
-            "provider_id": "5692eae837b7a1d2b7ebd8e6bd251b51",
             "tracking": true,
+            "start": {
+              "location": {
+                "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
+                "descriptor": {
+                  "name": "5692eae837b7a1d2b7ebd8e6bd251b51"
+                },
+                "gps": "17.3371562,76.8311261"
+              },
+              "time": {
+                "timestamp": "2023-01-30T18:53:05.000Z"
+              },
+              "contact": {
+                "phone": "+91-9164607070",
+                "email": "support@jajee.in"
+              }
+            },
             "end": {
               "location": {
                 "gps": "18.450792, 73.811897",
@@ -105,42 +125,19 @@
                   "area_code": "411041"
                 }
               },
-              "contact": {
-                "phone": "8983796134",
-                "email": "akshay+1@wemotiveforge.com"
+              "time": {
+                "timestamp": "2023-01-30T18:53:41.000Z"
               }
             },
             "state": {
               "descriptor": {
-                "name": "Serviceable"
+                "name": "Order-delivered",
+                "code": "Order-delivered"
               }
             },
-            "@ondc/org/category": "Next Day Delivery",
-            "@ondc/org/TAT": "P3D",
             "@ondc/org/provider_name": "SelfDelivery"
           }
-        ],
-        "payment": {
-          "collected_by": "BAP",
-          "@ondc/org/buyer_app_finder_fee_type": "Percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-          "@ondc/org/withholding_amount": "0.00",
-          "@ondc/org/return_window": "P7D",
-          "@ondc/org/settlement_basis": "Collection",
-          "@ondc/org/settlement_window": "P7D",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "seller-app",
-              "settlement_phase": "sale-amount",
-              "settlement_type": "neft",
-              "settlement_bank_account_no": "1112220032274181",
-              "settlement_ifsc_code": "RAZR0000001",
-              "beneficiary_name": "Kishor",
-              "bank_name": "sate bank of india",
-              "branch_name": "manikonda"
-            }
-          ]
-        }
+        ]
       }
     }
   }
