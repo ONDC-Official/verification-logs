@@ -9,14 +9,14 @@
     "bap_uri" : "https://buyer-app-preprod.ondc.org/protocol/v1",
     "bpp_id" : "pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/ndhgo",
     "bpp_uri" : "https://pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/ndhgo",
-    "transaction_id" : "ce77481e-a38f-4af9-9456-614840c623df",
-    "message_id" : "2c212faf-4420-489e-a99b-fdff285757f2",
-    "timestamp" : "2023-02-02T13:56:29.798Z",
+    "transaction_id" : "1bc9bf25-5efc-441a-aba5-931d27a35f56",
+    "message_id" : "cb160c25-d8b9-4758-bb05-0e3c6f6d5101",
+    "timestamp" : "2023-02-07T20:00:33.879Z",
     "ttl" : "PT30S"
   },
   "message" : {
     "order" : {
-      "id" : "2023-01-02-358157",
+      "id" : "2023-01-07-650862",
       "state" : "Created",
       "provider" : {
         "id" : "137749",
@@ -25,12 +25,18 @@
         } ]
       },
       "items" : [ {
-        "id" : "MTM3NzQ5XzI3MDE4MTc=",
+        "id" : "MTM3NzQ5XzI3MDI3NjI=",
         "quantity" : {
-          "count" : 2
-        }
+          "count" : 1
+        },
+        "fulfillment_id" : "1"
+      }, {
+        "id" : "MTM3NzQ5XzI3MDI3Njg=",
+        "quantity" : {
+          "count" : 1
+        },
+        "fulfillment_id" : "1"
       } ],
-      "offers" : [ ],
       "billing" : {
         "name" : "Monish",
         "address" : {
@@ -47,6 +53,7 @@
         "phone" : "9566291095"
       },
       "fulfillments" : [ {
+        "id" : "1",
         "type" : "Delivery",
         "provider_id" : "137749",
         "tracking" : false,
@@ -84,15 +91,38 @@
           "value" : "309.00"
         },
         "breakup" : [ {
-          "@ondc/org/item_id" : "MTM3NzQ5XzI3MDE4MTc=",
+          "@ondc/org/item_id" : "MTM3NzQ5XzI3MDI3Njg=",
           "@ondc/org/item_quantity" : {
-            "count" : 2
+            "count" : 1
           },
           "@ondc/org/title_type" : "item",
-          "title" : "Monish Apple Juice",
+          "item" : {
+            "price" : {
+              "currency" : "INR",
+              "value" : "180.00"
+            }
+          },
+          "title" : "Monish Crispy Fries",
           "price" : {
             "currency" : "INR",
-            "value" : "300.00"
+            "value" : "180.00"
+          }
+        }, {
+          "@ondc/org/item_id" : "MTM3NzQ5XzI3MDI3NjI=",
+          "@ondc/org/item_quantity" : {
+            "count" : 1
+          },
+          "@ondc/org/title_type" : "item",
+          "item" : {
+            "price" : {
+              "currency" : "INR",
+              "value" : "120.00"
+            }
+          },
+          "title" : "Monish Mango Juice - Regular",
+          "price" : {
+            "currency" : "INR",
+            "value" : "120.00"
           }
         }, {
           "@ondc/org/item_id" : "1",
@@ -106,17 +136,32 @@
       },
       "payment" : {
         "params" : {
+          "transaction_id" : "ONDC-1bc9bf25-5efc-441a-aba5-931d27a35f56-1",
           "amount" : "309",
           "currency" : "INR"
         },
-        "type" : "ON-FULFILLMENT",
-        "status" : "NOT-PAID",
-        "collected_by" : "BPP",
-        "@ondc/org/buyer_app_finder_fee_type" : "percent",
-        "@ondc/org/buyer_app_finder_fee_amount" : "3.00"
+        "type" : "ON-ORDER",
+        "status" : "PAID",
+        "collected_by" : "BAP",
+        "@ondc/org/buyer_app_finder_fee_type" : "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount" : "3.0",
+        "@ondc/org/withholding_amount" : "0.0",
+        "@ondc/org/return_window" : "0",
+        "@ondc/org/settlement_basis" : "Collection",
+        "@ondc/org/settlement_window" : "P2D",
+        "@ondc/org/settlement_details" : [ {
+          "settlement_counterparty" : "seller-app",
+          "settlement_phase" : "sale-amount",
+          "settlement_amount" : 309,
+          "settlement_type" : "neft",
+          "settlement_bank_account_no" : "000100289877623",
+          "settlement_ifsc_code" : "SBIN0008752",
+          "bank_name" : "SBI bnka",
+          "beneficiary_address" : "JOHN DOE"
+        } ]
       },
-      "created_at" : "2023-02-02T13:56:30.139Z",
-      "updated_at" : "2023-02-02T13:56:30.139Z"
+      "created_at" : "2023-02-07T20:00:34.422Z",
+      "updated_at" : "2023-02-07T20:00:34.422Z"
     }
   }
 }
