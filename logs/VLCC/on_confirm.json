@@ -8,21 +8,21 @@
     "bap_id": "buyer-app-preprod.ondc.org",
     "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
     "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-    "transaction_id": "14de6f3f-b3fe-45ce-b504-05e171efdab1",
-    "message_id": "8f390668-1504-4438-a497-3252c3b43cdd",
-    "timestamp": "2023-01-31T07:35:22.706Z",
+    "transaction_id": "3709c778-16f9-47c4-a9c7-35378e007427",
+    "message_id": "c2d053f1-206e-4df7-aade-edf51ad130e2",
+    "timestamp": "2023-02-10T06:12:07.196Z",
     "bpp_id": "vlccpreprod.thesellerapp.com",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2023-00-31-543679",
+      "id": "2023-01-09-863435",
       "state": "Created",
       "provider": {
         "id": "6a67b112-8361-11ed-a1eb-0242ac120002",
         "locations": [{ "id": "65426587829" }]
       },
-      "items": [{ "id": "39967064293455", "quantity": { "count": "1" } }],
+      "items": [{ "id": "39967064293455","fulfillment_id": "Fulfillment1","quantity": { "count": "1" } }],
       "billing": {
         "address": {
           "door": "",
@@ -117,11 +117,33 @@
         "params": {
           "amount": "520",
           "currency": "INR",
-          "transaction_id": "ONDC-14de6f3f-b3fe-45ce-b504-05e171efdab1-1"
+          "transaction_id": "ONDC-3709c778-16f9-47c4-a9c7-35378e007427-1"
         },
         "status": "NOT-PAID",
         "type": "POST-FULFILLMENT",
-        "collected_by": "BPP"
+        "collected_by": "BPP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/withholding_amount": "0.0",
+        "@ondc/org/return_window": "0",
+        "@ondc/org/settlement_basis": "Collection",
+        "@ondc/org/settlement_window": "P2D",
+        "@ondc/org/settlement_details":
+        [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "upi_address": "",
+            "settlement_bank_account_no": "533435045860",
+            "settlement_ifsc_code": "ICIC0054321",
+            "beneficiary_name": "VLCC PERSONAL CARE PRIVATE LIMITED",
+            "bank_name": "ICICI BANK",
+            "branch_name": "Gurugram  Chembur branch"
+          }
+          ]
+          
+
       }
     }
   }
