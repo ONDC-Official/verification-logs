@@ -1,0 +1,68 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "*",
+    "core_version": "1.0.0",
+    "bpp_id": "ondcpp.yaarilabs.com",
+    "bpp_uri": "https://ondcpp.yaarilabs.com/api/ondc/preprod",
+    "transaction_id": "ea4d30e9-3845-4dc3-8e2f-d39e2837f438",
+    "message_id": "f1843d4c-b243-4dd2-9321-5f5fef973f6e",
+    "bap_id": "ondc.eunimart.com",
+    "bap_uri": "https://ondc.eunimart.com/api/v1/ondc/lsp_bap/eunimart_lsp_bap",
+    "timestamp": "2023-02-10T18:21:33.732Z",
+    "ttl": "PT30S",
+    "action": "on_init"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "2" },
+      "items": [{ "category_id": "Standard Delivery", "id": "YAARI-2" }],
+      "quote": {
+        "price": { "currency": "INR", "value": "354" },
+        "breakup": [
+          {
+            "price": { "currency": "INR", "value": "177" },
+            "@ondc/org/title_type": "Delivery Charge",
+            "@ondc/org/item_id": "YAARI-2"
+          }
+        ]
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": { "descriptor": { "code": "Agent-assigned" } },
+          "cancellation_fee": {
+            "percentage": "0",
+            "amount": { "currency": "INR", "value": "0" }
+          }
+        },
+        {
+          "fulfillment_state": { "descriptor": { "code": "Order-picked-up" } },
+          "cancellation_fee": {
+            "percentage": "100",
+            "amount": { "currency": "INR", "value": "177" }
+          }
+        },
+        {
+          "fulfillment_state": { "descriptor": { "code": "Out-for-delivery" } },
+          "cancellation_fee": {
+            "percentage": "100",
+            "amount": { "currency": "INR", "value": "177" }
+          }
+        }
+      ],
+      "payment": {
+        "type": "ON-ORDER",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
+      }
+    }
+  }
+}
