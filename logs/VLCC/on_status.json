@@ -8,22 +8,26 @@
     "bap_id": "buyer-app-preprod.ondc.org",
     "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
     "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
-    "transaction_id": "3709c778-16f9-47c4-a9c7-35378e007427",
+    "transaction_id": "318df372-d7e1-4f6b-8b81-993fcaf99ccb",
     "message_id": "f5f33770-1a89-4fd1-a445-4ba285bf4909",
-      "timestamp": "2023-02-10T06:13:50.426Z",
+      "timestamp": "2023-02-17T06:13:50.426Z",
     "bpp_id": "vlccpreprod.thesellerapp.com",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2023-01-09-863435",
+      "id": "2023-01-17-430439",
       "state": "Accepted",
       "provider": {
         "id": "6a67b112-8361-11ed-a1eb-0242ac120002",
         "locations": [{ "id": "65426587829" }]
       },
-      "fulfillment_id": "Fulfillment1",
-      "items": [{ "id": "39967064293455", "quantity": { "count": 1 } }],
+     
+      "items": [{ "id": "39967064293455",  "fulfillment_id": "Fulfillment1","quantity": { "count": 1 } ,"tags":
+      {
+        "status":"Return_Approved"
+      }
+}],
       "billing": {
         "address": {
           "door": "",
@@ -71,22 +75,76 @@
       "fulfillments": [
         {
           "id": "Fulfillment1",
-          "type": "Delivery",
-          "tracking": true,
-          "state": { "descriptor": { "name": "Pending", "code": "Pending" } },
-          "start": {
-            "location": {
-              "id": "65426587829",
-              "descriptor": { "name": "VLCC" },
-              "gps": "12.956399,77.636803"
-            },
-            "contact": {
-              "phone": "18001028522",
-              "email": "customercare@vlccpersonalcare.com"
+          "@ondc/org/provider_name": "VLCC",
+
+          "state": {
+            "descriptor": {
+              "name": "Pending",
+              "code": "Pending"
             }
+          },
+          "type":"Delivery",
+          "tracking":false,
+
+          "start":
+          {
+            "location":
+            {
+              "id":"65426587829",
+              "descriptor":
+              {
+                "name":"VLCC"
+              },
+              "gps":"13.0722683, 77.3231792"
+            },
+            "time":
+            {
+              "range":
+              {
+                "start":"2023-02-17T10:00:00.000Z",
+                "end":"2023-02-21T10:30:00.000Z"
+              }
+            },
+            "instructions":
+            {
+              "name":"Status for pickup",
+              "short_desc":"Pickup Confirmation Code"
+            },
+            "contact":
+            {
+              "phone":"9820988610",
+
+              "email":"harish.maurya@ens.enterprises"
+            }
+          },
+
+          "end": {
+            "contact": {
+              "email": "harish.maurya@ens.enterprises",
+              "phone": "6393245616"
+            },
+            "person": { "name": "Harish" },
+            "location": {
+              "gps": "28.574981, 77.320812",
+              "address": {
+                "door": "",
+                "name": "Harish",
+                "building": "",
+                "street": "A133 Noida sector 63",
+                "locality": "Test",
+                "ward": "",
+                "city": "Noida",
+                "state": "Uttar Pradesh",
+                "country": "IND",
+                "area_code": "201301"
+              }
+              
+            }   
           }
         }
       ]
+
     }
   }
 }
+
