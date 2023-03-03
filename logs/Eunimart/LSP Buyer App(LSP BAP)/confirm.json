@@ -1,0 +1,221 @@
+{
+	"context": {
+		"domain": "nic2004:60232",
+		"country": "IND",
+		"city": "std:080",
+		"action": "confirm",
+		"core_version": "1.0.0",
+		"bap_id": "ondc.eunimart.com",
+		"bap_uri": "https://ondc.eunimart.com/api/v1/ondc/lsp_bap/eunimart_lsp_bap",
+		"transaction_id": "6ea3ae6e-a027-4b3b-bd2d-4accff5ea489",
+		"ttl": "PT30S",
+		"message_id": "a710e5b7-ab25-48ad-b016-7bc5b4b2c925",
+		"timestamp": "2023-01-30T15:22:14.620Z",
+		"bpp_id": "ondc-preprod.loadshare.net",
+		"bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp"
+	},
+	"message": {
+		"order": {
+			"id": "8bf201dd-1563-4db9-92f6-c4d901cf7e8b1",
+			"state": "Created",
+			"provider": {
+				"id": "loadshare@ondc-preprod.loadshare.net"
+			},
+			"items": [
+				{
+					"id": "express",
+					"category_id": "Immediate Delivery"
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "39"
+				},
+				"breakup": [
+					{
+						"@ondc/org/item_id": "express",
+						"@ondc/org/title_type": "Delivery Charge",
+						"title": "Delivery Charge",
+						"price": {
+							"currency": "INR",
+							"value": "39"
+						}
+					}
+				]
+			},
+			"payment": {
+				"@ondc/org/collection_amount": "1034.9",
+				"type": "POST-FULFILLMENT",
+				"status": "NOT-PAID",
+				"time": {
+					"label": "Pay by",
+					"range": {
+						"end": "2023-03-01T15:18:59.356Z"
+					}
+				}
+			},
+			"cancellation_terms": [
+				{
+					"fulfillment_state": {
+						"descriptor": {
+							"code": "Agent-assigned"
+						}
+					},
+					"cancellation_fee": {
+						"percentage": "50"
+					}
+				},
+				{
+					"fulfillment_state": {
+						"descriptor": {
+							"code": "Order-picked-up"
+						}
+					},
+					"cancellation_fee": {
+						"percentage": "100"
+					}
+				}
+			],
+			"tags": [
+				{
+					"code": "bpp_terms_liability",
+					"list": [
+						{
+							"code": "max_liability_cap",
+							"value": "1000"
+						},
+						{
+							"code": "max_liability",
+							"value": "1"
+						}
+					]
+				},
+				{
+					"code": "bpp_terms_arbitration",
+					"list": [
+						{
+							"code": "mandatory_arbitration",
+							"value": "true"
+						},
+						{
+							"code": "court_jurisdiction",
+							"value": "KA"
+						}
+					]
+				},
+				{
+					"code": "bpp_terms_charges",
+					"list": [
+						{
+							"code": "delay_interest",
+							"value": "18"
+						},
+						{
+							"code": "max_delay_charges",
+							"value": "20"
+						}
+					]
+				}
+			],
+			"fulfillments": [
+				{
+					"id": "Fulfillment-1",
+					"type": "Prepaid",
+					"start": {
+						"person": {
+							"name": "Jagan"
+						},
+						"location": {
+							"gps": "12.9388881,77.6529607",
+							"address": {
+								"name": "Arun Kumar",
+								"building": "60 MLD Sewage Treatment Plant",
+								"locality": "Challaghatta",
+								"city": "Bengaluru",
+								"state": "karnataka",
+								"country": "India",
+								"area_code": "560017"
+							}
+						},
+						"contact": {
+							"phone": "9894748270",
+							"email": "arun@gmail.com"
+						}
+					},
+					"end": {
+						"person": {
+							"name": "Jagan"
+						},
+						"location": {
+							"gps": "12.9365182,77.6495522",
+							"address": {
+								"name": "Jagan",
+								"building": "Belur Nagasandra",
+								"locality": "Bellandur",
+								"city": "Bengaluru",
+								"state": "karnataka",
+								"country": "India",
+								"area_code": "560017"
+							}
+						},
+						"contact": {
+							"phone": "8056558432",
+							"email": "jagan@gmail.com"
+						}
+					},
+					"tags": {
+						"@ondc/org/order_ready_to_ship": "Yes"
+					}
+				}
+			],
+			"billing": {
+				"name": "Manik",
+				"address": {
+					"name": "D000, Prestige Towers",
+					"locality": "Bannerghatta Road",
+					"city": "Bengaluru",
+					"state": "Karnataka",
+					"country": "India",
+					"area_code": "560019"
+				},
+				"tax_number": "29AAACU1901H1ZK",
+				"phone": "9886098860",
+				"email": "manikgh@gmail.com"
+			},
+			"@ondc/org/linked_order": {
+				"items": [
+					{
+						"category_id": "Grocery",
+						"descriptor": {
+							"name": "Atta"
+						},
+						"quantity": {
+							"count": 1,
+							"measure": {
+								"unit": "Kilogram",
+								"value": 7.84
+							}
+						},
+						"price": {
+							"currency": "INR",
+							"value": "1034.9"
+						}
+					}
+				],
+				"provider": {
+					"descriptor": {
+						"name": "Siva Store"
+					}
+				},
+				"order": {
+					"id": "f76cd8de-69ad-4631-b98a-e724b2d812ac1",
+					"weight": {
+						"unit": "Kilogram",
+						"value": 7.84
+					}
+				}
+			}
+		}
+	}
+}
