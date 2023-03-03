@@ -1,57 +1,95 @@
 {
-  "context":{
-     "domain":"nic2004:60232",
-     "country":"IND",
-     "city":"std:080",
-     "action":"on_search",
-     "bap_id":"b-ondc-seller-bpp.nlincs.in",
-     "bap_uri":"https://b-ondc-seller-bpp.nlincs.in/lbap",
-     "transaction_id":"19282_222035400117_20354_00000000-3683-d416-ffff-ffff9abaa189_iJY5lZ",
-     "message_id":"A5lrFxjBDhvFNR5HbqsKa8Hm58hFzobW",
-     "timestamp":"2022-11-25T05:14:43.529Z",
-     "core_version":"1.0.0",
-     "ttl":"PT30S",
-     "bpp_id":"ondc-dev.delhivery.com",
-     "bpp_uri":"https://ondc-dev.delhivery.com/delhivery/v1/"
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_search",
+    "bap_id": "b-ondc-seller-bpp.nlincs.in",
+    "bap_uri": "https://b-ondc-seller-bpp.nlincs.in/lbap",
+    "transaction_id": "20641_222035400235_20354_00000000-6d59-29d4-ffff-ffff9abaa189_8DAG2B",
+    "message_id": "uWlErj56ejxpX5xUIS006Fk5afgij0y6",
+    "timestamp": "2023-03-03T16:41:18.643Z",
+    "core_version": "1.1.0",
+    "ttl": "PT30S",
+    "bpp_id": "ondc-dev.delhivery.com",
+    "bpp_uri": "https://ondc-dev.delhivery.com/delhivery/v1/"
   },
-  "message":{
-     "catalog":{
-        "bpp/descriptor":{
-           "name":"Delhivery"
+  "message": {
+    "catalog": {
+      "bpp/fulfillments": [
+        {
+          "id": "1",
+          "type": "Prepaid"
         },
-        "bpp/providers":[
-           {
-              "id":"Delhivery",
-              "descriptor":{
-                 "name":"Delhivery",
-                 "short_desc":"Delhivery",
-                 "long_desc":"Delhivery"
+        {
+          "id": "2",
+          "type": "CoD"
+        },
+        {
+          "id": "3",
+          "type": "RTO"
+        },
+        {
+          "id": "4",
+          "type": "Reverse QC"
+        }
+      ],
+      "bpp/descriptor": {
+        "name": "Delhivery"
+      },
+      "bpp/providers": [
+        {
+          "id": "Delhivery",
+          "descriptor": {
+            "name": "Delhivery",
+            "short_desc": "Delhivery",
+            "long_desc": "Delhivery"
+          },
+          "categories": [
+            {
+              "id": "Standard Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "P4D"
+              }
+            }
+          ],
+          "items": [
+            {
+              "id": "6155b9d8-8c35-4b0e-b5af-cbb6bc026973",
+              "parent_item_id": "",
+              "category_id": "Standard Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2H2P",
+                "name": "Standard Delivery",
+                "short_desc": "Delhivery Surface",
+                "long_desc": "Delhivery Surface"
               },
-              "categories":[
-                 {
-                    "id":"Standard Delivery",
-                    "time":{
-                       "duration":"P2D"
-                    }
-                 }
-              ],
-              "items":[
-                 {
-                    "id":"c95a98ef-a811-4aa9-822d-334d00d2462f",
-                    "category_id":"Standard Delivery",
-                    "descriptor":{
-                       "name":"Standard Delivery",
-                       "short_desc":"Delhivery Surface",
-                       "long_desc":"Delhivery Surface"
-                    },
-                    "price":{
-                       "currency":"INR",
-                       "value":"0.50"
-                    }
-                 }
-              ]
-           }
-        ]
-     }
+              "price": {
+                "currency": "INR",
+                "value": "12.00"
+              }
+            },
+            {
+              "id": "0b96ce8b-6fdd-4c27-b858-6fba49b52290",
+              "parent_item_id": "6155b9d8-8c35-4b0e-b5af-cbb6bc026973",
+              "category_id": "Standard Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "code": "P2H2P",
+                "name": "Standard Delivery",
+                "short_desc": "Delhivery Surface RTO charge",
+                "long_desc": "Delhivery Surface RTO charge"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "34.00"
+              }
+            }
+          ]
+        }
+      ]
+    }
   }
 }
