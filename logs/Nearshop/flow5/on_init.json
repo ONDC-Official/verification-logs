@@ -3,28 +3,21 @@
         "domain": "nic2004:52110",
         "country": "IND",
         "city": "std:080",
-        "action": "on_status",
+        "action": "on_init",
         "core_version": "1.1.0",
         "bap_id": "buyer-app-preprod.ondc.org",
         "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
         "bpp_uri": "https://api.staging.nearshop.in/bpp/api/v1",
-        "transaction_id": "217ad8cb-6e36-4145-982d-488195d3dc05",
-        "message_id": "c3b20389-de7d-4536-9eca-6901cb0178a9",
-        "timestamp": "2023-02-18T03:07:32.932Z",
+        "transaction_id": "26446932-d036-4399-84bf-bb615eb98574",
+        "message_id": "9b521f48-e1b2-4206-8081-37f5641a4d98",
+        "timestamp": "2023-03-07T14:00:03.230Z",
         "bpp_id": "api.staging.nearshop.in",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "state": "Accepted",
             "provider": {
-                "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                "locations": [
-                    {
-                        "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location"
-                    }
-                ],
-                "rateable": true
+                "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7"
             },
             "items": [
                 {
@@ -45,7 +38,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "169"
+                    "value": "164"
                 },
                 "breakup": [
                     {
@@ -57,16 +50,13 @@
                         "title": "Watermelon",
                         "price": {
                             "currency": "INR",
-                            "value": "105"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "delivery",
-                        "price": {
-                            "currency": "INR",
-                            "value": "30"
+                            "value": "103"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "103"
+                            }
                         }
                     },
                     {
@@ -78,7 +68,22 @@
                         "title": "Gobi | Cauliflower",
                         "price": {
                             "currency": "INR",
-                            "value": "34"
+                            "value": "31"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "31"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
                         }
                     }
                 ],
@@ -86,77 +91,51 @@
             },
             "billing": {
                 "address": {
-                    "door": "ABC",
-                    "name": "sumit kumar",
                     "building": "ABC",
-                    "street": "ABC street",
-                    "locality": "ABC street",
                     "city": "Bengaluru",
                     "state": "Karnataka",
                     "country": "IND",
-                    "area_code": "560064"
+                    "area_code": "560064",
+                    "locality": "ABC street",
+                    "name": "sumit kumar"
                 },
                 "phone": "9898989898",
                 "name": "sumit kumar",
                 "email": "sumitait5219@gmail.com",
-                "created_at": "2023-02-18T03:06:52.626Z",
-                "updated_at": "2023-02-18T03:06:52.626Z"
+                "created_at": "2023-03-07T14:00:03.197Z",
+                "updated_at": "2023-03-07T14:00:03.197Z"
             },
             "fulfillments": [
                 {
                     "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                    "type": "Delivery",
                     "tracking": true,
                     "end": {
                         "contact": {
                             "email": "sumitait5219@gmail.com",
                             "phone": "9898989898"
                         },
-                        "person": {
-                            "name": "sumit kumar"
-                        },
                         "location": {
                             "gps": "13.119769, 77.588122",
                             "address": {
-                                "door": "ABC",
-                                "name": "sumit kumar",
                                 "building": "ABC",
-                                "street": "ABC street",
-                                "locality": "ABC street",
                                 "city": "Bengaluru",
                                 "state": "Karnataka",
                                 "country": "IND",
-                                "area_code": "560064"
+                                "area_code": "560064",
+                                "locality": "ABC street",
+                                "name": "sumit kumar"
                             }
                         }
-                    },
-                    "type": "Delivery",
-                    "customer": {
-                        "person": {
-                            "name": "sumit kumar"
-                        }
-                    },
-                    "provider_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
-                    "state": {
-                        "descriptor": {
-                            "code": "Pending"
-                        }
-                    },
-                    "rateable": true
+                    }
                 }
             ],
             "payment": {
-                "uri": "",
-                "tl_method": "http/get",
-                "params": {
-                    "amount": "169",
-                    "currency": "INR",
-                    "transaction_id": "ONDC-217ad8cb-6e36-4145-982d-488195d3dc05-1"
-                },
-                "status": "NOT-PAID",
-                "type": "ON-FULFILLMENT",
+                "type": "ON-ORDER",
                 "collected_by": "BPP",
-                "@ondc/org/buyer_app_finder_fee_type": "Percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/collected_by_status": "Assert",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "0.87",
                 "@ondc/org/withholding_amount": "0.0",
                 "@ondc/org/return_window": "0",
                 "@ondc/org/settlement_basis": "Collection",
@@ -175,12 +154,9 @@
                     }
                 ]
             },
-            "addOns": [],
-            "offers": [],
-            "documents": [],
-            "created_at": "2023-02-18T03:07:04.502Z",
-            "updated_at": "2023-02-18T03:07:04.769Z",
-            "id": "2023-01-18-740652"
+            "provider_location": {
+                "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location"
+            }
         }
     }
 }
