@@ -6,18 +6,18 @@
     "action": "on_status",
     "core_version": "1.1.0",
     "bap_id": "buyer-app.ondc.org",
-    "bap_uri": "https://cc00-2401-4900-531d-b8ac-4d27-3302-5844-bc41.in.ngrok.io/protocol/v1",
+    "bap_uri": "https://c278-2402-e280-3e33-24e-e0ed-28d0-11fb-e4c5.in.ngrok.io/protocol/v1",
     "bpp_id": "preprod-jajee-bpp.shopalyst.com",
     "bpp_uri": "https://preprod-jajee-bpp.shopalyst.com/jajee",
-    "transaction_id": "4eaa4609-18fa-4ee2-a18c-018b8cf2accd",
-    "message_id": "cdd9c353-26aa-4120-a7f3-5bec0bc092e0",
-    "timestamp": "2023-02-15T13:23:59.960Z",
+    "transaction_id": "5fe7ff40-1885-4f0b-80f0-b41f86fdac18",
+    "message_id": "8b82c2c5-f073-41f7-8ddf-a91289f7a8c1",
+    "timestamp": "2023-02-22T06:06:01.637Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2023-01-15-511519",
-      "state": "Accepted",
+      "id": "2023-01-22-420992",
+      "state": "Completed",
       "provider": {
         "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
         "locations": [
@@ -56,6 +56,10 @@
         },
         "breakup": [
           {
+            "price": {
+              "currency": "INR",
+              "value": "120.00"
+            },
             "@ondc/org/item_id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035371267_default",
             "item": {
               "price": {
@@ -65,9 +69,14 @@
             },
             "@ondc/org/item_quantity": {
               "count": 1
-            }
+            },
+            "@ondc/org/title_type": "item"
           },
           {
+            "price": {
+              "currency": "INR",
+              "value": "280.00"
+            },
             "@ondc/org/item_id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035404035_default",
             "item": {
               "price": {
@@ -77,9 +86,14 @@
             },
             "@ondc/org/item_quantity": {
               "count": 1
-            }
+            },
+            "@ondc/org/title_type": "item"
           },
           {
+            "price": {
+              "currency": "INR",
+              "value": "560.00"
+            },
             "@ondc/org/item_id": "CBE44A9BDF3C10A61A3227A41688E82C_43540035436803_default",
             "item": {
               "price": {
@@ -89,7 +103,8 @@
             },
             "@ondc/org/item_quantity": {
               "count": 1
-            }
+            },
+            "@ondc/org/title_type": "item"
           },
           {
             "title": "Delivery Charges",
@@ -105,10 +120,8 @@
       "billing": {
         "name": "Akshay",
         "address": {
-          "door": "pune",
           "name": "Akshay",
           "building": "pune",
-          "street": "ok",
           "locality": "ok",
           "city": "Pune",
           "state": "Maharashtra",
@@ -117,34 +130,64 @@
         },
         "email": "akshay+1@wemotiveforge.com",
         "phone": "8983796134",
-        "created_at": "2023-02-15T13:21:29.403Z",
-        "updated_at": "2023-02-15T13:21:29.403Z"
+        "created_at": "2023-02-22T05:58:06.724Z",
+        "updated_at": "2023-02-22T05:58:06.724Z"
       },
       "fulfillments": [
         {
           "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
           "type": "Delivery",
           "tracking": true,
+          "start": {
+            "location": {
+              "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
+              "descriptor": {
+                "name": "5692eae837b7a1d2b7ebd8e6bd251b51"
+              },
+              "gps": "17.3371562,76.8311261"
+            },
+            "time": {
+              "timestamp": "2023-02-22T11:35:44.000Z"
+            },
+            "contact": {
+              "phone": "+91-9164607070",
+              "email": "support@jajee.in"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "18.450792, 73.811897",
+              "address": {
+                "name": "Akshay",
+                "building": "pune",
+                "locality": "ok",
+                "city": "Pune",
+                "state": "Maharashtra",
+                "country": "IND",
+                "area_code": "411041"
+              }
+            },
+            "time": {
+              "timestamp": "2023-02-22T11:35:50.000Z"
+            }
+          },
           "state": {
             "descriptor": {
-              "name": "Pending",
-              "code": "Pending"
+              "name": "Order-delivered",
+              "code": "Order-delivered"
             }
           },
           "@ondc/org/provider_name": "Jajee"
         }
       ],
       "payment": {
+        "uri": "https://juspay.in/",
         "tl_method": "http/get",
         "type": "ON-ORDER",
         "status": "PAID",
         "collected_by": "BAP",
         "@ondc/org/buyer_app_finder_fee_type": "Percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-        "@ondc/org/withholding_amount": "0.0",
-        "@ondc/org/return_window": "0",
-        "@ondc/org/settlement_basis": "Collection",
-        "@ondc/org/settlement_window": "P2D",
         "@ondc/org/settlement_details": [
           {
             "settlement_counterparty": "seller-app",
@@ -158,7 +201,7 @@
           }
         ],
         "params": {
-          "transaction_id": "ONDC-4eaa4609-18fa-4ee2-a18c-018b8cf2accd-1",
+          "transaction_id": "ONDC-5fe7ff40-1885-4f0b-80f0-b41f86fdac18-1",
           "amount": "960",
           "currency": "INR"
         }
