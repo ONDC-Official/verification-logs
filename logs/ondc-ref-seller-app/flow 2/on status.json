@@ -1,0 +1,137 @@
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_status",
+        "core_version": "1.1.0",
+        "bap_id": "buyer-app.ondc.org",
+        "bap_uri": "https://ab61-2402-e280-3e33-24e-4513-96ef-5bb6-a61b.in.ngrok.io/protocol/v1",
+        "bpp_uri": "https://ref-seller-app-preprod.ondc.org",
+        "transaction_id": "7b3ae627-608b-4e66-9b32-ef41cca99095",
+        "message_id": "cc2b80a8-3224-4f5b-86f8-222ae91c2989",
+        "timestamp": "2023-03-21T17:33:45.301Z",
+        "bpp_id": "ref-seller-app-preprod.ondc.org",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "2023-03-21-869076",
+            "provider": {
+                "id": "b744d985-628f-4b16-b2ff-d503dda2ce69"
+            },
+            "state": "Created",
+            "items": [
+                {
+                    "id": "75b628c4-2a01-4add-97fc-3f2333650805",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "lsn_prepaid"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "name": "Akshay",
+                    "building": "pune",
+                    "locality": "ok",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560095"
+                },
+                "phone": "8983796134",
+                "name": "Akshay",
+                "email": "akshay+1@wemotiveforge.com",
+                "created_at": "2023-03-21T17:29:51.743Z",
+                "updated_at": "2023-03-21T17:29:51.743Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "lsn_prepaid",
+                    "end": {
+                        "contact": {
+                            "email": "akshay+1@wemotiveforge.com",
+                            "phone": "8983796134"
+                        },
+                        "person": {
+                            "name": "Akshay"
+                        },
+                        "location": {
+                            "gps": "12.938208, 77.619106",
+                            "address": {
+                                "name": "Akshay",
+                                "building": "pune",
+                                "locality": "ok",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560095"
+                            }
+                        }
+                    },
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "239"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "75b628c4-2a01-4add-97fc-3f2333650805",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Mango",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "value": "200",
+                            "currency": "INR"
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "39"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://juspay.in/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "239",
+                    "currency": "INR",
+                    "transaction_id": "ONDC-7b3ae627-608b-4e66-9b32-ef41cca99095-1"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "Percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "123",
+                        "settlement_ifsc_code": "HDFC0048",
+                        "beneficiary_name": "Akshay",
+                        "bank_name": "HDFC"
+                    }
+                ]
+            }
+        }
+    }
+}
