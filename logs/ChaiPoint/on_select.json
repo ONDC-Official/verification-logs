@@ -5,13 +5,13 @@
        "city": "std:080",
        "action": "on_select",
        "core_version": "1.1.0",
-       "bap_id": "buyer-app.ondc.org",
-       "bap_uri": "https://buyer-app.ondc.org/protocol/v1/on_select",
-       "bpp_id": "testing.chaipoint.com",
-       "bpp_uri": "https://z1o2ovg69j.execute-api.ap-south-1.amazonaws.com/QA6/",
-       "transaction_id": "0551c0bf-e95c-4e87-b518-5255b62b12d4",
-       "message_id": "2e1b0c05-77b7-4278-ac4c-3594da46b8aa",
-       "timestamp": "2023-02-26T18:57:13.272Z",
+       "bap_id": "buyer-app-preprod.ondc.org",
+       "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_select",
+       "bpp_id": "ondc.chaipoint.com",
+       "bpp_uri": "https://ondc.chaipoint.com/",
+       "transaction_id": "f0725663-60bc-4a07-adf5-a2d1f0a869d1",
+       "message_id": "d619cc78-bd87-40e7-9e56-9822e99e6723",
+       "timestamp": "2023-03-24T14:43:48.058Z",
        "ttl": "PT30S"
    },
    "message": {
@@ -33,68 +33,95 @@
                        "value": "252.0"
                    },
                    "fulfillment_id": "76"
+               },
+               {
+                   "id": "1061",
+                   "parent_item_id": "0",
+                   "descriptor": {
+                       "name": "Snacks Combo 2"
+                   },
+                   "quantity": {
+                       "selected": {
+                           "count": 1
+                       }
+                   },
+                   "price": {
+                       "currency": "INR",
+                       "value": "544.95"
+                   },
+                   "fulfillment_id": "76"
                }
            ],
            "provider": {
                "id": "76",
                "tags": {
-                   "lookupId": "a583c1d1-c26a-4a6a-afa7-a1be2eeacddf"
+                   "lookupId": "19f4441a-9e82-4185-8a97-db7db96261b4"
                }
            },
            "quote": {
                "price": {
                    "currency": "INR",
-                   "value": "252.0"
+                   "value": "797.0"
                },
                "breakup": [
                    {
                        "title": "Items Total",
                        "price": {
                            "currency": "INR",
-                           "value": "240.0"
+                           "value": "759.0"
                        }
                    },
                    {
                        "title": "CGST(2.5%)",
                        "price": {
                            "currency": "INR",
-                           "value": "6.0"
+                           "value": "18.97"
                        }
                    },
                    {
                        "title": "SGST/UTGST(2.5%)",
                        "price": {
                            "currency": "INR",
-                           "value": "6.0"
-                       }
+                           "value": "18.97"
+                       },
+                       "@ondc/org/title_type": "tax"
                    },
                    {
                        "title": "Delivery Charges",
                        "price": {
                            "currency": "INR",
                            "value": "0.0"
-                       }
+                       },
+                       "@ondc/org/title_type": "delivery"
                    },
                    {
                        "title": "Packaging Charges",
                        "price": {
                            "currency": "INR",
                            "value": "0.0"
-                       }
+                       },
+                       "@ondc/org/title_type": "Packaging"
                    },
                    {
                        "title": "Round Off",
                        "price": {
                            "currency": "INR",
-                           "value": "0.0"
-                       }
+                           "value": "0.05"
+                       },
+                       "@ondc/org/title_type": "Round off"
                    }
                ]
            },
            "fulfillments": [
                {
                    "id": "76",
-                   "type": "Delivery"
+                   "type": "Delivery",
+                   "state": {
+                       "descriptor": {
+                           "code": "Serviceable"
+                       }
+                   },
+                   "@ondc/org/TAT": "PT45M"
                }
            ]
        }
