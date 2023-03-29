@@ -5,100 +5,96 @@
         "city": "std:080",
         "action": "receiver_recon",
         "core_version": "1.0.0",
-        "bap_id": "abc.rsp.com",
-        "bap_uri": "https://abc.rsp.com",
-        "bpp_id": "abc.receiverapp.com",
-        "bpp_uri": "https://abc.receiverapp.com",
-        "transaction_id": "6baa811a-6cbe-4ad3-94e9-cbf96aaff343",
-        "message_id": "6baa811a-6cbe-4ad3-94e9-cbf96aaff343",
-        "timestamp": "2022-10-28T10:34:58.469Z",
-        "ttl": "P2D"
+        "bap_id": "ondc.eunimart.com/api/v1/ondc/rsp/eunimart_rsp/",
+        "bap_uri": "https://ondc.eunimart.com/api/v1/ondc/rsp/eunimart_rsp/",
+        "transaction_id": "659f779f-2a96-4e88-9c63-1bdd1fc2402e",
+        "ttl": "PT30S",
+        "message_id": "08e50bcd-2783-4ba9-9d39-e25f726e2c74",
+        "timestamp": "2023-03-24T09:17:15.270Z",
+        "bpp_id": "ondc.eunimart.com",
+        "bpp_uri": "https://ondc.eunimart.com/api/v1/ondc/bpp/eunimart_bpp/"
     },
     "message": {
         "orderbook": {
             "orders": [
                 {
-                    "id": "K106403902112759",
-                    "invoice_no": "2022/XYZ/12345-2",
-                    "collector_app_id": "abc.collectorapp.com",
-                    "receiver_app_id": "abc.receiverapp.com",
-                    "state": "Completed",
+                    "withholding_tax_gst": {
+                        "currency": "INR",
+                        "value": "0"
+                    },
+                    "invoice_no": "341b469a-33ac-460d-ac7d-6f0f387877fa",
+                    "created_at": "2023-03-24T09:17:10.029Z",
+                    "deduction_by_collector": {
+                        "currency": "INR",
+                        "value": "2.1"
+                    },
+                    "receiver_app_id": "ondc.eunimart.com",
+                    "settlement_reason_code": "01",
+                    "collector_app_id": "ondc.eunimart.com",
+                    "updated_at": "2023-03-24T09:17:10.058Z",
                     "provider": {
                         "name": {
-                            "name": "SABJI XPRESS PVT LTD - BANASWADI",
-                            "code": "18275-ONDC-1"
+                            "code": "SIVA-ONDC-STORE-1",
+                            "name": "SIVA-ONDC-STORE-1"
                         },
-                        "address": "Delhi"
+                        "address": ""
+                    },
+                    "payerdetails": {
+                        "payer_bank_code": "UTIB0000008",
+                        "payer_name": "Shayak Mazumder",
+                        "payer_address": "Eunimart Omnichannel pvt ltd, Madhapur, Hyderabad, Telangana-500081 ,India",
+                        "payer_account_no": "011401533011533",
+                        "payer_virtual_payment_address": ""
                     },
                     "payment": {
-                        "uri": "abcdcd/upi",
-                        "tl_method": "http/get",
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "collected_by": "BAP",
                         "params": {
-                            "transaction_id": "3df395a9",
+                            "transaction_id": "order_LUyDPEBoPHg1oJ",
                             "transaction_status": "PAID",
-                            "amount": "1234",
+                            "amount": "105.00",
                             "currency": "INR"
                         },
                         "type": "ON-ORDER",
-                        "status": "PAID",
-                        "collected_by": "BAP",
-                        "@ondc/org/collected_by_status": "Assert",
-                        "@ondc/org/buyer_app_finder_fee_type": "Amount",
-                        "@ondc/org/buyer_app_finder_fee_amount": "602.0",
-                        "@ondc/org/withholding_amount": "124",
-                        "@ondc/org/withholding_amount_status": "Assert",
-                        "@ondc/org/return_window": "P6D",
-                        "@ondc/org/return_window_status": "Assert",
-                        "@ondc/org/settlement_basis": "Collection",
-                        "@ondc/org/settlement_basis_status": "Assert",
-                        "@ondc/org/settlement_window": "T8D",
-                        "@ondc/org/settlement_window_status": "Assert",
                         "@ondc/org/settlement_details": [
                             {
-                                "settlement_counterparty": "buyer-app",
+                                "settlement_counterparty": "seller-app",
                                 "settlement_phase": "sale-amount",
-                                "settlement_amount": 1231,
                                 "settlement_type": "neft",
-                                "settlement_bank_account_no": "99679007677676",
-                                "settlement_ifsc_code": "HDFC900008",
-                                "upi_address": "sellerapp@upi",
-                                "bank_name": "HDFC",
-                                "branch_name": "Delhi",
-                                "beneficiary_address": "delhi",
-                                "beneficiary_name": "A to Z Printing Solutions Pvt. Ltd",
+                                "beneficiary_name": "Shayak Mazumder",
+                                "beneficiary_address": "",
+                                "settlement_bank_account_no": "78000768594",
+                                "settlement_ifsc_code": "UTIB0000008",
+                                "bank_name": "Axis",
+                                "branch_name": "Madhapur",
+                                "settlement_reference": "UTR_2",
                                 "settlement_status": "PAID",
-                                "settlement_reference": "KKIB2311424",
-                                "settlement_timestamp": "2022-10-28T10:34:58.469Z"
+                                "settlement_timestamp": "2023-03-24T09:17:10.058Z"
                             }
-                        ]
+                        ],
+                        "status": "PAID",
+                        "@ondc/org/collected_by_status": "",
+                        "@ondc/org/buyer_app_finder_fee_amount": "2",
+                        "@ondc/org/withholding_amount": "",
+                        "@ondc/org/withholding_amount_status": "",
+                        "@ondc/org/return_window": "P7D",
+                        "@ondc/org/return_window_status": "",
+                        "@ondc/org/settlement_basis": "",
+                        "@ondc/org/settlement_basis_status": "",
+                        "@ondc/org/settlement_window": "",
+                        "@ondc/org/settlement_window_status": ""
                     },
-                    "withholding_tax_gst": {
-                        "currency": "INR",
-                        "value": "-123"
-                    },
+                    "id": "341b469a-33ac-460d-ac7d-6f0f387877fa",
+                    "state": "Completed",
                     "withholding_tax_tds": {
                         "currency": "INR",
-                        "value": "0673658"
+                        "value": "0"
                     },
-                    "deduction_by_collector": {
-                        "currency": "INR",
-                        "value": "-123"
-                    },
-                    "payerdetails": {
-                        "payer_name": "“Example1 company Pvt. Ltd",
-                        "payer_address": "string",
-                        "payer_account_no": 509424924294248,
-                        "payer_bank_code": "“HDFC0000000”",
-                        "payer_virtual_payment_address": "80abc@abctMh2h"
-                    },
-                    "settlement_reason_code": "01",
-                    "transaction_id": "3df395a9-c196-4678-a4d1-5eaf4f7df8dc",
-                    "settlement_id": "121313",
-                    "settlement_reference_no": "3718683618631",
+                    "settlement_id": "STL-1",
+                    "settlement_reference_no": "UTR_2",
+                    "transaction_id": "be87e6a3-4e8e-4a4f-813e-517429083915",
                     "recon_status": "01",
-                    "order_recon_status": "01",
-                    "created_at": "2022-10-28T10:34:58.472Z",
-                    "updated_at": "2022-10-28T10:34:58.472Z"
+                    "order_recon_status": "01"
                 }
             ]
         }
