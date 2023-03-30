@@ -7,20 +7,22 @@
     "core_version": "1.1.0",
     "bap_id": "jiomart-buyer.ondcz5.de",
     "bap_uri": "https://jiomart-buyer.ondcz5.de/protocol/v1",
-    "transaction_id": "a008c07b-9104-4db8-9cce-53fba91241a5",
-    "message_id": "fa543943-2a90-40b0-bc82-e1ebfcdd56b6",
-    "timestamp": "2023-03-09T08:13:24.273Z",
-    "bpp_id": "preprod-jajee-bpp.shopalyst.com"
+    "transaction_id": "a8a9f522-4246-4117-b922-01fbc975fdfa",
+    "message_id": "9463f9d5-ba69-4479-b249-6dd8cdb1d4bd",
+    "timestamp": "2023-03-29T14:10:29.718Z",
+    "ttl": "PT30S",
+    "bpp_id": "sit.mytra.money",
+    "bpp_uri": "https://sit.mytra.money/api/method/ondc/"
   },
   "message": {
     "order": {
-      "id": "81c6c216-e5aa-4c41-9322-156716fa9d7b",
+      "id": "69928347-41f0-4947-b5dd-4cc2788ed852",
+      "state": "Created",
       "billing": {
         "address": {
-          "door": "Near Thakur College",
           "name": "Mohit Kamble (Home)",
           "building": "Near Thakur College",
-          "street": "E-1902, Sarova Park, Samta Nagar, Kandivali(E)",
+          "locality": "Mumbai",
           "city": "Konkan Division",
           "state": "Maharashtra",
           "country": "IND",
@@ -28,33 +30,33 @@
         },
         "phone": "7738027004",
         "name": "Mohit Kamble (Home)",
-        "email": "mohitkamble@gofynd.com"
+        "email": "mohitkamble@gofynd.com",
+        "created_at": "2023-03-29T14:10:04.329Z",
+        "updated_at": "2023-03-29T14:10:04.329Z"
       },
       "items": [
         {
-          "id": "55EA20538A3151ABD81510BBB42C9CE3_43540043596035_default",
-          "quantity": { "count": 4 }
-        },
-        {
-          "id": "55EA20538A3151ABD81510BBB42C9CE3_43540043661571_default",
+          "fulfillment_id": "ONDC-REQ-39367",
+          "id": "Lion Dates, 250g",
           "quantity": { "count": 2 }
         }
       ],
       "provider": {
-        "id": "5692eae837b7a1d2b7ebd8e6bd251b51",
-        "locations": [{ "id": "5692eae837b7a1d2b7ebd8e6bd251b51" }]
+        "id": "PwcTech Technologies Pvt Ltd",
+        "locations": [{ "id": "Finished Goods - Pwc" }]
       },
       "fulfillments": [
         {
+          "id": "ONDC-REQ-39367",
           "end": {
+            "person": { "name": "Mohit Kamble (Home)" },
             "contact": { "phone": "7738027004" },
             "location": {
-              "gps": "19.2058593, 72.86612",
+              "gps": "19.2058593,72.86612",
               "address": {
-                "door": "Near Thakur College",
                 "name": "Mohit Kamble (Home)",
                 "building": "Near Thakur College",
-                "street": "E-1902, Sarova Park, Samta Nagar, Kandivali(E)",
+                "locality": "Mumbai",
                 "city": "Konkan Division",
                 "state": "Maharashtra",
                 "country": "IND",
@@ -62,47 +64,60 @@
               }
             }
           },
-          "type": "Delivery",
-          "customer": { "person": {} },
-          "provider_id": "5692eae837b7a1d2b7ebd8e6bd251b51"
+          "type": "Delivery"
         }
       ],
-      "addOns": [],
-      "offers": [],
       "payment": {
-        "params": { "amount": "560", "currency": "INR" },
+        "params": {
+          "amount": "125.39",
+          "currency": "INR",
+          "transaction_id": "10982308870820973000"
+        },
         "status": "PAID",
         "type": "ON-ORDER",
-        "collected_by": "BAP"
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "2",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "111222333444",
+            "settlement_ifsc_code": "ICIC0001112",
+            "beneficiary_name": "PwcTech Technologies Pvt Ltd",
+            "bank_name": "ICICI BANK LIMITED"
+          }
+        ]
       },
       "quote": {
-        "price": { "currency": "INR", "value": "560.00" },
+        "price": { "currency": "INR", "value": "125.39" },
         "breakup": [
           {
-            "title": "RAISINS/KHISMISH/MANUKKA - 100g",
-            "price": { "currency": "INR", "value": "160.00" },
-            "@ondc/org/item_id": "55EA20538A3151ABD81510BBB42C9CE3_43540043596035_default",
-            "item": { "price": { "currency": "INR", "value": "40.00" } },
-            "@ondc/org/item_quantity": { "count": 4 },
-            "@ondc/org/title_type": "item"
-          },
-          {
-            "title": "RAISINS/KHISMISH/MANUKKA - 500g",
-            "price": { "currency": "INR", "value": "400.00" },
-            "@ondc/org/item_id": "55EA20538A3151ABD81510BBB42C9CE3_43540043661571_default",
-            "item": { "price": { "currency": "INR", "value": "200.00" } },
+            "@ondc/org/item_id": "Lion Dates, 250g",
             "@ondc/org/item_quantity": { "count": 2 },
-            "@ondc/org/title_type": "item"
+            "@ondc/org/title_type": "item",
+            "title": "Lion Dates, 250g",
+            "price": { "currency": "INR", "value": "106.26" },
+            "item": {
+              "quantity": {
+                "available": { "count": "2.0" },
+                "maximum": { "count": "2.0" }
+              },
+              "price": { "currency": "INR", "value": "53.13" }
+            }
           },
           {
-            "title": "Delivery Charges",
-            "price": { "currency": "INR", "value": "0.00" },
-            "@ondc/org/item_id": "5692eae837b7a1d2b7ebd8e6bd251b51",
-            "@ondc/org/title_type": "delivery"
+            "@ondc/org/item_id": "Lion Dates, 250g",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "19.13" }
           }
         ],
-        "ttl": "PT15M"
-      }
+        "ttl": "PT1H"
+      },
+      "created_at": "2023-03-29T14:10:29.718Z",
+      "updated_at": "2023-03-29T14:10:29.718Z"
     }
   }
 }
