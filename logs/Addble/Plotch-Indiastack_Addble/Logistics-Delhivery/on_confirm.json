@@ -1,0 +1,168 @@
+{
+	"context": {
+		"domain": "nic2004:60232",
+		"country": "IND",
+		"city": "std:080",
+		"action": "on_confirm",
+		"core_version": "1.0.0",
+		"transaction_id": "c04c4f9a-2881-4be1-82ba-95780ac3e136",
+		"bap_id": "preprod-ondc.addble.com",
+		"bap_uri": "https://preprod-ondc.addble.com/",
+		"bpp_id": "ondc-dev.delhivery.com",
+		"bpp_uri": "https://ondc-dev.delhivery.com/delhivery/v1/",
+		"message_id": "5759a840-7108-4dd8-a9d3-3607cba02cac",
+		"timestamp": "2023-01-03T21:34:38.158Z"
+	},
+	"message": {
+		"order": {
+			"id": "fe5d1173-cb8f-42c8-8a7c-6ed7e1238144",
+			"state": "Accepted",
+			"provider": {
+				"id": "Delhivery"
+			},
+			"items": [
+				{
+					"id": "56f1923d-7db5-4e43-a04d-787361fa6e38",
+					"category_id": "Standard Delivery"
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "36.34"
+				},
+				"breakup": [
+					{
+						"@ondc/org/item_id": "56f1923d-7db5-4e43-a04d-787361fa6e38",
+						"@ondc/org/title_type": "Delivery Charge",
+						"price": {
+							"currency": "INR",
+							"value": "36.34"
+						}
+					}
+				]
+			},
+			"payment": {
+				"type": "ON-ORDER",
+				"status": "",
+				"collected_by": "BAP",
+				"params": {},
+				"@ondc/org/settlement_window_status": "Agree",
+				"@ondc/org/settlement_details": [
+					{
+						"beneficiary_name": "DELHIVERY LIMITED",
+						"settlement_status": "NOT-PAID",
+						"settlement_counterparty": "seller-app",
+						"settlement_phase": "sale-amount",
+						"branch_name": "DLF GALERIA",
+						"bank_name": "HDFC BANK",
+						"settlement_ifsc_code": "IFSCTEST1234",
+						"settlement_bank_account_no": "ACCTEST1234",
+						"settlement_type": "neft"
+					}
+				]
+			},
+			"fulfillments": [
+				{
+					"id": "6dd4c5ba-36ad-4744-9a3f-4cead19a5486",
+					"tracking": true,
+					"state": {
+						"descriptor": {
+							"code": "Pending",
+							"name": "Pending"
+						}
+					},
+					"@ondc/org/awb_no": "352026821431",
+					"type": "Prepaid"
+				},
+				{
+					"id": "6dd4c5ba-36ad-4744-9a3f-4cead19a5486-RTO",
+					"type": "RTO"
+				}
+			],
+			"cancellation_terms": [
+				{
+					"fulfillment_state": {
+						"descriptor": {
+							"code": "Order-picked-up"
+						}
+					},
+					"cancellation_fee": {
+						"percentage": "25",
+						"amount": {
+							"currency": "INR",
+							"value": "100"
+						}
+					}
+				},
+				{
+					"fulfillment_state": {
+						"descriptor": {
+							"code": "Out-for-delivery"
+						}
+					},
+					"cancellation_fee": {
+						"percentage": "75",
+						"amount": {
+							"currency": "INR",
+							"value": "250"
+						}
+					}
+				}
+			],
+			"tags": [
+				{
+					"code": "bpp_terms_liability",
+					"list": [
+						{
+							"code": "max_liability_cap",
+							"value": "10000"
+						},
+						{
+							"code": "max_liability",
+							"value": "2"
+						},
+						{
+							"code": "accept",
+							"value": "Y"
+						}
+					]
+				},
+				{
+					"code": "bpp_terms_arbitration",
+					"list": [
+						{
+							"code": "mandatory_arbitration",
+							"value": "false"
+						},
+						{
+							"code": "court_jurisdiction",
+							"value": "KA"
+						},
+						{
+							"code": "accept",
+							"value": "Y"
+						}
+					]
+				},
+				{
+					"code": "bpp_terms_charges",
+					"list": [
+						{
+							"code": "delay_interest",
+							"value": "1000"
+						},
+						{
+							"code": "max_delay_charges",
+							"value": "1000"
+						},
+						{
+							"code": "accept",
+							"value": "Y"
+						}
+					]
+				}
+			]
+		}
+	}
+}
