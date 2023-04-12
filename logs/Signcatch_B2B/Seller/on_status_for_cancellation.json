@@ -3,25 +3,24 @@
         "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:011",
-        "action": "confirm",
+        "action": "on_status",
         "core_version": "2.0.0",
         "bap_id": "preprod-buyer.signcatch.com",
         "bap_uri": "https://preprod-buyer.signcatch.com/",
         "bpp_id": "preprod-seller.signcatch.com",
         "bpp_uri": "https://preprod-seller.signcatch.com/",
         "transaction_id": "f99975a6-3719-416d-9707-783d66230695",
-        "message_id": "799db311-8418-4676-9dff-68ce3361d458",
-        "timestamp": "2023-04-12T07:31:03.941Z",
-        "ttl": "PT30S"
+        "message_id": "2358a740-dd73-4e1a-8d68-54502cb46a2d",
+        "timestamp": "2023-04-12T07:34:01.525Z"
     },
     "message": {
         "order": {
             "id": "64365e37fa395d04bd911735",
-            "state": "Created",
+            "state": "Cancelled",
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "1292.00"
+                    "value": "1292.0"
                 },
                 "breakup": [
                     {
@@ -66,7 +65,7 @@
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "100.00"
+                            "value": "100.0"
                         }
                     }
                 ],
@@ -76,23 +75,29 @@
                 "id": "SW10000275",
                 "locations": [
                     {
-                        "id": "LSIN000277"
+                        "id": "LSIN000275"
                     }
                 ]
             },
             "items": [
                 {
-                    "id": "4548",
-                    "fulfillment_id": "1",
-                    "quantity": {
-                        "count": 4
-                    }
-                },
-                {
                     "id": "4504",
                     "fulfillment_id": "1",
                     "quantity": {
                         "count": 4
+                    },
+                    "tags": {
+                        "status": "Cancelled"
+                    }
+                },
+                {
+                    "id": "4548",
+                    "fulfillment_id": "1",
+                    "quantity": {
+                        "count": 4
+                    },
+                    "tags": {
+                        "status": "Cancelled"
                     }
                 }
             ],
@@ -100,6 +105,11 @@
                 {
                     "id": "1",
                     "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
                     "end": {
                         "contact": {
                             "phone": "9467545021"
@@ -117,12 +127,36 @@
                                 "area_code": "110057"
                             }
                         },
-                        "person": {
-                            "name": "Ashish Super Mart"
+                        "time": {
+                            "range": {
+                                "start": "2023-04-12T07:31:04.275Z",
+                                "end": "2023-04-14T07:31:04.276Z"
+                            }
                         }
                     },
                     "type": "Delivery",
-                    "provider_id": "SW10000275"
+                    "@ondc/org/provider_name": "Organic Diet & Herbal Products",
+                    "start": {
+                        "contact": {
+                            "email": "ondcsupport@signcatch.com",
+                            "phone": "01143099716"
+                        },
+                        "location": {
+                            "gps": "28.69515,77.297623",
+                            "descriptor": {
+                                "name": "Organic Diet & Herbal Products",
+                                "images": [
+                                    "https://awstoazures3.blob.core.windows.net/signcatch-master/staging/wholesalers/logo/1676550552752BechLogo.jpg"
+                                ]
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-04-12T07:31:04.275Z",
+                                "end": "2023-04-14T07:31:04.276Z"
+                            }
+                        }
+                    }
                 }
             ],
             "billing": {
@@ -137,16 +171,12 @@
                     "area_code": "110057"
                 },
                 "phone": "9467545021",
-                "name": "Ashish Super Mart",
+                "name": "Ashish Signcatch",
                 "email": "",
                 "created_at": "2023-04-12T07:30:28.499Z",
                 "updated_at": "2023-04-12T07:30:28.499Z"
             },
             "payment": {
-                "params": {
-                    "amount": "1292.00",
-                    "currency": "INR"
-                },
                 "type": "ON-FULFILLMENT",
                 "collected_by": "BPP",
                 "status": "NOT-PAID",
@@ -163,10 +193,17 @@
                         "bank_name": "Central Bank of India",
                         "branch_name": "Faridabad,Haryana"
                     }
-                ]
+                ],
+                "params": {
+                    "currency": "INR",
+                    "amount": "1292.00"
+                }
+            },
+            "tags": {
+                "cancellation_reason_id": "012"
             },
             "created_at": "2023-04-12T07:31:03.941Z",
-            "updated_at": "2023-04-12T07:31:03.941Z"
+            "updated_at": "2023-04-12T07:32:44.754Z"
         }
     }
 }
