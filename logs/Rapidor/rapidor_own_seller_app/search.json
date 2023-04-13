@@ -1,32 +1,67 @@
 {
-    "context": {
-      "domain": "nic2004:52110",
+  "context": {
+      "domain": "ONDC:RET10",
       "country": "IND",
-      "city": "std:080",
+      "city": "std:011",
       "action": "search",
-      "core_version": "1.1.0",
-      "transaction_id": "VC0Pi9lZNVSlJl0X36p1",
-      "message_id": "6a1d43a2-3165-45eb-b539-6b2a5814a5bf",
-      "timestamp": "2023-03-29T13:25:01.000Z",
-      "bap_id": "rapidor.co",
-      "bap_uri": "https://stagingb2b.rapidor.co/v1/ondc/buyer/",
-      "ttl": "PT10M"
-    },
-    "message": {
+      "core_version": "2.0.0",
+      "transaction_id": "tWxqHhEzkTqy8WUNEpioy",
+      "message_id": "DDj9eMGg_xpUDIHpQxJ71",
+      "timestamp": "2023-04-12T12:56:47.315Z",
+      "bap_id": "ondcpreprodb2b.rapidor.co",
+      "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+      "ttl": "PT30S"
+  },
+  "message": {
       "intent": {
-        "item": {
-          "descriptor": {
-            "name": "steak"
+          "item": {
+              "descriptor": {
+                  "name": "chicken cutlet"
+              }
+          },
+          "fulfillment": {
+              "type": "Delivery",
+              "stops": [
+                  {
+                      "type": "end",
+                      "location": {
+                          "gps": "28.6139391,77.2090212",
+                          "area_code": "110060"
+                      }
+                  }
+              ]
+          },
+          "tags": [
+              {
+                  "code": "bap_terms",
+                  "list": [
+                      {
+                          "code": "finder_fee_type",
+                          "value": "percent"
+                      },
+                      {
+                          "code": "finder_fee_amount",
+                          "value": "0"
+                      }
+                  ]
+              },
+              {
+                  "code": "buyer_id",
+                  "list": [
+                      {
+                          "code": "buyer_id_code",
+                          "value": "gst"
+                      },
+                      {
+                          "code": "buyer_id_no",
+                          "value": "08AIKPG0624Q2ZY"
+                      }
+                  ]
+              }
+          ],
+          "payment": {
+              "type": "ON-FULFILLMENT"
           }
-        },
-        "fulfillment": {
-          "end": {
-            "location": {
-              "gps": "12.4535445,77.9283792"
-            }
-          }
-        },
-        "tags": []
       }
-    }
   }
+}
