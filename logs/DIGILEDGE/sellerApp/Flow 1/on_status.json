@@ -3,21 +3,21 @@
         "domain": "nic2004:52110",
         "country": "IND",
         "city": "std:080",
-        "action": "confirm",
+        "action": "on_status",
         "core_version": "1.1.0",
         "bap_id": "buyer-app-preprod.ondc.org",
         "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
         "bpp_id": "seller.ondc.digiledge.in",
         "bpp_uri": "https://seller.ondc.digiledge.in/v1/preprod",
         "transaction_id": "ae48f79b-8866-4d29-b1e7-6985471f19c2",
-        "message_id": "028a6b23-971f-40ad-8581-d1e89b25d76c",
-        "timestamp": "2023-04-13T11:00:19.628Z",
+        "message_id": "e5f23854-2861-4e6e-ad2e-21200103a36d",
+        "timestamp": "2023-04-13T11:18:02.224Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "2023-04-13-174756",
-            "state": "Created",
+            "state": "Completed",
             "provider": {
                 "id": "DIGLE98081",
                 "locations": [
@@ -29,7 +29,7 @@
             "items": [
                 {
                     "id": "75bcfbc3-034f-4150-96af-0ca767ee3f3f",
-                    "fulfillment_id": "470f9cc8-9b52-4f6c-9e5c-2465ecc64a21",
+                    "fulfillment_id": "470f9cc8-9b52-4f6c-9e5c-2465ecc64a21-ReverseQC",
                     "quantity": {
                         "count": 2
                     }
@@ -39,6 +39,9 @@
                     "fulfillment_id": "470f9cc8-9b52-4f6c-9e5c-2465ecc64a21",
                     "quantity": {
                         "count": 2
+                    },
+                    "tags": {
+                        "status": "Return_Approved"
                     }
                 }
             ],
@@ -62,7 +65,42 @@
                 {
                     "id": "470f9cc8-9b52-4f6c-9e5c-2465ecc64a21",
                     "type": "Delivery",
+                    "@ondc/org/provider_name": "Digledge Samsung",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
                     "tracking": true,
+                    "start": {
+                        "location": {
+                            "id": "99068efe-7501-4a9b-9999-26b6ca944a77",
+                            "descriptor": {
+                                "name": "Digledge Samsung"
+                            },
+                            "gps": "10.995341,77.070690",
+                            "address": {
+                                "building": "Nallur",
+                                "street": "Nallur",
+                                "locality": "Nallur",
+                                "city": "Sulur",
+                                "state": "Tamil Nadu",
+                                "country": "IND",
+                                "area_code": "641016"
+                            }
+                        },
+                        "time": {
+                            "timestamp": "2023-04-13T11:12:20.917Z",
+                            "range": {
+                                "start": "2023-04-13T11:00:20.404Z",
+                                "end": "2023-04-13T11:45:20.404Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
                     "end": {
                         "location": {
                             "gps": "13.011325, 77.591942",
@@ -76,12 +114,87 @@
                                 "area_code": "560006"
                             }
                         },
+                        "time": {
+                            "timestamp": "2023-04-13T11:12:20.917Z",
+                            "range": {
+                                "start": "2023-04-13T11:45:20.404Z",
+                                "end": "2023-04-13T12:30:20.404Z"
+                            }
+                        },
                         "contact": {
                             "phone": "8979879897",
                             "email": "shabir@gmail.com"
                         },
                         "person": {
                             "name": "shabirahamed"
+                        }
+                    },
+                    "rateable": true
+                },
+                {
+                    "id": "470f9cc8-9b52-4f6c-9e5c-2465ecc64a21-ReverseQC",
+                    "type": "Reverse QC",
+                    "@ondc/org/provider_name": "Digledge Samsung",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "tracking": true,
+                    "start": {
+                        "location": {
+                            "id": "99068efe-7501-4a9b-9999-26b6ca944a77",
+                            "descriptor": {
+                                "name": "shabirahamed"
+                            },
+                            "gps": "13.011325, 77.591942",
+                            "address": {
+                                "name": "shabirahamed",
+                                "building": "Sri sakthi",
+                                "locality": "Nallur",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560006"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-04-13T13:15:20.404Z",
+                                "end": "2023-04-13T14:00:20.404Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "8979879897",
+                            "email": "shabir@gmail.com"
+                        },
+                        "person": {
+                            "name": "shabirahamed"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "10.995341,77.070690",
+                            "address": {
+                                "name": "Digledge Samsung",
+                                "building": "Nallur",
+                                "street": "Nallur",
+                                "locality": "Nallur",
+                                "city": "Sulur",
+                                "state": "Tamil Nadu",
+                                "country": "IND",
+                                "area_code": "641016"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-04-13T14:00:20.404Z",
+                                "end": "2023-04-13T14:45:20.404Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
                         }
                     }
                 }
@@ -167,7 +280,7 @@
                 ]
             },
             "created_at": "2023-04-13T11:00:19.628Z",
-            "updated_at": "2023-04-13T11:00:19.628Z"
+            "updated_at": "2023-04-13T11:13:38.483Z"
         }
     }
 }
