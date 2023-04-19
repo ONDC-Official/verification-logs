@@ -1,0 +1,70 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.1.0",
+    "bap_id": "preprod-ondc.viranc.com/p/v1/store",
+    "bap_uri": "https://preprod-ondc.viranc.com/p/v1/store/bapl",
+    "transaction_id": "113729c0-3b19-5776-a2d6-2dafb57a9f78",
+    "message_id": "6cc20202-e065-5d22-ad8c-f79c6d55c4dd",
+    "timestamp": "2023-04-18T12:31:40.097Z",
+    "bpp_id": "qaapis.delcaper.com",
+    "bpp_uri": "https://qaapis.delcaper.com/public/ondc"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "Delcaper"
+      },
+      "items": [
+        {
+          "id": 1,
+          "category_id": "Same Day Delivery",
+          "descriptor": {
+            "code": "P2P"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "5.9"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": 1,
+            "@ondc/org/title_type": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "5"
+            }
+          },
+          {
+            "@ondc/org/item_id": 1,
+            "@ondc/org/title_type": "GST",
+            "price": {
+              "currency": "INR",
+              "value": "0.9"
+            }
+          }
+        ]
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "upi",
+            "beneficiary_name": "xxxxx",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
+      }
+    }
+  }
+}
