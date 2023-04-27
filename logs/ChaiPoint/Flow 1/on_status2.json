@@ -3,19 +3,21 @@
         "domain": "nic2004:52110",
         "country": "IND",
         "city": "std:080",
-        "action": "on_init",
+        "action": "on_status",
         "core_version": "1.1.0",
         "bap_id": "buyer-app-preprod.ondc.org",
-        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_init",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_status",
         "bpp_id": "ondc.chaipoint.com",
         "bpp_uri": "https://ondc.chaipoint.com/",
         "transaction_id": "0ad6452e-b6af-463a-98f4-a0c27dff8223",
-        "message_id": "bdc72460-796d-416a-a238-990a8fb01721",
-        "timestamp": "2023-04-26T12:38:40.295Z",
+        "message_id": "6bdcd7aa-757d-4472-8acc-69be1453ff66",
+        "timestamp": "2023-04-26T13:24:17.800Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "id": "38946",
+            "state": "Completed",
             "items": [
                 {
                     "id": "1046",
@@ -33,12 +35,17 @@
                 }
             ],
             "provider": {
-                "id": "76"
+                "id": "76",
+                "locations": [
+                    {
+                        "id": "839"
+                    }
+                ]
             },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "356.0"
+                    "value": "355.94"
                 },
                 "breakup": [
                     {
@@ -143,6 +150,16 @@
                 "updated_at": "2023-04-26T12:38:38.324Z"
             },
             "payment": {
+                "uri": "https://juspay.in/",
+                "params": {
+                    "transaction_id": "ONDC-0ad6452e-b6af-463a-98f4-a0c27dff8223-1",
+                    "amount": "356",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "tl_method": "http/get",
+                "collected_by": "BAP",
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0",
                 "@ondc/org/settlement_details": [
@@ -158,9 +175,11 @@
                     }
                 ]
             },
+            "created_at": "2023-04-26T13:24:17.800Z",
+            "updated_at": "2023-04-26T13:24:17.800Z",
             "fulfillments": [
                 {
-                    "id": "76",
+                    "id": "1",
                     "type": "Delivery",
                     "end": {
                         "contact": {
@@ -178,15 +197,42 @@
                                 "area_code": "560029",
                                 "state": "Karnataka"
                             }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-04-26T12:40:32.001Z",
+                                "end": "2023-04-26T13:25:32.001Z"
+                            }
                         }
                     },
-                    "tracking": false,
-                    "provider_id": "76"
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
+                    "start": {
+                        "location": {
+                            "id": "839",
+                            "gps": "12.930798, 77.632912",
+                            "descriptor": {
+                                "name": "Chaipoint Koramangala 3"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-04-26T12:40:32.001Z",
+                                "end": "2023-04-26T13:25:32.001Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "Chaipoint,feedback@chaipoint.com,8880141000",
+                            "email": "support@chaipoint.com"
+                        }
+                    },
+                    "tracking": true,
+                    "@ondc/org/provider_name": "Chaipoint Koramangala 3"
                 }
-            ],
-            "provider_location": {
-                "id": "839"
-            }
+            ]
         }
     }
 }
