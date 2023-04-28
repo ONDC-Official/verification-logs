@@ -9,9 +9,9 @@
     "bap_uri": "https://preprod-ondc.viranc.com/p/v1/store/bapl",
     "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc/logistics",
     "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/logistics/",
-    "transaction_id": "267b2073-d457-5003-a00f-c37281ddccaf",
-    "message_id": "569c2684-26ba-507e-9b7d-38f1832e10f7",
-    "timestamp": "2023-03-27T06:21:11.367Z",
+    "transaction_id": "80d67666-9f3b-514d-9cec-34322780c8f5",
+    "message_id": "76d2d722-b861-5aa2-b033-44359bd821f3",
+    "timestamp": "2023-04-24T06:11:36.154Z",
     "ttl": "PT30S"
   },
   "message": {
@@ -23,6 +23,10 @@
         {
           "id": "1",
           "type": "Prepaid"
+        },
+        {
+          "id": "3",
+          "type": "RTO"
         }
       ],
       "bpp/providers": [
@@ -38,22 +42,41 @@
               "id": "Immediate Delivery",
               "time": {
                 "label": "TAT",
-                "duration": "PT15M"
+                "duration": "PT26M"
               }
             }
           ],
           "items": [
             {
               "id": "I1",
+              "parent_item_id": "",
               "category_id": "Immediate Delivery",
               "fulfillment_id": "1",
               "descriptor": {
                 "name": "Magicpin",
-                "code": "P2P"
+                "code": "P2P",
+                "short_desc": "Magicpin as a Logistics Provider",
+                "long_desc": "Magicpin as a Logistics Provider"
               },
               "price": {
                 "currency": "INR",
-                "value": "1"
+                "value": "75"
+              }
+            },
+            {
+              "id": "I2",
+              "parent_item_id": "I1",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "name": "RTO Quote",
+                "code": "P2P",
+                "short_desc": "RTO Quote",
+                "long_desc": "RTO Quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "75"
               }
             }
           ]

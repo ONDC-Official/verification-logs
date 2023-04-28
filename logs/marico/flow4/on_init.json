@@ -1,33 +1,41 @@
 {
     "context": {
-        "city": "*",
-        "action": "init",
-        "bap_id": "jiomart-buyer.ondcz5.de",
-        "bpp_id": "ondcpreprod.marico.in",
         "domain": "nic2004:52110",
-        "bap_uri": "https://jiomart-buyer.ondcz5.de/protocol/v1",
         "country": "IND",
-        "timestamp": "2023-03-23T09:37:01.013Z",
-        "message_id": "efb0a8c4-2a8b-4eae-a761-ce729d31803e",
+        "city": "std:079",
+        "action": "on_init",
         "core_version": "1.1.0",
-        "transaction_id": "fc290514-bd19-40f3-81c7-aa48b4a8da03"
+        "bap_id": "jiomart-buyer.ondcz5.de",
+        "bap_uri": "https://jiomart-buyer.ondcz5.de/protocol/v1",
+        "bpp_id": "ondcpreprod.marico.in",
+        "bpp_uri": "https://ondcpreprod.marico.in/retail/",
+        "transaction_id": "1bd3f848-caf7-43eb-a808-3d8332a29257",
+        "message_id": "8e7c7743-f822-4c8a-9f77-16f44c47c780",
+        "timestamp": "2023-04-24T06:42:30.904Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "provider": {
+                "id": "ondcpreprod.marico.in"
+            },
+            "provider_location": {
+                "id": "ondcpreprod-marico-in-1"
+            },
             "items": [
                 {
-                    "id": "MANS49",
+                    "id": "8901088129831",
+                    "fulfillment_id": "1",
                     "quantity": {
                         "count": 2
-                    },
-                    "fulfillment_id": "1"
+                    }
                 },
                 {
-                    "id": "8901088055772",
+                    "id": "MANS108",
+                    "fulfillment_id": "1",
                     "quantity": {
                         "count": 1
-                    },
-                    "fulfillment_id": "1"
+                    }
                 }
             ],
             "billing": {
@@ -38,48 +46,111 @@
                     "city": "Ahmedabad",
                     "name": "Jay Bhavsar",
                     "state": "Gujarat",
-                    "street": "E-302",
                     "country": "IND",
                     "building": "Haridarshan cross road",
-                    "locality": null,
+                    "locality": "",
                     "area_code": "380023"
                 },
-                "created_at": "2023-03-13T09:31:15.211Z",
-                "updated_at": "2023-03-23T08:37:49.657Z"
-            },
-            "provider": {
-                "id": "ondcpreprod.marico.in",
-                "locations": [
-                    {
-                        "id": "ondcpreprod-marico-in-1"
-                    }
-                ]
+                "created_at": "2023-04-24T06:42:30.756Z",
+                "updated_at": "2023-04-24T06:42:30.756Z"
             },
             "fulfillments": [
                 {
                     "id": "1",
+                    "type": "Delivery",
+                    "provider_id": "ondcpreprod.marico.in",
+                    "tracking": false,
                     "end": {
-                        "contact": {
-                            "email": "jay@jetbro.in",
-                            "phone": "9898547799"
-                        },
                         "location": {
-                            "gps": "23.0213373, 72.6239995",
+                            "gps": "23.0213373,72.6239995",
                             "address": {
-                                "city": "Ahmedabad",
-                                "name": "Jay Bhavsar",
-                                "state": "Gujarat",
-                                "street": "E-302",
-                                "country": "IND",
                                 "building": "Haridarshan cross road",
-                                "locality": null,
+                                "name": "Jay Bhavsar",
+                                "locality": "",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
                                 "area_code": "380023"
                             }
+                        },
+                        "contact": {
+                            "phone": "9898547799",
+                            "email": ""
                         }
-                    },
-                    "type": "Delivery"
+                    }
                 }
-            ]
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "601"
+                },
+                "breakup": [
+                    {
+                        "title": "Saffola Masala Oats Masala & Coriander - 500 gm",
+                        "price": {
+                            "currency": "INR",
+                            "value": "332"
+                        },
+                        "@ondc/org/item_id": "8901088129831",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "166"
+                            }
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "Saffola Pure Honey 250g + Saffola Arogyam ChyawanAmrut 500 gm",
+                        "price": {
+                            "currency": "INR",
+                            "value": "269"
+                        },
+                        "@ondc/org/item_id": "MANS108",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "269"
+                            }
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery"
+                    }
+                ],
+                "ttl": "PT30S"
+            },
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "2",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "beneficiary_name": "Marico Limited - DTC",
+                        "upi_address": "",
+                        "settlement_bank_account_no": "MARICO12337",
+                        "settlement_ifsc_code": "HDFC0001573",
+                        "bank_name": "HDFC Bank Ltd.",
+                        "branch_name": "HDFC Bank Ltd. , Kalina"
+                    }
+                ]
+            }
         }
     }
 }
