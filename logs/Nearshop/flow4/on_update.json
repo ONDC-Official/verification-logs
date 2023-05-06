@@ -1,0 +1,185 @@
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_update",
+        "core_version": "1.1.0",
+        "bap_id": "buyer-app-preprod.ondc.org",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+        "bpp_uri": "https://api.staging.nearshop.in/bpp/api/v1",
+        "transaction_id": "33e4e632-7817-49d5-954b-50ee3b6921f3",
+        "message_id": "b4de0405-b837-4e2f-93a8-afec348b110a",
+        "timestamp": "2023-05-06T15:51:33.493Z",
+        "bpp_id": "api.staging.nearshop.in",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "state": "Completed",
+            "items": [
+                {
+                    "id": "fea40eec-fa72-4230-9e5d-40eb606e70db",
+                    "fulfillment_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                    "quantity": {
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "184ac88f-0c41-419d-be32-994879631e18",
+                    "fulfillment_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": {
+                        "status": "Liquidated"
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "133"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "fea40eec-fa72-4230-9e5d-40eb606e70db",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Watermelon",
+                        "price": {
+                            "currency": "INR",
+                            "value": "103"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "103"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "184ac88f-0c41-419d-be32-994879631e18",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Gobi | Cauliflower",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "31"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
+                        }
+                    }
+                ],
+                "ttl": "P4D"
+            },
+            "fulfillments": [
+                {
+                    "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7",
+                    "tracking": true,
+                    "end": {
+                        "contact": {
+                            "email": "sumitait5219@gmail.com",
+                            "phone": "9898989898"
+                        },
+                        "person": {
+                            "name": "sumit kumar"
+                        },
+                        "location": {
+                            "gps": "13.119769, 77.588122",
+                            "address": {
+                                "name": "sumit kumar",
+                                "building": "ABC",
+                                "locality": "ABC street",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560064"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-05-06T15:50:23.457Z",
+                                "end": "2023-05-06T15:51:49.857Z"
+                            },
+                            "timestamp": "2023-05-06T15:51:15.570Z"
+                        }
+                    },
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
+                    "rateable": true,
+                    "start": {
+                        "location": {
+                            "id": "44f1a436-8eb8-5bb7-93e7-39e2324efcb7_location",
+                            "descriptor": {
+                                "name": "iFresh Nearshop"
+                            },
+                            "gps": "13.105621,77.570382"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-05-06T15:50:23.457Z",
+                                "end": "2023-05-06T17:50:23.457Z"
+                            },
+                            "timestamp": "2023-05-06T15:50:50.552Z"
+                        },
+                        "contact": {
+                            "phone": "09049249012"
+                        }
+                    },
+                    "@ondc/org/provider_name": "iFresh Nearshop"
+                }
+            ],
+            "payment": {
+                "uri": "https://juspay.in/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "164",
+                    "currency": "INR",
+                    "transaction_id": "ONDC-33e4e632-7817-49d5-954b-50ee3b6921f3-1"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "810030027666312",
+                        "settlement_ifsc_code": "UTIB0000234",
+                        "beneficiary_name": "Nearshop Pvt Ltd",
+                        "bank_name": "Axis Bank",
+                        "branch_name": "Jakkur"
+                    }
+                ]
+            },
+            "created_at": "2023-05-06T15:50:22.938Z",
+            "updated_at": "2023-05-06T15:51:33.493Z",
+            "id": "2023-05-06-217226"
+        }
+    }
+}
