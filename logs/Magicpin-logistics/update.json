@@ -3,111 +3,65 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:022",
-    "action": "on_status",
+    "action": "update",
     "core_version": "1.1.0",
     "bap_id": "preprod-ondc.viranc.com/p/v1/store",
     "bap_uri": "https://preprod-ondc.viranc.com/p/v1/store/bapl",
     "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc/logistics",
     "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/logistics/",
     "transaction_id": "52635b92-332a-538e-9f62-3a31869b054d",
-    "message_id": "24d9b39e-c77a-4e85-bc10-dec02788d2c3",
-    "timestamp": "2023-05-06T21:12:11.724Z",
+    "message_id": "3c541ecc-5922-470f-afae-9b8416714ee3",
+    "timestamp": "2023-05-06T21:12:01.556Z",
     "ttl": "PT30S"
   },
   "message": {
+    "update_target": "fulfillment",
     "order": {
       "id": "8aaff806-e3af-41fd-a868-e312a964e6fb",
-      "state": "In-progress",
-      "provider": {
-        "id": "P1"
-      },
+      "state": "Accepted",
       "items": [
         {
           "id": "I1",
-          "parent_item_id": "",
           "category_id": "Standard Delivery",
           "descriptor": {
             "code": "P2P"
           }
         }
       ],
-      "billing": {
-        "name": "ONDC Test Seller Store",
-        "address": {
-          "name": "ONDC Test Seller Store",
-          "building": "Fort",
-          "locality": "Fort",
-          "city": "Mumbai",
-          "state": "Maharashtra",
-          "country": "India",
-          "area_code": "400001"
-        },
-        "email": "test@gmail.com",
-        "phone": "9999999999",
-        "tax_number": "pan_number",
-        "created_at": "2023-05-06T21:09:34.975Z",
-        "updated_at": "2023-05-06T21:09:34.975Z"
-      },
       "fulfillments": [
         {
-          "type": "1",
+          "id": "1",
+          "type": "Prepaid",
           "start": {
-            "time": {
-              "range": {
-                "start": "2023-05-06T21:27:11.724Z",
-                "end": "2023-05-06T21:42:11.724Z"
-              }
+            "instructions": {
+              "name": "Status for pickup",
+              "long_desc": "Pickup Confirmation Code",
+              "short_desc": "9838261"
             }
           },
           "end": {
-            "time": {
-              "range": {
-                "start": "2023-05-06T21:57:11.724Z",
-                "end": "2023-05-06T22:12:11.724Z"
-              }
+            "instructions": {
+              "name": "Status for drop",
+              "long_desc": "Delivery Confirmation Code",
+              "short_desc": "7069531"
             }
           },
-          "state": {
-            "descriptor": {
-              "code": "Agent-assigned"
-            }
-          },
-          "tracking": true
+          "tags": {
+            "@ondc/org/order_ready_to_ship": "yes"
+          }
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "1"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "I1",
-            "@ondc/org/title_type": "Delivery Charge",
-            "price": {
-              "currency": "INR",
-              "value": "1"
-            }
-          }
-        ]
-      },
       "payment": {
+        "@ondc/org/collection_amount": "451.14",
         "collected_by": "BAP",
         "type": "POST-FULFILLMENT"
       },
-      "created_at": "2023-05-06T21:09:57.930Z",
-      "updated_at": "2023-05-06T21:09:57.930Z",
       "@ondc/org/linked_order": {
         "items": [
           {
-            "parent_item_id": "",
             "category_id": "Grocery",
             "descriptor": {
               "name": "Aashirvaad Shudh Chakki Atta, 10kg Pack"
-            },
-            "price": {
-              "currency": "INR",
-              "value": "437.00"
             },
             "quantity": {
               "count": 1,
@@ -115,6 +69,10 @@
                 "unit": "Kilogram",
                 "value": 10
               }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "437.00"
             }
           }
         ],
@@ -138,7 +96,8 @@
             "value": 10
           }
         }
-      }
+      },
+      "updated_at": "2023-05-06T21:12:01.556Z"
     }
   }
 }
