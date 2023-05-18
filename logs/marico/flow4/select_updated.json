@@ -1,57 +1,123 @@
 {
     "context": {
-        "ttl": "PT30S",
-        "city": "std:079",
-        "action": "select",
-        "bap_id": "jiomart-buyer.ondcz5.de",
-        "bpp_id": "ondcpreprod.marico.in",
         "domain": "nic2004:52110",
-        "bap_uri": "https://jiomart-buyer.ondcz5.de/protocol/v1",
-        "bpp_uri": "https://ondcpreprod.marico.in/retail/",
         "country": "IND",
-        "timestamp": "2023-05-17T11:26:44.395Z",
-        "message_id": "c9372330-70f1-4858-9df2-bc5412530136",
+        "city": "std:079",
+        "action": "on_select",
         "core_version": "1.1.0",
-        "transaction_id": "b55c3922-9499-4ce0-bbed-03cd72164b2c"
+        "bap_id": "jiomart-buyer.ondcz5.de",
+        "bap_uri": "https://jiomart-buyer.ondcz5.de/protocol/v1",
+        "bpp_id": "ondcpreprod.marico.in",
+        "bpp_uri": "https://ondcpreprod.marico.in/retail/",
+        "transaction_id": "f9b33c6f-f412-491f-8d61-ec6679a2e53e",
+        "message_id": "2d10a10e-6739-4cc3-921f-70a7b640fb60",
+        "timestamp": "2023-05-17T13:16:26.051Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "provider": {
+                "id": "ondcpreprod.marico.in"
+            },
             "items": [
                 {
-                    "id": "MANS108",
-                    "quantity": {
-                        "count": 1
-                    },
-                    "location_id": "ondcpreprod-marico-in-1"
+                    "fulfillment_id": "1",
+                    "id": "8901088055772"
                 },
                 {
-                    "id": "MANS111",
-                    "quantity": {
-                        "count": 1
-                    },
-                    "location_id": "ondcpreprod-marico-in-1"
+                    "fulfillment_id": "1",
+                    "id": "8901088182539"
                 }
             ],
-            "provider": {
-                "id": "ondcpreprod.marico.in",
-                "locations": [
-                    {
-                        "id": "ondcpreprod-marico-in-1"
-                    }
-                ]
-            },
             "fulfillments": [
                 {
-                    "end": {
-                        "location": {
-                            "gps": "23.0213373,72.6239995",
-                            "address": {
-                                "area_code": "380023"
-                            }
+                    "id": "1",
+                    "@ondc/org/provider_name": "Marico",
+                    "tracking": false,
+                    "@ondc/org/category": "Express Delivery",
+                    "@ondc/org/TAT": "P4D",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
                         }
                     }
                 }
-            ]
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "704"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "8901088055772",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Saffola Oats, 1 kg with Free Saffola Oats 400 gm",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "386"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "2"
+                                },
+                                "maximum": {
+                                    "count": "3"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "193"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "8901088182539",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Saffola Immuniveda Golden Turmeric Milk Mix 400g | Ayurvedic Immunity Booster Haldi Doodh | Healthy drink for kids & adults",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "318"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "2"
+                                },
+                                "maximum": {
+                                    "count": "3"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "318"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery"
+                    }
+                ],
+                "ttl": "PT30S"
+            }
         }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "Item quantity unavailable"
     }
 }
