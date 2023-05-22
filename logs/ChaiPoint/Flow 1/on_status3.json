@@ -3,42 +3,69 @@
         "domain": "nic2004:52110",
         "country": "IND",
         "city": "std:080",
-        "action": "on_init",
+        "action": "on_status",
         "core_version": "1.1.0",
         "bap_id": "buyer-app-preprod.ondc.org",
-        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_init",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_status",
         "bpp_id": "ondc.chaipoint.com",
         "bpp_uri": "https://ondc.chaipoint.com/",
         "transaction_id": "99242094-568e-4f41-968c-644f492b0ac1",
-        "message_id": "ec7c843e-d5ce-429a-b5ba-231fa849e272",
-        "timestamp": "2023-05-18T11:48:53.648Z",
+        "message_id": "a04aa7c0-5d07-404b-8bca-9d4465760e20",
+        "timestamp": "2023-05-18T12:13:25.402Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "id": "2023-05-18-436969",
+            "state": "Completed",
             "items": [
                 {
                     "id": "1046",
                     "quantity": {
-                        "count": 2
+                        "count": 1
+                    },
+                    "fulfillment_id": "76"
+                },
+                {
+                    "id": "1046",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "76",
+                    "tags": {
+                        "status": "Liquidated"
+                    }
+                },
+                {
+                    "id": "831",
+                    "quantity": {
+                        "count": 1
                     },
                     "fulfillment_id": "76"
                 },
                 {
                     "id": "831",
                     "quantity": {
-                        "count": 2
+                        "count": 1
                     },
-                    "fulfillment_id": "76"
+                    "fulfillment_id": "76",
+                    "tags": {
+                        "status": "Liquidated"
+                    }
                 }
             ],
             "provider": {
-                "id": "76"
+                "id": "76",
+                "locations": [
+                    {
+                        "id": "839"
+                    }
+                ]
             },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "880.0"
+                    "value": "440.05"
                 },
                 "breakup": [
                     {
@@ -55,7 +82,7 @@
                         },
                         "@ondc/org/item_id": "831",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 1
                         },
                         "@ondc/org/title_type": "item"
                     },
@@ -63,7 +90,7 @@
                         "title": "Tax",
                         "price": {
                             "currency": "INR",
-                            "value": "24.0"
+                            "value": "12.0"
                         },
                         "@ondc/org/item_id": "831",
                         "@ondc/org/title_type": "tax"
@@ -82,7 +109,7 @@
                         },
                         "@ondc/org/item_id": "1046",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 1
                         },
                         "@ondc/org/title_type": "item"
                     },
@@ -90,7 +117,7 @@
                         "title": "Tax",
                         "price": {
                             "currency": "INR",
-                            "value": "17.9"
+                            "value": "8.95"
                         },
                         "@ondc/org/item_id": "1046",
                         "@ondc/org/title_type": "tax"
@@ -122,8 +149,7 @@
                         "@ondc/org/item_id": "76",
                         "@ondc/org/title_type": "misc"
                     }
-                ],
-                "ttl": "P1D"
+                ]
             },
             "billing": {
                 "name": "Kushagra",
@@ -143,6 +169,16 @@
                 "updated_at": "2023-05-18T11:48:51.712Z"
             },
             "payment": {
+                "uri": "https://juspay.in/",
+                "params": {
+                    "transaction_id": "ONDC-99242094-568e-4f41-968c-644f492b0ac1-1",
+                    "amount": "880",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "tl_method": "http/get",
+                "collected_by": "BAP",
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0",
                 "@ondc/org/settlement_details": [
@@ -158,9 +194,11 @@
                     }
                 ]
             },
+            "created_at": "2023-05-18T12:13:25.402Z",
+            "updated_at": "2023-05-18T12:13:25.402Z",
             "fulfillments": [
                 {
-                    "id": "76",
+                    "id": "1",
                     "type": "Delivery",
                     "end": {
                         "contact": {
@@ -178,15 +216,45 @@
                                 "area_code": "560034",
                                 "state": "Karnataka"
                             }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-05-18T11:50:06.364Z",
+                                "end": "2023-05-18T12:35:06.364Z"
+                            }
                         }
                     },
-                    "tracking": false,
-                    "provider_id": "76"
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
+                    "start": {
+                        "location": {
+                            "id": "839",
+                            "gps": "12.930798, 77.632912",
+                            "descriptor": {
+                                "name": "Chaipoint Koramangala 3"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-05-18T11:50:06.364Z",
+                                "end": "2023-05-18T12:35:06.364Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "Chaipoint,feedback@chaipoint.com,8880141000",
+                            "email": "support@chaipoint.com"
+                        }
+                    },
+                    "tracking": true,
+                    "@ondc/org/provider_name": "Chaipoint Koramangala 3"
                 }
-            ],
-            "provider_location": {
-                "id": "839"
-            }
+            ]
         }
     }
 }
+
+
+

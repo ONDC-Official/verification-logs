@@ -3,83 +3,55 @@
         "domain": "nic2004:52110",
         "country": "IND",
         "city": "std:080",
-        "action": "on_select",
+        "action": "on_update",
         "core_version": "1.1.0",
         "bap_id": "buyer-app-preprod.ondc.org",
-        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_select",
+        "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_update",
         "bpp_id": "ondc.chaipoint.com",
         "bpp_uri": "https://ondc.chaipoint.com/",
-        "transaction_id": "99242094-568e-4f41-968c-644f492b0ac1",
-        "message_id": "1e5ad2a8-cc57-4216-8529-a14a9787c5fa",
-        "timestamp": "2023-05-18T11:47:59.255Z",
+        "transaction_id": "18893131-ef61-43d4-b200-1dcc15f80ffb",
+        "message_id": "1ca79ae3-f88b-4a7b-87b9-584fe0a489db",
+        "timestamp": "2023-05-19T11:59:56.532Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "id": "2023-05-19-610543",
+            "state": "Completed",
             "items": [
                 {
-                    "id": "831",
+                    "id": "169",
+                    "quantity": {
+                        "count": 3
+                    },
                     "fulfillment_id": "76"
                 },
                 {
                     "id": "1046",
+                    "quantity": {
+                        "count": 0
+                    },
                     "fulfillment_id": "76"
+                },
+                {
+                    "id": "1046",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "76",
+                    "tags": {
+                        "status": "Liquidated"
+                    }
                 }
             ],
-            "provider": {
-                "id": "76"
-            },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "880.0"
+                    "value": "504.06"
                 },
                 "breakup": [
                     {
                         "item": {
-                            "quantity": {
-                                "available": {
-                                    "count": "999999"
-                                },
-                                "maximum": {
-                                    "count": "999999"
-                                }
-                            },
-                            "price": {
-                                "currency": "INR",
-                                "value": "240.0"
-                            }
-                        },
-                        "title": "Tomato Pasta + Cold Coffee",
-                        "price": {
-                            "currency": "INR",
-                            "value": "240.0"
-                        },
-                        "@ondc/org/item_id": "831",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
-                        },
-                        "@ondc/org/title_type": "item"
-                    },
-                    {
-                        "title": "Tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "24.0"
-                        },
-                        "@ondc/org/item_id": "831",
-                        "@ondc/org/title_type": "tax"
-                    },
-                    {
-                        "item": {
-                            "quantity": {
-                                "available": {
-                                    "count": "999999"
-                                },
-                                "maximum": {
-                                    "count": "999999"
-                                }
-                            },
                             "price": {
                                 "currency": "INR",
                                 "value": "179.0"
@@ -92,7 +64,7 @@
                         },
                         "@ondc/org/item_id": "1046",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 0
                         },
                         "@ondc/org/title_type": "item"
                     },
@@ -100,9 +72,36 @@
                         "title": "Tax",
                         "price": {
                             "currency": "INR",
-                            "value": "17.9"
+                            "value": "0.0"
                         },
                         "@ondc/org/item_id": "1046",
+                        "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "160.0"
+                            }
+                        },
+                        "title": "Cold Coffee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "160.0"
+                        },
+                        "@ondc/org/item_id": "169",
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "24.0"
+                        },
+                        "@ondc/org/item_id": "169",
                         "@ondc/org/title_type": "tax"
                     },
                     {
@@ -127,26 +126,40 @@
                         "title": "Convenience Fee",
                         "price": {
                             "currency": "INR",
-                            "value": "0.1"
+                            "value": "0.05"
                         },
                         "@ondc/org/item_id": "76",
                         "@ondc/org/title_type": "misc"
                     }
-                ],
-                "ttl": "P1D"
+                ]
             },
             "fulfillments": [
                 {
-                    "id": "76",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
+                    "id": "1",
+                    "type": "Delivery",
+                    "end": {
+                        "time": {
+                            "timestamp": "2023-05-19T10:37:29.211Z",
+                            "range": {
+                                "start": "2023-05-19T10:37:29.211Z",
+                                "end": "2023-05-19T11:22:29.211Z"
+                            }
                         }
                     },
-                    "tracking": false,
-                    "@ondc/org/TAT": "PT60M",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/provider_name": "Chaipoint Koramangala 3"
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "timestamp": "2023-05-19T10:37:29.211Z",
+                            "range": {
+                                "start": "2023-05-19T10:37:29.211Z",
+                                "end": "2023-05-19T11:22:29.211Z"
+                            }
+                        }
+                    }
                 }
             ]
         }
