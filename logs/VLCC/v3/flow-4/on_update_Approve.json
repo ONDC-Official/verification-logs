@@ -1,0 +1,199 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_update",
+    "core_version": "1.1.0",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_uri": "https://vlccpreprod.thesellerapp.com/preprod/v1",
+    "transaction_id": "392999a6-0b9b-4106-b536-88a9e4650b3b",
+    "message_id": "e4b9fe8f-d5a6-4957-8bb6-60524993f43c",
+    "timestamp": "2023-05-12T11:15:33.344Z",
+    "bpp_id": "vlccpreprod.thesellerapp.com",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2023-05-12-785167",
+      "state": "Completed",
+      "items": [
+        {
+          "id": "44618443784490",
+          "fulfillment_id": "cbd118f4-5d74-438b-a405-3a39055ca181-ReverseQC",
+          "quantity": {
+            "count": 1
+          },
+          "tags": {
+            "status": "Return_Approved"
+          }
+        },
+        {
+          "id": "44618446471466",
+          "fulfillment_id": "cbd118f4-5d74-438b-a405-3a39055ca181",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "0"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "44618443784490",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "700"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "700"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "44618446471466",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "160"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "160"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "cbd118f4-5d74-438b-a405-3a39055ca181",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "cbd118f4-5d74-438b-a405-3a39055ca181",
+          "type": "Delivery",
+          "@ondc/org/provider_name": "VLCC Personal Care",
+          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered"
+            }
+          },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-05-12T11:06:30.650Z",
+                "end": "2023-05-12T11:12:45.607Z"
+              },
+              "timestamp": "2023-05-12T11:13:11.457Z"
+            }
+          },
+          "end": {
+            "contact": {
+              "email": "harish.maurya@ens.enterprises",
+              "phone": "6393245616"
+            },
+            "person": {
+              "name": "Harish"
+            },
+            "location": {
+              "gps": "28.574981, 77.320812",
+              "address": {
+                "name": "Harish",
+                "building": "A133",
+                "locality": "A133 Noida sector 63",
+                "city": "Noida",
+                "state": "Uttar Pradesh",
+                "country": "IND",
+                "area_code": "201301"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-05-12T11:12:45.607Z",
+                "end": "2023-05-18T11:06:32.056Z"
+              },
+              "timestamp": "2023-05-12T11:13:11.457Z"
+            }
+          }
+        },
+        {
+          "id": "cbd118f4-5d74-438b-a405-3a39055ca181-ReverseQC",
+          "type": "Reverse QC",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-05-12T11:15:33.344Z",
+                "end": "2023-05-16T11:15:34.173Z"
+              }
+            },
+            "instructions": {
+              "short_desc": "Return QC",
+              "long_desc": "Product will be picked up soon",
+              "additional_desc": {
+                "content_type": "text/html",
+                "url": ""
+              },
+              "images": [
+                "URL or data string as per spec"
+              ]
+            }
+          }
+        }
+      ],
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "860",
+          "currency": "INR",
+          "transaction_id": "ONDC-392999a6-0b9b-4106-b536-88a9e4650b3b-1"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "upi_address": "8860775669@paytm",
+            "settlement_bank_account_no": "533435045860",
+            "settlement_ifsc_code": "ICIC0006239",
+            "beneficiary_name": "VLCC PERSONAL CARE PRIVATE LIMITED",
+            "bank_name": "ICICI BANK",
+            "branch_name": "Gurugram  Chembur branch"
+          }
+        ]
+      },
+      "created_at": "2023-05-12T11:06:29.213Z",
+      "updated_at": "2023-05-12T11:15:33.344Z"
+    }
+  }
+}

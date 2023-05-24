@@ -1,0 +1,163 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.1.0",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_uri": "https://preprod.xpressbaazaar.com/v1/",
+    "transaction_id": "f3744058-5363-4351-899e-21bf0bab9c0a",
+    "message_id": "22e04be1-7923-4e6d-8bb4-5cca4293becd",
+    "timestamp": "2023-05-19T13:08:02.032Z",
+    "bpp_id": "preprod.xpressbaazaar.com",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2023-05-19-197093",
+      "state": "Accepted",
+      "provider": {
+        "id": "2e650076-92e1-4937-9b7b-d414adc34089",
+        "locations": [{ "id": "2e650076-92e1-4937-9b7b-d414adc34089" }]
+      },
+      "items": [
+        {
+          "id": "535db641-d2a0-40e2-a23f-24539d2c82a8",
+          "quantity": { "count": 1 },
+          "fulfillment_id": "2e650076-92e1-4937-9b7b-d414adc34089"
+        },
+        {
+          "id": "42af5fe8-d5c1-4554-84bd-abf7b8209d27",
+          "quantity": { "count": 1 },
+          "fulfillment_id": "2e650076-92e1-4937-9b7b-d414adc34089"
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "neha",
+          "building": "kanpur",
+          "locality": "noida sector 63",
+          "city": "Noida",
+          "state": "Uttar Pradesh",
+          "country": "IND",
+          "area_code": "201301"
+        },
+        "phone": "9898989898",
+        "name": "neha",
+        "email": "neha.kumari@ens.enterprises",
+        "created_at": "2023-05-19T13:00:46.455Z",
+        "updated_at": "2023-05-19T13:00:46.455Z"
+      },
+      "fulfillments": [
+        {
+          "id": "2e650076-92e1-4937-9b7b-d414adc34089",
+          "@ondc/org/provider_name": "2e650076-92e1-4937-9b7b-d414adc34089",
+          "type": "Delivery",
+          "state": { "descriptor": { "code": "Pending" } },
+          "start": {
+            "location": {
+              "id": "2e650076-92e1-4937-9b7b-d414adc34089",
+              "descriptor": { "name": "Yumfood" },
+              "gps": "13.0722683,77.3231792"
+            },
+            "contact": {
+              "phone": "8978909876",
+              "email": "info@ens.enterprises"
+            },
+            "time": {
+              "range": {
+                "start": "2023-05-19T13:01:37.024Z",
+                "end": "2023-05-25T13:01:35.310Z"
+              },
+              "timestamp": "2023-05-25T13:01:35.310Z"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.574981, 77.320812",
+              "address": {
+                "name": "neha",
+                "building": "kanpur",
+                "locality": "noida sector 63",
+                "city": "Noida",
+                "state": "Uttar Pradesh",
+                "country": "IND",
+                "area_code": "201301"
+              }
+            },
+            "contact": {
+              "email": "neha.kumari@ens.enterprises",
+              "phone": "9898989898"
+            },
+            "time": {
+              "range": {
+                "start": "2023-05-19T13:01:37.024Z",
+                "end": "2023-05-19T13:08:00.000Z"
+              },
+              "timestamp": "2023-05-19T13:08:00.000Z"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "434" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "535db641-d2a0-40e2-a23f-24539d2c82a8",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "title": "Women's Horlicks Caramel Refill 200g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "135" },
+            "item": { "price": { "currency": "INR", "value": "135" } }
+          },
+          {
+            "@ondc/org/item_id": "42af5fe8-d5c1-4554-84bd-abf7b8209d27",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "title": "Women's Horlicks Chocolate Pet Jar 400g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "299" },
+            "item": { "price": { "currency": "INR", "value": "299" } }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "2e650076-92e1-4937-9b7b-d414adc34089",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "0" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "434",
+          "currency": "INR",
+          "transaction_id": "ONDC-f3744058-5363-4351-899e-21bf0bab9c0a-1"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "upi_address": "yumfood@oksbi",
+            "settlement_bank_account_no": "32828742090",
+            "settlement_ifsc_code": "SBIN000699",
+            "beneficiary_name": "Yumfood",
+            "bank_name": "State Bank of India",
+            "branch_name": "New Delhi Main Branch"
+          }
+        ]
+      },
+      "created_at": "2023-05-19T13:01:33.690Z",
+      "updated_at": "2023-05-19T13:08:02.032Z"
+    }
+  }
+}
