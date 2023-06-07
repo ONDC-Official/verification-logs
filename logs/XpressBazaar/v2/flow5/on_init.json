@@ -1,0 +1,109 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.1.0",
+    "bap_id": "buyer-app-preprod.ondc.org",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bpp_uri": "https://preprod.xpressbaazaar.com/v1/",
+    "transaction_id": "805175cc-3b01-4a05-a41c-fafc60fdfe77",
+    "message_id": "c794bed1-f2d6-4eb7-9607-b1685f96ff1d",
+    "timestamp": "2023-06-02T08:01:39.811Z",
+    "bpp_id": "preprod.xpressbaazaar.com",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "DEMO-14" },
+      "provider_location": { "id": "DEMO-14" },
+      "items": [
+        {
+          "id": "c3d99679-b92b-4f71-98b4-c682ce7e4dee",
+          "quantity": { "count": 1 },
+          "fulfillment_id": "DEMO-14"
+        }
+      ],
+      "billing": {
+        "address": {
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560056",
+          "locality": "No 86, Korulur Village Kasaba Hobli, Hoskote Taluk",
+          "name": "Shippu"
+        },
+        "phone": "8368922474",
+        "name": "Shippu",
+        "email": "y@gmail.com",
+        "created_at": "2023-06-02T08:01:39.220Z",
+        "updated_at": "2023-06-02T08:01:39.220Z"
+      },
+      "fulfillments": [
+        {
+          "id": "DEMO-14",
+          "type": "Delivery",
+          "end": {
+            "contact": { "email": "y@gmail.com", "phone": "8368922474" },
+            "location": {
+              "gps": "12.950073, 77.5017450000001",
+              "address": {
+                "name": "Shippu",
+                "building": "",
+                "locality": "No 86, Korulur Village Kasaba Hobli, Hoskote Taluk",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560056"
+              }
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "359" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "c3d99679-b92b-4f71-98b4-c682ce7e4dee",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "title": "Women's Horlicks Chocolate Pet Jar 400g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "299" },
+            "item": { "price": { "currency": "INR", "value": "299" } }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "DEMO-14",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "50" }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "10" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "upi_address": "8050353678@oksbi",
+            "settlement_bank_account_no": "ICICI6778832",
+            "settlement_ifsc_code": "ICICI12343",
+            "beneficiary_name": "Kaushal Store",
+            "bank_name": "ICICI",
+            "branch_name": "Bangalore"
+          }
+        ]
+      }
+    }
+  }
+}
