@@ -1,115 +1,165 @@
 {
-    "context": {
-      "domain": "nic2004:12345",
-      "country": "IND",
-      "city": "std:080",
-      "action": "collector_recon",
-      "core_version": "1.0.0",
-      "bap_id": "abc.collectorapp.com",
-      "bap_uri": "https://abc.collectorapp.com",
-      "bpp_id": "abc.rsp.com",
-      "bpp_uri": "https://abc.rsp.com",
-      "transaction_id": "6baa811a-6cbe-4ad3-94e9-cbf96aaff343",
-      "message_id": "6baa811a-6cbe-4ad3-94e9-cbf96aaff343",
-      "timestamp": "2022-10-28T10:34:58.469Z",
-      "key": null,
-      "ttl": "P2D"
-    },
-    "message": {
-      "orderbook": {
-        "orders": [
-          {
-            "id": "K106403902112759",
-            "invoice_no": "2022/XYZ/12345-2",
-            "collector_app_id": "abc.collectorapp.com",
-            "receiver_app_id": "abc.collectorapp.com",
-            "receiver_app_uri": "https://abc.receiverapp.com",
-            "state": "Delivered",
-            "provider": {
-              "name": {
-                "name": "SABJI XPRESS PVT LTD - BANASWADI",
-                "code": "18275-ONDC-1"
-              },
-              "address": "NewDelhi"
+  "context": {
+    "domain": "nic2004:65191",
+    "country": "IND",
+    "city": "std:080",
+    "action": "collector_recon",
+    "core_version": "1.1.0",
+    "bap_id": "collector.rsp.ondc.digiledge.in",
+    "bap_uri": "https://0.0.0.0:9001",
+    "bpp_id": "rsp.ondc.digiledge.in",
+    "bpp_uri": "http://0.0.0.0:9003",
+    "transaction_id": "7e260471-31d4-4bcf-b12f-c520f9b4be15",
+    "message_id": "df9022fb-5d7f-4529-ad56-135fe08d291d",
+    "timestamp": "2023-06-09T16:51:32.567Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "orderbook": {
+      "orders": [
+        {
+          "id": "1686225116927-df2328b4-5867-4136-bb2f-b1aa9729d0ef",
+          "collector_app_id": "collector.rsp.ondc.digiledge.in",
+          "receiver_app_id": "seller.instastack.io",
+          "receiver_app_uri": "http://0.0.0.0:9002",
+          "state": "In-progress",
+          "provider": {
+            "name": {
+              "name": "InstaStack Store - Thane",
+              "code": "dc8141ca-24be-4a4f-9061-41b4113c4a1e"
             },
-            "payment": {
-              "uri": "abcdd/fff",
-              "tl_method": "http/get",
-              "params": {
-                "transaction_id": "3df395a9-c196-4678-a4d1-5eaf4f7df8dc",
-                "transaction_status": "PAID",
-                "amount": "1234",
-                "currency": "INR"
-              },
-              "type": "ON-ORDER",
-              "status": "PAID",
-              "collected_by": "BPP",
-              "@ondc/org/collected_by_status": "Assert",
-              "@ondc/org/buyer_app_finder_fee_type": "Amount",
-              "@ondc/org/buyer_app_finder_fee_amount": "3",
-              "@ondc/org/withholding_amount": "0",
-              "@ondc/org/withholding_amount_status": "Assert",
-              "@ondc/org/return_window": "T6D",
-              "@ondc/org/return_window_status": "Assert",
-              "@ondc/org/settlement_basis": "Collection",
-              "@ondc/org/settlement_basis_status": "Assert",
-              "@ondc/org/settlement_window": "T10D",
-              "@ondc/org/settlement_window_status": "Assert",
-              "@ondc/org/settlement_details": [
-                {
-                  "settlement_counterparty": "buyer",
-                  "settlement_phase": "sale-amount",
-                  "settlement_amount": 1231,
-                  "settlement_type": "neft",
-                  "settlement_bank_account_no": "509424924294248",
-                  "settlement_ifsc_code": "HDFC0000000",
-                  "upi_address": "80abc@abctMh2h",
-                  "bank_name": "HDFC",
-                  "branch_name": "Ghaziabad",
-                  "beneficiary_name" : "Example1 company Pvt. Ltd",
-                  "beneficiary_address": "Ghaziabad",
-                  "settlement_status": "READY",
-                  "settlement_reference": null,
-                  "settlement_timestamp": "2022-12-08T09:00:03.240Z"
-                }
-              ]
+            "address": "Thane"
+          },
+          "payment": {
+            "uri": "https://ondc.transaction.com/payment",
+            "tl_method": "http/get",
+            "params": {
+              "transaction_id": "0d6f1685-97f2-4269-b812-c10ea7435829",
+              "transaction_status": "PAID",
+              "amount": "1474",
+              "currency": "INR"
             },
-            "withholding_tax_gst": {
-              "currency": "INR",
-              "value": "0"
+            "type": "ON-ORDER",
+            "status": "PAID",
+            "collected_by": "BAP",
+            "@ondc/org/collected_by_status": "assert",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3",
+            "@ondc/org/return_window": "P6D",
+            "@ondc/org/return_window_status": "assert",
+            "@ondc/org/settlement_basis": "Collection",
+            "@ondc/org/settlement_basis_status": "assert",
+            "@ondc/org/settlement_window_status": "assert",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "seller-app",
+                "settlement_phase": "sale-amount",
+                "settlement_amount": "1031.80",
+                "settlement_type": "upi",
+                "settlement_bank_account_no": "thor_does_not_have_a_bank_account",
+                "settlement_ifsc_code": "someIFSC",
+                "upi_address": "thor@okicicicicic",
+                "bank_name": "Marvels Bank",
+                "branch_name": "Asgard",
+                "beneficiary_name": "Thor"
+              }
+            ]
+          },
+          "withholding_tax_gst": {
+            "currency": "INR",
+            "value": "0"
+          },
+          "withholding_tax_tds": {
+            "currency": "INR",
+            "value": "0"
+          },
+          "deduction_by_collector": {
+            "currency": "INR",
+            "value": "0"
+          },
+          "payerdetails": {
+            "payer_name": "Digiledge",
+            "payer_address": "",
+            "payer_account_no": 879929882798,
+            "payer_bank_code": "HDFBH20901"
+          },
+          "settlement_reason_code": "01",
+          "transaction_id": "7e260471-31d4-4bcf-b12f-c520f9b4be15",
+          "created_at": "2023-06-08T11:51:56.926Z",
+          "updated_at": "2023-06-08T11:53:00.049Z"
+        },
+        {
+          "id": "1686225116927-71aa1f46-da23-4ed3-9a7f-c6d4091d6e3f",
+          "collector_app_id": "collector.rsp.ondc.digiledge.in",
+          "receiver_app_id": "seller.instastack.io",
+          "receiver_app_uri": "http://0.0.0.0:9002",
+          "state": "In-progress",
+          "provider": {
+            "name": {
+              "name": "InstaStack Store Powai",
+              "code": "e649c7a6-7cce-48bb-82bb-8d5341a0a9c7"
             },
-            "withholding_tax_tds": {
-              "currency": "INR",
-              "value": "0"
+            "address": "Mumbai"
+          },
+          "payment": {
+            "uri": "https://ondc.transaction.com/payment",
+            "tl_method": "http/get",
+            "params": {
+              "transaction_id": "08476755-0f0b-4305-bdb6-542b53d84126",
+              "transaction_status": "PAID",
+              "amount": "58549",
+              "currency": "INR"
             },
-            "deduction_by_collector": {
-              "currency": "INR",
-              "value": "0"
-            },
-            "order_recon_status": null,
-            "payerdetails": {
-              "payer_name": "A to Z Printing Solutions Pvt. Ltd",
-              "payer_address": "New Delhi",
-              "payer_account_no": 99679007677676,
-              "payer_bank_code": "HDFC900008",
-              "payer_virtual_payment_address": "sellerapp@upi"
-            },
-            "settlement_reason_code": "03",
-            "transaction_id": "6baa811a-6cbe-4ad3-94e9-cbf96aaff343",
-            "settlement_id": null,
-            "settlement_reference_no": null,
-            "recon_status": null,
-            "diff_amount": null,
-            "counterparty_recon_status": null,
-            "counterparty_diff_amount": null,
-            "message": {
-              "name": "dummy",
-              "code": "dummy"
-            },
-            "created_at": "2022-12-08T09:00:03.243Z",
-            "updated_at": "2022-12-08T09:00:03.243Z"
-          }
-        ]
-      }
+            "type": "ON-ORDER",
+            "status": "PAID",
+            "collected_by": "BAP",
+            "@ondc/org/collected_by_status": "assert",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3",
+            "@ondc/org/return_window": "P6D",
+            "@ondc/org/return_window_status": "assert",
+            "@ondc/org/settlement_basis": "Collection",
+            "@ondc/org/settlement_basis_status": "assert",
+            "@ondc/org/settlement_window_status": "assert",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "seller-app",
+                "settlement_phase": "sale-amount",
+                "settlement_amount": "40984.30",
+                "settlement_type": "upi",
+                "settlement_bank_account_no": "thor_does_not_have_a_bank_account",
+                "settlement_ifsc_code": "someIFSC",
+                "upi_address": "thor@okicicicicic",
+                "bank_name": "Marvels Bank",
+                "branch_name": "Asgard",
+                "beneficiary_name": "Thor"
+              }
+            ]
+          },
+          "withholding_tax_gst": {
+            "currency": "INR",
+            "value": "0"
+          },
+          "withholding_tax_tds": {
+            "currency": "INR",
+            "value": "0"
+          },
+          "deduction_by_collector": {
+            "currency": "INR",
+            "value": "0"
+          },
+          "payerdetails": {
+            "payer_name": "Digiledge",
+            "payer_address": "",
+            "payer_account_no": 879929882798,
+            "payer_bank_code": "HDFBH20901"
+          },
+          "settlement_reason_code": "01",
+          "transaction_id": "7e260471-31d4-4bcf-b12f-c520f9b4be15",
+          "created_at": "2023-06-08T11:51:56.926Z",
+          "updated_at": "2023-06-08T11:53:00.051Z"
+        }
+      ]
     }
   }
+}
