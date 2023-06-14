@@ -3,7 +3,7 @@
 		"bpp_id": "integrations-preprod.channelier.com",
 		"bpp_uri": "https://integrations-preprod.channelier.com/ondc",
 		"domain": "nic2004:52110",
-		"core_version": "1.0.0",
+		"core_version": "1.1.0",
 		"ttl": "PT30S",
 		"bap_id": "buyer-app-preprod.ondc.org",
 		"bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
@@ -17,7 +17,7 @@
 	"message": {
 		"order": {
 			"id": "2023-06-13-732381",
-			"status": "Completed",
+			"state": "Completed",
 			"provider": {
 				"id": "CU0",
 				"locations": []
@@ -91,10 +91,10 @@
 						},
 						"time": {
 							"range": {
-								"start": "2023-06-13T02:35:51.914Z",
-								"end": "2023-06-13T02:35:51.914Z"
+								"start": "2023-06-13T02:34:51.914Z",
+								"end": "2023-06-13T02:34:51.914Z"
 							},
-							"timestamp": "2023-06-13T02:35:51.914Z"
+							"timestamp": "2023-06-13T02:34:51.914Z"
 						}
 					},
 					"end": {
@@ -126,8 +126,18 @@
 				{
 					"id": "L-F-1686625640493",
 					"type": "Reverse QC",
+					"state": {
+						"descriptor": {
+							"code": "RTO-Initiated",
+							"images": []
+						}
+					},
 					"start": {
 						"location": {
+							"descriptor": {
+								"name": "ABC Store",
+								"images": []
+							},
 							"gps": "18.9391840000001, 72.837118",
 							"address": {
 								"name": "Ravinder",
@@ -145,6 +155,12 @@
 						},
 						"person": {
 							"name": "Ravinder"
+						},
+						"time": {
+							"range": {
+								"start": "2023-06-13T02:34:51.914Z",
+								"end": "2023-06-13T02:34:51.914Z"
+							}
 						}
 					},
 					"end": {
@@ -169,6 +185,12 @@
 						},
 						"person": {
 							"name": "Channelier Super Store"
+						},
+						"time": {
+							"range": {
+								"start": "2023-06-13T02:34:51.914Z",
+								"end": "2023-06-13T02:34:51.914Z"
+							}
 						}
 					}
 				}
@@ -176,7 +198,7 @@
 			"quote": {
 				"price": {
 					"currency": "INR",
-					"value": "199.50"
+					"value": "199.5"
 				},
 				"breakup": [
 					{
@@ -197,8 +219,7 @@
 								"maximum": {
 									"count": "3"
 								}
-							},
-							"tags": []
+							}
 						},
 						"title": "Wai Wai Vinegar - Enhances Taste, 180 ml Single",
 						"price": {
@@ -208,7 +229,8 @@
 					},
 					{
 						"@ondc/org/item_id": "L-F-1686623003097",
-						"title": "delivery",
+						"@ondc/org/title_type": "delivery",
+						"title": "Delivery charges",
 						"price": {
 							"currency": "INR",
 							"value": "99.5"
@@ -238,16 +260,15 @@
 						"settlement_ifsc_code": "string",
 						"bank_name": "string",
 						"branch_name": "string",
-						"settlement_phase": "string"
+						"settlement_phase": "sale-amount"
 					},
 					{
-						"settlement_counterparty":"buyer",
-						"settlement_phase":"refund",
-						"settlement_type":"upi",
-						"settlement_amount":"50",
-						"settlement_timestamp":"2023-06-13T02:29:27.917Z"
-					  }
-			
+						"settlement_counterparty": "buyer",
+						"settlement_phase": "refund",
+						"settlement_type": "upi",
+						"settlement_amount": "50",
+						"settlement_timestamp": "2023-06-13T02:29:27.917Z"
+					}
 				]
 			},
 			"created_at": "2023-06-13T02:29:27.917Z",
