@@ -1,0 +1,180 @@
+{
+	"context": {
+		"bpp_id": "integrations-preprod.channelier.com",
+		"bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+		"domain": "nic2004:52110",
+		"core_version": "1.1.0",
+		"ttl": "PT30S",
+		"bap_id": "buyer-app-preprod.ondc.org",
+		"bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+		"transaction_id": "27b6a89f-5f6d-49f9-b9da-44fa7775e601",
+		"message_id": "a4695eec-633f-4eb4-a5c4-a1544dbb8878",
+		"country": "IND",
+		"city": "std:080",
+		"timestamp": "2023-06-13T09:21:08.993Z",
+		"action": "on_status"
+	},
+	"message": {
+		"order": {
+			"id": "2023-06-13-577295",
+			"state": "Completed",
+			"provider": {
+				"id": "CU0",
+				"locations": [{
+					"id": "L1"
+				}]
+			},
+			"items": [{
+				"id": "CU0I1",
+				"quantity": {
+					"count": 2
+				},
+				"fulfillment_id": "L-F-1686647706026"
+			}],
+			"documents": [{
+				"url": "https://invoice_url",
+				"label": "Invoice"
+			}],
+			"billing": {
+				"name": "deepa",
+				"address": {
+					"name": "deepa",
+					"locality": "Delhi",
+					"city": "Bengaluru",
+					"state": "Karnataka",
+					"country": "IND",
+					"area_code": "560001"
+				},
+				"email": "deepa.rana060902@gmail.com",
+				"phone": "6398356412",
+				"created_at": "2023-06-13T09:15:19.917Z",
+				"updated_at": "2023-06-13T09:15:19.917Z"
+			},
+			"fulfillments": [{
+				"id": "L-F-1686647706026",
+				"type": "Delivery",
+				"@ondc/org/provider_name": "Shipyaari",
+				"state": {
+					"descriptor": {
+						"code": "Order-delivered",
+						"images": []
+					}
+				},
+				"tracking": false,
+				"start": {
+					"location": {
+						"id": "L1",
+						"descriptor": {
+							"name": "ABC Store",
+							"images": []
+						},
+						"gps": "12.956399,77.636803"
+					},
+					"time": {
+                        "range": {
+                            "start": "2023-06-13T09:19:01.677Z",
+                            "end": "2023-06-13T09:19:01.677Z"
+                        },
+                        "timestamp": "2023-06-13T09:19:01.677Z"
+                    },
+					"contact": {
+						"phone": "9886098860",
+						"email": "nobody@nomail.com"
+					}
+				},
+				"end": {
+					"location": {
+						"gps": "12.9812430000001, 77.5950340000001",
+						"address": {
+							"name": "deepa",
+							"building": "",
+							"locality": "Delhi",
+							"city": "Bengaluru",
+							"state": "Karnataka",
+							"country": "IND",
+							"area_code": "560001"
+						}
+					},
+					"contact": {
+						"phone": "6398356412",
+						"email": "deepa.rana060902@gmail.com"
+					},
+                    "time": {
+						"range": {
+							"start": "2023-06-13T09:20:58.362Z",
+							"end": "2023-06-13T16:25:01.164Z"
+						},
+						"timestamp":"2023-06-13T16:25:01.164Z"
+					}
+				}
+			}],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "199.50"
+				},
+				"breakup": [{
+					"@ondc/org/item_id": "CU0I1",
+					"@ondc/org/item_quantity": {
+						"count": 2
+					},
+					"@ondc/org/title_type": "item",
+					"item": {
+						"price": {
+							"currency": "INR",
+							"value": "50.00"
+						},
+						"quantity": {
+							"available": {
+								"count": "46"
+							},
+							"maximum": {
+								"count": "46"
+							}
+						},
+						"tags": []
+					},
+					"title": "Wai Wai Vinegar - Enhances Taste, 180 ml Single",
+					"price": {
+						"currency": "INR",
+						"value": "100.00"
+					}
+				}, {
+					"@ondc/org/item_id": "L-F-1686647706026",
+					"@ondc/org/title_type": "delivery",
+					"title": "Delivery charges",
+					"price": {
+						"currency": "INR",
+						"value": "99.5"
+					}
+				}],
+				"ttl": "P1D"
+			},
+			"payment": {
+				"uri": "https://juspay.in/",
+				"tl_method": "http/get",
+				"params": {
+					"transaction_id": "27b6a89f-5f6d-49f9-b9da-44fa7775e601",
+					"amount": "199.5",
+					"currency": "INR"
+				},
+				"type": "ON-ORDER",
+				"status": "PAID",
+				"collected_by": "BAP",
+				"@ondc/org/buyer_app_finder_fee_type": "percent",
+				"@ondc/org/buyer_app_finder_fee_amount": "3.0",
+				"@ondc/org/settlement_details": [{
+					"settlement_counterparty": "seller-app",
+					"settlement_phase": "sale-amount",
+					"settlement_type": "neft",
+					"settlement_bank_account_no": "string",
+					"settlement_ifsc_code": "string",
+					"bank_name": "string",
+					"branch_name": "string"
+				}]
+			},
+			"created_at": "2023-06-13T09:16:33.291Z",
+			"updated_at": "2023-06-13T09:20:58.362Z"
+		}
+	}
+}
