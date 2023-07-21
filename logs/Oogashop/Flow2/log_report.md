@@ -1,20 +1,17 @@
 **/on_search**
-- Timestamp not in RFC 3339 (YYYY-MM-DDTHH:MN:SS.MSSZ) Format
 - Either one of fixed timings (range) or split timings (both frequency and times) should be provided in /bpp/providers[0]/locations[0]/time
+- Either one of fixed timings (range) or split timings (both frequency and times) should be provided in /bpp/providers[1]/locations[0]/time
 
 **/select**
 - /message/order/items/0/quantity/count must be integer
 - /message/order/items/1/quantity/count must be integer
 
 **/on_select**
-- Timestamp not in RFC 3339 (YYYY-MM-DDTHH:MN:SS.MSSZ) Format
 - /quote/breakup/0/@ondc~1org~1item_quantity/count must be integer
-- /quote/breakup/2/@ondc~1org~1item_quantity/count must be integer
-- /quote/breakup/3/price/value must match pattern "^(\d*.?\d{1,2})$"
-- /fulfillments/0 must have required property '@ondc/org/provider_name'
-- /fulfillments[0]/@ondc/org/TAT (O2D) in /on_select can't be smaller than @ondc/org/time_ship (O2S) in /on_search
-- invalid  id: OOGASHOP-ONDC-11 in delivery line item (should be a valid fulfillment_id)
-- invalid  id: OOGASHOP-ONDC-12 in delivery line item (should be a valid fulfillment_id)
+- /quote/breakup/1/@ondc~1org~1item_quantity/count must be integer
+- Item's unit and total price mismatch for id: OOGASHOP-ONDC-47134
+- quote.price.value 150 does not match with the price breakup 75.00
+- Warning: Quoted Price in /on_select INR 75 does not match with the total price of items in /select INR 150
 
 **/init**
 - /message/order/items/0/quantity/count must be integer
@@ -24,16 +21,14 @@
 - /items/0/quantity/count must be integer
 - /items/1/quantity/count must be integer
 - /quote/breakup/0/@ondc~1org~1item_quantity/count must be integer
-- /quote/breakup/2/@ondc~1org~1item_quantity/count must be integer
-- /quote/breakup/3/price/value must match pattern "^(\d*.?\d{1,2})$"
-- Timestamp not in RFC 3339 (YYYY-MM-DDTHH:MN:SS.MSSZ) Format
+- /quote/breakup/1/@ondc~1org~1item_quantity/count must be integer
 - gps coordinates in fulfillments[0].end.location mismatch in /select & /on_init
+- Quoted Price 150 does not match with Net Breakup Price 75 in /on_init
 - Discrepancies between the quote object in /on_select and /on_init
 
 **/confirm**
 - /message/order/quote/breakup/0/@ondc~1org~1item_quantity/count must be integer
-- /message/order/quote/breakup/2/@ondc~1org~1item_quantity/count must be integer
-- /message/order/quote/breakup/3/price/value must match pattern "^(\d*.?\d{1,2})$"
+- /message/order/quote/breakup/1/@ondc~1org~1item_quantity/count must be integer
 - address/door mismatches in /billing in /init and /confirm
 - fulfillments[0].end.location gps is not matching with gps in /select
 - Discrepancies between the quote object in /on_select and /confirm
@@ -41,17 +36,9 @@
 **/on_confirm**
 - /items/0/quantity/count must be integer
 - /items/1/quantity/count must be integer
-- /fulfillments/0/state/descriptor/code must be equal to constant (Pending)
 - /quote/breakup/0/@ondc~1org~1item_quantity/count must be integer
-- /quote/breakup/2/@ondc~1org~1item_quantity/count must be integer
-- /quote/breakup/3/price/value must match pattern "^(\d*.?\d{1,2})$"
-- Timestamp not in RFC 3339 (YYYY-MM-DDTHH:MN:SS.MSSZ) Format
-- order.created_at timestamp mismatches in /confirm and /on_confirm
+- /quote/breakup/1/@ondc~1org~1item_quantity/count must be integer
 - address/door mismatches in /billing in /confirm and /on_confirm
-- default fulfillments state is missing in /on_confirm
 - fulfillments[0].end.location gps is not matching with gps in /select
 - Discrepancies between the quote object /on_select and /on_confirm
-
-**/on_cancel**
-- Timestamp not in RFC 3339 (YYYY-MM-DDTHH:MN:SS.MSSZ) Format
 
