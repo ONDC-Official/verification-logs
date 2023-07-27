@@ -1,23 +1,25 @@
+**/init**
+- /message/order/billing/address must have required property 'building'
+
 **/on_init**
-- provider_location.id mismatches in /on_search and /on_init
+- /billing/address must have required property 'building'
 
 **/confirm**
-- provider.locations[0].id mismatches in /on_search and /confirm
-- address/door mismatches in /billing in /init and /confirm
+- /message/order/billing/address must have required property 'building'
 
 **/on_confirm**
-- provider.locations[0].id mismatches in /on_search and /on_confirm
+- /billing/address must have required property 'building'
 - store name  /fulfillments[1]/start/location/descriptor/name can't change
 
 **/on_status (Pending)**
-- provider.locations[0].id mismatches in /on_search and /on_status_pending
+- /billing/address must have required property 'building'
 
 **/on_status (Order-picked-up)**
+- /billing/address must have required property 'building'
 - /fulfillments/0/end/time delivery time should not be present until order is delivered
 - /fulfillments/1/end/time delivery time should not be present until order is delivered
-- provider.locations[0].id mismatches in /on_search and /on_status_picked
 
 **/on_status (Order-Delivered)**
-- provider.locations[0].id mismatches in /on_search and /on_status_delivered
+- /billing/address must have required property 'building'
 - delivery timestamp (/end/time/timestamp) can't be less than or equal to the pickup timestamp (start/time/timestamp)
 
