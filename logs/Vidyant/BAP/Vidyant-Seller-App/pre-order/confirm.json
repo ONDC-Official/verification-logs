@@ -1,0 +1,205 @@
+{
+  "context": {
+    "domain": "ONDC:RET12",
+    "action": "confirm",
+    "bap_id": "us-central1-ondcgo.cloudfunctions.net/api/ondc/onboarding",
+    "bap_uri": "https://us-central1-ondcgo.cloudfunctions.net/api",
+    "bpp_id": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
+    "bpp_uri": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
+    "transaction_id": "bf0b41da-a275-4d2e-99f2-630fb6345f2d",
+    "message_id": "1690446593255",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2023-07-27T08:29:53.255Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "O1",
+      "state": "Created",
+      "provider": {
+        "id": "8gZTqo0wLHOIYXMexvZy",
+        "locations": [
+          {
+            "id": "8gZTqo0wLHOIYXMexvZy-location"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "lwRGPYe3NYDxt9HR77Ez_color-orange_size-m",
+          "quantity": {
+            "count": 1
+          },
+          "fulfillment_id": "9f29eeb2-dd64-42aa-abd9-98a21c4a5edb"
+        }
+      ],
+      "billing": {
+        "name": "Atiti Singh",
+        "address": {
+          "name": "Tranzita System ",
+          "building": "Cyber Heights",
+          "locality": "Vibhuti Khand",
+          "city": "Lucknow ",
+          "state": "KA",
+          "country": "IN",
+          "area_code": "226010"
+        },
+        "phone": "9129785903",
+        "email": "atiti@tranzita.com",
+        "created_at": "2023-07-27T08:29:53.256Z",
+        "updated_at": "2023-07-27T08:29:53.256Z"
+      },
+      "fulfillments": [
+        {
+          "id": "9f29eeb2-dd64-42aa-abd9-98a21c4a5edb",
+          "type": "Delivery",
+          "@ondc/org/TAT": "PT24H",
+          "tracking": false,
+          "end": {
+            "person": {
+              "name": "Ramu"
+            },
+            "contact": {
+              "email": "atiti@tranzita.com",
+              "phone": "9129785903"
+            },
+            "location": {
+              "gps": "26.867669,81.0103994",
+              "address": {
+                "name": "Tranzita System ",
+                "building": "Cyber Heights",
+                "locality": "Vibhuti Khand",
+                "city": "Lucknow ",
+                "state": "KA",
+                "country": "IN",
+                "area_code": "226010"
+              }
+            }
+          },
+          "vehicle": {
+            "registration": "3LVJ945"
+          }
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "lwRGPYe3NYDxt9HR77Ez",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "599"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "599"
+            },
+            "@ondc/org/title_type": "item",
+            "title": "Cool look t-shirt",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            }
+          },
+          {
+            "@ondc/org/item_id": "9e31bdb2-d242-400d-b105-783e719e792a",
+            "price": {
+              "currency": "INR",
+              "value": "50"
+            },
+            "@ondc/org/title_type": "Delivery",
+            "title": "Delivery charges"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "649"
+        },
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "bf0b41da-a275-4d2e-99f2-630fb6345f2d",
+          "amount": "649"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "beneficiary_name": "Vidyant Technologies Pvt. Ltd",
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "branch_name": "HSR Layout Bangalore",
+            "bank_name": "HDFC Bank",
+            "settlement_ifsc_code": "HDFC5463",
+            "settlement_bank_account_no": "4562312321235458",
+            "upi_address": "vidyant@ybl",
+            "settlement_type": "upi"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "tax_number",
+              "value": "gst_number_of_sellerNP"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            },
+            {
+              "code": "fixed_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            },
+            {
+              "code": "tax_number",
+              "value": "gst_number_of_buyerNP"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-07-27T08:29:53.256Z",
+      "updated_at": "2023-07-27T08:29:53.256Z"
+    }
+  },
+  "user": {
+    "uid": "e2GflZ0vFxalFUgPZT1C4TyzhkW2",
+    "email": "atiti@tranzita.com",
+    "phone": "9129785903"
+  }
+}
