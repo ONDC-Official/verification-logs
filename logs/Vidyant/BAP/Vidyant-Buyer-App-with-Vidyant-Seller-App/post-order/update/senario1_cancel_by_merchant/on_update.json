@@ -1,0 +1,252 @@
+{
+  "context": {
+    "transaction_id": "99cbeccc-3446-4455-9462-c8cd596b8724",
+    "country": "IND",
+    "bpp_id": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
+    "city": "std:080",
+    "message_id": "1690704406896",
+    "core_version": "1.2.0",
+    "ttl": "PT30S",
+    "bap_id": "us-central1-ondcgo.cloudfunctions.net/api/ondc/onboarding",
+    "domain": "ONDC:RET12",
+    "bpp_uri": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
+    "action": "on_update",
+    "bap_uri": "https://us-central1-ondcgo.cloudfunctions.net/api",
+    "timestamp": "2023-07-30T08:06:46.976Z"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "PT60M",
+          "start": {
+            "contact": {
+              "phone": "9886098860",
+              "email": "nobody@nomail.com"
+            },
+            "location": {
+              "address": {
+                "city": "Bengaluru",
+                "area_code": "560076",
+                "locality": "Jayanagar",
+                "state": "KA"
+              },
+              "id": "8gZTqo0wLHOIYXMexvZy-location",
+              "descriptor": {
+                "name": "ABC Store"
+              },
+              "gps": "12.956399,77.636803"
+            },
+            "time": {
+              "range": {
+                "start": "2023-06-03T10:00:00.000Z",
+                "end": "2023-06-03T10:30:00.000Z"
+              }
+            }
+          },
+          "end": {
+            "person": {
+              "name": "name_of_person"
+            },
+            "contact": {
+              "phone": "70936 51509",
+              "email": "nobody@nomail.com"
+            },
+            "location": {
+              "address": {
+                "country": "IN",
+                "city": "Bengaluru",
+                "area_code": "560035",
+                "name": "Abhishek Srivastava",
+                "locality": "Harlur Road",
+                "state": "KA",
+                "building": "15114 Bangalore"
+              },
+              "gps": "12.9017861,77.6645846"
+            },
+            "time": {
+              "range": {
+                "start": "2023-06-03T11:00:00.000Z",
+                "end": "2023-06-03T11:30:00.000Z"
+              }
+            }
+          },
+          "id": "46142085-88a3-48c7-a313-6ea3eccda133",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "type": "Delivery",
+          "@ondc/org/provider_name": "LSP or Provider Name",
+          "tracking": true
+        },
+        {
+          "id": "C1",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "type": "Cancel",
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "002"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "sellerNP.com"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "I1"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-170.00"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "tax"
+                },
+                {
+                  "code": "id",
+                  "value": "I1"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "0.00"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "lwRGPYe3NYDxt9HR77Ez",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "599"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "599"
+            },
+            "@ondc/org/title_type": "item",
+            "title": "Cool look t-shirt",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            }
+          },
+          {
+            "@ondc/org/item_id": "46142085-88a3-48c7-a313-6ea3eccda133",
+            "price": {
+              "currency": "INR",
+              "value": "50"
+            },
+            "@ondc/org/title_type": "Delivery",
+            "title": "Delivery charges"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "649"
+        },
+        "ttl": "P1D"
+      },
+      "updated_at": "2023-07-30T08:06:50.605Z",
+      "provider": {
+        "locations": [
+          {
+            "id": "8gZTqo0wLHOIYXMexvZy-location"
+          }
+        ],
+        "id": "8gZTqo0wLHOIYXMexvZy"
+      },
+      "created_at": "2023-07-30T08:06:50.605Z",
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "collected_by": "BAP",
+        "params": {
+          "transaction_id": "f53c6462-e9e1-456c-9eca-3a7110639a6d",
+          "amount": "649",
+          "currency": "INR"
+        },
+        "type": "ON-ORDER",
+        "uri": "https://ondc.transaction.com/payment",
+        "status": "PAID",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "beneficiary_name": "Vidyant Technologies Pvt. Ltd",
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "branch_name": "HSR Layout Bangalore",
+            "bank_name": "HDFC Bank",
+            "settlement_ifsc_code": "HDFC5463",
+            "settlement_bank_account_no": "4562312321235458",
+            "upi_address": "vidyant@ybl",
+            "settlement_type": "upi"
+          }
+        ]
+      },
+      "id": "f53c6462-e9e1-456c-9eca-3a7110639a6d",
+      "state": "CREATED",
+      "items": [
+        {
+          "quantity": {
+            "count": 1
+          },
+          "id": "lwRGPYe3NYDxt9HR77Ez_ColorOrange_SizeM",
+          "fulfillment_id": "46142085-88a3-48c7-a313-6ea3eccda133"
+        }
+      ],
+      "billing": {
+        "address": {
+          "country": "IN",
+          "city": "Bengaluru",
+          "area_code": "560035",
+          "name": "Abhishek Srivastava",
+          "locality": "Harlur Road",
+          "state": "KA",
+          "building": "15114 Bangalore"
+        },
+        "updated_at": "2023-07-12T05:33:53.006Z",
+        "phone": "70936 51509",
+        "name": "Abhishek Srivastava",
+        "created_at": "2023-07-12T05:33:53.006Z",
+        "email": "abhishek.mailbox@gmail.com"
+      }
+    }
+  }
+}
