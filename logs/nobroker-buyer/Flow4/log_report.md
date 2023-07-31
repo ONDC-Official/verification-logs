@@ -16,8 +16,12 @@
 
 **/on_update (Initiated)**
 - /quote must have required property 'ttl'
+- message_id of all unsolicited /on_update calls should be same for a particular /update request
 
 **/on_update (Liquidated)**
-- /quote must have required property 'ttl'
-- Invalid quote/breakup item: 6212D9AA9B62D5C2BCF6E61B5AE6D8EE_43459932946691_default can't have multiple objects
+-  must have required property 'created_at'
+-  must have required property 'updated_at'
+- message_id of all unsolicited /on_update calls should be same for a particular /update request
+- order/updated_at timestamp can't be future dated (should match context/timestamp)
+- order/created_at timestamp can't change (should remain same as in /confirm)
 
