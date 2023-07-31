@@ -17,3 +17,7 @@
 **/on_update (Initiated)**
 - /quote must have required property 'ttl'
 
+**/on_update (Liquidated)**
+- /quote must have required property 'ttl'
+- Invalid quote/breakup item: 6212D9AA9B62D5C2BCF6E61B5AE6D8EE_43459932946691_default can't have multiple objects
+
