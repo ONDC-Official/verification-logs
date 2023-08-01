@@ -14,14 +14,10 @@
 **/on_status (Order-picked-up)**
 - /fulfillments/0/end must have required property 'time'
 
-**/on_update (Initiated)**
-- /quote must have required property 'ttl'
-- message_id of all unsolicited /on_update calls should be same for a particular /update request
-
 **/on_update (Liquidated)**
 -  must have required property 'created_at'
 -  must have required property 'updated_at'
-- message_id of all unsolicited /on_update calls should be same for a particular /update request
+- Invalid quote/breakup item: 32AE547A9C88B65D08D8A5FC8BAE79B0_43459841294595_default can't have multiple objects
 - order/updated_at timestamp can't be future dated (should match context/timestamp)
 - order/created_at timestamp can't change (should remain same as in /confirm)
 
