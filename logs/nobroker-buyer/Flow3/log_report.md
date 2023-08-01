@@ -9,7 +9,6 @@
 - Warning: Quoted Price in /on_select INR 4745 does not match with the total price of items in /select INR 4740
 
 **/on_confirm**
-- context/timestamp difference between /on_confirm and /confirm should be smaller than 5 sec
 - order.updated_at timestamp should be updated as per the context.timestamp (since default fulfillment state is added)
 
 **/on_status (Order-picked-up)**
