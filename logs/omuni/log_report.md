@@ -1,23 +1,13 @@
-**/on_init**
-- provider_location.id mismatches in /on_search and /on_init
+**/on_search**
+- /message/catalog/bpp~1providers/0/items/0/@ondc~1org~1statutory_reqs_packaged_commodities/month_year_of_manufacture_packing_import must match pattern "^(?!\s*$).+"
+- /message/catalog/bpp~1providers/0/items/1/@ondc~1org~1statutory_reqs_packaged_commodities/month_year_of_manufacture_packing_import must match pattern "^(?!\s*$).+"
+- /message/catalog/bpp~1providers/0/items/2/@ondc~1org~1statutory_reqs_packaged_commodities/month_year_of_manufacture_packing_import must match pattern "^(?!\s*$).+"
+- /message/catalog/bpp~1providers/0/items/3/@ondc~1org~1statutory_reqs_packaged_commodities/month_year_of_manufacture_packing_import must match pattern "^(?!\s*$).+"
+- /message/catalog/bpp~1providers/0/items/4/@ondc~1org~1statutory_reqs_packaged_commodities/month_year_of_manufacture_packing_import must match pattern "^(?!\s*$).+"
 
 **/confirm**
-- provider.locations[0].id mismatches in /on_search and /confirm
 - address/door mismatches in /billing in /init and /confirm
 
 **/on_confirm**
-- provider.locations[0].id mismatches in /on_search and /on_confirm
 - store name  /fulfillments[1]/start/location/descriptor/name can't change
-
-**/on_status (Pending)**
-- provider.locations[0].id mismatches in /on_search and /on_status_pending
-
-**/on_status (Order-picked-up)**
-- /fulfillments/0/end/time delivery time should not be present until order is delivered
-- /fulfillments/1/end/time delivery time should not be present until order is delivered
-- provider.locations[0].id mismatches in /on_search and /on_status_picked
-
-**/on_status (Order-Delivered)**
-- provider.locations[0].id mismatches in /on_search and /on_status_delivered
-- delivery timestamp (/end/time/timestamp) can't be less than or equal to the pickup timestamp (start/time/timestamp)
 
