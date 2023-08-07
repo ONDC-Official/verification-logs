@@ -1,8 +1,8 @@
 **/on_select**
-- Warning: Quoted Price in /on_select INR 60 does not match with the total price of items in /select INR 160
+- Warning: Quoted Price in /on_select INR 100 does not match with the total price of items in /select INR 280
 
 **/on_init**
-- Warning: items[1].quantity.count for item OOGASHOP-ONDC-47131 mismatches with the items quantity selected in /select
+- Warning: items[1].quantity.count for item OOGASHOP-ONDC-47057 mismatches with the items quantity selected in /select
 - gps coordinates in fulfillments[0].end.location mismatch in /select & /on_init
 
 **/confirm**
