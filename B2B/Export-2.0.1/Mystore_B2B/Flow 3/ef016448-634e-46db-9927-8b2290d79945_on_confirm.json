@@ -2,14 +2,14 @@
   "request": {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_init",
+      "action": "on_confirm",
       "bap_id": "mystore5.storehippo.manu:3000",
       "bap_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0",
       "bpp_id": "mystore5.storehippo.manu:3000",
       "bpp_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0/",
-      "transaction_id": "f6d33706-682c-4bd0-ac51-8ace85386a33",
-      "message_id": "21d4c783-eade-40bc-81b0-7312947171da",
-      "timestamp": "2023-08-01T18:27:10.725Z",
+      "transaction_id": "ef016448-634e-46db-9927-8b2290d79945",
+      "message_id": "e19ea3d6-f910-4c08-bdb9-0a5077c6a185",
+      "timestamp": "2023-08-05T08:27:54.581Z",
       "ttl": "PT30S",
       "location": {
         "city": {
@@ -24,7 +24,12 @@
     "message": {
       "order": {
         "provider": {
-          "id": "64c8a8220357056a595060be"
+          "id": "64c8a8220357056a595060be",
+          "locations": [
+            {
+              "id": "64c8a8220357056a595060be"
+            }
+          ]
         },
         "items": [
           {
@@ -34,9 +39,6 @@
                 "count": 1
               }
             },
-            "fulfillment_id": [
-              "6ms64c8a8220357056a595060be1e2"
-            ],
             "fulfillment_ids": [
               "6ms64c8a8220357056a595060be1e2"
             ]
@@ -62,10 +64,10 @@
               "item": {
                 "quantity": {
                   "available": {
-                    "count": "580"
+                    "count": "561"
                   },
                   "maximum": {
-                    "count": "580"
+                    "count": "561"
                   }
                 },
                 "price": {
@@ -75,7 +77,7 @@
               }
             },
             {
-              "@ondc/org/item_id": "6mstestSeller64c8a8220357056a595060be1e2",
+              "@ondc/org/item_id": "6ms64c8a8220357056a595060be1e2",
               "title": "Delivery charges",
               "@ondc/org/title_type": "delivery",
               "price": {
@@ -83,32 +85,53 @@
                 "value": "0"
               }
             }
-          ]
+          ],
+          "ttl": "P6D"
         },
         "billing": {
           "name": "saurabh",
-          "address": {
-            "name": "L-559 Mangol puri",
-            "building": "L-559",
-            "city": "Gurugram",
-            "state": "Haryana",
-            "country": "IN",
-            "area_code": "122050",
-            "locality": "L-559 Mangol puri"
+          "address": "L-559 Mangol puri",
+          "state": {
+            "name": "Haryana"
           },
-          "phone": "8368476734",
-          "tax_number": "31AAFDN5341L2Z7",
-          "created_at": "2023-08-01T18:27:10.666Z",
-          "updated_at": "2023-08-01T18:27:10.666Z"
+          "city": {
+            "name": "Gurugram"
+          },
+          "tax_id": "31AAFDN5341L2Z7",
+          "phone": "8368476734"
         },
         "fulfillments": [
           {
-            "id": [
-              "6ms64c8a8220357056a595060be1e2"
-            ],
+            "id": "64ce080a3e3906761125570d",
+            "state": {
+              "descriptor": {
+                "name": "Pending",
+                "code": "Pending"
+              }
+            },
             "type": "Delivery",
-            "tracking": false,
+            "tracking": true,
             "stops": [
+              {
+                "location": {
+                  "id": "64c8a8220357056a595060be",
+                  "descriptor": {
+                    "name": "testSellerMystore"
+                  },
+                  "gps": "12.9812829,77.5951451"
+                },
+                "contact": {
+                  "phone": "8010117117",
+                  "email": "dummy-1f6ee736625f435ff88eaafd6c9bdedf@storehippo.com"
+                },
+                "type": "start",
+                "time": {
+                  "range": {
+                    "start": "2023-08-05T08:27:54.497Z",
+                    "end": "2023-08-05T08:27:54.497Z"
+                  }
+                }
+              },
               {
                 "type": "end",
                 "location": {
@@ -126,39 +149,25 @@
                   }
                 },
                 "contact": {
-                  "phone": "8368476734"
+                  "phone": "8368476734",
+                  "email": "saurabh.singh@hippoinnovations.com"
+                },
+                "time": {
+                  "range": {
+                    "start": "2023-08-05T08:27:54.497Z",
+                    "end": "2023-08-05T08:27:54.497Z"
+                  }
                 }
               }
-            ]
-          }
-        ],
-        "payment": {
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "seller-app",
-              "settlement_type": "neft",
-              "settlement_phase": "sale-amount"
-            }
-          ],
-          "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "3"
-        },
-        "payments": [
-          {
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "seller-app",
-                "settlement_type": "neft",
-                "settlement_phase": "sale-amount"
-              }
             ],
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3"
+            "@ondc/org/provider_name": "testSellerMystore"
           }
         ],
         "tags": [
           {
-            "code": "buyer_id",
+            "descriptor": {
+              "code": "buyer_id"
+            },
             "list": [
               {
                 "code": "buyer_id_code",
@@ -170,21 +179,46 @@
               }
             ]
           }
-        ]
+        ],
+        "payments": [
+          {
+            "params": {
+              "transaction_id": "TXN-Bi4J4D972",
+              "amount": "500",
+              "currency": "INR"
+            },
+            "type": "PRE-FULFILLMENT",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "seller-app",
+                "settlement_type": "neft",
+                "settlement_phase": "sale-amount"
+              }
+            ],
+            "status": "PAID",
+            "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_amount": "3",
+            "@ondc/org/buyer_app_finder_fee_type": "percent"
+          }
+        ],
+        "id": "64ce08063e3906761125560c",
+        "state": "Accepted",
+        "created_at": "2023-08-05T08:27:54.497Z",
+        "updated_at": "2023-08-05T08:27:54.581Z"
       }
     }
   },
   "response": {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_init",
+      "action": "on_confirm",
       "bap_id": "mystore5.storehippo.manu:3000",
       "bap_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0",
       "bpp_id": "mystore5.storehippo.manu:3000",
       "bpp_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0/",
-      "transaction_id": "f6d33706-682c-4bd0-ac51-8ace85386a33",
-      "message_id": "21d4c783-eade-40bc-81b0-7312947171da",
-      "timestamp": "2023-08-01T18:27:10.725Z",
+      "transaction_id": "ef016448-634e-46db-9927-8b2290d79945",
+      "message_id": "e19ea3d6-f910-4c08-bdb9-0a5077c6a185",
+      "timestamp": "2023-08-05T08:27:54.581Z",
       "ttl": "PT30S",
       "location": {
         "city": {
