@@ -1,21 +1,24 @@
 {
     "context": {
-        "domain": "nic2004:60232",
-        "country": "IND",
-        "city": "std:080",
-        "core_version": "1.1.0",
-        "bpp_id": "ondcpp.yaarilabs.com",
-        "bpp_uri": "https://ondcpp.yaarilabs.com/api/ondc/preprod",
-        "transaction_id": "bf3588f7-9137-4c7a-965e-f6b63161129d",
-        "message_id": "f3f7918d-218e-4ceb-ba65-be227962d476",
+        "action": "on_search",
         "bap_id": "logistics.ondc.digiledge.in",
         "bap_uri": "https://logistics.ondc.digiledge.in",
-        "timestamp": "2023-02-22T05:55:11.961Z",
+        "bpp_id": "shipdh.in",
+        "bpp_uri": "https://shipdh.in/ondc/bpp/api/",
+        "country": "IND",
+        "city": "std:080",
         "ttl": "PT30S",
-        "action": "on_search"
+        "domain": "nic2004:60232",
+        "core_version": "1.1.0",
+        "transaction_id": "630163ab-80b4-4f39-8b7b-7ba0311d76c8",
+        "message_id": "e0bc2a12-15fb-4f6f-868a-9eb417e69f8a",
+        "timestamp": "2023-08-09T12:41:38.091Z"
     },
     "message": {
         "catalog": {
+            "bpp/descriptor": {
+                "name": "Shipdelight Logistics Technologies Private Limited"
+            },
             "bpp/fulfillments": [
                 {
                     "id": "1",
@@ -28,43 +31,116 @@
                 {
                     "id": "3",
                     "type": "RTO"
-                },
-                {
-                    "id": "4",
-                    "type": "Reverse QC"
                 }
             ],
-            "bpp/descriptor": {
-                "name": "Shipyaari"
-            },
             "bpp/providers": [
                 {
-                    "id": "6406",
+                    "id": "1",
                     "descriptor": {
-                        "name": "Ekart"
+                        "name": "Shipdelight Logistics Technologies Private Limited",
+                        "short_desc": "ShipDelight",
+                        "long_desc": "ShipDelight"
                     },
                     "categories": [
                         {
-                            "id": "Standard Delivery",
+                            "id": "Same Day Delivery",
                             "time": {
                                 "label": "TAT",
-                                "duration": "P5D"
+                                "duration": "PT2H"
+                            }
+                        },
+                        {
+                            "id": "Next Day Delivery",
+                            "time": {
+                                "label": "TAT",
+                                "duration": "P1DT2H"
                             }
                         }
                     ],
+                    "locations": [],
                     "items": [
                         {
-                            "id": "YAARI-6406",
+                            "id": "5",
                             "parent_item_id": "",
-                            "category_id": "Standard Delivery",
-                            "fulfillment_id": "2",
+                            "category_id": "Same Day Delivery",
+                            "fulfillment_id": "1",
                             "descriptor": {
                                 "code": "P2P",
-                                "name": "Ekart"
+                                "name": "Same Day delivery",
+                                "short_desc": "Same Day delivery",
+                                "long_desc": "Same Day delivery"
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "408.28"
+                                "value": "35"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT2H",
+                                "timestamp": "2023-08-09T07:11:38.091Z"
+                            }
+                        },
+                        {
+                            "id": "9",
+                            "parent_item_id": "",
+                            "category_id": "Next Day Delivery",
+                            "fulfillment_id": "1",
+                            "descriptor": {
+                                "code": "P2H2P",
+                                "name": "Next Day delivery",
+                                "short_desc": "Next Day delivery",
+                                "long_desc": "Next Day delivery"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "35"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT24H",
+                                "timestamp": "2023-08-09T07:11:38.091Z"
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "parent_item_id": "5",
+                            "category_id": "Same Day Delivery",
+                            "fulfillment_id": "3",
+                            "descriptor": {
+                                "code": "P2H2P",
+                                "name": "RTO quote",
+                                "short_desc": "RTO quote",
+                                "long_desc": "RTO quote"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "35"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT2H",
+                                "timestamp": "2023-08-09T07:11:38.091Z"
+                            }
+                        },
+                        {
+                            "id": "11",
+                            "parent_item_id": "9",
+                            "category_id": "Next Day Delivery",
+                            "fulfillment_id": "3",
+                            "descriptor": {
+                                "code": "P2H2P",
+                                "name": "RTO quote",
+                                "short_desc": "RTO quote",
+                                "long_desc": "RTO quote"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "35"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT24H",
+                                "timestamp": "2023-08-09T07:11:38.091Z"
                             }
                         }
                     ]
