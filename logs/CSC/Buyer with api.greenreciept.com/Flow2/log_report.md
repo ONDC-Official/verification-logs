@@ -10,10 +10,8 @@
 
 **/confirm**
 - /message/order/payment must have required property '@ondc/org/settlement_details'
-- created_at, updated_at mismatches in /billing in /init and /confirm
 
 **/on_confirm**
 - context/timestamp difference between /on_confirm and /confirm should be smaller than 5 sec
-- created_at, updated_at mismatches in /billing in /confirm and /on_confirm
 - payment object mismatches in /confirm & /on_confirm
 
