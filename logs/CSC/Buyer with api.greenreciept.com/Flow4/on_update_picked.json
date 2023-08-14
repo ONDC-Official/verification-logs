@@ -1,0 +1,171 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_update",
+    "core_version": "1.1.0",
+    "bap_id": "stagingapi.cscestore.in/ondc",
+    "bap_uri": "https://stagingapi.cscestore.in/ondc/buyer/preprod",
+    "bpp_id": "api.greenreceipt.in",
+    "bpp_uri": "https://api.greenreceipt.in/ondc/",
+    "transaction_id": "cbafd6f0-557d-4997-bacf-b99c267889d2",
+    "message_id": "05eb6d1d-4943-41bb-9eca-2fea999634f9",
+    "timestamp": "2023-08-14T12:20:48.034Z"
+  },
+  "message": {
+    "order": {
+      "id": "ONDCRBMOZ1692005486",
+      "state": "Completed",
+      "items": [
+        {
+          "id": "4633_360599",
+          "fulfillment_id": "4633_F1",
+          "quantity": { "count": 10 }
+        },
+        {
+          "id": "4633_360598",
+          "fulfillment_id": "4633_ReverseQC_1",
+          "quantity": { "count": 2 },
+          "tags": { "status": "Return_Picked" }
+        }
+      ],
+      "billing": {
+        "name": "Sonu KY",
+        "address": {
+          "name": "Sonu KY",
+          "building": "Attur po",
+          "door": "Attur po",
+          "locality": "Attur",
+          "city": "BENGALURU URBAN",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560080"
+        },
+        "email": "Insphere.sonu@gmail.com",
+        "phone": "7428723247",
+        "created_at": "2023-08-14T09:31:13.668Z",
+        "updated_at": "2023-08-14T09:31:13.668Z"
+      },
+      "quote": {
+        "price": { "currency": "INR", "value": "45000.00" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "4633_360599",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": { "count": 10 },
+            "price": { "currency": "INR", "value": "45000.00" },
+            "item": { "price": { "currency": "INR", "value": "4500.00" } },
+            "title": "Triple Chocolate cake - 8 Inch"
+          },
+          {
+            "@ondc/org/item_id": "4633_360598",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": { "count": 0 },
+            "price": { "currency": "INR", "value": "0.00" },
+            "item": { "price": { "currency": "INR", "value": "3000.00" } },
+            "title": "Triple Chocolate cake - 7 Inch"
+          },
+          {
+            "@ondc/org/item_id": "4633_F1",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "0.00" },
+            "title": "Delivery charges"
+          }
+        ],
+        "ttl": "PT4H"
+      },
+      "fulfillments": [
+        {
+          "id": "4633_F1",
+          "@ondc/org/provider_name": "Labonel Fine Baking - Sadashivanagar",
+          "type": "Delivery",
+          "state": { "descriptor": { "code": "Order-delivered" } },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-08-14T09:41:26.188Z",
+                "end": "2023-08-14T13:41:26.188Z"
+              },
+              "timestamp": "2023-08-14T09:36:25.407Z"
+            },
+            "location": {
+              "descriptor": {
+                "name": "Labonel Fine Baking - Sadashivanagar",
+                "images": ["https://bynow.co.in/Images/logos/logo.png"]
+              },
+              "gps": "13.0046,77.5839"
+            },
+            "contact": { "phone": "9871847047", "email": "labonel@gmail.com" }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2023-08-14T09:41:26.188Z",
+                "end": "2023-08-14T13:41:26.188Z"
+              },
+              "timestamp": "2023-08-14T09:37:26.327Z"
+            },
+            "contact": { "phone": "7428723247" },
+            "location": {
+              "gps": "13.01,77.57",
+              "address": {
+                "name": "Sonu KY",
+                "building": "Attur",
+                "door": "Attur po",
+                "locality": "Attur",
+                "city": "BENGALURU URBAN",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560080"
+              }
+            }
+          }
+        },
+        {
+          "id": "4633_ReverseQC_1",
+          "@ondc/org/provider_name": "Labonel Fine Baking - Sadashivanagar",
+          "type": "Reverse QC",
+          "state": { "descriptor": { "code": "Order-picked-up" } },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-08-14T12:19:59.880Z",
+                "end": "2023-08-14T16:19:59.880Z"
+              },
+              "timestamp": "2023-08-14T12:20:47.850Z"
+            }
+          }
+        }
+      ],
+      "payment": {
+        "tl_method": null,
+        "params": {
+          "currency": "INR",
+          "transaction_id": "16d523edd88f3c29a4e2",
+          "amount": "51000.00"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "Buynxt Private Limited",
+            "upi_address": "buynxt@okidfc",
+            "settlement_bank_account_no": "10129914936",
+            "settlement_ifsc_code": "IDFB0021001",
+            "bank_name": "IDFC First Bank Limited",
+            "branch_name": "Golf Course Road, Gurgaon"
+          }
+        ]
+      },
+      "created_at": "2023-08-14T09:31:26.213Z",
+      "updated_at": "2023-08-14T12:20:48.034Z"
+    }
+  }
+}
