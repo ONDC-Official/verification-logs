@@ -2,14 +2,14 @@
   "request": {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_confirm",
+      "action": "on_status",
       "bap_id": "mystore5.storehippo.manu:3000",
       "bap_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0",
-      "bpp_id": "mystore5.storehippo.manu:3000",
-      "bpp_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0/",
-      "transaction_id": "ef016448-634e-46db-9927-8b2290d79945",
-      "message_id": "e19ea3d6-f910-4c08-bdb9-0a5077c6a185",
-      "timestamp": "2023-08-05T08:27:54.581Z",
+      "bpp_id": "beta.mystore.in",
+      "bpp_uri": "https://beta.mystore.in/ondc/1.0/",
+      "transaction_id": "23e28e34-93fc-400a-9a0e-c956a07b8bfd",
+      "message_id": "942b2e33-b3f2-4447-af57-a6a2b7477def",
+      "timestamp": "2023-08-14T10:20:37.287Z",
       "ttl": "PT30S",
       "location": {
         "city": {
@@ -41,6 +41,27 @@
             },
             "fulfillment_ids": [
               "6ms64c8a8220357056a595060be1e2"
+            ],
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BUYER_TERMS"
+              },
+              "list": [
+                  {
+                      "descriptor": {
+                          "code": "ITEM_REQ"
+                      },
+                      "value": "Testtt"
+                  },
+                  {
+                      "descriptor": {
+                          "code": "PACKAGING_REQ"
+                      },
+                      "value": "Don't use plastic bags"
+                  }
+              ]
+              }
             ]
           }
         ],
@@ -64,10 +85,10 @@
               "item": {
                 "quantity": {
                   "available": {
-                    "count": "561"
+                    "count": "498"
                   },
                   "maximum": {
-                    "count": "561"
+                    "count": "498"
                   }
                 },
                 "price": {
@@ -75,21 +96,12 @@
                   "value": "500"
                 }
               }
-            },
-            {
-              "@ondc/org/item_id": "6ms64c8a8220357056a595060be1e2",
-              "title": "Delivery charges",
-              "@ondc/org/title_type": "delivery",
-              "price": {
-                "currency": "INR",
-                "value": "0"
-              }
             }
           ],
           "ttl": "P6D"
         },
         "billing": {
-          "name": "saurabh",
+          "name": "saurabh singh",
           "address": "L-559 Mangol puri",
           "state": {
             "name": "Haryana"
@@ -97,16 +109,16 @@
           "city": {
             "name": "Gurugram"
           },
-          "tax_id": "31AAFDN5341L2Z7",
+          "tax_id":"06AAGCN9749N1ZM",
           "phone": "8368476734"
         },
         "fulfillments": [
           {
-            "id": "64ce080a3e3906761125570d",
+            "id": "64d9fbbbb4b0210dedde986f",
             "state": {
               "descriptor": {
-                "name": "Pending",
-                "code": "Pending"
+                "name": "Order delivered",
+                "code": "Order-delivered"
               }
             },
             "type": "Delivery",
@@ -127,15 +139,15 @@
                 "type": "start",
                 "time": {
                   "range": {
-                    "start": "2023-08-05T08:27:54.497Z",
-                    "end": "2023-08-05T08:27:54.497Z"
+                    "start": "2023-08-14T09:59:38.358Z",
+                    "end": "2023-08-14T09:59:38.358Z"
                   }
                 }
               },
               {
                 "type": "end",
                 "location": {
-                  "gps": "13.03466,77.55721",
+                  "gps": "28.356316,76.931176",
                   "address": "L-559 Mangol puri",
                   "city": {
                     "name": "Gurugram"
@@ -149,18 +161,40 @@
                   }
                 },
                 "contact": {
-                  "phone": "8368476734",
-                  "email": "saurabh.singh@hippoinnovations.com"
+                  "phone": "9871123754",
+                  "email": "reachus@mystore"
                 },
                 "time": {
                   "range": {
-                    "start": "2023-08-05T08:27:54.497Z",
-                    "end": "2023-08-05T08:27:54.497Z"
+                    "start": "2023-08-14T09:59:38.358Z",
+                    "end": "2023-08-14T09:59:38.358Z"
                   }
                 }
               }
             ],
-            "@ondc/org/provider_name": "testSellerMystore"
+            "@ondc/org/provider_name": "testSellerMystore",
+            "end": {
+              "time": {
+                "range": {
+                  "start": "2023-08-14T10:23:18.589Z",
+                  "end": "2023-08-14T10:50:18.589Z"
+                },
+                "timestamp": "2023-08-14T10:20:37.114Z"
+              }
+            },
+            "start": {
+              "time": {
+                "range": {
+                  "start": "2023-08-14T10:21:18.589Z",
+                  "end": "2023-08-14T10:25:18.589Z"
+                },
+                "timestamp": "2023-08-14T10:20:18.589Z"
+              }
+            },
+            "agent": {
+              "name": "Mystore",
+              "phone": "9898129898"
+            }
           }
         ],
         "tags": [
@@ -183,11 +217,11 @@
         "payments": [
           {
             "params": {
-              "transaction_id": "TXN-Bi4J4D972",
+              "transaction_id": "TXN-j3PmoFQL",
               "amount": "500",
               "currency": "INR"
             },
-            "type": "PRE-FULFILLMENT",
+            "type": "ON-FULFILLMENT",
             "@ondc/org/settlement_details": [
               {
                 "settlement_counterparty": "seller-app",
@@ -195,30 +229,36 @@
                 "settlement_phase": "sale-amount"
               }
             ],
-            "status": "PAID",
+            "status": "NOT-PAID",
             "collected_by": "BAP",
             "@ondc/org/buyer_app_finder_fee_amount": "3",
             "@ondc/org/buyer_app_finder_fee_type": "percent"
           }
         ],
-        "id": "64ce08063e3906761125560c",
-        "state": "Accepted",
-        "created_at": "2023-08-05T08:27:54.497Z",
-        "updated_at": "2023-08-05T08:27:54.581Z"
+        "id": "64d9fa74b4b0210dedde94a8",
+        "created_at": "2023-08-14T09:59:38.358Z",
+        "updated_at": "2023-08-14T10:20:37.355Z",
+        "state": "Completed",
+        "documents": [
+          {
+            "url": "//cdn.storehippo.com/s/632dcf060c84820019e5c3eb/ms.invoices/64d9fd4c5ed9e52cf696e158/invoice-INV-18.pdf",
+            "label": "INVOICE"
+          }
+        ]
       }
     }
   },
   "response": {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_confirm",
+      "action": "on_status",
       "bap_id": "mystore5.storehippo.manu:3000",
       "bap_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0",
-      "bpp_id": "mystore5.storehippo.manu:3000",
-      "bpp_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0/",
-      "transaction_id": "ef016448-634e-46db-9927-8b2290d79945",
-      "message_id": "e19ea3d6-f910-4c08-bdb9-0a5077c6a185",
-      "timestamp": "2023-08-05T08:27:54.581Z",
+      "bpp_id": "beta.mystore.in",
+      "bpp_uri": "https://beta.mystore.in/ondc/1.0/",
+      "transaction_id": "23e28e34-93fc-400a-9a0e-c956a07b8bfd",
+      "message_id": "942b2e33-b3f2-4447-af57-a6a2b7477def",
+      "timestamp": "2023-08-14T10:20:37.287Z",
       "ttl": "PT30S",
       "location": {
         "city": {
@@ -232,7 +272,7 @@
     },
     "message": {
       "ack": {
-        "status": "ACK"
+        "status": "NACK"
       }
     }
   }
