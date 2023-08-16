@@ -4,83 +4,80 @@
     "country": "IND",
     "city": "std:080",
     "action": "on_confirm",
-    "coreVersion": "1.1.0",
-    "bapId": "ondc-seller-api.trafyn.site",
-    "bapUri": "https://ondc-seller-api.trafyn.site/",
-    "bppId": "ondc-preprod.loadshare.net",
-    "bppUri": "https://ondc-preprod.loadshare.net/logistics/bpp",
-    "transactionId": "54334132-22b1-4b90-b68f-61dfefdc9994",
-    "messageId": "691f5ca9-76ca-46f1-bd53-98033666c730",
-    "timestamp": "2023-08-04T07:30:54.141Z"
+    "core_version": "1.1.0",
+    "bap_id": "ondc-seller-api.trafyn.site",
+    "bap_uri": "https://ondc-seller-api.trafyn.site/",
+    "bpp_id": "qaapis.delcaper.com",
+    "bpp_uri": "https://qaapis.delcaper.com/public/ondc",
+    "transaction_id": "5f59555f-0a7b-4130-adfa-86ba46574ca1",
+    "message_id": "de20a766-00a2-4b60-9ed1-a0a1d39dd5da",
+    "timestamp": "2023-08-10T09:32:59.108Z"
   },
   "message": {
     "order": {
-      "id": "2023-08-04-211132",
+      "id": "2023-08-10-379872",
       "state": "Accepted",
-      "provider": {
-        "id": "loadshare@ondc-preprod.loadshare.net"
-      },
+      "provider": { "id": "SMILE" },
       "items": [
         {
-          "id": "sameday",
-          "categoryId": "Same Day Delivery",
-          "descriptor": {
-            "code": "P2P"
+          "id": "1",
+          "category_id": "Next Day Delivery",
+          "descriptor": { "code": "P2P" }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "35" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "Delivery Charge",
+            "price": { "currency": "INR", "value": "35" }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Prepaid",
+          "state": { "descriptor": { "code": "Pending" } },
+          "tracking": false,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-08-10T09:32:61.108Z",
+                "end": "2023-08-10T09:50:61.108Z"
+              }
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2023-08-10T09:32:61.108Z",
+                "end": "2023-08-10T09:50:61.108Z"
+              }
+            }
           }
         }
       ],
       "billing": {
-        "name": "Ninjacart ONDC Seller",
+        "name": "Ninjacart Seller 3",
         "address": {
-          "name": "Ninjacart ONDC Seller",
-          "building": "Wework vaishanvi signature",
-          "locality": "Bellandur",
-          "city": "Bengaluru",
-          "state": "Karnataka",
-          "country": "India",
-          "area_code": "560024"
+          "name": "Ninjacart Seller 3",
+          "building": "Wanowrie, Pune",
+          "locality": "Wanowrie, Pune",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "IND",
+          "area_code": "411013"
         },
-        "email": "gandesirisanith@ninjacart.com",
+        "email": "ondc-support@ninjacart.com",
         "phone": "7374090460",
-        "taxNumber": "29AAACZ8597L1Z8",
-        "createdAt": "2023-08-04T07:27:35.096Z",
-        "updatedAt": "2023-08-04T07:27:35.096Z"
+        "tax_number": "29AAACZ8597L1Z8",
+        "created_at": "2023-08-10T09:32:12.389Z",
+        "updated_at": "2023-08-10T09:32:12.389Z"
       },
-      "fulfillments": [
-        {
-          "id": "lsn_prepaid",
-          "type": "Prepaid",
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
-          "tracking": true,
-          "tags": {}
-        }
-      ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": 100.0
-        },
-        "breakup": [
-          {
-            "atOndcOrgItemId": "sameday",
-            "atOndcOrgTitleType": "Delivery Charge",
-            "price": {
-              "currency": "INR",
-              "value": 100.0
-            }
-          }
-        ]
-      },
-      "payment": {
-        "type": "POST-FULFILLMENT",
-        "collectedBy": "BAP"
-      },
-      "createdAt": "2023-08-04T07:30:53.135Z",
-      "updatedAt": "2023-08-04T07:30:54.141Z"
+      "created_at": "2023-08-10T09:32:57.918Z",
+      "updated_at": "2023-08-10T09:32:59.108Z"
     }
   }
 }

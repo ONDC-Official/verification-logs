@@ -7,68 +7,71 @@
     "core_version": "1.1.0",
     "bap_id": "ondc-seller-api.trafyn.site",
     "bap_uri": "https://ondc-seller-api.trafyn.site/",
-    "bpp_id": "ondc-preprod.loadshare.net",
-    "bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp",
-    "transaction_id": "54334132-22b1-4b90-b68f-61dfefdc9994",
-    "message_id": "d4d19f6a-7dc0-4084-8e95-04ccc2e00758",
-    "timestamp": "2023-08-04T07:28:04.357Z"
+    "transaction_id": "5f59555f-0a7b-4130-adfa-86ba46574ca1",
+    "message_id": "805dfba2-4f1f-430b-bdbb-db1a6ce7daa7",
+    "timestamp": "2023-08-10T09:31:45.981Z",
+    "bpp_id": "qaapis.delcaper.com",
+    "bpp_uri": "https://qaapis.delcaper.com/public/ondc"
   },
   "message": {
     "catalog": {
-      "bpp/descriptor": {
-        "name": "LoadShare Delivery"
-      },
       "bpp/fulfillments": [
-        {
-          "id": "lsn_prepaid",
-          "type": "Prepaid",
-          "tracking": false,
-          "tags": {}
-        }
+        { "id": "1", "type": "Prepaid" },
+        { "id": "3", "type": "RTO" }
       ],
+      "bpp/descriptor": { "name": "SHREE MARUTI INTEGRATED LOGISTICS LIMITED" },
       "bpp/providers": [
         {
-          "id": "loadshare@ondc-preprod.loadshare.net",
+          "id": "SMILE",
           "descriptor": {
-            "name": "LoadShare Networks",
-            "short_desc": "LoadShare Networks Private Limited",
-            "long_desc": "LoadShare Networks Private Limited"
+            "name": "SHREE MARUTI INTEGRATED LOGISTICS LIMITED",
+            "short_desc": "SMILE",
+            "long_desc": "SHREE MARUTI INTEGRATED LOGISTICS LIMITED"
           },
           "categories": [
             {
-              "id": "Express Delivery",
-              "time": {
-                "label": "TAT",
-                "duration": "PT2H"
-              },
-              "tags": {}
+              "id": "Standard Delivery",
+              "time": { "label": "TAT", "duration": "PT14H" }
             }
           ],
           "items": [
             {
-              "id": "sameday",
+              "id": "1",
               "parent_item_id": "",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "1",
               "descriptor": {
-                "name": "Express Delivery",
+                "name": "Retail",
                 "code": "P2P",
-                "short_desc": "Upto 2 hours for delivery",
-                "long_desc": "Upto 2 hours for delivery"
+                "short_desc": "Next Day Delivery for Retail",
+                "long_desc": "Next Day Delivery for Retail"
               },
-              "price": {
-                "currency": "INR",
-                "value": "100.00"
-              },
-              "category_id": "Express Delivery",
-              "fulfillment_id": "lsn_prepaid",
+              "price": { "currency": "INR", "value": "35" },
               "time": {
                 "label": "TAT",
-                "timestamp": "2023-08-04T09:28:04.173Z",
-                "duration": "PT2H"
+                "duration": "PT14H",
+                "timestamp": "2023-08-11T03:31:45.981Z"
+              }
+            },
+            {
+              "id": "1-I2",
+              "parent_item_id": "1",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
               },
-              "tags": {}
+              "price": { "currency": "INR", "value": "35" },
+              "time": {
+                "label": "TAT",
+                "duration": "PT14H",
+                "timestamp": "2023-08-11T03:31:45.981Z"
+              }
             }
-          ],
-          "tags": {}
+          ]
         }
       ]
     }
