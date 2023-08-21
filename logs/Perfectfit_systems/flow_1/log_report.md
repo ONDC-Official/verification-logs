@@ -1,5 +1,6 @@
 **/on_select**
 - /quote/breakup/5/price/value must match pattern "^(\d*.?\d{1,2})$"
+- Warning: Quoted Price in /on_select INR 1555.4 does not match with the total price of items in /select INR 1540
 
 **/on_init**
 - /quote/breakup/5/price/value must match pattern "^(\d*.?\d{1,2})$"
@@ -29,7 +30,5 @@
 - /quote/breakup/5/price/value must match pattern "^(\d*.?\d{1,2})$"
 
 **/on_update (Return_Delivered)**
-- /quote/breakup/0/price/value must match pattern "^(\d*.?\d{1,2})$"
 - /quote/breakup/5/price/value must match pattern "^(\d*.?\d{1,2})$"
-- Item's unit and total price mismatch for id: item_006
 
