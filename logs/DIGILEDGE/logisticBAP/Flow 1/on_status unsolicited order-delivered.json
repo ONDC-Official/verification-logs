@@ -1,23 +1,22 @@
 {
     "context": {
-        "action": "on_confirm",
+        "action": "on_status",
         "bap_id": "logistics.ondc.digiledge.in",
         "bap_uri": "https://logistics.ondc.digiledge.in",
         "bpp_id": "shipdh.in",
         "bpp_uri": "https://shipdh.in/ondc/bpp/api/",
         "country": "IND",
         "city": "std:080",
-        "ttl": "PT30S",
         "domain": "nic2004:60232",
         "core_version": "1.1.0",
         "transaction_id": "609ea5fa-fc00-4fcb-8602-43726a48c3a9",
-        "message_id": "f01d066e-2f9b-442f-9b0f-b164d074fb5c",
-        "timestamp": "2023-08-16T16:19:37.977Z"
+        "message_id": "e3f2561a-28f1-4f84-8122-c38220d1f5b1",
+        "timestamp": "2023-08-16T11:01:07.444Z"
     },
     "message": {
         "order": {
             "id": "1692182977865-7ad57b6e-ba8c-4f79-9acd-70856b27b6ce",
-            "state": "Accepted",
+            "state": "Completed",
             "provider": {
                 "id": "1"
             },
@@ -33,7 +32,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "30"
+                    "value": "30.00"
                 },
                 "breakup": [
                     {
@@ -63,21 +62,51 @@
                 "created_at": "2023-08-16T10:49:05.999Z",
                 "updated_at": "2023-08-16T10:49:05.999Z"
             },
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_type": "neft",
+                        "upi_address": null,
+                        "settlement_bank_account_no": "917020074322489",
+                        "settlement_ifsc_code": "UTIB0000395"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
-                    "id": "1",
                     "type": "Prepaid",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Order-delivered"
                         }
                     },
                     "@ondc/org/awb_no": "1692182978213219",
-                    "tracking": true
+                    "tracking": true,
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2023-08-16T05:18:20.948Z",
+                                "end": "2023-08-16T05:48:20.948Z"
+                            },
+                            "timestamp": "2023-08-16T11:00:41.962Z"
+                        }
+                    },
+                    "end": {
+                        "time": {
+                            "range": {
+                                "start": "2023-08-16T07:18:20.948Z",
+                                "end": "2023-08-16T09:18:20.948Z"
+                            },
+                            "timestamp": "2023-08-16T11:01:07.444Z"
+                        }
+                    }
                 }
             ],
             "created_at": "2023-08-16T16:19:37.977Z",
-            "updated_at": "2023-08-16T16:19:37.977Z"
+            "updated_at": "2023-08-16T11:01:07.444Z"
         }
     }
 }
