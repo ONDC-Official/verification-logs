@@ -2,14 +2,14 @@
   "request": {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_confirm",
+      "action": "on_status",
       "bap_id": "mystore5.storehippo.manu:3000",
       "bap_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0",
       "bpp_id": "beta.mystore.in",
       "bpp_uri": "https://beta.mystore.in/ondc/1.0/",
-      "transaction_id": "394f61c6-c7cc-495d-ae8c-4f4df708dbed",
-      "message_id": "d3c4060b-ee4a-41ab-acdb-750d0c0bfb98",
-      "timestamp": "2023-08-22T05:42:46.118Z",
+      "transaction_id": "ea770f00-e52e-406b-ae58-fff55339270c",
+      "message_id": "74118c1b-05e0-4c0d-bf07-95ad896d5fd2",
+      "timestamp": "2023-08-27T18:15:17.170Z",
       "ttl": "PT30S",
       "location": {
         "city": {
@@ -36,9 +36,12 @@
             "id": "64c8ab6090133b103be0ac1d",
             "quantity": {
               "selected": {
-                "count": 5
+                "count": 1
               }
             },
+            "fulfillment_ids": [
+              "6ms64c8a8220357056a595060be1e2"
+            ],
             "tags": [
               {
                 "descriptor": {
@@ -49,7 +52,7 @@
                     "descriptor": {
                       "code": "ITEM_REQ"
                     },
-                    "value": "Testtt"
+                    "value": "testtt"
                   },
                   {
                     "descriptor": {
@@ -59,36 +62,33 @@
                   }
                 ]
               }
-            ],
-            "fulfillment_ids": [
-              "6ms64c8a8220357056a595060be1e2"
             ]
           }
         ],
         "quote": {
           "price": {
             "currency": "INR",
-            "value": "2500.00"
+            "value": "500.00"
           },
           "breakup": [
             {
               "@ondc/org/item_id": "64c8ab6090133b103be0ac1d",
               "@ondc/org/item_quantity": {
-                "count": 5
+                "count": 1
               },
               "title": "SellerApp: testtt",
               "@ondc/org/title_type": "item",
               "price": {
                 "currency": "INR",
-                "value": "2500"
+                "value": "500"
               },
               "item": {
                 "quantity": {
                   "available": {
-                    "count": "490"
+                    "count": "478"
                   },
                   "maximum": {
-                    "count": "490"
+                    "count": "478"
                   }
                 },
                 "price": {
@@ -102,7 +102,7 @@
         },
         "billing": {
           "name": "saurabh singh",
-          "address": "L-559 Mangol Puri",
+          "address": "L-580 mangolpuri",
           "state": {
             "name": "Haryana"
           },
@@ -110,16 +110,15 @@
             "name": "Gurugram"
           },
           "tax_id": "07AAGFF2194N1Z1",
-          "phone": "8368476734",
-          "email": "saurabh.singh@hippoinnovations.com"
+          "phone": "8368476734"
         },
         "fulfillments": [
           {
             "id": "6ms64c8a8220357056a595060be1e2",
             "state": {
               "descriptor": {
-                "name": "Pending",
-                "code": "Pending"
+                "name": "Order picked up",
+                "code": "Order-picked-up"
               }
             },
             "type": "Delivery",
@@ -139,21 +138,27 @@
                 },
                 "type": "start",
                 "instructions": {
-                  "name": "OTP",
-                  "short_desc": "2346"
+                  "name":"Proof of pickup",
+                  "short_desc":"shipping label",
+                  "long_desc":"shipping label",
+                  "images":
+                  [
+                    "https://d2pyicwmjx3wii.cloudfront.net/s/62ea2c599d1398fa16dbae0a/636c8d9521cd491a8c9a4723/webp/mystore-logo-blue-480x480.png"
+                  ]
                 },
                 "time": {
                   "range": {
-                    "start": "2023-08-22T05:42:08.117Z",
-                    "end": "2023-08-22T05:42:08.117Z"
-                  }
+                    "start": "2023-08-27T17:16:44.940Z",
+                    "end": "2023-08-27T17:16:44.940Z"
+                  },
+                  "timestamp": "2023-08-27T18:15:16.939Z"
                 }
               },
               {
                 "type": "end",
                 "location": {
                   "gps": "28.356316,76.931176",
-                  "address": "L-559 Mangol Puri",
+                  "address": "L-580 mangolpuri",
                   "city": {
                     "name": "Gurugram"
                   },
@@ -171,13 +176,17 @@
                 },
                 "time": {
                   "range": {
-                    "start": "2023-08-22T05:42:08.117Z",
-                    "end": "2023-08-22T05:42:08.117Z"
+                    "start": "2023-08-27T17:16:44.940Z",
+                    "end": "2023-08-27T17:16:44.940Z"
                   }
                 }
               }
             ],
-            "@ondc/org/provider_name": "testSellerMystore"
+            "@ondc/org/provider_name": "testSellerMystore",
+            "agent": {
+              "name": "Mystore",
+              "phone": "9898129898"
+            }
           }
         ],
         "tags": [
@@ -204,47 +213,53 @@
         "payments": [
           {
             "params": {
-              "transaction_id": null,
-              "amount": "2500",
+              "transaction_id": "TXN-d7ziFT8L",
+              "amount": "500",
               "currency": "INR"
             },
             "type": "ON-FULFILLMENT",
             "@ondc/org/settlement_details": [
               {
                 "settlement_counterparty": "seller-app",
-                "settlement_phase": "sale-amount",
                 "settlement_type": "neft",
-                "settlement_bank_account_no": "10131492624",
-                "settlement_ifsc_code": "IDFB0021001",
-                "beneficiary_name": "HIPPO INNOVATIONS PRIVATE LIMITED ONDC",
-                "bank_name": "IDFC FIRST Bank",
-                "branch_name": "Gurgaon - Golf Course Road Branch"
+                "settlement_bank_account_no": "154123347152",
+                "settlement_ifsc_code": "HDFC62186",
+                "bank_name": "HDFC",
+                "branch_name": "Kabar",
+                "beneficiary_name": "Mystore",
+                "settlement_phase": "sale-amount"
               }
             ],
             "status": "NOT-PAID",
-            "collected_by": "BAP",
+            "collected_by": "BPP",
             "@ondc/org/buyer_app_finder_fee_amount": "3",
             "@ondc/org/buyer_app_finder_fee_type": "percent"
           }
         ],
-        "id": "64e44aa76eb5e91547a23f19",
-        "state": "Accepted",
-        "created_at": "2023-08-22T05:42:08.117Z",
-        "updated_at": "2023-08-22T05:42:46.118Z"
+        "id": "64eb84f4ac82803832ede867",
+        "created_at": "2023-08-27T17:16:44.940Z",
+        "updated_at": "2023-08-27T18:15:17.255Z",
+        "state": "In-progress",
+        "documents": [
+          {
+            "url": "//cdn.storehippo.com/s/632dcf060c84820019e5c3eb/ms.invoices/64eb8710ac82803832edf3ec/invoice-INV-20.pdf",
+            "label": "PROFORMA_INVOICE"
+          }
+        ]
       }
     }
   },
   "response": {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_confirm",
+      "action": "on_status",
       "bap_id": "mystore5.storehippo.manu:3000",
       "bap_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0",
-      "bpp_id": "mystore5.storehippo.manu:3000",
-      "bpp_uri": "http://mystore5.storehippo.manu:3000/ondc/1.0/",
-      "transaction_id": "394f61c6-c7cc-495d-ae8c-4f4df708dbed",
-      "message_id": "99d0d410-ab97-4da7-9f76-58dba64d2675",
-      "timestamp": "2023-08-22T05:42:46.118Z",
+      "bpp_id": "beta.mystore.in",
+      "bpp_uri": "https://beta.mystore.in/ondc/1.0/",
+      "transaction_id": "ea770f00-e52e-406b-ae58-fff55339270c",
+      "message_id": "74118c1b-05e0-4c0d-bf07-95ad896d5fd2",
+      "timestamp": "2023-08-27T18:15:17.170Z",
       "ttl": "PT30S",
       "location": {
         "city": {
@@ -258,7 +273,7 @@
     },
     "message": {
       "ack": {
-        "status": "ACK"
+        "status": "NACK"
       }
     }
   }
