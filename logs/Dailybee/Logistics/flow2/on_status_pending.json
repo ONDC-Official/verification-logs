@@ -3,19 +3,20 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_confirm",
+    "action": "on_status",
     "core_version": "1.1.0",
     "bap_id": "pp-ondc.dlyb.in",
     "bap_uri": "https://pp-ondc.dlyb.in/",
     "bpp_id": "dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io",
     "bpp_uri": "https://dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io/api/ondc/customerportaldemodtdc/",
     "transaction_id": "28c2432f-cbfb-4bbc-b38f-b1568b748797",
-    "message_id": "cfea4824-1cca-4390-8cb5-23151ef5ea00",
-    "timestamp": "2023-08-25T10:28:06.754Z"
+    "message_id": "11a93be0-097c-48ee-85cf-7751446ea207",
+    "timestamp": "2023-08-25T10:28:18.989Z"
   },
   "message": {
     "order": {
       "id": "2023-08-25-949467",
+      "state": "Accepted",
       "provider": {
         "id": "Shipsy NPO ONDC"
       },
@@ -44,35 +45,6 @@
           }
         ]
       },
-      "fulfillments": [
-        {
-          "id": "1",
-          "type": "Prepaid",
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
-          "tracking": false,
-          "@ondc/org/awb_no": "7X1394890",
-          "start": {
-            "time": {
-              "range": {
-                "start": "2023-08-25T10:33:00.396Z",
-                "end": "2023-08-25T17:30:00.396Z"
-              }
-            }
-          },
-          "end": {
-            "time": {
-              "range": {
-                "start": "2023-08-29T10:33:00.396Z",
-                "end": "2023-08-29T17:30:00.396Z"
-              }
-            }
-          }
-        }
-      ],
       "billing": {
         "name": "Kushero Innovations Private Ltd",
         "address": {
@@ -90,9 +62,51 @@
         "created_at": "2023-08-25T10:27:57.466Z",
         "updated_at": "2023-08-25T10:27:57.466Z"
       },
+      "payment": {
+        "@ondc/org/collection_amount": "94.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ],
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT"
+      },
       "created_at": "2023-08-25T10:28:05.396Z",
-      "updated_at": "2023-08-25T10:28:06.754Z",
-      "state": "Accepted"
+      "updated_at": "2023-08-25T10:28:11.576Z",
+      "fulfillments": [
+        {
+          "type": "Prepaid",
+          "@ondc/org/awb_no": "7X1394890",
+          "tracking": false,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-08-25T10:33:00.396Z",
+                "end": "2023-08-25T17:30:00.396Z"
+              }
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2023-08-29T10:33:00.396Z",
+                "end": "2023-08-29T17:30:00.396Z"
+              }
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "Pending",
+              "name": "Pending"
+            }
+          }
+        }
+      ]
     }
   }
 }
