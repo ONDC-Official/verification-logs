@@ -1,5 +1,5 @@
 **/on_select**
-- Warning: Quoted Price in /on_select INR 50 does not match with the total price of items in /select INR 110
+- Warning: Quoted Price in /on_select INR 70 does not match with the total price of items in /select INR 170
 
 **/on_init**
 - Discrepancies between the quote object in /on_select and /on_init
