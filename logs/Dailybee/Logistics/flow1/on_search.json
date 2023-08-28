@@ -1,17 +1,17 @@
 {
   "context": {
-    "transaction_id": "588550db-a2c7-48bc-b76a-8a397d39cdb6",
-    "country": "IND",
-    "bpp_id": "ondc.whizzard.in",
-    "city": "std:080",
     "domain": "nic2004:60232",
-    "bpp_uri": "https://ondc.whizzard.in/api/integration",
+    "country": "IND",
+    "city": "std:080",
     "action": "on_search",
-    "message_id": "5ae62f37-b445-4d90-af71-3f190257fc51--619b80dd7e6cb55f99de11ed",
     "core_version": "1.1.0",
-    "bap_uri": "https://pp-ondc.dlyb.in/",
     "bap_id": "pp-ondc.dlyb.in",
-    "timestamp": "2023-08-16T12:18:21.717Z"
+    "bap_uri": "https://pp-ondc.dlyb.in/",
+    "bpp_id": "dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io",
+    "bpp_uri": "https://dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io/api/ondc/customerportaldemodtdc/",
+    "transaction_id": "7fe61a4e-6ce9-4923-a0a8-9ada03756a12",
+    "message_id": "d3e9aef1-cf5a-445c-847a-604188a82163--64e3026850bf693f18cff658",
+    "timestamp": "2023-08-25T10:05:42.834Z"
   },
   "message": {
     "catalog": {
@@ -27,93 +27,73 @@
         {
           "id": "3",
           "type": "RTO"
+        },
+        {
+          "id": "4",
+          "type": "Reverse QC"
         }
       ],
+      "bpp/descriptor": {
+        "name": "Shipsy NPO ONDC"
+      },
       "bpp/providers": [
         {
-          "id": "MLL",
+          "id": "Shipsy NPO ONDC",
           "descriptor": {
-            "name": "Mahindra Logistics",
-            "short_desc": "MLL",
-            "long_desc": "Mahindra Logistics Ltd."
+            "name": "Shipsy NPO ONDC",
+            "short_desc": "Shipsy NPO ONDC",
+            "long_desc": "Shipsy NPO ONDC"
           },
           "categories": [
             {
-              "id": "Same Day Delivery",
+              "id": "Standard Delivery",
               "time": {
-                "duration": "PT4M",
-                "label": "TAT"
+                "label": "TAT",
+                "duration": "P2D"
               }
             }
           ],
           "items": [
             {
-              "category_id": "Same Day Delivery",
+              "id": "B2C SMART EXPRESS",
+              "category_id": "Standard Delivery",
+              "parent_item_id": "",
+              "descriptor": {
+                "code": "P2H2P",
+                "name": "Standard Delivery",
+                "short_desc": "B2C SMART EXPRESS",
+                "long_desc": "1 - 2 Day/s"
+              },
               "price": {
                 "currency": "INR",
-                "value": "20.0"
-              },
-              "id": "I4",
-              "descriptor": {
-                "code": "P2P",
-                "name": "4 Hour delivery",
-                "short_desc": "4 Hr delivery",
-                "long_desc": "4 Hr delivery"
+                "value": "64.00"
               },
               "time": {
-                "duration": "PT4M",
                 "label": "TAT",
-                "timestamp": "2023-08-16T12:18:21.717Z"
+                "duration": "P2D",
+                "timestamp": "2023-08-27T10:05:42.835Z"
               },
               "fulfillment_id": "1"
             },
             {
-              "category_id": "Same Day Delivery",
+              "id": "B2C SMART EXPRESS - RTO",
+              "category_id": "Standard Delivery",
+              "parent_item_id": "B2C SMART EXPRESS",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "name": "RTO quote",
+                "code": "P2H2P",
+                "short_desc": "B2C SMART EXPRESS RTO quote",
+                "long_desc": "B2C SMART EXPRESS RTO quote"
+              },
               "price": {
                 "currency": "INR",
-                "value": "20.0"
-              },
-              "id": "I5",
-              "descriptor": {
-                "code": "P2P",
-                "name": "1 Hours delivery",
-                "short_desc": "1 Hrs delivery",
-                "long_desc": "1 Hrs delivery"
-              },
-              "time": {
-                "duration": "PT1H",
-                "label": "TAT",
-                "timestamp": "2023-08-16T12:18:21.717Z"
-              },
-              "fulfillment_id": "2"
-            },
-            {
-              "category_id": "Same Day Delivery",
-              "parent_item_id": "",
-              "price": {
-                "currency": "INR",
-                "value": "20.0"
-              },
-              "id": "I6",
-              "descriptor": {
-                "code": "P2P",
-                "name": "1 Hours delivery",
-                "short_desc": "1 Hrs delivery",
-                "long_desc": "1 Hrs delivery"
-              },
-              "time": {
-                "duration": "PT1H",
-                "label": "TAT",
-                "timestamp": "2023-08-16T12:18:21.717Z"
-              },
-              "fulfillment_id": "3"
+                "value": "12.80"
+              }
             }
           ]
         }
-      ],
-      "bpp/descriptor": {
-        "name": "Mahindra Logistics"
-      }
+      ]
     }
   }
 }
