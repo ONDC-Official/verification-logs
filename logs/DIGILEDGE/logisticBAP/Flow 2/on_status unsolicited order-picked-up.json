@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_confirm",
+        "action": "on_status",
         "bap_id": "logistics.ondc.digiledge.in",
         "bap_uri": "https://logistics.ondc.digiledge.in",
         "bpp_id": "shipdh.in",
@@ -10,13 +10,13 @@
         "domain": "nic2004:60232",
         "core_version": "1.1.0",
         "transaction_id": "8c781850-47f3-4a68-9574-8ff159f8ada6",
-        "message_id": "59035c42-0944-46f5-a0bf-5a825bb638c3",
-        "timestamp": "2023-08-31T10:57:34.365Z"
+        "message_id": "f97435f8-e571-4778-8694-fff5ed60f7be",
+        "timestamp": "2023-08-31T11:19:14.854Z"
     },
     "message": {
         "order": {
             "id": "1693479453885-d30d9285-8e12-4d3f-bf8d-31a4d4d8c1c2",
-            "state": "Accepted",
+            "state": "In-progress",
             "provider": {
                 "id": "1"
             },
@@ -62,21 +62,49 @@
                 "created_at": "2023-08-31T10:57:04.835Z",
                 "updated_at": "2023-08-31T10:57:04.835Z"
             },
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "917020074322489",
+                        "settlement_ifsc_code": "UTIB0000395"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
-                    "id": "1",
                     "type": "Prepaid",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Order-picked-up"
                         }
                     },
                     "@ondc/org/awb_no": "1693479454378376",
-                    "tracking": true
+                    "tracking": true,
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2023-08-31T12:56:27.000Z",
+                                "end": "2023-08-31T18:56:27.000Z"
+                            },
+                            "timestamp": "2023-08-31T11:19:14.854Z"
+                        }
+                    },
+                    "end": {
+                        "time": {
+                            "range": {
+                                "start": "2023-09-01T12:56:27.000Z",
+                                "end": "2023-09-01T18:56:27.000Z"
+                            }
+                        }
+                    }
                 }
             ],
             "created_at": "2023-08-31T10:57:34.125Z",
-            "updated_at": "2023-08-31T10:57:34.365Z"
+            "updated_at": "2023-08-31T11:19:14.854Z"
         }
     }
 }
