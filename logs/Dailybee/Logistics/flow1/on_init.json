@@ -1,58 +1,57 @@
 {
   "context": {
-    "transaction_id": "588550db-a2c7-48bc-b76a-8a397d39cdb6",
-    "country": "IND",
-    "bpp_id": "ondc.whizzard.in",
-    "city": "std:080",
     "domain": "nic2004:60232",
-    "bpp_uri": "https://ondc.whizzard.in/api/integration",
+    "country": "IND",
+    "city": "std:080",
     "action": "on_init",
-    "message_id": "72e28404-b70b-40b9-bb19-a5b9cb94fe35",
     "core_version": "1.1.0",
-    "bap_uri": "https://pp-ondc.dlyb.in/",
     "bap_id": "pp-ondc.dlyb.in",
-    "timestamp": "2023-08-16T12:18:38.883Z"
+    "bap_uri": "https://pp-ondc.dlyb.in/",
+    "bpp_id": "dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io",
+    "bpp_uri": "https://dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io/api/ondc/customerportaldemodtdc/",
+    "transaction_id": "7fe61a4e-6ce9-4923-a0a8-9ada03756a12",
+    "message_id": "95ea91c1-628a-41ce-a7d0-5c8c5def6ab3",
+    "timestamp": "2023-08-25T10:05:50.369Z"
   },
   "message": {
     "order": {
-      "quote": {
-        "breakup": [
-          {
-            "@ondc/org/item_id": "I4",
-            "price": {
-              "currency": "INR",
-              "value": "20.0"
-            },
-            "@ondc/org/title_type": "Delivery Charge"
-          }
-        ],
-        "price": {
-          "currency": "INR",
-          "value": "20.0"
-        }
-      },
       "provider": {
-        "id": "MLL"
-      },
-      "payment": {
-        "collected_by": "BAP",
-        "type": "ON-ORDER",
-        "@ondc/org/settlement_details": [
-          {
-            "beneficiary_name": "Jeevan",
-            "settlement_counterparty": "seller-app",
-            "settlement_ifsc_code": "SBIN0000123",
-            "settlement_bank_account_no": "123239845757",
-            "upi_address": "jeavan@ybl",
-            "settlement_type": "upi"
-          }
-        ]
+        "id": "Shipsy NPO ONDC"
       },
       "items": [
         {
-          "id": "I4"
+          "id": "B2C SMART EXPRESS"
         }
-      ]
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "64.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "B2C SMART EXPRESS",
+            "@ondc/org/title_type": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "64.00"
+            }
+          }
+        ]
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
+      }
     }
   }
 }
