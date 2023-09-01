@@ -1,0 +1,109 @@
+{
+	"context": {
+		"bpp_id": "integrations-preprod.channelier.com",
+		"bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+		"domain": "nic2004:52110",
+		"core_version": "1.1.0",
+		"ttl": "PT30S",
+		"bap_id": "buyer-app-preprod.ondc.org",
+		"bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+		"transaction_id": "b084fc38-a5af-4996-9035-d295af1e13f8",
+		"message_id": "9d99e1f6-4c6b-4419-abb2-5ae39ba03a49",
+		"country": "IND",
+		"city": "std:080",
+		"timestamp": "2023-07-18T08:50:47.837Z",
+		"action": "on_init"
+	},
+	"message": {
+		"order": {
+			"provider": {
+				"id": "CU0"
+			},
+			"provider_location": { "id": "L1" },
+			"items": [
+				{
+					"id": "CU0I0",
+					"quantity": { "count": 2 },
+					"fulfillment_id": "L-F-1688740036500"
+				}
+			],
+			"fulfillments": [
+				{
+					"id": "L-F-1688740036500",
+					"tracking": false,
+					"type": "Delivery",
+					"end": {
+						"contact": {
+							"email": "mktgpvec5@gmail.com",
+							"phone": "6398356412"
+						},
+						"location": {
+							"gps": "12.938208, 77.619106",
+							"address": {
+								"name": "Deepa Rana",
+								"building": "Near bhawana play school",
+								"locality": "Delhi",
+								"city": "Bengaluru",
+								"state": "Karnataka",
+								"country": "IND",
+								"area_code": "560095"
+							}
+						}
+					}
+				}
+			],
+			"quote": {
+				"price": { "currency": "INR", "value": "222.00" },
+				"breakup": [
+					{
+						"@ondc/org/item_id": "CU0I0",
+						"@ondc/org/item_quantity": { "count": 2 },
+						"@ondc/org/title_type": "item",
+						"item": { "price": { "currency": "INR", "value": "50.00" } },
+						"title": "Wai Wai Vinegar - Enhances Taste, 180 ml Single",
+						"price": { "currency": "INR", "value": "100.00" }
+					},
+					{
+						"@ondc/org/item_id": "L-F-1688740036500",
+						"@ondc/org/title_type": "delivery",
+						"title": "Delivery charges",
+						"price": { "currency": "INR", "value": "122" }
+					}
+				],
+				"ttl": "P1D"
+			},
+			"billing": {
+				"address": {
+					"building": "Near bhawana play school",
+					"city": "Bengaluru",
+					"state": "Karnataka",
+					"country": "IND",
+					"area_code": "560095",
+					"locality": "Delhi",
+					"name": "Deepa Rana"
+				},
+				"phone": "6398356412",
+				"name": "Deepa Rana",
+				"email": "mktgpvec5@gmail.com",
+				"created_at": "2023-07-18T08:50:45.661Z",
+				"updated_at": "2023-07-18T08:50:45.661Z"
+			},
+			"payment": {
+				"collected_by": "BAP",
+				"@ondc/org/buyer_app_finder_fee_type": "percent",
+				"@ondc/org/buyer_app_finder_fee_amount": "3.0",
+				"@ondc/org/settlement_details": [
+					{
+						"settlement_counterparty": "seller-app",
+						"settlement_type": "neft",
+						"settlement_bank_account_no": "string",
+						"settlement_ifsc_code": "string",
+						"bank_name": "string",
+						"branch_name": "string",
+						"settlement_phase": "sale-amount"
+					}
+				]
+			}
+		}
+	}
+}
