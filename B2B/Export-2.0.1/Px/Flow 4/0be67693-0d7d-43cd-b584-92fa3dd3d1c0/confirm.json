@@ -9,31 +9,35 @@
             "code":"IND"
          }
       },
-      "action":"init",
+      "action":"confirm",
       "version":"2.0.1",
       "bap_id":"devapi.proxtera.app",
       "bap_uri":"https://devapi.proxtera.app/ondc",
-      "transaction_id":"c62c7f03-8b06-406a-a4f0-5b71442282b9",
-      "message_id":"514bfcca-efb9-438e-8880-9f3a70301502",
-      "timestamp":"2023-08-24T09:54:16.451Z",
+      "transaction_id":"0be67693-0d7d-43cd-b584-92fa3dd3d1c0",
+      "message_id":"bfa8f801-834b-497d-ab48-1b5b2aca219e",
+      "timestamp":"2023-09-01T03:39:42.559Z",
       "bpp_id":"preprod-seller.signcatch.com",
       "bpp_uri":"https://preprod-seller.signcatch.com/",
-      "ttl":"P7D"
+      "ttl":"PT30S"
    },
    "message":{
       "order":{
+         "id":"PO9664697159",
+         "state":"Created",
          "provider":{
             "id":"SW10000378",
             "locations":[
                {
                   "id":"LSIN000378"
                }
-            ],
-            "ttl":"P7D"
+            ]
          },
          "items":[
             {
-               "id":"4630",
+               "id":"4612",
+               "fulfillment_ids":[
+                  "YGY16PZH6SWSABN"
+               ],
                "quantity":{
                   "selected":{
                      "count":100
@@ -63,57 +67,51 @@
             }
          ],
          "billing":{
-            "name":"Proxtera Ltd",
-            "address":"133 Cecil St, #17-03 Keck Seng Tower",
+            "name":"ABC Private Limited",
+            "address":"12, Murugappa Rd",
             "state":{
-               "name":"Singapore"
+               "name":"Tamil Nadu"
             },
             "city":{
-               "name":"Singapore"
+               "name":"Chennai"
             },
-            "tax_id":"EWREWRE123666",
+            "tax_id":"EWREWRE1239990",
             "email":"saravanan@instrive.in",
-            "phone":"8220623799"
+            "phone":""
          },
          "fulfillments":[
             {
-               "id":"1",
+               "id":"YGY16PZH6SWSABN",
                "type":"Delivery",
+               "tracking":false,
                "stops":[
                   {
                      "type":"end",
                      "location":{
-                        "gps":"1.2803224, 103.8490244",
-                        "address":"133 Cecil St, #17-03 Keck Seng Tower",
+                        "gps":"13.020554, 80.24027269999999",
+                        "address":"12, Murugappa Rd",
                         "city":{
-                           "name":"Singapore"
+                           "name":"Chennai"
                         },
                         "country":{
-                           "code":"Singapore"
+                           "code":"India"
                         },
-                        "area_code":"069535",
+                        "area_code":"600085",
                         "state":{
-                           "name":"Singapore"
+                           "name":"Tamil Nadu"
                         }
                      },
                      "contact":{
-                        "phone":"8220623799"
+                        "phone":"",
+                        "email":"saravanan@instrive.in"
+                     },
+                     "customer":{
+                        "person":{
+                           "name":"ABC Private Limited"
+                        }
                      }
                   }
                ],
-               "customer":{
-                  "person":{
-                     "creds":[
-                        {
-                           "id":"ESG-12345678",
-                           "type":"License",
-                           "desc":"Import License No. ESG-12345678",
-                           "icon":"https://proxtera-public.s3.ap-southeast-1.amazonaws.com/Proxtera+Logo+RGB+Black.png",
-                           "url":"https://proxtera-public.s3.ap-southeast-1.amazonaws.com/company-license.pdf"
-                        }
-                     ]
-                  }
-               },
                "tags":[
                   {
                      "descriptor":{
@@ -130,16 +128,73 @@
                            "descriptor":{
                               "code":"NAMED_PLACE_OF_DELIVERY"
                            },
-                           "value":"Singapore"
+                           "value":"Chennai"
                         }
                      ]
                   }
                ]
             }
          ],
+         "quote":{
+            "price":{
+               "currency":"INR",
+               "value":"44400.00"
+            },
+            "breakup":[
+               {
+                  "item":{
+                     "quantity":{
+                        "available":{
+                           "count":"5395"
+                        },
+                        "maximum":{
+                           "count":"5395"
+                        }
+                     },
+                     "price":{
+                        "currency":"INR",
+                        "value":"444.00"
+                     }
+                  },
+                  "@ondc/org/item_id":"4612",
+                  "title":"CHAIOM Digestive Green Tea 100gm loose tea",
+                  "@ondc/org/title_type":"item",
+                  "@ondc/org/item_quantity":{
+                     "count":100
+                  },
+                  "price":{
+                     "currency":"INR",
+                     "value":"44400.0"
+                  }
+               }
+            ],
+            "ttl":"P1D"
+         },
          "payments":[
             {
-               "type":"ON-FULFILLMENT"
+               "params":{
+                  "currency":"INR",
+                  "transaction_id":"3937",
+                  "amount":"44400.00"
+               },
+               "status":"NOT-PAID",
+               "type":"POST-FULFILLMENT",
+               "collected_by":"BPP",
+               "@ondc/org/buyer_app_finder_fee_type":"percent",
+               "@ondc/org/buyer_app_finder_fee_amount":"0",
+               "@ondc/org/settlement_details":[
+                  {
+                     "settlement_counterparty":"buyer-app",
+                     "settlement_phase":"sale-amount",
+                     "settlement_type":"upi",
+                     "upi_address":"ashok@oksbi",
+                     "settlement_bank_account_no":"65783120",
+                     "settlement_ifsc_code":"SBI000001",
+                     "beneficiary_name":"Ashok",
+                     "bank_name":"SBI",
+                     "branch_name":"Chennai"
+                  }
+               ]
             }
          ],
          "tags":[
@@ -158,11 +213,13 @@
                      "descriptor":{
                         "code":"buyer_id_no"
                      },
-                     "value":"EWREWRE123666"
+                     "value":"EWREWRE1239990"
                   }
                ]
             }
-         ]
+         ],
+         "created_at":"2023-09-01T03:39:42.559Z",
+         "updated_at":"2023-09-01T03:39:42.559Z"
       }
    }
 }

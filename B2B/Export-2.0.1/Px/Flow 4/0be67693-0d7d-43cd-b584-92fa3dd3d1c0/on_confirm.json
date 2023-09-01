@@ -1,14 +1,14 @@
 {
    "context":{
       "domain":"ONDC:RET10",
-      "action":"on_init",
+      "action":"on_confirm",
       "bap_id":"devapi.proxtera.app",
       "bap_uri":"https://devapi.proxtera.app/ondc",
       "bpp_id":"preprod-seller.signcatch.com",
       "bpp_uri":"https://preprod-seller.signcatch.com/",
-      "transaction_id":"373d3b38-4d7f-4b43-a123-e3b3d5fccad7",
-      "message_id":"a3de162c-5f99-456d-88a5-c1c7ba020103",
-      "timestamp":"2023-08-24T10:31:41.145Z",
+      "transaction_id":"0be67693-0d7d-43cd-b584-92fa3dd3d1c0",
+      "message_id":"bfa8f801-834b-497d-ab48-1b5b2aca219e",
+      "timestamp":"2023-09-01T03:39:42.838Z",
       "location":{
          "city":{
             "code":"std:999"
@@ -18,10 +18,12 @@
          }
       },
       "version":"2.0.1",
-      "ttl":"P7D"
+      "ttl":"PT30S"
    },
    "message":{
       "order":{
+         "id":"PO9664697159",
+         "state":"Cancelled",
          "quote":{
             "price":{
                "currency":"INR",
@@ -32,10 +34,10 @@
                   "item":{
                      "quantity":{
                         "available":{
-                           "count":"8398"
+                           "count":"5395"
                         },
                         "maximum":{
-                           "count":"8398"
+                           "count":"5395"
                         }
                      },
                      "price":{
@@ -43,8 +45,8 @@
                         "value":"444.00"
                      }
                   },
-                  "@ondc/org/item_id":"4630",
-                  "title":"Chaiom Hill Turmeric Golden Milk Masala Powder Turmeric Latte Mix 150gm",
+                  "@ondc/org/item_id":"4612",
+                  "title":"CHAIOM Digestive Green Tea 100gm loose tea",
                   "@ondc/org/title_type":"item",
                   "@ondc/org/item_quantity":{
                      "count":100
@@ -58,14 +60,16 @@
             "ttl":"P1D"
          },
          "provider":{
-            "id":"SW10000378"
-         },
-         "provider_location":{
-            "id":"LSIN000378"
+            "id":"SW10000378",
+            "locations":[
+               {
+                  "id":"LSIN000378"
+               }
+            ]
          },
          "items":[
             {
-               "id":"4630",
+               "id":"4612",
                "quantity":{
                   "count":0,
                   "selected":{
@@ -94,37 +98,70 @@
                   }
                ],
                "fulfillment_ids":[
-                  "UI5VRUMBCC6DNKX"
+                  "YGY16PZH6SWSABN"
                ]
             }
          ],
          "fulfillments":[
             {
-               "id":"UI5VRUMBCC6DNKX",
+               "id":"YGY16PZH6SWSABN",
                "stops":[
                   {
                      "type":"end",
                      "location":{
-                        "gps":"1.2803224, 103.8490244",
-                        "address":"133 Cecil St, #17-03 Keck Seng Tower",
+                        "gps":"13.020554, 80.24027269999999",
+                        "address":"12, Murugappa Rd",
                         "city":{
-                           "name":"Singapore"
+                           "name":"Chennai"
                         },
                         "state":{
-                           "name":"Singapore"
+                           "name":"Tamil Nadu"
                         },
                         "country":{
-                           "code":"Singapore"
+                           "code":"India"
                         },
-                        "area_code":"069535"
+                        "area_code":"600085"
                      },
                      "contact":{
-                        "phone":"8870323539"
+                        "email":"saravanan@instrive.in",
+                        "phone":""
+                     },
+                     "time":{
+                        "range":{
+                           "start":"2023-09-01T03:39:42.819Z",
+                           "end":"2023-09-02T03:39:42.819Z"
+                        }
+                     }
+                  },
+                  {
+                     "type":"start",
+                     "location":{
+                        "id":"LSIN000378",
+                        "gps":"28.529314,77.148445",
+                        "descriptor":{
+                           "name":"Chaiom"
+                        }
+                     },
+                     "contact":{
+                        "email":"ondcsupport@signcatch.com",
+                        "phone":"01143099716"
+                     },
+                     "time":{
+                        "range":{
+                           "start":"2023-09-01T03:39:42.819Z",
+                           "end":"2023-09-01T03:39:42.819Z"
+                        }
                      }
                   }
                ],
                "tracking":false,
+               "state":{
+                  "descriptor":{
+                     "code":"Pending"
+                  }
+               },
                "type":"Delivery",
+               "@ondc/org/provider_name":"Chaiom",
                "tags":[
                   {
                      "descriptor":{
@@ -141,7 +178,7 @@
                            "descriptor":{
                               "code":"NAMED_PLACE_OF_DELIVERY"
                            },
-                           "value":"Singapore"
+                           "value":"Chennai"
                         }
                      ]
                   }
@@ -149,17 +186,17 @@
             }
          ],
          "billing":{
-            "address":"133 Cecil St, #17-03 Keck Seng Tower",
-            "phone":"8870323539",
-            "name":"Proxtera Ltd",
+            "address":"12, Murugappa Rd",
+            "phone":"",
+            "name":"ABC Private Limited",
             "email":"saravanan@instrive.in",
             "state":{
-               "name":"Singapore"
+               "name":"Tamil Nadu"
             },
             "city":{
-               "name":"Singapore"
+               "name":"Chennai"
             },
-            "tax_id":"EWREWRE123666"
+            "tax_id":"EWREWRE1239990"
          },
          "tags":[
             {
@@ -171,7 +208,7 @@
                      }
                   },
                   {
-                     "value":"EWREWRE123666",
+                     "value":"EWREWRE1239990",
                      "descriptor":{
                         "code":"buyer_id_no"
                      }
@@ -182,10 +219,33 @@
                }
             }
          ],
+         "created_at":"2023-09-01T03:39:42.559Z",
+         "updated_at":"2023-09-01T03:39:42.838Z",
          "payments":[
             {
+               "type":"POST-FULFILLMENT",
+               "collected_by":"BPP",
+               "status":"NOT-PAID",
                "@ondc/org/buyer_app_finder_fee_type":"percent",
-               "@ondc/org/buyer_app_finder_fee_amount":"0"
+               "@ondc/org/buyer_app_finder_fee_amount":"0",
+               "@ondc/org/settlement_details":[
+                  {
+                     "settlement_counterparty":"buyer-app",
+                     "settlement_phase":"sale-amount",
+                     "settlement_type":"upi",
+                     "upi_address":"ashok@oksbi",
+                     "settlement_bank_account_no":"65783120",
+                     "settlement_ifsc_code":"SBI000001",
+                     "beneficiary_name":"Ashok",
+                     "bank_name":"SBI",
+                     "branch_name":"Chennai"
+                  }
+               ],
+               "params":{
+                  "currency":"INR",
+                  "transaction_id":"3937",
+                  "amount":"44400.00"
+               }
             }
          ]
       }
