@@ -1,0 +1,189 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:999"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "version": "2.0.1",
+        "transaction_id": "b395e43a-236e-458c-8b24-603d6bbbdee9",
+        "message_id": "9ab98460-d776-44c4-bafb-4ec12425ff7c",
+        "timestamp": "2023-08-26T01:43:31.076Z",
+        "bap_id": "devapi.proxtera.app",
+        "bap_uri": "https://devapi.proxtera.app/ondc",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+        "ttl": "P3D"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "abadfoodslive",
+                "ttl": "P3D"
+            },
+            "provider_location": {
+                "id": "L1"
+            },
+            "items": [
+                {
+                    "id": "ITM05341",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "Requirements"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "Requirements"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "Test For ONDC",
+                "address": "Sreekrishnapuram, Kerala",
+                "email": "sachin.giridhar@acelrtech.com",
+                "phone": "9744782170",
+                "tax_id": "22AAAAA1234A1Z5",
+                "city": {
+                    "name": "Kannur"
+                },
+                "state": {
+                    "name": "Kerala"
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": "Sreekrishnapuram, Kerala",
+                                "gps": "10.906673, 76.41581289999999",
+                                "area_code": "670006",
+                                "state": {
+                                    "name": "Kerala"
+                                },
+                                "city": {
+                                    "name": "Kannur"
+                                },
+                                "country": {
+                                    "code": "India"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9744782170"
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Kannur"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "title": "CS CHICKEN CUTLET 15X500GMS NET RTF ASSRTD",
+                        "item_id": "ITM05341",
+                        "title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "358.21"
+                        },
+                        "quantity": {
+                            "count": 1
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "358.21"
+                            }
+                        }
+                    },
+                    {
+                        "title": "tax",
+                        "item_id": "ITM05341",
+                        "title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "42.99"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "item_id": "F1",
+                        "title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "401.20"
+                },
+                "ttl": "P2D"
+            },
+            "payments": [
+                {
+                    "buyer_app_finder_fee_type": "percent",
+                    "buyer_app_finder_fee_amount": "0"
+                }
+            ]
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "50005",
+        "message": "Quotation cannot be completed within 3 days"
+    }
+}

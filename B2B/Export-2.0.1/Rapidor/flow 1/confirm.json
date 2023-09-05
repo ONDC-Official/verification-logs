@@ -1,0 +1,235 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:999"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "confirm",
+        "version": "2.0.1",
+        "bap_id": "devapi.proxtera.app",
+        "bap_uri": "https://devapi.proxtera.app/ondc",
+        "transaction_id": "10f6a5da-1f41-4e93-bd09-1d78b7986156",
+        "message_id": "378c7e30-3560-4fcd-a5f8-4b0b9600187a",
+        "timestamp": "2023-08-26T01:40:22.516Z",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "PO7334499081",
+            "state": "Created",
+            "provider": {
+                "id": "abadfoodslive",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "ITM05550",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "12345"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "Requirements"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "Test For ONDC",
+                "address": "Sreekrishnapuram, Kerala",
+                "state": {
+                    "name": "Kerala"
+                },
+                "city": {
+                    "name": "Kannur"
+                },
+                "tax_id": "22AAAAA1234A1Z5",
+                "email": "sachin.giridhar@acelrtech.com",
+                "phone": "9744782170"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "10.906673, 76.41581289999999",
+                                "address": "Sreekrishnapuram, Kerala",
+                                "city": {
+                                    "name": "Kannur"
+                                },
+                                "country": {
+                                    "code": "India"
+                                },
+                                "area_code": "670006",
+                                "state": {
+                                    "name": "Kerala"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9744782170",
+                                "email": "sachin.giridhar@acelrtech.com"
+                            },
+                            "customer": {
+                                "person": {
+                                    "name": "Test For ONDC"
+                                }
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Kannur"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "title": "CHICKEN CUTLET 6X1KG NET RTF ASSRTD",
+                        "@ondc/org/item_id": "ITM05550",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "340.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "340.00"
+                            }
+                        }
+                    },
+                    {
+                        "title": "tax",
+                        "@ondc/org/item_id": "ITM05550",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40.80"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "380.80"
+                },
+                "ttl": "P2D"
+            },
+            "payments": [
+                {
+                    "params": {
+                        "currency": "INR",
+                        "transaction_id": "3937",
+                        "amount": "380.80"
+                    },
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "upi",
+                            "upi_address": "ashok@oksbi",
+                            "settlement_bank_account_no": "65783120",
+                            "settlement_ifsc_code": "SBI000001",
+                            "beneficiary_name": "Ashok",
+                            "bank_name": "SBI",
+                            "branch_name": "Chennai"
+                        }
+                    ]
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "tin"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "22AAAAA1234A1Z5"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2023-08-26T01:40:22.516Z",
+            "updated_at": "2023-08-26T01:40:22.516Z"
+        }
+    }
+}
