@@ -1,14 +1,14 @@
 {
   "context": {
     "domain": "ONDC:RET10",
-    "action": "on_confirm",
+    "action": "on_init",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
     "bpp_id": "preprod-seller.signcatch.com",
     "bpp_uri": "https://preprod-seller.signcatch.com/",
-    "transaction_id": "1170bc79-b580-43d5-8d40-60541ea1d02e",
-    "message_id": "183570e4-6f54-4ebb-abdd-043bbfea0fda",
-    "timestamp": "2023-09-05T13:55:43.394Z",
+    "transaction_id": "211412da-6774-4ffa-80c4-3b75b69399ce",
+    "message_id": "c347686a-6efc-4243-bbc8-7a0fcf0f4bca",
+    "timestamp": "2023-09-06T07:12:41.760Z",
     "location": {
       "city": {
         "code": "std:999"
@@ -18,12 +18,10 @@
       }
     },
     "version": "2.0.1",
-    "ttl": "PT30S"
+    "ttl": "P4D"
   },
   "message": {
     "order": {
-      "id": "PO7895314024",
-      "state": "Cancelled",
       "quote": {
         "price": {
           "currency": "INR",
@@ -34,10 +32,10 @@
             "item": {
               "quantity": {
                 "available": {
-                  "count": "8049"
+                  "count": "7849"
                 },
                 "maximum": {
-                  "count": "8049"
+                  "count": "7849"
                 }
               },
               "price": {
@@ -60,12 +58,10 @@
         "ttl": "P1D"
       },
       "provider": {
-        "id": "SW10000378",
-        "locations": [
-          {
-            "id": "LSIN000378"
-          }
-        ]
+        "id": "SW10000378"
+      },
+      "provider_location": {
+        "id": "LSIN000378"
       },
       "items": [
         {
@@ -80,13 +76,13 @@
             {
               "list": [
                 {
-                  "value": "Nil",
+                  "value": "Require 100 quantities",
                   "descriptor": {
                     "code": "ITEM_REQ"
                   }
                 },
                 {
-                  "value": "Nil",
+                  "value": "Require good packaging.",
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   }
@@ -98,13 +94,13 @@
             }
           ],
           "fulfillment_ids": [
-            "DJZAEEWEODRLPTX"
+            "4WESH61D1BROASY"
           ]
         }
       ],
       "fulfillments": [
         {
-          "id": "DJZAEEWEODRLPTX",
+          "id": "4WESH61D1BROASY",
           "stops": [
             {
               "type": "end",
@@ -123,45 +119,12 @@
                 "area_code": "123456"
               },
               "contact": {
-                "email": "bharathraj@instrive.in",
                 "phone": "9095038910"
-              },
-              "time": {
-                "range": {
-                  "start": "2023-09-05T13:55:43.372Z",
-                  "end": "2023-09-06T13:55:43.372Z"
-                }
-              }
-            },
-            {
-              "type": "start",
-              "location": {
-                "id": "LSIN000378",
-                "gps": "28.529314,77.148445",
-                "descriptor": {
-                  "name": "Chaiom"
-                }
-              },
-              "contact": {
-                "email": "ondcsupport@signcatch.com",
-                "phone": "01143099716"
-              },
-              "time": {
-                "range": {
-                  "start": "2023-09-05T13:55:43.372Z",
-                  "end": "2023-09-05T13:55:43.372Z"
-                }
               }
             }
           ],
           "tracking": false,
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
           "type": "Delivery",
-          "@ondc/org/provider_name": "Chaiom",
           "tags": [
             {
               "descriptor": {
@@ -219,33 +182,10 @@
           }
         }
       ],
-      "created_at": "2023-09-05T13:55:42.897Z",
-      "updated_at": "2023-09-05T13:55:43.394Z",
       "payments": [
         {
-          "type": "ON-FULFILLMENT",
-          "collected_by": "BPP",
-          "status": "NOT-PAID",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "buyer-app",
-              "settlement_phase": "sale-amount",
-              "settlement_type": "upi",
-              "upi_address": "ashok@oksbi",
-              "settlement_bank_account_no": "65783120",
-              "settlement_ifsc_code": "SBI000001",
-              "beneficiary_name": "Ashok",
-              "bank_name": "SBI",
-              "branch_name": "Chennai"
-            }
-          ],
-          "params": {
-            "currency": "INR",
-            "transaction_id": "3937",
-            "amount": "27200.00"
-          }
+          "@ondc/org/buyer_app_finder_fee_amount": "0"
         }
       ]
     }

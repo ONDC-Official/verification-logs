@@ -9,35 +9,31 @@
         "code": "IND"
       }
     },
-    "action": "confirm",
+    "action": "init",
     "version": "2.0.1",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "1170bc79-b580-43d5-8d40-60541ea1d02e",
-    "message_id": "183570e4-6f54-4ebb-abdd-043bbfea0fda",
-    "timestamp": "2023-09-05T13:55:42.897Z",
+    "transaction_id": "211412da-6774-4ffa-80c4-3b75b69399ce",
+    "message_id": "c347686a-6efc-4243-bbc8-7a0fcf0f4bca",
+    "timestamp": "2023-09-06T07:12:30.364Z",
     "bpp_id": "preprod-seller.signcatch.com",
     "bpp_uri": "https://preprod-seller.signcatch.com/",
-    "ttl": "PT30S"
+    "ttl": "P4D"
   },
   "message": {
     "order": {
-      "id": "PO7895314024",
-      "state": "Created",
       "provider": {
         "id": "SW10000378",
         "locations": [
           {
             "id": "LSIN000378"
           }
-        ]
+        ],
+        "ttl": "P4D"
       },
       "items": [
         {
           "id": "4622",
-          "fulfillment_ids": [
-            "DJZAEEWEODRLPTX"
-          ],
           "quantity": {
             "selected": {
               "count": 100
@@ -53,13 +49,13 @@
                   "descriptor": {
                     "code": "ITEM_REQ"
                   },
-                  "value": "Nil"
+                  "value": "Require 100 quantities"
                 },
                 {
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   },
-                  "value": "Nil"
+                  "value": "Require good packaging."
                 }
               ]
             }
@@ -81,9 +77,8 @@
       },
       "fulfillments": [
         {
-          "id": "DJZAEEWEODRLPTX",
+          "id": "1",
           "type": "Delivery",
-          "tracking": false,
           "stops": [
             {
               "type": "end",
@@ -102,13 +97,7 @@
                 }
               },
               "contact": {
-                "phone": "9095038910",
-                "email": "bharathraj@instrive.in"
-              },
-              "customer": {
-                "person": {
-                  "name": "Bharath test company"
-                }
+                "phone": "9095038910"
               }
             }
           ],
@@ -135,66 +124,9 @@
           ]
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "27200.00"
-        },
-        "breakup": [
-          {
-            "item": {
-              "quantity": {
-                "available": {
-                  "count": "8049"
-                },
-                "maximum": {
-                  "count": "8049"
-                }
-              },
-              "price": {
-                "currency": "INR",
-                "value": "272.00"
-              }
-            },
-            "@ondc/org/item_id": "4622",
-            "title": "Chaiom Tea Box Black Tea Green Tea 6 Variants 30 Tea Bags",
-            "@ondc/org/title_type": "item",
-            "@ondc/org/item_quantity": {
-              "count": 100
-            },
-            "price": {
-              "currency": "INR",
-              "value": "27200.0"
-            }
-          }
-        ],
-        "ttl": "P1D"
-      },
       "payments": [
         {
-          "params": {
-            "currency": "INR",
-            "transaction_id": "3937",
-            "amount": "27200.00"
-          },
-          "status": "NOT-PAID",
-          "type": "ON-FULFILLMENT",
-          "collected_by": "BPP",
-          "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "buyer-app",
-              "settlement_phase": "sale-amount",
-              "settlement_type": "upi",
-              "upi_address": "ashok@oksbi",
-              "settlement_bank_account_no": "65783120",
-              "settlement_ifsc_code": "SBI000001",
-              "beneficiary_name": "Ashok",
-              "bank_name": "SBI",
-              "branch_name": "Chennai"
-            }
-          ]
+          "type": "ON-FULFILLMENT"
         }
       ],
       "tags": [
@@ -217,9 +149,7 @@
             }
           ]
         }
-      ],
-      "created_at": "2023-09-05T13:55:42.897Z",
-      "updated_at": "2023-09-05T13:55:42.897Z"
+      ]
     }
   }
 }
