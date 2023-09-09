@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_status",
+        "action": "on_confirm",
         "version": "2.0.1",
-        "transaction_id": "39130b47-a037-45f5-9531-bf4b882d9eb7",
-        "message_id": "X07sEltTyCk4x_H5vaML0",
-        "timestamp": "2023-09-07T11:07:18.000Z",
+        "transaction_id": "c3e1f45d-3ad3-479c-9b95-d99bb75cb11d",
+        "message_id": "240f2898-4449-4228-9215-ee20f1148233",
+        "timestamp": "2023-09-07T11:16:27.748Z",
         "bap_id": "devapi.proxtera.app",
         "bap_uri": "https://devapi.proxtera.app/ondc",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,15 +22,15 @@
     },
     "message": {
         "order": {
-            "id": "PO4654265701",
-            "state": "In-progress",
+            "id": "PO8823345170",
             "provider": {
                 "id": "5f4104ba-fcd1-4ffc-90e8-ee7c26733f5f",
                 "locations": [
                     {
                         "id": "L1"
                     }
-                ]
+                ],
+                "rateable": false
             },
             "items": [
                 {
@@ -42,12 +42,33 @@
                         "selected": {
                             "count": 1
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "fresh"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "handle with care"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "billing": {
                 "name": "sanu",
-                "address": "chittang, malappuram",
+                "address": "chittang",
                 "email": "sanu.shilshad@acelrtech.com",
                 "phone": "9562279968",
                 "tax_id": "22AAAPZ0000A1Z5",
@@ -64,9 +85,10 @@
                     "type": "Delivery",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
+                    "rateable": false,
                     "state": {
                         "descriptor": {
-                            "code": "Out-for-delivery"
+                            "code": "Pending"
                         }
                     },
                     "stops": [
@@ -78,35 +100,26 @@
                                     "images": [
                                         "https://www.rapidor.co/wp-content/uploads/2023/02/Logo.svg"
                                     ],
-                                    "name": "PlaceOrder"
+                                    "name": "Abad Foods"
                                 },
                                 "gps": "12.998115,77.629250"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2023-09-07T11:04:15.000Z",
-                                    "end": "2023-09-07T13:04:15.000Z"
-                                },
-                                "timestamp": "2023-09-07T11:06:59.000Z"
+                                    "start": "2023-09-07T11:16:27.000Z",
+                                    "end": "2023-09-07T13:16:27.000Z"
+                                }
                             },
                             "contact": {
                                 "phone": "9072377660",
                                 "email": "care@acelrtech.com"
-                            },
-                            "instructions": {
-                                "name": "Proof of pickup",
-                                "short_desc": "handle with care",
-                                "long_desc": "handle with care",
-                                "images": [
-                                    "https://rapidor.s3.us-west-2.amazonaws.com/images/proof_of_picked_up.jpeg"
-                                ]
                             }
                         },
                         {
                             "type": "end",
                             "location": {
-                                "address": "chittang, malappuram, 673642",
-                                "gps": "-0.002060,-0.029526",
+                                "address": "chittang",
+                                "gps": "-0.022316, -0.022659",
                                 "area_code": "673642",
                                 "state": {
                                     "name": "kerala"
@@ -115,17 +128,18 @@
                                     "name": "malappuram"
                                 },
                                 "country": {
-                                    "code": "IND"
+                                    "code": "India"
                                 }
                             },
                             "time": {
                                 "range": {
-                                    "start": "2023-09-09T11:04:15.000Z",
-                                    "end": "2023-09-09T13:04:15.000Z"
+                                    "start": "2023-09-09T11:16:27.000Z",
+                                    "end": "2023-09-09T13:16:27.000Z"
                                 }
                             },
                             "contact": {
-                                "phone": "9562279968"
+                                "phone": "9562279968",
+                                "email": "sanu.shilshad@acelrtech.com"
                             }
                         }
                     ],
@@ -150,20 +164,6 @@
                             ]
                         }
                     ]
-                }
-            ],
-            "payments": [
-                {
-                    "status": "NOT-PAID",
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "params": {
-                        "currency": "INR",
-                        "transaction_id": "3937",
-                        "amount": "336.00"
-                    },
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
                 }
             ],
             "quote": {
@@ -211,18 +211,52 @@
                 },
                 "ttl": "P2D"
             },
-            "documents": [
+            "payments": [
                 {
-                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/PO4654265701.pdf?v=1694084656",
-                    "label": "PROFORMA_INVOICE"
-                },
-                {
-                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/KL/PO4654265701-5f4104ba-fcd1-4ffc-90e8-ee7c26733f5f.pdf",
-                    "label": "Invoice"
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "transaction_id": "3937",
+                        "amount": "336.00"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale_amount",
+                            "settlement_type": "upi",
+                            "upi_address": "test@gocash.com"
+                        }
+                    ]
                 }
             ],
-            "created_at": "2023-09-07T11:04:15.003Z",
-            "updated_at": "2023-09-07T11:07:18.000Z"
+            "state": "Created",
+            "created_at": "2023-09-07T11:16:27.179Z",
+            "updated_at": "2023-09-07T11:16:27.748Z",
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "tin"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "22AAAPZ0000A1Z5"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
