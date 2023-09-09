@@ -1,75 +1,125 @@
 {
   "context": {
+    "action": "on_search",
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_search",
     "core_version": "1.1.0",
     "bap_id": "ondc-seller-api.trafyn.site",
     "bap_uri": "https://ondc-seller-api.trafyn.site/",
-    "transaction_id": "5f59555f-0a7b-4130-adfa-86ba46574ca1",
-    "message_id": "805dfba2-4f1f-430b-bdbb-db1a6ce7daa7",
-    "timestamp": "2023-08-10T09:31:45.981Z",
-    "bpp_id": "qaapis.delcaper.com",
-    "bpp_uri": "https://qaapis.delcaper.com/public/ondc"
+    "bpp_id": "flash-api.staging.shadowfax.in",
+    "bpp_uri": "https://flash-api.staging.shadowfax.in/ondc/v1",
+    "transaction_id": "b711460d-7c73-4e8f-bc98-7f568f6d00b6",
+    "message_id": "a0ff7a39-38eb-45b6-a0b5-a07960be784b",
+    "timestamp": "2023-09-03T11:45:38.393Z"
   },
   "message": {
     "catalog": {
       "bpp/fulfillments": [
-        { "id": "1", "type": "Prepaid" },
+        { "id": "2", "type": "Prepaid" },
         { "id": "3", "type": "RTO" }
       ],
-      "bpp/descriptor": { "name": "SHREE MARUTI INTEGRATED LOGISTICS LIMITED" },
+      "bpp/descriptor": { "name": "SFX" },
       "bpp/providers": [
         {
-          "id": "SMILE",
+          "id": "SFX",
           "descriptor": {
-            "name": "SHREE MARUTI INTEGRATED LOGISTICS LIMITED",
-            "short_desc": "SMILE",
-            "long_desc": "SHREE MARUTI INTEGRATED LOGISTICS LIMITED"
+            "name": "SFX",
+            "short_desc": "SFX",
+            "long_desc": "Shadowfax"
           },
           "categories": [
             {
-              "id": "Standard Delivery",
-              "time": { "label": "TAT", "duration": "PT14H" }
+              "id": "Immediate Delivery",
+              "time": { "label": "TAT", "duration": "PT40M" }
+            },
+            {
+              "id": "Next Day Delivery",
+              "time": { "label": "TAT", "duration": "PT40M" }
+            },
+            {
+              "id": "Same Day Delivery",
+              "time": { "label": "TAT", "duration": "PT40M" }
             }
           ],
           "items": [
             {
-              "id": "1",
+              "id": "SFXImmediateDelivery",
               "parent_item_id": "",
-              "category_id": "Next Day Delivery",
-              "fulfillment_id": "1",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "2",
               "descriptor": {
-                "name": "Retail",
                 "code": "P2P",
-                "short_desc": "Next Day Delivery for Retail",
-                "long_desc": "Next Day Delivery for Retail"
+                "name": "Immediate Delivery",
+                "short_desc": "Immediate Delivery for F&B",
+                "long_desc": "Immediate Delivery for F&B"
               },
-              "price": { "currency": "INR", "value": "35" },
-              "time": {
-                "label": "TAT",
-                "duration": "PT14H",
-                "timestamp": "2023-08-11T03:31:45.981Z"
-              }
+              "price": { "currency": "INR", "value": "2.00" }
             },
             {
-              "id": "1-I2",
-              "parent_item_id": "1",
+              "id": "SFXImmediateDeliveryRTO",
+              "parent_item_id": "SFXImmediateDelivery",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO Immediate Delivery",
+                "short_desc": "RTO Immediate Delivery for F&B",
+                "long_desc": "RTO Immediate Delivery for F&B"
+              },
+              "price": { "currency": "INR", "value": "0.80" }
+            },
+            {
+              "id": "SFXNextDayDelivery",
+              "parent_item_id": "",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Next Day Delivery",
+                "short_desc": "Next Day Delivery",
+                "long_desc": "Next Day Delivery"
+              },
+              "price": { "currency": "INR", "value": "2.00" }
+            },
+            {
+              "id": "SFXNextDayDeliveryRTO",
+              "parent_item_id": "SFXNextDayDelivery",
               "category_id": "Next Day Delivery",
               "fulfillment_id": "3",
               "descriptor": {
                 "code": "P2P",
-                "name": "RTO",
-                "short_desc": "RTO quote",
-                "long_desc": "RTO quote"
+                "name": "Next Day Delivery",
+                "short_desc": "RTO Next Day Delivery",
+                "long_desc": "RTO Next Day Delivery"
               },
-              "price": { "currency": "INR", "value": "35" },
-              "time": {
-                "label": "TAT",
-                "duration": "PT14H",
-                "timestamp": "2023-08-11T03:31:45.981Z"
-              }
+              "price": { "currency": "INR", "value": "2.00" }
+            },
+            {
+              "id": "SFXSameDayDelivery",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Same Day Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery"
+              },
+              "price": { "currency": "INR", "value": "2.00" }
+            },
+            {
+              "id": "SFXSameDayDeliveryRTO",
+              "parent_item_id": "SFXSameDayDelivery",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Same Day Delivery",
+                "short_desc": "RTO Same Day Delivery",
+                "long_desc": "RTO Same Day Delivery"
+              },
+              "price": { "currency": "INR", "value": "2.00" }
             }
           ]
         }
