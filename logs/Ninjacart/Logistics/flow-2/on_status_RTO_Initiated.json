@@ -10,13 +10,13 @@
     "bpp_id": "flash-api.staging.shadowfax.in",
     "bpp_uri": "https://flash-api.staging.shadowfax.in/ondc/v1",
     "transaction_id": "b711460d-7c73-4e8f-bc98-7f568f6d00b6",
-    "message_id": "53d8cd7c-d06b-48cf-8a77-0dfb6ca449ec",
-    "timestamp": "2023-09-03T11:51:30.211Z"
+    "message_id": "2d16f0b8-76d0-4c3f-b0b0-71034ea424dc",
+    "timestamp": "2023-09-03T12:41:33.319Z"
   },
   "message": {
     "order": {
       "id": "2023-09-05-506081",
-      "state": "In-progress",
+      "state": "Cancelled",
       "provider": { "id": "SFX" },
       "items": [
         {
@@ -26,12 +26,23 @@
         }
       ],
       "quote": {
-        "price": { "currency": "INR", "value": "2.00" },
+        "price": {
+          "currency": "INR",
+          "value": "4.00"
+        },
         "breakup": [
           {
-            "@ondc/org/item_id": "SFXSameDayDelivery",
+            "@ondc/org/item_id": "SFXImmediateDelivery",
             "@ondc/org/title_type": "Delivery Charge",
             "price": { "currency": "INR", "value": "2.00" }
+          },
+          {
+            "title": "RTO Charges",
+            "@ondc/org/title_type": "RTO Charge",
+            "price": {
+              "currency": "INR",
+              "value": "2.00"
+            }
           }
         ]
       },
@@ -65,8 +76,11 @@
           }
         ]
       },
+      "tags": {
+        "cancellation_reason_id": "016"
+      },
       "created_at": "2023-09-03T11:45:50.123Z",
-      "updated_at": "2023-09-03T11:51:30.211Z",
+      "updated_at": "2023-09-03T12:41:33.319Z",
       "fulfillments": [
         {
           "type": "Prepaid",
@@ -90,8 +104,35 @@
           },
           "state": {
             "descriptor": {
-              "code": "Out-for-delivery",
-              "name": "Out for delivery"
+              "code": "Cancelled",
+              "name": "Cancelled"
+            }
+          }
+        },
+        {
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Initiated",
+              "name": "RTO Initiated"
+            }
+          },
+          "tracking": false,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-09-03T12:41:33.319Z",
+                "end": "2023-09-03T12:41:33.319Z"
+              },
+              "timestamp": "2023-09-03T12:41:33.319Z"
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2023-09-03T13:41:33.319Z",
+                "end": "2023-09-03T13:41:33.319Z"
+              }
             }
           }
         }
