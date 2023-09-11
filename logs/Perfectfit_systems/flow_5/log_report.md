@@ -1,6 +1,6 @@
 **/on_select**
-- /quote/breakup/5/price/value must match pattern "^(\d*.?\d{1,2})$"
-- Warning: Quoted Price in /on_select INR 444.4 does not match with the total price of items in /select INR 1240
+- /quote/breakup/4/price/value must match pattern "^(\d*.?\d{1,2})$"
+- Warning: Quoted Price in /on_select INR 440 does not match with the total price of items in /select INR 1240
 
 **/on_init**
 - /quote/breakup/4/price/value must match pattern "^(\d*.?\d{1,2})$"
@@ -15,5 +15,5 @@
 - Discrepancies between the quote object /on_select and /on_confirm
 
 **/on_status (Pending)**
-- /quote/breakup/4/price/value must match pattern "^(\d*.?\d{1,2})$"
+- /quote/breakup/3/price/value must match pattern "^(\d*.?\d{1,2})$"
 
