@@ -1,3 +1,7 @@
+**/on_search**
+- /message/catalog/bpp~1providers/0/items/0/descriptor/images must NOT have more than 3 items
+- /message/catalog/bpp~1providers/0/items/1/descriptor/images must NOT have more than 3 items
+
 **/init**
 - value of address.name, address.building and address.locality should be unique
 
@@ -9,5 +13,4 @@
 
 **/update (Refund)**
 - /message/order/items/0/tags/ttl_approval must match format "duration"
-- Inaccurate calculation of refund amount (pls check the quote price in refund triggering state)
 
