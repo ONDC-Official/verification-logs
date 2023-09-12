@@ -1,1 +1,1 @@
-Flow 1 mystore buyer app
+b2b buyer app logs updated
