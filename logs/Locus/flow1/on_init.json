@@ -1,0 +1,196 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-devo.locus-api-devo.com/v1/client/ondc-devo",
+        "bap_uri": "https://ondc-devo.locus-api-devo.com/v1/client/ondc-devo",
+        "bpp_id": "stg.ondc.adloggs.com",
+        "bpp_uri": "https://stg.ondc.adloggs.com/api",
+        "transaction_id": "b19798d0605a4a8da22b6c683666d859",
+        "message_id": "cdf00360dc334fb5a251ebbf05a052a3",
+        "timestamp": "2023-09-13T11:24:000Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P1"
+            },
+            "items": [
+                {
+                    "id": "I1",
+                    "fulfillment_id": "1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.969792,77.639701",
+                            "address": {
+                                "name": "Store name",
+                                "building": "House or building name",
+                                "locality": "Locality",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560008"
+                            }
+                        },
+                        "contact": {
+                            "phone": "999999999",
+                            "email": "sample@locus.sh"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.977203,77.631812",
+                            "address": {
+                                "name": "My house #",
+                                "building": "My house or building name",
+                                "locality": "locality",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560008"
+                            }
+                        },
+                        "contact": {
+                            "email": "sample@locus.sh",
+                            "phone": "999999999"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "no"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "23.60"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3.60"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "23.60"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "23.60"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "5"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
