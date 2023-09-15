@@ -1,3 +1,7 @@
+**/on_search**
+- /message/catalog/bpp~1providers/0/items/0/descriptor/images must NOT have more than 3 items
+- /message/catalog/bpp~1providers/0/items/1/descriptor/images must NOT have more than 3 items
+
 **/init**
 - value of address.name, address.building and address.locality should be unique
 
