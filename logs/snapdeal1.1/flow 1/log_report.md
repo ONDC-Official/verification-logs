@@ -6,6 +6,9 @@
 - /message/catalog/bpp~1providers/0/items/4/category_id category_id should be one of the valid categories as defined in [enhanced sub-category list](https://docs.google.com/spreadsheets/d/1ayRbp-WmXwwbzp7z1MgRO0NuKZM1AQk4GGZ8SE4NTnw/edit#gid=0)
 - /message/catalog/bpp~1providers/0/items/5/category_id category_id should be one of the valid categories as defined in [enhanced sub-category list](https://docs.google.com/spreadsheets/d/1ayRbp-WmXwwbzp7z1MgRO0NuKZM1AQk4GGZ8SE4NTnw/edit#gid=0)
 - /message/catalog/bpp~1providers/0/items/6/category_id category_id should be one of the valid categories as defined in [enhanced sub-category list](https://docs.google.com/spreadsheets/d/1ayRbp-WmXwwbzp7z1MgRO0NuKZM1AQk4GGZ8SE4NTnw/edit#gid=0)
+- /message/catalog/bpp~1providers/0/items/7/category_id category_id should be one of the valid categories as defined in [enhanced sub-category list](https://docs.google.com/spreadsheets/d/1ayRbp-WmXwwbzp7z1MgRO0NuKZM1AQk4GGZ8SE4NTnw/edit#gid=0)
+- /message/catalog/bpp~1providers/0/items/8/category_id category_id should be one of the valid categories as defined in [enhanced sub-category list](https://docs.google.com/spreadsheets/d/1ayRbp-WmXwwbzp7z1MgRO0NuKZM1AQk4GGZ8SE4NTnw/edit#gid=0)
+- /message/catalog/bpp~1providers/0/items/9/category_id category_id should be one of the valid categories as defined in [enhanced sub-category list](https://docs.google.com/spreadsheets/d/1ayRbp-WmXwwbzp7z1MgRO0NuKZM1AQk4GGZ8SE4NTnw/edit#gid=0)
 
 **/select**
 - /message/order/items/0 must have required property 'location_id'

@@ -3,21 +3,20 @@
     "domain": "nic2004:52110",
     "country": "IND",
     "city": "std:080",
-    "action": "confirm",
+    "action": "on_status",
     "core_version": "1.1.0",
     "bap_id": "buyer-app-preprod.ondc.org",
-    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
+    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1/on_status",
     "bpp_id": "ondc.stg.snapdeal.com",
     "bpp_uri": "https://ondc.stg.snapdeal.com",
     "transaction_id": "e0c111f8-7d75-4192-8b72-3381189cf6d8",
-    "message_id": "add020a7-ec1e-426c-bd91-f0639cfeaa3e",
-    "timestamp": "2023-09-21T11:06:37.170Z",
-    "ttl": "PT30S"
+    "message_id": "81652086-045c-497c-8b3f-4620d704f69b",
+    "timestamp": "2023-09-21T11:15:04.264Z"
   },
   "message": {
     "order": {
       "id": "2023-09-21-698932",
-      "state": "Created",
+      "state": "In-progress",
       "provider": {
         "id": "0cac8d",
         "locations": [
@@ -63,9 +62,40 @@
         {
           "id": "1",
           "type": "Delivery",
+          "provider_id": "0cac8d",
+          "@ondc/org/provider_name": "SNAPDEAL",
+          "state": {
+            "descriptor": {
+              "name": "Packed",
+              "code": "Packed"
+            }
+          },
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "sd-loc-0",
+              "descriptor": {
+                "name": "snapdeal",
+                "images": [
+                  "https://n3.sdlcdn.com/imgs/a/b/c/sdtv/46564544.png"
+                ]
+              },
+              "gps": "28.401066,77.103027"
+            },
+            "time": {
+              "range": {
+                "start": "2023-09-21T11:06:38.000Z",
+                "end": "2023-09-23T11:06:38.000Z"
+              }
+            },
+            "contact": {
+              "phone": "9999999999",
+              "email": "help@snapdeal.com"
+            }
+          },
           "end": {
             "location": {
-              "gps": "28.552176, 77.2687120000001",
+              "gps": "28.552176,77.2687120000001",
               "address": {
                 "name": "Shikhar Srivastava",
                 "building": "capital cyberscape",
@@ -76,12 +106,15 @@
                 "area_code": "110020"
               }
             },
+            "time": {
+              "range": {
+                "start": "2023-09-21T11:06:38.000Z",
+                "end": "2023-09-30T11:06:38.000Z"
+              }
+            },
             "contact": {
               "phone": "9978239422",
               "email": "shikhar.sri.2202@gmail.com"
-            },
-            "person": {
-              "name": "Shikhar Srivastava"
             }
           }
         }
@@ -89,25 +122,26 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "1086"
+          "value": "1086.0",
+          "maximum_value": "1086.0"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "SDL396254582_0cac8d",
-            "@ondc/org/item_quantity": {
-              "count": 1
-            },
-            "@ondc/org/title_type": "item",
-            "title": "testing",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery charges",
             "price": {
               "currency": "INR",
-              "value": "543"
-            },
-            "item": {
-              "price": {
-                "currency": "INR",
-                "value": "543"
-              }
+              "value": "0.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing charges",
+            "price": {
+              "currency": "INR",
+              "value": "0.0"
             }
           },
           {
@@ -129,20 +163,27 @@
             }
           },
           {
-            "@ondc/org/item_id": "1",
-            "@ondc/org/title_type": "delivery",
-            "title": "Delivery charges",
+            "@ondc/org/item_id": "SDL396254582_0cac8d",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "title": "testing",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "543"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "543"
+              }
             }
           }
         ],
         "ttl": "PT1H"
       },
       "payment": {
-        "uri": "https://juspay.in/",
-        "tl_method": "http/get",
         "params": {
           "transaction_id": "e0c111f8-7d75-4192-8b72-3381189cf6d8",
           "amount": "1086",
@@ -167,7 +208,7 @@
         ]
       },
       "created_at": "2023-09-21T11:06:37.170Z",
-      "updated_at": "2023-09-21T11:06:37.170Z"
+      "updated_at": "2023-09-21T11:15:04.264Z"
     }
   }
 }
