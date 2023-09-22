@@ -1,1 +1,1 @@
-buyer flow mystore
+Buyer app logs submitted
