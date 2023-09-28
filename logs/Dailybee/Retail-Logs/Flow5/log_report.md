@@ -5,9 +5,6 @@
 **/on_select**
 - Warning: Quoted Price in /on_select INR 210 does not match with the total price of items in /select INR 408
 
-**/init**
-- value of address.name, address.building and address.locality should be unique
-
 **/on_init**
 - Discrepancies between the quote object in /on_select and /on_init
 
