@@ -1,0 +1,231 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:0484"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_status",
+        "version": "2.0.1",
+        "transaction_id": "95158bde-94e2-4e3f-80c1-9ee850744b69",
+        "message_id": "C5AMxituuBhhQeWTdmpZC",
+        "timestamp": "2023-09-29T12:48:11.000Z",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+        "ttl": "P1D"
+    },
+    "message": {
+        "order": {
+            "id": "RAP-0002206",
+            "state": "Accepted",
+            "provider": {
+                "id": "5f4104ba-fcd1-4ffc-90e8-ee7c26733f5f",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "ITM00123",
+                    "fulfillment_ids": [
+                        "F1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Sachin",
+                "address": "37a Chancery Lane, Singapore, Singapore, Singapore",
+                "phone": "7306112513",
+                "tax_id": "29AABCL0212H1ZY",
+                "city": {
+                    "name": "Singapore"
+                },
+                "state": {
+                    "name": "Singapore"
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "Rapidor",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "PlaceOrder"
+                                },
+                                "gps": "12.998115,77.629250"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2023-09-29T12:47:51.000Z",
+                                    "end": "2023-09-29T14:47:51.000Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9072377660",
+                                "email": "care@acelrtech.com"
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": "37a Chancery Lane, Singapore, Singapore, Singapore, 521147",
+                                "gps": "10.055684,76.354504",
+                                "area_code": "521147",
+                                "state": {
+                                    "name": "Singapore"
+                                },
+                                "city": {
+                                    "name": "Singapore"
+                                },
+                                "country": {
+                                    "code": "SGP"
+                                }
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2023-10-01T12:47:51.000Z",
+                                    "end": "2023-10-01T14:47:51.000Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "7306112513"
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "EXW"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Bengaluru"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "0.00"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "title": "CHICKEN COCKTAIL SAUSAGE-ASSRTD-12 X 1 KG-DFPL",
+                        "@ondc/org/item_id": "ITM00123",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "500.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "250.00"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Tax",
+                        "@ondc/org/item_id": "ITM00123",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "60.00"
+                        }
+                    },
+                    {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "ITM00123",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "Packing",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "560.00"
+                },
+                "ttl": "P2D"
+            },
+            "created_at": "2023-09-29T12:47:50.721Z",
+            "updated_at": "2023-09-29T12:48:11.000Z"
+        }
+    }
+}
