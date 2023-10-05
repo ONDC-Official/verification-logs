@@ -1,0 +1,202 @@
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_status",
+        "core_version": "1.1.0",
+        "bap_id": "preprod-buyer-ondc.ndh01.com/retail",
+        "bap_uri": "https://preprod-buyer-ondc.ndh01.com/retail/buyer",
+        "bpp_id": "preprod-ondc.ndh01.com/retail",
+        "bpp_uri": "https://preprod-ondc.ndh01.com/retail/seller",
+        "transaction_id": "ec47ddf4-fd85-444c-ab70-8184598fe10e",
+        "message_id": "2b5dcc58-4352-4bac-b580-9a3f7e85c291",
+        "timestamp": "2023-10-03T12:15:22.340Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "db9c0678db2440b59b9682cd505d78f6",
+            "state": "Accepted",
+            "provider": {
+                "id": "132622",
+                "locations": [
+                    {
+                        "id": "L-132622"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "MTMyNjIyXzc5Njg2MjVfM19Q",
+                    "quantity": {
+                        "count": 3
+                    },
+                    "fulfillment_id": "1"
+                },
+                {
+                    "id": "MTMyNjIyXzc5Njg2MjRfM19Q",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "1"
+                }
+            ],
+            "documents": [
+                {
+                    "url": "https://www.ndhgo.com/invoices",
+                    "label": "Invoice"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "building": "null",
+                    "locality": "null",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "IND",
+                    "area_code": "110010"
+                },
+                "phone": "9905277681",
+                "created_at": "2023-10-03T12:12:36.634Z",
+                "updated_at": "2023-10-03T12:12:36.634Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "id": "L-132622",
+                            "descriptor": {
+                                "name": "Monish ONDC Store",
+                                "images": [
+                                    "https://ndh.imgix.net/ndh-stores/stores_img/1669702828392.png"
+                                ]
+                            },
+                            "gps": "12.911862,77.6445923"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-10-03T12:33:23.183Z",
+                                "end": "2023-10-03T12:43:23.183Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "store@example.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "28.6105073, 77.1145653",
+                            "address": {
+                                "building": "null",
+                                "locality": "null",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "IND",
+                                "area_code": "110010"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-10-03T13:13:23.183Z",
+                                "end": "2023-10-03T14:13:23.183Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9905277681"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "110.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "MTMyNjIyXzc5Njg2MjVfM19Q",
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "10.00"
+                            }
+                        },
+                        "title": "Cheese Makhana",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "MTMyNjIyXzc5Njg2MjRfM19Q",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "80.00"
+                            }
+                        },
+                        "title": "Roasted Cheddar Cheese Makhana, 60g - Gluten Free | Anti Oxidants | MSG Free | Zero Trans Fat | No added Preservatives and No artificial.",
+                        "price": {
+                            "currency": "INR",
+                            "value": "80.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "ttl": "PT5M"
+            },
+            "payment": {
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "ordeh_96e63021c6c940b9a5020cd56cc67235",
+                    "amount": "110.00",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "50200057646960",
+                        "settlement_ifsc_code": "HDFC0000718",
+                        "bank_name": "HDFC Bank",
+                        "branch_name": "Salt Lake City"
+                    }
+                ]
+            },
+            "created_at": "2023-10-03T12:13:23.183Z",
+            "updated_at": "2023-10-03T12:15:22.171Z"
+        }
+    }
+}
