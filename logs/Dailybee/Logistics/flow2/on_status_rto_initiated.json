@@ -7,51 +7,82 @@
     "core_version": "1.1.0",
     "bap_id": "pp-ondc.dlyb.in",
     "bap_uri": "https://pp-ondc.dlyb.in/",
-    "bpp_id": "dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io",
-    "bpp_uri": "https://dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io/api/ondc/customerportaldemodtdc/",
-    "transaction_id": "dd17c796-61c0-43d3-8a5b-db0e6696863f",
-    "message_id": "1693997967279",
-    "timestamp": "2023-09-06T10:59:27.282Z"
+    "bpp_id": "ondc-preprod.loadshare.net",
+    "bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp",
+    "transaction_id": "e8c88f56-c26c-4110-82dc-a7f36ee0aafe",
+    "message_id": "2192db59-9fba-42e7-a7c6-c404778fe9ff",
+    "timestamp": "2023-10-04T12:19:34.417Z"
   },
   "message": {
     "order": {
-      "id": "2023-09-06-352896",
+      "id": "2023-10-04-585771",
       "state": "Cancelled",
       "provider": {
-        "id": "Shipsy NPO ONDC"
+        "id": "loadshare@ondc-preprod.loadshare.net"
       },
       "items": [
         {
-          "id": "B2C SMART EXPRESS",
-          "category_id": "Standard Delivery",
+          "id": "immediate_delivery-PT1H30M",
+          "category_id": "Immediate Delivery",
           "descriptor": {
-            "code": "P2H2P"
+            "code": "P2P"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "76.8"
+          "value": "81.00"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "B2C SMART EXPRESS",
+            "@ondc/org/item_id": "immediate_delivery-PT1H30M",
             "@ondc/org/title_type": "Delivery Charge",
             "price": {
               "currency": "INR",
-              "value": "64.00"
-            }
-          },
-          {
-            "title": "RTO Charges",
-            "@ondc/org/title_type": "RTO Charge",
-            "price": {
-              "currency": "INR",
-              "value": "12.8"
+              "value": "81.00"
             }
           }
         ]
+      },
+      "fulfillments": [
+        {
+          "id": "lsn_prepaid",
+          "type": "Prepaid",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Initiated"
+            }
+          },
+          "tracking": true,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-10-04T12:19:33.375Z",
+                "end": "2023-10-04T12:19:33.375Z"
+              }
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2023-10-04T12:26:25.170Z",
+                "end": "2023-10-04T12:34:34.418Z"
+              }
+            }
+          },
+          "tags": {
+            "cancellation_reason_id": "013"
+          },
+          "agent": {
+            "name": "purva daga",
+            "phone": "6377620492"
+          }
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP"
       },
       "billing": {
         "name": "Kushero Innovations Private Ltd",
@@ -67,84 +98,69 @@
         "email": "satya@dailybee.in",
         "phone": "8310103202",
         "tax_number": "36AAICK6920A1ZS",
-        "created_at": "2023-09-06T09:08:24.092Z",
-        "updated_at": "2023-09-06T09:08:24.092Z"
+        "created_at": "2023-10-04T12:18:10.462Z",
+        "updated_at": "2023-10-04T12:18:10.462Z"
       },
-      "payment": {
-        "@ondc/org/collection_amount": "64.00",
-        "@ondc/org/settlement_details": [
+      "created_at": "2023-10-04T12:18:13.870Z",
+      "updated_at": "2023-10-04T12:19:33.375Z",
+      "@ondc/org/linked_order": {
+        "items": [
           {
-            "settlement_counterparty": "seller-app",
-            "settlement_type": "upi",
-            "upi_address": "gft@oksbi",
-            "settlement_bank_account_no": "XXXXXXXXXX",
-            "settlement_ifsc_code": "XXXXXXXXX"
+            "category_id": "Grocery",
+            "descriptor": {
+              "name": "Harpic Original Power Plus 500ML"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "Kilogram",
+                "value": 0.5
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "99.00"
+            }
+          },
+          {
+            "category_id": "Grocery",
+            "descriptor": {
+              "name": "Bathroom Cleaner Lemon"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "Kilogram",
+                "value": 0.5
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "105.00"
+            }
           }
         ],
-        "collected_by": "BAP",
-        "type": "POST-FULFILLMENT"
-      },
-      "tags": {
-        "AWB no": "7D2321216",
-        "cancellation_reason_id": "015"
-      },
-      "created_at": "2023-09-06T09:08:27.627Z",
-      "updated_at": "2023-09-06T10:59:27.181Z",
-      "fulfillments": [
-        {
-          "type": "Prepaid",
-          "@ondc/org/awb_no": "7D2321216",
-          "tracking": false,
-          "start": {
-            "time": {
-              "range": {
-                "start": "2023-09-06T09:52:00.929Z",
-                "end": "2023-09-06T17:30:00.929Z"
-              },
-              "timestamp": "2023-09-06T10:28:47.135Z"
-            },
-            "instructions": {
-              "name": "Proof Of Pickup",
-              "images": [
-                "https://shipsy.s3.amazonaws.com/1/poc/2023-09-06/pickupcompleted/poc_a5f51z_1693996127852"
-              ]
-            }
+        "provider": {
+          "descriptor": {
+            "name": "Dailybee - Test Store 2"
           },
-          "end": {
-            "time": {
-              "range": {
-                "start": "2023-09-08T09:52:00.929Z",
-                "end": "2023-09-08T17:30:00.929Z"
-              }
-            }
-          },
-          "state": {
-            "descriptor": {
-              "code": "Cancelled",
-              "name": "Cancelled"
-            }
+          "address": {
+            "name": "Dailybee - Test Store 2",
+            "street": "12th Main Rd,  HAL 2nd Stage",
+            "locality": "Doopanahalli, Indiranagar",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "area_code": "560008"
           }
         },
-        {
-          "type": "RTO",
-          "state": {
-            "descriptor": {
-              "code": "RTO-Initiated",
-              "name": "RTO Initiated"
-            }
-          },
-          "tracking": false,
-          "start": {
-            "time": {
-              "range": {
-                "start": "2023-09-06T10:59:27.061Z",
-                "end": "2023-09-06T10:59:27.061Z"
-              },
-              "timestamp": "2023-09-06T10:59:27.061Z"
-            }
+        "order": {
+          "id": "2023-10-04-585771",
+          "weight": {
+            "unit": "Kilogram",
+            "value": 1
           }
         }
-      ]
+      }
     }
   }
 }

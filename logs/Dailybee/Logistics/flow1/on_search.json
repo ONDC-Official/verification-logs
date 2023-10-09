@@ -7,88 +7,168 @@
     "core_version": "1.1.0",
     "bap_id": "pp-ondc.dlyb.in",
     "bap_uri": "https://pp-ondc.dlyb.in/",
-    "bpp_id": "dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io",
-    "bpp_uri": "https://dtdc-ondc-integration-preprod-demo.demoprojectxsandbox3.shipsy.io/api/ondc/customerportaldemodtdc/",
-    "transaction_id": "1fc4692c-9428-4085-b48c-b2e72beb9c67",
-    "message_id": "cfd379bd-bd0a-42b7-ae37-56bd12b3bb25--64e4882839533ea694157512",
-    "timestamp": "2023-09-06T09:09:26.390Z"
+    "transaction_id": "995f39f0-9489-4fe2-a3bb-93976d37c862",
+    "message_id": "4cf41e03-719d-4ffc-af88-254548f8a627--64e4882839533ea694157512",
+    "timestamp": "2023-10-04T11:28:49.965Z",
+    "bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp",
+    "bpp_id": "ondc-preprod.loadshare.net"
   },
   "message": {
     "catalog": {
       "bpp/fulfillments": [
         {
-          "id": "1",
+          "id": "lsn_prepaid",
           "type": "Prepaid"
         },
         {
-          "id": "2",
-          "type": "CoD"
-        },
-        {
-          "id": "3",
+          "id": "RTO_lsn_prepaid",
           "type": "RTO"
-        },
-        {
-          "id": "4",
-          "type": "Reverse QC"
         }
       ],
       "bpp/descriptor": {
-        "name": "Shipsy NPO ONDC"
+        "name": "LoadShare Delivery"
       },
       "bpp/providers": [
         {
-          "id": "Shipsy NPO ONDC",
+          "id": "loadshare@ondc-preprod.loadshare.net",
           "descriptor": {
-            "name": "Shipsy NPO ONDC",
-            "short_desc": "Shipsy NPO ONDC",
-            "long_desc": "Shipsy NPO ONDC"
+            "name": "LoadShare Networks",
+            "long_desc": "LoadShare Networks Private Limited",
+            "short_desc": "LoadShare Networks Private Limited"
           },
           "categories": [
             {
-              "id": "Standard Delivery",
+              "id": "Immediate Delivery",
               "time": {
                 "label": "TAT",
-                "duration": "P2D"
+                "duration": "PT1H30M"
+              }
+            },
+            {
+              "id": "Same Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT2H"
+              }
+            },
+            {
+              "id": "Next Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "P1D"
               }
             }
           ],
           "items": [
             {
-              "id": "B2C SMART EXPRESS",
-              "category_id": "Standard Delivery",
+              "id": "immediate_delivery-PT1H30M",
               "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "lsn_prepaid",
               "descriptor": {
-                "code": "P2H2P",
-                "name": "Standard Delivery",
-                "short_desc": "B2C SMART EXPRESS",
-                "long_desc": "1 - 2 Day/s"
+                "code": "P2P",
+                "name": "Immediate Delivery",
+                "long_desc": "Upto 1 hour 30 minutes for delivery",
+                "short_desc": "Upto 1 hour 30 minutes for delivery"
               },
               "price": {
                 "currency": "INR",
-                "value": "64.00"
+                "value": "81.00"
               },
               "time": {
                 "label": "TAT",
-                "duration": "P2D",
-                "timestamp": "2023-09-08T09:09:26.390Z"
-              },
-              "fulfillment_id": "1"
+                "duration": "PT1H30M",
+                "timestamp": "2023-10-04T12:58:49.735Z"
+              }
             },
             {
-              "id": "B2C SMART EXPRESS - RTO",
-              "category_id": "Standard Delivery",
-              "parent_item_id": "B2C SMART EXPRESS",
-              "fulfillment_id": "3",
+              "id": "RTO_immediate_delivery-PT1H30M",
+              "parent_item_id": "immediate_delivery-PT1H30M",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "RTO_lsn_prepaid",
               "descriptor": {
+                "code": "P2P",
                 "name": "RTO quote",
-                "code": "P2H2P",
-                "short_desc": "B2C SMART EXPRESS RTO quote",
-                "long_desc": "B2C SMART EXPRESS RTO quote"
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
               },
               "price": {
                 "currency": "INR",
-                "value": "12.80"
+                "value": "81.00"
+              }
+            },
+            {
+              "id": "same_day_delivery-PT2H",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "lsn_prepaid",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Same Day Delivery",
+                "long_desc": "Upto 2 hours for delivery",
+                "short_desc": "Upto 2 hours for delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "86.00"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT2H",
+                "timestamp": "2023-10-04T13:28:49.735Z"
+              }
+            },
+            {
+              "id": "RTO_same_day_delivery-PT2H",
+              "parent_item_id": "same_day_delivery-PT2H",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "RTO_lsn_prepaid",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "86.00"
+              }
+            },
+            {
+              "id": "next_day_delivery-P1D",
+              "parent_item_id": "",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "lsn_prepaid",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Next Day Delivery",
+                "long_desc": "Upto 1 day for delivery",
+                "short_desc": "Upto 1 day for delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "81.00"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "P1D",
+                "timestamp": "2023-10-05T11:28:49.735Z"
+              }
+            },
+            {
+              "id": "RTO_next_day_delivery-P1D",
+              "parent_item_id": "next_day_delivery-P1D",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "RTO_lsn_prepaid",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "81.00"
               }
             }
           ]
