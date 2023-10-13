@@ -1,1 +1,1 @@
-b2b buyer app logs updated
+Buyer app logs submitted
