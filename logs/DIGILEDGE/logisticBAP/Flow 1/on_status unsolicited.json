@@ -7,106 +7,147 @@
         "core_version": "1.1.0",
         "bap_id": "logistics.ondc.digiledge.in",
         "bap_uri": "https://logistics.ondc.digiledge.in",
-        "transaction_id": "544d2f58-5c4e-43d5-82d8-aa8923c782d3",
-        "message_id": "d3db5d90-08fd-4f42-80e4-9e6eb0d4eb95",
-        "timestamp": "2023-09-28T11:21:43.657Z",
-        "ttl": "PT30S",
-        "bpp_id": "ondc-wrapper-ondc.proxy.dev.dunzo.com",
-        "bpp_uri": "https://ondc-wrapper-ondc.proxy.dev.dunzo.com/"
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc/logistics",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/logistics/",
+        "transaction_id": "fd98fb70-6b0d-4117-9ea3-ecf5e4a83ded",
+        "message_id": "6a0fb663-743a-4426-8e12-2febb383472a",
+        "timestamp": "2023-10-12T11:04:44.762Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2023-09-28-579402",
+            "id": "2023-10-12-943725",
             "state": "In-progress",
             "provider": {
-                "id": "dunzo-lsp"
+                "id": "P1",
+                "name": {
+                    "name": "",
+                    "code": ""
+                }
             },
             "items": [
                 {
-                    "id": "item-14e9ea4d-df37-42ec-87a3-fb7fb5657850",
-                    "category_id": "Immediate Delivery",
+                    "id": "I1",
+                    "parent_item_id": "",
+                    "category_id": "Standard Delivery",
                     "descriptor": {
-                        "code": "P2P",
-                        "name": "Dunzo",
-                        "short_desc": "Dunzo",
-                        "long_desc": "Dunzo"
+                        "code": "P2P"
                     }
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "391"
+            "billing": {
+                "name": "Shabir",
+                "address": {
+                    "name": "Sri Sakthi Rice",
+                    "building": "Dr.No 12",
+                    "locality": "27G",
+                    "city": "BENGALURU URBAN",
+                    "state": "KARNATAKA",
+                    "country": "IND",
+                    "area_code": "560043"
                 },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "item-14e9ea4d-df37-42ec-87a3-fb7fb5657850",
-                        "@ondc/org/title_type": "Delivery Charge",
-                        "price": {
-                            "currency": "INR",
-                            "value": "391"
-                        }
-                    }
-                ]
+                "email": "shabir@digiledge.in",
+                "phone": "9781341222",
+                "tax_number": "29GGGGG1314R9Z6",
+                "created_at": "2023-10-12T06:08:26.026Z",
+                "updated_at": "2023-10-12T06:08:26.026Z"
             },
             "fulfillments": [
                 {
+                    "id": "1",
                     "type": "Prepaid",
-                    "state": {
-                        "descriptor": {
-                            "code": "Order-picked-up",
-                            "name": "Order picked up"
-                        }
-                    },
-                    "tracking": false,
                     "start": {
                         "time": {
+                            "timestamp": "2023-10-12T11:04:44.000Z",
                             "range": {
-                                "start": "2023-09-28T11:21:43.657Z",
-                                "end": "2023-09-28T11:21:43.657Z"
-                            },
-                            "timestamp": "2023-09-28T11:21:38.000Z"
+                                "start": "2023-10-12T11:19:44.762Z",
+                                "end": "2023-10-12T11:34:44.762Z"
+                            }
                         }
                     },
                     "end": {
                         "time": {
                             "range": {
-                                "start": "2023-09-28T11:21:43.657Z",
-                                "end": "2023-09-28T11:35:43.657Z"
-                            },
-                            "timestamp": ""
+                                "start": "2023-10-12T11:49:44.762Z",
+                                "end": "2023-10-12T12:04:44.762Z"
+                            }
                         }
                     },
-                    "tags": {},
-                    "agent": {
-                        "name": "K ",
-                        "phone": "9986260750"
-                    }
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
+                    "tracking": true
                 }
             ],
-            "billing": {
-                "address": {
-                    "name": "Sri Sakthi Rice",
-                    "locality": "27G",
-                    "city": "BENGALURU URBAN",
-                    "state": "KARNATAKA",
-                    "country": "IND",
-                    "area_code": "560043",
-                    "building": "Dr.No 12"
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "1"
                 },
-                "email": "shabir@digiledge.in",
-                "name": "Shabir",
-                "phone": "9781341222",
-                "tax_number": "29GGGGG1314R9Z6",
-                "created_at": "2023-09-28T11:10:42.053Z",
-                "updated_at": "2023-09-28T11:10:42.053Z"
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1"
+                        }
+                    }
+                ]
             },
-            "created_at": "2023-09-28T11:11:12.897Z",
-            "updated_at": "2023-09-28T11:21:43.657Z",
             "payment": {
-                "type": "POST-FULFILLMENT",
-                "@ondc/org/settlement_details": null,
-                "collected_by": "BAP"
+                "collected_by": "BAP",
+                "type": "POST-FULFILLMENT"
+            },
+            "created_at": "2023-10-12T06:08:54.860Z",
+            "updated_at": "2023-10-12T06:08:54.860Z",
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "parent_item_id": "",
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "KLM King Store Traditional Basmati Rice 1kg"
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "35"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "Kilogram",
+                                "value": 1
+                            }
+                        }
+                    }
+                ],
+                "provider": {
+                    "id": "SRISA971913613",
+                    "descriptor": {
+                        "name": "Sri Sakthi Rice"
+                    },
+                    "address": {
+                        "name": "Sri Sakthi Rice",
+                        "locality": "27G",
+                        "city": "BENGALURU URBAN",
+                        "state": "KARNATAKA",
+                        "area_code": "560043"
+                    },
+                    "name": {
+                        "name": "",
+                        "code": ""
+                    }
+                },
+                "order": {
+                    "id": "2023-10-12-943725",
+                    "weight": {
+                        "unit": "Kilogram",
+                        "value": 1
+                    }
+                }
             }
         }
     }
