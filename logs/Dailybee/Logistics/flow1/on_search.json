@@ -1,179 +1,233 @@
 {
   "context": {
-    "domain": "nic2004:60232",
+    "transaction_id": "df35d5b3-1123-45a0-9f75-9ac9e2b5d54b_64e3026850bf693f18cff658",
     "country": "IND",
+    "bpp_id": "ondc.whizzard.in",
     "city": "std:080",
+    "domain": "nic2004:60232",
+    "bpp_uri": "https://ondc.whizzard.in/api/integration",
     "action": "on_search",
+    "message_id": "90e9930e-684c-42c3-9333-aa5fde214f8e--64e3026850bf693f18cff658",
     "core_version": "1.1.0",
-    "bap_id": "pp-ondc.dlyb.in",
     "bap_uri": "https://pp-ondc.dlyb.in/",
-    "transaction_id": "995f39f0-9489-4fe2-a3bb-93976d37c862",
-    "message_id": "4cf41e03-719d-4ffc-af88-254548f8a627--64e4882839533ea694157512",
-    "timestamp": "2023-10-04T11:28:49.965Z",
-    "bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp",
-    "bpp_id": "ondc-preprod.loadshare.net"
+    "bap_id": "pp-ondc.dlyb.in",
+    "timestamp": "2023-10-17T16:53:50.136Z"
   },
   "message": {
     "catalog": {
       "bpp/fulfillments": [
         {
-          "id": "lsn_prepaid",
+          "id": "1",
           "type": "Prepaid"
         },
         {
-          "id": "RTO_lsn_prepaid",
+          "id": "2",
+          "type": "CoD"
+        },
+        {
+          "id": "3",
           "type": "RTO"
         }
       ],
-      "bpp/descriptor": {
-        "name": "LoadShare Delivery"
-      },
       "bpp/providers": [
         {
-          "id": "loadshare@ondc-preprod.loadshare.net",
+          "id": "MLL",
           "descriptor": {
-            "name": "LoadShare Networks",
-            "long_desc": "LoadShare Networks Private Limited",
-            "short_desc": "LoadShare Networks Private Limited"
+            "name": "Mahindra Logistics",
+            "short_desc": "MLL",
+            "long_desc": "Mahindra Logistics Ltd."
           },
           "categories": [
             {
               "id": "Immediate Delivery",
               "time": {
-                "label": "TAT",
-                "duration": "PT1H30M"
+                "duration": "PT20M",
+                "label": "TAT"
               }
             },
             {
               "id": "Same Day Delivery",
               "time": {
-                "label": "TAT",
-                "duration": "PT2H"
-              }
-            },
-            {
-              "id": "Next Day Delivery",
-              "time": {
-                "label": "TAT",
-                "duration": "P1D"
+                "duration": "PT2H",
+                "label": "TAT"
               }
             }
           ],
           "items": [
             {
-              "id": "immediate_delivery-PT1H30M",
-              "parent_item_id": "",
               "category_id": "Immediate Delivery",
-              "fulfillment_id": "lsn_prepaid",
-              "descriptor": {
-                "code": "P2P",
-                "name": "Immediate Delivery",
-                "long_desc": "Upto 1 hour 30 minutes for delivery",
-                "short_desc": "Upto 1 hour 30 minutes for delivery"
-              },
+              "parent_item_id": "",
               "price": {
                 "currency": "INR",
-                "value": "81.00"
+                "value": "30"
+              },
+              "id": "I1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "20 min delivery",
+                "short_desc": "20 min delivery",
+                "long_desc": "20 min delivery"
               },
               "time": {
+                "duration": "PT20M",
                 "label": "TAT",
-                "duration": "PT1H30M",
-                "timestamp": "2023-10-04T12:58:49.735Z"
-              }
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "1"
             },
             {
-              "id": "RTO_immediate_delivery-PT1H30M",
-              "parent_item_id": "immediate_delivery-PT1H30M",
               "category_id": "Immediate Delivery",
-              "fulfillment_id": "RTO_lsn_prepaid",
+              "parent_item_id": "",
+              "price": {
+                "currency": "INR",
+                "value": "30"
+              },
+              "id": "I2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "20 min delivery",
+                "short_desc": "20 min delivery",
+                "long_desc": "20 min delivery"
+              },
+              "time": {
+                "duration": "PT20M",
+                "label": "TAT",
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "2"
+            },
+            {
+              "category_id": "Immediate Delivery",
+              "parent_item_id": "I2",
+              "price": {
+                "currency": "INR",
+                "value": "30"
+              },
+              "id": "I4",
               "descriptor": {
                 "code": "P2P",
                 "name": "RTO quote",
                 "short_desc": "RTO quote",
-                "long_desc": "RTO quote"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "81.00"
-              }
-            },
-            {
-              "id": "same_day_delivery-PT2H",
-              "parent_item_id": "",
-              "category_id": "Same Day Delivery",
-              "fulfillment_id": "lsn_prepaid",
-              "descriptor": {
-                "code": "P2P",
-                "name": "Same Day Delivery",
-                "long_desc": "Upto 2 hours for delivery",
-                "short_desc": "Upto 2 hours for delivery"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "86.00"
+                "long_desc": "RTO quote for Immediate Delivery"
               },
               "time": {
+                "duration": "PT20M",
                 "label": "TAT",
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "3"
+            },
+            {
+              "category_id": "Immediate Delivery",
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "30"
+              },
+              "id": "I3",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote for Immediate Delivery"
+              },
+              "time": {
+                "duration": "PT20M",
+                "label": "TAT",
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "3"
+            },
+            {
+              "category_id": "Same Day Delivery",
+              "parent_item_id": "",
+              "price": {
+                "currency": "INR",
+                "value": "30"
+              },
+              "id": "I5",
+              "descriptor": {
+                "code": "P2P",
+                "name": "2 Hour delivery",
+                "short_desc": "2 Hr delivery",
+                "long_desc": "2 Hr delivery"
+              },
+              "time": {
                 "duration": "PT2H",
-                "timestamp": "2023-10-04T13:28:49.735Z"
-              }
+                "label": "TAT",
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "1"
             },
             {
-              "id": "RTO_same_day_delivery-PT2H",
-              "parent_item_id": "same_day_delivery-PT2H",
               "category_id": "Same Day Delivery",
-              "fulfillment_id": "RTO_lsn_prepaid",
-              "descriptor": {
-                "code": "P2P",
-                "name": "RTO quote",
-                "short_desc": "RTO quote",
-                "long_desc": "RTO quote"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "86.00"
-              }
-            },
-            {
-              "id": "next_day_delivery-P1D",
               "parent_item_id": "",
-              "category_id": "Next Day Delivery",
-              "fulfillment_id": "lsn_prepaid",
-              "descriptor": {
-                "code": "P2P",
-                "name": "Next Day Delivery",
-                "long_desc": "Upto 1 day for delivery",
-                "short_desc": "Upto 1 day for delivery"
-              },
               "price": {
                 "currency": "INR",
-                "value": "81.00"
+                "value": "30"
+              },
+              "id": "I6",
+              "descriptor": {
+                "code": "P2P",
+                "name": "2 Hours delivery",
+                "short_desc": "2 Hrs delivery",
+                "long_desc": "2 Hrs delivery"
               },
               "time": {
+                "duration": "PT2H",
                 "label": "TAT",
-                "duration": "P1D",
-                "timestamp": "2023-10-05T11:28:49.735Z"
-              }
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "2"
             },
             {
-              "id": "RTO_next_day_delivery-P1D",
-              "parent_item_id": "next_day_delivery-P1D",
-              "category_id": "Next Day Delivery",
-              "fulfillment_id": "RTO_lsn_prepaid",
+              "category_id": "Same Day Delivery",
+              "parent_item_id": "I6",
+              "price": {
+                "currency": "INR",
+                "value": "30"
+              },
+              "id": "I8",
               "descriptor": {
                 "code": "P2P",
                 "name": "RTO quote",
                 "short_desc": "RTO quote",
-                "long_desc": "RTO quote"
+                "long_desc": "RTO quote for Same Day Delivery"
               },
+              "time": {
+                "duration": "PT2H",
+                "label": "TAT",
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "3"
+            },
+            {
+              "category_id": "Same Day Delivery",
+              "parent_item_id": "I5",
               "price": {
                 "currency": "INR",
-                "value": "81.00"
-              }
+                "value": "30"
+              },
+              "id": "I7",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote for Same Day Delivery"
+              },
+              "time": {
+                "duration": "PT2H",
+                "label": "TAT",
+                "timestamp": "2023-10-17T16:53:50.136Z"
+              },
+              "fulfillment_id": "3"
             }
           ]
         }
-      ]
+      ],
+      "bpp/descriptor": {
+        "name": "Mahindra Logistics"
+      }
     }
   }
 }

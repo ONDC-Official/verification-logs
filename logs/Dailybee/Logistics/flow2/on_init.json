@@ -1,49 +1,58 @@
 {
   "context": {
-    "domain": "nic2004:60232",
+    "transaction_id": "36bf0031-6a55-4995-a471-68f3a21e23cd_64e3026850bf693f18cff658",
     "country": "IND",
+    "bpp_id": "ondc.whizzard.in",
     "city": "std:080",
+    "domain": "nic2004:60232",
+    "bpp_uri": "https://ondc.whizzard.in/api/integration",
     "action": "on_init",
+    "message_id": "6ee9e573-c637-4c80-b0d5-cfa2298f430c",
     "core_version": "1.1.0",
-    "bap_id": "pp-ondc.dlyb.in",
     "bap_uri": "https://pp-ondc.dlyb.in/",
-    "bpp_id": "ondc-preprod.loadshare.net",
-    "bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp",
-    "transaction_id": "e8c88f56-c26c-4110-82dc-a7f36ee0aafe",
-    "message_id": "d92fa08d-3f3c-4497-b722-cd2825bb189f",
-    "timestamp": "2023-10-04T12:18:10.769Z"
+    "bap_id": "pp-ondc.dlyb.in",
+    "timestamp": "2023-10-17T17:13:20.143Z"
   },
   "message": {
     "order": {
-      "provider": {
-        "id": "loadshare@ondc-preprod.loadshare.net"
-      },
-      "items": [
-        {
-          "id": "immediate_delivery-PT1H30M"
-        }
-      ],
       "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "81.00"
-        },
         "breakup": [
           {
-            "@ondc/org/item_id": "immediate_delivery-PT1H30M",
-            "@ondc/org/title_type": "Delivery Charge",
+            "@ondc/org/item_id": "I1",
             "price": {
               "currency": "INR",
-              "value": "81.00"
-            }
+              "value": "30"
+            },
+            "@ondc/org/title_type": "Delivery Charge"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "30"
+        }
+      },
+      "provider": {
+        "id": "MLL"
+      },
+      "payment": {
+        "collected_by": "BAP",
+        "type": "ON-ORDER",
+        "@ondc/org/settlement_details": [
+          {
+            "beneficiary_name": "Jeevan",
+            "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "SBIN0000123",
+            "settlement_bank_account_no": "123239845757",
+            "upi_address": "jeavan@ybl",
+            "settlement_type": "upi"
           }
         ]
       },
-      "payment": {
-        "type": "POST-FULFILLMENT",
-        "collected_by": "BAP",
-        "@ondc/org/settlement_details": null
-      }
+      "items": [
+        {
+          "id": "I1"
+        }
+      ]
     }
   }
 }
