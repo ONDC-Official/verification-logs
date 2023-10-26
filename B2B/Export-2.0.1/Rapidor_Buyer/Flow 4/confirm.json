@@ -1,0 +1,244 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:999"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "confirm",
+        "version": "2.0.1",
+        "transaction_id": "b05ed744-c6b8-4f77-83d3-be4e2a3778ed",
+        "message_id": "3595c6bf-bba8-436a-b913-a604f78716b2",
+        "timestamp": "2023-09-29T13:02:41.721Z",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+        "ttl": "P2D"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "name": "Singapore",
+                "address": "37a Chancery Lane, Singapore, Singapore, Singapore",
+                "phone": "7306112513",
+                "tax_id": "29AABCL0212H1ZY",
+                "city": {
+                    "name": "Singapore"
+                },
+                "state": {
+                    "name": "Singapore"
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": "37a Chancery Lane, Singapore, Singapore, Singapore, 521147",
+                                "gps": "1.3224,103.8383032",
+                                "area_code": "521147",
+                                "state": {
+                                    "name": "Singapore"
+                                },
+                                "city": {
+                                    "name": "Singapore"
+                                },
+                                "country": {
+                                    "code": "SGP"
+                                }
+                            },
+                            "contact": {
+                                "phone": "7306112513"
+                            },
+                            "customer": {
+                                "person": {
+                                    "name": "Singapore"
+                                }
+                            }
+                        }
+                    ],
+                    "tracking": false,
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "EXW"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Bengaluru"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "id": "RAP-0002207",
+            "state": "Created",
+            "provider": {
+                "id": "5f4104ba-fcd1-4ffc-90e8-ee7c26733f5f",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "ITM00123",
+                    "fulfillment_id": "F1",
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "reject"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "Discount"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "0.00"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "title": "CHICKEN COCKTAIL SAUSAGE-ASSRTD-12 X 1 KG-DFPL",
+                        "@ondc/org/item_id": "ITM00123",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "250.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "250.00"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Tax",
+                        "@ondc/org/item_id": "ITM00123",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30.00"
+                        }
+                    },
+                    {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "ITM00123",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "Packing",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "280.00"
+                },
+                "ttl": "P2D"
+            },
+            "created_at": "2023-09-29T13:02:41.721Z",
+            "updated_at": "2023-09-29T13:02:41.721Z",
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "29AABCL0212H1ZY"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
