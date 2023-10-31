@@ -1,64 +1,65 @@
+Request:
 {
   "context": {
-    "domain": "nic2004:52110",
+    "domain": "ONDC:RET10",
     "country": "IND",
     "city": "std:080",
     "action": "select",
-    "core_version": "1.1.0",
-    "bap_id": "buyer-app-preprod.ondc.org",
-    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-    "bpp_uri": "https://api.greenreceipt.in/ondc/",
-    "transaction_id": "3cff44d5-f135-4273-8b70-0015b6d4f8ec",
-    "message_id": "55f2633b-bfe4-43e8-899d-b20892003882",
-    "timestamp": "2023-04-21T13:21:53.346Z",
-    "bpp_id": "api.greenreceipt.in",
-    "ttl": "PT30S"
+    "core_version": "1.2.0",
+    "bap_id": "preprod.easypay.co.in",
+    "bap_uri": "https://preprod.easypay.co.in/ecommerce/ondc/buyer/",
+    "transaction_id": "EASPY-ONDC-1698748215470-1222121022322222",
+    "message_id": "EASPY-ONDC-1698747494682-0130231334908330",
+    "timestamp": "2023-10-31T16:00:34.382Z",
+    "ttl": "PT30M",
+    "bpp_id": "preprod-wiggles.humbhionline.in",
+    "bpp_uri": "https://preprod-wiggles.humbhionline.in/bpp/"
   },
   "message": {
     "order": {
-      "items": [
-        {
-          "id": "246024",
-          "quantity": {
-            "count": 1
-          },
-          "location_id": "1968"
-        },
-        {
-          "id": "246042",
-          "quantity": {
-            "count": 1
-          },
-          "location_id": "1968"
-        },
-        {
-          "id": "246070",
-          "quantity": {
-            "count": 2
-          },
-          "location_id": "1968"
-        }
-      ],
       "provider": {
-        "id": "1968",
+        "id": "preprod-wiggles.humbhionline.in",
         "locations": [
           {
-            "id": "1968"
+            "id": "./local_retail/ind/80777412902@preprod-wiggles.humbhionline.in.provider_location"
           }
         ]
       },
+      "items": [
+        {
+          "id": "./local_retail/ind/44773217239334@preprod-wiggles.humbhionline.in.item",
+          "location_id": "./local_retail/ind/80777412902@preprod-wiggles.humbhionline.in.provider_location",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
       "fulfillments": [
         {
+          "id": "1",
+          "type": "Delivery",
           "end": {
             "location": {
-              "gps": "13.032943, 77.630862",
+              "gps": "12.902848,77.599918",
               "address": {
-                "area_code": "560043"
+                "area_code": "560001"
               }
             }
           }
         }
       ]
+    }
+  }
+}
+
+
+
+
+Response:
+{
+  "message": {
+    "ack": {
+      "status": "ACK"
     }
   }
 }

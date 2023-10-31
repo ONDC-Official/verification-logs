@@ -1,167 +1,162 @@
+Request:
 {
   "context": {
-    "domain": "nic2004:52110",
-    "country": "IND",
-    "city": "std:080",
+    "domain": "ONDC:RET10",
     "action": "confirm",
-    "core_version": "1.1.0",
-    "bap_id": "buyer-app-preprod.ondc.org",
-    "bap_uri": "https://buyer-app-preprod.ondc.org/protocol/v1",
-    "bpp_uri": "https://api.greenreceipt.in/ondc/",
-    "transaction_id": "3cff44d5-f135-4273-8b70-0015b6d4f8ec",
-    "message_id": "09978a99-e183-4c13-a581-c1578fe3bd08",
-    "timestamp": "2023-04-21T13:22:22.334Z",
-    "bpp_id": "api.greenreceipt.in",
-    "ttl": "PT30S"
+    "core_version": "1.2.0",
+    "bap_id": "preprod.easypay.co.in",
+    "bap_uri": "https://preprod.easypay.co.in/ecommerce/ondc/buyer/",
+    "bpp_id": "preprod-wiggles.humbhionline.in",
+    "bpp_uri": "https://preprod-wiggles.humbhionline.in/bpp/",
+    "transaction_id": "EASPY-ONDC-1698748215470-1222121022322222",
+    "message_id": "EASPY-ONDC-1698747494682-0130231334908330",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2023-10-31T16:02:34.221Z",
+    "ttl": "PT30M"
   },
   "message": {
     "order": {
-      "id": "2023-04-21-583211",
+      "id": "EASPY-ONDC-1698748351752-2303301030110322",
       "state": "Created",
-      "billing": {
-        "address": {
-          "name": "Ashutosh Shukla",
-          "locality": "Pebble Bay",
-          "city": "Bengaluru",
-          "state": "Karnataka",
-          "country": "IND",
-          "area_code": "560043"
-        },
-        "phone": "9871847047",
-        "name": "Ashutosh Shukla",
-        "email": "ashutosh@buynxt.in",
-        "created_at": "2023-04-21T18:52:13.8169411+05:30",
-        "updated_at": "2023-04-21T18:52:13.8169411+05:30"
-      },
-      "items": [
-        {
-          "id": "246024",
-          "quantity": {
-            "count": 1
-          },
-          "fulfillment_id": "1968"
-        },
-        {
-          "id": "246042",
-          "quantity": {
-            "count": 1
-          },
-          "fulfillment_id": "1968"
-        },
-        {
-          "id": "246070",
-          "quantity": {
-            "count": 2
-          },
-          "fulfillment_id": "1968"
-        }
-      ],
       "provider": {
-        "id": "1968",
+        "id": "preprod-wiggles.humbhionline.in",
         "locations": [
           {
-            "id": "1968"
+            "id": "./local_retail/ind/80777412902@preprod-wiggles.humbhionline.in.provider_location"
           }
         ]
       },
+      "items": [
+        {
+          "id": "./local_retail/ind/44773217239334@preprod-wiggles.humbhionline.in.item",
+          "fulfillment_id": "fulfillment/home_delivery/EASPY-ONDC-1698748215470-1222121022322222",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "billing": {
+        "name": "Jay Piyushkumar Mehta ",
+        "address": {
+          "door": "15/11, KG Halli, D' Souza Layout, Ashok Nagar, Bengaluru, Karnataka 560001, India",
+          "name": "15/11",
+          "building": "15/11, KG Halli, D' Souza Layout, Ashok Nagar, Bengaluru, Karnataka 560001, India",
+          "locality": "15/11",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "area_code": "560001"
+        },
+        "phone": "9033891671",
+        "email": "vrushali.c@easypay.in",
+        "created_at": "2023-10-31T16:02:34.229Z",
+        "updated_at": "2023-10-31T16:02:34.229Z"
+      },
       "fulfillments": [
         {
-          "id": "1968",
+          "id": "fulfillment/home_delivery/EASPY-ONDC-1698748215470-1222121022322222",
+          "type": "Delivery",
           "tracking": false,
+          "provider_id": "preprod-wiggles.humbhionline.in/logistics",
           "end": {
-            "contact": {
-              "phone": "9871847047"
-            },
             "person": {
-              "name": "Ashutosh Shukla"
+              "name": "Jay Piyushkumar Mehta "
+            },
+            "contact": {
+              "email": "",
+              "phone": "9033891671"
             },
             "location": {
-              "gps": "12.9492953,77.7019878",
+              "gps": "12.902848,77.599918",
               "address": {
-                "name": "Ashutosh Shukla",
-                "locality": "Pebble Bay",
+                "door": "",
+                "name": "15/11",
+                "building": "",
+                "locality": "15/11",
                 "city": "Bengaluru",
                 "state": "Karnataka",
-                "country": "IND",
-                "area_code": "560043"
+                "country": "India",
+                "area_code": "560001"
               }
             }
           },
-          "type": "Delivery"
+          "rateable": true
         }
       ],
-      "payment": {
-        "uri": "https://juspay.in/",
-        "tl_method": "http/get",
-        "params": {
-          "amount": "530",
-          "currency": "INR"
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "249.0"
         },
-        "status": "NOT-PAID",
-        "type": "ON-FULFILLMENT",
-        "collected_by": "BPP",
+        "breakup": [
+          {
+            "@ondc/org/item_id": "fulfillment/home_delivery/EASPY-ONDC-1698748215470-1222121022322222",
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "60.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "./local_retail/ind/44773217239334@preprod-wiggles.humbhionline.in.item",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "title": "Barkstix Dog Treats for Training Adult & Puppies - Chicken & Banana - ( 100gm )",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "189.0"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "189.0"
+              },
+              "quantity": {
+                "available": {},
+                "maximum": {}
+              }
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "uri": "",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "EASPY-ONDC-1698748351752-2303301030110322",
+          "transaction_status": "SUCCESS",
+          "amount": "249.0"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/buyer_app_finder_fee_amount": "0",
         "@ondc/org/settlement_details": [
           {
             "settlement_counterparty": "seller-app",
             "settlement_phase": "sale-amount",
             "settlement_type": "upi",
-            "upi_address": "greenreceipt@oksbi",
-            "settlement_bank_account_no": "1234567890",
-            "settlement_ifsc_code": "BANK123",
-            "beneficiary_name": "Green Receipt",
-            "bank_name": "ABC Bank",
-            "branch_name": "Gurgaon"
+            "upi_address": "9845114558@upi"
           }
         ]
       },
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "530.00"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "246024",
-            "@ondc/org/item_quantity": {
-              "count": "1"
-            },
-            "title": "Classic Margaritha",
-            "@ondc/org/title_type": "item",
-            "price": {
-              "currency": "INR",
-              "value": "250.00"
-            }
-          },
-          {
-            "@ondc/org/item_id": "246042",
-            "@ondc/org/item_quantity": {
-              "count": "1"
-            },
-            "title": "French Fries Salted",
-            "@ondc/org/title_type": "item",
-            "price": {
-              "currency": "INR",
-              "value": "80.00"
-            }
-          },
-          {
-            "@ondc/org/item_id": "246070",
-            "@ondc/org/item_quantity": {
-              "count": "2"
-            },
-            "title": "Cappuchino",
-            "@ondc/org/title_type": "item",
-            "price": {
-              "currency": "INR",
-              "value": "100.00"
-            }
-          }
-        ]
-      },
-      "created_at": "2023-04-21T13:22:22.334Z",
-      "updated_at": "2023-04-21T13:22:22.334Z"
+      "tags": []
+    }
+  }
+}
+
+
+Response:
+{
+  "message": {
+    "ack": {
+      "status": "ACK"
     }
   }
 }
