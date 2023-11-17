@@ -1,75 +1,126 @@
 {
   "context": {
     "domain": "nic2004:60232",
-    "country": "IND",
-    "city": "std:080",
-    "action": "on_search",
     "core_version": "1.1.0",
     "bap_id": "preprod.xpressbaazaar.com",
     "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-    "bpp_id": "my.ithinklogistics.com/ondc/preprod",
-    "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
-    "transaction_id": "6ab22ac1-17ff-4638-a824-41fd5218601f",
-    "message_id": "97e8720a-22bc-45c9-b9cb-6b57b4e45c0b",
-    "timestamp": "2023-10-25T11:03:34.223Z"
+    "bpp_id": "preprod-bpp.iway.digiit.io",
+    "bpp_uri": "https://preprod-bpp.iway.digiit.io",
+    "city": "std:080",
+    "country": "IND",
+    "action": "on_search",
+    "transaction_id": "0c21c130-ae62-495e-be98-51e0c17a89be",
+    "message_id": "6ea1f2ef-12d3-4b7d-85f6-55cedaa65150",
+    "timestamp": "2023-11-07T13:00:53.955Z"
   },
   "message": {
     "catalog": {
       "bpp/fulfillments": [
         { "id": "1", "type": "Prepaid" },
-        { "id": "2", "type": "RTO" }
+        { "id": "3", "type": "RTO" },
+        { "id": "4", "type": "Reverse QC" }
       ],
-      "bpp/descriptor": { "name": "my.ithinklogistics.com" },
+      "bpp/descriptor": { "name": "iway" },
       "bpp/providers": [
         {
-          "id": "8",
+          "id": "107-Account-DER-292",
           "descriptor": {
-            "name": "iThinkLogistics",
-            "short_desc": "iThinkLogistics",
-            "long_desc": "iThinkLogistics"
+            "name": "Iway Logistics & Delivery",
+            "short_desc": "Iway Logistics & Delivery",
+            "long_desc": "Iway Logistics & Delivery"
           },
           "categories": [
             {
-              "id": "Standard Delivery",
-              "time": { "label": "TAT", "duration": "P1DT3H" }
+              "id": "Next Day Delivery",
+              "time": { "label": "TAT", "duration": "P1D" }
+            },
+            {
+              "id": "Immediate Delivery",
+              "time": { "label": "TAT", "duration": "PT45M" }
+            },
+            {
+              "id": "Same Day Delivery",
+              "time": { "label": "TAT", "duration": "PT6H" }
             }
           ],
           "items": [
             {
-              "id": "8I1",
+              "id": "18",
               "parent_item_id": "",
-              "category_id": "Standard Delivery",
+              "category_id": "Next Day Delivery",
               "fulfillment_id": "1",
               "descriptor": {
-                "code": "P2H2P",
-                "name": "Standard Delivery",
-                "short_desc": "Standard Delivery",
-                "long_desc": "Standard Delivery"
+                "code": "P2P",
+                "name": "Next Day Delivery",
+                "short_desc": "Next Day Delivery",
+                "long_desc": "Next Day Delivery"
               },
-              "price": { "currency": "INR", "value": "66.08" },
-              "time": {
-                "label": "TAT",
-                "duration": "P1DT3H",
-                "timestamp": "2023-10-26T14:30:00.000Z"
-              }
+              "price": { "currency": "INR", "value": "20.0" }
             },
             {
-              "id": "8I2",
-              "parent_item_id": "8I1",
-              "category_id": "Standard Delivery",
-              "fulfillment_id": "2",
+              "id": "rto-item-18",
+              "parent_item_id": "18",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "3",
               "descriptor": {
-                "code": "P2H2P",
+                "code": "P2P",
                 "name": "RTO quote",
                 "short_desc": "RTO quote",
                 "long_desc": "RTO quote"
               },
-              "price": { "currency": "INR", "value": "29.00" },
-              "time": {
-                "label": "TAT",
-                "duration": "P1DT3H",
-                "timestamp": "2023-10-26T14:30:00.000Z"
-              }
+              "price": { "currency": "INR", "value": "25.0" }
+            },
+            {
+              "id": "19",
+              "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Immediate Delivery",
+                "short_desc": "Immediate Delivery",
+                "long_desc": "Immediate Delivery"
+              },
+              "price": { "currency": "INR", "value": "30.0" }
+            },
+            {
+              "id": "rto-item-19",
+              "parent_item_id": "19",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": { "currency": "INR", "value": "35.0" }
+            },
+            {
+              "id": "20",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Same Day Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery"
+              },
+              "price": { "currency": "INR", "value": "25.0" }
+            },
+            {
+              "id": "rto-item-20",
+              "parent_item_id": "20",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "3",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": { "currency": "INR", "value": "30.0" }
             }
           ]
         }
