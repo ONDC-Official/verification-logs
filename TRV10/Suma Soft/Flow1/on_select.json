@@ -1,0 +1,239 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:020"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "timestamp": "2023-11-21T08:19:33.126Z",
+    "transaction_id": "8669464f-e967-42a2-99bb-83e45b2a99f2",
+    "message_id": "f8b68d0e-97c3-4d6a-bbb3-0ae36d9e5361",
+    "version": "2.0.0",
+    "action": "/on_select",
+    "bap_id": "mobilitybuyer.sumasoft.com",
+    "bap_uri": "https://mobilitybuyer.sumasoft.com/mobility/passenger",
+    "bpp_uri": "https://mobilityseller.sumasoft.com/mobility/auto",
+    "bpp_id": "mobilityseller.sumasoft.com"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "64914e84e833e424558d20b5",
+        "descriptor": {
+          "name": "SUMA-SOFT"
+        }
+      },
+      "items": [
+        {
+          "id": "64914ec2e833e424558d218f",
+          "descriptor": {
+            "name": "AUTO-RIKSHA-ECONOMICAL"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "3"
+                }
+              ]
+            }
+          ],
+          "fulfillment_ids": [
+            "64dddb50a5fecda2e209adac"
+          ],
+          "payment_ids": [
+            null
+          ]
+        }
+      ],
+      "quote": {
+        "value": 190.38,
+        "currency": "INR",
+        "breakup": [
+          {
+            "title": "Base Fare",
+            "price": {
+              "value": 23,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "Per km fare",
+            "price": {
+              "value": 15.33,
+              "currency": "INR"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "64dddb50a5fecda2e209adac",
+          "state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED",
+              "name": "Ride is assigned."
+            }
+          },
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "18.560911,73.8068482",
+                "address": "Warje, Pune, Maharashtra, India"
+              }
+            },
+            {
+              "type": "END",
+              "time": {
+                "duration": "PT25M"
+              },
+              "location": {
+                "gps": "18.4864727,73.79683399999999",
+                "address": "Warje, Pune, Maharashtra, India"
+              }
+            }
+          ],
+          "rateable": true,
+          "agent": {
+            "person": {
+              "id": "64feabba0bdedc28e42c49f9",
+              "name": "Pallavi  Kadam"
+            }
+          },
+          "vehicle": {
+            "category": "AUTO-RICKSHAW"
+          }
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "100"
+          }
+        }
+      ]
+    }
+  }
+}
