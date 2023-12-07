@@ -1,7 +1,7 @@
 {
     "context": {
-        "ttl": "PT2M",
-        "action": "init",
+        "ttl": "PT300S",
+        "action": "on_init",
         "bap_id": "openbox.preprod.triffy.in",
         "bpp_id": "openbox.preprod.triffy.in",
         "domain": "ONDC:TRV10",
@@ -16,16 +16,15 @@
                 "code": "IND"
             }
         },
-        "timestamp": "2023-12-07T20:21:01.803Z",
-        "message_id": "7111f3e2-2efc-495e-8ddb-342daa6a8498",
-        "transaction_id": "8a457a18-238f-46fc-beed-a73133ea9c8f"
+        "timestamp": "2023-12-07T19:28:02.595Z",
+        "message_id": "d3e9f7ce-9516-48ec-b48d-c662354b184e",
+        "transaction_id": "c10d67ed-6aa7-4d9a-992d-052b5e8bc257"
     },
     "message": {
         "order": {
-            "id": "kOiivRSywU",
             "items": [
                 {
-                    "id": "a1aba09e-69f5-48ad-921f-f126c111d89b",
+                    "id": "2d3caeb0-d30a-4228-86d3-8bdb894b7b33",
                     "tags": [
                         {
                             "list": [
@@ -85,20 +84,56 @@
                         }
                     ],
                     "price": {
-                        "value": "70",
+                        "value": "271",
                         "currency": "INR"
                     },
                     "descriptor": {
                         "code": "RIDE",
                         "name": "TRIFFY RIDE"
                     },
+                    "payment_ids": [
+                        "494c580e-4821-4e1f-9ef9-2e5e2f3fa67c"
+                    ],
                     "fulfillment_ids": [
-                        "cd4e299d-402b-4997-b0c2-e960932c7c4a"
+                        "dc1e7472-321b-43a1-bb06-04397d449a51"
                     ]
                 }
             ],
-            "billing": {
-                "name": "Imayaselvan "
+            "quote": {
+                "price": {
+                    "value": "271",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "value": "40",
+                            "currency": "INR"
+                        },
+                        "title": "BASE_CHARGE"
+                    },
+                    {
+                        "price": {
+                            "value": "134",
+                            "currency": "INR"
+                        },
+                        "title": "DISTANCE_CHARGE"
+                    },
+                    {
+                        "price": {
+                            "value": "10",
+                            "currency": "INR"
+                        },
+                        "title": "PICKUP_CHARGE"
+                    },
+                    {
+                        "price": {
+                            "value": "87",
+                            "currency": "INR"
+                        },
+                        "title": "SURGE_CHARGE"
+                    }
+                ]
             },
             "payments": [
                 {
@@ -177,32 +212,71 @@
             },
             "fulfillments": [
                 {
-                    "id": "cd4e299d-402b-4997-b0c2-e960932c7c4a",
+                    "id": "dc1e7472-321b-43a1-bb06-04397d449a51",
                     "type": "DELIVERY",
                     "stops": [
                         {
                             "type": "START",
                             "location": {
-                                "gps": "12.916296, 77.652132"
+                                "gps": "12.961728, 77.659253"
                             }
                         },
                         {
                             "type": "END",
                             "location": {
-                                "gps": "12.912068, 77.650045"
+                                "gps": "12.916267, 77.651855"
                             }
                         }
                     ],
                     "vehicle": {
                         "variant": "Auto",
                         "category": "AUTO_RICKSHAW"
-                    },
-                    "customer": {
-                        "person": {
-                            "name": "Imayaselvan "
+                    }
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
                         },
-                        "contact": {
-                            "phone": "9043213001"
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ASSIGNED"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ENROUTE_PICKUP"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ARRIVED_PICKUP"
                         }
                     }
                 }
