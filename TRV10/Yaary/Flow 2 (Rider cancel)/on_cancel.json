@@ -1,14 +1,12 @@
 {
-    "error": {},
     "context": {
-        "key": "YaikZICyoqdGnFO/4yD6NZzXNbsMO2ceFkLVLFjoER4=",
         "ttl": "PT120S",
-        "action": "ONCANCEL",
-        "bap_id": "openbox-uat.triffy.co",
-        "bpp_id": "openbox-uat.triffy.co",
+        "action": "on_cancel",
+        "bap_id": "openbox.preprod.triffy.in",
+        "bpp_id": "openbox.preprod.triffy.in",
         "domain": "ONDC:TRV10",
-        "bap_uri": "https://openbox-uat.triffy.co/bap",
-        "bpp_uri": "https://openbox-uat.triffy.co/bpp",
+        "bap_uri": "https://openbox.preprod.triffy.in/buyer",
+        "bpp_uri": "https://openbox.preprod.triffy.in/seller",
         "version": "2.0.0",
         "location": {
             "city": {
@@ -18,55 +16,97 @@
                 "code": "IND"
             }
         },
-        "timestamp": "2023-11-28T12:23:00.356439+05:30",
-        "message_id": "6743e9e2-4fb5-487c-92b7-13ba8018f177",
-        "transaction_id": "df049d0d-152d-472f-864a-6802be6fd201"
+        "timestamp": "2023-12-07T07:37:09Z",
+        "message_id": "59c1a2cc-3035-43a0-bbf2-d1ddf03fc05c",
+        "transaction_id": "5eadb960-fcae-4595-b7c8-af2f981471db"
     },
     "message": {
         "order": {
             "items": [
                 {
-                    "id": "1a34f77a-3e45-4332-4f6b-01c4dba34e12",
+                    "id": "03fccbe3-0ddc-4fb4-b260-e82a776eec40",
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "1.5",
+                                    "descriptor": {
+                                        "code": "NIGHT_CHARGE_MULTIPLIER"
+                                    }
+                                },
+                                {
+                                    "value": "23:00:00",
+                                    "descriptor": {
+                                        "code": "NIGHT_SHIFT_START_TIME"
+                                    }
+                                },
+                                {
+                                    "value": "05:00:00",
+                                    "descriptor": {
+                                        "code": "NIGHT_SHIFT_END_TIME"
+                                    }
+                                },
+                                {
+                                    "value": "40",
+                                    "descriptor": {
+                                        "code": "MIN_FARE"
+                                    }
+                                },
+                                {
+                                    "value": "2",
+                                    "descriptor": {
+                                        "code": "MIN_FARE_DISTANCE_KM"
+                                    }
+                                },
+                                {
+                                    "value": "15",
+                                    "descriptor": {
+                                        "code": "PER_KM_CHARGE"
+                                    }
+                                },
+                                {
+                                    "value": "10",
+                                    "descriptor": {
+                                        "code": "PICKUP_CHARGE"
+                                    }
+                                },
+                                {
+                                    "value": "0",
+                                    "descriptor": {
+                                        "code": "WAITING_CHARGE_PER_MIN"
+                                    }
+                                }
+                            ],
+                            "display": true,
+                            "descriptor": {
+                                "code": "FARE_POLICY"
+                            }
+                        }
+                    ],
                     "price": {
-                        "value": "251",
+                        "value": "0",
                         "currency": "INR"
                     },
                     "descriptor": {
                         "code": "RIDE"
                     },
                     "payment_ids": [
-                        "51e3ca60-7b3d-4f6b-897f-02b2dbf30e53"
+                        "2ac286b7-444c-4c29-b55b-1d9000c5a61c"
                     ],
                     "fulfillment_ids": [
-                        "3e22f77a-0642-4551-a038-d8dee48ac75f"
+                        "18cd93de-dd43-4e23-8acd-8864c0b8d13a"
                     ]
                 }
             ],
             "quote": {
                 "price": {
-                    "value": "251",
+                    "value": "0",
                     "currency": "INR"
-                },
-                "breakup": [
-                    {
-                        "price": {
-                            "value": "236",
-                            "currency": "INR"
-                        },
-                        "title": "base_price"
-                    },
-                    {
-                        "price": {
-                            "value": "15",
-                            "currency": "INR"
-                        },
-                        "title": "pickup_charge"
-                    }
-                ]
+                }
             },
             "payments": [
                 {
-                    "id": "51e3ca60-7b3d-4f6b-897f-02b2dbf30e53",
+                    "id": "2ac286b7-444c-4c29-b55b-1d9000c5a61c",
                     "type": "ON-FULFILLMENT",
                     "params": {
                         "bank_code": "DUMMY_BANK_CODE",
@@ -77,56 +117,108 @@
                     "collected_by": "BPP"
                 }
             ],
+            "provider": {
+                "id": "Triffy_Provider"
+            },
             "fulfillments": [
                 {
-                    "id": "3e22f77a-0642-4551-a038-d8dee48ac75f",
-                    "type": "Delivery",
+                    "id": "18cd93de-dd43-4e23-8acd-8864c0b8d13a",
+                    "type": "DELIVERY",
                     "agent": {
                         "person": {
-                            "id": "99efe7e3-d635-49a2-b52e-25c7ec90b1d9",
-                            "name": "Test"
+                            "id": "d2ae7cfa-85c2-4764-8f2f-fac61a9eecbb",
+                            "name": "Shashank"
                         },
                         "contact": {
-                            "phone": "6363767270"
+                            "phone": "6638252072"
                         }
                     },
                     "state": {
                         "descriptor": {
                             "code": "RIDE_CANCELLED",
-                            "name": "The ride has been canceled"
+                            "name": "The ride has been cancelled"
                         }
                     },
                     "stops": [
                         {
                             "type": "START",
                             "location": {
-                                "gps": "12.916266972027486,77.65185441469565"
+                                "gps": "12.916179, 77.652238",
+                                "address": "643, 12th Cross Rd, Sector 2, PWD Quarters, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102, India"
                             },
                             "authorization": {
                                 "type": "OTP",
-                                "token": "3413"
+                                "token": "7183"
                             }
                         },
                         {
                             "type": "END",
                             "location": {
-                                "gps": "12.827809948288182,77.65578420390976"
+                                "gps": "12.986906, 77.601985",
+                                "address": "140, Rajiv Gandhi Colony, Shivaji Nagar, Bengaluru, Karnataka 560051, India"
                             }
                         }
                     ],
                     "vehicle": {
-                        "make": "BAJAJ",
-                        "model": "RE",
+                        "make": "Bajaj",
+                        "model": "RE Compact",
                         "variant": "Auto",
                         "category": "AUTO_RICKSHAW",
-                        "registration": "KA57"
+                        "registration": "TS896631"
                     },
                     "customer": {
                         "person": {
-                            "name": "SAURABH SINGH"
+                            "name": "Ajith Madhan"
                         },
                         "contact": {
-                            "phone": "8888888888"
+                            "phone": "7448308493"
+                        }
+                    }
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ASSIGNED"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ENROUTE_PICKUP"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ARRIVED_PICKUP"
                         }
                     }
                 }
