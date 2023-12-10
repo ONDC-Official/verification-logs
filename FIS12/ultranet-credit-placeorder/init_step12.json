@@ -4,13 +4,16 @@
 	    "location": {
 		"country": {
 		    "code": "IND"
+		},
+		"city": {
+		    "code": "*"
 		}
 	    },
 	    "action": "init",
 	    "version": "2.0.0",
-	    "transaction_id": "d9df6289-ff9a-4ba3-847d-739ba44c77a2",
-	    "message_id": "d3e77128-ae75-4ef7-8575-ab5a9d97387b",
-	    "timestamp": "2023-12-08T15:47:50.419Z",
+	    "transaction_id": "15756b7d-0608-446e-b548-41ce1cc62e2f",
+	    "message_id": "624ebf86-8044-44ad-9132-7ce356f410c5",
+	    "timestamp": "2023-12-10T11:00:34.736Z",
 	    "bap_id": "preprod-fis.placeorder.com",
 	    "bap_uri": "https://preprod-fis.placeorder.com/v1/ondc-fis/buyer",
 	    "bpp_id": "dmi-ondcpreprod.refo.dev",
@@ -27,11 +30,11 @@
 			"id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
 			"xinput": {
 			    "form": {
-				"id": "2435a13a-cdf8-48fa-8b62-071139da4b17"
+				"id": "9ca99aca-545d-49c3-99bb-9a9756cd7eb5"
 			    },
 			    "form_response": {
 				"status": "SUCCESS",
-				"submission_id": "be72e106-97f8-45de-bfaa-54b1b4545919"
+				"submission_id": "b13907d1-b0a0-4576-93bb-5ecc2202ec07"
 			    }
 			}
 		    }
@@ -39,6 +42,12 @@
 		"payments": [
 		    {
 			"collected_by": "BPP",
+			"type": "ON_ORDER",
+			"params": {
+			    "bank_account_number": "000701557895",
+			    "bank_code": "ICIC0000007",
+			    "virtual_payment_address": "pawan6179@icici"
+			},
 			"tags": [
 			    {
 				"descriptor": {
@@ -55,7 +64,7 @@
 					"descriptor": {
 					    "code": "BUYER_FINDER_FEES_PERCENTAGE"
 					},
-					"value": "0"
+					"value": "1"
 				    }
 				],
 				"display": false
@@ -81,39 +90,15 @@
 				"list": [
 				    {
 					"descriptor": {
+					    "code": "SETTLEMENT_AMOUNT"
+					},
+					"value": "1000"
+				    },
+				    {
+					"descriptor": {
 					    "code": "SETTLEMENT_WINDOW"
 					},
 					"value": "PT60M"
-				    },
-				    {
-					"descriptor": {
-					    "code": "SETTLEMENT_BASIS"
-					},
-					"value": "Delivery"
-				    },
-				    {
-					"descriptor": {
-					    "code": "SETTLEMENT_TYPE"
-					},
-					"value": "upi"
-				    },
-				    {
-					"descriptor": {
-					    "code": "MANDATORY_ARBITRATION"
-					},
-					"value": "true"
-				    },
-				    {
-					"descriptor": {
-					    "code": "COURT_JURISDICTION"
-					},
-					"value": "New Delhi"
-				    },
-				    {
-					"descriptor": {
-					    "code": "DELAY_INTEREST"
-					},
-					"value": "0"
 				    },
 				    {
 					"descriptor": {
@@ -123,9 +108,33 @@
 				    },
 				    {
 					"descriptor": {
-					    "code": "SETTLEMENT_AMOUNT"
+					    "code": "MANDATORY_ARBITRATION"
 					},
-					"value": "0"
+					"value": "true"
+				    },
+				    {
+					"descriptor": {
+					    "code": "SETTLEMENT_BASIS"
+					},
+					"value": "invoice_receipt"
+				    },
+				    {
+					"descriptor": {
+					    "code": "SETTLEMENT_TYPE"
+					},
+					"value": "upi"
+				    },
+				    {
+					"descriptor": {
+					    "code": "DELAY_INTEREST"
+					},
+					"value": "2.5"
+				    },
+				    {
+					"descriptor": {
+					    "code": "COURT_JURISDICTION"
+					},
+					"value": "New Delhi"
 				    }
 				],
 				"display": false
