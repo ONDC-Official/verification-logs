@@ -1,0 +1,220 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:020"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "timestamp": "2023-12-11T12:58:18.114Z",
+    "transaction_id": "9aa69fd4-7de7-4d92-9a7e-9b34e18ab1ff",
+    "message_id": "6ee263c3-59ad-4c6b-8263-c155b2007093",
+    "version": "2.0.0",
+    "action": "on_status",
+    "bap_id": "staging-xcellntapps-buyer.sumasoft.com",
+    "bap_uri": "htts://staging-xcellntapps-buyer.sumasoft.com/mobility/passenger",
+    "bpp_uri": "https://staging-xcellntapps-seller.sumasoft.com/mobility/auto",
+    "bpp_id": "staging-xcellntapps-seller.sumasoft.com"
+  },
+  "message": {
+    "order": {
+      "id": "65770738dd603658a69386a2",
+      "provider": {
+        "id": "64df4347a5fecda2e20afda0",
+        "descriptor": {
+          "name": "SUMA-SOFT-CABS"
+        }
+      },
+      "items": [
+        {
+          "id": "64ddaacaa5fecda2e2097559",
+          "descriptor": {
+            "name": "ECONOMICAL",
+            "images": [
+              "uri:https://staging-xcellntapps-seller.sumasoft.com/uploads/icons/64ddaacaa5fecda2e2097558-64ddaacaa5fecda2e2097559.png"
+            ]
+          },
+          "price": {
+            "value": "93.49",
+            "currency": "INR"
+          },
+          "fulfillment_ids": [
+            "64ddaacaa5fecda2e2097558"
+          ],
+          "payment_ids": [
+            "6577073c8da53d25cd9cf78b"
+          ]
+        }
+      ],
+      "quote": {
+        "value": "93.49",
+        "currency": "INR",
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": 28,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "CGST",
+            "price": {
+              "value": "2.20",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "SGST",
+            "price": {
+              "value": "2.20",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": 60,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "BUYER_FINDER_FEES",
+            "price": {
+              "value": 1.09032,
+              "currency": "INR"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "64ddaacaa5fecda2e2097559",
+          "state": {
+            "descriptor": {
+              "code": "PAYMENT_COLLECTED",
+              "name": "Payment received"
+            }
+          },
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "OTP",
+                "token": "9518"
+              },
+              "location": {
+                "gps": "18.5609446,73.8070409",
+                "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+              }
+            },
+            {
+              "type": "END",
+              "authorization": {
+                "type": "OTP",
+                "token": "9518"
+              },
+              "location": {
+                "gps": "18.5642452,73.7768511",
+                "address": "Baner, Pune, Maharashtra, India"
+              }
+            }
+          ],
+          "agent": {
+            "person": {
+              "id": "657190008da53d25cd9911fc",
+              "name": "Pallavi  Kadam "
+            },
+            "contact": {
+              "phone": "9696974441"
+            }
+          },
+          "rateable": false,
+          "rating": 0,
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "registration": "ABCD124567"
+          },
+          "customer": {
+            "person": {
+              "name": "Rohit Vairagkar"
+            },
+            "contact": {}
+          }
+        }
+      ],
+      "cancellation_terms": {
+        "cancellation_terms": [
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ASSIGNED"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ENROUTE_PICKUP"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "30"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ARRIVED_PICKUP"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "50"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_STARTED"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "percentage": "100"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "6577073c8da53d25cd9cf78b",
+          "collected_by": "BPP",
+          "status": "PAID",
+          "type": "ON-FULFILLMENT",
+          "params": {
+            "amount": 93.49,
+            "currency": "INR"
+          }
+        }
+      ]
+    }
+  }
+}

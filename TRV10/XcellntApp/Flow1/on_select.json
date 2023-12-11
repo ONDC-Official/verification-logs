@@ -1,0 +1,261 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:020"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "timestamp": "2023-12-11T12:57:31.054Z",
+    "transaction_id": "9aa69fd4-7de7-4d92-9a7e-9b34e18ab1ff",
+    "message_id": "5c8befdf-ff92-4787-bb55-082e1dc5ab92",
+    "version": "2.0.0",
+    "action": "/on_select",
+    "bap_id": "staging-xcellntapps-buyer.sumasoft.com",
+    "bap_uri": "htts://staging-xcellntapps-buyer.sumasoft.com/mobility/passenger",
+    "bpp_uri": "https://staging-xcellntapps-seller.sumasoft.com/mobility/auto",
+    "bpp_id": "staging-xcellntapps-seller.sumasoft.com"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "64df4347a5fecda2e20afda0",
+        "descriptor": {
+          "name": "SUMA-SOFT-CABS"
+        }
+      },
+      "items": [
+        {
+          "id": "64ddaacaa5fecda2e2097559",
+          "descriptor": {
+            "name": "ECONOMICAL",
+            "code": "TAXI-ECO"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "3"
+                }
+              ]
+            }
+          ],
+          "fulfillment_ids": [
+            "64ddaacaa5fecda2e2097558"
+          ],
+          "payment_ids": [
+            null
+          ]
+        }
+      ],
+      "quote": {
+        "value": 93.49,
+        "currency": "INR",
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": 28,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "CGST",
+            "price": {
+              "value": "2.20",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "SGST",
+            "price": {
+              "value": "2.20",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": 60,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "BUYER_FINDER_FEES",
+            "price": {
+              "value": 1.09032,
+              "currency": "INR"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "64ddaacaa5fecda2e2097558",
+          "state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED",
+              "name": "Ride is assigned."
+            }
+          },
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "18.5609446,73.8070409",
+                "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+              }
+            },
+            {
+              "type": "END",
+              "time": {
+                "duration": "PT10M"
+              },
+              "location": {
+                "gps": "18.5642452,73.7768511",
+                "address": "Baner, Pune, Maharashtra, India"
+              }
+            }
+          ],
+          "rateable": true,
+          "agent": {
+            "person": {
+              "id": "657190008da53d25cd9911fc",
+              "name": "Pallavi  Kadam "
+            }
+          },
+          "vehicle": {
+            "category": "CABS"
+          }
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "100"
+          }
+        }
+      ]
+    }
+  }
+}
