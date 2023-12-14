@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2023-11-21T10:00:26.384Z",
-    "transaction_id": "ee76e08e-f205-479b-ac0a-1ba05c527708",
-    "message_id": "b36c5cc6-cec9-4363-808e-ac427b62a19a",
+    "timestamp": "2023-12-14T10:57:42.745Z",
+    "transaction_id": "5f2be493-63c4-4496-90c1-a632a8e79791",
+    "message_id": "1175be9f-aac1-4d48-841d-154e5b7d3ff9",
     "version": "2.0.0",
     "action": "/on_select",
     "bap_id": "mobilitybuyer.sumasoft.com",
@@ -22,16 +22,17 @@
   "message": {
     "order": {
       "provider": {
-        "id": "64914e84e833e424558d20b5",
+        "id": "64df4347a5fecda2e20afda0",
         "descriptor": {
-          "name": "SUMA-SOFT"
+          "name": "TAXI-SANGHATANA"
         }
       },
       "items": [
         {
-          "id": "64914ec2e833e424558d218f",
+          "id": "64ddaacaa5fecda2e2097559",
           "descriptor": {
-            "name": "AUTO-RIKSHA-ECONOMICAL"
+            "name": "ECONOMICAL",
+            "code": "RIDE"
           },
           "tags": [
             {
@@ -112,7 +113,7 @@
             }
           ],
           "fulfillment_ids": [
-            "64dddb50a5fecda2e209adac"
+            "64ddaacaa5fecda2e2097558"
           ],
           "payment_ids": [
             null
@@ -120,20 +121,41 @@
         }
       ],
       "quote": {
-        "value": 190.38,
+        "value": 146.15,
         "currency": "INR",
         "breakup": [
           {
-            "title": "Base Fare",
+            "title": "BASE_FARE",
             "price": {
-              "value": 23,
+              "value": 28,
               "currency": "INR"
             }
           },
           {
-            "title": "Per km fare",
+            "title": "CGST",
             "price": {
-              "value": 15.33,
+              "value": "3.48",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "SGST",
+            "price": {
+              "value": "3.48",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": 111.1911088631957,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "BUYER_FINDER_FEES",
+            "price": {
+              "value": 0,
               "currency": "INR"
             }
           }
@@ -141,7 +163,7 @@
       },
       "fulfillments": [
         {
-          "id": "64dddb50a5fecda2e209adac",
+          "id": "64ddaacaa5fecda2e2097558",
           "state": {
             "descriptor": {
               "code": "RIDE_ASSIGNED",
@@ -152,30 +174,43 @@
             {
               "type": "START",
               "location": {
-                "gps": "18.5609126,73.8068199",
-                "address": "Warje, Pune, Maharashtra, India"
+                "gps": "18.5609368,73.8070244",
+                "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
               }
             },
             {
               "type": "END",
               "time": {
-                "duration": "PT25M"
+                "duration": "PT18M"
               },
               "location": {
-                "gps": "18.4864727,73.79683399999999",
-                "address": "Warje, Pune, Maharashtra, India"
+                "gps": "18.5073514,73.8076543",
+                "address": "Kothrud, Pune, Maharashtra, India"
               }
             }
           ],
           "rateable": true,
+          "rating": 3.34,
           "agent": {
             "person": {
-              "id": "64feabba0bdedc28e42c49f9",
+              "id": "656094052277809a4fed3a35",
               "name": "Pallavi  Kadam"
             }
           },
           "vehicle": {
             "category": "AUTO-RICKSHAW"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "params": {
+            "bank_code": "ICIC000001",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "amit.sharma@upi"
           }
         }
       ],

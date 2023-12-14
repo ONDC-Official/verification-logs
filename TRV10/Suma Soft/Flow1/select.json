@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2023-11-21T08:19:18.283Z",
-    "transaction_id": "8669464f-e967-42a2-99bb-83e45b2a99f2",
-    "message_id": "f8b68d0e-97c3-4d6a-bbb3-0ae36d9e5361",
+    "timestamp": "2023-12-14T10:45:47.780Z",
+    "transaction_id": "7fd95aee-1be0-48eb-bd96-184c0c73fb65",
+    "message_id": "bd45905d-ee6a-42d9-9c6a-25d7d1097c37",
     "version": "2.0.0",
     "action": "select",
     "bap_id": "mobilitybuyer.sumasoft.com",
@@ -21,13 +21,64 @@
   },
   "message": {
     "order": {
+      "provider": {
+        "id": "64df4347a5fecda2e20afda0",
+        "descriptor": {
+          "name": "SUMA-SOFT-CABS"
+        },
+        "payments": [],
+        "items": [
+          {
+            "id": "64ddaacaa5fecda2e2097559",
+            "descriptor": {
+              "name": "ECONOMICAL",
+              "code": "RIDE"
+            },
+            "price": {
+              "value": "332.30",
+              "currency": "INR"
+            },
+            "fulfillment_ids": [
+              "64ddaacaa5fecda2e2097558"
+            ],
+            "images": [
+              "uri:https://mobilityseller.sumasoft.com/uploads/icons/64ddaacaa5fecda2e2097558-64ddaacaa5fecda2e2097559.png"
+            ]
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "64ddaacaa5fecda2e2097558",
+            "stops": [
+              {
+                "type": "START",
+                "location": {
+                  "gps": "18.5609453,73.8070427",
+                  "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+                }
+              },
+              {
+                "type": "END",
+                "location": {
+                  "gps": "18.5002903,73.93898879999999",
+                  "address": "Hadapsar Gadital Bus Stand, Utkarsh Nagar, Hadapsar, Pune, Maharashtra, India"
+                }
+              }
+            ],
+            "vehicle": {
+              "category": "CABS"
+            }
+          }
+        ]
+      },
       "items": [
         {
-          "id": "64914ec2e833e424558d218f"
+          "id": "64ddaacaa5fecda2e2097559"
         }
       ],
       "fulfillments": [
         {
+          "id": "64ddaacaa5fecda2e2097558",
           "stops": [
             {
               "type": "START",
@@ -38,8 +89,62 @@
             {
               "type": "END",
               "location": {
-                "address": "Warje, Pune, Maharashtra, India"
+                "address": "Hadapsar Gadital Bus Stand, Utkarsh Nagar, Hadapsar, Pune, Maharashtra, India"
               }
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "ON-FULFILLMENT",
+          "status": "NOT-PAID",
+          "params": {
+            "bank_code": "ICIC000001",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "amit.sharma@upi"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
             }
           ]
         }

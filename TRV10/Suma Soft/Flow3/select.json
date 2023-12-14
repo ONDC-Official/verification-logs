@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2023-11-21T08:26:42.553Z",
-    "transaction_id": "df7192d8-dc62-4511-99b8-84948067ef76",
-    "message_id": "28695d56-e5b0-4e4a-9f6d-978557e95dad",
+    "timestamp": "2023-12-14T10:49:07.213Z",
+    "transaction_id": "45f2dc63-9b3b-4984-924c-9dab449baed8",
+    "message_id": "fd7f55f5-10a0-4203-8453-6fa1c1bddb61",
     "version": "2.0.0",
     "action": "select",
     "bap_id": "mobilitybuyer.sumasoft.com",
@@ -21,13 +21,64 @@
   },
   "message": {
     "order": {
+      "provider": {
+        "id": "64df4347a5fecda2e20afda0",
+        "descriptor": {
+          "name": "SUMA-SOFT-CABS"
+        },
+        "payments": [],
+        "items": [
+          {
+            "id": "64ddaacaa5fecda2e2097559",
+            "descriptor": {
+              "name": "ECONOMICAL",
+              "code": "RIDE"
+            },
+            "price": {
+              "value": "146.17",
+              "currency": "INR"
+            },
+            "fulfillment_ids": [
+              "64ddaacaa5fecda2e2097558"
+            ],
+            "images": [
+              "uri:https://mobilityseller.sumasoft.com/uploads/icons/64ddaacaa5fecda2e2097558-64ddaacaa5fecda2e2097559.png"
+            ]
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "64ddaacaa5fecda2e2097558",
+            "stops": [
+              {
+                "type": "START",
+                "location": {
+                  "gps": "18.5609453,73.8070427",
+                  "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+                }
+              },
+              {
+                "type": "END",
+                "location": {
+                  "gps": "18.5073514,73.8076543",
+                  "address": "Kothrud, Pune, Maharashtra, India"
+                }
+              }
+            ],
+            "vehicle": {
+              "category": "CABS"
+            }
+          }
+        ]
+      },
       "items": [
         {
-          "id": "64914ec2e833e424558d218f"
+          "id": "64ddaacaa5fecda2e2097559"
         }
       ],
       "fulfillments": [
         {
+          "id": "64ddaacaa5fecda2e2097558",
           "stops": [
             {
               "type": "START",
@@ -38,8 +89,62 @@
             {
               "type": "END",
               "location": {
-                "address": "Warje, Pune, Maharashtra, India"
+                "address": "Kothrud, Pune, Maharashtra, India"
               }
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "ON-FULFILLMENT",
+          "status": "NOT-PAID",
+          "params": {
+            "bank_code": "ICIC000001",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "amit.sharma@upi"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
             }
           ]
         }
