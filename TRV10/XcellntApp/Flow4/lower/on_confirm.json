@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2023-12-12T12:57:35.456Z",
-    "transaction_id": "a02114c6-47ec-4533-975c-ad0e8cd6e8ab",
-    "message_id": "127cf90f-862f-459a-bb09-e5efd346fd67",
+    "timestamp": "2023-12-14T04:32:24.641Z",
+    "transaction_id": "3a47f91d-be90-48d8-a3fd-19cc86b04537",
+    "message_id": "bdd49e4e-ecd0-44b4-8632-af944d66482b",
     "version": "2.0.0",
     "action": "on_confirm",
     "bap_id": "staging-xcellntapps-buyer.sumasoft.com",
@@ -21,7 +21,7 @@
   },
   "message": {
     "order": {
-      "id": "657858b5ce3eda1a247d19f8",
+      "id": "657a854ef8e29cf0199911ba",
       "provider": {
         "id": "64df4347a5fecda2e20afda0"
       },
@@ -33,21 +33,20 @@
             "code": "TAXI-ECO"
           },
           "price": {
-            "maximum_value": "252.85",
             "currency": "INR",
-            "minimum_value": "252.85"
+            "value": "108.97"
           },
           "tags": "",
           "fulfillment_id": [
             "64ddaacaa5fecda2e2097558"
           ],
           "payment_id": [
-            "657858b98da53d25cd9e2ce0"
+            "657a85538da53d25cd9fb6ff"
           ]
         }
       ],
       "quote": {
-        "value": "252.85",
+        "value": "108.97",
         "currency": "INR",
         "breakup": [
           {
@@ -58,34 +57,42 @@
             }
           },
           {
+            "title": "MID_NIGHT_CHARGES",
+            "price": {
+              "value": 14.923757093679665,
+              "currency": "INR"
+            }
+          },
+          {
             "title": "CGST",
             "price": {
-              "value": "5.95",
+              "value": "2.57",
               "currency": "INR"
             }
           },
           {
             "title": "SGST",
             "price": {
-              "value": "5.95",
+              "value": "2.57",
               "currency": "INR"
             }
           },
           {
             "title": "DISTANCE_FARE",
             "price": {
-              "value": 210,
+              "value": 59.69502837471866,
               "currency": "INR"
             }
           },
           {
             "title": "BUYER_FINDER_FEES",
             "price": {
-              "value": 2.94882,
+              "value": 1.2109016685271003,
               "currency": "INR"
             }
           }
-        ]
+        ],
+        "ttl": "P200S"
       },
       "fulfillments": [
         {
@@ -102,7 +109,7 @@
               "name": "Rohit Vairagkar"
             },
             "contact": {
-              "phone": ""
+              "phone": "9763783236"
             }
           },
           "agent": {
@@ -120,52 +127,27 @@
               "type": "START",
               "authorization": {
                 "type": "OTP",
-                "token": "8670"
+                "token": "1339"
               },
               "location": {
-                "gps": "18.560942,73.8070311",
+                "gps": "18.560934,73.8069984",
                 "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
               }
             },
             {
               "type": "END",
               "location": {
-                "gps": "18.560942,73.8070311",
+                "gps": "18.560934,73.8069984",
                 "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
               }
             }
           ],
           "vehicle": {
-            "category": "",
+            "category": "CABS",
             "registration": "ABCD124567",
             "make": "Tata taxi ",
             "model": "Bollaro"
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "ROUTE_INFO",
-                "name": "Route Information"
-              },
-              "display": true,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "encoded_polyline",
-                    "name": "Path"
-                  },
-                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
-                },
-                {
-                  "descriptor": {
-                    "code": "waypoints",
-                    "name": "Waypoints"
-                  },
-                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
-                }
-              ]
-            }
-          ]
+          }
         }
       ],
       "cancellation_terms": {
@@ -227,22 +209,33 @@
       },
       "payments": [
         {
-          "id": "657858b98da53d25cd9e2ce0",
+          "id": "657a85538da53d25cd9fb6ff",
           "status": "NOT-PAID",
           "type": "ON-FULFILLMENT",
-          "params": {},
           "tags": [
             {
               "descriptor": {
-                "code": "SETTLEMENT_DETAILS"
+                "code": "SETTLEMENT_TERMS"
               },
               "display": false,
               "list": [
                 {
                   "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "UPI"
+                  "value": "upi"
                 }
               ]
             },
@@ -260,7 +253,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "params": {}
         }
       ]
     }
