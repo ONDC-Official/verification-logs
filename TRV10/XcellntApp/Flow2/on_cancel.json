@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2023-12-14T04:29:53.685Z",
-    "transaction_id": "05cfe19f-21a1-4454-996b-1e50f97a0723",
-    "message_id": "bb4d7f81-25cb-4cd0-a9d8-d67a2333dada",
+    "timestamp": "2023-12-14T12:00:27.972Z",
+    "transaction_id": "c263142b-d176-44c7-a3af-767811eef630",
+    "message_id": "6a89d881-f7a3-4391-a057-dfa65b70a74e",
     "version": "2.0.0",
     "action": "/on_cancel",
     "bap_id": "staging-xcellntapps-buyer.sumasoft.com",
@@ -21,7 +21,7 @@
   },
   "message": {
     "order": {
-      "id": "657a84ac88988617f931ae6d",
+      "id": "657aee4389057b3044546d42",
       "provider": {
         "id": "64df4347a5fecda2e20afda0"
       },
@@ -33,21 +33,97 @@
             "code": "TAXI-ECO"
           },
           "price": {
-            "maximum_value": "108.97",
             "currency": "INR",
-            "minimum_value": "108.97"
+            "value": "93.13"
           },
-          "tags": "",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "3"
+                }
+              ]
+            }
+          ],
           "fulfillment_id": [
             "64ddaacaa5fecda2e2097558"
           ],
           "payment_id": [
-            null
+            "657aee478da53d25cda00fce"
           ]
         }
       ],
       "quote": {
-        "value": "108.97",
+        "value": "93.13",
         "currency": "INR",
         "breakup": [
           {
@@ -92,13 +168,13 @@
             {
               "type": "START",
               "location": {
-                "gps": "18.560934,73.8069984"
+                "gps": "18.5609315,73.8070075"
               }
             },
             {
               "type": "END",
               "location": {
-                "gps": "18.560934,73.8069984"
+                "gps": "18.5609315,73.8070075"
               }
             }
           ],
@@ -174,7 +250,7 @@
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
-              "value": "54.48"
+              "value": "46.56"
             }
           }
         },
@@ -188,29 +264,46 @@
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
-              "value": "108.97"
+              "value": "93.13"
             }
           }
         }
       ],
       "cancellation": {
-        "time": "2023-12-14T04:29:53.684Z",
+        "time": "2023-12-14T12:00:27.972Z",
         "cancelled_by": "CONSUMER"
       },
       "payments": [
         {
+          "id": "657aee478da53d25cda00fce",
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "params": {},
           "tags": [
             {
               "descriptor": {
-                "code": "SETTLEMENT_DETAILS"
+                "code": "SETTLEMENT_TERMS"
               },
               "display": false,
               "list": [
                 {
                   "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "UPI"
+                  "value": "upi"
                 }
               ]
             },
