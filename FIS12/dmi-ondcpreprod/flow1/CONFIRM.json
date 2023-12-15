@@ -1,16 +1,6 @@
 {
     "context": {
         "domain": "ONDC:FIS12",
-        "action": "confirm",
-        "version": "2.0.0",
-        "bap_id": "ondcfinancepreprod.easypay.co.in",
-        "bap_uri": "https://ondcfinancepreprod.easypay.co.in/ecommerce/ondc/buyer-finance/",
-        "transaction_id": "d4784c99-d76a-41e8-a933-b512fa4585e3",
-        "message_id": "dccba901-b111-4692-9094-a8db0c9481b9",
-        "timestamp": "2023-12-14T16:23:13.615Z",
-        "ttl": "PT30M",
-        "bpp_id": "dmi-ondcpreprod.refo.dev",
-        "bpp_uri": "https://dmi-ondcpreprod.refo.dev/app/ondc/seller",
         "location": {
             "country": {
                 "code": "IND"
@@ -18,7 +8,17 @@
             "city": {
                 "code": "*"
             }
-        }
+        },
+        "transaction_id": "2fa5159e-c529-4311-9335-7d8fe60ce747",
+        "message_id": "960f93f9-1a4e-4d49-9fb8-75d709d74d5d",
+        "action": "confirm",
+        "timestamp": "2023-12-15T15:48:12.449Z",
+        "version": "2.0.0",
+        "bap_uri": "https://ondcfinancepreprod.easypay.co.in/ecommerce/ondc/buyer-finance/",
+        "bap_id": "ondcfinancepreprod.easypay.co.in",
+        "bpp_uri": "https://dmi-ondcpreprod.refo.dev/app/ondc/seller",
+        "bpp_id": "dmi-ondcpreprod.refo.dev",
+        "ttl": "PT30M"
     },
     "message": {
         "order": {
@@ -29,12 +29,12 @@
                 {
                     "id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
                     "xinput": {
-                        "form": {
-                            "id": "681bfe3b-1696-4d66-9275-3c44f1c884bb"
-                        },
                         "form_response": {
                             "status": "SUCCESS",
-                            "submission_id": "08dc0ec4-927b-4b93-a512-7a7f99d7ef0e"
+                            "submission_id": "0a2608e4-bb3e-4411-aa86-3fa01f7983c6"
+                        },
+                        "form": {
+                            "id": "97f76950-a52e-4909-a671-20aef92e56b2"
                         }
                     }
                 }
@@ -42,12 +42,6 @@
             "payments": [
                 {
                     "collected_by": "BPP",
-                    "type": "ON_ORDER",
-                    "params": {
-                        "bank_code": "SBIN0000541",
-                        "bank_account_number": "35330265768",
-                        "virtual_payment_address": "7745810700@upi"
-                    },
                     "tags": [
                         {
                             "descriptor": {
@@ -66,6 +60,20 @@
                                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                     },
                                     "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "PAYMENT_COLLECTOR"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "BPP"
                                 }
                             ]
                         },
@@ -101,7 +109,13 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "params": {
+                        "bank_code": "SBIN0000541",
+                        "bank_account_number": "35330265768",
+                        "virtual_payment_address": "7745810700@upi"
+                    },
+                    "type": "ON_ORDER"
                 }
             ]
         }
