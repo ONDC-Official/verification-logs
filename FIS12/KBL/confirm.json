@@ -1,0 +1,109 @@
+{
+    "context": {
+        "domain": "ONDC:FIS12",
+        "action": "confirm",
+        "version": "2.0.0",
+        "bap_id": "ondcfinancepreprod.easypay.co.in",
+        "bap_uri": "https://ondcfinancepreprod.easypay.co.in/ecommerce/ondc/buyer-finance/",
+        "transaction_id": "95eaf4b3-c70c-4d36-b10e-44f68afc3a83",
+        "message_id": "3726c8e1-fdea-47b4-98be-8fed763d05ab",
+        "timestamp": "2023-12-19T11:24:59.911Z",
+        "ttl": "PT30M",
+        "bpp_id": "preprodfiu.pirimidtech.com",
+        "bpp_uri": "https://preprodfiu.pirimidtech.com:8881/lender-bridge/ondc/kbl-preprod",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        }
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "kbl-preprod"
+            },
+            "items": [
+                {
+                    "id": "PERSONAL_LOAN",
+                    "xinput": {
+                        "form": {
+                            "id": "a44144a1-c991-40c0-a394-bac3623f6a25"
+                        },
+                        "form_response": {
+                            "status": "SUCCESS",
+                            "submission_id": "098b969a-53d7-427c-9ce5-71dc90a270c6"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "type": "ON_ORDER",
+                    "params": {
+                        "bank_code": "SBIN0000541",
+                        "bank_account_number": "35330265768",
+                        "virtual_payment_address": "7745810700@upi"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent-annualized"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1000"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://easypay.in/loan.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
