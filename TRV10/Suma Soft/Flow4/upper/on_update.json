@@ -9,70 +9,338 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2023-12-14T10:59:06.619Z",
-    "transaction_id": "5f2be493-63c4-4496-90c1-a632a8e79791",
-    "message_id": "b1a81b3b-92a7-4fdf-b911-ccc087f06bb9",
+    "timestamp": "2023-12-26T12:06:33.543Z",
+    "transaction_id": "741a9bc5-67d4-4f68-9497-ae4c2053963e",
+    "message_id": "e4b78a27-74f2-4215-9f21-2ca30b510195",
     "version": "2.0.0",
     "action": "on_update",
     "bap_id": "mobilitybuyer.sumasoft.com",
     "bap_uri": "https://mobilitybuyer.sumasoft.com/mobility/passenger",
     "bpp_uri": "https://mobilityseller.sumasoft.com/mobility/auto",
-    "bpp_id": "mobilityseller.sumasoft.com"
+    "bpp_id": "mobilityseller.sumasoft.com",
+    "ttl": "PT30S"
   },
   "message": {
     "update_target": "order.quote",
     "order": {
+      "provider": {
+        "id": "64914e84e833e424558d20b5",
+        "descriptor": {
+          "name": "AUTO-SANGHATANA"
+        }
+      },
+      "items": [
+        {
+          "id": "64914ec2e833e424558d218f",
+          "descriptor": {
+            "name": "AUTO-RIKSHA-ECONOMICAL"
+          },
+          "price": {
+            "value": "62.40",
+            "currency": "INR"
+          },
+          "fulfillment_ids": [
+            "64dddb50a5fecda2e209adac"
+          ],
+          "payment_ids": [
+            "658ac1542277809a4f1fa6e2"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "display": true,
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "display": true,
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "display": true,
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "display": true,
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "display": true,
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "display": true,
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "display": true,
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "display": true,
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "display": true,
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "display": true,
+                  "value": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "64914ec2e833e424558d218f",
+          "state": {
+            "descriptor": {
+              "code": "RIDE_ENDED",
+              "name": "Your ride has ended"
+            }
+          },
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "18.5609953,73.8069902",
+                "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "18.561764,73.784467",
+                "address": "Baner Road, Baner, Pune, Maharashtra, India"
+              }
+            }
+          ],
+          "agent": {
+            "person": {
+              "id": "64f6dfd60bdedc28e4243d93",
+              "name": "Vishal Jangave"
+            },
+            "contact": {
+              "phone": "8805061661"
+            }
+          },
+          "rateable": false,
+          "rating": 0,
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "registration": "MH13GH6161",
+            "model": "Bajaj",
+            "make": "Bajaj auto"
+          },
+          "customer": {
+            "person": {
+              "name": "Ramdas Kadam"
+            },
+            "contact": {
+              "phone": "9763783236"
+            }
+          }
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "100"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "658ac1542277809a4f1fa6e2",
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT",
+          "params": {
+            "bank_code": "ICIC000001",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "amit.sharma@upi",
+            "amount": 122.69,
+            "currency": "INR"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "quote": {
         "price": {
-          "currency": "INR",
-          "value": "205.68"
+          "value": "122.69"
         },
         "breakup": [
           {
             "title": "BASE_FARE",
             "price": {
-              "value": 28,
+              "value": 23,
               "currency": "INR"
             }
           },
           {
             "title": "CGST",
             "price": {
-              "value": "4.88",
+              "value": "2.64",
               "currency": "INR"
             }
           },
           {
             "title": "SGST",
             "price": {
-              "value": "4.88",
+              "value": "2.64",
               "currency": "INR"
             }
           },
           {
             "title": "DISTANCE_FARE",
             "price": {
-              "value": 167.1711088631957,
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "BUYER_FINDER_FEES",
-            "price": {
-              "value": 0,
+              "value": "82.41",
               "currency": "INR"
             }
           },
           {
             "title": "WAITING_CHARGE",
             "price": {
-              "value": 0.75,
+              "value": 12,
               "currency": "INR"
             }
           }
         ]
-      },
-      "payment": {}
+      }
     }
   }
 }
