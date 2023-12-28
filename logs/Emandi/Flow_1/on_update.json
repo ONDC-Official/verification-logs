@@ -1,0 +1,362 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_update",
+        "core_version": "1.2.0",
+        "bap_id": "non-prod.emandi.ondc.traversetec.co",
+        "bap_uri": "https://non-prod.emandi.ondc.traversetec.co/b2c",
+        "bpp_uri": "https://non-prod.b2cseller.ondc.traversetec.co/b2c",
+        "bpp_id": "non-prod.b2cseller.ondc.traversetec.co",
+        "transaction_id": "c9b69050-51db-4969-82c5-9f010545772b",
+        "message_id": "e05196ed-472f-49a2-94e1-dc89a87b6fba",
+        "timestamp": "2023-12-01T11:25:09.000Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "O2",
+            "state": "In-progress",
+            "provider": {
+                "id": "P1",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "FM_54",
+                    "fulfillment_id": "F1",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": {
+                        "status": "Return_Initiated"
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "100.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "65.0"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "65.0"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "50.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "25.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "title": "Discount",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-50.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
+                        }
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
+                    "@ondc/org/awb_no": "1227262193237777",
+                    "tracking": false,
+                    "start": {
+                        "person": {
+                            "name": "Ramu"
+                        },
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "name",
+                                "building": "My house or building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        },
+                        "time": {
+                            "duration": "PT15M",
+                            "range": {
+                                "start": "2023-06-06T23:45:00.000Z",
+                                "end": "2023-06-07T00:00:00.000Z"
+                            },
+                            "timestamp": "2023-06-07T00:00:00.000Z"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for pickup",
+                            "images": [
+                                "link to downloadable shipping label (required for P2H2P)",
+                                "https://lsp.com/pickup_image.png",
+                                "https://lsp.com/rider_location.png"
+                            ],
+                            "additional_desc": {
+                                "content_type": "text/html",
+                                "url": "https://reverse_qc_sop_form.htm"
+                            }
+                        }
+                    },
+                    "end": {
+                        "person": {
+                            "name": "person_name"
+                        },
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "My house or building #",
+                                "building": "My house or building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560076"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "short_desc": "value of DCC",
+                            "long_desc": "additional instructions for delivery",
+                            "images": [
+                                "https://lsp.com/delivery_image.png",
+                                "https://lsp.com/rider_location.png"
+                            ]
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-06-07T02:00:00.000Z",
+                                "end": "2023-06-07T02:15:00.000Z"
+                            }
+                        }
+                    },
+                    "agent": {
+                        "name": "person_name",
+                        "phone": "9886098860"
+                    },
+                    "vehicle": {
+                        "registration": "3LVJ945"
+                    },
+                    "@ondc/org/ewaybillno": "EBN1",
+                    "@ondc/org/ebnexpirydate": "2023-06-30T12:00:00.000Z"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "building": "7,9th cross laxmi layout marathalli",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560066",
+                    "locality": "Pattandur Agrahara Road",
+                    "name": "Kalpesh morker"
+                },
+                "phone": "7405240767",
+                "name": "Kalpesh morker",
+                "email": "morker.kalpesh1@gmail.com",
+                "created_at": "2023-12-22T06:08:51.878Z",
+                "updated_at": "2023-12-22T06:08:51.878Z"
+            },
+            "payment": {
+                "@ondc/org/collection_amount": "300.00",
+                "collected_by": "BPP",
+                "type": "ON-FULFILLMENT",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX"
+                    }
+                ]
+            },
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Atta"
+                        },
+                        "quantity": {
+                            "count": 2,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "150.00"
+                        }
+                    }
+                ],
+                "provider": {
+                    "descriptor": {
+                        "name": "Aadishwar Store"
+                    },
+                    "address": {
+                        "name": "KHB Towers",
+                        "building": "Building or House No",
+                        "street": "6th Block",
+                        "locality": "Koramangala",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "area_code": "560070"
+                    }
+                },
+                "order": {
+                    "id": "O1",
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 1
+                    },
+                    "dimensions": {
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 1
+                        }
+                    }
+                }
+            },
+            "tags": [
+                {
+                    "code": "diff_dim",
+                    "list": [
+                        {
+                            "code": "unit",
+                            "value": "centimeter"
+                        },
+                        {
+                            "code": "length",
+                            "value": "1.5"
+                        },
+                        {
+                            "code": "breadth",
+                            "value": "1.5"
+                        },
+                        {
+                            "code": "height",
+                            "value": "1.5"
+                        }
+                    ]
+                },
+                {
+                    "code": "diff_weight",
+                    "list": [
+                        {
+                            "code": "unit",
+                            "value": "kilogram"
+                        },
+                        {
+                            "code": "weight",
+                            "value": "1.5"
+                        }
+                    ]
+                },
+                {
+                    "code": "diff_proof",
+                    "list": [
+                        {
+                            "code": "type",
+                            "value": "image"
+                        },
+                        {
+                            "code": "url",
+                            "value": "https://lsp.com/sorter/images1.png"
+                        }
+                    ]
+                }
+            ],
+            "updated_at": "2023-06-07T23:00:30.000Z"
+        }
+    }
+}

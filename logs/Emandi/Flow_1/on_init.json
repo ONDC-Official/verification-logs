@@ -1,0 +1,332 @@
+{
+    "context": {
+        "domain": "ONDC:RET14",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "non-prod.emandi.ondc.traversetec.co",
+        "bap_uri": "https://non-prod.emandi.ondc.traversetec.co/b2c",
+        "bpp_id": "non-prod.b2cseller.ondc.traversetec.co",
+        "bpp_uri": "https://non-prod.b2cseller.ondc.traversetec.co/b2c",
+        "transaction_id": "c9b69050-51db-4969-82c5-9f010545772b",
+        "message_id": "18f8c63c-926e-48a5-addf-69ca5939a762",
+        "timestamp": "2023-12-22T06:08:51.000Z",
+        "city": "std:080",
+        "country": "IND"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P1",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "provider_location": {
+                "id": "L1"
+            },
+            "items": [
+                {
+                    "id": "FM_54",
+                    "fulfillment_id": "F1",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "address": {
+                    "building": "7,9th cross laxmi layout marathalli",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560066",
+                    "locality": "Pattandur Agrahara Road",
+                    "name": "Kalpesh morker"
+                },
+                "phone": "7405240767",
+                "name": "Kalpesh morker",
+                "email": "morker.kalpesh1@gmail.com",
+                "created_at": "2023-12-22T06:08:51.878Z",
+                "updated_at": "2023-12-22T06:08:51.878Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "end": {
+                        "contact": {
+                            "email": "morker.kalpesh1@gmail.com",
+                            "phone": "7405240767"
+                        },
+                        "location": {
+                            "gps": "12.980115874134428,77.73387730121614",
+                            "address": {
+                                "building": "7,9th cross laxmi layout marathalli",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560066",
+                                "locality": "Pattandur Agrahara Road",
+                                "name": "Kalpesh morker"
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rto_action",
+                            "list": [
+                                {
+                                    "code": "return_to_origin",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "100.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Morker Plain Atta",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "65.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "65.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "title": "Discount",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-50.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "25.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "FM_54",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BPP",
+                "uri": "https://snp.com/pg",
+                "status": "NOT-PAID",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "10.00",
+                "tags": [
+                    {
+                        "code": "bpp_collect",
+                        "list": [
+                            {
+                                "code": "success",
+                                "value": "Y"
+                            },
+                            {
+                                "code": "error",
+                                "value": ".."
+                            }
+                        ]
+                    }
+                ],
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "Sachin",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "1234567891",
+                        "settlement_ifsc_code": "HDFC0000543",
+                        "bank_name": "HDFC",
+                        "branch_name": "Benglore"
+                    }
+                ]
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "10.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "10.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "009"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "010,011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "20.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100.00"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000.00"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000.00"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "18AABCU9603R1ZM"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
