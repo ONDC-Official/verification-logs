@@ -10,24 +10,67 @@
             }
         },
         "action": "on_select",
-        "version": "2.0.1",
-        "transaction_id": "257d2ee2-bce3-453c-8b89-bc97e5c91efe",
-        "message_id": "6cc5ecb2-147f-4561-b1b1-9ccfd3bec58a",
-        "timestamp": "2023-10-31T06:33:43.400Z",
+        "version": "2.0.2",
+        "transaction_id": "b5370dd6-0dd3-484c-af16-357a0cc44ecf",
+        "message_id": "6f653de1-4e56-4b20-9ff0-cb2dc66ea72e",
+        "timestamp": "2023-12-27T17:55:35.114Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
-        "ttl": "PT30S"
+        "ttl": "P1D"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "9829644477"
+                "id": "9829644477",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ],
+                "ttl": "P1D"
             },
             "items": [
                 {
-                    "id": "BESAN-KP-30KG"
+                    "id": "BESAN-500G",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "location_ids": [
+                        "L1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 1.0
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packaging & shipment needed"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "handle with care"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT"
                 }
             ],
             "fulfillments": [
@@ -47,12 +90,12 @@
             "quote": {
                 "breakup": [
                     {
-                        "title": "LAXMI BHOG KADI PAKODA BESAN 30 KG",
-                        "@ondc/org/item_id": "BESAN-KP-30KG",
+                        "title": "LAXMI BHOG BESAN 500G",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "2455.00"
+                            "value": "42.70"
                         },
                         "@ondc/org/item_quantity": {
                             "count": 1
@@ -60,7 +103,7 @@
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "2455.00"
+                                "value": "42.70"
                             },
                             "quantity": {
                                 "available": {
@@ -74,28 +117,46 @@
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "BESAN-KP-30KG",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2.13"
+                        }
+                    },
+                    {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-2.00"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
                             "value": "0.00"
                         }
                     },
                     {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-KP-30KG",
-                        "@ondc/org/title_type": "discount",
+                        "title": "Packing",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "packing",
                         "price": {
                             "currency": "INR",
-                            "value": "-0.00"
+                            "value": "0.00"
                         }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "2455.00"
+                    "value": "42.83"
                 },
-                "ttl": "P2D"
+                "ttl": "P1D"
             }
         }
     }
