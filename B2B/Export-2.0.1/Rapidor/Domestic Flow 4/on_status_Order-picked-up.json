@@ -3,17 +3,17 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:0788"
+                "code": "std:080"
             },
             "country": {
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "d371082e-7087-42e5-86c1-70dc950980de",
-        "message_id": "6af99af2-1b7a-45db-9a7a-7da4e4589a28",
-        "timestamp": "2023-12-27T20:21:11.512Z",
+        "transaction_id": "f6142ae6-39c5-40d4-b4c8-4f0d3d469665",
+        "message_id": "FMO9NdkACIb0KbqTOSs-e",
+        "timestamp": "2024-01-02T14:44:17.000Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,15 +22,19 @@
     },
     "message": {
         "order": {
+            "id": "RAP-0042283",
+            "state": "In-progress",
             "provider": {
-                "id": "9829644477"
-            },
-            "provider_location": {
-                "id": "L1"
+                "id": "9829644477",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
             },
             "items": [
                 {
-                    "id": "MAIDA-500G",
+                    "id": "BESAN-500G",
                     "fulfillment_ids": [
                         "1"
                     ],
@@ -38,33 +42,12 @@
                         "selected": {
                             "count": 1
                         }
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "No special packaging & shipment needed"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "handle with care"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
             "billing": {
-                "name": "",
-                "address": "itu, Tui, uiuitt, Bangalore Urban, 560001",
+                "name": "uti",
+                "address": "uti, itu, Tui, uiuitt, Bangalore Urban, 560001",
                 "phone": "9947328084",
                 "tax_id": "33AWAPS4854L1Z6",
                 "city": {
@@ -78,15 +61,47 @@
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "tracking": false,
                     "@ondc/org/provider_name": "Rapidor",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P3D",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
                     "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "PlaceOrder"
+                                },
+                                "gps": "26.766510,75.777967"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-02T14:36:30.000Z",
+                                    "end": "2024-01-02T16:36:30.000Z"
+                                },
+                                "timestamp": "2024-01-02T14:44:17.000Z"
+                            },
+                            "contact": {
+                                "phone": "9829644477",
+                                "email": "care@acelrtech.com"
+                            },
+                            "instructions": {
+                                "name": "Proof of pickup",
+                                "short_desc": "handle with care",
+                                "long_desc": "handle with care",
+                                "images": [
+                                    "https://rapidor.s3-us-west-2.amazonaws.com/files/qsOAuhSCMmMHVtT1cJT99_proof-of-picked-up-jpeg.jpeg"
+                                ]
+                            }
+                        },
                         {
                             "type": "end",
                             "location": {
-                                "address": "itu, Tui, uiuitt, Bangalore Urban, 560001",
+                                "address": "uti, itu, Tui, uiuitt, Bangalore Urban, 560001",
                                 "gps": "12.976594,77.599271",
                                 "area_code": "560001",
                                 "state": {
@@ -99,22 +114,42 @@
                                     "code": "IND"
                                 }
                             },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-04T14:36:30.000Z",
+                                    "end": "2024-01-04T16:36:30.000Z"
+                                }
+                            },
                             "contact": {
                                 "phone": "9947328084"
                             }
                         }
-                    ]
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "44.83"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
                 }
             ],
             "quote": {
                 "breakup": [
                     {
-                        "title": "LAXMI BHOG MAIDA 500G",
-                        "@ondc/org/item_id": "MAIDA-500G",
+                        "title": "LAXMI BHOG BESAN 500G",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "18.15"
+                            "value": "42.70"
                         },
                         "@ondc/org/item_quantity": {
                             "count": 1
@@ -122,31 +157,31 @@
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "18.15"
+                                "value": "42.70"
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "MAIDA-500G",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "0.91"
+                            "value": "2.13"
                         }
                     },
                     {
                         "title": "Discount",
-                        "@ondc/org/item_id": "MAIDA-500G",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
-                            "value": "-10.00"
+                            "value": "-0.00"
                         }
                     },
                     {
                         "title": "Delivery Charge",
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
@@ -155,7 +190,7 @@
                     },
                     {
                         "title": "Convenience Fee",
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
@@ -164,7 +199,7 @@
                     },
                     {
                         "title": "Packing",
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "packing",
                         "price": {
                             "currency": "INR",
@@ -174,24 +209,22 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "9.06"
+                    "value": "44.83"
                 },
                 "ttl": "P2D"
             },
-            "payments": [
+            "documents": [
                 {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "seller-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "upi_address": ""
-                        }
-                    ]
+                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/RAP-0042283.pdf?v=1704206191",
+                    "label": "PROFORMA_INVOICE"
+                },
+                {
+                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/KA/RAP-0042283-9829644477.pdf",
+                    "label": "Invoice"
                 }
-            ]
+            ],
+            "created_at": "2024-01-02T14:36:18.612Z",
+            "updated_at": "2024-01-02T14:44:17.000Z"
         }
     }
 }
