@@ -1,24 +1,24 @@
 {
     "context": {
+        "ttl": "P2D",
+        "bap_id": "b2bapi-stage.spicesmartshop.com",
+        "bap_uri": "https://b65f-122-15-78-57.ngrok-free.app/bap",
         "domain": "ONDC:RET14",
+        "message_id": "12181394-6bf7-4cb9-ad11-1b98c1e01578",
+        "transaction_id": "5cd13c62-db2e-4f71-870b-89eef737c9ad",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
         "location": {
             "city": {
-                "code": "std:06784"
+                "code": "std:020"
             },
             "country": {
                 "code": "IND"
             }
         },
-        "action": "on_select",
+        "action": "select",
         "version": "2.0.2",
-        "transaction_id": "5e264b04-fe85-44b8-9440-a68bc47bf325",
-        "message_id": "dd9d594a-61d8-49ca-8908-15c14e4fff81",
-        "timestamp": "2023-12-31T12:13:32.738Z",
-        "bap_id": "b2bapi-stage.spicesmartshop.com",
-        "bap_uri": "https://47bf-49-36-58-109.ngrok-free.app/bap",
-        "bpp_id": "ondcpreprodb2b.rapidor.co",
-        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
-        "ttl": "PT30S"
+        "timestamp": "2024-01-02T14:59:52.397Z"
     },
     "message": {
         "order": {
@@ -39,28 +39,54 @@
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 6.0
+                            "count": 6
                         }
                     },
                     "tags": [
                         {
+                            "display": true,
                             "descriptor": {
                                 "code": "BUYER_TERMS"
                             },
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "No special packing required"
-                                },
-                                {
-                                    "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
                                     "value": "Provide No Discount"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packing required"
                                 }
                             ]
+                        }
+                    ]
+                }
+            ],
+            "fulfillments": [
+                {
+                    "stops": [
+                        {
+                            "location": {
+                                "gps": "18.56105,73.7799630000001",
+                                "city": {
+                                    "name": "Pune"
+                                },
+                                "state": {
+                                    "name": "Maharashtra"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "411045"
+                            },
+                            "type": "end",
+                            "contact": {
+                                "phone": "919130506289"
+                            }
                         }
                     ]
                 }
@@ -70,91 +96,27 @@
                     "type": "ON-FULFILLMENT"
                 }
             ],
-            "fulfillments": [
+            "tags": [
                 {
-                    "id": "F1",
-                    "@ondc/org/provider_name": "Rapidor",
-                    "tracking": false,
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P2D",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
-                        }
-                    }
-                }
-            ],
-            "quote": {
-                "breakup": [
-                    {
-                        "title": "realme Watch 3-1.8 inch Horizon Curved Display with Bluetooth Calling SmartwatchÂ Â (Gray Strap, Free Size)",
-                        "@ondc/org/item_id": "6208900",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "24174.00"
-                        },
-                        "@ondc/org/item_quantity": {
-                            "count": 6
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "4029.00"
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
                             },
-                            "quantity": {
-                                "available": {
-                                    "count": "20"
-                                },
-                                "maximum": {
-                                    "count": "20"
-                                }
-                            }
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "27SPNBO6786S0Z8"
                         }
-                    },
-                    {
-                        "title": "Tax",
-                        "@ondc/org/item_id": "6208900",
-                        "@ondc/org/title_type": "tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "4351.32"
-                        }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "6208900",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-0.00"
-                        }
-                    },
-                    {
-                        "title": "Convenience Fee",
-                        "@ondc/org/item_id": "F1",
-                        "@ondc/org/title_type": "misc",
-                        "price": {
-                            "currency": "INR",
-                            "value": "285.25"
-                        }
-                    },
-                    {
-                        "title": "Packing",
-                        "@ondc/org/item_id": "F1",
-                        "@ondc/org/title_type": "packing",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                ],
-                "price": {
-                    "currency": "INR",
-                    "value": "28810.57"
-                },
-                "ttl": "PT30S"
-            }
+                    ]
+                }
+            ]
         }
     }
 }
