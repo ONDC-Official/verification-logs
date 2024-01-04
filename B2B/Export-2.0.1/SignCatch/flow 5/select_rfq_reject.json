@@ -9,16 +9,16 @@
         "code": "IND"
       }
     },
-    "action": "init",
-    "version": "2.0.1",
+    "action": "select",
+    "version": "2.0.2",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "9e51510a-376a-43da-9517-60107d7bfc6a",
-    "message_id": "d7da8deb-68fb-4f6b-b007-82a253a6a7a7",
-    "timestamp": "2023-09-11T09:16:28.227Z",
+    "transaction_id": "fb790b34-3319-4946-b865-33f1277bb94b",
+    "message_id": "d96bc302-6778-4c3a-a3e7-37fbccc2060d",
+    "timestamp":"2024-01-04T13:33:20.377Z",
     "bpp_id": "preprod-seller.signcatch.com",
     "bpp_uri": "https://preprod-seller.signcatch.com/",
-    "ttl": "P8D"
+    "ttl": "P1D"
   },
   "message": {
     "order": {
@@ -28,12 +28,14 @@
           {
             "id": "LSIN000378"
           }
-        ],
-        "ttl": "P8D"
+        ]
       },
       "items": [
         {
-          "id": "4632",
+          "id": "4625",
+          "location_ids": [
+            "LSIN000378"
+          ],
           "quantity": {
             "selected": {
               "count": 100
@@ -49,55 +51,39 @@
                   "descriptor": {
                     "code": "ITEM_REQ"
                   },
-                  "value": "Darjeeling Prime Black Tea Long Leaf Tea 200g"
+                  "value": "item has no requirement"
                 },
                 {
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   },
-                  "value": "Darjeeling Prime Black Tea Long Leaf Tea 200g"
+                  "value": "item has no packaging requirement"
                 }
               ]
             }
           ]
         }
       ],
-      "billing": {
-        "name": "Pk",
-        "address": "Singapore",
-        "state": {
-          "name": "Singapore"
-        },
-        "city": {
-          "name": "Singapore"
-        },
-        "tax_id": "24AAACC4175D1Z2",
-        "email": "praveen@signcatch.com",
-        "phone": "9711999716"
-      },
       "fulfillments": [
         {
-          "id": "1",
-          "type": "Delivery",
           "stops": [
             {
+              "contact": {
+                "phone": "9711999716"
+              },
               "type": "end",
               "location": {
                 "gps": "1.2804385, 103.8489962",
-                "address": "Singapore",
+                "area_code": "460136",
                 "city": {
+                  "name": "Singapore"
+                },
+                "state": {
                   "name": "Singapore"
                 },
                 "country": {
                   "code": "SGP"
-                },
-                "area_code": "460136",
-                "state": {
-                  "name": "Singapore"
                 }
-              },
-              "contact": {
-                "phone": "9711999716"
               }
             }
           ],
@@ -111,7 +97,7 @@
                   "descriptor": {
                     "code": "INCOTERMS"
                   },
-                  "value": "Cost, Insurance and Freight (CIF)"
+                  "value": "CIF"
                 },
                 {
                   "descriptor": {
@@ -146,6 +132,19 @@
                 "code": "buyer_id_no"
               },
               "value": "24AAACC4175D1Z2"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "COMM_CHANNEL"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "chat_url"
+              },
+              "value": "https://devapi.proxtera.app/spaces/chat-room/?"
             }
           ]
         }

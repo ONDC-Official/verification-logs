@@ -1,14 +1,14 @@
 {
   "context": {
     "domain": "ONDC:RET10",
-    "action": "on_select",
+    "action": "on_init",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
     "bpp_id": "preprod-seller.signcatch.com",
     "bpp_uri": "https://preprod-seller.signcatch.com/",
     "transaction_id": "9e51510a-376a-43da-9517-60107d7bfc6a",
-    "message_id": "679289db-5d92-436f-9f88-9059b6f0ee25",
-    "timestamp": "2023-09-11T09:16:27.731Z",
+    "message_id": "d7da8deb-68fb-4f6b-b007-82a253a6a7a7",
+    "timestamp": "2023-09-11T09:24:27.293Z",
     "location": {
       "city": {
         "code": "std:999"
@@ -18,7 +18,7 @@
       }
     },
     "version": "2.0.1",
-    "ttl": "PT30S"
+    "ttl": "P8D"
   },
   "message": {
     "order": {
@@ -30,14 +30,6 @@
         "breakup": [
           {
             "item": {
-              "quantity": {
-                "available": {
-                  "count": "9056"
-                },
-                "maximum": {
-                  "count": "9056"
-                }
-              },
               "price": {
                 "currency": "INR",
                 "value": "248.00"
@@ -60,11 +52,135 @@
       "provider": {
         "id": "SW10000378"
       },
+      "provider_location": {
+        "id": "LSIN000378"
+      },
       "items": [
         {
-          "id": "4632"
+          "id": "4632",
+          "quantity": {
+            "selected": {
+              "count": 100
+            }
+          },
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "Darjeeling Prime Black Tea Long Leaf Tea 200g",
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  }
+                },
+                {
+                  "value": "Darjeeling Prime Black Tea Long Leaf Tea 200g",
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              }
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "gps": "1.2804385, 103.8489962",
+                "address": "Singapore",
+                "city": {
+                  "name": "Singapore"
+                },
+                "state": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                },
+                "area_code": "460136"
+              },
+              "contact": {
+                "phone": "9711999716"
+              }
+            }
+          ],
+          "tracking": false,
+          "type": "Delivery",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "DELIVERY_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "INCOTERMS"
+                  },
+                  "value": "Cost, Insurance and Freight (CIF)"
+                },
+                {
+                  "descriptor": {
+                    "code": "NAMED_PLACE_OF_DELIVERY"
+                  },
+                  "value": "Singapore"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "address": "Singapore",
+        "phone": "9711999716",
+        "name": "Pk",
+        "email": "praveen@signcatch.com",
+        "state": {
+          "name": "Singapore"
+        },
+        "city": {
+          "name": "Singapore"
+        },
+        "tax_id": "24AAACC4175D1Z2"
+      },
+      "tags": [
+        {
+          "list": [
+            {
+              "value": "tin",
+              "descriptor": {
+                "code": "buyer_id_code"
+              }
+            },
+            {
+              "value": "24AAACC4175D1Z2",
+              "descriptor": {
+                "code": "buyer_id_no"
+              }
+            }
+          ],
+          "descriptor": {
+            "code": "buyer_id"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0"
         }
       ]
     }
+  },
+  "error": {
+    "type": "DOMAIN-ERROR",
+    "code": "50005",
+    "message": "Can Not Deliver To Given Location"
   }
 }
