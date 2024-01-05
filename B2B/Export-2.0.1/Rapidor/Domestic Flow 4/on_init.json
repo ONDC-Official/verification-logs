@@ -3,22 +3,22 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:0788"
+                "code": "std:080"
             },
             "country": {
                 "code": "IND"
             }
         },
         "action": "on_init",
-        "version": "2.0.1",
-        "transaction_id": "5b7f00f7-626a-4703-8eeb-a48ca2378538",
-        "message_id": "78b85d77-cd06-4d7f-ba9e-9908134e025d",
-        "timestamp": "2023-10-31T07:12:33.423Z",
+        "version": "2.0.2",
+        "transaction_id": "f6142ae6-39c5-40d4-b4c8-4f0d3d469665",
+        "message_id": "6164e74e-ac9a-415a-bbbe-1c9c997ad6f0",
+        "timestamp": "2024-01-02T14:36:11.364Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
-        "ttl": "P2D"
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
@@ -32,7 +32,7 @@
                 {
                     "id": "BESAN-500G",
                     "fulfillment_ids": [
-                        "F1"
+                        "1"
                     ],
                     "quantity": {
                         "selected": {
@@ -55,7 +55,7 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "reject"
+                                    "value": "handle with care"
                                 }
                             ]
                         }
@@ -63,44 +63,44 @@
                 }
             ],
             "billing": {
-                "name": "Nisha Export",
-                "address": "test location, Test street, test location, Chennai, 682078",
-                "phone": "8592070544",
-                "tax_id": "33AALDS7407J1Z7",
+                "name": "uti",
+                "address": "uti, itu, Tui, uiuitt, Bangalore Urban, 560001",
+                "phone": "9947328084",
+                "tax_id": "33AWAPS4854L1Z6",
                 "city": {
-                    "name": "Chennai"
+                    "name": "Bangalore Urban"
                 },
                 "state": {
-                    "name": "Tamil Nadu"
+                    "name": "Karnataka"
                 }
             },
             "fulfillments": [
                 {
-                    "id": "F1",
+                    "id": "1",
                     "type": "Delivery",
                     "tracking": false,
                     "@ondc/org/provider_name": "Rapidor",
                     "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P1D",
+                    "@ondc/org/TAT": "P3D",
                     "stops": [
                         {
                             "type": "end",
                             "location": {
-                                "address": "test location, Test street, test location, Chennai, 682078",
-                                "gps": "13.082680,80.270718",
-                                "area_code": "682078",
+                                "address": "uti, itu, Tui, uiuitt, Bangalore Urban, 560001",
+                                "gps": "12.976594,77.599271",
+                                "area_code": "560001",
                                 "state": {
-                                    "name": "Tamil Nadu"
+                                    "name": "Karnataka"
                                 },
                                 "city": {
-                                    "name": "Chennai"
+                                    "name": "Bangalore Urban"
                                 },
                                 "country": {
                                     "code": "IND"
                                 }
                             },
                             "contact": {
-                                "phone": "8592070544"
+                                "phone": "9947328084"
                             }
                         }
                     ]
@@ -146,7 +146,7 @@
                     },
                     {
                         "title": "Delivery Charge",
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
@@ -155,7 +155,7 @@
                     },
                     {
                         "title": "Convenience Fee",
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
@@ -164,7 +164,7 @@
                     },
                     {
                         "title": "Packing",
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "packing",
                         "price": {
                             "currency": "INR",
@@ -181,7 +181,15 @@
             "payments": [
                 {
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0"
+                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "seller-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "upi_address": ""
+                        }
+                    ]
                 }
             ]
         }
