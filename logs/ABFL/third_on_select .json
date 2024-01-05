@@ -1,14 +1,14 @@
 {
-    
+   
         "context": {
             "domain": "ONDC:FIS12",
-            "action": "on_confirm",
+            "action": "on_select",
             "version": "2.0.0",
             "bap_id": "ondcuat.easypay.co.in",
             "bap_uri": "https://ondcuat.easypay.co.in/ecommerce/ondc/buyer-finance/",
             "transaction_id": "72d7d0c9-8832-4f77-866c-f120ddd7976a",
-            "message_id": "cac4832c-1bac-400d-a21c-10a3aca70c0b",
-            "timestamp": "2024-01-05T09:52:44.125Z",
+            "message_id": "a8d2677d-2f94-4f8b-862b-f5ad9a88f493",
+            "timestamp": "2024-01-05T09:44:03.530Z",
             "ttl": "PT30M",
             "bpp_id": "api.abcscuat.com",
             "bpp_uri": "https://api.abcscuat.com/abfl-ondc",
@@ -23,7 +23,6 @@
         },
         "message": {
             "order": {
-                "id": "66B7AEDF45",
                 "provider": {
                     "id": "1",
                     "descriptor": {
@@ -183,7 +182,7 @@
                                 "short_desc": "Delayed payments penalty"
                             },
                             "value": "5%"
-                        }, 
+                        },
                         {
                             "descriptor": {
                               "code": "OTHER_PENALTY_FEE",
@@ -191,7 +190,7 @@
                               "short_desc": "Other Penal Charges"
                             },
                             "value": "1%"
-                          },{
+                          }, {
                             "descriptor": {
                                 "code": "ANNUAL_PERCENTAGE_RATE",
                                 "name": "Annual Percentage Rate",
@@ -235,7 +234,28 @@
                             "value": "PT30D"
                         }],
                         "display": true
-                    }]
+                    }],
+                    "xinput": {
+                        "head": {
+                            "descriptor": {
+                                "name": "Customer Information"
+                            },
+                            "index": {
+                                "min": 0,
+                                "cur": 1,
+                                "max": 1
+                            },
+                            "headings": ["Set Loan Amount", "Know your Customer"]
+                        },
+                        "form": {
+                            "id": "478434f5-fe8d-46f3-962f-7f3e56c69244",
+                            "mime_type": "application/html",
+                            "url": "https://upsell-frontend-uat.abfldirect.com/kyc",
+                            "resubmit": false,
+                            "multiple_sumbissions": false
+                        },
+                        "required": true
+                    }
                 }],
                 "quote": {
                     "id": "b469bb12-9f67-4898-8f39-ea7816f54289",
@@ -253,7 +273,7 @@
                         "title": "INTEREST",
                         "price": {
                             "currency": "INR",
-                            "value": "8193.64"
+                            "value": "8193"
                         }
                     }, {
                         "title": "PROCESSING_FEE",
@@ -287,273 +307,7 @@
                         }
                     }],
                     "ttl": "PT15D"
-                },
-                "fulfillments":[ {
-                    "customer": {
-                        "person": {
-                            "name": "Hitesh John Doe"
-                        },
-                        "contact": {
-                            "phone": "+91-9999999999",
-                            "email": "john.doe@example.com"
-                        }
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "SANCTIONED"
-                        }
-                    }
-                }],
-                "payments": [{
-                    "type": "ON_ORDER",
-                    "collected_by": "BPP",
-                    "status": "NOT-PAID",
-                    "tags": [{
-                        "descriptor": {
-                            "code": "BUYER_FINDER_FEES"
-                        },
-                        "list": [{
-                            "descriptor": {
-                                "code": "BUYER_FINDER_FEES_TYPE"
-                            },
-                            "value": "percent-annualized"
-                        }, {
-                            "descriptor": {
-                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                            },
-                            "value": "1"
-                        }],
-                        "display": false
-                    }, {
-                        "descriptor": {
-                            "code": "SETTLEMENT_TERMS"
-                        },
-                        "list": [{
-                            "descriptor": {
-                                "code": "SETTLEMENT_WINDOW"
-                            },
-                            "value": "PT60M"
-                        }, {
-                            "descriptor": {
-                                "code": "SETTLEMENT_BASIS"
-                            },
-                            "value": "INVOICE_RECEIPT"
-                        }, {
-                            "descriptor": {
-                                "code": "MANDATORY_ARBITRATION"
-                            },
-                            "value": "TRUE"
-                        }, {
-                            "descriptor": {
-                                "code": "COURT_JURISDICTION"
-                            },
-                            "value": "New Delhi"
-                        }, {
-                            "descriptor": {
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
-                        }, {
-                            "descriptor": {
-                                "code": "SETTLEMENT_AMOUNT"
-                            },
-                            "value": "1159"
-                        }],
-                        "display": false
-                    }]
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-02-01T00:00:00.000Z",
-                            "end": "2024-02-29T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-03-01T00:00:00.000Z",
-                            "end": "2024-03-31T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-04-01T00:00:00.000Z",
-                            "end": "2024-04-30T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-05-01T00:00:00.000Z",
-                            "end": "2024-05-31T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-06-01T00:00:00.000Z",
-                            "end": "2024-06-30T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-07-01T00:00:00.000Z",
-                            "end": "2024-07-31T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-08-01T00:00:00.000Z",
-                            "end": "2024-08-31T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-09-01T00:00:00.000Z",
-                            "end": "2024-09-30T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-10-01T00:00:00.000Z",
-                            "end": "2024-10-31T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-11-01T00:00:00.000Z",
-                            "end": "2024-11-30T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2024-12-01T00:00:00.000Z",
-                            "end": "2024-12-31T00:00:00.000Z"
-                        }
-                    }
-                }, {
-                    "type": "POST_FULFILLMENT",
-                    "params": {
-                        "amount": "13099.47",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "time": {
-                        "label": "INSTALLMENT",
-                        "range": {
-                            "start": "2025-01-01T00:00:00.000Z",
-                            "end": "2025-01-31T00:00:00.000Z"
-                        }
-                    }
-                }],
-                "cancellation_terms": [{
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "SANCTIONED"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "3%"
-                    },
-                    "external_ref": {
-                        "mimetype": "application/pdf",
-                        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-                    }
-                }],
-                "documents": [{
-                    "descriptor": {
-                        "code": "LOAN_AGREEMENT",
-                        "name": "Loan Agreement Document",
-                        "short_desc": "Download your Loan Agreement document here",
-                        "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
-                    },
-                    "mime_type": "application/pdf",
-                    "url": "https://lender.com/loan/loan-agreement/O1.pdf"
-                }]
+                }
             }
         }
 }
