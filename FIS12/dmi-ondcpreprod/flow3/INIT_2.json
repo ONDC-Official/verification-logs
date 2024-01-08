@@ -1,84 +1,121 @@
 {
-  "context": {
-    "domain": "ONDC:FIS12",
-    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
-    "transaction_id": "cfa25692-a967-49b4-86d6-3b78b569c4d7",
-    "message_id": "84b196b7-e7d1-4b46-9a8b-2722847d6d45",
-    "action": "init",
-    "timestamp": "2024-01-04T10:18:05.212Z",
-    "version": "2.0.0",
-    "bap_uri": "https://ondcfinancepreprod.easypay.co.in/ecommerce/ondc/buyer-finance/",
-    "bap_id": "ondcfinancepreprod.easypay.co.in",
-    "bpp_uri": "https://dmi-ondcpreprod.refo.dev/app/ondc/seller",
-    "bpp_id": "dmi-ondcpreprod.refo.dev",
-    "ttl": "PT30M"
-  },
-  "message": {
-    "order": {
-      "provider": { "id": "101" },
-      "items": [
-        {
-          "id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
-          "xinput": {
-            "form_response": {
-              "status": "SUCCESS",
-              "submission_id": "88d991e3-62cf-43f6-949a-08fcfd824867"
+    "context": {
+        "domain": "ONDC:FIS12",
+        "action": "init",
+        "version": "2.0.0",
+        "bap_id": "ondcfinancepreprod.easypay.co.in",
+        "bap_uri": "https://ondcfinancepreprod.easypay.co.in/ecommerce/ondc/buyer-finance/",
+        "transaction_id": "7c3a5bb9-c7bd-4aa5-aaa9-6a7d295402ec",
+        "message_id": "a5dbfaa6-10e7-4598-9299-464bd0dd1b9a",
+        "timestamp": "2024-01-08T08:52:56.660Z",
+        "ttl": "PT30M",
+        "bpp_id": "dmi-ondcpreprod.refo.dev",
+        "bpp_uri": "https://dmi-ondcpreprod.refo.dev/app/ondc/seller",
+        "location": {
+            "country": {
+                "code": "IND"
             },
-            "form": { "id": "307c06dd-9e2b-45f2-828c-5f7edac91fe3" }
-          }
-        }
-      ],
-      "payments": [
-        {
-          "collected_by": "BPP",
-          "tags": [
-            {
-              "descriptor": { "code": "BUYER_FINDER_FEES" },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": { "code": "BUYER_FINDER_FEES_TYPE" },
-                  "value": "percent-annualized"
-                },
-                {
-                  "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" },
-                  "value": "1"
-                }
-              ]
-            },
-            {
-              "descriptor": { "code": "SETTLEMENT_TERMS" },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": { "code": "SETTLEMENT_AMOUNT" },
-                  "value": "1000"
-                },
-                {
-                  "descriptor": { "code": "SETTLEMENT_WINDOW" },
-                  "value": "PT60M"
-                },
-                {
-                  "descriptor": { "code": "STATIC_TERMS" },
-                  "value": "https://easypay.in/loan.html"
-                },
-                {
-                  "descriptor": { "code": "SETTLEMENT_BASIS" },
-                  "value": "invoice_receipt"
-                },
-                { "descriptor": { "code": "SETTLEMENT_TYPE" }, "value": "upi" },
-                { "descriptor": { "code": "DELAY_INTEREST" }, "value": "2.5" }
-              ]
+            "city": {
+                "code": "*"
             }
-          ],
-          "params": {
-            "bank_code": "SBIN0000541",
-            "bank_account_number": "35330265768",
-            "virtual_payment_address": "7745810700@upi"
-          },
-          "type": "ON_ORDER"
         }
-      ]
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "101"
+            },
+            "items": [
+                {
+                    "id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
+                    "xinput": {
+                        "form": {
+                            "id": "5fa1a979-4dc5-447c-8c18-4ba31c25bdab"
+                        },
+                        "form_response": {
+                            "status": "SUCCESS",
+                            "submission_id": "7a64ca45-12f6-4153-bc5d-4681e3858306"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "type": "ON_ORDER",
+                    "params": {
+                        "bank_code": "SBIN0000541",
+                        "bank_account_number": "35330265768",
+                        "virtual_payment_address": "7745810700@upi"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent-annualized"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1000"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://easypay.in/loan.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "invoice_receipt"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     }
-  }
 }
