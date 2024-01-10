@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2024-01-05T12:43:20.400Z",
-    "transaction_id": "1d2078e7-a520-4dd2-8a76-3f04b9aa6892",
-    "message_id": "d946869b-7355-4ecf-a70f-ef0397489f04",
+    "timestamp": "2024-01-10T12:05:02.812Z",
+    "transaction_id": "4fbb05da-7bc1-4c52-8008-77cf7e8dce76",
+    "message_id": "c86427e4-cb4c-473e-b8bf-4271f21ee433",
     "version": "2.0.0",
     "action": "on_confirm",
     "bap_id": "mobilitybuyer.sumasoft.com",
@@ -22,10 +22,11 @@
   },
   "message": {
     "order": {
-      "id": "6597f953abc65025629df7c8",
+      "id": "",
       "provider": {
         "id": "64914e84e833e424558d20b5"
       },
+      "status": "ACTIVE",
       "items": [
         {
           "id": "64914ec2e833e424558d218f",
@@ -35,7 +36,7 @@
           },
           "price": {
             "currency": "INR",
-            "value": "88.22"
+            "value": "88.30"
           },
           "tags": [
             {
@@ -125,20 +126,24 @@
               ]
             }
           ],
-          "fulfillment_ids": ["64dddb50a5fecda2e209adac"],
-          "payment_ids": ["6597f95a2277809a4f364588"]
+          "fulfillment_ids": [
+            "64dddb50a5fecda2e209adac"
+          ],
+          "payment_ids": [
+            "659e87e72277809a4f40b5df"
+          ]
         }
       ],
       "quote": {
         "price": {
-          "value": "88.22",
+          "value": "88.30",
           "currency": "INR"
         },
         "breakup": [
           {
             "title": "BASE_FARE",
             "price": {
-              "value": 0,
+              "value": "0",
               "currency": "INR"
             }
           },
@@ -159,7 +164,7 @@
           {
             "title": "DISTANCE_FARE",
             "price": {
-              "value": "88.22",
+              "value": "88.30",
               "currency": "INR"
             }
           }
@@ -168,11 +173,11 @@
       },
       "fulfillments": [
         {
-          "id": "64914ec2e833e424558d218f",
+          "id": "64dddb50a5fecda2e209adac",
           "type": "DELIVERY",
           "state": {
             "descriptor": {
-              "code": "DRIVER_EN_ROUTE",
+              "code": "DRIVER_EN_ROUTE_TO_PICKUP",
               "name": "Driver is on the way"
             }
           },
@@ -187,101 +192,100 @@
           "agent": {
             "person": {
               "id": "",
-              "name": "Dipali Amale"
+              "name": "Aashish Choudhari"
             },
             "contact": {
-              "phone": "8855901875"
+              "phone": "8668266350"
             },
-            "rating": 0
+            "rating": "0"
           },
           "stops": [
             {
               "type": "START",
               "authorization": {
                 "type": "OTP",
-                "token": "9888"
+                "token": "5155"
               },
               "location": {
-                "gps": "18.615922,73.779846",
-                "address": "JQ8H+CVG, Thergaon, Pimpri-Chinchwad, Maharashtra 411017, India"
+                "gps": "18.615966,73.779859",
+                "address": "r, JQ8H+CVG, Thergaon, Pimpri-Chinchwad, Maharashtra 411017, India"
               }
             },
             {
               "type": "END",
               "location": {
-                "gps": "18.615922,73.779846",
-                "address": "JQ8H+CVG, Thergaon, Pimpri-Chinchwad, Maharashtra 411017, India"
+                "gps": "18.615966,73.779859",
+                "address": "r, JQ8H+CVG, Thergaon, Pimpri-Chinchwad, Maharashtra 411017, India"
               }
             }
           ],
           "vehicle": {
             "category": "AUTO_RICKSHAW",
-            "registration": "DM2345",
-            "make": "Suma_auto d",
-            "model": "DM"
+            "registration": "MH12DC8613",
+            "make": "Honda Civic",
+            "model": "Sedan"
           }
         }
       ],
-      "cancellation_terms": {
-        "cancellation_terms": [
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "RIDE_ASSIGNED"
-              }
-            },
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "0"
-              }
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
             }
           },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "RIDE_ENROUTE_PICKUP"
-              }
-            },
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "30"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "RIDE_ARRIVED_PICKUP"
-              }
-            },
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "50"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "RIDE_STARTED"
-              }
-            },
-            "reason_required": true,
-            "cancellation_fee": {
-              "percentage": "100"
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0"
             }
           }
-        ]
-      },
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "100"
+          }
+        }
+      ],
       "payments": [
         {
-          "id": "6597f95a2277809a4f364588",
+          "id": "659e87e72277809a4f40b5df",
+          "collected_by": "BPP",
           "status": "NOT-PAID",
           "type": "ON-FULFILLMENT",
           "tags": [
