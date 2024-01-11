@@ -9,29 +9,28 @@
         "code": "IND"
       }
     },
-    "action": "confirm",
+    "action": "on_status",
     "version": "2.0.2",
     "bap_id": "ondc-buyer-api.trafyn.site",
     "bap_uri": "https://ondc-buyer-api.trafyn.site/",
     "bpp_id": "ondcpreprodb2b.rapidor.co",
     "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
     "transaction_id": "aab89b66-696f-4e55-96de-f3374b0de6db",
-    "message_id": "4a509485-6bb0-4a28-a438-61639059424f",
-    "timestamp": "2024-01-11T11:13:56.922Z",
+    "message_id": "gK40YB7ZtoY1-pBzSWMoU",
+    "timestamp": "2024-01-11T11:33:56Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "aab89b66-696f-4e55-96de-f3374b0de6db",
-      "state": "Created",
+      "state": "Completed",
       "provider": {
         "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
         "locations": [
           {
             "id": "L1"
           }
-        ],
-        "ttl": "PT30S"
+        ]
       },
       "items": [
         {
@@ -43,30 +42,6 @@
           },
           "fulfillment_ids": [
             "F1"
-          ],
-          "location_ids": [
-            "L1"
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "ITEM_REQ"
-                  },
-                  "value": "free text on Item Customization"
-                },
-                {
-                  "descriptor": {
-                    "code": "PACKAGING_REQ"
-                  },
-                  "value": "free text on packaging Customization"
-                }
-              ]
-            }
           ]
         },
         {
@@ -78,30 +53,6 @@
           },
           "fulfillment_ids": [
             "F1"
-          ],
-          "location_ids": [
-            "L1"
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "ITEM_REQ"
-                  },
-                  "value": "free text on Item Customization"
-                },
-                {
-                  "descriptor": {
-                    "code": "PACKAGING_REQ"
-                  },
-                  "value": "free text on packaging Customization"
-                }
-              ]
-            }
           ]
         }
       ],
@@ -118,15 +69,53 @@
         "phone": "9998889998",
         "tax_id": "xxxxxxxxxxxxxxx"
       },
+      "documents": [
+        {
+          "url": "https://storage.googleapis.com/awstoazures3/b2b-seller/staging/Invoices/378/RAP-0042779.pdf",
+          "label": "Invoice"
+        },
+        {
+          "url": "https://storage.googleapis.com/awstoazures3/b2b-seller/staging/licenses/profoma/RAP-0042779/IN000MCWGGHBNXE0ZH2D.pdf",
+          "label": "PROFORMA_INVOICE"
+        }
+      ],
       "fulfillments": [
         {
           "id": "F1",
           "type": "Delivery",
+          "@ondc/org/provider_name": "sanu",
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered"
+            }
+          },
+          "tracking": false,
           "stops": [
             {
               "location": {
-                "gps": "22.4658435,87.7507979",
-                "address": "",
+                "id": "L1",
+                "descriptor": {
+                  "name": "PlaceOrder"
+                },
+                "gps": "12.473357,78.536600"
+              },
+              "type": "start",
+              "time": {
+                "timestamp": "2024-01-11T11:30:24.001Z",
+                "range": {
+                  "start": "2024-01-11T11:13:58.095Z",
+                  "end": "2024-01-11T13:13:58.095Z"
+                }
+              },
+              "contact": {
+                "phone": "6380612306",
+                "email": "care@acelrtech.com"
+              }
+            },
+            {
+              "location": {
+                "gps": "22.465843,87.750798",
+                "address": "Bengaluru, 560103",
                 "city": {
                   "name": "Bengaluru"
                 },
@@ -139,17 +128,19 @@
                 "area_code": "560103"
               },
               "type": "end",
-              "contact": {
-                "phone": "9998889998",
-                "email": ""
-              },
-              "customer": {
-                "person": {
-                  "name": "SAMAR KUMAR MULLICK"
+              "time": {
+                "timestamp": "2024-01-11T11:33:56.075Z",
+                "range": {
+                  "start": "2024-01-13T11:13:58.015Z",
+                  "end": "2024-01-13T13:13:58.015Z"
                 }
+              },
+              "contact": {
+                "phone": "9998889998"
               }
             }
-          ]
+          ],
+          "tags": []
         }
       ],
       "quote": {
@@ -201,54 +192,18 @@
         {
           "collected_by": "BPP",
           "params": {
+            "transaction_id": "sN8Vvhnvf70hqow5T1_fy",
             "amount": "7250.00",
             "currency": "INR"
           },
           "type": "ON-FULFILLMENT",
-          "status": "NOT-PAID",
+          "status": "PAID",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0",
-          "@ondc/org/withholding_amount": "0",
-          "@ondc/org/settlement_basis": "delivery",
-          "@ondc/org/settlement_window": "P1D",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "buyer-app",
-              "settlement_phase": "sale-amount",
-              "settlement_type": "upi",
-              "settlement_bank_account_no": "923020048031608",
-              "settlement_ifsc_code": "UTIB0000009",
-              "upi_address": "ninjacart@ybl",
-              "bank_name": "AXIS BANK LTD",
-              "branch_name": "Bangalore Main Branch",
-              "beneficiary_name": "63IDEASINFOLABS PRIVATE LIMITED"
-            }
-          ]
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0"
         }
       ],
       "created_at": "2024-01-11T11:13:57.875Z",
-      "updated_at": "2024-01-11T11:13:57.875Z",
-      "tags": [
-        {
-          "descriptor": {
-            "code": "buyer_id"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "buyer_id_code"
-              },
-              "value": "gst"
-            },
-            {
-              "descriptor": {
-                "code": "buyer_id_no"
-              },
-              "value": "xxxxxxxxxxxxxxx"
-            }
-          ]
-        }
-      ]
+      "updated_at": "2024-01-11T11:33:56Z"
     }
   }
 }

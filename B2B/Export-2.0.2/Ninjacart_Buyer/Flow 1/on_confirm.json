@@ -9,7 +9,7 @@
         "code": "IND"
       }
     },
-    "action": "confirm",
+    "action": "on_confirm",
     "version": "2.0.2",
     "bap_id": "ondc-buyer-api.trafyn.site",
     "bap_uri": "https://ondc-buyer-api.trafyn.site/",
@@ -17,13 +17,13 @@
     "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
     "transaction_id": "aab89b66-696f-4e55-96de-f3374b0de6db",
     "message_id": "4a509485-6bb0-4a28-a438-61639059424f",
-    "timestamp": "2024-01-11T11:13:56.922Z",
+    "timestamp": "2024-01-11T11:13:58.304Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "aab89b66-696f-4e55-96de-f3374b0de6db",
-      "state": "Created",
+      "state": "Accepted",
       "provider": {
         "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
         "locations": [
@@ -31,6 +31,7 @@
             "id": "L1"
           }
         ],
+        "rateable": false,
         "ttl": "PT30S"
       },
       "items": [
@@ -43,9 +44,6 @@
           },
           "fulfillment_ids": [
             "F1"
-          ],
-          "location_ids": [
-            "L1"
           ],
           "tags": [
             {
@@ -78,9 +76,6 @@
           },
           "fulfillment_ids": [
             "F1"
-          ],
-          "location_ids": [
-            "L1"
           ],
           "tags": [
             {
@@ -122,7 +117,35 @@
         {
           "id": "F1",
           "type": "Delivery",
+          "rateable": false,
+          "@ondc/org/provider_name": "sanu",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "tracking": false,
           "stops": [
+            {
+              "location": {
+                "id": "L1",
+                "descriptor": {
+                  "name": "Yelagiri Hills Tribal Farmer Producer Company Limited"
+                },
+                "gps": "12.473357,78.536600"
+              },
+              "type": "start",
+              "time": {
+                "range": {
+                  "start": "2024-01-11T11:13:58Z",
+                  "end": "2024-01-11T13:13:58Z"
+                }
+              },
+              "contact": {
+                "phone": "6380612306",
+                "email": "yelagirihtfpcl@gmail.com"
+              }
+            },
             {
               "location": {
                 "gps": "22.4658435,87.7507979",
@@ -139,14 +162,15 @@
                 "area_code": "560103"
               },
               "type": "end",
+              "time": {
+                "range": {
+                  "start": "2024-01-13T11:13:58Z",
+                  "end": "2024-01-13T13:13:58Z"
+                }
+              },
               "contact": {
                 "phone": "9998889998",
                 "email": ""
-              },
-              "customer": {
-                "person": {
-                  "name": "SAMAR KUMAR MULLICK"
-                }
               }
             }
           ]
@@ -208,26 +232,21 @@
           "status": "NOT-PAID",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
           "@ondc/org/buyer_app_finder_fee_amount": "0",
-          "@ondc/org/withholding_amount": "0",
-          "@ondc/org/settlement_basis": "delivery",
-          "@ondc/org/settlement_window": "P1D",
           "@ondc/org/settlement_details": [
             {
               "settlement_counterparty": "buyer-app",
               "settlement_phase": "sale-amount",
-              "settlement_type": "upi",
-              "settlement_bank_account_no": "923020048031608",
-              "settlement_ifsc_code": "UTIB0000009",
-              "upi_address": "ninjacart@ybl",
-              "bank_name": "AXIS BANK LTD",
-              "branch_name": "Bangalore Main Branch",
-              "beneficiary_name": "63IDEASINFOLABS PRIVATE LIMITED"
+              "settlement_type": "neft",
+              "settlement_bank_account_no": "",
+              "settlement_ifsc_code": "",
+              "bank_name": "",
+              "beneficiary_name": ""
             }
           ]
         }
       ],
       "created_at": "2024-01-11T11:13:57.875Z",
-      "updated_at": "2024-01-11T11:13:57.875Z",
+      "updated_at": "2024-01-11T11:13:58.304Z",
       "tags": [
         {
           "descriptor": {
