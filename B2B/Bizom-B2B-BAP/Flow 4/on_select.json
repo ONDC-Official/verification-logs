@@ -1,0 +1,133 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_select",
+        "version": "2.0.2",
+        "transaction_id": "9199efd3-7fe4-4b4e-8234-516dd687bec8",
+        "message_id": "1ca58a05-d482-4dbb-9cf6-dc066509eb77",
+        "timestamp": "2024-01-09T09:50:20.699Z",
+        "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
+        "bap_uri": "https://develapigateway.bizom.in/bap/ondcb2b",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "9829644477",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "BESAN-500G",
+                    "location_ids": [
+                        "L1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 101
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "@ondc/org/provider_name": "Rapidor",
+                    "tracking": false,
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "P2D",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "title": "LAXMI BHOG BESAN 500G",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "4270.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 100
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "42.70"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "count": "100"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "title": "Tax",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "213.50"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "448.35"
+                        }
+                    },
+                    {
+                        "title": "Discount",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "4931.85"
+                },
+                "ttl": "P2D"
+            }
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "Item is not in stock"
+    }
+}
