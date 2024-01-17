@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_status",
+        "action": "on_confirm",
         "version": "2.0.2",
-        "transaction_id": "eb668588-b8a5-40d7-8268-6635c85196d1",
-        "message_id": "9IxMOERzqkXhyKb53Ir24",
-        "timestamp": "2024-01-12T14:08:18.000Z",
+        "transaction_id": "92d6ea6e-87a1-4dca-8104-00bef1dacdc6",
+        "message_id": "801d4886-cb31-4b8c-9576-5ddb9e044542",
+        "timestamp": "2024-01-17T04:49:29.477Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,27 +22,48 @@
     },
     "message": {
         "order": {
-            "id": "RAP-0043127",
-            "state": "In-progress",
+            "id": "RAP-0043395",
             "provider": {
                 "id": "9829644477",
                 "locations": [
                     {
                         "id": "L1"
                     }
-                ]
+                ],
+                "rateable": false
             },
             "items": [
                 {
-                    "id": "BESAN-500G",
+                    "id": "MAIDA-500G",
                     "fulfillment_ids": [
                         "F1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 10
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packaging & shipment needed"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "handle with extra care"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "billing": {
@@ -63,9 +84,10 @@
                     "type": "Delivery",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
+                    "rateable": false,
                     "state": {
                         "descriptor": {
-                            "code": "Out-for-delivery"
+                            "code": "Pending"
                         }
                     },
                     "stops": [
@@ -74,16 +96,15 @@
                             "location": {
                                 "id": "L1",
                                 "descriptor": {
-                                    "name": "PlaceOrder"
+                                    "name": "Radha Soami Food Products Pvt Ltd."
                                 },
                                 "gps": "26.766510,75.777967"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-12T14:07:44.000Z",
-                                    "end": "2024-01-12T16:07:44.000Z"
-                                },
-                                "timestamp": "2024-01-12T14:08:09.000Z"
+                                    "start": "2024-01-17T04:49:33.000Z",
+                                    "end": "2024-01-17T06:49:33.000Z"
+                                }
                             },
                             "contact": {
                                 "phone": "9829644477",
@@ -108,58 +129,53 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-14T14:07:44.000Z",
-                                    "end": "2024-01-14T16:07:44.000Z"
+                                    "start": "2024-01-19T04:49:33.000Z",
+                                    "end": "2024-01-19T06:49:33.000Z"
                                 }
                             },
                             "contact": {
                                 "phone": "9947328084"
                             }
                         }
-                    ],
-                    "tags": []
-                }
-            ],
-            "payments": [
-                {
-                    "status": "NOT-PAID",
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "params": {
-                        "currency": "INR",
-                        "amount": "44.83"
-                    },
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
+                    ]
                 }
             ],
             "quote": {
                 "breakup": [
                     {
-                        "title": "LAXMI BHOG BESAN 500G",
-                        "@ondc/org/item_id": "BESAN-500G",
+                        "title": "LAXMI BHOG MAIDA 500G",
+                        "@ondc/org/item_id": "MAIDA-500G",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "42.70"
+                            "value": "181.50"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 1
+                            "count": 10
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "42.70"
+                                "value": "18.15"
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/item_id": "MAIDA-500G",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "2.13"
+                            "value": "9.07"
+                        }
+                    },
+                    {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "MAIDA-500G",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
                         }
                     },
                     {
@@ -168,7 +184,7 @@
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "10.00"
                         }
                     },
                     {
@@ -188,35 +204,65 @@
                             "currency": "INR",
                             "value": "0.00"
                         }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "44.83"
+                    "value": "200.57"
                 },
                 "ttl": "P2D"
             },
-            "documents": [
+            "payments": [
                 {
-                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/RAP-0043127.pdf?v=1705068465",
-                    "label": "PROFORMA_INVOICE"
-                },
-                {
-                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/KA/RAP-0043127-9829644477.pdf",
-                    "label": "Invoice"
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "200.57"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10"
                 }
             ],
-            "created_at": "2024-01-12T14:07:44.415Z",
-            "updated_at": "2024-01-12T14:08:18.000Z"
+            "state": "Accepted",
+            "created_at": "2024-01-17T04:49:25.406Z",
+            "updated_at": "2024-01-17T04:49:29.477Z",
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "33AWAPS4854L1Z6"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_confirm",
+        "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "43a29da3-9161-4099-ba53-3586cbc2ec0c",
-        "message_id": "f3f6ddbf-4176-417e-97fc-ba7f548f34a0",
-        "timestamp": "2024-01-12T11:28:00.115Z",
+        "transaction_id": "de86e6f8-18cb-4aaa-88cf-dc3d3104cf0e",
+        "message_id": "OwJJaKRSWuh-H4oIWTLLE",
+        "timestamp": "2024-01-16T15:04:50.000Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,15 +22,15 @@
     },
     "message": {
         "order": {
-            "id": "RAP-0043100",
+            "id": "RAP-0043373",
+            "state": "Accepted",
             "provider": {
                 "id": "9829644477",
                 "locations": [
                     {
                         "id": "L1"
                     }
-                ],
-                "rateable": false
+                ]
             },
             "items": [
                 {
@@ -42,28 +42,7 @@
                         "selected": {
                             "count": 1
                         }
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "No special packaging & shipment needed"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "reject"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
             "billing": {
@@ -84,7 +63,6 @@
                     "type": "Delivery",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
-                    "rateable": false,
                     "state": {
                         "descriptor": {
                             "code": "Pending"
@@ -96,14 +74,14 @@
                             "location": {
                                 "id": "L1",
                                 "descriptor": {
-                                    "name": "Radha Soami Food Products Pvt Ltd."
+                                    "name": "PlaceOrder"
                                 },
                                 "gps": "26.766510,75.777967"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-12T11:28:00.000Z",
-                                    "end": "2024-01-12T13:28:00.000Z"
+                                    "start": "2024-01-16T15:04:38.000Z",
+                                    "end": "2024-01-16T17:04:38.000Z"
                                 }
                             },
                             "contact": {
@@ -129,15 +107,29 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-14T11:28:00.000Z",
-                                    "end": "2024-01-14T13:28:00.000Z"
+                                    "start": "2024-01-18T15:04:38.000Z",
+                                    "end": "2024-01-18T17:04:38.000Z"
                                 }
                             },
                             "contact": {
                                 "phone": "9947328084"
                             }
                         }
-                    ]
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "54.83"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
                 }
             ],
             "quote": {
@@ -157,6 +149,14 @@
                             "price": {
                                 "currency": "INR",
                                 "value": "42.70"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "count": "100"
+                                }
                             }
                         }
                     },
@@ -170,12 +170,21 @@
                         }
                     },
                     {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
                         "title": "Delivery Charge",
                         "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "10.00"
                         }
                     },
                     {
@@ -195,76 +204,22 @@
                             "currency": "INR",
                             "value": "0.00"
                         }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "44.83"
+                    "value": "54.83"
                 },
-                "ttl": "P2D"
+                "ttl": "P1D"
             },
-            "payments": [
+            "documents": [
                 {
-                    "status": "NOT-PAID",
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "params": {
-                        "currency": "INR",
-                        "amount": "44.83"
-                    },
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "settlement_bank_account_no": "919562279968",
-                            "settlement_ifsc_code": "PYTM0123456",
-                            "beneficiary_name": "SANU SHILSHAD CHIITANGADAN",
-                            "bank_name": "PAYTM PAYMENTS BANK"
-                        }
-                    ]
+                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/RAP-0043373.pdf?v=1705417479",
+                    "label": "PROFORMA_INVOICE"
                 }
             ],
-            "state": "Cancelled",
-            "created_at": "2024-01-12T11:27:59.819Z",
-            "updated_at": "2024-01-12T11:28:00.115Z",
-            "tags": [
-                {
-                    "descriptor": {
-                        "code": "buyer_id"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_code"
-                            },
-                            "value": "gst"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            },
-                            "value": "33AWAPS4854L1Z6"
-                        }
-                    ]
-                }
-            ]
+            "created_at": "2024-01-16T15:04:37.427Z",
+            "updated_at": "2024-01-16T15:04:50.000Z"
         }
-    },
-    "error": {
-        "type": "DOMAIN-ERROR",
-        "code": "30019",
-        "message": "Auto Rejecting as requirements have keyword `reject`"
     }
 }

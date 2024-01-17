@@ -11,9 +11,9 @@
         },
         "action": "on_init",
         "version": "2.0.2",
-        "transaction_id": "eb668588-b8a5-40d7-8268-6635c85196d1",
-        "message_id": "ad649d5b-0ecd-4e8a-ada3-0d5d8ce4b9b2",
-        "timestamp": "2024-01-12T14:07:40.752Z",
+        "transaction_id": "ab962fb6-71a0-4d0b-97dc-3b4cc9ae1e7b",
+        "message_id": "9631337d-4e53-4d40-abf7-59333f642a4e",
+        "timestamp": "2024-01-16T15:27:41.922Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -55,7 +55,7 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "handle with care"
+                                    "value": "reject"
                                 }
                             ]
                         }
@@ -136,6 +136,15 @@
                         }
                     },
                     {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
                         "title": "Delivery Charge",
                         "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "delivery",
@@ -161,15 +170,6 @@
                             "currency": "INR",
                             "value": "0.00"
                         }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
                     }
                 ],
                 "price": {
@@ -181,7 +181,11 @@
             "payments": [
                 {
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0"
+                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "collected_by": "BAP",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10"
                 }
             ]
         }
