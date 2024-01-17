@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_init",
+        "action": "on_status",
         "bap_id": "customer-preprod.staging.plectrum.dev",
         "bap_uri": "https://customer-preprod.staging.plectrum.dev/buyer/mobility/metro/api/v1",
         "bpp_id": "metrobox.preprod.triffy.in",
@@ -14,8 +14,8 @@
                 "code": "IND"
             }
         },
-        "message_id": "a1770d72-d667-4576-86b3-f7df9d95c0aa",
-        "timestamp": "2024-01-17T03:36:41.987Z",
+        "message_id": "1b247599-2f45-4ecd-931d-4fe4074e2aef",
+        "timestamp": "2024-01-17T03:36:54.022Z",
         "transaction_id": "711a7aba-d592-48d2-a61d-8f87f0dd365b",
         "ttl": "PT300S",
         "version": "2.0.0"
@@ -34,11 +34,18 @@
                     }
                 }
             ],
+            "created_at": "2024-01-17T03:36:47.545895379Z",
             "fulfillments": [
                 {
                     "id": "078ef8e9-d811-47b2-871d-3102a1727d28",
                     "stops": [
                         {
+                            "authorization": {
+                                "status": "UNUSED",
+                                "token": "MEUCICs85396GbK/8Kba6yXJxR7dxDHdJWPswZ9k9U/5L+jkAiEAslNWjSWw0Re++aQkzxerjHCS8i8o9C/WCSWD/c9wCIw=<FSP>303815,SLM,SKO,SJT,1,2024-01-17 03:36:46.753",
+                                "type": "QR",
+                                "valid_to": "2024-01-17T20:30:00Z"
+                            },
                             "id": "1",
                             "location": {
                                 "descriptor": {
@@ -72,12 +79,28 @@
                             "type": "END"
                         }
                     ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "303815"
+                                }
+                            ]
+                        }
+                    ],
                     "type": "TRIP",
                     "vehicle": {
                         "category": "METRO"
                     }
                 }
             ],
+            "id": "0b1026f7e53441fdb9b8a2d77ec11f2d",
             "items": [
                 {
                     "category_ids": [
@@ -111,11 +134,14 @@
                     "collected_by": "BAP",
                     "id": "ca02a424-98f8-46cc-ab6b-bbfe27296344",
                     "params": {
+                        "amount": "24",
                         "bank_account_number": "4323434556",
                         "bank_code": "KKBK0000261",
+                        "currency": "INR",
+                        "transaction_id": "TICKET_ORDER_6466054ff23b74354e847815_3440",
                         "virtual_payment_address": "9988199772@okicic"
                     },
-                    "status": "NOT-PAID",
+                    "status": "PAID",
                     "tags": [
                         {
                             "descriptor": {
@@ -205,6 +231,7 @@
                     "value": "24"
                 }
             },
+            "status": "ACTIVE",
             "tags": [
                 {
                     "descriptor": {
@@ -219,7 +246,8 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "updated_at": "2024-01-17T03:36:54.022990798Z"
         }
     }
 }
