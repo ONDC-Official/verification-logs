@@ -1,25 +1,77 @@
 {
-  "context": {
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:0484" } },
-    "domain": "ONDC:TRV11",
-    "timestamp": "2024-01-09T10:53:54.346Z",
-    "bap_id": "staging-operator.paytm.com/OndcMetro/on_callback",
-    "transaction_id": "7b50d4a0-af0b-11ee-88cf-a0a0bbd3c565",
-    "message_id": "7b50d4a0-af0b-11ee-8c6d-355502b10264",
-    "version": "2.0.0",
-    "action": "search",
-    "bap_uri": "https://staging-operator.paytm.com/OndcMetro/on_callback",
-    "ttl": "PT30S"
-  },
-  "message": {
-    "intent": {
-      "fulfillment": { "vehicle": { "category": "METRO" } },
-      "payment": {
-        "tags": [
-          { "descriptor": { "code": "BUYER_FINDER_FEES" }, "display": false, "list": [{ "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" }, "value": "1" }] },
-          { "descriptor": { "code": "SETTLEMENT_TERMS" }, "display": false, "list": [] }
-        ]
-      }
+    "uri": "https://preprod.gateway.ondc.org/search",
+    "json": {
+        "context": {
+            "location": {
+                "country": {
+                    "code": "IND"
+                },
+                "city": {
+                    "code": "std:044"
+                }
+            },
+            "domain": "ONDC:TRV11",
+            "timestamp": "2024-01-18T14:15:37.461Z",
+            "bap_id": "staging-operator.paytm.com/preprod/OndcMetro/on_callback",
+            "transaction_id": "270d8560-b63a-11ee-85a9-2e9647f56f8a",
+            "message_id": "270d5e50-b63a-11ee-8fb2-5c045720cbe2",
+            "version": "2.0.0",
+            "action": "search",
+            "bap_uri": "https://staging-operator.paytm.com/preprod/OndcMetro/on_callback",
+            "ttl": "PT30S"
+        },
+        "message": {
+            "intent": {
+                "fulfillment": {
+                    "vehicle": {
+                        "category": "METRO"
+                    }
+                },
+                "payment": {
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://dgtickets-staging.paytm.com/v1/mumbaimetro/tnc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": "Signature keyId=\"staging-operator.paytm.com/preprod/OndcMetro/on_callback|bdd29740-ae17-11ee-8fae-6f3015b50ccd|ed25519\",algorithm=\"ed25519\",created=\"1705587337\",expires=\"1705587367\",headers=\"(created) (expires) digest\",signature=\"v7OEg+mOl3PvQBKvHdy6Mi5PDAVO+eDwJvNNHinzK5QfvnX8C8073603Xox/bGBrESiC+s1QMs8RUriAGQmGBQ==\""
     }
-  }
 }
