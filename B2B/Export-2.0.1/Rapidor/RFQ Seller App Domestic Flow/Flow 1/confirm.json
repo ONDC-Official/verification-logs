@@ -11,9 +11,9 @@
         },
         "action": "confirm",
         "version": "2.0.2",
-        "transaction_id": "76ea6940-3608-445d-b076-01ff16cec6c4",
-        "message_id": "246e2277-5945-48a1-a87e-36ac1b3d1b02",
-        "timestamp": "2024-01-12T08:47:46.068Z",
+        "transaction_id": "de86e6f8-18cb-4aaa-88cf-dc3d3104cf0e",
+        "message_id": "f7dc2bd0-0309-4a0a-831a-e9395c9fed7d",
+        "timestamp": "2024-01-16T15:04:37.427Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -68,7 +68,7 @@
                     "tracking": false
                 }
             ],
-            "id": "RAP-0043069",
+            "id": "RAP-0043373",
             "state": "Created",
             "provider": {
                 "id": "9829644477",
@@ -119,10 +119,24 @@
                     "collected_by": "BPP",
                     "params": {
                         "currency": "INR",
-                        "amount": "44.83"
+                        "amount": "54.83"
                     },
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0"
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10"
                 }
             ],
             "quote": {
@@ -142,6 +156,14 @@
                             "price": {
                                 "currency": "INR",
                                 "value": "42.70"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "count": "100"
+                                }
                             }
                         }
                     },
@@ -155,12 +177,21 @@
                         }
                     },
                     {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
                         "title": "Delivery Charge",
                         "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "10.00"
                         }
                     },
                     {
@@ -180,25 +211,16 @@
                             "currency": "INR",
                             "value": "0.00"
                         }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-0.00"
-                        }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "44.83"
+                    "value": "54.83"
                 },
-                "ttl": "P2D"
+                "ttl": "P1D"
             },
-            "created_at": "2024-01-12T08:47:46.068Z",
-            "updated_at": "2024-01-12T08:47:46.068Z",
+            "created_at": "2024-01-16T15:04:37.427Z",
+            "updated_at": "2024-01-16T15:04:37.427Z",
             "tags": [
                 {
                     "descriptor": {

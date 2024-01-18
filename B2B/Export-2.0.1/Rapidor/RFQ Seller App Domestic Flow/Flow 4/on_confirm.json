@@ -11,9 +11,9 @@
         },
         "action": "on_confirm",
         "version": "2.0.2",
-        "transaction_id": "eb668588-b8a5-40d7-8268-6635c85196d1",
-        "message_id": "29a79d3f-1959-48a4-8951-e1648a78a997",
-        "timestamp": "2024-01-12T14:07:44.730Z",
+        "transaction_id": "ab962fb6-71a0-4d0b-97dc-3b4cc9ae1e7b",
+        "message_id": "cffc778a-ae86-4340-8e3d-dfa8790d1757",
+        "timestamp": "2024-01-16T15:27:49.500Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,7 +22,7 @@
     },
     "message": {
         "order": {
-            "id": "RAP-0043127",
+            "id": "RAP-0043375",
             "provider": {
                 "id": "9829644477",
                 "locations": [
@@ -59,7 +59,7 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "handle with care"
+                                    "value": "reject"
                                 }
                             ]
                         }
@@ -102,8 +102,8 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-12T14:07:44.000Z",
-                                    "end": "2024-01-12T16:07:44.000Z"
+                                    "start": "2024-01-16T15:27:49.000Z",
+                                    "end": "2024-01-16T17:27:49.000Z"
                                 }
                             },
                             "contact": {
@@ -129,8 +129,8 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-14T14:07:44.000Z",
-                                    "end": "2024-01-14T16:07:44.000Z"
+                                    "start": "2024-01-18T15:27:49.000Z",
+                                    "end": "2024-01-18T17:27:49.000Z"
                                 }
                             },
                             "contact": {
@@ -170,6 +170,15 @@
                         }
                     },
                     {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
                         "title": "Delivery Charge",
                         "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "delivery",
@@ -191,15 +200,6 @@
                         "title": "Packing",
                         "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "packing",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
                             "value": "0.00"
@@ -231,14 +231,17 @@
                             "settlement_bank_account_no": "919562279968",
                             "settlement_ifsc_code": "PYTM0123456",
                             "beneficiary_name": "919562279968",
-                            "bank_name": "PAYTM PAYMENTS BANK"
+                            "bank_name": "PAYTM BANK"
                         }
-                    ]
+                    ],
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10"
                 }
             ],
-            "state": "Accepted",
-            "created_at": "2024-01-12T14:07:44.415Z",
-            "updated_at": "2024-01-12T14:07:44.730Z",
+            "state": "Cancelled",
+            "created_at": "2024-01-16T15:27:48.824Z",
+            "updated_at": "2024-01-16T15:27:49.500Z",
             "tags": [
                 {
                     "descriptor": {
@@ -261,5 +264,10 @@
                 }
             ]
         }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "30019",
+        "message": "Auto Rejecting as requirements have keyword `reject`"
     }
 }
