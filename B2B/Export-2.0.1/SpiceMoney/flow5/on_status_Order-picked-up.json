@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "d28faf68-fb73-4d22-8da4-164e711d5d2a",
-        "message_id": "aa1620d4-52b8-4cae-91fe-842770806129",
-        "timestamp": "2024-01-12T16:09:03.268Z",
+        "transaction_id": "07c4958c-567e-4102-8922-517fc8fd281a",
+        "message_id": "4DigzfrdDb8ELiS1CGBAi",
+        "timestamp": "2024-01-18T14:03:36.000Z",
         "bap_id": "b2bapi-stage.spicesmartshop.com",
         "bap_uri": "https://5762-103-91-88-205.ngrok-free.app/bap",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,11 +22,15 @@
     },
     "message": {
         "order": {
+            "id": "09a74058-1a26-466d-82db-293ed012cb1f",
+            "state": "In-progress",
             "provider": {
-                "id": "7907561761"
-            },
-            "provider_location": {
-                "id": "L1"
+                "id": "7907561761",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
             },
             "items": [
                 {
@@ -38,28 +42,7 @@
                         "selected": {
                             "count": 15
                         }
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "free text on Item Customization"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "free text on packaging Customization"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
             "billing": {
@@ -79,15 +62,39 @@
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "tracking": false,
                     "@ondc/org/provider_name": "Rapidor",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P3D",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
                     "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "PlaceOrder"
+                                },
+                                "gps": "10.197500,76.214700"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-18T14:03:03.000Z",
+                                    "end": "2024-01-18T16:03:03.000Z"
+                                },
+                                "timestamp": "2024-01-18T14:03:36.000Z"
+                            },
+                            "contact": {
+                                "phone": "7907561761",
+                                "email": "care@acelrtech.com"
+                            }
+                        },
                         {
                             "type": "end",
                             "location": {
-                                "address": "C205 Madhupushpa Pune Maharashtra India",
+                                "address": "C205 Madhupushpa Pune Maharashtra India, Pune, 560027",
                                 "gps": "12.972442,77.580643",
                                 "area_code": "560027",
                                 "state": {
@@ -100,11 +107,31 @@
                                     "code": "IND"
                                 }
                             },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-20T14:03:03.000Z",
+                                    "end": "2024-01-20T16:03:03.000Z"
+                                }
+                            },
                             "contact": {
                                 "phone": "917727883199"
                             }
                         }
-                    ]
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "status": "NOT-PAID",
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "72026.43"
+                    },
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "1.0"
                 }
             ],
             "quote": {
@@ -179,12 +206,18 @@
                 },
                 "ttl": "P2D"
             },
-            "payments": [
+            "documents": [
                 {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0"
+                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/09a74058-1a26-466d-82db-293ed012cb1f.pdf?v=1705586586",
+                    "label": "PROFORMA_INVOICE"
+                },
+                {
+                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/MH/09a74058-1a26-466d-82db-293ed012cb1f-7907561761.pdf",
+                    "label": "Invoice"
                 }
-            ]
+            ],
+            "created_at": "2024-01-18T14:03:03.293Z",
+            "updated_at": "2024-01-18T14:03:36.000Z"
         }
     }
 }
