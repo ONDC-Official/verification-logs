@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_status",
+        "action": "on_cancel",
         "bap_id": "customer-preprod.staging.plectrum.dev",
         "bap_uri": "https://customer-preprod.staging.plectrum.dev/buyer/mobility/metro/api/v1",
         "bpp_id": "metrobox.preprod.triffy.in",
@@ -14,9 +14,9 @@
                 "code": "IND"
             }
         },
-        "message_id": "07d8b9ca-12cf-48e0-97d1-46c05477710d",
-        "timestamp": "2024-01-19T05:34:42.946Z",
-        "transaction_id": "8c1f9b0b-43a2-4130-92b3-cb5599fa04c7",
+        "message_id": "8203ef60-8d2d-4430-9e15-89677f94be89",
+        "timestamp": "2024-01-19T05:41:36.954Z",
+        "transaction_id": "a07fa426-7d7b-4377-8ed7-01acae18b780",
         "ttl": "PT300S",
         "version": "2.0.0"
     },
@@ -26,6 +26,10 @@
                 "name": "Automation User",
                 "phone": "1111133344"
             },
+            "cancellation": {
+                "cancelled_by": "CONSUMER",
+                "time": "2024-01-19T05:41:36.954Z"
+            },
             "cancellation_terms": [
                 {
                     "external_ref": {
@@ -34,18 +38,11 @@
                     }
                 }
             ],
-            "created_at": "2024-01-19T05:34:36.862Z",
             "fulfillments": [
                 {
-                    "id": "a3c7fd08-68d4-4e7c-b959-2aef071cf944",
+                    "id": "2a46c05f-b7b6-4b93-98e0-ce082cb30b08",
                     "stops": [
                         {
-                            "authorization": {
-                                "status": "UNCLAIMED",
-                                "token": "MEUCICwZrLNH+1/USyUlP0sjDRbVXwHgLxOkDKtqJmwZG1L/AiEAnPlkG5FKj51S4ut7Cw9q5HLL9nyotEZrkqRpZeCax4k=<FSP>303908,SNW,STV,SJT,1,2024-01-19 05:34:36.353",
-                                "type": "QR",
-                                "valid_to": "2024-01-19T20:30:00Z"
-                            },
                             "id": "1",
                             "location": {
                                 "descriptor": {
@@ -78,7 +75,7 @@
                                     "descriptor": {
                                         "code": "NUMBER"
                                     },
-                                    "value": "303908"
+                                    "value": "303909"
                                 }
                             ]
                         }
@@ -89,18 +86,18 @@
                     }
                 }
             ],
-            "id": "353a912af6a24ca1a7f1d718bc898600",
+            "id": "dd74968baba344bdb6270956566dd28c",
             "items": [
                 {
                     "category_ids": [
-                        "f9bbc285-3d79-46d3-b541-2e01070e5605"
+                        "288cdb1d-be63-4439-b35a-78a9455ae18c"
                     ],
                     "descriptor": {
                         "code": "SJT",
                         "name": "Single Journey Ticket"
                     },
                     "fulfillment_ids": [
-                        "a3c7fd08-68d4-4e7c-b959-2aef071cf944"
+                        "2a46c05f-b7b6-4b93-98e0-ce082cb30b08"
                     ],
                     "id": "sjt-newwashermenpetmetro-thiruvotriyurmetro",
                     "price": {
@@ -121,13 +118,13 @@
             "payments": [
                 {
                     "collected_by": "BAP",
-                    "id": "f4f3d3a5-1cc4-4516-8d4c-de26105e7fb7",
+                    "id": "5d367afb-d029-4c2e-8de8-cc8e8ddfb795",
                     "params": {
                         "amount": "16",
                         "bank_account_number": "4323434556",
                         "bank_code": "KKBK0000261",
                         "currency": "INR",
-                        "transaction_id": "8c1f9b0b-43a2-4130-92b3-cb5599fa04c7",
+                        "transaction_id": "a07fa426-7d7b-4377-8ed7-01acae18b780",
                         "virtual_payment_address": "9988199772@okicic"
                     },
                     "status": "PAID",
@@ -215,7 +212,7 @@
                 "descriptor": {
                     "name": "Chennai Metro Rail Limited"
                 },
-                "id": "b521d92e-2d78-4e7f-bb6c-8f15f8528991",
+                "id": "b8750819-8e64-4eae-8eb2-eadd215b88f1",
                 "time": {
                     "range": {
                         "end": "2023-09-14T23:30:00.000Z",
@@ -243,14 +240,40 @@
                             "value": "16"
                         },
                         "title": "BASE_FARE"
+                    },
+                    {
+                        "item": {
+                            "id": "rf1",
+                            "price": {
+                                "currency": "INR",
+                                "value": "-0.00"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        },
+                        "title": "REFUND"
+                    },
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "16.00"
+                        },
+                        "title": "CANCELLATION_CHARGES"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "16"
+                    "value": "16.00"
                 }
             },
-            "status": "ACTIVE",
+            "status": "SOFT_CANCEL",
             "tags": [
                 {
                     "descriptor": {
@@ -265,8 +288,7 @@
                         }
                     ]
                 }
-            ],
-            "updated_at": "2024-01-19T05:34:42.946Z"
+            ]
         }
     }
 }
