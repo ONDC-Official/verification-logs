@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_status",
+        "action": "on_cancel",
         "bap_id": "staging-operator.paytm.com/preprod/OndcMetro/on_callback",
         "bap_uri": "https://staging-operator.paytm.com/preprod/OndcMetro/on_callback",
         "bpp_id": "metrobox.preprod.triffy.in",
@@ -14,8 +14,8 @@
                 "code": "IND"
             }
         },
-        "message_id": "5aaf4920-b960-11ee-85e4-f87c3dae7226",
-        "timestamp": "2024-01-22T14:26:38.843Z",
+        "message_id": "3157ada0-b961-11ee-8501-6a29b880b1fb",
+        "timestamp": "2024-01-22T14:32:38.711Z",
         "transaction_id": "d9617aa0-b95f-11ee-89f4-29a3355047ca",
         "ttl": "PT300S",
         "version": "2.0.0"
@@ -26,6 +26,10 @@
                 "name": "Metro user",
                 "phone": "9971901764"
             },
+            "cancellation": {
+                "cancelled_by": "CONSUMER",
+                "time": "2024-01-22T14:32:38.711Z"
+            },
             "cancellation_terms": [
                 {
                     "external_ref": {
@@ -34,18 +38,11 @@
                     }
                 }
             ],
-            "created_at": "2024-01-22T14:23:02.582Z",
             "fulfillments": [
                 {
                     "id": "57204917-5eb7-4303-abd3-3ac91aa86fb0",
                     "stops": [
                         {
-                            "authorization": {
-                                "status": "UNCLAIMED",
-                                "token": "MEUCIBw7tfiI8lEOx6E41xl6zkcnRSyiDEg15DxkPU9iAcN3AiEA55rR4DRRVtv/54iyqgyTFPrEcf2uOIw/4Oj9sowWg9A=<FSP>303985,SAP,SHC,SJT,1,2024-01-22 14:23:02.327",
-                                "type": "QR",
-                                "valid_to": "2024-01-22T20:30:00Z"
-                            },
                             "id": "1",
                             "location": {
                                 "descriptor": {
@@ -243,14 +240,40 @@
                             "value": "32"
                         },
                         "title": "BASE_FARE"
+                    },
+                    {
+                        "item": {
+                            "id": "rf1",
+                            "price": {
+                                "currency": "INR",
+                                "value": "-32.00"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "-32.00"
+                        },
+                        "title": "REFUND"
+                    },
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "title": "CANCELLATION_CHARGES"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "32"
+                    "value": "0.00"
                 }
             },
-            "status": "ACTIVE",
+            "status": "SOFT_CANCEL",
             "tags": [
                 {
                     "descriptor": {
@@ -265,8 +288,7 @@
                         }
                     ]
                 }
-            ],
-            "updated_at": "2024-01-22T14:26:38.844Z"
+            ]
         }
     }
 }
