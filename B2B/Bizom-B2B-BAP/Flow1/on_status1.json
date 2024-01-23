@@ -11,9 +11,9 @@
         },
         "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "b206ee4b-19c4-4d2b-a038-5539f3820a8a",
-        "message_id": "4EQRNVJ-8dIoRwnJqhDUr",
-        "timestamp": "2024-01-09T11:15:55.000Z",
+        "transaction_id": "713741dc-5077-4df7-a191-a4537945f294",
+        "message_id": "_fvmrQCHNk8bVtX6s-8rf",
+        "timestamp": "2024-01-23T07:58:55.000Z",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bap_uri": "https://develapigateway.bizom.in/bap/ondcb2b",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,10 +22,10 @@
     },
     "message": {
         "order": {
-            "id": "b123fa05-24c0-484a-a67d-733d1817aacb",
-            "state": "In-progress",
+            "id": "149c1c59-8fbe-4593-8ea1-2ff4c6fef694",
+            "state": "Accepted",
             "provider": {
-                "id": "e0984602-7df7-4a55-9990-69d90f6ec572",
+                "id": "9829644477",
                 "locations": [
                     {
                         "id": "L1"
@@ -34,13 +34,13 @@
             },
             "items": [
                 {
-                    "id": "148152",
+                    "id": "243643",
                     "fulfillment_ids": [
                         "F1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 5
+                            "count": 1
                         }
                     }
                 }
@@ -66,7 +66,7 @@
                     "tracking": false,
                     "state": {
                         "descriptor": {
-                            "code": "Order-picked-up"
+                            "code": "Pending"
                         }
                     },
                     "stops": [
@@ -77,17 +77,16 @@
                                 "descriptor": {
                                     "name": "PlaceOrder"
                                 },
-                                "gps": "12.994755,77.597191"
+                                "gps": "26.907120,75.789239"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-09T10:55:50.000Z",
-                                    "end": "2024-01-09T12:55:50.000Z"
-                                },
-                                "timestamp": "2024-01-09T11:15:55.000Z"
+                                    "start": "2024-01-23T07:57:32.000Z",
+                                    "end": "2024-01-23T09:57:32.000Z"
+                                }
                             },
                             "contact": {
-                                "phone": "9961755401",
+                                "phone": "9829644477",
                                 "email": "care@acelrtech.com"
                             }
                         },
@@ -109,8 +108,8 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-11T10:55:50.000Z",
-                                    "end": "2024-01-11T12:55:50.000Z"
+                                    "start": "2024-01-25T07:57:32.000Z",
+                                    "end": "2024-01-25T09:57:32.000Z"
                                 }
                             },
                             "contact": {
@@ -123,69 +122,91 @@
             ],
             "payments": [
                 {
-                    "status": "NOT-PAID",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "10.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "seller-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
                     "type": "ON-FULFILLMENT",
                     "collected_by": "BPP",
+                    "status": "NOT-PAID",
                     "params": {
                         "currency": "INR",
                         "transaction_id": "121",
-                        "amount": "8373.75"
-                    },
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                        "amount": "60.31"
+                    }
                 }
             ],
             "quote": {
                 "breakup": [
                     {
-                        "title": "Kanjivaram Saree",
-                        "@ondc/org/item_id": "148152",
+                        "title": "LAXMI BHOG BESAN 500G",
+                        "@ondc/org/item_id": "243643",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "7250.00"
+                            "value": "42.70"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 5
+                            "count": 1
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "1450.00"
+                                "value": "42.70"
                             }
                         }
                     },
                     {
                         "title": "Tax",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "362.50"
+                            "value": "2.13"
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
                         }
                     },
                     {
                         "title": "Convenience Fee",
+                        "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "761.25"
+                            "value": "5.48"
                         }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "8373.75"
+                    "value": "60.31"
                 },
                 "ttl": "P2D"
             },
             "documents": [
                 {
-                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/KA/b123fa05-24c0-484a-a67d-733d1817aacb-e0984602-7df7-4a55-9990-69d90f6ec572.pdf",
-                    "label": "Invoice"
+                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/149c1c59-8fbe-4593-8ea1-2ff4c6fef694.pdf?v=1705996653",
+                    "label": "PROFORMA_INVOICE"
                 }
             ],
-            "created_at": "2024-01-09T10:55:37.551Z",
-            "updated_at": "2024-01-09T11:15:55.000Z"
+            "created_at": "2024-01-23T07:57:29.883Z",
+            "updated_at": "2024-01-23T07:58:55.000Z"
         }
     }
 }

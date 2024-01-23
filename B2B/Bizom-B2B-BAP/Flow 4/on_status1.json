@@ -11,9 +11,9 @@
         },
         "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "9199efd3-7fe4-4b4e-8234-516dd687bec8",
-        "message_id": "T3PJ5ReAlJusJe6ODFnh4",
-        "timestamp": "2024-01-09T10:26:00.000Z",
+        "transaction_id": "5e5fac9f-3d6d-43b9-909e-8dff8eb2750a",
+        "message_id": "0y-CcF6iXuxf4g7PSeDVU",
+        "timestamp": "2024-01-23T07:45:37.000Z",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bap_uri": "https://develapigateway.bizom.in/bap/ondcb2b",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,8 +22,8 @@
     },
     "message": {
         "order": {
-            "id": "94b2594a-9602-42ba-812c-b7933f71f683",
-            "state": "In-progress",
+            "id": "8b0cac60-b130-467b-97a8-c906c10ebf76",
+            "state": "Accepted",
             "provider": {
                 "id": "9829644477",
                 "locations": [
@@ -34,13 +34,13 @@
             },
             "items": [
                 {
-                    "id": "148071",
+                    "id": "243617",
                     "fulfillment_ids": [
                         "F1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 100
                         }
                     }
                 }
@@ -66,7 +66,7 @@
                     "tracking": false,
                     "state": {
                         "descriptor": {
-                            "code": "Order-picked-up"
+                            "code": "Pending"
                         }
                     },
                     "stops": [
@@ -77,14 +77,13 @@
                                 "descriptor": {
                                     "name": "PlaceOrder"
                                 },
-                                "gps": "26.766510,75.777967"
+                                "gps": "26.907120,75.789239"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-09T10:04:11.000Z",
-                                    "end": "2024-01-09T12:04:11.000Z"
-                                },
-                                "timestamp": "2024-01-09T10:26:00.000Z"
+                                    "start": "2024-01-23T07:37:59.000Z",
+                                    "end": "2024-01-23T09:37:59.000Z"
+                                }
                             },
                             "contact": {
                                 "phone": "9829644477",
@@ -109,8 +108,8 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-01-11T10:04:11.000Z",
-                                    "end": "2024-01-11T12:04:11.000Z"
+                                    "start": "2024-01-25T07:37:59.000Z",
+                                    "end": "2024-01-25T09:37:59.000Z"
                                 }
                             },
                             "contact": {
@@ -123,30 +122,41 @@
             ],
             "payments": [
                 {
-                    "status": "NOT-PAID",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "10.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "seller-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
                     "type": "ON-FULFILLMENT",
                     "collected_by": "BPP",
+                    "status": "NOT-PAID",
                     "params": {
                         "currency": "INR",
                         "transaction_id": "121",
-                        "amount": "49.31"
-                    },
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                        "amount": "4942.85"
+                    }
                 }
             ],
             "quote": {
                 "breakup": [
                     {
                         "title": "LAXMI BHOG BESAN 500G",
-                        "@ondc/org/item_id": "148071",
+                        "@ondc/org/item_id": "243617",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "42.70"
+                            "value": "4270.00"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 1
+                            "count": 100
                         },
                         "item": {
                             "price": {
@@ -157,35 +167,46 @@
                     },
                     {
                         "title": "Tax",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "2.13"
+                            "value": "213.50"
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
                         }
                     },
                     {
                         "title": "Convenience Fee",
+                        "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "4.48"
+                            "value": "449.35"
                         }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "49.31"
+                    "value": "4942.85"
                 },
                 "ttl": "P2D"
             },
             "documents": [
                 {
-                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/KA/94b2594a-9602-42ba-812c-b7933f71f683-9829644477.pdf",
-                    "label": "Invoice"
+                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/8b0cac60-b130-467b-97a8-c906c10ebf76.pdf?v=1705995480",
+                    "label": "PROFORMA_INVOICE"
                 }
             ],
-            "created_at": "2024-01-09T10:04:03.540Z",
-            "updated_at": "2024-01-09T10:26:00.000Z"
+            "created_at": "2024-01-23T07:37:53.697Z",
+            "updated_at": "2024-01-23T07:45:37.000Z"
         }
     }
 }

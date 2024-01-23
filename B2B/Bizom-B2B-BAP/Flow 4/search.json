@@ -1,83 +1,85 @@
 {
-    "context": {
-      "domain": "ONDC:RET10",
-      "location": {
-        "city": {
-          "code": "std:080"
-        },
-        "country": {
-          "code": "IND"
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "search",
+    "version": "2.0.2",
+    "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
+    "bap_uri": "https://develapigateway.bizom.in/bap/ondcb2b",
+    "transaction_id": "f0f8dc76-7e29-48b9-94ad-25cbc519815d",
+    "message_id": "6696c3c5-3e55-41b9-bd28-32e198fdd383",
+    "timestamp": "2024-01-23T07:31:14.016Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "intent": {
+      "item": {
+        "descriptor": {
+          "name": "BESAN-500G"
         }
       },
-      "action": "search",
-      "version": "2.0.2",
-      "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
-      "bap_uri": "https://develapigateway.bizom.in/bap/ondcb2b",
-      "transaction_id": "87f2583e-5c7b-4426-a4b9-b0b20626cd75",
-      "message_id": "4560f56d-1cb9-43fa-9868-e4da8eb8787b",
-      "timestamp": "2024-01-09T09:44:29.985Z",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "intent": {
-        "item": {
-          "descriptor": {
-            "name": "BESAN"
+      "fulfillment": {
+        "type": "Delivery",
+        "stops": [
+          {
+            "type": "Delivery",
+            "location": {
+              "gps": "12.923638114128435,77.67586975767115",
+              "area_code": "560103"
+            }
           }
-        },
-        "fulfillment": {
-          "stops": [
+        ]
+      },
+      "payment": {
+        "type": "ON-FULFILLMENT"
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "code": "bap_terms"
+          },
+          "list": [
             {
-              "location": {
-                "gps": "12.923638114128435,77.67586975767115",
-                "area_code": "560103"
-              }
+              "descriptor": {
+                "code": "finder_fee_type"
+              },
+              "value": "percent"
+            },
+            {
+              "descriptor": {
+                "code": "finder_fee_amount"
+              },
+              "value": "10"
             }
           ]
         },
-        "payment": {
-          "type": "ON-FULFILLMENT"
-        },
-        "tags": [
-          {
-            "descriptor": {
-              "code": "bap_terms"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "finder_fee_type"
-                },
-                "value": "percent"
-              },
-              {
-                "descriptor": {
-                  "code": "finder_fee_amount"
-                },
-                "value": "10"
-              }
-            ]
+        {
+          "descriptor": {
+            "code": "buyer_id"
           },
-          {
-            "descriptor": {
-              "code": "buyer_id"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "buyer_id_code"
-                },
-                "value": "gst"
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
               },
-              {
-                "descriptor": {
-                  "code": "buyer_id_no"
-                },
-                "value": "29AAFCM4341L1Z6"
-              }
-            ]
-          }
-        ]
-      }
+              "value": "gst"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "29AAFCM4341L1Z6"
+            }
+          ]
+        }
+      ]
     }
   }
+}
