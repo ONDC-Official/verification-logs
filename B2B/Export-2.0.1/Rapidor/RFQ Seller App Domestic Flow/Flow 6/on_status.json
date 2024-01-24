@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "d2e5882a-078b-4cbf-ab49-bf32fcbd75e8",
-        "message_id": "f04e7f60-c661-4d7e-8941-e4ad52e542f6",
-        "timestamp": "2024-01-24T14:29:54.141Z",
+        "transaction_id": "c3f9cf3b-79e0-4045-8db4-e01afa76ea69",
+        "message_id": "6Puy2TM_FIh3NjsOS1YKF",
+        "timestamp": "2024-01-24T15:29:20.992Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,44 +22,27 @@
     },
     "message": {
         "order": {
+            "id": "RAP-0044283",
+            "state": "Completed",
             "provider": {
-                "id": "9829644477"
-            },
-            "provider_location": {
-                "id": "L1"
+                "id": "9829644477",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
             },
             "items": [
                 {
-                    "id": "BESAN-500G",
+                    "id": "MAIDA-500G",
                     "fulfillment_ids": [
                         "1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 100
                         }
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "No special packaging & shipment needed"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "handle with care"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
             "billing": {
@@ -78,11 +61,35 @@
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "tracking": false,
                     "@ondc/org/provider_name": "Rapidor",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P3D",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
                     "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "PlaceOrder"
+                                },
+                                "gps": "26.907120,75.789239"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-24T14:55:45.000Z",
+                                    "end": "2024-01-24T16:55:45.000Z"
+                                },
+                                "timestamp": "2024-01-24T14:56:15.000Z"
+                            },
+                            "contact": {
+                                "phone": "9829644477",
+                                "email": "care@acelrtech.com"
+                            }
+                        },
                         {
                             "type": "end",
                             "location": {
@@ -99,45 +106,81 @@
                                     "code": "IND"
                                 }
                             },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-26T14:55:45.000Z",
+                                    "end": "2024-01-26T16:55:45.000Z"
+                                },
+                                "timestamp": "2024-01-24T14:56:40.000Z"
+                            },
                             "contact": {
                                 "phone": "9947328084"
                             }
                         }
-                    ]
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "1.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "seller-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10",
+                    "status": "PAID",
+                    "params": {
+                        "currency": "INR",
+                        "transaction_id": "3o7Gb2L3xmYyqZaI6uYLZ",
+                        "amount": "1934.91"
+                    }
                 }
             ],
             "quote": {
                 "breakup": [
                     {
-                        "title": "LAXMI BHOG BESAN 500G",
-                        "@ondc/org/item_id": "BESAN-500G",
+                        "title": "LAXMI BHOG MAIDA 500G",
+                        "@ondc/org/item_id": "MAIDA-500G",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "42.70"
+                            "value": "1815.00"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 1
+                            "count": 100
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "42.70"
+                                "value": "18.15"
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/item_id": "MAIDA-500G",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "2.13"
+                            "value": "90.75"
                         }
                     },
                     {
                         "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/item_id": "MAIDA-500G",
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
@@ -159,7 +202,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "0.55"
+                            "value": "19.16"
                         }
                     },
                     {
@@ -174,79 +217,22 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "55.38"
+                    "value": "1934.91"
                 },
                 "ttl": "P2D"
             },
-            "payments": [
+            "documents": [
                 {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "1.0",
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "10"
-                }
-            ],
-            "tags": [
-                {
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "max_liability"
-                            },
-                            "value": "2"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "max_liability_cap"
-                            },
-                            "value": "10000"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "mandatory_arbitration"
-                            },
-                            "value": "false"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "court_jurisdiction"
-                            },
-                            "value": "Kerala"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "delay_interest"
-                            },
-                            "value": "1000"
-                        }
-                    ]
+                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/RAP-0044283.pdf?v=1706108146",
+                    "label": "PROFORMA_INVOICE"
                 },
                 {
-                    "descriptor": {
-                        "code": "buyer_id"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_code"
-                            },
-                            "value": "gst"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            },
-                            "value": "33AWAPS4854L1Z6"
-                        }
-                    ]
+                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/KA/RAP-0044283-9829644477.pdf",
+                    "label": "Invoice"
                 }
-            ]
+            ],
+            "created_at": "2024-01-24T14:55:44.499Z",
+            "updated_at": "2024-01-24T15:28:44.573Z"
         }
     }
 }
