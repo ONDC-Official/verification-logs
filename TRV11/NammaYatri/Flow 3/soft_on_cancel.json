@@ -1,0 +1,294 @@
+{
+  "context": {
+    "action": "on_cancel",
+    "bap_id": "api.sandbox.beckn.juspay.in/dev/bap/frfs/4b17bd06-ae7e-48e9-85bf-282fb310209c",
+    "bap_uri": "https://api.sandbox.beckn.juspay.in/dev/bap/frfs/4b17bd06-ae7e-48e9-85bf-282fb310209c",
+    "bpp_id": "metrobox.preprod.triffy.in",
+    "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:044"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "5021aaa1-4b1b-4301-a1bd-f34b866e5778",
+    "timestamp": "2024-01-30T12:21:55.067391Z",
+    "transaction_id": "48cdc406-21ec-4f90-99bf-fe704e6d9bc7",
+    "ttl": "PT30S",
+    "version": "2.0.0"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "name": "Ethan",
+        "phone": "9988776655"
+      },
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-01-30T12:21:55.067391Z"
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://metro-terms.triffy.in/chennai/index.html"
+          }
+        }
+      ],
+      "created_at": "2024-01-30T14:39:29.404Z",
+      "fulfillments": [
+        {
+          "id": "fc3b8d55-93d4-49f8-9a1f-3646d2652a17",
+          "stops": [
+            {
+              "id": "1",
+              "location": {
+                "descriptor": {
+                  "code": "SAN|0227",
+                  "name": "Ashok Nagar"
+                },
+                "gps": "13.035534, 80.211140"
+              },
+              "type": "START"
+            },
+            {
+              "id": "2",
+              "location": {
+                "descriptor": {
+                  "code": "SSI|0229",
+                  "name": "Ekkattuthangal"
+                },
+                "gps": "13.017044, 80.205940"
+              },
+              "type": "END"
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "304235"
+                }
+              ]
+            }
+          ],
+          "type": "TRIP",
+          "vehicle": {
+            "category": "METRO"
+          }
+        }
+      ],
+      "id": "TRFdd6b8efc4c044b8391103969cdc927db",
+      "items": [
+        {
+          "category_ids": [
+            "8ab87431-9f6d-40f2-816d-118c81058530"
+          ],
+          "descriptor": {
+            "code": "SJT",
+            "name": "Single Journey Ticket"
+          },
+          "fulfillment_ids": [
+            "fc3b8d55-93d4-49f8-9a1f-3646d2652a17"
+          ],
+          "id": "sjt-ashoknagar-ekkattuthangal",
+          "price": {
+            "currency": "INR",
+            "value": "16"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "id": "a13f6901-387e-4fdf-9094-233041921883",
+          "params": {
+            "amount": "16",
+            "bank_account_number": "00228130001XXXX",
+            "bank_code": "XXXX0000022",
+            "currency": "INR",
+            "transaction_id": "9cd13010-e60d-4c04-b30a-3163ba903487"
+          },
+          "status": "PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECIEPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Bengaluru"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://metro-terms.triffy.in/chennai/index.html"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "16"
+                }
+              ]
+            }
+          ],
+          "type": "PRE-ORDER"
+        }
+      ],
+      "provider": {
+        "descriptor": {
+          "name": "Chennai Metro Rail Limited"
+        },
+        "id": "triffy-cmrl-rail-metro",
+        "time": {
+          "range": {
+            "end": "2006-01-02T17:00:00Z",
+            "start": "2006-01-02T23:00:00Z"
+          }
+        }
+      },
+      "quote": {
+        "breakup": [
+          {
+            "item": {
+              "id": "sjt-ashoknagar-ekkattuthangal",
+              "price": {
+                "currency": "INR",
+                "value": "16"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "16"
+            },
+            "title": "BASE_FARE"
+          },
+          {
+            "item": {
+              "id": "rf1",
+              "price": {
+                "currency": "INR",
+                "value": "-16.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "-16.00"
+            },
+            "title": "REFUND"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "CANCELLATION_CHARGES"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "0.00"
+        }
+      },
+      "status": "SOFT_CANCEL",
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://chennaimetrorail.org/time-table/"
+            }
+          ]
+        }
+      ],
+      "updated_at": "2024-01-30T12:21:55.067391Z"
+    }
+  }
+}
