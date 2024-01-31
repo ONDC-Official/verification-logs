@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_cancel",
         "version": "2.0.2",
-        "transaction_id": "6553b934-7378-4123-b9dd-1663cdcf844a",
-        "message_id": "125a664d-dc51-4a26-8eab-68c789088f2b",
-        "timestamp": "2024-01-31T12:13:22.894Z",
+        "transaction_id": "50fe7d2f-b765-48b7-ac57-934afdfad819",
+        "message_id": "IdjJ1ulgsUhjRUSE1UWAM",
+        "timestamp": "2024-01-31T12:58:10.160Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,11 +22,22 @@
     },
     "message": {
         "order": {
-            "provider": {
-                "id": "9829644477"
+            "order_id": "RAP-0044756",
+            "cancellation": {
+                "cancelled_by": "ondcpreprodb2b.rapidor.co",
+                "reason": {
+                    "id": "002"
+                }
             },
-            "provider_location": {
-                "id": "L1"
+            "status": "Cancelled",
+            "provider": {
+                "id": "9829644477",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ],
+                "rateable": false
             },
             "items": [
                 {
@@ -36,7 +47,7 @@
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 100
+                            "count": 2
                         }
                     },
                     "tags": []
@@ -48,7 +59,7 @@
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 100
+                            "count": 2
                         }
                     },
                     "tags": []
@@ -70,11 +81,35 @@
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "tracking": false,
                     "@ondc/org/provider_name": "Rapidor",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P3D",
+                    "tracking": false,
+                    "rateable": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
                     "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "Radha Soami Food Products Pvt Ltd."
+                                },
+                                "gps": "26.907120,75.789239"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-01-31T12:26:28.000Z",
+                                    "end": "2024-01-31T14:26:28.000Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9829644477",
+                                "email": "care@acelrtech.com"
+                            }
+                        },
                         {
                             "type": "end",
                             "location": {
@@ -89,6 +124,12 @@
                                 },
                                 "country": {
                                     "code": "IND"
+                                }
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-02-02T12:26:28.000Z",
+                                    "end": "2024-02-02T14:26:28.000Z"
                                 }
                             },
                             "contact": {
@@ -106,10 +147,10 @@
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "33200.00"
+                            "value": "664.00"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 100
+                            "count": 2
                         },
                         "item": {
                             "price": {
@@ -124,7 +165,7 @@
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "1660.00"
+                            "value": "33.20"
                         }
                     },
                     {
@@ -142,10 +183,10 @@
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "1910.00"
+                            "value": "38.20"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 100
+                            "count": 2
                         },
                         "item": {
                             "price": {
@@ -160,7 +201,7 @@
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "95.50"
+                            "value": "1.91"
                         }
                     },
                     {
@@ -187,7 +228,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "368.75"
+                            "value": "7.47"
                         }
                     },
                     {
@@ -202,7 +243,7 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "37244.25"
+                    "value": "754.78"
                 },
                 "ttl": "P2D"
             },
@@ -225,10 +266,34 @@
                     "collected_by": "BPP",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0"
+                    "@ondc/org/withholding_amount": "0",
+                    "status": "NOT-PAID",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "754.78"
+                    }
                 }
             ],
             "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "33AWAPS4854L1Z6"
+                        }
+                    ]
+                },
                 {
                     "descriptor": {
                         "code": "bpp_terms"
@@ -268,20 +333,14 @@
                 },
                 {
                     "descriptor": {
-                        "code": "buyer_id"
+                        "code": "bap_terms"
                     },
                     "list": [
                         {
                             "descriptor": {
-                                "code": "buyer_id_code"
+                                "code": "accept_bpp_terms"
                             },
-                            "value": "gst"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            },
-                            "value": "33AWAPS4854L1Z6"
+                            "value": "Y"
                         }
                     ]
                 }
