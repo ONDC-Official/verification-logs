@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2024-01-29T12:38:26.606Z",
-    "transaction_id": "90d85800-ce85-4113-9406-c0ddea98d94d",
-    "message_id": "56300964-b1be-424c-8a75-172c9dbea7c6",
+    "timestamp": "2024-01-31T07:15:55.427Z",
+    "transaction_id": "a40fa59d-3c86-4811-bac1-cdbbbc8ac0e8",
+    "message_id": "074dd645-5520-4496-964b-9969efc50eb3",
     "version": "2.0.0",
     "action": "on_init",
     "bap_id": "mobilitybuyer.sumasoft.com",
@@ -84,6 +84,20 @@
                   },
                   "display": true,
                   "value": "22:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "display": true,
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "display": true,
+                  "value": "0"
                 }
               ]
             }
@@ -92,7 +106,7 @@
             "64dddb50a5fecda2e209adac"
           ],
           "payment_ids": [
-            "65b79c422277809a4f703511"
+            "65b9f3ab2277809a4f74e580"
           ]
         }
       ],
@@ -127,8 +141,8 @@
             {
               "type": "START",
               "location": {
-                "gps": "18.560886,73.806971",
-                "address": "4th Floor, Westend Icon, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+                "gps": "18.560885,73.806933",
+                "address": "10 Westend Mall SF 2, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
               }
             },
             {
@@ -198,21 +212,49 @@
         {
           "fulfillment_state": {
             "descriptor": {
-              "code": "DRIVER_EN_ROUTE_TO_PICKUP"
+              "code": "RIDE_ENDED"
             }
           },
           "reason_required": true,
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
-              "value": "25"
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_CANCELLED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
             }
           }
         }
       ],
       "payments": [
         {
-          "id": "65b79c422277809a4f703511",
+          "id": "65b9f3ab2277809a4f74e580",
           "type": "ON-FULFILLMENT",
           "collected_by": "BPP",
           "status": "NOT-PAID",
@@ -270,7 +312,7 @@
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "1"
+                  "value": "0"
                 }
               ]
             }

@@ -9,9 +9,9 @@
       }
     },
     "domain": "ONDC:TRV10",
-    "timestamp": "2024-01-29T12:23:29.130Z",
-    "transaction_id": "877f6639-4222-47f4-8832-2a253822f725",
-    "message_id": "2b5b3669-493d-4a43-a03d-fb9e27708e35",
+    "timestamp": "2024-01-31T07:09:35.016Z",
+    "transaction_id": "e46b4d5f-4a76-4e0e-9133-f2651d2d02d8",
+    "message_id": "f7dd4dc9-64f3-48c3-93a2-b4d205c6645b",
     "version": "2.0.0",
     "action": "on_cancel",
     "bap_id": "mobilitybuyer.sumasoft.com",
@@ -22,7 +22,7 @@
   },
   "message": {
     "order": {
-      "id": "02c16861-ac0e-4549-9bff-cfbc00e32853",
+      "id": "8c088ad0-9caa-4972-99dc-4016d9a6205c",
       "provider": {
         "id": "64914e84e833e424558d20b5"
       },
@@ -130,7 +130,7 @@
             "64dddb50a5fecda2e209adac"
           ],
           "payment_ids": [
-            "65b798ae2277809a4f7026d2"
+            "65b9f21b2277809a4f74da12"
           ]
         }
       ],
@@ -170,7 +170,7 @@
           "type": "DELIVERY",
           "state": {
             "descriptor": {
-              "code": "RIDE_CANCELLED",
+              "code": "RIDE_ENROUTE_PICKUP",
               "name": "Oops! The ride is cancelled."
             }
           },
@@ -197,13 +197,13 @@
             {
               "type": "START",
               "location": {
-                "gps": "18.560901,73.806909"
+                "gps": "18.560884,73.806938"
               }
             },
             {
               "type": "END",
               "location": {
-                "gps": "18.560901,73.806909"
+                "gps": "18.560884,73.806938"
               }
             }
           ],
@@ -261,21 +261,49 @@
         {
           "fulfillment_state": {
             "descriptor": {
-              "code": "DRIVER_EN_ROUTE_TO_PICKUP"
+              "code": "RIDE_ENDED"
             }
           },
           "reason_required": true,
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
-              "value": "25"
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_CANCELLED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
             }
           }
         }
       ],
       "payments": [
         {
-          "id": "65b798ae2277809a4f7026d2",
+          "id": "65b9f21b2277809a4f74da12",
           "type": "ON-FULFILLMENT",
           "collected_by": "BPP",
           "status": "NOT-PAID",
@@ -334,6 +362,24 @@
                     "code": "STATIC_TERMS"
                   },
                   "value": "https://mobitybuyer.sumasoft.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Pune"
                 }
               ]
             },
@@ -347,7 +393,7 @@
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "1"
+                  "value": "0"
                 }
               ]
             }
