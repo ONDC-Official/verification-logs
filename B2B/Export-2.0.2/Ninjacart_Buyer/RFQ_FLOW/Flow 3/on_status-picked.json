@@ -9,30 +9,34 @@
         "code": "IND"
       }
     },
-    "action": "on_confirm",
+    "action": "on_status",
     "version": "2.0.2",
     "bap_id": "ondc-buyer-api.trafyn.site",
     "bap_uri": "https://ondc-buyer-api.trafyn.site/",
     "bpp_id": "ondcpreprodb2b.rapidor.co",
     "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
     "transaction_id": "RFQ_f8bf106e-a382-4710-9cef-758e1316369e",
-    "message_id": "8a4dc3df-55b5-4bf0-9dca-22a4af6e94c3",
-    "timestamp": "2024-02-02T09:08:32.649Z",
+    "message_id": "FLyGcVyspLxh4nEd0_wy3",
+    "timestamp": "2024-02-02T09:24:54Z",
     "ttl": "PT4H"
   },
   "message": {
     "order": {
       "id": "f8bf106e-a382-4710-9cef-758e1316369e",
-      "state": "Accepted",
+      "state": "In-progress",
+      "documents": [
+        {
+          "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/f8bf106e-a382-4710-9cef-758e1316369e.pdf?v=1706864913",
+          "label": "PROFORMA_INVOICE"
+        }
+      ],
       "provider": {
         "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
         "locations": [
           {
             "id": "L1"
           }
-        ],
-        "rateable": false,
-        "ttl": "PT4H"
+        ]
       },
       "items": [
         {
@@ -44,27 +48,6 @@
           },
           "fulfillment_ids": [
             "1"
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "ITEM_REQ"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "PACKAGING_REQ"
-                  },
-                  "value": ""
-                }
-              ]
-            }
           ]
         },
         {
@@ -76,27 +59,6 @@
           },
           "fulfillment_ids": [
             "1"
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "ITEM_REQ"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "PACKAGING_REQ"
-                  },
-                  "value": ""
-                }
-              ]
-            }
           ]
         }
       ],
@@ -116,10 +78,9 @@
           "id": "1",
           "@ondc/org/provider_name": "Rapidor",
           "type": "Delivery",
-          "rateable": false,
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "Order-picked-up"
             }
           },
           "tracking": false,
@@ -128,26 +89,35 @@
               "location": {
                 "id": "L1",
                 "descriptor": {
-                  "name": "Yelagiri Hills Tribal Farmer Producer Company Limited"
+                  "name": "PlaceOrder"
                 },
                 "gps": "12.473357,78.536600"
               },
               "type": "start",
               "time": {
+                "timestamp": "2024-02-02T09:24:54Z",
                 "range": {
                   "start": "2024-02-02T09:08:32Z",
                   "end": "2024-02-02T11:08:32Z"
                 }
               },
+              "instructions": {
+                "name": "Proof of pickup",
+                "short_desc": "order picked",
+                "long_desc": "order picked",
+                "images": [
+                  "https://rapidor.s3-us-west-2.amazonaws.com/files/7kPlhjM391ev17_SXWwY7_system-design-png.png"
+                ]
+              },
               "contact": {
                 "phone": "6380612306",
-                "email": "yelagirihtfpcl@gmail.com"
+                "email": "care@acelrtech.com"
               }
             },
             {
               "location": {
-                "gps": "12.473357,78.5366",
-                "address": "Bangalore",
+                "gps": "12.473357,78.536600",
+                "address": "Bangalore, Bangalore, 635853",
                 "city": {
                   "name": "Bangalore"
                 },
@@ -170,7 +140,8 @@
                 "phone": "9123456789"
               }
             }
-          ]
+          ],
+          "tags": []
         }
       ],
       "quote": {
@@ -237,7 +208,7 @@
           "type": "ON-FULFILLMENT",
           "status": "NOT-PAID",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
           "@ondc/org/withholding_amount": "0",
           "@ondc/org/settlement_basis": "delivery",
           "@ondc/org/settlement_window": "P1D",
@@ -255,28 +226,7 @@
         }
       ],
       "created_at": "2024-02-02T14:38:32.267Z",
-      "updated_at": "2024-02-02T09:08:32.649Z",
-      "tags": [
-        {
-          "descriptor": {
-            "code": "buyer_id"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "buyer_id_code"
-              },
-              "value": "gst"
-            },
-            {
-              "descriptor": {
-                "code": "buyer_id_no"
-              },
-              "value": "xxxxxxxxxxxxxxx"
-            }
-          ]
-        }
-      ]
+      "updated_at": "2024-02-02T09:24:54Z"
     }
   }
 }
