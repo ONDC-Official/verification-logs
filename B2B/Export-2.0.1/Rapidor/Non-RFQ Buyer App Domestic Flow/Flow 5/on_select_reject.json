@@ -3,17 +3,17 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
             }
         },
-        "action": "on_status",
+        "action": "on_select",
         "version": "2.0.2",
-        "transaction_id": "6553b934-7378-4123-b9dd-1663cdcf844a",
-        "message_id": "1lHqyEIVX9uw2svJ5jjem",
-        "timestamp": "2024-01-31T12:14:03.000Z",
+        "transaction_id": "50fe7d2f-b765-48b7-ac57-934afdfad819",
+        "message_id": "f4c53aa0-ff1c-4188-87d1-c8889932818d",
+        "timestamp": "2024-01-31T12:25:53.680Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,8 +22,6 @@
     },
     "message": {
         "order": {
-            "id": "RAP-0044753",
-            "state": "In-progress",
             "provider": {
                 "id": "9829644477",
                 "locations": [
@@ -38,9 +36,12 @@
                     "fulfillment_ids": [
                         "1"
                     ],
+                    "location_ids": [
+                        "L1"
+                    ],
                     "quantity": {
                         "selected": {
-                            "count": 100
+                            "count": 2
                         }
                     }
                 },
@@ -49,112 +50,33 @@
                     "fulfillment_ids": [
                         "1"
                     ],
+                    "location_ids": [
+                        "L1"
+                    ],
                     "quantity": {
                         "selected": {
-                            "count": 100
+                            "count": 2
                         }
                     }
                 }
             ],
-            "billing": {
-                "name": "RAMAKRISHNAN SATHISH KUMAR",
-                "address": "uti, itu, Tui, uiuitt, Bangalore Rural, 560001",
-                "phone": "9947328084",
-                "tax_id": "33AWAPS4854L1Z6",
-                "city": {
-                    "name": "Bangalore Rural"
-                },
-                "state": {
-                    "name": "Karnataka"
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
                 }
-            },
+            ],
             "fulfillments": [
                 {
                     "id": "1",
-                    "type": "Delivery",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "P3D",
                     "state": {
                         "descriptor": {
-                            "code": "Out-for-delivery"
+                            "code": "Non-serviceable"
                         }
-                    },
-                    "stops": [
-                        {
-                            "type": "start",
-                            "location": {
-                                "id": "L1",
-                                "descriptor": {
-                                    "name": "PlaceOrder"
-                                },
-                                "gps": "26.907120,75.789239"
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-01-31T12:13:26.000Z",
-                                    "end": "2024-01-31T14:13:26.000Z"
-                                },
-                                "timestamp": "2024-01-31T12:13:55.000Z"
-                            },
-                            "contact": {
-                                "phone": "9829644477",
-                                "email": "care@acelrtech.com"
-                            }
-                        },
-                        {
-                            "type": "end",
-                            "location": {
-                                "address": "uti, itu, Tui, uiuitt, Bangalore Rural, 560001",
-                                "gps": "12.976594,77.599271",
-                                "area_code": "560001",
-                                "state": {
-                                    "name": "Karnataka"
-                                },
-                                "city": {
-                                    "name": "Bangalore Rural"
-                                },
-                                "country": {
-                                    "code": "IND"
-                                }
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-02-02T12:13:26.000Z",
-                                    "end": "2024-02-02T14:13:26.000Z"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9947328084"
-                            }
-                        }
-                    ],
-                    "tags": []
-                }
-            ],
-            "payments": [
-                {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "1.0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "seller-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "settlement_bank_account_no": "1234567890",
-                            "settlement_ifsc_code": "HDFC0000102",
-                            "beneficiary_name": "Thomson",
-                            "bank_name": "Test Bank"
-                        }
-                    ],
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
-                    "status": "NOT-PAID",
-                    "params": {
-                        "currency": "INR",
-                        "amount": "37244.25"
                     }
                 }
             ],
@@ -166,15 +88,23 @@
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "33200.00"
+                            "value": "664.00"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 100
+                            "count": 2
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
                                 "value": "332.00"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "count": "100"
+                                }
                             }
                         }
                     },
@@ -184,7 +114,7 @@
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "1660.00"
+                            "value": "33.20"
                         }
                     },
                     {
@@ -202,15 +132,23 @@
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "1910.00"
+                            "value": "38.20"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 100
+                            "count": 2
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
                                 "value": "19.10"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "count": "100"
+                                }
                             }
                         }
                     },
@@ -220,7 +158,7 @@
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "95.50"
+                            "value": "1.91"
                         }
                     },
                     {
@@ -238,7 +176,7 @@
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "10.00"
+                            "value": "0.00"
                         }
                     },
                     {
@@ -247,7 +185,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "368.75"
+                            "value": "7.37"
                         }
                     },
                     {
@@ -262,18 +200,15 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "37244.25"
+                    "value": "754.78"
                 },
                 "ttl": "P2D"
-            },
-            "documents": [
-                {
-                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/RAP-0044753.pdf?v=1706703207",
-                    "label": "Invoice"
-                }
-            ],
-            "created_at": "2024-01-31T12:13:25.852Z",
-            "updated_at": "2024-01-31T12:14:03.000Z"
+            }
         }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "30009",
+        "message": "Buyer Location not Serviceable"
     }
 }
