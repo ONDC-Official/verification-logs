@@ -1,6 +1,6 @@
 {
     "context": {
-        "domain": "ONDC:RET1A",
+        "domain": "ONDC:RET1B",
         "location": {
             "city": {
                 "code": "std:079"
@@ -11,9 +11,9 @@
         },
         "action": "on_search",
         "version": "2.0.2",
-        "transaction_id": "8f5bc725-93c0-43a7-b57b-ad859aa9728d",
-        "message_id": "6acff218-fb6f-49f6-9af7-866855d90289",
-        "timestamp": "2024-01-24T13:41:23.000Z",
+        "transaction_id": "bbbd85e5-6eca-4395-aefb-28646d3d6f73",
+        "message_id": "4305319e-d938-4a1d-bd42-d00cab3f4e0e",
+        "timestamp": "2024-02-02T11:20:09.803Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "ttl": "PT30S",
@@ -24,28 +24,18 @@
         "catalog": {
             "fulfillments": [
                 {
-                    "id": "'1'",
+                    "id": "1",
                     "type": "Delivery"
                 },
                 {
-                    "id": "'2'",
+                    "id": "2",
                     "type": "Self-Pickup"
                 }
             ],
             "payments": [
                 {
-                    "id": "1",
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "BPP"
-                },
-                {
                     "id": "2",
                     "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP"
-                },
-                {
-                    "id": "3",
-                    "type": "POST-FULFILLMENT",
                     "collected_by": "BPP"
                 }
             ],
@@ -74,7 +64,77 @@
                         ]
                     },
                     "ttl": "P1D",
-                    "tags": [],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "serviceability"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "location"
+                                    },
+                                    "value": "L1"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "category"
+                                    },
+                                    "value": "RET1B-*"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "type"
+                                    },
+                                    "value": "12"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "val"
+                                    },
+                                    "value": "IND"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "unit"
+                                    },
+                                    "value": "country"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "seller_terms"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "gst_credit_invoice"
+                                    },
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "seller_id"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "seller_id_code"
+                                    },
+                                    "value": "gst"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "seller_id_no"
+                                    },
+                                    "value": "19AABCU9603R1ZK"
+                                }
+                            ]
+                        }
+                    ],
                     "fulfillments": [
                         {
                             "contact": {
@@ -86,7 +146,7 @@
                     "locations": [
                         {
                             "id": "W20222745923425",
-                            "gps": "22.6015,88.4004",
+                            "gps": "22.601500,88.400400",
                             "address": "6/4515-1",
                             "city": {
                                 "code": "std:033",
@@ -102,7 +162,7 @@
                         },
                         {
                             "id": "W20222745923425",
-                            "gps": "22.6015,88.4004",
+                            "gps": "22.601500,88.400400",
                             "address": "6/4515-1",
                             "city": {
                                 "code": "std:033",
@@ -149,8 +209,8 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "'1500'",
-                                "maximum_value": "'5000'"
+                                "value": "1500.00",
+                                "maximum_value": "5000.00"
                             },
                             "matched": "true",
                             "quantity": {
@@ -165,18 +225,18 @@
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "'68'"
+                                    "count": "46"
                                 },
                                 "maximum": {
                                     "measure": {
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "'68'"
+                                    "count": "46"
                                 }
                             },
                             "category_ids": [
-                                "RET1A-10"
+                                "RET1B-1029"
                             ],
                             "fulfillment_ids": [
                                 "1"
@@ -185,7 +245,6 @@
                                 "W20222745923425"
                             ],
                             "payment_ids": [
-                                "1",
                                 "2"
                             ],
                             "cancellation_terms": [
@@ -195,7 +254,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
+                                    }
                                 },
                                 {
                                     "fulfillment_state": {
@@ -203,22 +265,9 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "6/4515-1, 24 Parganas (North), 700048",
-                                            "gps": "22.6015,88.4004"
-                                        }
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
                                     }
                                 }
                             ],
@@ -249,9 +298,21 @@
                                     "list": [
                                         {
                                             "descriptor": {
+                                                "code": "time_to_ship"
+                                            },
+                                            "value": "P7D"
+                                        },
+                                        {
+                                            "descriptor": {
                                                 "code": "tax_rate"
                                             },
-                                            "value": "'12'"
+                                            "value": "12"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -287,6 +348,22 @@
                                     ]
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "return_location": {
+                                    "address": "6/4515-1, 24 Parganas (North), 700048",
+                                    "gps": "22.601500,88.400400"
+                                },
+                                "fulfillment_managed_by": "seller"
+                            },
                             "location_id": "W20222745923425"
                         },
                         {
@@ -320,8 +397,8 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "'1500'",
-                                "maximum_value": "'5000'"
+                                "value": "1500.00",
+                                "maximum_value": "5000.00"
                             },
                             "matched": "true",
                             "quantity": {
@@ -336,20 +413,18 @@
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "'95'"
+                                    "count": "6"
                                 },
                                 "maximum": {
                                     "measure": {
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "'95'"
+                                    "count": "6"
                                 }
                             },
                             "category_ids": [
-                                "RET1A-10",
-                                "RET1A-10",
-                                "RET1A-10"
+                                "RET1B-1029"
                             ],
                             "fulfillment_ids": [
                                 "1"
@@ -358,7 +433,6 @@
                                 "W20222745923425"
                             ],
                             "payment_ids": [
-                                "1",
                                 "2"
                             ],
                             "cancellation_terms": [
@@ -368,7 +442,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
+                                    }
                                 },
                                 {
                                     "fulfillment_state": {
@@ -376,22 +453,9 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "6/4515-1, 24 Parganas (North), 700048",
-                                            "gps": "22.6015,88.4004"
-                                        }
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
                                     }
                                 }
                             ],
@@ -422,9 +486,21 @@
                                     "list": [
                                         {
                                             "descriptor": {
+                                                "code": "time_to_ship"
+                                            },
+                                            "value": "P7D"
+                                        },
+                                        {
+                                            "descriptor": {
                                                 "code": "tax_rate"
                                             },
-                                            "value": "'12'"
+                                            "value": "12"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -460,6 +536,22 @@
                                     ]
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "return_location": {
+                                    "address": "6/4515-1, 24 Parganas (North), 700048",
+                                    "gps": "22.601500,88.400400"
+                                },
+                                "fulfillment_managed_by": "seller"
+                            },
                             "location_id": "W20222745923425"
                         }
                     ]
