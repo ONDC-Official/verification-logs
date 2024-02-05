@@ -9,37 +9,28 @@
         "code": "IND"
       }
     },
-    "action": "on_confirm",
+    "action": "on_init",
     "version": "2.0.2",
     "bap_id": "ondc-buyer-api.trafyn.site",
     "bap_uri": "https://ondc-buyer-api.trafyn.site/",
     "bpp_id": "ondcpreprodb2b.rapidor.co",
     "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
-    "transaction_id": "bed0c11d-9d37-49d2-a2d4-d65217448c1e",
-    "message_id": "d0b7668d-29f1-4a9d-bfd9-c88e16ca6ee3",
-    "timestamp": "2024-02-02T18:30:44.559Z",
-    "ttl": "PT30S"
+    "transaction_id": "RFQ_5f27c517-b3db-4c2a-9d9e-b3f6b9719ef8",
+    "message_id": "774e9820-edd2-4bb2-ab49-3a55ef48944d",
+    "timestamp": "2024-02-04T07:35:11.541Z",
+    "ttl": "PT4H"
   },
   "message": {
     "order": {
-      "id": "bed0c11d-9d37-49d2-a2d4-d65217448c1e",
-      "state": "Accepted",
       "provider": {
-        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
-        "locations": [
-          {
-            "id": "L1"
-          }
-        ],
-        "rateable": false,
-        "ttl": "PT30S"
+        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5"
       },
       "items": [
         {
           "id": "8787687687939",
           "quantity": {
             "selected": {
-              "count": 1
+              "count": 3
             }
           },
           "fulfillment_ids": [
@@ -71,7 +62,7 @@
           "id": "8787687687943",
           "quantity": {
             "selected": {
-              "count": 1
+              "count": 3
             }
           },
           "fulfillment_ids": [
@@ -102,12 +93,12 @@
       ],
       "billing": {
         "name": "TEST",
-        "address": "Bangalore",
+        "address": "ABC",
         "state": {
           "name": "Tamil Nadu"
         },
         "city": {
-          "name": "Bangalore"
+          "name": "Bengaluru"
         },
         "email": "test@gmail.com",
         "phone": "9123456789",
@@ -117,41 +108,17 @@
         {
           "id": "1",
           "@ondc/org/provider_name": "Rapidor",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
           "type": "Delivery",
-          "rateable": false,
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
           "tracking": false,
           "stops": [
             {
               "location": {
-                "id": "L1",
-                "descriptor": {
-                  "name": "Yelagiri Hills Tribal Farmer Producer Company Limited"
-                },
-                "gps": "12.473357,78.536600"
-              },
-              "type": "start",
-              "time": {
-                "range": {
-                  "start": "2024-02-02T18:30:44Z",
-                  "end": "2024-02-02T20:30:44Z"
-                }
-              },
-              "contact": {
-                "phone": "6380612306",
-                "email": "yelagirihtfpcl@gmail.com"
-              }
-            },
-            {
-              "location": {
-                "gps": "13.0963045,80.2865916",
-                "address": "",
+                "gps": "12.473357,78.5366",
+                "address": "ABC",
                 "city": {
-                  "name": ""
+                  "name": "Bengaluru"
                 },
                 "state": {
                   "name": "Tamil Nadu"
@@ -162,15 +129,8 @@
                 "area_code": "635853"
               },
               "type": "end",
-              "time": {
-                "range": {
-                  "start": "2024-02-04T18:30:44Z",
-                  "end": "2024-02-04T20:30:44Z"
-                }
-              },
               "contact": {
-                "phone": "9123456789",
-                "email": ""
+                "phone": "9123456789"
               }
             }
           ]
@@ -179,13 +139,13 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "1460.00"
+          "value": "4360.00"
         },
         "breakup": [
           {
             "@ondc/org/item_id": "8787687687939",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 3
             },
             "@ondc/org/title_type": "item",
             "item": {
@@ -197,13 +157,31 @@
             "title": "Mapillai samba rice",
             "price": {
               "currency": "INR",
-              "value": "150.00"
+              "value": "450.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "-0.00"
             }
           },
           {
             "@ondc/org/item_id": "8787687687943",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 3
             },
             "@ondc/org/title_type": "item",
             "item": {
@@ -215,7 +193,25 @@
             "title": "Ghee",
             "price": {
               "currency": "INR",
-              "value": "1300.00"
+              "value": "3900.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "-0.00"
             }
           },
           {
@@ -226,6 +222,24 @@
               "currency": "INR",
               "value": "10.00"
             }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
           }
         ],
         "ttl": "P2D"
@@ -233,33 +247,52 @@
       "payments": [
         {
           "collected_by": "BPP",
-          "params": {
-            "amount": "1460.00",
-            "currency": "INR"
-          },
           "type": "ON-FULFILLMENT",
-          "status": "PAID",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
           "@ondc/org/withholding_amount": "0",
           "@ondc/org/settlement_basis": "delivery",
-          "@ondc/org/settlement_window": "P1D",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "seller-app",
-              "settlement_phase": "sale-amount",
-              "settlement_type": "neft",
-              "settlement_bank_account_no": "1234567890",
-              "settlement_ifsc_code": "HDFC0000102",
-              "bank_name": "Test Bank",
-              "beneficiary_name": "Thomson"
-            }
-          ]
+          "@ondc/org/settlement_window": "P1D"
         }
       ],
-      "created_at": "2024-02-02T18:30:44.177Z",
-      "updated_at": "2024-02-02T18:30:44.559Z",
       "tags": [
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "max_liability_cap"
+              },
+              "value": "10000"
+            },
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "court_jurisdiction"
+              },
+              "value": "Kerala"
+            },
+            {
+              "descriptor": {
+                "code": "delay_interest"
+              },
+              "value": "1000"
+            }
+          ]
+        },
         {
           "descriptor": {
             "code": "buyer_id"
@@ -279,7 +312,10 @@
             }
           ]
         }
-      ]
+      ],
+      "provider_location": {
+        "id": "L1"
+      }
     }
   }
 }
