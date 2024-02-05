@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "5f2297bf-c284-4213-b0c5-bab6ad5ace10",
-        "message_id": "8569473e-f39e-4749-9082-a877b603c175",
-        "timestamp": "2024-02-05T11:16:10.232Z",
+        "transaction_id": "18669407-afb6-4b86-9219-c0ffa9a8d38f",
+        "message_id": "s2qLBZ-LIXlM1MPiyxn8O",
+        "timestamp": "2024-02-05T11:49:57.000Z",
         "bap_id": "b2bapi-stage.spicesmartshop.com",
         "bap_uri": "https://16c5-122-15-78-57.ngrok-free.app/bap",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,11 +22,15 @@
     },
     "message": {
         "order": {
+            "id": "0a992711-f5ee-4b5b-8cf8-e743b1524712",
+            "state": "Accepted",
             "provider": {
-                "id": "7907561761"
-            },
-            "provider_location": {
-                "id": "L1"
+                "id": "7907561761",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
             },
             "items": [
                 {
@@ -38,8 +42,7 @@
                         "selected": {
                             "count": 1
                         }
-                    },
-                    "tags": []
+                    }
                 }
             ],
             "billing": {
@@ -59,15 +62,38 @@
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "tracking": false,
                     "@ondc/org/provider_name": "Rapidor",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P3D",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
                     "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "PlaceOrder"
+                                },
+                                "gps": "10.197500,76.214700"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-02-05T11:49:28.000Z",
+                                    "end": "2024-02-05T13:49:28.000Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "7907561761",
+                                "email": "care@acelrtech.com"
+                            }
+                        },
                         {
                             "type": "end",
                             "location": {
-                                "address": "C205 Madhupushpa Pune Maharashtra India",
+                                "address": "C205 Madhupushpa Pune Maharashtra India, Pune, 560027",
                                 "gps": "12.972442,77.580643",
                                 "area_code": "560027",
                                 "state": {
@@ -80,11 +106,46 @@
                                     "code": "IND"
                                 }
                             },
+                            "time": {
+                                "range": {
+                                    "start": "2024-02-07T11:49:28.000Z",
+                                    "end": "2024-02-07T13:49:28.000Z"
+                                }
+                            },
                             "contact": {
                                 "phone": "917727883199"
                             }
                         }
-                    ]
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "1.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "seller-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "0.00",
+                    "status": "PAID",
+                    "params": {
+                        "currency": "INR",
+                        "transaction_id": "f6d2ad90-95d8-4682-98ec-cc9d1e6a9eb5",
+                        "amount": "67154.90"
+                    }
                 }
             ],
             "quote": {
@@ -159,86 +220,8 @@
                 },
                 "ttl": "P2D"
             },
-            "payments": [
-                {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "1.0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "seller-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "settlement_bank_account_no": "1234567890",
-                            "settlement_ifsc_code": "HDFC0000102",
-                            "beneficiary_name": "Thomson",
-                            "bank_name": "Test Bank"
-                        }
-                    ],
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0"
-                }
-            ],
-            "tags": [
-                {
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "max_liability"
-                            },
-                            "value": "2"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "max_liability_cap"
-                            },
-                            "value": "10000"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "mandatory_arbitration"
-                            },
-                            "value": "false"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "court_jurisdiction"
-                            },
-                            "value": "Kerala"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "delay_interest"
-                            },
-                            "value": "1000"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "buyer_id"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_code"
-                            },
-                            "value": "gst"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            },
-                            "value": "29AAMJE1244G5Z3"
-                        }
-                    ]
-                }
-            ]
+            "created_at": "2024-02-05T11:49:28.121Z",
+            "updated_at": "2024-02-05T11:49:57.000Z"
         }
     }
 }
