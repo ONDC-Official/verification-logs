@@ -4,8 +4,8 @@
         "bap_id": "b2bapi-stage.spicesmartshop.com",
         "bap_uri": "https://b2bapi-stage.spicesmartshop.com/bap",
         "domain": "ONDC:RET14",
-        "message_id": "79d052ed-cc16-4ef4-92c3-a4a7e8b9ee0b",
-        "transaction_id": "ac1ca430-c705-4034-8d53-be226866a211",
+        "message_id": "4f59a293-a5cc-4688-9659-80385281dd44",
+        "transaction_id": "541e3023-a31d-448b-9248-83595717b7a7",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
         "location": {
@@ -18,11 +18,11 @@
         },
         "action": "confirm",
         "version": "2.0.2",
-        "timestamp": "2024-01-28T17:55:35.593Z"
+        "timestamp": "2024-02-05T06:39:19.219Z"
     },
     "message": {
         "order": {
-            "id": "3aa33c84-4212-447c-9df9-6a5dc625ee43",
+            "id": "3bec1e78-2779-44f4-b729-8ecc76051443",
             "state": "Created",
             "provider": {
                 "id": "7907561761",
@@ -168,7 +168,7 @@
             "payments": [
                 {
                     "params": {
-                        "transaction_id": "ac1ca430-c705-4034-8d53-be226866a211",
+                        "transaction_id": "943bbe55-0875-4ebe-9335-17c92e92565d",
                         "amount": "67033.70",
                         "currency": "INR"
                     },
@@ -178,23 +178,59 @@
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
                     "@ondc/org/buyer_app_finder_fee_amount": "1",
                     "@ondc/org/withholding_amount": "0.00",
-                    "@ondc/org/settlement_basis": "Delivery",
+                    "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
                     "@ondc/org/settlement_details": [
                         {
-                            "settlement_counterparty": "buyer-app",
+                            "settlement_counterparty": "seller-app",
                             "settlement_phase": "sale-amount",
                             "settlement_type": "neft",
-                            "settlement_bank_account_no": "001481400001250",
-                            "settlement_ifsc_code": "YESB0000014",
-                            "bank_name": "YES BANK LTD",
-                            "branch_name": "SECTOR-132, NOIDA, BRANCH",
-                            "beneficiary_name": "SPICE MONEY LIMITED"
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "bank_name": "Test Bank",
+                            "beneficiary_name": "Thomson"
                         }
                     ]
                 }
             ],
             "tags": [
+                {
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "max_liability"
+                            },
+                            "value": "2"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "10000"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "mandatory_arbitration"
+                            },
+                            "value": "false"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Kerala"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "1000"
+                        }
+                    ]
+                },
                 {
                     "descriptor": {
                         "code": "buyer_id"
@@ -213,10 +249,23 @@
                             "value": "32ZYOGD3672C3Z2"
                         }
                     ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
                 }
             ],
-            "created_at": "2024-01-28T17:55:35.593Z",
-            "updated_at": "2024-01-28T17:55:35.593Z"
+            "created_at": "2024-02-05T06:39:19.219Z",
+            "updated_at": "2024-02-05T06:39:19.219Z"
         }
     }
 }
