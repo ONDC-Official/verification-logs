@@ -1,0 +1,120 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.2",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "bpp_id": "preprod-seller.signcatch.com",
+    "bpp_uri": "https://preprod-seller.signcatch.com/",
+    "transaction_id": "14609459-3d2b-47e2-841d-880900ed77b4",
+    "message_id": "00c037a2-17cf-4fbb-9526-2b01211be908",
+    "timestamp": "2024-01-29T23:05:00.739Z",
+    "ttl": "P2D"
+  },
+  "message": {
+    "order": {
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "17600.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "176.00"
+              }
+            },
+            "@ondc/org/item_id": "4635",
+            "title": "Chaiom Cardamom Black Tea CTC Tea 100 gm loose tea",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 100
+            },
+            "price": {
+              "currency": "INR",
+              "value": "17600.00"
+            }
+          }
+        ],
+        "ttl": "P7D"
+      },
+      "provider": {
+        "id": "SW10000378",
+        "locations": [
+          {
+            "id": "LSIN000378"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "4635",
+          "location_ids": [
+            "LSIN000378"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 100
+            }
+          },
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "no req",
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  }
+                },
+                {
+                  "value": "no pack req",
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              }
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "tracking": false,
+          "state": {
+            "descriptor": {
+              "code": "Not Serviceable"
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0"
+        }
+      ]
+    }
+  },
+  "error": {
+    "type": "DOMAIN-ERROR",
+    "code": "40002",
+    "message": "Item quantity unavailable"
+  }
+}
