@@ -1,0 +1,234 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "confirm",
+    "version": "2.0.2",
+    "bap_id": "ondc-buyer-api.trafyn.site",
+    "bap_uri": "https://ondc-buyer-api.trafyn.site/",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "transaction_id": "085fbc77-67fa-49df-92b3-da04075dcf4e",
+    "message_id": "6c26198e-adca-45a2-ba35-ea2cb2a3ef0e",
+    "timestamp": "2024-02-07T09:24:34.964Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "085fbc77-67fa-49df-92b3-da04075dcf4e",
+      "state": "Completed",
+      "provider": {
+        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "8787687687943",
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "fulfillment_ids": [
+            "1"
+          ],
+          "location_ids": [
+            "L1"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": ""
+                },
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "TEST",
+        "address": "",
+        "state": {
+          "name": "Tamil Nadu"
+        },
+        "city": {
+          "name": ""
+        },
+        "email": "",
+        "phone": "9123456789",
+        "tax_id": "xxxxxxxxxxxxxxx"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "stops": [
+            {
+              "location": {
+                "gps": "13.0963045,80.2865916",
+                "address": "",
+                "city": {
+                  "name": ""
+                },
+                "state": {
+                  "name": "Tamil Nadu"
+                },
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "635853"
+              },
+              "type": "end",
+              "contact": {
+                "phone": "9123456789",
+                "email": ""
+              },
+              "customer": {
+                "person": {
+                  "name": "TEST"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "1310.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "1300.00"
+              }
+            },
+            "title": "Ghee",
+            "price": {
+              "currency": "INR",
+              "value": "1300.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "10.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P2D"
+      },
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "params": {
+            "transaction_id": "07b49089-2478-4aee-92c2-648786d2d436",
+            "amount": "1310.00",
+            "currency": "INR"
+          },
+          "type": "PRE-FULFILLMENT",
+          "status": "PAID",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/settlement_details": []
+        }
+      ],
+      "created_at": "2024-02-07T09:24:35.383Z",
+      "updated_at": "2024-02-07T09:24:35.383Z",
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "gst"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "1649064"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
