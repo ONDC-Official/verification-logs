@@ -9,21 +9,20 @@
                 "code": "IND"
             }
         },
-        "action": "on_confirm",
+        "action": "on_cancel",
         "version": "2.0.2",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-seller.signcatch.com",
         "bpp_uri": "https://preprod-seller.signcatch.com/",
         "transaction_id": "89e69399-501f-4f0c-aab5-504853a6bc40",
-        "message_id": "b3ef713c-c4e6-4366-99a9-d76dcd3dbda6",
-        "timestamp": "2024-02-08T13:58:15.528Z",
+        "message_id": "90b10b68-3265-4549-9397-6063db22e70a",
+        "timestamp": "2024-02-08T14:00:13.892Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "RAP-0045536",
-            "state": "Accepted",
+            "status": "Cancelled",
             "quote": {
                 "price": {
                     "currency": "INR",
@@ -78,6 +77,13 @@
                 ],
                 "ttl": "P1D"
             },
+            "cancellation": {
+                "reason": {
+                    "id": "012"
+                },
+                "cancelled_by": "preprod-seller.signcatch.com"
+            },
+            "order_id": "RAP-0045536",
             "provider": {
                 "id": "SW10000378",
                 "locations": [
@@ -85,6 +91,9 @@
                         "id": "LSIN000378"
                     }
                 ]
+            },
+            "provider_location": {
+                "id": "LSIN000378"
             },
             "items": [
                 {
@@ -96,23 +105,23 @@
                     },
                     "tags": [
                         {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
                             "list": [
                                 {
+                                    "value": "No special packaging & shipment needed",
                                     "descriptor": {
                                         "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "No special packaging & shipment needed"
+                                    }
                                 },
                                 {
+                                    "value": "handle with care",
                                     "descriptor": {
                                         "code": "ITEM_REQ"
-                                    },
-                                    "value": "handle with care"
+                                    }
                                 }
-                            ]
+                            ],
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            }
                         }
                     ],
                     "fulfillment_ids": [
@@ -188,7 +197,7 @@
             "billing": {
                 "address": "malappuram, malappuram, Malappuram, malappuram, Malappuram, 673642",
                 "phone": "9947328084",
-                "name": "RAMAKRISHNAN SATHISH KUMAR",
+                "name": "",
                 "state": {
                     "name": "Kerala"
                 },
@@ -199,77 +208,75 @@
             },
             "tags": [
                 {
-                    "descriptor": {
-                        "code": "buyer_id"
-                    },
                     "list": [
                         {
+                            "value": "gst",
                             "descriptor": {
                                 "code": "buyer_id_code"
-                            },
-                            "value": "gst"
+                            }
                         },
                         {
+                            "value": "33AWAPS4854L1Z6",
                             "descriptor": {
                                 "code": "buyer_id_no"
-                            },
-                            "value": "33AWAPS4854L1Z6"
+                            }
                         }
-                    ]
+                    ],
+                    "descriptor": {
+                        "code": "buyer_id"
+                    }
                 },
                 {
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    },
                     "list": [
                         {
+                            "value": "0",
                             "descriptor": {
                                 "code": "max_liability"
-                            },
-                            "value": "0"
+                            }
                         },
                         {
+                            "value": "0",
                             "descriptor": {
                                 "code": "max_liability_cap"
-                            },
-                            "value": "0"
+                            }
                         },
                         {
+                            "value": "false",
                             "descriptor": {
                                 "code": "mandatory_arbitration"
-                            },
-                            "value": "false"
+                            }
                         },
                         {
+                            "value": "Delhi",
                             "descriptor": {
                                 "code": "court_jurisdiction"
-                            },
-                            "value": "Delhi"
+                            }
                         },
                         {
+                            "value": "0.0",
                             "descriptor": {
                                 "code": "delay_interest"
-                            },
-                            "value": "0.0"
+                            }
                         }
-                    ]
+                    ],
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    }
                 },
                 {
-                    "descriptor": {
-                        "code": "bap_terms"
-                    },
                     "list": [
                         {
+                            "value": "Y",
                             "descriptor": {
                                 "code": "accept_bpp_terms"
-                            },
-                            "value": "Y"
+                            }
                         }
-                    ]
+                    ],
+                    "descriptor": {
+                        "code": "bap_terms"
+                    }
                 }
             ],
-            "created_at": "2024-02-08T13:58:15.430Z",
-            "updated_at": "2024-02-08T13:58:15.528Z",
             "payments": [
                 {
                     "type": "ON-FULFILLMENT",
