@@ -11,13 +11,13 @@
         },
         "action": "on_search",
         "version": "2.0.2",
-        "transaction_id": "2f660fe7-1109-44d9-8f19-a385ccacf8ae",
-        "message_id": "2e6f0070-80f2-4ffa-9bed-0af814d193cb",
-        "timestamp": "2024-01-29T09:04:01.365Z",
+        "transaction_id": "57196c91-7d63-46be-ad79-63cc821296d8",
+        "message_id": "dc129f42-fab9-4181-bb70-4e74ac7a2729",
+        "timestamp": "2024-02-03T14:10:54.251Z",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bap_uri": "https://develapigateway.bizom.in/bap/ondcb2b",
-        "bpp_id": "preprod-b2b.placeorder.com",
-        "bpp_uri": "https://preprod-b2b.placeorder.com/v1/ondc/seller",
+        "bpp_id": "ondcpreprodb2b.rapidor.co",
+        "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
         "ttl": "PT30S"
     },
     "message": {
@@ -42,7 +42,7 @@
                         "short_desc": "PlaceOrder ONDC B2B Marketplace",
                         "long_desc": "PlaceOrder ONDC B2B Marketplace for your business needs. More info at: https://www.placeorder.com",
                         "additional_desc": {
-                            "url": "https://preprod-b2b.placeorder.com/v1/ondc/chat?chat_id=e1f4d218-f671-4994-879a-4b72b0b3e47c&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0NTE5MDQxfQ.wEKAd4fdVeEXmEnyyBQRwKPNsLhCP8ph53JbBkU-n-Y",
+                            "url": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=5e3b52b1-d3d6-4024-bdaa-583dd0be3bd6&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0OTY5NDU0fQ.YTFI5TYjRZrteeAhLPULl2yOTGO6NGUOwpNVNqatLfs",
                             "content_type": "text/html"
                         },
                         "images": [
@@ -154,6 +154,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -242,7 +248,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -250,25 +259,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P2D"
@@ -351,6 +363,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -439,7 +457,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -447,419 +468,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
-                            "replacement_terms": [
-                                {
-                                    "replace_within": "P2D"
-                                }
-                            ],
-                            "matched": "true",
-                            "recommended": "true"
-                        },
-                        {
-                            "id": "BESAN-KP-30KG",
-                            "descriptor": {
-                                "name": "LAXMI BHOG KADI PAKODA BESAN 30 KG",
-                                "code": "4:11061000",
-                                "short_desc": "LAXMI BHOG KADI PAKODA BESAN 30 KG",
-                                "long_desc": "Radha Soami Foods,kadi pakoda Besan 30 kg,Nutrient-rich chickpea flour for versatile cooking. Packed with protein, fiber, and vitamins, it enhances taste and nutrition in your dishes. Elevate your recipes with this wholesome ingredient!",
-                                "images": [
-                                    {
-                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-KP-30KG.png"
-                                    },
-                                    {
-                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-KP-30KG.png"
-                                    }
-                                ]
-                            },
-                            "price": {
-                                "currency": "INR",
-                                "value": "2455.00",
-                                "maximum_value": "2455.0"
-                            },
-                            "category_ids": [
-                                "RET10-1030"
-                            ],
-                            "fulfillment_ids": [
-                                "1"
-                            ],
-                            "payment_ids": [
-                                "1",
-                                "2",
-                                "3"
-                            ],
-                            "location_ids": [
-                                "L1"
-                            ],
-                            "quantity": {
-                                "unitized": {
-                                    "measure": {
-                                        "unit": "kilogram",
-                                        "value": "30"
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
                                     }
                                 },
-                                "available": {
-                                    "measure": {
-                                        "unit": "kilogram",
-                                        "value": "30"
-                                    },
-                                    "count": "100"
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
                                 },
-                                "maximum": {
-                                    "measure": {
-                                        "unit": "kilogram",
-                                        "value": "30"
-                                    },
-                                    "count": "100"
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
                                 }
                             },
-                            "tags": [
-                                {
-                                    "descriptor": {
-                                        "code": "g2"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "time_to_ship"
-                                            },
-                                            "value": "P2D"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "tax_rate"
-                                            },
-                                            "value": "0"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "g3"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "brand"
-                                            },
-                                            "value": "Radha Soami Food Products Pvt Ltd"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "pack_size"
-                                            },
-                                            "value": "1"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "num_price_slabs"
-                                            },
-                                            "value": "0"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "back_image"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "url"
-                                            },
-                                            "value": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-KP-30KG.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "veg_nonveg"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "veg"
-                                            },
-                                            "value": "yes"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "origin"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "country"
-                                            },
-                                            "value": "IND"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "creator": {
-                                "descriptor": {
-                                    "name": "Radha Soami Food Products Pvt Ltd.",
-                                    "contact": {
-                                        "name": "Radha Soami Food Products Pvt Ltd.",
-                                        "phone": "9829644477",
-                                        "email": "admin@rapidor.co",
-                                        "address": {
-                                            "full": "H-273<br><br>Jaipur<br>"
-                                        }
-                                    }
-                                }
-                            },
-                            "cancellation_terms": [
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Pending"
-                                        }
-                                    },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Packed"
-                                        }
-                                    },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
-                                }
-                            ],
-                            "replacement_terms": [
-                                {
-                                    "replace_within": "P2D"
-                                }
-                            ],
-                            "matched": "true",
-                            "recommended": "true"
-                        },
-                        {
-                            "id": "BESAN-LM-30KG",
-                            "descriptor": {
-                                "name": "LAXMI BHOG MOTIYA BESAN 30 KG",
-                                "code": "4:11061000",
-                                "short_desc": "LAXMI BHOG MOTIYA BESAN 30 KG",
-                                "long_desc": "Radha Soami Foods, Motiya Besan 30 kg,Nutrient-rich chickpea flour for versatile cooking. Packed with protein, fiber, and vitamins, it enhances taste and nutrition in your dishes. Elevate your recipes with this wholesome ingredient!",
-                                "images": [
-                                    {
-                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-LM-30KG.png"
-                                    },
-                                    {
-                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-LM-30KG.png"
-                                    }
-                                ]
-                            },
-                            "price": {
-                                "currency": "INR",
-                                "value": "2455.00",
-                                "maximum_value": "2455.0"
-                            },
-                            "category_ids": [
-                                "RET10-1030"
-                            ],
-                            "fulfillment_ids": [
-                                "1"
-                            ],
-                            "payment_ids": [
-                                "1",
-                                "2",
-                                "3"
-                            ],
-                            "location_ids": [
-                                "L1"
-                            ],
-                            "quantity": {
-                                "unitized": {
-                                    "measure": {
-                                        "unit": "kilogram",
-                                        "value": "30"
-                                    }
-                                },
-                                "available": {
-                                    "measure": {
-                                        "unit": "kilogram",
-                                        "value": "30"
-                                    },
-                                    "count": "100"
-                                },
-                                "maximum": {
-                                    "measure": {
-                                        "unit": "kilogram",
-                                        "value": "30"
-                                    },
-                                    "count": "100"
-                                }
-                            },
-                            "tags": [
-                                {
-                                    "descriptor": {
-                                        "code": "g2"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "time_to_ship"
-                                            },
-                                            "value": "P2D"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "tax_rate"
-                                            },
-                                            "value": "0"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "g3"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "brand"
-                                            },
-                                            "value": "Radha Soami Food Products Pvt Ltd"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "pack_size"
-                                            },
-                                            "value": "1"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "num_price_slabs"
-                                            },
-                                            "value": "0"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "back_image"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "url"
-                                            },
-                                            "value": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-LM-30KG.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "veg_nonveg"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "veg"
-                                            },
-                                            "value": "yes"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "origin"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "country"
-                                            },
-                                            "value": "IND"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "creator": {
-                                "descriptor": {
-                                    "name": "Radha Soami Food Products Pvt Ltd.",
-                                    "contact": {
-                                        "name": "Radha Soami Food Products Pvt Ltd.",
-                                        "phone": "9829644477",
-                                        "email": "admin@rapidor.co",
-                                        "address": {
-                                            "full": "H-273<br><br>Jaipur<br>"
-                                        }
-                                    }
-                                }
-                            },
-                            "cancellation_terms": [
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Pending"
-                                        }
-                                    },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Packed"
-                                        }
-                                    },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
-                                }
-                            ],
                             "replacement_terms": [
                                 {
                                     "replace_within": "P2D"
@@ -942,6 +572,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -1030,7 +666,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -1038,25 +677,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P2D"
@@ -1066,18 +708,18 @@
                             "recommended": "true"
                         },
                         {
-                            "id": "MOTA-BESAN-30KG",
+                            "id": "BESAN-KP-30KG",
                             "descriptor": {
-                                "name": "LAXMI BHOG MOTA BESAN 30 KG",
+                                "name": "LAXMI BHOG KADI PAKODA BESAN 30 KG",
                                 "code": "4:11061000",
-                                "short_desc": "LAXMI BHOG MOTA BESAN 30 KG",
-                                "long_desc": "Radha Soami Foods, mota Besan 30 kg,Nutrient-rich chickpea flour for versatile cooking. Packed with protein, fiber, and vitamins, it enhances taste and nutrition in your dishes. Elevate your recipes with this wholesome ingredient!",
+                                "short_desc": "LAXMI BHOG KADI PAKODA BESAN 30 KG",
+                                "long_desc": "Radha Soami Foods,kadi pakoda Besan 30 kg,Nutrient-rich chickpea flour for versatile cooking. Packed with protein, fiber, and vitamins, it enhances taste and nutrition in your dishes. Elevate your recipes with this wholesome ingredient!",
                                 "images": [
                                     {
-                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/MOTA-BESAN-30KG.png"
+                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-KP-30KG.png"
                                     },
                                     {
-                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/MOTA-BESAN-30KG.png"
+                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-KP-30KG.png"
                                     }
                                 ]
                             },
@@ -1139,6 +781,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -1176,7 +824,7 @@
                                             "descriptor": {
                                                 "code": "url"
                                             },
-                                            "value": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/MOTA-BESAN-30KG.png"
+                                            "value": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-KP-30KG.png"
                                         }
                                     ]
                                 },
@@ -1227,7 +875,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -1235,25 +886,237 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
+                                }
+                            ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
+                                }
+                            },
+                            "replacement_terms": [
+                                {
+                                    "replace_within": "P2D"
+                                }
+                            ],
+                            "matched": "true",
+                            "recommended": "true"
+                        },
+                        {
+                            "id": "BESAN-LM-30KG",
+                            "descriptor": {
+                                "name": "LAXMI BHOG MOTIYA BESAN 30 KG",
+                                "code": "4:11061000",
+                                "short_desc": "LAXMI BHOG MOTIYA BESAN 30 KG",
+                                "long_desc": "Radha Soami Foods, Motiya Besan 30 kg,Nutrient-rich chickpea flour for versatile cooking. Packed with protein, fiber, and vitamins, it enhances taste and nutrition in your dishes. Elevate your recipes with this wholesome ingredient!",
+                                "images": [
+                                    {
+                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-LM-30KG.png"
+                                    },
+                                    {
+                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-LM-30KG.png"
+                                    }
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "2455.00",
+                                "maximum_value": "2455.0"
+                            },
+                            "category_ids": [
+                                "RET10-1030"
+                            ],
+                            "fulfillment_ids": [
+                                "1"
+                            ],
+                            "payment_ids": [
+                                "1",
+                                "2",
+                                "3"
+                            ],
+                            "location_ids": [
+                                "L1"
+                            ],
+                            "quantity": {
+                                "unitized": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "30"
+                                    }
+                                },
+                                "available": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "30"
+                                    },
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "30"
+                                    },
+                                    "count": "100"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "descriptor": {
+                                        "code": "g2"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "time_to_ship"
+                                            },
+                                            "value": "P2D"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "tax_rate"
+                                            },
+                                            "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "g3"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "brand"
+                                            },
+                                            "value": "Radha Soami Food Products Pvt Ltd"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "pack_size"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "num_price_slabs"
+                                            },
+                                            "value": "0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "back_image"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "url"
+                                            },
+                                            "value": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/BESAN-LM-30KG.png"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "veg_nonveg"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "veg"
+                                            },
+                                            "value": "yes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "origin"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "country"
+                                            },
+                                            "value": "IND"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "creator": {
+                                "descriptor": {
+                                    "name": "Radha Soami Food Products Pvt Ltd.",
+                                    "contact": {
+                                        "name": "Radha Soami Food Products Pvt Ltd.",
+                                        "phone": "9829644477",
+                                        "email": "admin@rapidor.co",
+                                        "address": {
+                                            "full": "H-273<br><br>Jaipur<br>"
+                                        }
+                                    }
+                                }
+                            },
+                            "cancellation_terms": [
+                                {
+                                    "fulfillment_state": {
+                                        "descriptor": {
+                                            "code": "Pending"
+                                        }
+                                    },
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
                                         "descriptor": {
-                                            "code": "Order-delivered"
+                                            "code": "Packed"
                                         }
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P2D"
@@ -1336,6 +1199,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -1424,7 +1293,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -1432,25 +1304,237 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
+                                }
+                            ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
+                                }
+                            },
+                            "replacement_terms": [
+                                {
+                                    "replace_within": "P2D"
+                                }
+                            ],
+                            "matched": "true",
+                            "recommended": "true"
+                        },
+                        {
+                            "id": "MOTA-BESAN-30KG",
+                            "descriptor": {
+                                "name": "LAXMI BHOG MOTA BESAN 30 KG",
+                                "code": "4:11061000",
+                                "short_desc": "LAXMI BHOG MOTA BESAN 30 KG",
+                                "long_desc": "Radha Soami Foods, mota Besan 30 kg,Nutrient-rich chickpea flour for versatile cooking. Packed with protein, fiber, and vitamins, it enhances taste and nutrition in your dishes. Elevate your recipes with this wholesome ingredient!",
+                                "images": [
+                                    {
+                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/MOTA-BESAN-30KG.png"
+                                    },
+                                    {
+                                        "url": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/MOTA-BESAN-30KG.png"
+                                    }
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "2455.00",
+                                "maximum_value": "2455.0"
+                            },
+                            "category_ids": [
+                                "RET10-1030"
+                            ],
+                            "fulfillment_ids": [
+                                "1"
+                            ],
+                            "payment_ids": [
+                                "1",
+                                "2",
+                                "3"
+                            ],
+                            "location_ids": [
+                                "L1"
+                            ],
+                            "quantity": {
+                                "unitized": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "30"
+                                    }
+                                },
+                                "available": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "30"
+                                    },
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "30"
+                                    },
+                                    "count": "100"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "descriptor": {
+                                        "code": "g2"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "time_to_ship"
+                                            },
+                                            "value": "P2D"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "tax_rate"
+                                            },
+                                            "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "g3"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "brand"
+                                            },
+                                            "value": "Radha Soami Food Products Pvt Ltd"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "pack_size"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "num_price_slabs"
+                                            },
+                                            "value": "0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "back_image"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "url"
+                                            },
+                                            "value": "https://placeorder.s3.ap-southeast-1.amazonaws.com/prod/images/grocery/flour-and-grains/MOTA-BESAN-30KG.png"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "veg_nonveg"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "veg"
+                                            },
+                                            "value": "yes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "origin"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "country"
+                                            },
+                                            "value": "IND"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "creator": {
+                                "descriptor": {
+                                    "name": "Radha Soami Food Products Pvt Ltd.",
+                                    "contact": {
+                                        "name": "Radha Soami Food Products Pvt Ltd.",
+                                        "phone": "9829644477",
+                                        "email": "admin@rapidor.co",
+                                        "address": {
+                                            "full": "H-273<br><br>Jaipur<br>"
+                                        }
+                                    }
+                                }
+                            },
+                            "cancellation_terms": [
+                                {
+                                    "fulfillment_state": {
+                                        "descriptor": {
+                                            "code": "Pending"
+                                        }
+                                    },
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
                                         "descriptor": {
-                                            "code": "Order-delivered"
+                                            "code": "Packed"
                                         }
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "true",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "H12, Jaipur, , Jaipur",
-                                            "gps": "26.907120,75.789239"
-                                        }
-                                    }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "H12, Jaipur, , Jaipur",
+                                    "gps": "26.907120,75.789239"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P2D"
@@ -1484,19 +1568,19 @@
                                     "descriptor": {
                                         "code": "type"
                                     },
-                                    "value": "12"
+                                    "value": "10"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "val"
                                     },
-                                    "value": "IND"
+                                    "value": "1730"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "unit"
                                     },
-                                    "value": "country"
+                                    "value": "km"
                                 }
                             ]
                         },
@@ -1556,7 +1640,7 @@
                         "short_desc": "PlaceOrder ONDC B2B Marketplace",
                         "long_desc": "PlaceOrder ONDC B2B Marketplace for your business needs. More info at: https://www.placeorder.com",
                         "additional_desc": {
-                            "url": "https://preprod-b2b.placeorder.com/v1/ondc/chat?chat_id=002f802a-c738-476f-b799-3c9b8d1e6e2b&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0NTE5MDQxfQ.wEKAd4fdVeEXmEnyyBQRwKPNsLhCP8ph53JbBkU-n-Y",
+                            "url": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=ab93dee8-69db-41c3-a90b-24f4a50cc2d9&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0OTY5NDU0fQ.YTFI5TYjRZrteeAhLPULl2yOTGO6NGUOwpNVNqatLfs",
                             "content_type": "text/html"
                         },
                         "images": [
@@ -1667,6 +1751,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -1755,7 +1845,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -1763,25 +1856,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "Kochi",
-                                            "gps": "10.197500,76.214700"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "Kochi",
+                                    "gps": "10.197500,76.214700"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P0D"
@@ -1863,6 +1959,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -1951,7 +2053,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "true"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -1959,25 +2064,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "true"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "Kochi",
-                                            "gps": "10.197500,76.214700"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "Kochi",
+                                    "gps": "10.197500,76.214700"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P0D"
@@ -2083,7 +2191,7 @@
                         "short_desc": "PlaceOrder ONDC B2B Marketplace",
                         "long_desc": "PlaceOrder ONDC B2B Marketplace for your business needs. More info at: https://www.placeorder.com",
                         "additional_desc": {
-                            "url": "https://preprod-b2b.placeorder.com/v1/ondc/chat?chat_id=7a473bf2-f125-4113-bc97-d93087335a1c&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0NTE5MDQxfQ.wEKAd4fdVeEXmEnyyBQRwKPNsLhCP8ph53JbBkU-n-Y",
+                            "url": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=b0215976-981a-4954-93ac-aafc6f265667&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0OTY5NDU0fQ.YTFI5TYjRZrteeAhLPULl2yOTGO6NGUOwpNVNqatLfs",
                             "content_type": "text/html"
                         },
                         "images": [
@@ -2121,202 +2229,6 @@
                         }
                     ],
                     "items": [
-                        {
-                            "id": "10002127",
-                            "descriptor": {
-                                "name": "French bean HARSHA 500 gm Case of 50",
-                                "code": "4:7133300",
-                                "short_desc": "French bean HARSHA 500 gm Case of 50",
-                                "long_desc": "FRENCH BEAN DCM SHRIRAM LTD HARSHA",
-                                "images": [
-                                    {
-                                        "url": "https://kheti-cdn.agrevolution.in/cc4ffe18-6c32-4d1a-80c3-688e7e40746d.png"
-                                    },
-                                    {
-                                        "url": "https://kheti-cdn.agrevolution.in/cc4ffe18-6c32-4d1a-80c3-688e7e40746d.png"
-                                    }
-                                ]
-                            },
-                            "price": {
-                                "currency": "INR",
-                                "value": "0.00",
-                                "maximum_value": "0.0"
-                            },
-                            "category_ids": [
-                                "RET10-104C"
-                            ],
-                            "fulfillment_ids": [
-                                "1"
-                            ],
-                            "payment_ids": [
-                                "2",
-                                "3"
-                            ],
-                            "location_ids": [
-                                "L1"
-                            ],
-                            "quantity": {
-                                "unitized": {
-                                    "measure": {
-                                        "unit": "unit",
-                                        "value": "1"
-                                    }
-                                },
-                                "available": {
-                                    "measure": {
-                                        "unit": "unit",
-                                        "value": "1"
-                                    },
-                                    "count": "100"
-                                },
-                                "maximum": {
-                                    "measure": {
-                                        "unit": "unit",
-                                        "value": "1"
-                                    },
-                                    "count": "100"
-                                }
-                            },
-                            "tags": [
-                                {
-                                    "descriptor": {
-                                        "code": "g2"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "time_to_ship"
-                                            },
-                                            "value": "P2D"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "tax_rate"
-                                            },
-                                            "value": "5"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "g3"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "brand"
-                                            },
-                                            "value": "Green Agrevolution Private Limited"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "pack_size"
-                                            },
-                                            "value": "1"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "num_price_slabs"
-                                            },
-                                            "value": "0"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "back_image"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "url"
-                                            },
-                                            "value": "https://kheti-cdn.agrevolution.in/cc4ffe18-6c32-4d1a-80c3-688e7e40746d.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "veg_nonveg"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "veg"
-                                            },
-                                            "value": "yes"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "origin"
-                                    },
-                                    "list": [
-                                        {
-                                            "descriptor": {
-                                                "code": "country"
-                                            },
-                                            "value": "IND"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "creator": {
-                                "descriptor": {
-                                    "name": "Green Agrevolution Private Limited",
-                                    "contact": {
-                                        "name": "Green Agrevolution Private Limited",
-                                        "phone": "9716511266",
-                                        "email": "admin+0710202309@rapidor.co",
-                                        "address": {
-                                            "full": "PUNE SASWAD ROAD, HIRAL COMPOU<br><br><br>"
-                                        }
-                                    }
-                                }
-                            },
-                            "cancellation_terms": [
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Pending"
-                                        }
-                                    },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Packed"
-                                        }
-                                    },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "PUNE SASWAD ROAD, HIRAL COMPOU, , ",
-                                            "gps": "18.524715,73.884100"
-                                        }
-                                    }
-                                }
-                            ],
-                            "replacement_terms": [
-                                {
-                                    "replace_within": "P0D"
-                                }
-                            ],
-                            "matched": "true",
-                            "recommended": "true"
-                        },
                         {
                             "id": "10000720",
                             "descriptor": {
@@ -2390,6 +2302,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -2478,7 +2396,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -2486,25 +2407,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "PUNE SASWAD ROAD, HIRAL COMPOU, , ",
-                                            "gps": "18.524715,73.884100"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "PUNE SASWAD ROAD, HIRAL COMPOU, , ",
+                                    "gps": "18.524715,73.884100"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P0D"
@@ -2586,6 +2510,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -2674,7 +2604,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -2682,25 +2615,236 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
+                                }
+                            ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "PUNE SASWAD ROAD, HIRAL COMPOU, , ",
+                                    "gps": "18.524715,73.884100"
+                                }
+                            },
+                            "replacement_terms": [
+                                {
+                                    "replace_within": "P0D"
+                                }
+                            ],
+                            "matched": "true",
+                            "recommended": "true"
+                        },
+                        {
+                            "id": "10002127",
+                            "descriptor": {
+                                "name": "French bean HARSHA 500 gm Case of 50",
+                                "code": "4:7133300",
+                                "short_desc": "French bean HARSHA 500 gm Case of 50",
+                                "long_desc": "FRENCH BEAN DCM SHRIRAM LTD HARSHA",
+                                "images": [
+                                    {
+                                        "url": "https://kheti-cdn.agrevolution.in/cc4ffe18-6c32-4d1a-80c3-688e7e40746d.png"
+                                    },
+                                    {
+                                        "url": "https://kheti-cdn.agrevolution.in/cc4ffe18-6c32-4d1a-80c3-688e7e40746d.png"
+                                    }
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "0.00",
+                                "maximum_value": "0.0"
+                            },
+                            "category_ids": [
+                                "RET10-104C"
+                            ],
+                            "fulfillment_ids": [
+                                "1"
+                            ],
+                            "payment_ids": [
+                                "2",
+                                "3"
+                            ],
+                            "location_ids": [
+                                "L1"
+                            ],
+                            "quantity": {
+                                "unitized": {
+                                    "measure": {
+                                        "unit": "unit",
+                                        "value": "1"
+                                    }
+                                },
+                                "available": {
+                                    "measure": {
+                                        "unit": "unit",
+                                        "value": "1"
+                                    },
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "measure": {
+                                        "unit": "unit",
+                                        "value": "1"
+                                    },
+                                    "count": "100"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "descriptor": {
+                                        "code": "g2"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "time_to_ship"
+                                            },
+                                            "value": "P2D"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "tax_rate"
+                                            },
+                                            "value": "5"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "g3"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "brand"
+                                            },
+                                            "value": "Green Agrevolution Private Limited"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "pack_size"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "num_price_slabs"
+                                            },
+                                            "value": "0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "back_image"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "url"
+                                            },
+                                            "value": "https://kheti-cdn.agrevolution.in/cc4ffe18-6c32-4d1a-80c3-688e7e40746d.png"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "veg_nonveg"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "veg"
+                                            },
+                                            "value": "yes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "origin"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "country"
+                                            },
+                                            "value": "IND"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "creator": {
+                                "descriptor": {
+                                    "name": "Green Agrevolution Private Limited",
+                                    "contact": {
+                                        "name": "Green Agrevolution Private Limited",
+                                        "phone": "9716511266",
+                                        "email": "admin+0710202309@rapidor.co",
+                                        "address": {
+                                            "full": "PUNE SASWAD ROAD, HIRAL COMPOU<br><br><br>"
+                                        }
+                                    }
+                                }
+                            },
+                            "cancellation_terms": [
+                                {
+                                    "fulfillment_state": {
+                                        "descriptor": {
+                                            "code": "Pending"
+                                        }
+                                    },
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
                                         "descriptor": {
-                                            "code": "Order-delivered"
+                                            "code": "Packed"
                                         }
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "PUNE SASWAD ROAD, HIRAL COMPOU, , ",
-                                            "gps": "18.524715,73.884100"
-                                        }
-                                    }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "PUNE SASWAD ROAD, HIRAL COMPOU, , ",
+                                    "gps": "18.524715,73.884100"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P0D"
@@ -2806,7 +2950,7 @@
                         "short_desc": "PlaceOrder ONDC B2B Marketplace",
                         "long_desc": "PlaceOrder ONDC B2B Marketplace for your business needs. More info at: https://www.placeorder.com",
                         "additional_desc": {
-                            "url": "https://preprod-b2b.placeorder.com/v1/ondc/chat?chat_id=ecb05011-4145-4ea5-8cc8-2043cdaabed5&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0NTE5MDQxfQ.wEKAd4fdVeEXmEnyyBQRwKPNsLhCP8ph53JbBkU-n-Y",
+                            "url": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=bdae6157-10a4-412a-87d3-34725130276d&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0OTY5NDU0fQ.YTFI5TYjRZrteeAhLPULl2yOTGO6NGUOwpNVNqatLfs",
                             "content_type": "text/html"
                         },
                         "images": [
@@ -2917,6 +3061,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -3005,7 +3155,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -3013,25 +3166,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P2D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "2/62, Maramangalam, Yercaud Salem TN 636601 IN",
-                                            "gps": "11.846892,78.365467"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P2D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "2/62, Maramangalam, Yercaud Salem TN 636601 IN",
+                                    "gps": "11.846892,78.365467"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P2D"
@@ -3137,7 +3293,7 @@
                         "short_desc": "PlaceOrder ONDC B2B Marketplace",
                         "long_desc": "PlaceOrder ONDC B2B Marketplace for your business needs. More info at: https://www.placeorder.com",
                         "additional_desc": {
-                            "url": "https://preprod-b2b.placeorder.com/v1/ondc/chat?chat_id=51257ce0-b494-426e-828d-376fe9d164b6&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0NTE5MDQxfQ.wEKAd4fdVeEXmEnyyBQRwKPNsLhCP8ph53JbBkU-n-Y",
+                            "url": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=cca664c8-817c-4dd6-8605-acfff5fc13bf&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRldmVsYXBpZ2F0ZXdheS5iaXpvbS5pbi9iYXAvb25kY2IyYiMyOUFBRkNNNDM0MUwxWjYiLCJuYW1lIjoiZGV2ZWxhcGlnYXRld2F5LmJpem9tLmluL2JhcC9vbmRjYjJiIiwiZXhwIjoxNzI0OTY5NDU0fQ.YTFI5TYjRZrteeAhLPULl2yOTGO6NGUOwpNVNqatLfs",
                             "content_type": "text/html"
                         },
                         "images": [
@@ -3248,6 +3404,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -3336,7 +3498,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -3344,25 +3509,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "3/86C7 North Street thiruthangal sengamala nachiyarpuram, Virudhunagar TN 626130 IN",
-                                            "gps": "9.451750,77.833075"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "3/86C7 North Street thiruthangal sengamala nachiyarpuram, Virudhunagar TN 626130 IN",
+                                    "gps": "9.451750,77.833075"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P0D"
@@ -3444,6 +3612,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "0"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -3532,7 +3706,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
+                                    },
+                                    "reason_required": false
                                 },
                                 {
                                     "fulfillment_state": {
@@ -3540,25 +3717,28 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
+                                    "cancellation_fee": {
+                                        "percentage": "100.00"
                                     },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "3/86C7 North Street thiruthangal sengamala nachiyarpuram, Virudhunagar TN 626130 IN",
-                                            "gps": "9.451750,77.833075"
-                                        }
-                                    }
+                                    "reason_required": false
                                 }
                             ],
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "fulfillment_managed_by": "seller",
+                                "return_location": {
+                                    "address": "3/86C7 North Street thiruthangal sengamala nachiyarpuram, Virudhunagar TN 626130 IN",
+                                    "gps": "9.451750,77.833075"
+                                }
+                            },
                             "replacement_terms": [
                                 {
                                     "replace_within": "P0D"
@@ -3670,15 +3850,18 @@
             "payments": [
                 {
                     "id": "1",
-                    "type": "PRE-FULFILLMENT"
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP"
                 },
                 {
                     "id": "2",
-                    "type": "ON-FULFILLMENT"
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
                 },
                 {
                     "id": "3",
-                    "type": "POST-FULFILLMENT"
+                    "type": "POST-FULFILLMENT",
+                    "collected_by": "BPP"
                 }
             ]
         }

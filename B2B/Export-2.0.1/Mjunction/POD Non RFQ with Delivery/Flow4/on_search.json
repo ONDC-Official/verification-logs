@@ -1,6 +1,6 @@
 {
     "context": {
-        "domain": "ONDC:RET1A",
+        "domain": "ONDC:RET1B",
         "location": {
             "city": {
                 "code": "std:079"
@@ -11,9 +11,9 @@
         },
         "action": "on_search",
         "version": "2.0.2",
-        "transaction_id": "72aacb56-3856-421c-a9f8-5125530c8f15",
-        "message_id": "e04cb114-08ea-439b-9dc6-bf7af15e79a6",
-        "timestamp": "2024-01-30T05:20:21.771Z",
+        "transaction_id": "943d7189-376c-4c8c-b800-b63ec31c9a4b",
+        "message_id": "e4ead503-0b3a-4afe-be46-d8895716461f",
+        "timestamp": "2024-02-06T15:33:33.834Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "ttl": "PT30S",
@@ -34,18 +34,8 @@
             ],
             "payments": [
                 {
-                    "id": "1",
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "BPP"
-                },
-                {
                     "id": "2",
                     "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP"
-                },
-                {
-                    "id": "3",
-                    "type": "POST-FULFILLMENT",
                     "collected_by": "BPP"
                 }
             ],
@@ -73,7 +63,7 @@
                             }
                         ]
                     },
-                    "ttl": "P1D",
+                    "ttl": "PT900S",
                     "tags": [
                         {
                             "descriptor": {
@@ -90,7 +80,7 @@
                                     "descriptor": {
                                         "code": "category"
                                     },
-                                    "value": "RET1B"
+                                    "value": "RET1B-*"
                                 },
                                 {
                                     "descriptor": {
@@ -156,23 +146,7 @@
                     "locations": [
                         {
                             "id": "W20222745923425",
-                            "gps": "22.6015,88.4004",
-                            "address": "6/4515-1",
-                            "city": {
-                                "code": "std:033",
-                                "name": "24 Parganas (North)"
-                            },
-                            "state": {
-                                "code": "WB"
-                            },
-                            "country": {
-                                "code": "IND"
-                            },
-                            "area_code": "700048"
-                        },
-                        {
-                            "id": "W20222745923425",
-                            "gps": "22.6015,88.4004",
+                            "gps": "22.601500,88.400400",
                             "address": "6/4515-1",
                             "city": {
                                 "code": "std:033",
@@ -235,18 +209,18 @@
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "54"
+                                    "count": "30"
                                 },
                                 "maximum": {
                                     "measure": {
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "54"
+                                    "count": "30"
                                 }
                             },
                             "category_ids": [
-                                "RET1B-1029"
+                                "RET1B-*"
                             ],
                             "fulfillment_ids": [
                                 "1"
@@ -264,7 +238,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
+                                    }
                                 },
                                 {
                                     "fulfillment_state": {
@@ -272,22 +249,9 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "6/4515-1, 24 Parganas (North), 700048",
-                                            "gps": "22.6015,88.4004"
-                                        }
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
                                     }
                                 }
                             ],
@@ -327,6 +291,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "12"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -337,32 +307,77 @@
                                     "list": [
                                         {
                                             "descriptor": {
-                                                "code": "weight"
-                                            },
-                                            "value": "4 kgs"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "shipping_weight"
-                                            },
-                                            "value": "4 kgs"
-                                        },
-                                        {
-                                            "descriptor": {
                                                 "code": "brand"
                                             },
                                             "value": "VB SALES 30"
                                         },
                                         {
                                             "descriptor": {
-                                                "code": "product_dimensions"
+                                                "code": "weight"
                                             },
-                                            "value": "1x1x3CM"
+                                            "value": "4"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "weight_unit"
+                                            },
+                                            "value": "kgs"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "shipping_weight"
+                                            },
+                                            "value": "4"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "shipping_weight_unit"
+                                            },
+                                            "value": "kgs"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_length"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_height"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_breadth"
+                                            },
+                                            "value": "3"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_unit"
+                                            },
+                                            "value": "CM"
                                         }
                                     ]
                                 }
                             ],
-                            "location_id": "W20222745923425"
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "return_location": {
+                                    "address": "6/4515-1, 24 Parganas (North), 700048",
+                                    "gps": "22.601500,88.400400"
+                                },
+                                "fulfillment_managed_by": "seller"
+                            }
                         },
                         {
                             "id": "SKU47334",
@@ -411,20 +426,18 @@
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "10"
+                                    "count": "6"
                                 },
                                 "maximum": {
                                     "measure": {
                                         "unit": "unit",
                                         "value": "1"
                                     },
-                                    "count": "10"
+                                    "count": "6"
                                 }
                             },
                             "category_ids": [
-                                "RET1B-1029",
-                                "RET1A-10",
-                                "RET1A-10"
+                                "RET1B-*"
                             ],
                             "fulfillment_ids": [
                                 "1"
@@ -442,7 +455,10 @@
                                             "code": "Pending"
                                         }
                                     },
-                                    "refund_eligible": "false"
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
+                                    }
                                 },
                                 {
                                     "fulfillment_state": {
@@ -450,22 +466,9 @@
                                             "code": "Packed"
                                         }
                                     },
-                                    "refund_eligible": "false"
-                                },
-                                {
-                                    "fulfillment_state": {
-                                        "descriptor": {
-                                            "code": "Order-delivered"
-                                        }
-                                    },
-                                    "return_policy": {
-                                        "return_eligible": "false",
-                                        "return_within": "P0D",
-                                        "fulfillment_managed_by": "seller",
-                                        "return_location": {
-                                            "address": "6/4515-1, 24 Parganas (North), 700048",
-                                            "gps": "22.6015,88.4004"
-                                        }
+                                    "reason_required": false,
+                                    "cancellation_fee": {
+                                        "percentage": "100"
                                     }
                                 }
                             ],
@@ -505,6 +508,12 @@
                                                 "code": "tax_rate"
                                             },
                                             "value": "12"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "cancellable"
+                                            },
+                                            "value": "false"
                                         }
                                     ]
                                 },
@@ -515,32 +524,77 @@
                                     "list": [
                                         {
                                             "descriptor": {
-                                                "code": "weight"
-                                            },
-                                            "value": "6 kgs"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "shipping_weight"
-                                            },
-                                            "value": "6 kgs"
-                                        },
-                                        {
-                                            "descriptor": {
                                                 "code": "brand"
                                             },
                                             "value": "VB SALES 30"
                                         },
                                         {
                                             "descriptor": {
-                                                "code": "product_dimensions"
+                                                "code": "weight"
                                             },
-                                            "value": "1x1x3CM"
+                                            "value": "6"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "weight_unit"
+                                            },
+                                            "value": "kgs"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "shipping_weight"
+                                            },
+                                            "value": "6"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "shipping_weight_unit"
+                                            },
+                                            "value": "kgs"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_length"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_height"
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_breadth"
+                                            },
+                                            "value": "3"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "dimension_unit"
+                                            },
+                                            "value": "CM"
                                         }
                                     ]
                                 }
                             ],
-                            "location_id": "W20222745923425"
+                            "return_terms": {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-delivered"
+                                    }
+                                },
+                                "return_eligible": false,
+                                "return_time": {
+                                    "duration": "P0D"
+                                },
+                                "return_location": {
+                                    "address": "6/4515-1, 24 Parganas (North), 700048",
+                                    "gps": "22.601500,88.400400"
+                                },
+                                "fulfillment_managed_by": "seller"
+                            }
                         }
                     ]
                 }
