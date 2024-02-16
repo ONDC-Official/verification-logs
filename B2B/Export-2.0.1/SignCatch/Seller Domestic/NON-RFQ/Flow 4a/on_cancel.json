@@ -9,21 +9,20 @@
         "code": "IND"
       }
     },
-    "action": "on_status",
+    "action": "on_cancel",
     "version": "2.0.2",
     "bap_id": "ondcpreprodb2b.rapidor.co",
     "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
     "bpp_id": "preprod-seller.signcatch.com",
     "bpp_uri": "https://preprod-seller.signcatch.com/",
-    "transaction_id": "f6949c08-6224-48c5-8a53-93f4e8c243a7",
-    "message_id": "e6a92a1c-3bb0-49e8-b982-500b5d2f0f52",
-    "timestamp": "2024-02-16T09:35:42.973Z",
+    "transaction_id": "b1152111-80ab-414f-9005-3ee76c61e9d0",
+    "message_id": "ydkT5_dTNbALbf2EPM5dk",
+    "timestamp": "2024-02-16T09:17:35.018Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "RAP-0046394",
-      "state": "Completed",
+      "status": "Cancelled",
       "quote": {
         "price": {
           "currency": "INR",
@@ -54,7 +53,7 @@
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "0.00"
             }
           },
           {
@@ -63,11 +62,11 @@
             "@ondc/org/title_type": "discount",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "0.00"
             }
           },
           {
-            "@ondc/org/item_id": "GCE9GXEA9MJSX02",
+            "@ondc/org/item_id": "1WQBTC4NKF10ET7",
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": {
@@ -76,26 +75,33 @@
             }
           },
           {
-            "@ondc/org/item_id": "GCE9GXEA9MJSX02",
+            "@ondc/org/item_id": "1WQBTC4NKF10ET7",
             "title": "Convenience Fee",
             "@ondc/org/title_type": "misc",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "0.00"
             }
           },
           {
-            "@ondc/org/item_id": "GCE9GXEA9MJSX02",
+            "@ondc/org/item_id": "1WQBTC4NKF10ET7",
             "title": "Packing charges",
             "@ondc/org/title_type": "packing",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "0.00"
             }
           }
         ],
         "ttl": "P1D"
       },
+      "cancellation": {
+        "reason": {
+          "id": "004"
+        },
+        "cancelled_by": "preprod-seller.signcatch.com"
+      },
+      "order_id": "RAP-0046381",
       "provider": {
         "id": "SW10000378",
         "locations": [
@@ -113,45 +119,14 @@
             }
           },
           "fulfillment_ids": [
-            "GCE9GXEA9MJSX02"
+            "1WQBTC4NKF10ET7"
           ]
         }
       ],
       "fulfillments": [
         {
-          "id": "GCE9GXEA9MJSX02",
+          "id": "1WQBTC4NKF10ET7",
           "stops": [
-            {
-              "type": "start",
-              "location": {
-                "id": "LSIN000378",
-                "gps": "29.898521,79.224632",
-                "area_code": "263659",
-                "descriptor": {
-                  "name": "Chaiom",
-                  "images": []
-                }
-              },
-              "contact": {
-                "email": "ondcsupport@signcatch.com",
-                "phone": "01143099716"
-              },
-              "time": {
-                "range": {
-                  "start": "2024-02-16T09:34:46.787Z",
-                  "end": "2024-02-18T09:34:46.787Z"
-                },
-                "timestamp": "2024-02-16T09:35:28.452Z"
-              },
-              "instructions": {
-                "name": "Pickup confirmation code",
-                "short_desc": "Proof of pickup",
-                "long_desc": "Additional instructions for pickup",
-                "images": [
-                  "https://storage.googleapis.com/awstoazures3/b2b-seller/staging/shippingChallan/GCE9GXEA9MJSX02/6331dbe479349413d652cd20_invoice-lp-sample-click-to-edit.pdf"
-                ]
-              }
-            },
             {
               "type": "end",
               "location": {
@@ -169,43 +144,47 @@
                 "area_code": "110057"
               },
               "contact": {
-                "name": "Prashant",
                 "phone": "9595777690"
               },
               "time": {
                 "range": {
-                  "start": "2024-02-16T09:34:46.774Z",
-                  "end": "2024-02-26T09:34:46.774Z"
-                },
-                "timestamp": "2024-02-16T09:35:42.973Z"
+                  "start": "2024-02-16T09:17:23.158Z",
+                  "end": "2024-02-26T09:17:23.158Z"
+                }
+              }
+            },
+            {
+              "type": "start",
+              "location": {
+                "id": "LSIN000378",
+                "gps": "29.898521,79.224632",
+                "area_code": "263659",
+                "descriptor": {
+                  "name": "Chaiom"
+                }
               },
-              "instructions": {
-                "name": "Proof of delivery",
-                "short_desc": "Value of POD",
-                "long_desc": "Additional instructions for delivery",
-                "images": [
-                  "https://storage.googleapis.com/awstoazures3/b2b-seller/staging/proofOfDelivery/378/RAP-0046394/GCE9GXEA9MJSX02/[].png"
-                ]
+              "contact": {
+                "email": "ondcsupport@signcatch.com",
+                "phone": "01143099716"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-02-16T09:17:23.174Z",
+                  "end": "2024-02-18T09:17:23.174Z"
+                }
               }
             }
           ],
           "tracking": false,
           "state": {
             "descriptor": {
-              "code": "Order-delivered"
+              "code": "Cancelled"
             }
           },
           "type": "Delivery",
           "@ondc/org/provider_name": "Chaiom",
-          "agent": {
-            "name": "Praveen",
-            "phone": "1111111891"
-          },
-          "vehicle": {
-            "category": "Auto",
-            "size": "Big",
-            "registration": "ABC 01 1111"
-          }
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P7D"
         }
       ],
       "billing": {
@@ -220,19 +199,82 @@
         },
         "tax_id": "07AAGFF2194N1Z1"
       },
-      "documents": [
+      "tags": [
         {
-          "url": "https://storage.googleapis.com/awstoazures3/b2b-seller/staging/Invoices/378/RAP-0046394.pdf",
-          "label": "Invoice"
+          "list": [
+            {
+              "value": "gst",
+              "descriptor": {
+                "code": "buyer_id_code"
+              }
+            },
+            {
+              "value": "07AAGFF2194N1Z1",
+              "descriptor": {
+                "code": "buyer_id_no"
+              }
+            }
+          ],
+          "descriptor": {
+            "code": "buyer_id"
+          }
+        },
+        {
+          "list": [
+            {
+              "value": "0",
+              "descriptor": {
+                "code": "max_liability"
+              }
+            },
+            {
+              "value": "0",
+              "descriptor": {
+                "code": "max_liability_cap"
+              }
+            },
+            {
+              "value": "false",
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              }
+            },
+            {
+              "value": "Delhi",
+              "descriptor": {
+                "code": "court_jurisdiction"
+              }
+            },
+            {
+              "value": "0.0",
+              "descriptor": {
+                "code": "delay_interest"
+              }
+            }
+          ],
+          "descriptor": {
+            "code": "bpp_terms"
+          }
+        },
+        {
+          "list": [
+            {
+              "value": "Y",
+              "descriptor": {
+                "code": "accept_bpp_terms"
+              }
+            }
+          ],
+          "descriptor": {
+            "code": "bap_terms"
+          }
         }
       ],
-      "created_at": "2024-02-16T09:34:46.495Z",
-      "updated_at": "2024-02-16T09:35:42.879Z",
       "payments": [
         {
           "type": "ON-FULFILLMENT",
           "collected_by": "BPP",
-          "status": "PAID",
+          "status": "NOT-PAID",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
           "@ondc/org/buyer_app_finder_fee_amount": "0.0",
           "@ondc/org/withholding_amount": "0",
@@ -251,7 +293,6 @@
           ],
           "params": {
             "currency": "INR",
-            "transaction_id": "rwG8ObhMR1J9o7d",
             "amount": "11711.00"
           }
         }
