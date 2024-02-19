@@ -1,7 +1,7 @@
 {
     "context": {
         "ttl": "PT30S",
-        "action": "on_init",
+        "action": "on_select",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "domain": "ONDC:RET10",
@@ -16,91 +16,37 @@
                 "code": "IND"
             }
         },
-        "timestamp": "2024-02-19T07:17:05.880Z",
-        "message_id": "920e6dfe-5757-4506-8a07-14f94ec87760",
-        "transaction_id": "801927ba-0bf6-4f9e-9c36-5fbee5b5af1e"
+        "timestamp": "2024-02-19T07:27:13.377Z",
+        "message_id": "1c3e361a-f56e-4245-ab83-f02e8f51a8ec",
+        "transaction_id": "d1cb57bd-0c8a-4a1c-a7f8-fea93c77e84e"
     },
     "message": {
         "order": {
-            "tags": [
-                {
-                    "list": [
-                        {
-                            "value": "2",
-                            "descriptor": {
-                                "code": "max_liability"
-                            }
-                        },
-                        {
-                            "value": "10000",
-                            "descriptor": {
-                                "code": "max_liability_cap"
-                            }
-                        },
-                        {
-                            "value": "false",
-                            "descriptor": {
-                                "code": "mandatory_arbitration"
-                            }
-                        },
-                        {
-                            "value": "Kerala",
-                            "descriptor": {
-                                "code": "court_jurisdiction"
-                            }
-                        },
-                        {
-                            "value": "1000",
-                            "descriptor": {
-                                "code": "delay_interest"
-                            }
-                        }
-                    ],
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    }
-                },
-                {
-                    "list": [
-                        {
-                            "value": "gst",
-                            "descriptor": {
-                                "code": "buyer_id_code"
-                            }
-                        },
-                        {
-                            "value": "29AAFCM4341L1Z6",
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            }
-                        }
-                    ],
-                    "descriptor": {
-                        "code": "buyer_id"
-                    }
-                }
-            ],
             "items": [
                 {
                     "id": "BESAN-500G",
-                    "tags": [],
                     "quantity": {
                         "selected": {
                             "count": 10
                         }
                     },
+                    "location_ids": [
+                        "L1"
+                    ],
                     "fulfillment_ids": [
                         "1"
                     ]
                 },
                 {
                     "id": "BESAN-01KG",
-                    "tags": [],
                     "quantity": {
                         "selected": {
                             "count": 1
                         }
                     },
+                    "location_ids": [
+                        "L1"
+                    ],
                     "fulfillment_ids": [
                         "1"
                     ]
@@ -118,6 +64,14 @@
                             "price": {
                                 "value": "42.70",
                                 "currency": "INR"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "100"
+                                },
+                                "available": {
+                                    "count": "100"
+                                }
                             }
                         },
                         "price": {
@@ -154,6 +108,14 @@
                             "price": {
                                 "value": "84.15",
                                 "currency": "INR"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "100"
+                                },
+                                "available": {
+                                    "count": "100"
+                                }
                             }
                         },
                         "price": {
@@ -214,67 +176,34 @@
                     }
                 ]
             },
-            "billing": {
-                "city": {
-                    "name": "bengaluru"
-                },
-                "name": "samarth",
-                "phone": "9898141644",
-                "state": {
-                    "name": "Karnataka"
-                },
-                "tax_id": "29AAFCM4341L1Z6",
-                "address": "Bizom, Bellandur"
-            },
             "payments": [
                 {
                     "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                    "collected_by": "BPP"
                 }
             ],
             "provider": {
-                "id": "9829644477"
+                "id": "9829644477",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
             },
             "fulfillments": [
                 {
                     "id": "1",
-                    "type": "Delivery",
-                    "stops": [
-                        {
-                            "type": "end",
-                            "contact": {
-                                "phone": "9898141644"
-                            },
-                            "location": {
-                                "gps": "12.923638114128435,77.67586975767115",
-                                "city": {
-                                    "name": "bengaluru"
-                                },
-                                "state": {
-                                    "name": "Karnataka"
-                                },
-                                "address": "Bizom, Bellandur",
-                                "country": {
-                                    "code": "IND"
-                                },
-                                "area_code": "560103"
-                            }
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
                         }
-                    ],
+                    },
                     "tracking": false,
                     "@ondc/org/TAT": "P3D",
                     "@ondc/org/category": "Standard Delivery",
                     "@ondc/org/provider_name": "Rapidor"
                 }
-            ],
-            "provider_location": {
-                "id": "L1"
-            }
+            ]
         }
     }
 }
