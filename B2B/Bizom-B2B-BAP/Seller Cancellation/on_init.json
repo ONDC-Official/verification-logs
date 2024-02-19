@@ -1,7 +1,7 @@
 {
     "context": {
         "ttl": "PT30S",
-        "action": "on_confirm",
+        "action": "on_init",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "domain": "ONDC:RET10",
@@ -16,33 +16,13 @@
                 "code": "IND"
             }
         },
-        "timestamp": "2024-02-19T07:17:23.280Z",
-        "message_id": "0c049c72-8baf-484e-8968-ceaeb7039114",
-        "transaction_id": "801927ba-0bf6-4f9e-9c36-5fbee5b5af1e"
+        "timestamp": "2024-02-19T07:53:54.820Z",
+        "message_id": "0760f581-9462-41d4-9106-a5fd621385ae",
+        "transaction_id": "541b7c08-9f74-494c-b007-b32c77221d00"
     },
     "message": {
         "order": {
-            "id": "1008da83-1372-439e-a914-6ab32d47dbd2",
             "tags": [
-                {
-                    "list": [
-                        {
-                            "value": "gst",
-                            "descriptor": {
-                                "code": "buyer_id_code"
-                            }
-                        },
-                        {
-                            "value": "29AAFCM4341L1Z6",
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            }
-                        }
-                    ],
-                    "descriptor": {
-                        "code": "buyer_id"
-                    }
-                },
                 {
                     "list": [
                         {
@@ -83,14 +63,20 @@
                 {
                     "list": [
                         {
-                            "value": "Y",
+                            "value": "gst",
                             "descriptor": {
-                                "code": "accept_bpp_terms"
+                                "code": "buyer_id_code"
+                            }
+                        },
+                        {
+                            "value": "29AAFCM4341L1Z6",
+                            "descriptor": {
+                                "code": "buyer_id_no"
                             }
                         }
                     ],
                     "descriptor": {
-                        "code": "bap_terms"
+                        "code": "buyer_id"
                     }
                 }
             ],
@@ -121,7 +107,7 @@
                 }
             ],
             "quote": {
-                "ttl": "PT30M",
+                "ttl": "P2D",
                 "price": {
                     "value": "552.81",
                     "currency": "INR"
@@ -139,7 +125,7 @@
                             "currency": "INR"
                         },
                         "title": "LAXMI BHOG BESAN 500G",
-                        "@ondc/org/item_id": "308486",
+                        "@ondc/org/item_id": "BESAN-500G",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
                             "count": 10
@@ -156,12 +142,12 @@
                     },
                     {
                         "price": {
-                            "value": "16.10",
+                            "value": "0.00",
                             "currency": "INR"
                         },
-                        "title": "Convenience Fee",
-                        "@ondc/org/item_id": "1",
-                        "@ondc/org/title_type": "misc"
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "discount"
                     },
                     {
                         "item": {
@@ -175,7 +161,7 @@
                             "currency": "INR"
                         },
                         "title": "LAXMI BHOG BESAN 01 KG",
-                        "@ondc/org/item_id": "308488",
+                        "@ondc/org/item_id": "BESAN-01KG",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
                             "count": 1
@@ -189,16 +175,50 @@
                         "title": "Tax",
                         "@ondc/org/item_id": "BESAN-01KG",
                         "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "price": {
+                            "value": "0.00",
+                            "currency": "INR"
+                        },
+                        "title": "Discount",
+                        "@ondc/org/item_id": "BESAN-01KG",
+                        "@ondc/org/title_type": "discount"
+                    },
+                    {
+                        "price": {
+                            "value": "0.00",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery Charge",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "price": {
+                            "value": "16.10",
+                            "currency": "INR"
+                        },
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "misc"
+                    },
+                    {
+                        "price": {
+                            "value": "0.00",
+                            "currency": "INR"
+                        },
+                        "title": "Packing",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "packing"
                     }
                 ]
             },
-            "state": "Accepted",
             "billing": {
                 "city": {
                     "name": "bengaluru"
                 },
                 "name": "samarth",
-                "email": "samarth@gmail.com",
                 "phone": "9898141644",
                 "state": {
                     "name": "Karnataka"
@@ -209,82 +229,25 @@
             "payments": [
                 {
                     "type": "ON-FULFILLMENT",
-                    "params": {
-                        "amount": "552.81",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
                     "collected_by": "BPP",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "bank_name": "HSBC",
-                            "branch_name": "Bellandur",
-                            "settlement_type": "neft",
-                            "beneficiary_name": "Samarth",
-                            "settlement_phase": "sale-amount",
-                            "settlement_ifsc_code": "sfd",
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_bank_account_no": "123"
-                        }
-                    ],
                     "@ondc/org/withholding_amount": "0",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3"
+                    "@ondc/org/buyer_app_finder_fee_amount": "3.0"
                 }
             ],
             "provider": {
-                "id": "9829644477",
-                "rateable": false,
-                "locations": [
-                    {
-                        "id": "L1"
-                    }
-                ]
+                "id": "9829644477"
             },
-            "created_at": "2024-02-19T07:17:22.725Z",
-            "updated_at": "2024-02-19T07:17:23.280Z",
             "fulfillments": [
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "state": {
-                        "descriptor": {
-                            "code": "Pending"
-                        }
-                    },
                     "stops": [
                         {
-                            "time": {
-                                "range": {
-                                    "end": "2024-02-19T09:17:23.000Z",
-                                    "start": "2024-02-19T07:17:23.000Z"
-                                }
-                            },
-                            "type": "start",
-                            "contact": {
-                                "email": "care@acelrtech.com",
-                                "phone": "9829644477"
-                            },
-                            "location": {
-                                "id": "L1",
-                                "gps": "26.907120,75.789239",
-                                "descriptor": {
-                                    "name": "Radha Soami Food Products Pvt Ltd."
-                                }
-                            }
-                        },
-                        {
-                            "time": {
-                                "range": {
-                                    "end": "2024-02-21T09:17:23.000Z",
-                                    "start": "2024-02-21T07:17:23.000Z"
-                                }
-                            },
                             "type": "end",
                             "contact": {
-                                "email": "samarth@gmail.com",
                                 "phone": "9898141644"
                             },
                             "location": {
@@ -303,11 +266,15 @@
                             }
                         }
                     ],
-                    "rateable": false,
                     "tracking": false,
+                    "@ondc/org/TAT": "P3D",
+                    "@ondc/org/category": "Standard Delivery",
                     "@ondc/org/provider_name": "Rapidor"
                 }
-            ]
+            ],
+            "provider_location": {
+                "id": "L1"
+            }
         }
     }
 }

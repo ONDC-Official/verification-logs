@@ -1,7 +1,7 @@
 {
     "context": {
         "ttl": "PT30S",
-        "action": "on_confirm",
+        "action": "on_cancel",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "domain": "ONDC:RET10",
@@ -16,13 +16,13 @@
                 "code": "IND"
             }
         },
-        "timestamp": "2024-02-19T07:17:23.280Z",
-        "message_id": "0c049c72-8baf-484e-8968-ceaeb7039114",
-        "transaction_id": "801927ba-0bf6-4f9e-9c36-5fbee5b5af1e"
+        "timestamp": "2024-02-19T07:30:02.276Z",
+        "message_id": "548da972-34a2-4164-90b2-1f012e5c24c0",
+        "transaction_id": "d1cb57bd-0c8a-4a1c-a7f8-fea93c77e84e"
     },
     "message": {
         "order": {
-            "id": "1008da83-1372-439e-a914-6ab32d47dbd2",
+            "id": "db7b05b2-945a-42b7-9f49-415bf586ae89",
             "tags": [
                 {
                     "list": [
@@ -103,6 +103,9 @@
                             "count": 10
                         }
                     },
+                    "payment_ids": [
+                        "P1"
+                    ],
                     "fulfillment_ids": [
                         "1"
                     ]
@@ -115,6 +118,9 @@
                             "count": 1
                         }
                     },
+                    "payment_ids": [
+                        "P1"
+                    ],
                     "fulfillment_ids": [
                         "1"
                     ]
@@ -123,7 +129,7 @@
             "quote": {
                 "ttl": "PT30M",
                 "price": {
-                    "value": "552.81",
+                    "value": "511.15",
                     "currency": "INR"
                 },
                 "breakup": [
@@ -139,8 +145,26 @@
                             "currency": "INR"
                         },
                         "title": "LAXMI BHOG BESAN 500G",
-                        "@ondc/org/item_id": "308486",
+                        "@ondc/org/item_id": "308516",
                         "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 10
+                        }
+                    },
+                    {
+                        "item": {
+                            "price": {
+                                "value": "42.70",
+                                "currency": "INR"
+                            }
+                        },
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "LAXMI BHOG BESAN 500G",
+                        "@ondc/org/item_id": "308516",
+                        "@ondc/org/title_type": "refund",
                         "@ondc/org/item_quantity": {
                             "count": 10
                         }
@@ -156,12 +180,30 @@
                     },
                     {
                         "price": {
+                            "value": "-21.35",
+                            "currency": "INR"
+                        },
+                        "title": "Tax",
+                        "@ondc/org/item_id": "BESAN-500G",
+                        "@ondc/org/title_type": "refund"
+                    },
+                    {
+                        "price": {
                             "value": "16.10",
                             "currency": "INR"
                         },
                         "title": "Convenience Fee",
                         "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "misc"
+                    },
+                    {
+                        "price": {
+                            "value": "-16.1",
+                            "currency": "INR"
+                        },
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "refund"
                     },
                     {
                         "item": {
@@ -175,8 +217,26 @@
                             "currency": "INR"
                         },
                         "title": "LAXMI BHOG BESAN 01 KG",
-                        "@ondc/org/item_id": "308488",
+                        "@ondc/org/item_id": "308518",
                         "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        }
+                    },
+                    {
+                        "item": {
+                            "price": {
+                                "value": "84.15",
+                                "currency": "INR"
+                            }
+                        },
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "LAXMI BHOG BESAN 01 KG",
+                        "@ondc/org/item_id": "308518",
+                        "@ondc/org/title_type": "refund",
                         "@ondc/org/item_quantity": {
                             "count": 1
                         }
@@ -189,10 +249,19 @@
                         "title": "Tax",
                         "@ondc/org/item_id": "BESAN-01KG",
                         "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "price": {
+                            "value": "-4.21",
+                            "currency": "INR"
+                        },
+                        "title": "Tax",
+                        "@ondc/org/item_id": "BESAN-01KG",
+                        "@ondc/org/title_type": "refund"
                     }
                 ]
             },
-            "state": "Accepted",
+            "state": "Cancelled",
             "billing": {
                 "city": {
                     "name": "bengaluru"
@@ -208,6 +277,7 @@
             },
             "payments": [
                 {
+                    "id": "P1",
                     "type": "ON-FULFILLMENT",
                     "params": {
                         "amount": "552.81",
@@ -231,7 +301,7 @@
                     ],
                     "@ondc/org/withholding_amount": "0",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3"
+                    "@ondc/org/buyer_app_finder_fee_amount": "3.0"
                 }
             ],
             "provider": {
@@ -243,23 +313,27 @@
                     }
                 ]
             },
-            "created_at": "2024-02-19T07:17:22.725Z",
-            "updated_at": "2024-02-19T07:17:23.280Z",
+            "cancellation": {
+                "reason": {
+                    "id": "003"
+                },
+                "cancelled_by": "develapigateway.bizom.in/bap/ondcb2b"
+            },
             "fulfillments": [
                 {
                     "id": "1",
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Cancelled"
                         }
                     },
                     "stops": [
                         {
                             "time": {
                                 "range": {
-                                    "end": "2024-02-19T09:17:23.000Z",
-                                    "start": "2024-02-19T07:17:23.000Z"
+                                    "end": "2024-02-19T09:27:33.000Z",
+                                    "start": "2024-02-19T07:27:33.000Z"
                                 }
                             },
                             "type": "start",
@@ -278,8 +352,8 @@
                         {
                             "time": {
                                 "range": {
-                                    "end": "2024-02-21T09:17:23.000Z",
-                                    "start": "2024-02-21T07:17:23.000Z"
+                                    "end": "2024-02-21T09:27:33.000Z",
+                                    "start": "2024-02-21T07:27:33.000Z"
                                 }
                             },
                             "type": "end",
