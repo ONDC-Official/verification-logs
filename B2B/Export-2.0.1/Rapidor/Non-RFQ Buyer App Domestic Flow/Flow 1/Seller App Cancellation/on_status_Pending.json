@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_select",
+        "action": "on_status",
         "version": "2.0.2",
-        "transaction_id": "7a7654a7-8796-4f86-8a5d-24bb94474709",
-        "message_id": "e6ea9daf-0879-4a7d-9f7d-bece6235c58c",
-        "timestamp": "2024-02-14T08:44:00.058Z",
+        "transaction_id": "57f9e122-758f-486f-a177-c3baa149d91a",
+        "message_id": "TZnKs1quMFbgsQnCWRqo_",
+        "timestamp": "2024-02-19T07:00:40.000Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,6 +22,8 @@
     },
     "message": {
         "order": {
+            "id": "RAP-0046481",
+            "state": "Accepted",
             "provider": {
                 "id": "9829644477",
                 "locations": [
@@ -36,9 +38,6 @@
                     "fulfillment_ids": [
                         "1"
                     ],
-                    "location_ids": [
-                        "L1"
-                    ],
                     "quantity": {
                         "selected": {
                             "count": 2
@@ -46,12 +45,9 @@
                     }
                 },
                 {
-                    "id": "MOTA-ATTA-30KG",
+                    "id": "BESAN-01KG",
                     "fulfillment_ids": [
                         "1"
-                    ],
-                    "location_ids": [
-                        "L1"
                     ],
                     "quantity": {
                         "selected": {
@@ -60,23 +56,104 @@
                     }
                 }
             ],
-            "payments": [
-                {
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP"
+            "billing": {
+                "name": "RAMAKRISHNAN SATHISH KUMAR",
+                "address": "uti, itu, Tui, uiuitt, Bangalore Rural, 560001",
+                "phone": "9947328084",
+                "tax_id": "33AWAPS4854L1Z6",
+                "city": {
+                    "name": "Bangalore Rural"
+                },
+                "state": {
+                    "name": "Karnataka"
                 }
-            ],
+            },
             "fulfillments": [
                 {
                     "id": "1",
+                    "type": "Delivery",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P3D",
                     "state": {
                         "descriptor": {
-                            "code": "Serviceable"
+                            "code": "Pending"
                         }
+                    },
+                    "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "PlaceOrder"
+                                },
+                                "gps": "26.907120,75.789239"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-02-19T07:00:32.000Z",
+                                    "end": "2024-02-19T09:00:32.000Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9829644477",
+                                "email": "care@acelrtech.com"
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "location": {
+                                "address": "uti, itu, Tui, uiuitt, Bangalore Rural, 560001",
+                                "gps": "12.976594,77.599271",
+                                "area_code": "560001",
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "city": {
+                                    "name": "Bangalore Rural"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-02-21T07:00:32.000Z",
+                                    "end": "2024-02-21T09:00:32.000Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9947328084"
+                            }
+                        }
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "0",
+                    "status": "NOT-PAID",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "266.38"
                     }
                 }
             ],
@@ -97,14 +174,6 @@
                             "price": {
                                 "currency": "INR",
                                 "value": "42.70"
-                            },
-                            "quantity": {
-                                "available": {
-                                    "count": "100"
-                                },
-                                "maximum": {
-                                    "count": "100"
-                                }
                             }
                         }
                     },
@@ -127,12 +196,12 @@
                         }
                     },
                     {
-                        "title": "LAXMI BHOG MOTA ATTA 30 KG",
-                        "@ondc/org/item_id": "MOTA-ATTA-30KG",
+                        "title": "LAXMI BHOG BESAN 01 KG",
+                        "@ondc/org/item_id": "BESAN-01KG",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "1940.00"
+                            "value": "168.30"
                         },
                         "@ondc/org/item_quantity": {
                             "count": 2
@@ -140,30 +209,22 @@
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "970.00"
-                            },
-                            "quantity": {
-                                "available": {
-                                    "count": "100"
-                                },
-                                "maximum": {
-                                    "count": "100"
-                                }
+                                "value": "84.15"
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "MOTA-ATTA-30KG",
+                        "@ondc/org/item_id": "BESAN-01KG",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "8.41"
                         }
                     },
                     {
                         "title": "Discount",
-                        "@ondc/org/item_id": "MOTA-ATTA-30KG",
+                        "@ondc/org/item_id": "BESAN-01KG",
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
@@ -176,7 +237,7 @@
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "10.00"
+                            "value": "0.00"
                         }
                     },
                     {
@@ -185,7 +246,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "20.40"
+                            "value": "0.00"
                         }
                     },
                     {
@@ -200,10 +261,12 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "2060.07"
+                    "value": "266.38"
                 },
                 "ttl": "P2D"
-            }
+            },
+            "created_at": "2024-02-19T07:00:31.560Z",
+            "updated_at": "2024-02-19T07:00:40.000Z"
         }
     }
 }
