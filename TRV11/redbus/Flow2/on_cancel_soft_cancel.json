@@ -1,0 +1,278 @@
+{
+  "context": {
+    "action": "on_cancel",
+    "bap_id": "rb-metro-preprod.redbus.in",
+    "bap_uri": "https://rb-metro-preprod.redbus.in",
+    "bpp_id": "metrobox.preprod.triffy.in",
+    "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:0484"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "cb53cf25-fc37-4ae6-8c14-0dd8f1f94a23",
+    "timestamp": "2024-02-21T10:53:21.345Z",
+    "transaction_id": "82a3ac00-deae-4bd0-af61-056e5bec4e79",
+    "ttl": "PT300S",
+    "version": "2.0.0"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "email": "subsks@redbus.com",
+        "name": "redBus User",
+        "phone": "6363281734"
+      },
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-02-21T10:53:21.345Z"
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "65552ac7-20a8-42f8-b614-2fd83f38e265",
+          "stops": [
+            {
+              "id": "1",
+              "location": {
+                "descriptor": {
+                  "code": "wzSo8ZMX6FEbJzmvVcftl6KKXoiW4Y",
+                  "name": "Aluva"
+                },
+                "gps": "10.109900, 76.349500"
+              },
+              "type": "START"
+            },
+            {
+              "id": "2",
+              "location": {
+                "descriptor": {
+                  "code": "zOB3jfWkWYeNMGdL6P6KZ8bC6TubO4",
+                  "name": "Ambattukavu"
+                },
+                "gps": "10.079300, 76.338900"
+              },
+              "type": "END"
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "8817.0.0.5"
+                }
+              ]
+            }
+          ],
+          "type": "TRIP",
+          "vehicle": {
+            "category": "METRO"
+          }
+        }
+      ],
+      "id": "TRF14a662b0498f4fecb712a2b05c34f285",
+      "items": [
+        {
+          "category_ids": [
+            "b30c8e21-e499-4b41-a84f-5a9167c2d30f"
+          ],
+          "descriptor": {
+            "code": "SJT",
+            "name": "Single Journey Ticket"
+          },
+          "fulfillment_ids": [
+            "65552ac7-20a8-42f8-b614-2fd83f38e265"
+          ],
+          "id": "sjt-aluva-ambattukavu",
+          "price": {
+            "currency": "INR",
+            "value": "18"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "duration": "PT30M",
+            "label": "Validity"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "id": "4aa04f20-468f-462a-834f-c9f298289077",
+          "params": {
+            "amount": "18",
+            "bank_account_number": "00228130001XXXX",
+            "bank_code": "XXXX0000022",
+            "currency": "INR"
+          },
+          "status": "PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECIEPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Kochi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://metro-terms.triffy.in/kochi/index.html"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "18.00"
+                }
+              ]
+            }
+          ],
+          "type": "PRE-ORDER"
+        }
+      ],
+      "provider": {
+        "descriptor": {
+          "name": "Kochi Metro Rail Limited"
+        },
+        "id": "triffy-kmrl-rail-metro",
+        "time": {
+          "range": {
+            "end": "2006-01-02T17:00:00.000Z",
+            "start": "2006-01-02T23:00:00.000Z"
+          }
+        }
+      },
+      "quote": {
+        "breakup": [
+          {
+            "item": {
+              "id": "sjt-aluva-ambattukavu",
+              "price": {
+                "currency": "INR",
+                "value": "18"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "18"
+            },
+            "title": "BASE_FARE"
+          },
+          {
+            "item": {
+              "id": "rf1",
+              "price": {
+                "currency": "INR",
+                "value": "-18.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "-18.00"
+            },
+            "title": "REFUND"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "CANCELLATION_CHARGES"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "0.00"
+        }
+      },
+      "status": "SOFT_CANCEL"
+    }
+  }
+}
