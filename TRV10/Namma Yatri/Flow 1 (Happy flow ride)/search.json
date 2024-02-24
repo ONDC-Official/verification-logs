@@ -12,15 +12,29 @@
         "code": "IND"
       }
     },
-    "message_id": "c58c9cfc-a23a-4b54-ab79-e4351befe3d5",
-    "timestamp": "2024-02-16T21:14:21.285987Z",
-    "transaction_id": "a5e30985-3377-40c6-9851-ea3777a70c80",
-    "version": "2.0.0",
-    "ttl": "PT120S"
+    "message_id": "1e566c6a-61e7-4147-8ce5-de0a7346d1a3",
+    "timestamp": "2024-02-24T12:52:07.657381Z",
+    "transaction_id": "a436f897-0209-4890-9af9-b6440e78c707",
+    "ttl": "PT2M",
+    "version": "2.0.0"
   },
   "message": {
     "intent": {
       "fulfillment": {
+        "customer": {
+          "person": {
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "CUSTOMER_INFO",
+                  "name": "Customer Information"
+                },
+                "display": false,
+                "list": []
+              }
+            ]
+          }
+        },
         "stops": [
           {
             "location": {
@@ -38,7 +52,7 @@
               }
             },
             "time": {
-              "timestamp": "2024-02-16T21:14:20.726316Z"
+              "timestamp": "2024-02-24T12:52:06Z"
             },
             "type": "START"
           },
@@ -94,7 +108,7 @@
               },
               {
                 "descriptor": {
-                  "code": "multiple_routes",
+                  "code": "MULTIPLE_ROUTES",
                   "name": "Multiple Routes"
                 },
                 "display": false,
@@ -106,10 +120,11 @@
       },
       "payment": {
         "collected_by": "BPP",
+        "status": "NOT-PAID",
         "tags": [
           {
             "descriptor": {
-              "code": "BUYER_FINDER_FEE"
+              "code": "BUYER_FINDER_FEES"
             },
             "display": false,
             "list": [
@@ -130,6 +145,13 @@
             "list": [
               {
                 "descriptor": {
+                  "code": "SETTLEMENT_WINDOW"
+                },
+                "display": false,
+                "value": "PT1D"
+              },
+              {
+                "descriptor": {
                   "code": "DELAY_INTEREST"
                 },
                 "display": false,
@@ -137,21 +159,36 @@
               },
               {
                 "descriptor": {
-                  "code": "SETTLEMENT_TYPE"
+                  "code": "SETTLEMENT_BASIS"
                 },
                 "display": false,
-                "value": "RSF"
+                "value": "INVOICE_RECIEPT"
+              },
+              {
+                "descriptor": {
+                  "code": "MANDATORY_ARBITRATION"
+                },
+                "display": false,
+                "value": "TRUE"
+              },
+              {
+                "descriptor": {
+                  "code": "COURT_JURISDICTION"
+                },
+                "display": false,
+                "value": "Kochi"
               },
               {
                 "descriptor": {
                   "code": "STATIC_TERMS"
                 },
                 "display": false,
-                "value": "https://example-test-bap.com/static-terms.txt"
+                "value": "https://api.example-bap.com/booking/terms"
               }
             ]
           }
-        ]
+        ],
+        "type": "ON-FULFILLMENT"
       }
     }
   }

@@ -14,11 +14,11 @@
         "code": "IND"
       }
     },
-    "message_id": "66535d99-57a9-47a4-9b45-2e4ec7282e59",
-    "timestamp": "2024-02-16T21:14:32.13169Z",
-    "transaction_id": "a5e30985-3377-40c6-9851-ea3777a70c80",
-    "version": "2.0.0",
-    "ttl": "PT30S"
+    "message_id": "aad6bfcd-1fad-48c4-9129-8dfb7add1043",
+    "timestamp": "2024-02-24T12:52:22.172737Z",
+    "transaction_id": "a436f897-0209-4890-9af9-b6440e78c707",
+    "ttl": "PT2M",
+    "version": "2.0.0"
   },
   "message": {
     "order": {
@@ -29,7 +29,7 @@
               "name": "Robert"
             }
           },
-          "id": "4c62ce51-71e7-47cd-ad52-f85cd22524fb",
+          "id": "e68b552a-76c1-427e-a294-e5cea8481285",
           "stops": [
             {
               "location": {
@@ -75,8 +75,13 @@
       ],
       "items": [
         {
+          "descriptor": {
+            "code": "RIDE",
+            "name": "SUV",
+            "short_desc": "SUV"
+          },
           "fulfillment_ids": [
-            "4c62ce51-71e7-47cd-ad52-f85cd22524fb"
+            "e68b552a-76c1-427e-a294-e5cea8481285"
           ],
           "id": "NAMMA_YATRI_PARTNER_SUV",
           "price": {
@@ -91,9 +96,86 @@
           "params": {
             "currency": "INR"
           },
-          "type": "ON_FULFILLMENT"
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "display": false,
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "display": false
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "display": false,
+                  "value": "PT1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "display": false,
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "display": false,
+                  "value": "INVOICE_RECIEPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "display": false,
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "display": false,
+                  "value": "Kochi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "display": false,
+                  "value": "https://api.example-bap.com/booking/terms"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT"
         }
       ],
+      "provider": {
+        "id": "api.sandbox.beckn.juspay.in/dev/dobpp/beckn/7f7896dd-787e-4a0b-8675-e9e6fe93bb8f"
+      },
       "quote": {
         "breakup": [
           {
@@ -115,7 +197,7 @@
               "currency": "INR",
               "value": "18"
             },
-            "title": "EXTRA_DISTANCE_FARE"
+            "title": "DISTANCE_FARE"
           }
         ],
         "price": {
@@ -123,7 +205,7 @@
           "offered_value": "148",
           "value": "148"
         },
-        "ttl": "PT0H0M32S"
+        "ttl": "PT59.984495S"
       }
     }
   }

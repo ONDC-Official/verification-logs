@@ -14,22 +14,29 @@
         "code": "IND"
       }
     },
-    "message_id": "60e6d6fa-a941-4339-9b13-ffef413fbb20",
-    "timestamp": "2024-02-16T21:14:38.17228Z",
-    "transaction_id": "a5e30985-3377-40c6-9851-ea3777a70c80",
-    "version": "2.0.0",
-    "ttl": "PT60S"
+    "message_id": "d8a42932-da7d-481b-92e0-05c330482970",
+    "timestamp": "2024-02-24T12:52:22.851827Z",
+    "transaction_id": "a436f897-0209-4890-9af9-b6440e78c707",
+    "ttl": "PT2M",
+    "version": "2.0.0"
   },
   "message": {
     "order": {
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0"
+            },
+            "percentage": "0"
+          },
+          "reason_required": false
+        }
+      ],
       "fulfillments": [
         {
-          "agent": {
-            "person": {
-              "name": "Robert"
-            }
-          },
-          "id": "4c62ce51-71e7-47cd-ad52-f85cd22524fb",
+          "id": "e68b552a-76c1-427e-a294-e5cea8481285",
           "stops": [
             {
               "location": {
@@ -73,35 +80,110 @@
           }
         }
       ],
-      "id": "8c13e099-9683-4560-a3bc-f4c52cfc9818",
+      "id": "0956ca2c-1154-46ea-b985-edbde345aef0",
       "items": [
         {
           "descriptor": {
+            "code": "RIDE",
             "short_desc": "NAMMA_YATRI_PARTNER_SUV"
           },
           "fulfillment_ids": [
-            "4c62ce51-71e7-47cd-ad52-f85cd22524fb"
+            "e68b552a-76c1-427e-a294-e5cea8481285"
           ],
           "id": "NAMMA_YATRI_PARTNER_SUV",
           "price": {
             "currency": "INR",
             "offered_value": "148",
             "value": "148"
-          }
+          },
+          "tags": []
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
           "params": {
-            "amount": "148",
             "currency": "INR"
           },
-          "type": "ON_FULFILLMENT"
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "display": false,
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "display": false
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "display": false,
+                  "value": "PT1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "display": false,
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "display": false,
+                  "value": "INVOICE_RECIEPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "display": false,
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "display": false,
+                  "value": "Kochi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "display": false,
+                  "value": "https://api.example-bap.com/booking/terms"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT"
         }
       ],
       "provider": {
-        "id": "NAMMA_YATRI"
+        "id": "api.sandbox.beckn.juspay.in/dev/dobpp/beckn/7f7896dd-787e-4a0b-8675-e9e6fe93bb8f"
       },
       "quote": {
         "breakup": [
@@ -127,7 +209,7 @@
               "offered_value": "18",
               "value": "18"
             },
-            "title": "EXTRA_DISTANCE_FARE"
+            "title": "DISTANCE_FARE"
           }
         ],
         "price": {
@@ -135,8 +217,7 @@
           "offered_value": "148",
           "value": "148"
         }
-      },
-      "status": "NEW"
+      }
     }
   }
 }
