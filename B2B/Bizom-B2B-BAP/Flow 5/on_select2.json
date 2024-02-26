@@ -1,7 +1,7 @@
 {
     "context": {
         "ttl": "PT30S",
-        "action": "on_select",
+        "action": "select",
         "bap_id": "develapigateway.bizom.in/bap/ondcb2b",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "domain": "ONDC:RET10",
@@ -16,18 +16,53 @@
                 "code": "IND"
             }
         },
-        "timestamp": "2024-02-03T14:14:19.622Z",
-        "message_id": "7cb4842e-505f-44dc-8d22-c46f26a84b81",
-        "transaction_id": "57196c91-7d63-46be-ad79-63cc821296d8"
+        "timestamp": "2024-02-19T07:16:29.105Z",
+        "message_id": "934f79d7-fd7d-4e4b-9632-3625cabbeac5",
+        "transaction_id": "801927ba-0bf6-4f9e-9c36-5fbee5b5af1e"
     },
     "message": {
         "order": {
+            "tags": [
+                {
+                    "list": [
+                        {
+                            "value": "gst",
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            }
+                        },
+                        {
+                            "value": "29AAFCM4341L1Z6",
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            }
+                        }
+                    ],
+                    "descriptor": {
+                        "code": "buyer_id"
+                    }
+                }
+            ],
             "items": [
                 {
                     "id": "BESAN-500G",
                     "quantity": {
                         "selected": {
-                            "count": 100
+                            "count": 10
+                        }
+                    },
+                    "location_ids": [
+                        "L1"
+                    ],
+                    "fulfillment_ids": [
+                        "1"
+                    ]
+                },
+                {
+                    "id": "BESAN-01KG",
+                    "quantity": {
+                        "selected": {
+                            "count": 1
                         }
                     },
                     "location_ids": [
@@ -38,90 +73,9 @@
                     ]
                 }
             ],
-            "quote": {
-                "ttl": "P2D",
-                "price": {
-                    "value": "4628.31",
-                    "currency": "INR"
-                },
-                "breakup": [
-                    {
-                        "item": {
-                            "price": {
-                                "value": "42.70",
-                                "currency": "INR"
-                            },
-                            "quantity": {
-                                "maximum": {
-                                    "count": "100"
-                                },
-                                "available": {
-                                    "count": "100"
-                                }
-                            }
-                        },
-                        "price": {
-                            "value": "4270.00",
-                            "currency": "INR"
-                        },
-                        "title": "LAXMI BHOG BESAN 500G",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "item",
-                        "@ondc/org/item_quantity": {
-                            "count": 100
-                        }
-                    },
-                    {
-                        "price": {
-                            "value": "213.50",
-                            "currency": "INR"
-                        },
-                        "title": "Tax",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "tax"
-                    },
-                    {
-                        "price": {
-                            "value": "0.00",
-                            "currency": "INR"
-                        },
-                        "title": "Discount",
-                        "@ondc/org/item_id": "BESAN-500G",
-                        "@ondc/org/title_type": "discount"
-                    },
-                    {
-                        "price": {
-                            "value": "10.00",
-                            "currency": "INR"
-                        },
-                        "title": "Delivery Charge",
-                        "@ondc/org/item_id": "1",
-                        "@ondc/org/title_type": "delivery"
-                    },
-                    {
-                        "price": {
-                            "value": "134.81",
-                            "currency": "INR"
-                        },
-                        "title": "Convenience Fee",
-                        "@ondc/org/item_id": "1",
-                        "@ondc/org/title_type": "misc"
-                    },
-                    {
-                        "price": {
-                            "value": "0.00",
-                            "currency": "INR"
-                        },
-                        "title": "Packing",
-                        "@ondc/org/item_id": "1",
-                        "@ondc/org/title_type": "packing"
-                    }
-                ]
-            },
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP"
+                    "type": "ON-FULFILLMENT"
                 }
             ],
             "provider": {
@@ -135,15 +89,28 @@
             "fulfillments": [
                 {
                     "id": "1",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "end",
+                            "contact": {
+                                "phone": "9898141644"
+                            },
+                            "location": {
+                                "gps": "12.923638114128435,77.67586975767115",
+                                "city": {
+                                    "name": "bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "560103"
+                            }
                         }
-                    },
-                    "tracking": false,
-                    "@ondc/org/TAT": "P3D",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/provider_name": "Rapidor"
+                    ]
                 }
             ]
         }
