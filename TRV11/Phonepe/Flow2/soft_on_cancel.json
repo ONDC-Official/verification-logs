@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "on_init",
+    "action": "on_cancel",
     "bap_id": "shopping-api-testing.phonepe.com",
     "bap_uri": "https://shopping-api-testing.phonepe.com/apis/mobilityConnector/callback/v1",
     "bpp_id": "metrobox.preprod.triffy.in",
@@ -14,8 +14,8 @@
         "code": "IND"
       }
     },
-    "message_id": "ONDCREQ2402271614480956401784",
-    "timestamp": "2024-02-27T10:44:48.886Z",
+    "message_id": "ONDCREQ2402271615210036401939",
+    "timestamp": "2024-02-27T10:45:22.423Z",
     "transaction_id": "ONDCRES2402271614480956401631",
     "ttl": "PT300S",
     "version": "2.0.0"
@@ -26,6 +26,10 @@
         "name": "Jaskaran Singh",
         "phone": "6363580789"
       },
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-02-27T10:45:22.423Z"
+      },
       "cancellation_terms": [
         {
           "external_ref": {
@@ -34,6 +38,7 @@
           }
         }
       ],
+      "created_at": "2024-02-27T10:45:04.297Z",
       "fulfillments": [
         {
           "id": "3768773e-1bff-4d4e-9ff5-ef4cb722b636",
@@ -61,12 +66,28 @@
               "type": "END"
             }
           ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "8823.0.0.4"
+                }
+              ]
+            }
+          ],
           "type": "TRIP",
           "vehicle": {
             "category": "METRO"
           }
         }
       ],
+      "id": "TRF1cdd0d02cb6a4e7784e82a0ae96d6ee3",
       "items": [
         {
           "category_ids": [
@@ -100,10 +121,12 @@
           "collected_by": "BAP",
           "id": "044b3c7f-3451-4ef0-8fd6-ad9a5d039a80",
           "params": {
+            "amount": "27",
             "bank_account_number": "00228130001XXXX",
-            "bank_code": "XXXX0000022"
+            "bank_code": "XXXX0000022",
+            "currency": "INR"
           },
-          "status": "NOT-PAID",
+          "status": "PAID",
           "tags": [
             {
               "descriptor": {
@@ -176,7 +199,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "27.00"
+                  "value": "0.00"
                 }
               ]
             }
@@ -216,13 +239,40 @@
               "value": "27"
             },
             "title": "BASE_FARE"
+          },
+          {
+            "item": {
+              "id": "rf1",
+              "price": {
+                "currency": "INR",
+                "value": "-27.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "-27.00"
+            },
+            "title": "REFUND"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "CANCELLATION_CHARGES"
           }
         ],
         "price": {
           "currency": "INR",
-          "value": "27"
+          "value": "0.00"
         }
       },
+      "status": "SOFT_CANCEL",
       "tags": [
         {
           "descriptor": {
@@ -237,7 +287,8 @@
             }
           ]
         }
-      ]
+      ],
+      "updated_at": "2024-02-27T10:45:22.423Z"
     }
   }
 }
