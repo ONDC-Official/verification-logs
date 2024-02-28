@@ -1,0 +1,156 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.2",
+    "bap_id": "ondc-buyer-api.trafyn.site",
+    "bap_uri": "https://ondc-buyer-api.trafyn.site/",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "transaction_id": "c78a91eb-5f9d-4373-ab97-933ba9d5dc15",
+    "message_id": "9e4ddc5f-6631-43c3-a8c2-619d3f82a57c",
+    "timestamp": "2024-02-14T13:00:49.18Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "8787687687939",
+          "quantity": {
+            "selected": {
+              "count": 100
+            }
+          },
+          "fulfillment_ids": [
+            "1"
+          ],
+          "location_ids": [
+            "L1"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Rapidor",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          },
+          "tracking": false
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "7510.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/item_quantity": {
+              "count": 50
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "150.00"
+              },
+              "quantity": {
+                "available": {
+                  "count": "50"
+                },
+                "maximum": {
+                  "count": "50"
+                }
+              }
+            },
+            "title": "Mapillai samba rice",
+            "price": {
+              "currency": "INR",
+              "value": "7500.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "10.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P2D"
+      },
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "PRE-FULFILLMENT"
+        }
+      ]
+    }
+  },
+  "error": {
+    "type": "DOMAIN-ERROR",
+    "code": "40002",
+    "message": "Item is not in stock"
+  }
+}

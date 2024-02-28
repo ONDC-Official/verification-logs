@@ -9,3 +9,12 @@
 - address/door mismatches in /billing in /confirm and /on_confirm
 - fulfillments[0].end.location gps is not matching with gps in /select
 
+**/on_status (Pending)**
+- address/door mismatches in /billing in /confirm and /on_status_pending
+
+**/on_status (Order-picked-up)**
+- address/door mismatches in /billing in /confirm and /on_status_picked
+
+**/on_status (Order-Delivered)**
+- address/door mismatches in /billing in /confirm and /on_status_delivered
+
