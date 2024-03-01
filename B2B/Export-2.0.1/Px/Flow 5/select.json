@@ -9,34 +9,40 @@
         "code": "IND"
       }
     },
-    "action": "init",
-    "version": "2.0.1",
+    "action": "select",
+    "version": "2.0.2",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "ac331780-0c6a-4dd9-b0b1-8e3b2761f4ef",
-    "message_id": "874730bc-e04a-4f4c-aa77-af73eec811f7",
-    "timestamp": "2023-09-06T07:19:28.270Z",
-    "bpp_id": "preprod-seller.signcatch.com",
-    "bpp_uri": "https://preprod-seller.signcatch.com/",
+    "transaction_id": "b2474e78-eb23-480d-9710-8ab0967fbdc5",
+    "message_id": "d8584ea5-4ec1-4537-8d83-3009939c5ba1",
+    "timestamp": "2024-03-01T14:11:19.999Z",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
     "ttl": "P2D"
   },
   "message": {
     "order": {
       "provider": {
-        "id": "SW10000378",
+        "id": "abadfoodslive",
         "locations": [
           {
-            "id": "LSIN000378"
+            "id": "L1"
           }
         ],
         "ttl": "P2D"
       },
       "items": [
         {
-          "id": "4629",
+          "id": "ITM02911",
+          "location_ids": [
+            "L1"
+          ],
+          "fulfillment_ids": [
+            "1"
+          ],
           "quantity": {
             "selected": {
-              "count": 100
+              "count": 1
             }
           },
           "tags": [
@@ -49,55 +55,47 @@
                   "descriptor": {
                     "code": "ITEM_REQ"
                   },
-                  "value": "Require 100 quantities"
+                  "value": "test"
                 },
                 {
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   },
-                  "value": "Require good packaging"
+                  "value": "test"
                 }
               ]
             }
           ]
         }
       ],
-      "billing": {
-        "name": "Bharath test company",
-        "address": "133 Cecil St, #17-03 Keck Seng Tower",
-        "state": {
-          "name": "Singapore"
-        },
-        "city": {
-          "name": "Singapore"
-        },
-        "tax_id": "CE12341234M",
-        "email": "bharathraj@instrive.in",
-        "phone": "9095038910"
-      },
       "fulfillments": [
         {
           "id": "1",
           "type": "Delivery",
           "stops": [
             {
+              "contact": {
+                "phone": "8220623799",
+                "email": "saravanan@instrive.in"
+              },
               "type": "end",
               "location": {
-                "gps": "1.2803224, 103.8490244",
-                "address": "133 Cecil St, #17-03 Keck Seng Tower",
+                "gps": "1.2804385, 103.8489962",
+                "area_code": "238858",
                 "city": {
                   "name": "Singapore"
                 },
-                "country": {
-                  "code": "Singapore"
-                },
-                "area_code": "123456",
                 "state": {
                   "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
                 }
               },
-              "contact": {
-                "phone": "9095038910"
+              "customer": {
+                "person": {
+                  "name": "ABC Private Limited"
+                }
               }
             }
           ],
@@ -111,7 +109,7 @@
                   "descriptor": {
                     "code": "INCOTERMS"
                   },
-                  "value": "DDP"
+                  "value": "CIF"
                 },
                 {
                   "descriptor": {
@@ -145,7 +143,20 @@
               "descriptor": {
                 "code": "buyer_id_no"
               },
-              "value": "CE12341234M"
+              "value": "BFGFG3R34534"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "COMM_CHANNEL"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "chat_url"
+              },
+              "value": "https://devapi.proxtera.app/spaces/chat-room/?token="
             }
           ]
         }

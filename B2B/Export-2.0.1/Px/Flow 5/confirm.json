@@ -10,37 +10,37 @@
       }
     },
     "action": "confirm",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "ac331780-0c6a-4dd9-b0b1-8e3b2761f4ef",
-    "message_id": "13eae4ef-8eed-49d5-ac3d-18376036ae2d",
-    "timestamp": "2023-09-06T07:21:21.148Z",
-    "bpp_id": "preprod-seller.signcatch.com",
-    "bpp_uri": "https://preprod-seller.signcatch.com/",
+    "transaction_id": "b2474e78-eb23-480d-9710-8ab0967fbdc5",
+    "message_id": "051414b8-03fa-4b65-a74c-3ebf3c611e2d",
+    "timestamp": "2024-03-01T14:14:52.936Z",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "PO9323537555",
+      "id": "PO6431395426",
       "state": "Created",
       "provider": {
-        "id": "SW10000378",
+        "id": "abadfoodslive",
         "locations": [
           {
-            "id": "LSIN000378"
+            "id": "L1"
           }
         ]
       },
       "items": [
         {
-          "id": "4629",
+          "id": "ITM02911",
           "fulfillment_ids": [
-            "KS67NEYXDNWUAJL"
+            "1"
           ],
           "quantity": {
             "selected": {
-              "count": 100
+              "count": 10
             }
           },
           "tags": [
@@ -53,13 +53,13 @@
                   "descriptor": {
                     "code": "ITEM_REQ"
                   },
-                  "value": "Require 100 quantities"
+                  "value": "test"
                 },
                 {
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   },
-                  "value": "Require good packaging"
+                  "value": "test"
                 }
               ]
             }
@@ -67,47 +67,50 @@
         }
       ],
       "billing": {
-        "name": "Bharath test company",
-        "address": "133 Cecil St, #17-03 Keck Seng Tower",
+        "name": "ABC Private Limited",
+        "address": "Singapore",
         "state": {
           "name": "Singapore"
         },
         "city": {
           "name": "Singapore"
         },
-        "tax_id": "CE12341234M",
-        "email": "bharathraj@instrive.in",
-        "phone": "9095038910"
+        "tax_id": "BFGFG3R34534",
+        "email": "saravanan@instrive.in",
+        "phone": "8220623799"
       },
       "fulfillments": [
         {
-          "id": "KS67NEYXDNWUAJL",
+          "id": "1",
           "type": "Delivery",
           "tracking": false,
+          "@ondc/org/provider_name": "Rapidor",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
           "stops": [
             {
               "type": "end",
               "location": {
-                "gps": "1.2803224, 103.8490244",
-                "address": "133 Cecil St, #17-03 Keck Seng Tower",
+                "gps": "1.2804385, 103.8489962",
+                "address": "Singapore",
                 "city": {
                   "name": "Singapore"
                 },
                 "country": {
-                  "code": "Singapore"
+                  "code": "SGP"
                 },
-                "area_code": "123456",
+                "area_code": "238858",
                 "state": {
                   "name": "Singapore"
                 }
               },
               "contact": {
-                "phone": "9095038910",
-                "email": "bharathraj@instrive.in"
+                "phone": "8220623799",
+                "email": "saravanan@instrive.in"
               },
               "customer": {
                 "person": {
-                  "name": "Bharath test company"
+                  "name": ""
                 }
               }
             }
@@ -122,7 +125,7 @@
                   "descriptor": {
                     "code": "INCOTERMS"
                   },
-                  "value": "DPU"
+                  "value": "CIF"
                 },
                 {
                   "descriptor": {
@@ -136,81 +139,102 @@
         }
       ],
       "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "45080.00"
-        },
         "breakup": [
           {
+            "title": "CHICKEN DRUMSTICK-ASSRTD-10X1 KG-SRFPL",
+            "@ondc/org/item_id": "ITM02911",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "3200.00"
+            },
+            "@ondc/org/item_quantity": {
+              "count": 10
+            },
             "item": {
-              "quantity": {
-                "available": {
-                  "count": "9398"
-                },
-                "maximum": {
-                  "count": "9398"
-                }
-              },
               "price": {
                 "currency": "INR",
-                "value": "444.00"
+                "value": "320.00"
               }
-            },
-            "@ondc/org/item_id": "4629",
-            "title": "CHAIOM Slim Tea, Green Tea 100gm loose tea",
-            "@ondc/org/title_type": "item",
-            "@ondc/org/item_quantity": {
-              "count": 100
-            },
-            "price": {
-              "currency": "INR",
-              "value": "44400.0"
             }
           },
           {
-            "@ondc/org/item_id": "KS67NEYXDNWUAJL",
-            "title": "Packing charges",
-            "@ondc/org/title_type": "packing",
+            "title": "Tax",
+            "@ondc/org/item_id": "ITM02911",
+            "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "600.00"
+              "value": "160.00"
             }
           },
           {
+            "title": "Discount",
+            "@ondc/org/item_id": "ITM02911",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "INR",
+              "value": "-0.00"
+            }
+          },
+          {
+            "title": "Delivery Charge",
             "@ondc/org/item_id": "1",
-            "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "80.00"
+              "value": "10.00"
+            }
+          },
+          {
+            "title": "Convenience Fee",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Packing",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
             }
           }
         ],
-        "ttl": "P1D"
+        "price": {
+          "currency": "INR",
+          "value": "3370.00"
+        },
+        "ttl": "P2D"
       },
       "payments": [
         {
           "params": {
             "currency": "INR",
-            "transaction_id": "3937",
-            "amount": "45080.00"
+            "amount": "3370.00"
           },
           "status": "NOT-PAID",
           "type": "ON-FULFILLMENT",
           "collected_by": "BPP",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
           "@ondc/org/settlement_details": [
             {
               "settlement_counterparty": "buyer-app",
               "settlement_phase": "sale-amount",
               "settlement_type": "upi",
-              "upi_address": "ashok@oksbi",
-              "settlement_bank_account_no": "65783120",
-              "settlement_ifsc_code": "SBI000001",
-              "beneficiary_name": "Ashok",
-              "bank_name": "SBI",
-              "branch_name": "Chennai"
+              "upi_address": "proxtera",
+              "settlement_bank_account_no": "NA",
+              "settlement_ifsc_code": "NA",
+              "beneficiary_name": "NA",
+              "bank_name": "NA",
+              "branch_name": "NA"
             }
           ]
         }
@@ -231,13 +255,39 @@
               "descriptor": {
                 "code": "buyer_id_no"
               },
-              "value": "CE12341234M"
+              "value": "BFGFG3R34534"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bap_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "NA"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "NA"
             }
           ]
         }
       ],
-      "created_at": "2023-09-06T07:21:21.148Z",
-      "updated_at": "2023-09-06T07:21:21.148Z"
+      "created_at": "2024-03-01T14:14:52.936Z",
+      "updated_at": "2024-03-01T14:14:52.936Z"
     }
   }
 }
