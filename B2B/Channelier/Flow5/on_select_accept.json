@@ -9,50 +9,36 @@
                 "code": "IND"
             }
         },
-        "action": "select",
+        "action": "on_select",
         "version": "2.0.2",
-        "transaction_id": "c9677368-0fe6-44b3-9e4a-8867106d08b3",
-        "message_id": "8ec98a1d-232d-42f0-b9ad-ea53adce6de6",
-        "timestamp": "2024-03-04T03:28:17.756Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "integrations-preprod.channelier.com",
         "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-        "ttl": "P1D"
+        "transaction_id": "960754d4-91c9-448f-93c2-384f0004ae26",
+        "message_id": "0c8248d5-e06a-4706-95a1-5a506e858204",
+        "timestamp": "2024-03-04T03:05:06.514Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
             "fulfillments": [
                 {
                     "id": "1",
-                    "type": "Delivery",
-                    "stops": [
-                        {
-                            "type": "end",
-                            "location": {
-                                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
-                                "gps": "28.481469,77.513547",
-                                "area_code": "201308",
-                                "state": {
-                                    "name": "Uttar Pradesh"
-                                },
-                                "city": {
-                                    "name": "Meerut"
-                                },
-                                "country": {
-                                    "code": "IND"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9997723459"
-                            }
+                    "@ondc/org/provider_name": "Cornitos",
+                    "@ondc/org/category": "Standard Delivery",
+                    "tracking": false,
+                    "@ondc/org/TAT": "P7DT48H",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
                         }
-                    ]
+                    }
                 }
             ],
             "items": [
                 {
-                    "id": "CU2I2",
+                    "id": "CU2I4",
                     "location_ids": [
                         "L1"
                     ],
@@ -61,7 +47,7 @@
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 1000
+                            "count": 3
                         }
                     },
                     "tags": [
@@ -93,12 +79,12 @@
                     {
                         "id": "L1"
                     }
-                ],
-                "ttl": "P1D"
+                ]
             },
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT"
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
                 }
             ],
             "tags": [
@@ -130,11 +116,64 @@
                             "descriptor": {
                                 "code": "chat_url"
                             },
-                            "value": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=c9677368-0fe6-44b3-9e4a-8867106d08b3&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViN2Y5NWVlLWE4NzgtNDgxNC1iZWVmLTc2ZGMyZmNhNWZlOCIsIm5hbWUiOiJTdW1pdCBLdW1hciBTaW5naCIsImV4cCI6MTcyNzUyMjg5N30.4slZff-IasHtX8vXu4_NH7WXsyMomZ8kjbK2d_oyPPc"
+                            "value": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=960754d4-91c9-448f-93c2-384f0004ae26&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViN2Y5NWVlLWE4NzgtNDgxNC1iZWVmLTc2ZGMyZmNhNWZlOCIsIm5hbWUiOiJTdW1pdCBLdW1hciBTaW5naCIsImV4cCI6MTcyNzUyMTUwNn0.YBEoukE9BpNkIVpszufki1UN2tZ_a8nfApM_O97VqZk"
                         }
                     ]
                 }
-            ]
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "1396.62"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "CU2I4",
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Cornitos Rajma Crusties King Curry 57g",
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "20"
+                                },
+                                "maximum": {
+                                    "count": "20"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "399.00"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "1197.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "107.62"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "92"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            }
         }
     }
 }

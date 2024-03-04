@@ -9,35 +9,46 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_confirm",
         "version": "2.0.2",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "integrations-preprod.channelier.com",
         "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-        "transaction_id": "c9677368-0fe6-44b3-9e4a-8867106d08b3",
-        "message_id": "31694d8e-18ed-45a7-9f9a-8ae88438d030",
-        "timestamp": "2024-03-04T03:29:04.503Z",
+        "transaction_id": "92655d6c-215e-4149-a61a-b950ae971266",
+        "message_id": "23c7abad-496b-402b-877e-e7e8deb3f80d",
+        "timestamp": "2024-03-04T02:30:58.010Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "CU2"
+                "id": "CU2",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ],
+                "rateable": true
             },
             "fulfillments": [
                 {
                     "id": "1",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P7DT4H",
+                    "type": "Delivery",
                     "@ondc/org/provider_name": "Cornitos",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "images": []
+                        }
+                    },
                     "tracking": false,
                     "stops": [
                         {
                             "type": "end",
                             "location": {
-                                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
                                 "gps": "28.481469,77.513547",
+                                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
                                 "area_code": "201308",
                                 "state": {
                                     "name": "Uttar Pradesh"
@@ -51,23 +62,50 @@
                             },
                             "contact": {
                                 "phone": "9997723459"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-03-04T02:32:03.052Z",
+                                    "end": "2024-03-11T06:31:58.052Z"
+                                }
+                            }
+                        },
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "Cornitos"
+                                },
+                                "gps": "11.036049, 77.015817"
+                            },
+                            "contact": {
+                                "phone": "9896910499",
+                                "email": "techpvec18@gmail.com"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-03-04T02:31:58.052Z",
+                                    "end": "2024-03-04T06:31:58.052Z"
+                                }
                             }
                         }
                     ],
-                    "type": "Delivery"
+                    "rateable": true
                 }
             ],
             "items": [
                 {
-                    "id": "CU2I2",
+                    "id": "CU2I4",
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
                     "fulfillment_ids": [
                         "1"
                     ],
-                    "quantity": {
-                        "selected": {
-                            "count": 5
-                        }
-                    },
+                    "location_ids": [],
                     "tags": [
                         {
                             "descriptor": {
@@ -84,7 +122,7 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "price 350"
+                                    "value": ""
                                 }
                             ]
                         }
@@ -93,39 +131,53 @@
             ],
             "payments": [
                 {
-                    "collected_by": "BPP",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
                     "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P5D",
                     "@ondc/org/withholding_amount": "0",
-                    "@ondc/org/collected_by_status": "Agree",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
-                    "@ondc/org/settlement_details": []
+                    "status": "NOT-PAID",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "537.62"
+                    }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "2045.62"
+                    "value": "537.62"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "CU2I2",
+                        "@ondc/org/item_id": "CU2I4",
                         "@ondc/org/item_quantity": {
-                            "count": 5
+                            "count": 1
                         },
                         "@ondc/org/title_type": "item",
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "360.00"
+                                "value": "399.00"
                             }
                         },
-                        "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+                        "title": "Cornitos Rajma Crusties King Curry 57g",
                         "price": {
                             "currency": "INR",
-                            "value": "1800.00"
+                            "value": "399.00"
                         }
                     },
                     {
@@ -143,12 +195,13 @@
                         "title": "Convenience Fee",
                         "price": {
                             "currency": "INR",
-                            "value": "138"
+                            "value": "31"
                         }
                     }
                 ],
                 "ttl": "P1D"
             },
+            "state": "Cancelled",
             "tags": [
                 {
                     "descriptor": {
@@ -205,23 +258,41 @@
                             "value": "1000"
                         }
                     ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
                 }
             ],
             "billing": {
                 "name": "Sumit Kumar Singh",
                 "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
-                "phone": "9997723459",
-                "tax_id": "22AAAAA0000A1Z5",
                 "state": {
                     "name": "Uttar Pradesh"
                 },
                 "city": {
                     "name": "Meerut"
-                }
+                },
+                "phone": "9997723459",
+                "tax_id": "22AAAAA0000A1Z5"
             },
-            "provider_location": {
-                "id": "L1"
-            }
+            "id": "RAP-0047650",
+            "created_at": "2024-03-04T02:30:57.873Z",
+            "updated_at": "2024-03-04T02:30:57.873Z"
         }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "30019",
+        "message": "PO rejected due to change in Terms and Conditions"
     }
 }
