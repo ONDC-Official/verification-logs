@@ -9,29 +9,35 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "confirm",
         "version": "2.0.2",
+        "transaction_id": "92655d6c-215e-4149-a61a-b950ae971266",
+        "message_id": "23c7abad-496b-402b-877e-e7e8deb3f80d",
+        "timestamp": "2024-03-04T02:30:57.873Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "integrations-preprod.channelier.com",
         "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-        "transaction_id": "c9677368-0fe6-44b3-9e4a-8867106d08b3",
-        "message_id": "31694d8e-18ed-45a7-9f9a-8ae88438d030",
-        "timestamp": "2024-03-04T03:29:04.503Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "provider": {
-                "id": "CU2"
+            "billing": {
+                "name": "Sumit Kumar Singh",
+                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
+                "phone": "9997723459",
+                "tax_id": "22AAAAA0000A1Z5",
+                "city": {
+                    "name": "Meerut"
+                },
+                "state": {
+                    "name": "Uttar Pradesh"
+                }
             },
             "fulfillments": [
                 {
                     "id": "1",
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P7DT4H",
-                    "@ondc/org/provider_name": "Cornitos",
-                    "tracking": false,
+                    "type": "Delivery",
                     "stops": [
                         {
                             "type": "end",
@@ -51,21 +57,36 @@
                             },
                             "contact": {
                                 "phone": "9997723459"
+                            },
+                            "customer": {
+                                "person": {
+                                    "name": ""
+                                }
                             }
                         }
                     ],
-                    "type": "Delivery"
+                    "tracking": false
                 }
             ],
+            "id": "RAP-0047650",
+            "state": "Created",
+            "provider": {
+                "id": "CU2",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
             "items": [
                 {
-                    "id": "CU2I2",
+                    "id": "CU2I4",
                     "fulfillment_ids": [
                         "1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 5
+                            "count": 1
                         }
                     },
                     "tags": [
@@ -84,7 +105,7 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "price 350"
+                                    "value": ""
                                 }
                             ]
                         }
@@ -93,62 +114,78 @@
             ],
             "payments": [
                 {
-                    "collected_by": "BPP",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
                     "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P5D",
                     "@ondc/org/withholding_amount": "0",
-                    "@ondc/org/collected_by_status": "Agree",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
-                    "@ondc/org/settlement_details": []
+                    "status": "NOT-PAID",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "537.62"
+                    }
                 }
             ],
             "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "2045.62"
-                },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "CU2I2",
-                        "@ondc/org/item_quantity": {
-                            "count": 5
-                        },
+                        "title": "Cornitos Rajma Crusties King Curry 57g",
+                        "@ondc/org/item_id": "CU2I4",
                         "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "399.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "360.00"
+                                "value": "399.00"
                             }
-                        },
-                        "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
-                        "price": {
-                            "currency": "INR",
-                            "value": "1800.00"
                         }
                     },
                     {
+                        "title": "Delivery Charges",
                         "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "delivery",
-                        "title": "Delivery Charges",
                         "price": {
                             "currency": "INR",
                             "value": "107.62"
                         }
                     },
                     {
+                        "title": "Convenience Fee",
                         "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "misc",
-                        "title": "Convenience Fee",
                         "price": {
                             "currency": "INR",
-                            "value": "138"
+                            "value": "31.00"
                         }
                     }
                 ],
+                "price": {
+                    "currency": "INR",
+                    "value": "537.62"
+                },
                 "ttl": "P1D"
             },
+            "created_at": "2024-03-04T02:30:57.873Z",
+            "updated_at": "2024-03-04T02:30:57.873Z",
             "tags": [
                 {
                     "descriptor": {
@@ -205,23 +242,21 @@
                             "value": "1000"
                         }
                     ]
-                }
-            ],
-            "billing": {
-                "name": "Sumit Kumar Singh",
-                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
-                "phone": "9997723459",
-                "tax_id": "22AAAAA0000A1Z5",
-                "state": {
-                    "name": "Uttar Pradesh"
                 },
-                "city": {
-                    "name": "Meerut"
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
                 }
-            },
-            "provider_location": {
-                "id": "L1"
-            }
+            ]
         }
     }
 }
