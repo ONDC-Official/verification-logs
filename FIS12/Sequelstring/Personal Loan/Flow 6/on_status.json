@@ -10,13 +10,13 @@
             }
         },
         "version": "2.0.0",
-        "action": "on_update",
-        "transaction_id": "85f61bcc-7eef-4ba8-931b-7bb0f21de591",
-        "message_id": "ee432cbd-a069-4f98-afc1-d86b061952c9",
-        "timestamp": "2024-03-04T22:41:54.969Z",
+        "action": "on_status",
+        "transaction_id": "7c3227e3-d052-4106-a522-b068cdfc95b9",
+        "message_id": "0be5b1a8-35e5-4c99-a9b8-fa85dd198aa4",
+        "timestamp": "2024-03-08T14:31:16.134Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT10M",
+        "ttl": "PT15M",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
         "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
     },
@@ -275,7 +275,7 @@
                 }
             ],
             "quote": {
-                "id": "b4de333d-68b7-4275-8848-c4f9f369b6a6",
+                "id": "04a9dada-2836-4e32-ade8-b5a2348ad046",
                 "price": {
                     "currency": "INR",
                     "value": "442300"
@@ -331,23 +331,9 @@
                         }
                     },
                     {
-                        "title": "PRE_PAYMENT_CHARGE",
+                        "title": "LATE_FEE_AMOUNT",
                         "price": {
-                            "value": "4500",
-                            "currency": "INR"
-                        }
-                    },
-                    {
-                        "title": "OUTSTANDING_PRINCIPLE",
-                        "price": {
-                            "value": "20000",
-                            "currency": "INR"
-                        }
-                    },
-                    {
-                        "title": "OUTSTANDING_INTEREST",
-                        "price": {
-                            "value": "6000",
+                            "value": "1500",
                             "currency": "INR"
                         }
                     }
@@ -356,22 +342,25 @@
             },
             "payments": [
                 {
-                    "id": "0437d09d-9abe-436a-b81d-cffd3a349ebd",
-                    "url": "https://ondc.sequelstring.com/seller/toPaymentUtility?amount=20000&order_id=b4de333d-68b7-4275-8848-c4f9f369b6a6&label=PRE_PART_PAYMENT",
+                    "id": "3",
+                    "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "20000",
+                        "amount": "89960",
                         "currency": "INR"
                     },
-                    "status": "NOT-PAID",
+                    "status": "PAID",
                     "time": {
-                        "label": "PRE_PART_PAYMENT"
-                    },
-                    "type": "POST_FULFILLMENT"
+                        "label": "MISSED_EMI_PAYMENT",
+                        "range": {
+                            "start": "2024-06-01T13:28:00.257Z",
+                            "end": "2024-06-30T13:28:00.257Z"
+                        }
+                    }
                 },
                 {
-                    "id": "85f61bcc-7eef-4ba8-931b-7bb0f21de591",
+                    "id": "7c3227e3-d052-4106-a522-b068cdfc95b9",
                     "type": "ON_ORDER",
-                    "status": "NOT_PAID",
+                    "status": "NOT-PAID",
                     "collected_by": "BPP",
                     "tags": [
                         {
@@ -429,6 +418,12 @@
                                         "code": "STATIC_TERMS"
                                     },
                                     "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1159"
                                 }
                             ]
                         }
@@ -445,8 +440,8 @@
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-04-01T22:38:55.770Z",
-                            "end": "2024-04-30T22:38:55.770Z"
+                            "start": "2024-04-01T13:28:00.257Z",
+                            "end": "2024-04-30T13:28:00.257Z"
                         }
                     }
                 },
@@ -461,8 +456,8 @@
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-05-01T22:38:55.770Z",
-                            "end": "2024-05-31T22:38:55.770Z"
+                            "start": "2024-05-01T13:28:00.257Z",
+                            "end": "2024-05-31T13:28:00.257Z"
                         }
                     }
                 },
@@ -473,12 +468,12 @@
                         "amount": "88460",
                         "currency": "INR"
                     },
-                    "status": "NOT-PAID",
+                    "status": "DEFERRED",
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-06-01T22:38:55.770Z",
-                            "end": "2024-06-30T22:38:55.770Z"
+                            "start": "2024-06-01T13:28:00.257Z",
+                            "end": "2024-06-30T13:28:00.257Z"
                         }
                     }
                 },
@@ -493,8 +488,8 @@
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-07-01T22:38:55.770Z",
-                            "end": "2024-07-31T22:38:55.770Z"
+                            "start": "2024-07-01T13:28:00.257Z",
+                            "end": "2024-07-31T13:28:00.257Z"
                         }
                     }
                 },
@@ -509,8 +504,8 @@
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-08-01T22:38:55.770Z",
-                            "end": "2024-08-31T22:38:55.770Z"
+                            "start": "2024-08-01T13:28:00.257Z",
+                            "end": "2024-08-31T13:28:00.257Z"
                         }
                     }
                 }
@@ -572,7 +567,7 @@
                     "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
                 }
             ],
-            "id": "b4de333d-68b7-4275-8848-c4f9f369b6a6"
+            "id": "04a9dada-2836-4e32-ade8-b5a2348ad046"
         }
     }
 }
