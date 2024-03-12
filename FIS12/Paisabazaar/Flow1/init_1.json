@@ -1,0 +1,110 @@
+{
+  "context": {
+    "domain": "ONDC:FIS12",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "init",
+    "bap_uri": "https://staging.paisabazaar.com/ondc/api/v1/callback/",
+    "bap_id": "staging.paisabazaar.com/ondc",
+    "bpp_id": "ondctest.refo.dev",
+    "bpp_uri": "https://ondctest.refo.dev/app/ondc/seller",
+    "transaction_id": "bb719e2a-4c3c-467d-b6da-fd9c852047cd",
+    "message_id": "2e05bb36-e125-40fc-8d8a-d954d25a71e7",
+    "ttl": "PT10M",
+    "timestamp": "2024-03-11T09:18:32Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "101"
+      },
+      "items": [
+        {
+          "id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
+          "xinput": {
+            "form": {
+              "id": "68f0f84f-e336-4891-8a94-10c7db36998f"
+            },
+            "form_response": {
+              "status": "APPROVED",
+              "submission_id": "58d7c724-cc6f-4248-b33e-620fb133dafe"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "ON_ORDER",
+          "status": "NOT-PAID",
+          "params": {
+            "bank_code": "",
+            "bank_account_number": "",
+            "virtual_payment_address": ""
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1159"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "neft"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
