@@ -1,0 +1,255 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:020"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "timestamp": "2023-12-14T12:01:43.504Z",
+    "transaction_id": "e84d5e16-968d-4446-b1a2-71e9a568100e",
+    "message_id": "cb7cde44-6636-4a61-8c78-fcd27ee1ab4e",
+    "version": "2.0.0",
+    "action": "on_confirm",
+    "bap_id": "staging-xcellntapps-buyer.sumasoft.com",
+    "bap_uri": "htts://staging-xcellntapps-buyer.sumasoft.com/mobility/passenger",
+    "bpp_uri": "https://staging-xcellntapps-seller.sumasoft.com/mobility/auto",
+    "bpp_id": "staging-xcellntapps-seller.sumasoft.com"
+  },
+  "message": {
+    "order": {
+      "id": "657aee9cd63d8e7fadea8411",
+      "provider": {
+        "id": "64df4347a5fecda2e20afda0"
+      },
+      "items": [
+        {
+          "id": "",
+          "descriptor": {
+            "name": "ECONOMICAL",
+            "code": "TAXI-ECO"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "185.77"
+          },
+          "tags": "",
+          "fulfillment_id": [
+            "64ddaacaa5fecda2e2097558"
+          ],
+          "payment_id": [
+            "657aeea28da53d25cda010c0"
+          ]
+        }
+      ],
+      "quote": {
+        "value": "185.77",
+        "currency": "INR",
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": 28,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "CGST",
+            "price": {
+              "value": "4.37",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "SGST",
+            "price": {
+              "value": "4.37",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": 146.96954546171932,
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "BUYER_FINDER_FEES",
+            "price": {
+              "value": 2.064640636448288,
+              "currency": "INR"
+            }
+          }
+        ],
+        "ttl": "P200S"
+      },
+      "fulfillments": [
+        {
+          "id": "64ddaacaa5fecda2e2097559",
+          "type": "DELIVERY",
+          "state": {
+            "descriptor": {
+              "code": "DRIVER_EN_ROUTE",
+              "name": "Driver is on the way"
+            }
+          },
+          "customer": {
+            "person": {
+              "name": "Rohit Vairagkar"
+            },
+            "contact": {
+              "phone": "9763783236"
+            }
+          },
+          "agent": {
+            "person": {
+              "id": "657190008da53d25cd9911fc",
+              "name": "Pallavi  Kadam "
+            },
+            "contact": {
+              "phone": "9696974441"
+            },
+            "rating": 0
+          },
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "OTP",
+                "token": "4252"
+              },
+              "location": {
+                "gps": "18.5609315,73.8070075",
+                "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "18.5609315,73.8070075",
+                "address": "16, DP Rd, Harmony Society, Ward No. 8, Wireless Colony, Aundh, Pune, Maharashtra 411007, India"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "CABS",
+            "registration": "ABCD124567",
+            "make": "Tata taxi ",
+            "model": "Bollaro"
+          }
+        }
+      ],
+      "cancellation_terms": {
+        "cancellation_terms": [
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ASSIGNED"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ENROUTE_PICKUP"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "30"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ARRIVED_PICKUP"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "50"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_STARTED"
+              }
+            },
+            "reason_required": true,
+            "cancellation_fee": {
+              "percentage": "100"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "657aeea28da53d25cda010c0",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "params": {}
+        }
+      ]
+    }
+  }
+}
