@@ -10,13 +10,13 @@
       }
     },
     "version": "2.1.0",
-    "action": "on_select",
-    "transaction_id": "c5c4a8d0-a1c6-4d42-bea3-25d05d82989f",
-    "message_id": "bafa6ae4-7d3a-41c2-8dbe-1bea2fdcb6f5",
-    "timestamp": "2024-03-16T12:19:15.938Z",
+    "action": "on_update",
+    "transaction_id": "14f04f06-197a-4716-be33-e11b29ae602f",
+    "message_id": "ddcaa7c2-dbb9-47bb-9911-b6d1885cdcec",
+    "timestamp": "2024-03-16T12:04:37.282Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
-    "ttl": "PT30M",
+    "ttl": "PT10M",
     "bpp_id": "ondc.sequelstring.com/seller/protocol",
     "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
   },
@@ -140,7 +140,7 @@
       },
       "items": [
         {
-          "id": "afdda76c-945f-4181-a7b4-f912bc4a552e",
+          "id": "63edb6dc-bc52-42f2-8c6f-bf180a3ece5a",
           "descriptor": {
             "code": "INVOICE_BASED_LOAN",
             "name": "Invoice Based Loan"
@@ -246,35 +246,11 @@
               "display": true
             }
           ],
-          "parent_item_id": "519c5433-a88a-41a0-bc9d-7cefa9b5f3d3",
-          "xinput": {
-            "head": {
-              "descriptor": {
-                "name": "Customer Information"
-              },
-              "index": {
-                "min": 0,
-                "cur": 1,
-                "max": 1
-              },
-              "headings": [
-                "Set Loan Amount",
-                "Know your Customer"
-              ]
-            },
-            "form": {
-              "id": "5b93e738-7770-48c9-8b8e-ded8a1e2f0fb",
-              "mime_type": "application/html",
-              "url": "https://ondc.sequelstring.com/seller/form/5b93e738-7770-48c9-8b8e-ded8a1e2f0fb",
-              "resubmit": false,
-              "multiple_sumbissions": false
-            },
-            "required": true
-          }
+          "parent_item_id": "519c5433-a88a-41a0-bc9d-7cefa9b5f3d3"
         }
       ],
       "quote": {
-        "id": "205f0f16-728a-4c67-989c-483ce62b5a47",
+        "id": "7dc064c8-4576-42c2-b5a2-30323c44b5c9",
         "price": {
           "currency": "INR",
           "value": "442300"
@@ -302,23 +278,9 @@
             }
           },
           {
-            "title": "OTHER_UPFRONT_CHARGES",
-            "price": {
-              "value": "0",
-              "currency": "INR"
-            }
-          },
-          {
             "title": "INSURANCE_CHARGES",
             "price": {
               "value": "500",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "NET_DISBURSED_AMOUNT",
-            "price": {
-              "value": "397700",
               "currency": "INR"
             }
           },
@@ -328,10 +290,252 @@
               "value": "0",
               "currency": "INR"
             }
+          },
+          {
+            "title": "LATE_FEE_AMOUNT",
+            "price": {
+              "value": "1500",
+              "currency": "INR"
+            }
           }
         ],
         "ttl": "PT29D23H55M"
-      }
+      },
+      "payments": [
+        {
+          "id": "1",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "89960",
+            "currency": "INR"
+          },
+          "status": "PAID",
+          "time": {
+            "label": "MISSED_EMI_PAYMENT",
+            "range": {
+              "start": "2024-04-01T12:03:06.557Z",
+              "end": "2024-04-30T12:03:06.557Z"
+            }
+          }
+        },
+        {
+          "id": "14f04f06-197a-4716-be33-e11b29ae602f",
+          "type": "ON_ORDER",
+          "status": "NOT-PAID",
+          "collected_by": "BPP",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1159"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "DEFERRED",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-04-01T12:03:06.557Z",
+              "end": "2024-04-30T12:03:06.557Z"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-05-01T12:03:06.557Z",
+              "end": "2024-05-31T12:03:06.557Z"
+            }
+          }
+        },
+        {
+          "id": "3",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-06-01T12:03:06.557Z",
+              "end": "2024-06-30T12:03:06.557Z"
+            }
+          }
+        },
+        {
+          "id": "4",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-07-01T12:03:06.557Z",
+              "end": "2024-07-31T12:03:06.557Z"
+            }
+          }
+        },
+        {
+          "id": "5",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-08-01T12:03:06.557Z",
+              "end": "2024-08-31T12:03:06.557Z"
+            }
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "customer": {
+            "organization": {
+              "address": "Industrial Park, Bangalore",
+              "state": {
+                "name": "Karnataka"
+              },
+              "city": {
+                "name": "Bangalore",
+                "code": "560045"
+              },
+              "contact": {
+                "phone": "9876543210",
+                "email": "alpha.manufacturing@gmail.com"
+              }
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "DISBURSED",
+              "name": "Loan Disbursed"
+            }
+          }
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "DISBURSED"
+            }
+          },
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://bpp.credit.becknprotocol.org/tnc.html"
+          },
+          "cancellation_fee": {
+            "percentage": "5%"
+          }
+        }
+      ],
+      "documents": [
+        {
+          "descriptor": {
+            "code": "LOAN_AGREEMENT",
+            "name": "Loan Agreement Document",
+            "short_desc": "Download your Loan Agreement document here",
+            "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
+          },
+          "mime_type": "application/pdf",
+          "url": "https://lender.com/loan/loan-agreement/O1.pdf"
+        },
+        {
+          "descriptor": {
+            "code": "LOAN_CANCELLATION",
+            "name": "Loan Cancellation Document",
+            "short_desc": "Download your Loan Cancellation document here",
+            "long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
+          },
+          "mime_type": "application/pdf",
+          "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
+        }
+      ],
+      "id": "7dc064c8-4576-42c2-b5a2-30323c44b5c9"
     }
   }
 }

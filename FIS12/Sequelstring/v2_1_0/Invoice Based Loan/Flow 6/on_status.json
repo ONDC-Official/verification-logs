@@ -11,9 +11,9 @@
         },
         "version": "2.1.0",
         "action": "on_status",
-        "transaction_id": "7eee2dd4-0fd0-4e71-a338-5a69bdd565e1",
-        "message_id": "50a32360-06e1-4636-af21-751bfc0ba2c6",
-        "timestamp": "2024-03-08T19:34:49.205Z",
+        "transaction_id": "14f04f06-197a-4716-be33-e11b29ae602f",
+        "message_id": "e539c2a2-9c79-4a6c-92a8-0f2449f37188",
+        "timestamp": "2024-03-16T12:15:10.923Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT15M",
@@ -140,7 +140,7 @@
             },
             "items": [
                 {
-                    "id": "501f5c85-8d0b-446b-af34-00272b51751f",
+                    "id": "63edb6dc-bc52-42f2-8c6f-bf180a3ece5a",
                     "descriptor": {
                         "code": "INVOICE_BASED_LOAN",
                         "name": "Invoice Based Loan"
@@ -152,7 +152,7 @@
                     "tags": [
                         {
                             "descriptor": {
-                                "code": "LOAN_INFO",
+                                "code": "INFO",
                                 "name": "Loan Information"
                             },
                             "list": [
@@ -200,7 +200,7 @@
                                         "code": "INTEREST_RATE_CONVERSION_CHARGE",
                                         "name": "interest rate conversion charges"
                                     },
-                                    "value": "NA"
+                                    "value": "0"
                                 },
                                 {
                                     "descriptor": {
@@ -225,6 +225,22 @@
                                         "short_desc": "Terms and Conditions"
                                     },
                                     "value": "https://sequelstringbank.com/loan/tnc.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COOL_OFF_PERIOD",
+                                        "name": "cool off period",
+                                        "short_desc": "Cooling off/look-up period during which borrower shall not be charged any penalty"
+                                    },
+                                    "value": "PT5M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "INSTALLMENT_AMOUNT",
+                                        "name": "Installment amount",
+                                        "short_desc": "Each installment amount of repayment"
+                                    },
+                                    "value": "88460.00"
                                 }
                             ],
                             "display": true
@@ -234,13 +250,13 @@
                     "xinput": {
                         "form_response": {
                             "status": "APPROVED",
-                            "submission_id": "9a4a5c31-eb87-4290-a8f6-a7016d5db451"
+                            "submission_id": "afa117e9-2332-4b7f-9e50-c005067b5316"
                         }
                     }
                 }
             ],
             "quote": {
-                "id": "14cb873c-0b4f-4788-8513-0f27541b2821",
+                "id": "7dc064c8-4576-42c2-b5a2-30323c44b5c9",
                 "price": {
                     "currency": "INR",
                     "value": "442300"
@@ -268,23 +284,9 @@
                         }
                     },
                     {
-                        "title": "OTHER_UPFRONT_CHARGES",
-                        "price": {
-                            "value": "0",
-                            "currency": "INR"
-                        }
-                    },
-                    {
                         "title": "INSURANCE_CHARGES",
                         "price": {
                             "value": "500",
-                            "currency": "INR"
-                        }
-                    },
-                    {
-                        "title": "NET_DISBURSED_AMOUNT",
-                        "price": {
-                            "value": "397700",
                             "currency": "INR"
                         }
                     },
@@ -296,16 +298,9 @@
                         }
                     },
                     {
-                        "title": "OUTSTANDING_PRINCIPAL",
+                        "title": "LATE_FEE_AMOUNT",
                         "price": {
-                            "value": "442300",
-                            "currency": "INR"
-                        }
-                    },
-                    {
-                        "title": "OUTSTANDING_INTEREST",
-                        "price": {
-                            "value": "0",
+                            "value": "1500",
                             "currency": "INR"
                         }
                     }
@@ -314,19 +309,23 @@
             },
             "payments": [
                 {
-                    "id": "24b31a2f-43e8-476f-a7e9-7d226adc1131",
+                    "id": "1",
+                    "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "442300",
+                        "amount": "89960",
                         "currency": "INR"
                     },
                     "status": "PAID",
                     "time": {
-                        "label": "FORECLOSURE"
-                    },
-                    "type": "POST_FULFILLMENT"
+                        "label": "MISSED_EMI_PAYMENT",
+                        "range": {
+                            "start": "2024-04-01T12:03:06.557Z",
+                            "end": "2024-04-30T12:03:06.557Z"
+                        }
+                    }
                 },
                 {
-                    "id": "7eee2dd4-0fd0-4e71-a338-5a69bdd565e1",
+                    "id": "14f04f06-197a-4716-be33-e11b29ae602f",
                     "type": "ON_ORDER",
                     "status": "NOT-PAID",
                     "collected_by": "BPP",
@@ -401,15 +400,15 @@
                     "id": "1",
                     "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "88460",
+                        "amount": "88460.00",
                         "currency": "INR"
                     },
                     "status": "DEFERRED",
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-04-01T17:38:30.024Z",
-                            "end": "2024-04-30T17:38:30.024Z"
+                            "start": "2024-04-01T12:03:06.557Z",
+                            "end": "2024-04-30T12:03:06.557Z"
                         }
                     }
                 },
@@ -417,15 +416,15 @@
                     "id": "2",
                     "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "88460",
+                        "amount": "88460.00",
                         "currency": "INR"
                     },
-                    "status": "DEFERRED",
+                    "status": "NOT-PAID",
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-05-01T17:38:30.024Z",
-                            "end": "2024-05-31T17:38:30.024Z"
+                            "start": "2024-05-01T12:03:06.557Z",
+                            "end": "2024-05-31T12:03:06.557Z"
                         }
                     }
                 },
@@ -433,15 +432,15 @@
                     "id": "3",
                     "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "88460",
+                        "amount": "88460.00",
                         "currency": "INR"
                     },
-                    "status": "DEFERRED",
+                    "status": "NOT-PAID",
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-06-01T17:38:30.024Z",
-                            "end": "2024-06-30T17:38:30.024Z"
+                            "start": "2024-06-01T12:03:06.557Z",
+                            "end": "2024-06-30T12:03:06.557Z"
                         }
                     }
                 },
@@ -449,15 +448,15 @@
                     "id": "4",
                     "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "88460",
+                        "amount": "88460.00",
                         "currency": "INR"
                     },
-                    "status": "DEFERRED",
+                    "status": "NOT-PAID",
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-07-01T17:38:30.024Z",
-                            "end": "2024-07-31T17:38:30.024Z"
+                            "start": "2024-07-01T12:03:06.557Z",
+                            "end": "2024-07-31T12:03:06.557Z"
                         }
                     }
                 },
@@ -465,15 +464,15 @@
                     "id": "5",
                     "type": "POST_FULFILLMENT",
                     "params": {
-                        "amount": "88460",
+                        "amount": "88460.00",
                         "currency": "INR"
                     },
-                    "status": "DEFERRED",
+                    "status": "NOT-PAID",
                     "time": {
                         "label": "INSTALLMENT",
                         "range": {
-                            "start": "2024-08-01T17:38:30.024Z",
-                            "end": "2024-08-31T17:38:30.024Z"
+                            "start": "2024-08-01T12:03:06.557Z",
+                            "end": "2024-08-31T12:03:06.557Z"
                         }
                     }
                 }
@@ -491,15 +490,15 @@
                                 "code": "560045"
                             },
                             "contact": {
-                                "phone": "369852",
+                                "phone": "9876543210",
                                 "email": "alpha.manufacturing@gmail.com"
                             }
                         }
                     },
                     "state": {
                         "descriptor": {
-                            "code": "COMPLETE",
-                            "name": "Loan Completed"
+                            "code": "DISBURSED",
+                            "name": "Loan Disbursed"
                         }
                     }
                 }
@@ -542,7 +541,7 @@
                     "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
                 }
             ],
-            "id": "14cb873c-0b4f-4788-8513-0f27541b2821"
+            "id": "7dc064c8-4576-42c2-b5a2-30323c44b5c9"
         }
     }
 }
