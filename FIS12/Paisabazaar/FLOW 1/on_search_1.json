@@ -1,5 +1,8 @@
 {
   "context": {
+    "action": "on_search",
+    "bap_id": "staging.paisabazaar.com/ondc",
+    "bap_uri": "https://staging.paisabazaar.com/ondc/api/v1/callback/",
     "domain": "ONDC:FIS12",
     "location": {
       "country": {
@@ -9,39 +12,36 @@
         "code": "*"
       }
     },
+    "message_id": "dcf534d1-c60f-4a46-8488-bee0297d6b57",
+    "transaction_id": "e8e8d6c8-561a-4289-987a-25a33f535e56",
+    "timestamp": "2024-03-18T16:57:17.785Z",
     "version": "2.0.0",
-    "action": "on_search",
-    "bap_id": "staging.paisabazaar.com/ondc",
-    "bap_uri": "https://staging.paisabazaar.com/ondc/api/v1/callback/",
-    "transaction_id": "bb719e2a-4c3c-467d-b6da-fd9c852047cd",
-    "message_id": "fe59514e-3586-40dc-abfe-d985064956e4",
-    "ttl": "PT30M",
-    "timestamp": "2024-03-11T09:14:44.606Z",
-    "bpp_id": "fis-seller-staging.ondc.org",
-    "bpp_uri": "https://fis-seller-staging.ondc.org/"
+    "ttl": "PT10M",
+    "bpp_id": "api.abcscuat.com",
+    "bpp_uri": "https://api.abcscuat.com/abfl-ondc-preprod"
   },
   "message": {
     "catalog": {
       "descriptor": {
-        "name": "ICICI Bank"
+        "name": "Aditya Birla Finance Limited"
       },
       "providers": [
         {
-          "id": "1",
+          "id": "ABFL_Provider",
           "descriptor": {
+            "name": "Aditya Birla Finance Limited",
+            "short_desc": "Aditya Birla Finance Limited",
+            "long_desc": "Aditya Birla Finance Limited",
             "images": [
               {
-                "url": "https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png",
+                "url": "https://abcscprod.azureedge.net/-/media/Feature/ABCL/ABFL/Sticky-Tab-Content/ABFLLogov11.webp?extension=webp&amp;revision=6d918649-4a8f-4754-8e00-cf7601b99ef8&amp;modified=20221111111234&amp;h=387&amp;w=431&amp;la=en&amp;hash=5B3653A133488E98B636182FCB8A1908",
                 "size_type": "sm"
               }
-            ],
-            "name": "ICICI Bank",
-            "short_desc": "ICICI Bank Ltd",
-            "long_desc": "ICICI Bank Ltd, India."
+            ]
           },
           "categories": [
             {
-              "id": "101123",
+              "id": "ABFL_PERSONAL_LOAN",
               "descriptor": {
                 "code": "PERSONAL_LOAN",
                 "name": "Personal Loan"
@@ -50,75 +50,11 @@
           ],
           "items": [
             {
-              "id": "ITEM_ID_1_PERSONAL-LOAN",
+              "id": "1d4b8433-8c2b-4e23-a53d-0db2cdca070e",
               "descriptor": {
                 "code": "PERSONAL_LOAN",
                 "name": "Personal Loan"
               },
-              "category_ids": [
-                "101123"
-              ],
-              "tags": [
-                {
-                  "descriptor": {
-                    "code": "general-info",
-                    "name": "General Information"
-                  },
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "MIN_INTEREST_RATE",
-                        "name": "Minimum Interest Rate",
-                        "short_desc": "Loans starting from 9% (p.a)"
-                      },
-                      "value": "9%"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MAX_INTEREST_RATE",
-                        "name": "Maximum Interest Rate",
-                        "short_desc": "Loan Rate below from 15% (p.a)"
-                      },
-                      "value": "15%"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MIN_TENURE",
-                        "name": "Minimum Tenure",
-                        "short_desc": "Loan Tenure starting form 5 months"
-                      },
-                      "value": "5 months"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MAX_TENURE",
-                        "name": "Maximum Tenure",
-                        "short_desc": "Loan Tenure upto form 5 years"
-                      },
-                      "value": "5 years"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MIN_LOAN_AMOUNT",
-                        "name": "Minimum Loan Amount",
-                        "short_desc": "Loan Amount starting from 50,000"
-                      },
-                      "value": "50000"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MAX_LOAN_AMOUNT",
-                        "name": "Minimum Loan Amount",
-                        "short_desc": "Loan Amount upto form 50,00,000"
-                      },
-                      "value": "5000000"
-                    }
-                  ],
-                  "display": true
-                }
-              ],
-              "matched": true,
-              "recommended": true,
               "xinput": {
                 "head": {
                   "descriptor": {
@@ -134,14 +70,78 @@
                   ]
                 },
                 "form": {
-                  "id": "F01",
+                  "id": "73c07463-85af-4982-a6b7-a96f0a19470d",
                   "mime_type": "text/html",
-                  "url": "https://fis-seller-staging.ondc.org/form/personal-loan/old/personal-info",
+                  "url": "https://api.abcscuat.com/abfl-ondc-preprod/forms/personal-info/omA52GeZdV1zwhEC6kQaaR",
                   "resubmit": false,
                   "multiple_sumbissions": false
                 },
                 "required": true
-              }
+              },
+              "category_ids": [
+                "ABFL_PERSONAL_LOAN"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "GENERAL_INFO",
+                    "name": "General Information"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "MIN_INTEREST_RATE",
+                        "name": "Minimum Interest Rate",
+                        "short_desc": "Loans starting from 14% (p.a)"
+                      },
+                      "value": "14%"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MAX_INTEREST_RATE",
+                        "name": "Maximum Interest Rate",
+                        "short_desc": "Loan Rate below from 32% (p.a)"
+                      },
+                      "value": "32%"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MIN_TENURE",
+                        "name": "Minimum Tenure",
+                        "short_desc": "Loan Tenure starting form 12 months"
+                      },
+                      "value": "12 months"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MAX_TENURE",
+                        "name": "Maximum Tenure",
+                        "short_desc": "Loan Tenure upto 24 months"
+                      },
+                      "value": "24 months"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MIN_LOAN_AMOUNT",
+                        "name": "Minimum Loan Amount",
+                        "short_desc": "Loan Amount starting from 50,000"
+                      },
+                      "value": "50000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MAX_LOAN_AMOUNT",
+                        "name": "Minimum Loan Amount",
+                        "short_desc": "Loan Amount upto 5,00,000"
+                      },
+                      "value": "500000"
+                    }
+                  ],
+                  "display": true
+                }
+              ],
+              "matched": true,
+              "recommended": true
             }
           ],
           "payments": [
@@ -158,7 +158,7 @@
                       "descriptor": {
                         "code": "BUYER_FINDER_FEES_TYPE"
                       },
-                      "value": "PERCENT_ANNUALIZED"
+                      "value": "percent-annualized"
                     },
                     {
                       "descriptor": {
@@ -221,42 +221,92 @@
                     "code": "GRO_NAME",
                     "name": "Gro name"
                   },
-                  "value": "ICICI"
+                  "value": "Ms. Shruti Sarraf"
                 },
                 {
                   "descriptor": {
                     "code": "GRO_EMAIL",
                     "name": "Gro email"
                   },
-                  "value": "lifeline@iciciprulife.com"
+                  "value": "grievance.finance@adityabirlacapital.com"
                 },
                 {
                   "descriptor": {
                     "code": "GRO_CONTACT_NUMBER",
                     "name": "Gro contact number"
                   },
-                  "value": "1860 266 7766"
+                  "value": "080 – 45860196"
+                },
+                {
+                  "descriptor": {
+                    "code": "GRO_DESIGNATION",
+                    "name": "Gro Designation"
+                  },
+                  "value": "Nodal Grievance Redressal Officer"
+                },
+                {
+                  "descriptor": {
+                    "code": "GRO_ADDRESS",
+                    "name": "Gro Address"
+                  },
+                  "value": "Aditya Birla Finance Limited, Tower 1, 18th Floor Jupiter mill compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013"
                 },
                 {
                   "descriptor": {
                     "code": "CUSTOMER_SUPPORT_LINK",
                     "name": "Customer support link"
                   },
-                  "value": "https://buy.iciciprulife.com/buy/GrievanceRedStep.htm?execution=e1s1"
+                  "value": "https://finance.adityabirlacapital.com/customer-services"
                 },
                 {
                   "descriptor": {
                     "code": "CUSTOMER_SUPPORT_CONTACT_NUMBER",
                     "name": "Customer support contact number"
                   },
-                  "value": "1800 1080"
+                  "value": "080 – 45860196"
                 },
                 {
                   "descriptor": {
                     "code": "CUSTOMER_SUPPORT_EMAIL",
                     "name": "Customer support email"
                   },
-                  "value": "customer.care@icicibank.com"
+                  "value": "grievance.finance@adityabirlacapital.com"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "LSP_INFO",
+                "name": "Lsp Info"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "LSP_NAME",
+                    "name": "Lsp name"
+                  },
+                  "value": "NA"
+                },
+                {
+                  "descriptor": {
+                    "code": "LSP_EMAIL",
+                    "name": "Lsp email"
+                  },
+                  "value": "NA"
+                },
+                {
+                  "descriptor": {
+                    "code": "LSP_CONTACT_NUMBER",
+                    "name": "Lsp contact number"
+                  },
+                  "value": "NA"
+                },
+                {
+                  "descriptor": {
+                    "code": "LSP_ADDRESS",
+                    "name": "Lsp Address"
+                  },
+                  "value": "NA"
                 }
               ]
             }

@@ -10,18 +10,19 @@
       }
     },
     "version": "2.0.0",
-    "action": "on_init",
+    "action": "on_update",
     "ttl": "PT15M",
-    "timestamp": "2024-03-11T09:18:32.850Z",
+    "timestamp": "2024-03-19T13:24:31.835Z",
     "bap_id": "staging.paisabazaar.com/ondc",
     "bap_uri": "https://staging.paisabazaar.com/ondc/api/v1/callback/",
-    "transaction_id": "bb719e2a-4c3c-467d-b6da-fd9c852047cd",
-    "message_id": "2e05bb36-e125-40fc-8d8a-d954d25a71e7",
-    "bpp_id": "ondctest.refo.dev",
-    "bpp_uri": "https://ondctest.refo.dev/app/ondc/seller"
+    "transaction_id": "6b3c70f6-ac68-4cd9-bfd5-f2bbe4144dc5",
+    "message_id": "7f48a8e7-f0ab-4655-9391-efd4eaf91473",
+    "bpp_id": "dmi-ondcpreprod.refo.dev",
+    "bpp_uri": "https://dmi-ondcpreprod.refo.dev/app/ondc/seller"
   },
   "message": {
     "order": {
+      "id": "DMI0040342453",
       "provider": {
         "id": "101",
         "descriptor": {
@@ -150,12 +151,12 @@
         {
           "id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
           "descriptor": {
-            "code": "PERSONAL_LOAN",
-            "name": "Personal Loan"
+            "code": "ONDC_PERSONAL_LOAN",
+            "name": "ONDC Personal Loan"
           },
           "price": {
             "currency": "INR",
-            "value": "87982.95"
+            "value": "21868.39"
           },
           "tags": [
             {
@@ -168,9 +169,9 @@
                   "descriptor": {
                     "code": "INTEREST_RATE",
                     "name": "Interest Rate",
-                    "short_desc": "Loans starting from 20.00% (p.a.)"
+                    "short_desc": "Loans starting from 22.00% (p.a.)"
                   },
-                  "value": "20.00%"
+                  "value": "22.00%"
                 },
                 {
                   "descriptor": {
@@ -194,7 +195,7 @@
                     "name": "Application Fees",
                     "short_desc": "Application Fees"
                   },
-                  "value": "1000.00 INR"
+                  "value": "0.00 INR"
                 },
                 {
                   "descriptor": {
@@ -242,7 +243,7 @@
                     "name": "Annual Percentage Rate",
                     "short_desc": "Effective annualized interest rate in percentage computed on net disbursed amount using IRR approach and reducing balance method"
                   },
-                  "value": "23.78%"
+                  "value": "26.47%"
                 },
                 {
                   "descriptor": {
@@ -274,65 +275,40 @@
                     "name": "Installment amount",
                     "short_desc": "Each installment amount of repayment"
                   },
-                  "value": "3562.71 INR"
+                  "value": "881.93 INR"
                 }
               ],
               "display": true
             }
-          ],
-          "xinput": {
-            "head": {
-              "descriptor": {
-                "name": "Account Information"
-              },
-              "index": {
-                "min": 0,
-                "cur": 0,
-                "max": 2
-              },
-              "headings": [
-                "Account Information",
-                "Emandate",
-                "Loan Agreement"
-              ]
-            },
-            "form": {
-              "id": "9093ad09-d19b-4c30-be5c-561194531e40",
-              "url": "https://ondctest.refo.dev/loans/accdtlform/9093ad09-d19b-4c30-be5c-561194531e40",
-              "resubmit": false,
-              "mime_type": "text/html",
-              "multiple_sumbissions": false
-            },
-            "required": true
-          }
+          ]
         }
       ],
       "quote": {
-        "id": "7e02b7d1-ac0e-41c1-ba4a-913623e7e9da",
+        "id": "823e8dfc-42e9-4476-b747-7f89a2c48cdc",
         "price": {
           "currency": "INR",
-          "value": "87982.95"
+          "value": "21868.39"
         },
         "breakup": [
           {
             "title": "PRINCIPAL",
             "price": {
               "currency": "INR",
-              "value": "70000.00"
+              "value": "17000.00"
             }
           },
           {
             "title": "INTEREST",
             "price": {
               "currency": "INR",
-              "value": "15504.95"
+              "value": "4166.29"
             }
           },
           {
             "title": "NET_DISBURSED_AMOUNT",
             "price": {
               "currency": "INR",
-              "value": "67522.00"
+              "value": "16297.90"
             }
           },
           {
@@ -360,34 +336,435 @@
             "title": "PROCESSING_FEE",
             "price": {
               "currency": "INR",
-              "value": "2478.00"
+              "value": "702.10"
             }
           }
         ],
-        "ttl": "PT29D23H58M"
+        "ttl": "PT28D19H15M"
       },
       "fulfillments": [
         {
           "customer": {
             "person": {
-              "name": "Anil Kumar"
+              "name": "Dinesh Singh"
             },
             "contact": {
-              "phone": "9999424360",
-              "email": "shah7.anil@gmail.com"
+              "phone": "9540967000",
+              "email": "dinu.baisla@gmail.com"
             }
           },
           "state": {
             "descriptor": {
-              "code": "INITIATED",
-              "name": "INITIATED"
+              "code": "DISBURSED",
+              "name": "DISBURSED"
             }
           }
         }
       ],
       "payments": [
         {
-          "id": "bb719e2a-4c3c-467d-b6da-fd9c852047cd",
+          "id": "15",
+          "type": "POST_FULFILLMENT",
+          "url": "https://rzp.io/i/H1wbawh",
+          "params": {
+            "amount": "3527.72",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "MISSED_EMI_PAYMENT",
+            "range": {
+              "start": "2024-04-05T00:00:00.000Z",
+              "end": "2024-05-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "1",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-03-05T00:00:00.000Z",
+              "end": "2024-04-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-04-05T00:00:00.000Z",
+              "end": "2024-05-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "3",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-05-05T00:00:00.000Z",
+              "end": "2024-06-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "4",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-06-05T00:00:00.000Z",
+              "end": "2024-07-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "5",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-07-05T00:00:00.000Z",
+              "end": "2024-08-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "6",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-08-05T00:00:00.000Z",
+              "end": "2024-09-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "7",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-09-05T00:00:00.000Z",
+              "end": "2024-10-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "8",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-10-05T00:00:00.000Z",
+              "end": "2024-11-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "9",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-11-05T00:00:00.000Z",
+              "end": "2024-12-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "10",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2024-12-05T00:00:00.000Z",
+              "end": "2025-01-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "11",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-01-05T00:00:00.000Z",
+              "end": "2025-02-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "12",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-02-05T00:00:00.000Z",
+              "end": "2025-03-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "13",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-03-05T00:00:00.000Z",
+              "end": "2025-04-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "14",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-04-05T00:00:00.000Z",
+              "end": "2025-05-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "15",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-05-05T00:00:00.000Z",
+              "end": "2025-06-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "16",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-06-05T00:00:00.000Z",
+              "end": "2025-07-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "17",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-07-05T00:00:00.000Z",
+              "end": "2025-08-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "18",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-08-05T00:00:00.000Z",
+              "end": "2025-09-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "19",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-09-05T00:00:00.000Z",
+              "end": "2025-10-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "20",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-10-05T00:00:00.000Z",
+              "end": "2025-11-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "21",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-11-05T00:00:00.000Z",
+              "end": "2025-12-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "22",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-12-05T00:00:00.000Z",
+              "end": "2026-01-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "23",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2026-01-05T00:00:00.000Z",
+              "end": "2026-02-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "24",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "881.93",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2026-02-05T00:00:00.000Z",
+              "end": "2026-03-05T00:00:00.000Z"
+            }
+          }
+        },
+        {
+          "id": "6b3c70f6-ac68-4cd9-bfd5-f2bbe4144dc5",
           "type": "ON_ORDER",
           "status": "NOT-PAID",
           "tags": [
@@ -469,6 +846,18 @@
             }
           ],
           "collected_by": "BPP"
+        }
+      ],
+      "documents": [
+        {
+          "descriptor": {
+            "code": "LOAN_AGREEMENT",
+            "name": "Loan Agreement Document",
+            "short_desc": "Loan Agreement Document",
+            "long_desc": "Loan Agreement Document"
+          },
+          "url": "https://refo-test.s3.ap-south-1.amazonaws.com/pss/DMI/134/POST_SANCTION/ESIGN/LA_TEST_SIGN_0e8d54b3-f11b-4107-b2b4-d20394da1944_18032024084457.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20240319T132431Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=AKIAQMIBHDLERRAEPIQD%2F20240319%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=b3c2886c0cf7596530baff83b8491ec465a301814da26ab268ed737ff2922141",
+          "mime_type": "application/pdf"
         }
       ],
       "cancellation_terms": [
