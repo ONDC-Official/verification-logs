@@ -1,0 +1,282 @@
+{
+    "context": {
+      "location": {
+        "country": {
+          "code": "IND"
+        },
+        "city": {
+          "code": "std:044"
+        }
+      },
+      "bap_id": "https://partner.uat.taxida.in",
+      "bap_uri": "https://partner.uat.taxida.in/v1/buyer/ondc",
+      "domain": "ONDC:TRV10",
+      "timestamp": "2024-01-08T16:46:58.000+00:00",
+      "bpp_id": "https://partner.uat.taxida.in",
+      "transaction_id": "9bc2dd01-7078-4758-89bc-3a2c2c93a491",
+      "message_id": "1cdd6c33-d7a5-4a76-b306-82721d0d4f08",
+      "version": "2.0.0",
+      "action": "on_confirm",
+      "bpp_uri": "https://partner.uat.taxida.in/v1/ondc",
+      "ttl": "PT6S"
+    },
+    "message": {
+      "order": {
+        "id": "TAXIDA81712",
+        "provider": {
+          "id": "9bc2dd01-7078-4758-89bc-3a2c2c93a491"
+        },
+        "items": [
+          {
+            "id": "34c4a2a4-863c-42af-909d-a35a7c6bf576",
+            "descriptor": {
+              "code": "RIDE",
+              "name": "Prime SUV",
+              "images": [
+                {
+                  "url": "https://api.uat.taxida.in/user-service/images/vehicles/1704703252472innova.jpg"
+                }
+              ]
+            },
+            "price": {
+              "value": "800",
+              "currency": "INR",
+              "maximum_value": "800",
+              "minimum_value": "800"
+            },
+            "fulfillment_ids": [
+              "1d10c5e8-5018-4a2a-9f66-53d06164c82c"
+            ],
+            "payment_ids": [
+              "c3750f0b-7464-44b9-bdc1-10fd787b3461"
+            ],
+            "tags": [
+              {
+                "list": [
+                  {
+                    "value": "200",
+                    "descriptor": {
+                      "code": "WAITING_CHARGE_PER_MIN"
+                    }
+                  },
+                  {
+                    "value": "100",
+                    "descriptor": {
+                      "code": "NIGHT_CHARGE_MULTIPLIER"
+                    }
+                  },
+                  {
+                    "value": "10:00:00",
+                    "descriptor": {
+                      "code": "NIGHT_SHIFT_START_TIME"
+                    }
+                  },
+                  {
+                    "value": "14:00:00",
+                    "descriptor": {
+                      "code": "NIGHT_SHIFT_END_TIME"
+                    }
+                  },
+                  {
+                    "value": "800",
+                    "descriptor": {
+                      "code": "MIN_FARE"
+                    }
+                  },
+                  {
+                    "value": "35",
+                    "descriptor": {
+                      "code": "DISTANCE_PER_KM"
+                    }
+                  },
+                  {
+                    "value": "37",
+                    "descriptor": {
+                      "code": "EXTRA_DISTANCE_KM"
+                    }
+                  }
+                ],
+                "display": true,
+                "descriptor": {
+                  "code": "FARE_POLICY",
+                  "name": "Fare policy"
+                }
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "value": "800",
+            "currency": "INR"
+          },
+          "breakup": [
+            {
+              "price": {
+                "value": "700",
+                "currency": "INR"
+              },
+              "title": "BASE_FARE"
+            },
+            {
+              "price": {
+                "value": "100",
+                "currency": "INR"
+              },
+              "title": "NIGHT_CHARGE"
+            }
+          ]
+        },
+        "fulfillments": [
+          {
+            "id": "1d10c5e8-5018-4a2a-9f66-53d06164c82c",
+            "customer": {
+              "person": {
+                "name": "ibrahim"
+              },
+              "contact": {
+                "phone": "9566247327"
+              }
+            },
+            "stops": [
+              {
+                "time": {
+                  "range": {
+                    "start": "2024-01-18T17:00:00.000Z"
+                  }
+                },
+                "type": "START",
+                "location": {
+                  "gps": "13.071373, 80.2416576"
+                },
+                "authorization": {
+                  "type": "OTP",
+                  "token": "3622"
+                }
+              },
+              {
+                "type": "END",
+                "location": {
+                  "gps": "13.0066625, 80.2206369"
+                }
+              }
+            ],
+            "vehicle": {
+              "category": "CAB"
+            },
+            "state": {
+              "descriptor": {
+                "code": "RIDE_CONFIRMED"
+              }
+            }
+          }
+        ],
+        "cancellation_terms": [
+          {
+            "reason_required": true,
+            "cancellation_fee": {
+              "percentage": "0"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ASSIGNED"
+              }
+            }
+          },
+          {
+            "reason_required": true,
+            "cancellation_fee": {
+              "percentage": "0"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "DRIVER_EN_ROUTE_TO_PICKUP"
+              }
+            }
+          },
+          {
+            "reason_required": true,
+            "cancellation_fee": {
+              "percentage": "0"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "DRIVER_AT_PICKUP"
+              }
+            }
+          }
+        ],
+        "payments": [
+          {
+            "id": "c3750f0b-7464-44b9-bdc1-10fd787b3461",
+            "type": "ON-FULFILLMENT",
+            "params": {
+              "bank_code": "ICIC0003219",
+              "bank_account_number": "321905000462"
+            },
+            "status": "NOT-PAID",
+            "collected_by": "BPP",
+            "tags": [
+              {
+                "list": [
+                  {
+                    "value": "true",
+                    "descriptor": {
+                      "code": "MANDATORY_ARBITRATION"
+                    }
+                  },
+                  {
+                    "value": "CHENNAI",
+                    "descriptor": {
+                      "code": "COURT_JURISDICTION"
+                    }
+                  },
+                  {
+                    "value": "0",
+                    "descriptor": {
+                      "code": "DELAY_INTEREST"
+                    }
+                  },
+                  {
+                    "value": "PT0S",
+                    "descriptor": {
+                      "code": "SETTLEMENT_WINDOW"
+                    }
+                  },
+                  {
+                    "value": "DELIVERY",
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    }
+                  },
+                  {
+                    "value": "RSF",
+                    "descriptor": {
+                      "code": "SETTLEMENT_TYPE"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "code": "SETTLEMENT_TERMS"
+                }
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                    },
+                    "value": "0"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
