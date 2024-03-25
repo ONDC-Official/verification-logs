@@ -2,9 +2,9 @@
   "context": {
     "action": "search",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://staging.cliniq360.com/bapl",
-    "bpp_id": "abscuat.com",
-    "bpp_uri": "https://abscuat.com/healthinsurance/ondc-preprod",
+    "bap_uri": "https://a9cb-2401-4900-1c42-8fff-00-244-c780.ngrok-free.app/bapl",
+    "bpp_id": "api.abcscuat.com",
+    "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
     "location": {
       "country": {
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "transaction_id": "afd480b9-cb26-4d2d-a78a-ac2789f07c9c",
-    "message_id": "3552b8a6-c8ed-480c-b607-9c3245c66e92",
-    "timestamp": "2024-03-13T16:57:46.560143+05:30",
+    "transaction_id": "bf4d0a22-07cf-4115-a4bf-e740545991b3",
+    "message_id": "0963a6c4-6f78-4609-b949-5751c80c5d1e",
+    "timestamp": "2024-03-22T14:23:00.988Z",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -33,25 +33,85 @@
           {
             "id": "I2",
             "xinput": {
+              "form": {
+                "id": "FO2"
+              },
               "form_response": {
                 "status": "SUCCESS",
-                "submission_id": "5132f902-6e25-42aa-8f72-7bfc8378c398"
+                "submission_id": "166d8c50-5a9c-4b37-a47f-0968c410b95b"
               }
             }
           },
           {
             "id": "I2",
             "xinput": {
+              "form": {
+                "id": "FO2"
+              },
               "form_response": {
                 "status": "SUCCESS",
-                "submission_id": "e0fb110a-ace2-4801-9de1-29f617344b93"
+                "submission_id": "9bfd3fcb-6582-41b9-a0cd-2102e9e918ee"
               }
             }
           }
         ]
       },
       "payment": {
-        "collected_by": "BPP"
+        "collected_by": "BPP",
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "percent-annualized"
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "5"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_WINDOW"
+                },
+                "value": "PT60M"
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_BASIS"
+                },
+                "value": "Delivery"
+              },
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+              }
+            ]
+          }
+        ]
       }
     }
   }
