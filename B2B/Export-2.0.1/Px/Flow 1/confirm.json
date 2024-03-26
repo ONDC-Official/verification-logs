@@ -10,37 +10,38 @@
       }
     },
     "action": "confirm",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "1e47c02b-4d74-4f50-98c5-e2eaee978516",
-    "message_id": "a5e6da8b-99ee-4f7d-b666-160f55d9522c",
-    "timestamp": "2023-09-06T07:16:14.870Z",
-    "bpp_id": "preprod-seller.signcatch.com",
-    "bpp_uri": "https://preprod-seller.signcatch.com/",
+    "transaction_id": "95053bf6-06bf-4b4e-983c-8c9797308583",
+    "message_id": "4e1c6d27-736e-495f-9dfd-c830ba4974c4",
+    "timestamp": "2024-03-25T08:22:12.120Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "PO8721137057",
+      "id": "PO7351110928",
       "state": "Created",
       "provider": {
-        "id": "SW10000378",
+        "id": "6343bc4ac45f7c0009701acb",
         "locations": [
           {
-            "id": "LSIN000378"
+            "id": "P_L1"
           }
         ]
       },
       "items": [
         {
-          "id": "4612",
+          "id": "65fbd910172637bba6688b53",
           "fulfillment_ids": [
-            "XL4WNEMIUEOR0OI"
+            "1",
+            "2"
           ],
           "quantity": {
             "selected": {
-              "count": 100
+              "count": 10
             }
           },
           "tags": [
@@ -53,13 +54,13 @@
                   "descriptor": {
                     "code": "ITEM_REQ"
                   },
-                  "value": "Require 100 quantities"
+                  "value": "flow 1"
                 },
                 {
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   },
-                  "value": "Require good packaging"
+                  "value": "flow 1"
                 }
               ]
             }
@@ -67,47 +68,50 @@
         }
       ],
       "billing": {
-        "name": "Bharath test company",
-        "address": "133 Cecil St, #17-03 Keck Seng Tower",
+        "name": "flow 1",
+        "address": "Airport Boulevard, Singapore Changi Airport (SIN) (SIN), Singapore",
         "state": {
           "name": "Singapore"
         },
         "city": {
           "name": "Singapore"
         },
-        "tax_id": "CE12341234M",
-        "email": "bharathraj@instrive.in",
-        "phone": "9095038910"
+        "tax_id": "WERTYUI123",
+        "email": "srijit@proxtera.com",
+        "phone": "+917003593398"
       },
       "fulfillments": [
         {
-          "id": "XL4WNEMIUEOR0OI",
+          "id": "1",
           "type": "Delivery",
           "tracking": false,
+          "@ondc/org/provider_name": "Company Legal Name",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P1D",
           "stops": [
             {
               "type": "end",
               "location": {
-                "gps": "1.2803224, 103.8490244",
-                "address": "133 Cecil St, #17-03 Keck Seng Tower",
+                "gps": "1.2804385, 103.8489962",
+                "address": "Airport Boulevard, Singapore Changi Airport (SIN) (SIN), Singapore",
                 "city": {
                   "name": "Singapore"
                 },
                 "country": {
-                  "code": "Singapore"
+                  "code": "SGP"
                 },
-                "area_code": "123456",
+                "area_code": "819643",
                 "state": {
                   "name": "Singapore"
                 }
               },
               "contact": {
-                "phone": "9095038910",
-                "email": "bharathraj@instrive.in"
+                "phone": "+917003593398",
+                "email": "srijit@proxtera.com"
               },
               "customer": {
                 "person": {
-                  "name": "Bharath test company"
+                  "name": "flow 1"
                 }
               }
             }
@@ -122,7 +126,7 @@
                   "descriptor": {
                     "code": "INCOTERMS"
                   },
-                  "value": "DDP"
+                  "value": "CIF"
                 },
                 {
                   "descriptor": {
@@ -137,80 +141,83 @@
       ],
       "quote": {
         "price": {
-          "currency": "INR",
-          "value": "45400.00"
+          "currency": "AUD",
+          "value": "80"
         },
         "breakup": [
           {
-            "item": {
-              "quantity": {
-                "available": {
-                  "count": "4895"
-                },
-                "maximum": {
-                  "count": "4895"
-                }
-              },
-              "price": {
-                "currency": "INR",
-                "value": "444.00"
-              }
-            },
-            "@ondc/org/item_id": "4612",
-            "title": "CHAIOM Digestive Green Tea 100gm loose tea",
-            "@ondc/org/title_type": "item",
+            "@ondc/org/item_id": "65fbd910172637bba6688b53",
             "@ondc/org/item_quantity": {
-              "count": 100
+              "count": 10
             },
+            "title": "chennai unique thing 3",
+            "@ondc/org/title_type": "item",
             "price": {
-              "currency": "INR",
-              "value": "44400.0"
+              "value": "50",
+              "currency": "AUD"
+            },
+            "item": {
+              "price": {
+                "value": "5",
+                "currency": "AUD"
+              }
             }
           },
           {
-            "@ondc/org/item_id": "XL4WNEMIUEOR0OI",
-            "title": "Packing charges",
-            "@ondc/org/title_type": "packing",
+            "title": "Discount",
+            "@ondc/org/item_id": "65fbd910172637bba6688b53",
+            "@ondc/org/title_type": "discount",
             "price": {
-              "currency": "INR",
-              "value": "800.00"
+              "currency": "AUD",
+              "value": "-10"
             }
           },
           {
-            "@ondc/org/item_id": "1",
-            "title": "Delivery charges",
+            "title": "Delivery Charges",
             "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "1",
             "price": {
-              "currency": "INR",
-              "value": "200.00"
+              "currency": "AUD",
+              "value": "20"
+            }
+          },
+          {
+            "title": "Packaging Charges",
+            "@ondc/org/title_type": "packing",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "AUD",
+              "value": "20"
             }
           }
         ],
-        "ttl": "P1D"
+        "ttl": "P4D"
       },
       "payments": [
         {
           "params": {
-            "currency": "INR",
-            "transaction_id": "3937",
-            "amount": "45400.00"
+            "currency": "AUD",
+            "amount": "80"
           },
           "status": "NOT-PAID",
-          "type": "ON-FULFILLMENT",
+          "type": "POST-FULFILLMENT",
           "collected_by": "BPP",
           "@ondc/org/buyer_app_finder_fee_type": "percent",
           "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
           "@ondc/org/settlement_details": [
             {
               "settlement_counterparty": "buyer-app",
               "settlement_phase": "sale-amount",
               "settlement_type": "upi",
-              "upi_address": "ashok@oksbi",
-              "settlement_bank_account_no": "65783120",
-              "settlement_ifsc_code": "SBI000001",
-              "beneficiary_name": "Ashok",
-              "bank_name": "SBI",
-              "branch_name": "Chennai"
+              "upi_address": "proxtera",
+              "settlement_bank_account_no": "NA",
+              "settlement_ifsc_code": "NA",
+              "beneficiary_name": "NA",
+              "bank_name": "NA",
+              "branch_name": "NA"
             }
           ]
         }
@@ -231,13 +238,39 @@
               "descriptor": {
                 "code": "buyer_id_no"
               },
-              "value": "CE12341234M"
+              "value": "WERTYUI123"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bap_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
             }
           ]
         }
       ],
-      "created_at": "2023-09-06T07:16:14.870Z",
-      "updated_at": "2023-09-06T07:16:14.870Z"
+      "created_at": "2024-03-25T08:22:12.120Z",
+      "updated_at": "2024-03-25T08:22:12.120Z"
     }
   }
 }

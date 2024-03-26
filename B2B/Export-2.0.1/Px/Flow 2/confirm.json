@@ -1,0 +1,276 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "confirm",
+    "version": "2.0.2",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "transaction_id": "038177e3-a75a-47a2-b8c5-cd2d82721519",
+    "message_id": "e090e69a-6b6a-4b0a-ac15-6d9bd495ed95",
+    "timestamp": "2024-03-25T10:01:30.076Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "PO1662732140",
+      "state": "Created",
+      "provider": {
+        "id": "6343bc4ac45f7c0009701acb",
+        "locations": [
+          {
+            "id": "P_L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "65f97f5fa3436a5cfd8440e4",
+          "fulfillment_ids": [
+            "1",
+            "2"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 10
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "flow 2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": "flow 2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "flow 2",
+        "address": "Stadium Walk, Singapore Indoor Stadium, Singapore",
+        "state": {
+          "name": "Singapore"
+        },
+        "city": {
+          "name": "Singapore"
+        },
+        "tax_id": "WERTYUI123",
+        "email": "srijit@proxtera.com",
+        "phone": "+917003593398"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "tracking": false,
+          "@ondc/org/provider_name": "Company Legal Name",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P1D",
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "gps": "1.2804385, 103.8489962",
+                "address": "Stadium Walk, Singapore Indoor Stadium, Singapore",
+                "city": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                },
+                "area_code": "397691",
+                "state": {
+                  "name": "Singapore"
+                }
+              },
+              "contact": {
+                "phone": "+917003593398",
+                "email": "srijit@proxtera.com"
+              },
+              "customer": {
+                "person": {
+                  "name": "flow 2"
+                }
+              }
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "DELIVERY_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "INCOTERMS"
+                  },
+                  "value": "CIF"
+                },
+                {
+                  "descriptor": {
+                    "code": "NAMED_PLACE_OF_DELIVERY"
+                  },
+                  "value": "Singapore"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "AUD",
+          "value": "78"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "65f97f5fa3436a5cfd8440e4",
+            "@ondc/org/item_quantity": {
+              "count": 10
+            },
+            "title": "chennai unique thing 2",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "value": "50",
+              "currency": "AUD"
+            },
+            "item": {
+              "price": {
+                "value": "5",
+                "currency": "AUD"
+              }
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "65f97f5fa3436a5cfd8440e4",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "AUD",
+              "value": "-30"
+            }
+          },
+          {
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "AUD",
+              "value": "29"
+            }
+          },
+          {
+            "title": "Packaging Charges",
+            "@ondc/org/title_type": "packing",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "AUD",
+              "value": "29"
+            }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "payments": [
+        {
+          "params": {
+            "currency": "AUD",
+            "amount": "78"
+          },
+          "status": "NOT-PAID",
+          "type": "PRE-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "upi_address": "proxtera",
+              "settlement_bank_account_no": "NA",
+              "settlement_ifsc_code": "NA",
+              "beneficiary_name": "NA",
+              "bank_name": "NA",
+              "branch_name": "NA"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "tin"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "WERTYUI123"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bap_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-03-25T10:01:30.076Z",
+      "updated_at": "2024-03-25T10:01:30.076Z"
+    }
+  }
+}

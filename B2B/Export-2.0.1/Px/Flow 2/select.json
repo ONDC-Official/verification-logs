@@ -9,34 +9,41 @@
         "code": "IND"
       }
     },
-    "action": "init",
-    "version": "2.0.1",
+    "action": "select",
+    "version": "2.0.2",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "211412da-6774-4ffa-80c4-3b75b69399ce",
-    "message_id": "c347686a-6efc-4243-bbc8-7a0fcf0f4bca",
-    "timestamp": "2023-09-06T07:12:30.364Z",
-    "bpp_id": "preprod-seller.signcatch.com",
-    "bpp_uri": "https://preprod-seller.signcatch.com/",
+    "transaction_id": "038177e3-a75a-47a2-b8c5-cd2d82721519",
+    "message_id": "b432e70f-7608-4e64-8760-f1fe172b2e17",
+    "timestamp": "2024-03-25T10:00:18.230Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
     "ttl": "P4D"
   },
   "message": {
     "order": {
       "provider": {
-        "id": "SW10000378",
+        "id": "6343bc4ac45f7c0009701acb",
         "locations": [
           {
-            "id": "LSIN000378"
+            "id": "P_L1"
           }
         ],
         "ttl": "P4D"
       },
       "items": [
         {
-          "id": "4622",
+          "id": "65f97f5fa3436a5cfd8440e4",
+          "location_ids": [
+            "L1"
+          ],
+          "fulfillment_ids": [
+            "1",
+            "2"
+          ],
           "quantity": {
             "selected": {
-              "count": 100
+              "count": 10
             }
           },
           "tags": [
@@ -49,55 +56,47 @@
                   "descriptor": {
                     "code": "ITEM_REQ"
                   },
-                  "value": "Require 100 quantities"
+                  "value": "flow 2"
                 },
                 {
                   "descriptor": {
                     "code": "PACKAGING_REQ"
                   },
-                  "value": "Require good packaging."
+                  "value": "flow 2"
                 }
               ]
             }
           ]
         }
       ],
-      "billing": {
-        "name": "Bharath test company",
-        "address": "133 Cecil St, #17-03 Keck Seng Tower",
-        "state": {
-          "name": "Singapore"
-        },
-        "city": {
-          "name": "Singapore"
-        },
-        "tax_id": "CE12341234M",
-        "email": "bharathraj@instrive.in",
-        "phone": "9095038910"
-      },
       "fulfillments": [
         {
           "id": "1",
           "type": "Delivery",
           "stops": [
             {
+              "contact": {
+                "phone": "+917003593398",
+                "email": "srijit@proxtera.com"
+              },
               "type": "end",
               "location": {
-                "gps": "1.2803224, 103.8490244",
-                "address": "133 Cecil St, #17-03 Keck Seng Tower",
+                "gps": "1.2804385, 103.8489962",
+                "area_code": "397691",
                 "city": {
                   "name": "Singapore"
                 },
-                "country": {
-                  "code": "Singapore"
-                },
-                "area_code": "123456",
                 "state": {
                   "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
                 }
               },
-              "contact": {
-                "phone": "9095038910"
+              "customer": {
+                "person": {
+                  "name": "flow 2"
+                }
               }
             }
           ],
@@ -126,7 +125,7 @@
       ],
       "payments": [
         {
-          "type": "ON-FULFILLMENT"
+          "type": "PRE-FULFILLMENT"
         }
       ],
       "tags": [
@@ -145,7 +144,20 @@
               "descriptor": {
                 "code": "buyer_id_no"
               },
-              "value": "CE12341234M"
+              "value": "WERTYUI123"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "COMM_CHANNEL"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "chat_url"
+              },
+              "value": "https://devapi.proxtera.app/spaces/chat-room"
             }
           ]
         }
