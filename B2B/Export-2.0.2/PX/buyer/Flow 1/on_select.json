@@ -11,54 +11,37 @@
     },
     "action": "on_select",
     "version": "2.0.2",
+    "transaction_id": "55a1e2b8-cdc6-45b9-b856-d588018f7f1f",
+    "message_id": "54df3e2c-4618-4fa9-8666-d023e6622823",
+    "timestamp": "2024-03-27T05:09:04.744Z",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
-    "transaction_id": "95053bf6-06bf-4b4e-983c-8c9797308583",
-    "message_id": "3aad4e57-4105-4813-b91a-dcf1a87f94dc",
-    "timestamp": "2024-03-25T08:21:52.438Z",
-    "bpp_id": "preprod-seller-api.proxtera.app",
-    "bpp_uri": "https://preprod-seller-api.proxtera.app",
-    "ttl": "P19D"
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "ttl": "P2D"
   },
   "message": {
     "order": {
       "provider": {
-        "id": "6343bc4ac45f7c0009701acb",
+        "id": "abadfoodslive",
         "locations": [
           {
-            "id": "P_L1"
+            "id": "L1"
           }
         ]
       },
-      "fulfillments": [
-        {
-          "id": "1",
-          "@ondc/org/provider_name": "Company Legal Name",
-          "tracking": false,
-          "@ondc/org/category": "Standard Delivery",
-          "@ondc/org/TAT": "P1D",
-          "provider_id": "6343bc4ac45f7c0009701ace",
-          "type": "Delivery",
-          "state": {
-            "descriptor": {
-              "code": "Serviceable"
-            }
-          }
-        }
-      ],
       "items": [
         {
-          "id": "65fbd910172637bba6688b53",
+          "id": "ITM00137",
+          "fulfillment_ids": [
+            "1"
+          ],
           "location_ids": [
             "L1"
           ],
-          "fulfillment_ids": [
-            "1",
-            "2"
-          ],
           "quantity": {
             "selected": {
-              "count": 10
+              "count": 1
             }
           },
           "tags": [
@@ -69,123 +52,121 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "ITEM_REQ"
+                    "code": "PACKAGING_REQ"
                   },
-                  "value": "flow 1"
+                  "value": "flow 1 rapidor seller"
                 },
                 {
                   "descriptor": {
-                    "code": "PACKAGING_REQ"
+                    "code": "ITEM_REQ"
                   },
-                  "value": "flow 1"
+                  "value": "flow 1 rapidor seller"
                 }
               ]
             }
           ]
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "AUD",
-          "value": "80"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "65fbd910172637bba6688b53",
-            "@ondc/org/item_quantity": {
-              "count": 10
-            },
-            "title": "chennai unique thing 3",
-            "@ondc/org/title_type": "item",
-            "price": {
-              "value": "50",
-              "currency": "AUD"
-            },
-            "item": {
-              "quantity": {
-                "available": {
-                  "count": 9858
-                },
-                "maximum": {
-                  "count": 9858
-                }
-              },
-              "price": {
-                "value": "5",
-                "currency": "AUD"
-              }
-            }
-          },
-          {
-            "title": "Discount",
-            "@ondc/org/item_id": "65fbd910172637bba6688b53",
-            "@ondc/org/title_type": "discount",
-            "price": {
-              "currency": "AUD",
-              "value": "-10"
-            }
-          },
-          {
-            "title": "Delivery Charges",
-            "@ondc/org/title_type": "delivery",
-            "@ondc/org/item_id": "1",
-            "price": {
-              "currency": "AUD",
-              "value": "20"
-            }
-          },
-          {
-            "title": "Packaging Charges",
-            "@ondc/org/title_type": "packing",
-            "@ondc/org/item_id": "1",
-            "price": {
-              "currency": "AUD",
-              "value": "20"
-            }
-          }
-        ],
-        "ttl": "P4D"
-      },
       "payments": [
         {
           "type": "POST-FULFILLMENT",
           "collected_by": "BPP"
         }
       ],
-      "tags": [
+      "fulfillments": [
         {
-          "descriptor": {
-            "code": "buyer_id"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "buyer_id_code"
-              },
-              "value": "tin"
-            },
-            {
-              "descriptor": {
-                "code": "buyer_id_no"
-              },
-              "value": "XXXX"
+          "id": "1",
+          "@ondc/org/provider_name": "Rapidor",
+          "tracking": false,
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
             }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "COMM_CHANNEL"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "chat_url"
-              },
-              "value": "https://devapi.proxtera.app/spaces/chat-room"
-            }
-          ]
+          }
         }
-      ]
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "title": "FRENCH FRIES PREMIUM-6/6-5 X 2.5 KG-IB",
+            "@ondc/org/item_id": "ITM00137",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "120.00"
+            },
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              },
+              "quantity": {
+                "available": {
+                  "count": "100"
+                },
+                "maximum": {
+                  "count": "100"
+                }
+              }
+            }
+          },
+          {
+            "title": "Tax",
+            "@ondc/org/item_id": "ITM00137",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "14.40"
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "ITM00137",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "INR",
+              "value": "-0.00"
+            }
+          },
+          {
+            "title": "Delivery Charge",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Convenience Fee",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Packing",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "134.40"
+        },
+        "ttl": "P2D"
+      }
     }
   }
 }

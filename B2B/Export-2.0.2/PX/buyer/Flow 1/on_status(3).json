@@ -9,11 +9,11 @@
         "code": "IND"
       }
     },
-    "action": "on_init",
+    "action": "on_status",
     "version": "2.0.2",
     "transaction_id": "55a1e2b8-cdc6-45b9-b856-d588018f7f1f",
-    "message_id": "0a677c08-c0bc-4170-9375-f67555e1ec29",
-    "timestamp": "2024-03-27T05:09:27.022Z",
+    "message_id": "VpV-8kf4_OWZWZ0UwLBpv",
+    "timestamp": "2024-03-27T05:11:34.000Z",
     "bap_id": "devapi.proxtera.app",
     "bap_uri": "https://devapi.proxtera.app/ondc",
     "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,11 +22,15 @@
   },
   "message": {
     "order": {
+      "id": "PO2810653086",
+      "state": "Completed",
       "provider": {
-        "id": "abadfoodslive"
-      },
-      "provider_location": {
-        "id": "L1"
+        "id": "abadfoodslive",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
       },
       "items": [
         {
@@ -38,28 +42,7 @@
             "selected": {
               "count": 1
             }
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "PACKAGING_REQ"
-                  },
-                  "value": "flow 1 rapidor seller"
-                },
-                {
-                  "descriptor": {
-                    "code": "ITEM_REQ"
-                  },
-                  "value": "flow 1 rapidor seller"
-                }
-              ]
-            }
-          ]
+          }
         }
       ],
       "billing": {
@@ -79,16 +62,48 @@
         {
           "id": "1",
           "type": "Delivery",
-          "tracking": false,
           "@ondc/org/provider_name": "Rapidor",
-          "@ondc/org/category": "Standard Delivery",
-          "@ondc/org/TAT": "P3D",
+          "tracking": false,
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered"
+            }
+          },
           "stops": [
+            {
+              "type": "start",
+              "location": {
+                "id": "L1",
+                "descriptor": {
+                  "name": "PlaceOrder"
+                },
+                "gps": "12.933543,77.546509"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-03-27T05:09:51.000Z",
+                  "end": "2024-03-27T07:09:51.000Z"
+                },
+                "timestamp": "2024-03-27T05:10:53.000Z"
+              },
+              "contact": {
+                "phone": "9072377660",
+                "email": "care@acelrtech.com"
+              },
+              "instructions": {
+                "name": "Proof of pickup",
+                "short_desc": "order picked up",
+                "long_desc": "order picked up",
+                "images": [
+                  "https://rapidor.s3-us-west-2.amazonaws.com/files/oPmMGLv6VCWq2vhnMh3p6_1-68-mb-20231003-114155-jpg.jpg"
+                ]
+              }
+            },
             {
               "type": "end",
               "location": {
-                "address": "Airport Boulevard, Singapore Changi Airport (SIN) (SIN), Singapore",
-                "gps": "1.2804385, 103.8489962",
+                "address": "Airport Boulevard, Singapore Changi Airport (SIN) (SIN), Singapore, Singapore, 819643",
+                "gps": "1.280439,103.848996",
                 "area_code": "819643",
                 "state": {
                   "name": "Singapore"
@@ -100,9 +115,23 @@
                   "code": "SGP"
                 }
               },
+              "time": {
+                "range": {
+                  "start": "2024-03-29T05:09:51.000Z",
+                  "end": "2024-03-29T07:09:51.000Z"
+                },
+                "timestamp": "2024-03-27T05:11:34.000Z"
+              },
               "contact": {
-                "phone": "+916383353594",
-                "email": "c146@yopmail.com"
+                "phone": "+916383353594"
+              },
+              "instructions": {
+                "name": "Proof of delivery",
+                "short_desc": "delivered",
+                "long_desc": "delivered",
+                "images": [
+                  "https://rapidor.s3-us-west-2.amazonaws.com/files/ODVSJCMvE_bHLvMIa_eCG_1-68-mb-20231003-114155-jpg.jpg"
+                ]
               }
             }
           ],
@@ -127,6 +156,35 @@
               ]
             }
           ]
+        }
+      ],
+      "payments": [
+        {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "upi_address": "proxtera",
+              "settlement_bank_account_no": "NA",
+              "settlement_ifsc_code": "NA",
+              "beneficiary_name": "NA",
+              "bank_name": "NA",
+              "branch_name": "NA"
+            }
+          ],
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
+          "status": "PAID",
+          "params": {
+            "currency": "INR",
+            "amount": "134.40"
+          }
         }
       ],
       "quote": {
@@ -201,75 +259,18 @@
         },
         "ttl": "P2D"
       },
-      "payments": [
+      "documents": [
         {
-          "@ondc/org/buyer_app_finder_fee_type": "percent",
-          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
-          "type": "POST-FULFILLMENT",
-          "collected_by": "BPP",
-          "@ondc/org/settlement_basis": "delivery",
-          "@ondc/org/settlement_window": "P1D",
-          "@ondc/org/withholding_amount": "0"
-        }
-      ],
-      "tags": [
-        {
-          "descriptor": {
-            "code": "bpp_terms"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "max_liability"
-              },
-              "value": "2"
-            },
-            {
-              "descriptor": {
-                "code": "max_liability_cap"
-              },
-              "value": "10000"
-            },
-            {
-              "descriptor": {
-                "code": "mandatory_arbitration"
-              },
-              "value": "false"
-            },
-            {
-              "descriptor": {
-                "code": "court_jurisdiction"
-              },
-              "value": "Kerala"
-            },
-            {
-              "descriptor": {
-                "code": "delay_interest"
-              },
-              "value": "1000"
-            }
-          ]
+          "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/PO2810653086.pdf?v=1711516192",
+          "label": "PROFORMA_INVOICE"
         },
         {
-          "descriptor": {
-            "code": "buyer_id"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "buyer_id_code"
-              },
-              "value": "tin"
-            },
-            {
-              "descriptor": {
-                "code": "buyer_id_no"
-              },
-              "value": "xxxx"
-            }
-          ]
+          "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/NA/PO2810653086-abadfoodslive.pdf",
+          "label": "Invoice"
         }
-      ]
+      ],
+      "created_at": "2024-03-27T05:09:51.208Z",
+      "updated_at": "2024-03-27T05:11:34.000Z"
     }
   }
 }
