@@ -1,0 +1,275 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_init",
+    "version": "2.0.2",
+    "transaction_id": "bd867611-f93f-4d85-8e0a-77ef7defb6bc",
+    "message_id": "8695c38c-9b9f-4495-8f50-ac016c07c887",
+    "timestamp": "2024-03-27T05:48:44.610Z",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "abadfoodslive"
+      },
+      "provider_location": {
+        "id": "L1"
+      },
+      "items": [
+        {
+          "id": "ITM05619",
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 10
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": "rapidor flow 6"
+                },
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "rapidor flow 6"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "rapidor flow 6",
+        "address": "Raffles Avenue, Singapore Flyer, Singapore",
+        "email": "c146@yopmail.com",
+        "phone": "+916383353594",
+        "tax_id": "xxxx",
+        "city": {
+          "name": "Singapore"
+        },
+        "state": {
+          "name": "Singapore"
+        }
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "tracking": false,
+          "@ondc/org/provider_name": "Rapidor",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "address": "Raffles Avenue, Singapore Flyer, Singapore",
+                "gps": "1.2804385, 103.8489962",
+                "area_code": "039803",
+                "state": {
+                  "name": "Singapore"
+                },
+                "city": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                }
+              },
+              "contact": {
+                "phone": "+916383353594",
+                "email": "c146@yopmail.com"
+              }
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "DELIVERY_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "INCOTERMS"
+                  },
+                  "value": "CIF"
+                },
+                {
+                  "descriptor": {
+                    "code": "NAMED_PLACE_OF_DELIVERY"
+                  },
+                  "value": "Singapore"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "title": "FRENCH FRIES PREMIUM 5X2.5KG NET AFS 9/9",
+            "@ondc/org/item_id": "ITM05619",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "1200.00"
+            },
+            "@ondc/org/item_quantity": {
+              "count": 10
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              }
+            }
+          },
+          {
+            "title": "Tax",
+            "@ondc/org/item_id": "ITM05619",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "144.00"
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "ITM05619",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "INR",
+              "value": "-0.00"
+            }
+          },
+          {
+            "title": "Delivery Charge",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Convenience Fee",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Packing",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "1344.00"
+        },
+        "ttl": "P2D"
+      },
+      "payments": [
+        {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "max_liability_cap"
+              },
+              "value": "10000"
+            },
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "court_jurisdiction"
+              },
+              "value": "Kerala"
+            },
+            {
+              "descriptor": {
+                "code": "delay_interest"
+              },
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "tin"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "xxxx"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

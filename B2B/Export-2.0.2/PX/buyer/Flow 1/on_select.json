@@ -1,0 +1,172 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.2",
+    "transaction_id": "55a1e2b8-cdc6-45b9-b856-d588018f7f1f",
+    "message_id": "54df3e2c-4618-4fa9-8666-d023e6622823",
+    "timestamp": "2024-03-27T05:09:04.744Z",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "ttl": "P2D"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "abadfoodslive",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "ITM00137",
+          "fulfillment_ids": [
+            "1"
+          ],
+          "location_ids": [
+            "L1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": "flow 1 rapidor seller"
+                },
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "flow 1 rapidor seller"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BPP"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Rapidor",
+          "tracking": false,
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "title": "FRENCH FRIES PREMIUM-6/6-5 X 2.5 KG-IB",
+            "@ondc/org/item_id": "ITM00137",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "120.00"
+            },
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              },
+              "quantity": {
+                "available": {
+                  "count": "100"
+                },
+                "maximum": {
+                  "count": "100"
+                }
+              }
+            }
+          },
+          {
+            "title": "Tax",
+            "@ondc/org/item_id": "ITM00137",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "14.40"
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "ITM00137",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "INR",
+              "value": "-0.00"
+            }
+          },
+          {
+            "title": "Delivery Charge",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Convenience Fee",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "Packing",
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "134.40"
+        },
+        "ttl": "P2D"
+      }
+    }
+  }
+}
