@@ -1,0 +1,219 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_init",
+    "version": "2.0.2",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "transaction_id": "d08a825c-befe-41cf-8400-11e468da31c5",
+    "message_id": "098bb905-c526-463b-9525-b55fc30bc6a2",
+    "timestamp": "2024-03-25T09:17:43.619Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
+    "ttl": "P19D"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "6343bc4ac45f7c0009701acb"
+      },
+      "provider_location": {
+        "id": "P_L1"
+      },
+      "items": [
+        {
+          "id": "65fbd910172637bba6688b53",
+          "fulfillment_ids": [
+            "1",
+            "2"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 10
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "Flow 5 -  PO rejection"
+                },
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": "Flow 5 -  PO rejection"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Company Legal Name",
+          "tracking": false,
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P1D",
+          "provider_id": "6343bc4ac45f7c0009701ace",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          },
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "gps": "1.2804385, 103.8489962",
+                "address": "Stadium Walk, Singapore Indoor Stadium, Singapore",
+                "city": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                },
+                "area_code": "397691",
+                "state": {
+                  "name": "Singapore"
+                }
+              },
+              "contact": {
+                "phone": "+917003593398",
+                "email": "srijit@proxtera.com"
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "AUD",
+          "value": "80"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "65fbd910172637bba6688b53",
+            "@ondc/org/item_quantity": {
+              "count": 10
+            },
+            "title": "chennai unique thing 3",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "value": "50",
+              "currency": "AUD"
+            },
+            "item": {
+              "price": {
+                "value": "5",
+                "currency": "AUD"
+              }
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "65fbd910172637bba6688b53",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "AUD",
+              "value": "-10"
+            }
+          },
+          {
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "AUD",
+              "value": "20"
+            }
+          },
+          {
+            "title": "Packaging Charges",
+            "@ondc/org/title_type": "packing",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "AUD",
+              "value": "20"
+            }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "billing": {
+        "name": "Flow 5 -  PO rejection",
+        "address": "Stadium Walk, Singapore Indoor Stadium, Singapore",
+        "state": {
+          "name": "Singapore"
+        },
+        "city": {
+          "name": "Singapore"
+        },
+        "tax_id": "XXXX",
+        "email": "srijit@proxtera.com",
+        "phone": "+917003593398"
+      },
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "tin"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "XXXX"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
