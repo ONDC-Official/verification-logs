@@ -2,7 +2,7 @@
   "context": {
     "action": "init",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://a9cb-2401-4900-1c42-8fff-00-244-c780.ngrok-free.app/credit",
+    "bap_uri": "https://staging.cliniq360.com/credit",
     "bpp_id": "dmi-ondcpreprod.refo.dev",
     "bpp_uri": "https://dmi-ondcpreprod.refo.dev/app/ondc/seller",
     "domain": "ONDC:FIS12",
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "transaction_id": "b6053364-6318-48ad-8baf-6f0e9b43a33d",
-    "message_id": "2ded58c6-3081-4eae-986f-085d0470b8e2",
-    "timestamp": "2024-03-24T11:40:03.773Z",
+    "transaction_id": "bc5d329f-93f6-4152-84d6-caefca35f621",
+    "message_id": "5e1ee476-4ab7-4a74-863f-a13b227f3f19",
+    "timestamp": "2024-03-27T22:43:22.597Z",
     "ttl": "PT10M",
     "version": "2.0.0"
   },
@@ -30,13 +30,78 @@
           "id": "d9eb81e2-96b5-477f-98dc-8518ad60d72e",
           "xinput": {
             "form": {
-              "id": "6927a1ba-e66d-40de-9a0d-d9b856a49704"
+              "id": "2b28f5ca-db9f-41f0-b00f-a37a73e2fea5"
             },
             "form_response": {
               "status": "SUCCESS",
-              "submission_id": "5d0adc27-0441-4024-a33b-65ac5052d0bd"
+              "submission_id": "b3175634-a52e-4039-bf03-e8c387d19400"
             }
           }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "ON_ORDER",
+          "params": {
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "9988199772@okicic"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1159"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "neft"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
