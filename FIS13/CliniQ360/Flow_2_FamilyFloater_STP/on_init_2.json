@@ -2,7 +2,7 @@
   "context": {
     "action": "on_init",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://a9cb-2401-4900-1c42-8fff-00-244-c780.ngrok-free.app/bapl",
+    "bap_uri": "https://staging.cliniq360.com/bapl",
     "bpp_id": "api.abcscuat.com",
     "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "d1f0a399-78c8-40ca-beff-4436c55db810",
-    "timestamp": "2024-03-22T14:53:16.568+05:30",
-    "transaction_id": "bf4d0a22-07cf-4115-a4bf-e740545991b3",
+    "message_id": "076093de-e500-49d6-af16-ab3ddf8f6bc6",
+    "timestamp": "2024-03-29T11:34:01.665Z",
+    "transaction_id": "120751f9-94b5-476c-a59a-075c10bf2da7",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -26,8 +26,8 @@
         {
           "customer": {
             "contact": {
-              "email": "rahul@gmail.com",
-              "phone": "9511878113"
+              "email": "ktest@gmail.com",
+              "phone": "8454833235"
             }
           },
           "state": {
@@ -40,7 +40,7 @@
       "payments": [
         {
           "collected_by": "BPP",
-          "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=62AA963A1701491387B126A47B7E9A4A20FB8492B1484D31A8B91EB2B0DC5AE083E6165B3DF44B69",
+          "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=44B1299DE0BB4D44B73D2084C07D98066DB833957BE24B699E53259032BC744BAC9FF7BFBBCE42D4",
           "params": {
             "amount": "1000",
             "bank_account_number": "1800002341",
@@ -50,6 +50,25 @@
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
           "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
             {
               "descriptor": {
                 "code": "SETTLEMENT_TERMS"
@@ -114,7 +133,7 @@
             {
               "descriptor": {
                 "name": "Activ One NXT Information",
-                "code": "CODI_GENERAL_INFO"
+                "code": "GENERAL_INFO"
               },
               "list": [
                 {
@@ -147,7 +166,7 @@
             "form": {
               "id": "FO9",
               "mime_type": "text/html",
-              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/paymentStatus.html?formId=20240322142302900",
+              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/paymentStatus.html?formId=20240329165906190",
               "resubmit": true
             },
             "required": true
@@ -157,9 +176,27 @@
           },
           "add_ons": [
             {
+              "id": "SUPER_CREDIT",
+              "quantity": {
+                "available": {
+                  "count": 1
+                },
+                "selected": {
+                  "count": 1
+                }
+              },
+              "descriptor": {
+                "name": "Super Credit",
+                "code": "SUPER_CREDIT"
+              }
+            },
+            {
               "id": "CRITICAL_ILLNESS_COVER",
               "quantity": {
                 "available": {
+                  "count": 1
+                },
+                "selected": {
                   "count": 1
                 }
               },
@@ -190,14 +227,14 @@
         "breakup": [
           {
             "price": {
-              "value": "17426",
+              "value": "21121",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
           },
           {
             "price": {
-              "value": "2823",
+              "value": "3422",
               "currency": "INR"
             },
             "title": "TAX"
@@ -218,11 +255,14 @@
           }
         ],
         "price": {
-          "value": "18506",
+          "value": "22431",
           "currency": "INR"
         }
       },
-      "id": "O20240322142302900"
+      "status": "FORM_PROCESSED",
+      "created_at": "2024-03-29T11:34:01.665Z",
+      "updated_at": "2024-03-29T11:34:01.665Z",
+      "id": "O20240329165906190"
     }
   }
 }
