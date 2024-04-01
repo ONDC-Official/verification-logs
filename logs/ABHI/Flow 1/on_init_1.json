@@ -2,7 +2,7 @@
   "context": {
     "action": "on_init",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://a9cb-2401-4900-1c42-8fff-00-244-c780.ngrok-free.app/bapl",
+    "bap_uri": "https://staging.cliniq360.com/bapl",
     "bpp_id": "api.abcscuat.com",
     "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "fbf1de93-3b33-43f3-8ad1-c453a07d0a7f",
-    "timestamp": "2024-03-22T11:25:56.333+05:30",
-    "transaction_id": "0703fa92-9840-484d-8c34-42a027ec8aaa",
+    "message_id": "3a4d00e7-c87f-4e81-9bf4-53f56b671b11",
+    "timestamp": "2024-03-29T05:48:47.318Z",
+    "transaction_id": "4c449397-3428-48ef-88c2-1a5cdc8b5445",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -26,8 +26,8 @@
         {
           "customer": {
             "contact": {
-              "email": "rachit@gmail.com",
-              "phone": "9511878113"
+              "email": "test@gmail.com",
+              "phone": "8454833235"
             }
           },
           "state": {
@@ -40,6 +40,7 @@
       "payments": [
         {
           "collected_by": "BPP",
+          "url": "https://www.abcinsurance.com/pg-gateway/payment?amount=1000&txn_id=c04a04ee-d892-400f-bbe6-479a43b4448a",
           "params": {
             "amount": "1000",
             "bank_account_number": "1800002341",
@@ -49,6 +50,25 @@
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
           "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
             {
               "descriptor": {
                 "code": "SETTLEMENT_TERMS"
@@ -91,6 +111,25 @@
                   "value": "400"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
             }
           ]
         }
@@ -113,7 +152,7 @@
             {
               "descriptor": {
                 "name": "Activ One NXT Information",
-                "code": "CODI_GENERAL_INFO"
+                "code": "GENERAL_INFO"
               },
               "list": [
                 {
@@ -121,7 +160,7 @@
                     "name": "COVERAGE_AMOUNT",
                     "code": "COVERAGE_AMOUNT"
                   },
-                  "value": "1000000"
+                  "value": "2000000"
                 }
               ]
             }
@@ -146,7 +185,7 @@
             "form": {
               "id": "FO8",
               "mime_type": "text/html",
-              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240322112251457",
+              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240329111557543",
               "resubmit": true
             },
             "required": true
@@ -156,21 +195,12 @@
           },
           "add_ons": [
             {
-              "id": "CLAIM_PROTECT_(NON-MEDICAL_EXPENSE_WAIVER)",
-              "quantity": {
-                "available": {
-                  "count": 1
-                }
-              },
-              "descriptor": {
-                "name": "CLAIM PROTECT (NON-MEDICAL EXPENSE WAIVER)",
-                "code": "CLAIM_PROTECT_(NON-MEDICAL_EXPENSE_WAIVER)"
-              }
-            },
-            {
               "id": "SUPER_CREDIT",
               "quantity": {
                 "available": {
+                  "count": 1
+                },
+                "selected": {
                   "count": 1
                 }
               },
@@ -183,6 +213,9 @@
               "id": "CRITICAL_ILLNESS_COVER",
               "quantity": {
                 "available": {
+                  "count": 1
+                },
+                "selected": {
                   "count": 1
                 }
               },
@@ -213,14 +246,14 @@
         "breakup": [
           {
             "price": {
-              "value": "8636",
+              "value": "13586",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
           },
           {
             "price": {
-              "value": "1399",
+              "value": "2201",
               "currency": "INR"
             },
             "title": "TAX"
@@ -241,11 +274,14 @@
           }
         ],
         "price": {
-          "value": "9172",
+          "value": "14429",
           "currency": "INR"
         }
       },
-      "id": "O20240322112251457"
+      "status": "FORM_PROCESSED",
+      "created_at": "2024-03-29T05:48:47.318Z",
+      "updated_at": "2024-03-29T05:48:47.318Z",
+      "id": "O20240329111557543"
     }
   }
 }

@@ -2,9 +2,9 @@
   "context": {
     "action": "on_confirm",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://a9cb-2401-4900-1c42-8fff-00-244-c780.ngrok-free.app/bapl",
-    "bpp_id": "api.abcscuat.com",
-    "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
+    "bap_uri": "https://staging.cliniq360.com/bapl",
+    "bpp_id": "abhi-digital-uat.adityabirlahealth.com",
+    "bpp_uri": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/ondc",
     "domain": "ONDC:FIS13",
     "location": {
       "country": {
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "07bc7b4e-77ad-49fe-9f78-9f3ffa8973bf",
-    "timestamp": "2024-03-22T14:54:52.317+05:30",
-    "transaction_id": "bf4d0a22-07cf-4115-a4bf-e740545991b3",
+    "message_id": "b9c98e04-dd3e-47fa-a093-005a81b077ac",
+    "timestamp": "2024-03-29T11:36:04.063Z",
+    "transaction_id": "120751f9-94b5-476c-a59a-075c10bf2da7",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -26,30 +26,50 @@
         {
           "customer": {
             "contact": {
-              "email": "rahul@gmail.com",
-              "phone": "9511878113"
+              "email": "ktest@gmail.com",
+              "phone": "8454833235"
             }
           },
           "state": {
             "descriptor": {
               "code": "GRANTED"
             }
-          }
+          },
+          "id": "FPT87526349                                                  "
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
           "params": {
-            "amount": "18506",
+            "amount": "22431",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
             "currency": "INR",
-            "transaction_id": "pay_NpLmSUNTNjOzkI"
+            "transaction_id": "U1230002030746"
           },
           "status": "PAID",
           "type": "PRE-ORDER",
           "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
             {
               "descriptor": {
                 "code": "SETTLEMENT_TERMS"
@@ -114,7 +134,7 @@
             {
               "descriptor": {
                 "name": "Activ One NXT Information",
-                "code": "CODI_GENERAL_INFO"
+                "code": "GENERAL_INFO"
               },
               "list": [
                 {
@@ -129,21 +149,21 @@
                     "name": "PolicyNumber",
                     "code": "PolicyNumber"
                   },
-                  "value": "31-23-0003374-00"
+                  "value": "31-23-0003445-00"
                 },
                 {
                   "descriptor": {
                     "name": "ReceiptNo",
                     "code": "ReceiptNo"
                   },
-                  "value": "DR-21-22-623555                                             "
+                  "value": "DR-21-22-624994                                             "
                 },
                 {
                   "descriptor": {
                     "name": "ProposalNumber",
                     "code": "ProposalNumber"
                   },
-                  "value": "230001113373"
+                  "value": "230001134011"
                 },
                 {
                   "descriptor": {
@@ -166,10 +186,22 @@
             "label": "TENURE"
           },
           "price": {
-            "value": "18506",
+            "value": "22431",
             "currency": "INR"
           },
           "add_ons": [
+            {
+              "id": "SUPER_CREDIT",
+              "quantity": {
+                "available": {
+                  "count": 1
+                }
+              },
+              "descriptor": {
+                "name": "Super Credit",
+                "code": "SUPER_CREDIT"
+              }
+            },
             {
               "id": "CRITICAL_ILLNESS_COVER",
               "quantity": {
@@ -201,44 +233,24 @@
       },
       "quote": {
         "id": "Q1",
+        "breakup": [
+          {
+            "price": {
+              "value": "22431",
+              "currency": "INR"
+            },
+            "title": "BASE_PRICE"
+          }
+        ],
         "price": {
-          "value": "18506",
+          "value": "22431",
           "currency": "INR"
         }
       },
-      "documents": [
-        {
-          "descriptor": {
-            "name": "Insurance Policy Document",
-            "code": "POLICY_DOC",
-            "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name",
-            "short_desc": "Download your digitally signed policy document here"
-          },
-          "mime_type": "application/pdf",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/homepage"
-        },
-        {
-          "descriptor": {
-            "name": "Claim Insurance Policy",
-            "code": "CLAIM_DOC",
-            "long_desc": "Buyer can renew their insurance by visiting the below url",
-            "short_desc": "Buyer can claim their insurance by visiting the below url"
-          },
-          "mime_type": "application/html",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/reimbursement-claims"
-        },
-        {
-          "descriptor": {
-            "name": "Renew Insurance Policy",
-            "code": "RENEW_DOC",
-            "short_desc": "Buyer can renew their insurance by visiting the below url"
-          },
-          "mime_type": "application/html",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/buy-insurance-online/v2/renewal-renew-policy?p=n+IQ0QXg0NW0LKUg6EpUjLnWi6Pi55DaZKwKkCg1Jkk=&m=Y7twZTTn0NnpQxiuDTgGDw==&s=gQWcP9AViqzyJUxTT6xqAQ==&d="
-        }
-      ],
-      "id": "O31-23-0003374-00"
+      "status": "FORM_PROCESSED",
+      "created_at": "2024-03-29T11:36:04.063Z",
+      "updated_at": "2024-03-29T11:36:04.063Z",
+      "id": "O31-23-0003445-00"
     }
-  },
-  "sourceUrl": "https://api.abcscuat.com/healthinsurance/ondc-preprod"
+  }
 }

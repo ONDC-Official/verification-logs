@@ -2,7 +2,7 @@
   "context": {
     "action": "on_init",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://a9cb-2401-4900-1c42-8fff-00-244-c780.ngrok-free.app/bapl",
+    "bap_uri": "https://staging.cliniq360.com/bapl",
     "bpp_id": "api.abcscuat.com",
     "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "2c0373ff-81ce-47b3-9509-cd24c8be0960",
-    "timestamp": "2024-03-22T14:52:17.055+05:30",
-    "transaction_id": "bf4d0a22-07cf-4115-a4bf-e740545991b3",
+    "message_id": "3949d82a-158a-4d42-a906-06abd60610fc",
+    "timestamp": "2024-03-29T11:32:59.825Z",
+    "transaction_id": "120751f9-94b5-476c-a59a-075c10bf2da7",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -26,8 +26,8 @@
         {
           "customer": {
             "contact": {
-              "email": "rahul@gmail.com",
-              "phone": "9511878113"
+              "email": "ktest@gmail.com",
+              "phone": "8454833235"
             }
           },
           "state": {
@@ -40,6 +40,7 @@
       "payments": [
         {
           "collected_by": "BPP",
+          "url": "https://www.abcinsurance.com/pg-gateway/payment?amount=1000&txn_id=c04a04ee-d892-400f-bbe6-479a43b4448a",
           "params": {
             "amount": "1000",
             "bank_account_number": "1800002341",
@@ -49,6 +50,25 @@
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
           "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
             {
               "descriptor": {
                 "code": "SETTLEMENT_TERMS"
@@ -91,6 +111,25 @@
                   "value": "400"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
             }
           ]
         }
@@ -113,7 +152,7 @@
             {
               "descriptor": {
                 "name": "Activ One NXT Information",
-                "code": "CODI_GENERAL_INFO"
+                "code": "GENERAL_INFO"
               },
               "list": [
                 {
@@ -146,7 +185,7 @@
             "form": {
               "id": "FO8",
               "mime_type": "text/html",
-              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240322142302900",
+              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240329165906190",
               "resubmit": true
             },
             "required": true
@@ -156,9 +195,27 @@
           },
           "add_ons": [
             {
+              "id": "SUPER_CREDIT",
+              "quantity": {
+                "available": {
+                  "count": 1
+                },
+                "selected": {
+                  "count": 1
+                }
+              },
+              "descriptor": {
+                "name": "Super Credit",
+                "code": "SUPER_CREDIT"
+              }
+            },
+            {
               "id": "CRITICAL_ILLNESS_COVER",
               "quantity": {
                 "available": {
+                  "count": 1
+                },
+                "selected": {
                   "count": 1
                 }
               },
@@ -189,14 +246,14 @@
         "breakup": [
           {
             "price": {
-              "value": "17426",
+              "value": "21121",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
           },
           {
             "price": {
-              "value": "2823",
+              "value": "3422",
               "currency": "INR"
             },
             "title": "TAX"
@@ -217,11 +274,14 @@
           }
         ],
         "price": {
-          "value": "18506",
+          "value": "22431",
           "currency": "INR"
         }
       },
-      "id": "O20240322142302900"
+      "status": "FORM_PROCESSED",
+      "created_at": "2024-03-29T11:32:59.825Z",
+      "updated_at": "2024-03-29T11:32:59.825Z",
+      "id": "O20240329165906190"
     }
   }
 }
