@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "73e3c2c3-a4f7-43cf-b4c5-98d9415b4300",
-    "timestamp": "2024-03-29T16:56:38.915Z",
-    "transaction_id": "120751f9-94b5-476c-a59a-075c10bf2da7",
+    "message_id": "6127cb44-d095-45bd-9e56-2daa3cbd7a6c",
+    "timestamp": "2024-04-06T07:07:32.670Z",
+    "transaction_id": "93249e8d-3a1b-4403-9667-3d5bc59bde4d",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -31,15 +31,15 @@
           "categories": [
             {
               "descriptor": {
-                "name": "Multi Individual Insurance",
-                "code": "MULTI_INDIVIDUAL_INSURANCE"
+                "name": "Individual Insurance",
+                "code": "INDIVIDUAL_INSURANCE"
               },
               "id": "C1"
             },
             {
               "descriptor": {
-                "name": "Family Floater Insurance",
-                "code": "FAMILY_FLOTER_INSURANCE"
+                "name": "Family Insurance",
+                "code": "FAMILY_INSURANCE"
               },
               "id": "C2"
             },
@@ -74,7 +74,7 @@
                 "name": "MultiIndividual",
                 "code": "MI",
                 "long_desc": "Aditya Birla Health Insurance Multi Individual",
-                "short_desc": "Aditya Birla Health Insurance Multi Individual"
+                "short_desc": "ABHI Multi Individual"
               },
               "id": "I1",
               "tags": [
@@ -86,10 +86,9 @@
                   "list": [
                     {
                       "descriptor": {
-                        "name": "Critical Illness Cover",
-                        "code": "Critical_Illness_Cover"
+                        "code": "COVERAGE_AMOUNT"
                       },
-                      "value": "N"
+                      "value": "1000000"
                     }
                   ],
                   "display": false
@@ -107,7 +106,7 @@
                   "index": {
                     "min": 0,
                     "cur": 0,
-                    "max": 0
+                    "max": 1
                   },
                   "headings": [
                     "Individual Information"
@@ -116,27 +115,12 @@
                 "form": {
                   "id": "FO1",
                   "mime_type": "text/html",
-                  "url": "https://mtpre.adityabirlahealth.com/healthinsurance/ondc/forms/personalinfo.html",
+                  "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/personalinfo.html",
                   "resubmit": true,
                   "multiple_sumbissions": false
                 },
-                "form_response": "",
                 "required": true
-              },
-              "add_ons": [
-                {
-                  "id": "MIA1",
-                  "quantity": {
-                    "available": {
-                      "count": 1
-                    }
-                  },
-                  "descriptor": {
-                    "name": "Vaccine Cover",
-                    "code": "VACCINE_COVER"
-                  }
-                }
-              ]
+              }
             },
             {
               "category_ids": [
@@ -147,8 +131,7 @@
                 "name": "Family Floater",
                 "code": "FF",
                 "long_desc": "Aditya Birla Health Insurance Family Floater",
-                "short_desc": "Aditya Birla Health Insurance Family Floater",
-                "images": ""
+                "short_desc": "ABHI Family Floater"
               },
               "id": "I2",
               "tags": [
@@ -160,10 +143,9 @@
                   "list": [
                     {
                       "descriptor": {
-                        "name": "Critical Illness Cover",
-                        "code": "Critical_Illness_Cover"
+                        "code": "COVERAGE_AMOUNT"
                       },
-                      "value": "N"
+                      "value": "1000000"
                     }
                   ],
                   "display": false
@@ -181,7 +163,7 @@
                   "index": {
                     "min": 0,
                     "cur": 0,
-                    "max": 0
+                    "max": 1
                   },
                   "headings": [
                     "Family Information"
@@ -190,41 +172,83 @@
                 "form": {
                   "id": "FO2",
                   "mime_type": "text/html",
-                  "url": "https://mtpre.adityabirlahealth.com/healthinsurance/ondc/forms/familyinfo.html",
+                  "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/familyinfo.html",
                   "resubmit": true,
                   "multiple_sumbissions": false
                 },
-                "form_response": "",
                 "required": true
-              },
-              "add_ons": [
-                {
-                  "id": "FFA1",
-                  "quantity": {
-                    "available": {
-                      "count": 1
-                    }
-                  },
-                  "descriptor": {
-                    "name": "Vaccine Cover",
-                    "code": "VACCINE_COVER"
-                  }
-                }
-              ]
+              }
             }
           ],
           "payments": [
             {
-              "collected_by": "BPP"
-            }
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "name": "Settlement Terms",
-                "code": "SETTLEMENT_TERMS"
-              },
-              "display": false
+              "collected_by": "BPP",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "5"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BAP_OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
