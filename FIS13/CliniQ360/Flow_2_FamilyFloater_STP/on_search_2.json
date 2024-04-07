@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "8203d475-1a5a-4871-9928-af3eff53e0fc",
-    "timestamp": "2024-03-29T11:29:06.575Z",
-    "transaction_id": "120751f9-94b5-476c-a59a-075c10bf2da7",
+    "message_id": "f1af2285-abfb-4d58-ba82-ba60ec52d415",
+    "timestamp": "2024-04-06T07:09:07.856Z",
+    "transaction_id": "93249e8d-3a1b-4403-9667-3d5bc59bde4d",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -30,15 +30,15 @@
           "categories": [
             {
               "descriptor": {
-                "name": "Multi Individual Insurance",
-                "code": "MULTI_INDIVIDUAL_INSURANCE"
+                "name": "Individual Insurance",
+                "code": "INDIVIDUAL_INSURANCE"
               },
               "id": "C1"
             },
             {
               "descriptor": {
-                "name": "Family Floater Insurance",
-                "code": "FAMILY_FLOATER_INSURANCE"
+                "name": "Family Insurance",
+                "code": "FAMILY_INSURANCE"
               },
               "id": "C2"
             },
@@ -69,22 +69,36 @@
                 "C3"
               ],
               "descriptor": {
-                "name": "Activ One NXT",
-                "code": "CODI",
-                "long_desc": "Aditya Birla Health Insurance Activ One NXT",
-                "short_desc": "ABHI Activ One NXT"
+                "name": "Family Floater",
+                "code": "FF",
+                "long_desc": "Aditya Birla Health Insurance Family Floater",
+                "short_desc": "ABHI Family Floater"
               },
-              "id": "CODI_I2",
+              "id": "I2",
               "tags": [
                 {
                   "descriptor": {
-                    "name": "Activ One NXT Information",
+                    "name": "General Information",
                     "code": "GENERAL_INFO"
-                  }
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "1000000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      }
+                    }
+                  ]
                 }
               ],
-              "price": {
-                "currency": "INR"
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
               }
             },
             {
@@ -99,20 +113,24 @@
                 "short_desc": "ABHI Activ One NXT - Digital"
               },
               "id": "CODI_Digital_I2",
-              "parent_item_id": "CODI_I2",
+              "parent_item_id": "I2",
               "tags": [
                 {
                   "descriptor": {
-                    "name": "Activ One NXT - Digital Information",
+                    "name": "General Information",
                     "code": "GENERAL_INFO"
                   },
                   "list": [
                     {
                       "descriptor": {
-                        "name": "COVERAGE_AMOUNT",
                         "code": "COVERAGE_AMOUNT"
                       },
                       "value": "2000000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      }
                     }
                   ]
                 }
@@ -121,20 +139,8 @@
                 "duration": "P1Y",
                 "label": "TENURE"
               },
-              "xinput": {
-                "head": {
-                  "descriptor": {
-                    "name": "Customer Information"
-                  }
-                },
-                "form": {
-                  "mime_type": "text/html",
-                  "resubmit": true
-                },
-                "required": true
-              },
               "price": {
-                "value": "16228",
+                "value": "13858",
                 "currency": "INR"
               },
               "add_ons": [
@@ -187,30 +193,6 @@
                   }
                 },
                 {
-                  "id": "CHRONIC_CARE",
-                  "quantity": {
-                    "available": {
-                      "count": 1
-                    }
-                  },
-                  "descriptor": {
-                    "name": "Chronic Care",
-                    "code": "CHRONIC_CARE"
-                  }
-                },
-                {
-                  "id": "CHRONIC_MANAGEMENT_PROGRAM_(OPD)",
-                  "quantity": {
-                    "available": {
-                      "count": 1
-                    }
-                  },
-                  "descriptor": {
-                    "name": "Chronic Management Program (OPD)",
-                    "code": "CHRONIC_MANAGEMENT_PROGRAM_(OPD)"
-                  }
-                },
-                {
                   "id": "DURABLE_EQUIPMENT_COVER",
                   "quantity": {
                     "available": {
@@ -223,15 +205,15 @@
                   }
                 },
                 {
-                  "id": "SECOND_MEDICAL_OPINION_FOR_LISTED_MAJOR_ILLNESSR",
+                  "id": "SECOND_MEDICAL_OPINION_FOR_LISTED_MAJOR_ILLNESS",
                   "quantity": {
                     "available": {
                       "count": 1
                     }
                   },
                   "descriptor": {
-                    "name": "Second Medical Opinion for listed Major Illnessr",
-                    "code": "SECOND_MEDICAL_OPINION_FOR_LISTED_MAJOR_ILLNESSR"
+                    "name": "Second Medical Opinion for listed Major Illness",
+                    "code": "SECOND_MEDICAL_OPINION_FOR_LISTED_MAJOR_ILLNESS"
                   }
                 },
                 {
@@ -284,16 +266,26 @@
                 },
                 {
                   "id": "VACCINE_COVER",
+                  "quantity": {
+                    "available": {
+                      "count": 1
+                    }
+                  },
                   "descriptor": {
                     "name": "Vaccine cover",
-                    "code": "VACCINE COVER"
+                    "code": "VACCINE_COVER"
                   }
                 },
                 {
                   "id": "TELE-OPD_CONSULTATION",
+                  "quantity": {
+                    "available": {
+                      "count": 1
+                    }
+                  },
                   "descriptor": {
                     "name": "Tele-OPD Consultation",
-                    "code": "TELE-OPD CONSULTATION"
+                    "code": "TELE-OPD_CONSULTATION"
                   }
                 }
               ]
@@ -301,19 +293,75 @@
           ],
           "payments": [
             {
-              "collected_by": "BPP"
-            }
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_TERMS"
-              }
+              "collected_by": "BPP",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "5"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BAP_OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
       ]
     }
-  },
-  "sourceUrl": "https://api.abcscuat.com/healthinsurance/ondc-preprod"
+  }
 }

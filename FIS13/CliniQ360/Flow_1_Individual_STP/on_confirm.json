@@ -3,8 +3,8 @@
     "action": "on_confirm",
     "bap_id": "staging.cliniq360.com",
     "bap_uri": "https://staging.cliniq360.com/bapl",
-    "bpp_id": "abhi-digital-uat.adityabirlahealth.com",
-    "bpp_uri": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/ondc",
+    "bpp_id": "api.abcscuat.com",
+    "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
     "location": {
       "country": {
@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "20cd6fc4-4f73-4be2-9e25-1bb36a173174",
-    "timestamp": "2024-03-29T05:52:38.042Z",
-    "transaction_id": "4c449397-3428-48ef-88c2-1a5cdc8b5445",
+    "message_id": "f649979d-1b6e-4aa1-aa1a-99ee521cedff",
+    "timestamp": "2024-04-06T05:58:51.135Z",
+    "transaction_id": "dc6b6d05-a3ab-4315-b84f-64974ba625bb",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -35,18 +35,18 @@
               "code": "GRANTED"
             }
           },
-          "id": "FPT87525621                                                  "
+          "id": "F20240406111808800"
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
           "params": {
-            "amount": "14428",
+            "amount": "12139",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
             "currency": "INR",
-            "transaction_id": "U1230002030395"
+            "transaction_id": "pay_NvEHRWVdgkIkuJ"
           },
           "status": "PAID",
           "type": "PRE-ORDER",
@@ -110,6 +110,18 @@
                     "code": "SETTLEMENT_AMOUNT"
                   },
                   "value": "400"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "BAP_OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
                 }
               ]
             }
@@ -133,50 +145,33 @@
           "tags": [
             {
               "descriptor": {
-                "name": "Activ One NXT Information",
+                "name": "General Information",
                 "code": "GENERAL_INFO"
               },
               "list": [
                 {
                   "descriptor": {
-                    "name": "COVERAGE_AMOUNT",
                     "code": "COVERAGE_AMOUNT"
                   },
                   "value": "2000000"
                 },
                 {
                   "descriptor": {
-                    "name": "PolicyNumber",
                     "code": "PolicyNumber"
                   },
-                  "value": "31-23-0003439-00"
+                  "value": "31-24-0000087-00"
                 },
                 {
                   "descriptor": {
-                    "name": "ReceiptNo",
                     "code": "ReceiptNo"
                   },
-                  "value": "DR-21-22-624792                                             "
+                  "value": "DR-21-22-627215                                             "
                 },
                 {
                   "descriptor": {
-                    "name": "ProposalNumber",
                     "code": "ProposalNumber"
                   },
-                  "value": "230001131270"
-                },
-                {
-                  "descriptor": {
-                    "name": "StpFlag",
-                    "code": "StpFlag"
-                  },
-                  "value": "STP"
-                },
-                {
-                  "descriptor": {
-                    "name": "PolicyStatus",
-                    "code": "PolicyStatus"
-                  }
+                  "value": "240000031273"
                 }
               ]
             }
@@ -186,7 +181,7 @@
             "label": "TENURE"
           },
           "price": {
-            "value": "14428",
+            "value": "11430",
             "currency": "INR"
           },
           "add_ons": [
@@ -195,23 +190,14 @@
               "quantity": {
                 "available": {
                   "count": 1
+                },
+                "selected": {
+                  "count": 0
                 }
               },
               "descriptor": {
                 "name": "Super Credit",
                 "code": "SUPER_CREDIT"
-              }
-            },
-            {
-              "id": "CRITICAL_ILLNESS_COVER",
-              "quantity": {
-                "available": {
-                  "count": 1
-                }
-              },
-              "descriptor": {
-                "name": "CRITICAL ILLNESS COVER",
-                "code": "CRITICAL_ILLNESS_COVER"
               }
             }
           ]
@@ -236,21 +222,73 @@
         "breakup": [
           {
             "price": {
-              "value": "14428",
+              "value": "11430",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
+          },
+          {
+            "price": {
+              "value": "1852",
+              "currency": "INR"
+            },
+            "title": "TAX"
+          },
+          {
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "title": "PROCESSING_FEE"
+          },
+          {
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "title": "CONVIENCE_FEE"
           }
         ],
         "price": {
-          "value": "14428",
+          "value": "12139",
           "currency": "INR"
         }
       },
-      "status": "FORM_PROCESSED",
-      "created_at": "2024-03-29T05:52:38.042Z",
-      "updated_at": "2024-03-29T05:52:38.042Z",
-      "id": "O31-23-0003439-00"
+      "documents": [
+        {
+          "descriptor": {
+            "name": "Insurance Policy Document",
+            "code": "POLICY_DOC",
+            "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name",
+            "short_desc": "Download your digitally signed policy document here"
+          },
+          "mime_type": "application/pdf",
+          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/homepage"
+        },
+        {
+          "descriptor": {
+            "name": "Claim Insurance Policy",
+            "code": "CLAIM_DOC",
+            "long_desc": "Buyer can renew their insurance by visiting the below url",
+            "short_desc": "Buyer can claim their insurance by visiting the below url"
+          },
+          "mime_type": "application/html",
+          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/reimbursement-claims"
+        },
+        {
+          "descriptor": {
+            "name": "Renew Insurance Policy",
+            "code": "RENEW_DOC",
+            "short_desc": "Buyer can renew their insurance by visiting the below url"
+          },
+          "mime_type": "application/html",
+          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/buy-insurance-online/v2/renewal-renew-policy?p=RsOslnPzgGDPEFU1Z/HDVyCpCgUb+lN+Ni3JSJ3yjLU=&m=03SnzeP4rtYFO2oo7xVnQg==&s=gQWcP9AViqzyJUxTT6xqAQ==&d="
+        }
+      ],
+      "status": "ACTIVE",
+      "created_at": "2024-04-06T05:58:51.135Z",
+      "updated_at": "2024-04-06T05:58:51.135Z",
+      "id": "Odc6b6d05-a3ab-4315-b84f-64974ba625bb"
     }
   }
 }
