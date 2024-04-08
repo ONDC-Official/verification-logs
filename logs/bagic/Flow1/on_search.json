@@ -14,16 +14,24 @@
         "bap_uri": "https://apiondcpreprod.insurancedekho.com/",
         "bpp_id": "bagic.api.finarkein.in",
         "bpp_uri": "https://bagic.api.finarkein.in/ondc/sn/bagic/",
-        "message_id": "57ee59a9-3456-4678-8f9c-2f36c1e97e16",
-        "timestamp": "2024-03-26T05:07:37.396Z",
-        "transaction_id": "0cc59ed5-26fa-4775-b0a4-d79585468ae5",
+        "message_id": "f2f849a9-bbf4-40b2-8dcd-452d365343fe",
+        "timestamp": "2024-04-05T13:43:59.685Z",
+        "transaction_id": "185349c5-1bfa-4523-bbde-40c67d418af0",
         "ttl": "PT24H",
         "version": "2.0.0"
     },
     "message": {
         "catalog": {
             "descriptor": {
-                "name": "Bajaj Allianz General Insurance Co. Ltd."
+                "name": "Bajaj Allianz General Insurance Co. Ltd.",
+                "short_desc": "Bajaj Allianz General Insurance Co. Ltd.",
+                "long_desc": "Bajaj Allianz General Insurance Co. Ltd.",
+                "images": [
+                    {
+                        "url": "https://www.abcinsurance.com/content/dam/abcinsurance/india/assets/images/header/logo.png",
+                        "size_type": "sm"
+                    }
+                ]
             },
             "providers": [
                 {
@@ -35,11 +43,18 @@
                                 "code": "MARINE_INSURANCE"
                             },
                             "id": "BAGIC-MIII"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Individual Insurance",
+                                "code": "INDIVIDUAL_INSURANCE"
+                            },
+                            "id": "BAGIC-II"
                         }
                     ],
                     "descriptor": {
-                        "name": "Bajaj Allianz General Insurance",
-                        "short_desc": "Bajaj Allianz General Insurance",
+                        "name": "Bajaj Allianz General Insurance Co. Ltd.",
+                        "short_desc": "Bajaj Allianz General Insurance Co. Ltd.",
                         "long_desc": "Bajaj Allianz General Insurance Co. Ltd.",
                         "images": [
                             {
@@ -51,6 +66,9 @@
                     "items": [
                         {
                             "id": "1002-ALL",
+                            "descriptor": {
+                                "name": "All Risk"
+                            },
                             "xinput": {
                                 "head": {
                                     "descriptor": {
@@ -68,12 +86,16 @@
                                 "form": {
                                     "id": "F01",
                                     "mime_type": "text/html",
-                                    "url": "https://bagic.api.finarkein.in/ondc/sn/bagic/form/MarinePersonalDetailsAllRisk.html?transactionId=0cc59ed5-26fa-4775-b0a4-d79585468ae5",
+                                    "url": "https://bagic.api.finarkein.in/ondc/sn/bagic/form/MarinePersonalDetailsAllRisk.html?transactionId=185349c5-1bfa-4523-bbde-40c67d418af0",
                                     "resubmit": false,
                                     "multiple_sumbissions": false
                                 },
                                 "required": true
                             },
+                            "category_ids": [
+                                "BAGIC-MIII",
+                                "BAGIC-II"
+                            ],
                             "tags": [
                                 {
                                     "descriptor": {
@@ -130,6 +152,9 @@
                         },
                         {
                             "id": "1002-BASIC",
+                            "descriptor": {
+                                "name": "Basic Risk"
+                            },
                             "xinput": {
                                 "head": {
                                     "descriptor": {
@@ -147,12 +172,16 @@
                                 "form": {
                                     "id": "F01",
                                     "mime_type": "text/html",
-                                    "url": "https://bagic.api.finarkein.in/ondc/sn/bagic/form/MarinePersonalDetailsBasicRisk.html?transactionId=0cc59ed5-26fa-4775-b0a4-d79585468ae5",
+                                    "url": "https://bagic.api.finarkein.in/ondc/sn/bagic/form/MarinePersonalDetailsBasicRisk.html?transactionId=185349c5-1bfa-4523-bbde-40c67d418af0",
                                     "resubmit": false,
                                     "multiple_sumbissions": false
                                 },
                                 "required": true
                             },
+                            "category_ids": [
+                                "BAGIC-MIII",
+                                "BAGIC-II"
+                            ],
                             "tags": [
                                 {
                                     "descriptor": {
@@ -214,46 +243,41 @@
                             "tags": [
                                 {
                                     "descriptor": {
-                                        "name": "Settlement Terms",
+                                        "code": "BUYER_FINDER_FEES"
+                                    },
+                                    "display": false,
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "code": "BUYER_FINDER_FEES_TYPE"
+                                            },
+                                            "value": "percent-annualized"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                            },
+                                            "value": "1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "descriptor": {
                                         "code": "SETTLEMENT_TERMS"
                                     },
                                     "display": false,
                                     "list": [
                                         {
                                             "descriptor": {
-                                                "code": "SETTLEMENT_WINDOW"
+                                                "code": "DELAY_INTEREST"
                                             },
-                                            "value": "PT60M"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "SETTLEMENT_BASIS"
-                                            },
-                                            "value": "Delivery"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "MANDATORY_ARBITRATION"
-                                            },
-                                            "value": "0"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "MANDATORY_ARBITRATION"
-                                            },
-                                            "value": "TRUE"
-                                        },
-                                        {
-                                            "descriptor": {
-                                                "code": "COURT_JURISDICTION"
-                                            },
-                                            "value": "New Delhi"
+                                            "value": "2.5"
                                         },
                                         {
                                             "descriptor": {
                                                 "code": "STATIC_TERMS"
                                             },
-                                            "value": "url"
+                                            "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
                                         }
                                     ]
                                 }
