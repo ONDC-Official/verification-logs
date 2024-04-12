@@ -9,45 +9,31 @@
         "code": "IND"
       }
     },
-    "action": "select",
+    "action": "on_select",
     "version": "2.0.2",
-    "transaction_id": "f54ad6dc-9455-45ce-959f-67bab990d80d",
-    "message_id": "6132ef02-8cea-4422-bf48-7b5c18b465e0",
-    "timestamp": "2024-04-08T12:44:38.685Z",
     "bap_id": "ondcpreprodb2b.rapidor.co",
     "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
     "bpp_id": "integrations-preprod.channelier.com",
     "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-    "ttl": "P1D"
+    "transaction_id": "57514188-661a-4d3f-b719-7d6cb23dc9c8",
+    "message_id": "7a6ce67c-a6ff-4ac6-8594-2e8b6e3ac898",
+    "timestamp": "2024-04-08T13:16:36.737Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
       "fulfillments": [
         {
           "id": "1",
-          "type": "Delivery",
-          "stops": [
-            {
-              "type": "end",
-              "location": {
-                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
-                "gps": "28.481469,77.513547",
-                "area_code": "201308",
-                "state": {
-                  "name": "Uttar Pradesh"
-                },
-                "city": {
-                  "name": "Meerut"
-                },
-                "country": {
-                  "code": "IND"
-                }
-              },
-              "contact": {
-                "phone": "9594631238"
-              }
+          "@ondc/org/provider_name": "Cornitos",
+          "@ondc/org/category": "Standard Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "P7DT2H",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
             }
-          ]
+          }
         }
       ],
       "items": [
@@ -93,12 +79,12 @@
           {
             "id": "L1"
           }
-        ],
-        "ttl": "P1D"
+        ]
       },
       "payments": [
         {
-          "type": "ON-FULFILLMENT"
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP"
         }
       ],
       "tags": [
@@ -130,11 +116,55 @@
               "descriptor": {
                 "code": "chat_url"
               },
-              "value": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=f54ad6dc-9455-45ce-959f-67bab990d80d&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5M2E1MjNkLTBiMTgtNGNkOS04N2NlLTYyYWM4YmFhMzM0MiIsIm5hbWUiOiJTdW1pdCBLdW1hciBTaW5naCIsImV4cCI6MTczMDU4MDI3OH0.c13ZtL7yin4ecY4TSMxQHaOSmkQHMryKEmKECUAZ1d4"
+              "value": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=57514188-661a-4d3f-b719-7d6cb23dc9c8&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5M2E1MjNkLTBiMTgtNGNkOS04N2NlLTYyYWM4YmFhMzM0MiIsIm5hbWUiOiJTdW1pdCBLdW1hciBTaW5naCIsImV4cCI6MTczMDU4MjE5NX0.22uzSYCluGe3Yt4KBRza_okydZEwQeCilLe9f1A3hV8"
             }
           ]
         }
-      ]
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "467.62"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "CU2I2",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "90"
+                },
+                "maximum": {
+                  "count": "90"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "360.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "360.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "107.62"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      }
     }
   }
 }
