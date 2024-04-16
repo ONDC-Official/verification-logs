@@ -1,0 +1,249 @@
+{
+    "context": {
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:0512"
+            }
+        },
+        "domain": "ONDC:TRV11",
+        "timestamp": "2021-03-23T10:00:40.065Z",
+        "bap_id": "proapi.easemytrip.com/metroapp/ONDC",
+        "transaction_id": "6f339232-2bc3-44d2-915c-30d2b053ce1d",
+        "message_id": "fde8b8b6-c2e5-49f7-b254-720843d528bd",
+        "version": "2.0.0",
+        "action": "on_init",
+        "bap_uri": "http://localhost:8080/afcsass/api/ondc/on_init",
+        "ttl": "PT30S",
+        "bpp_id": "uat.kanpurmetrogosmartcard.com",
+        "bpp_uri": "https://uat.kanpurmetrogosmartcard.com/afc/api/ondc"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "name": "John Doe",
+                "email": "john.doe@example.com",
+                "phone": "+91-9897867564"
+            },
+            "cancellation_terms": [
+                {
+                    "external_ref": {
+                        "mimetype": "text/html",
+                        "url": "https://lmrcl.com/kanpur-metro/fare-info"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "a3c7fd08-68d4-4e7c-b959-2aef071cf944",
+                    "type": "TRIP",
+                    "stops": [
+                        {
+                            "id": "106",
+                            "location": {
+                                "descriptor": {
+                                    "code": "Rawatpur",
+                                    "name": "Rawatpur"
+                                },
+                                "gps": "26.48296221,26.48296221"
+                            },
+                            "type": "START"
+                        },
+                        {
+                            "id": "101",
+                            "location": {
+                                "descriptor": {
+                                    "code": "Kalyanpur",
+                                    "name": "Kalyanpur"
+                                },
+                                "gps": "26.48296221,26.48296221"
+                            },
+                            "type": "END"
+                        }
+                    ],
+                    "vehicle": {
+                        "category": "METRO"
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "id": "SJT-Rawatpur-Kalyanpur",
+                    "categoryIds": [
+                        "f9bbc285-3d79-46d3-b541-2e01070e5605"
+                    ],
+                    "descriptor": {
+                        "name": "Single Journey",
+                        "code": "SJT"
+                    },
+                    "fulfillmentIds": [
+                        "a3c7fd08-68d4-4e7c-b959-2aef071cf944"
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "20.0000"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "PT120M"
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "a3c7fd08-68d4-4e7c-b959-2aef071cf944",
+                    "collected_by": "BAP",
+                    "status": "NOT-PAID",
+                    "type": "PRE-ORDER",
+                    "params": {
+                        "bank_code": "KKBK0000261",
+                        "bank_account_number": "4323434556",
+                        "virtual_payment_address": "9988199772@okicic"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_DETAILS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "INVOICE_RECEIPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Kanpur"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://uat.kanpurmetrogosmartcard.com/policy/terms_and_conditions.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "20.0000"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "kanpur-rail-metro",
+                "descriptor": {
+                    "name": "Kanpur Metro Rail Limited"
+                },
+                "time": {
+                    "range": {
+                        "end": "2024-04-16T23:30:00.000Z",
+                        "start": "2024-04-16T05:30:00.000Z"
+                    }
+                }
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "20.0000"
+                },
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "SJT-Rawatpur-Kalyanpur",
+                            "price": {
+                                "currency": "INR",
+                                "value": "20.0000"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "20.0000"
+                        }
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "SCHEDULED_INFO"
+                    },
+                    "display": false,
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "GTFS"
+                            },
+                            "value": "https://upmetrorail.com/"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
