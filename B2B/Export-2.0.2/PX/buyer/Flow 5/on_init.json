@@ -1,0 +1,239 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_init",
+    "version": "2.0.2",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "transaction_id": "f3718fa8-93c9-410e-b54e-97a1c0984213",
+    "message_id": "6a96d181-3cb5-4b0d-b1af-d59c29829988",
+    "timestamp": "2024-04-16T12:02:24.993Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
+    "ttl": "P19D"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "65af58846bcee2b81c107e93"
+      },
+      "provider_location": {
+        "id": "P_L1"
+      },
+      "items": [
+        {
+          "id": "661e23fbb8b0b5ea2b8c8d18",
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 50
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "flow 5"
+                },
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": "flow 5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Instrive softlabs",
+          "tracking": false,
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P1D",
+          "provider_id": "65af58846bcee2b81c107e97",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "DELIVERY_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "INCOTERMS"
+                  },
+                  "value": "EXW"
+                },
+                {
+                  "descriptor": {
+                    "code": "NAMED_PLACE_OF_DELIVERY"
+                  },
+                  "value": "singapore"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "gps": "1.2804385, 103.8489962",
+                "address": "2 Stadium Walk, Singapore 397691",
+                "city": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                },
+                "area_code": "397691",
+                "state": {
+                  "name": "Singapore"
+                }
+              },
+              "contact": {
+                "phone": "+919999999999",
+                "email": "srijit@proxtera.com"
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "EUR",
+          "value": "760"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "661e23fbb8b0b5ea2b8c8d18",
+            "@ondc/org/item_quantity": {
+              "count": 50
+            },
+            "title": "new_tech_logs_product",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "value": "900",
+              "currency": "EUR"
+            },
+            "item": {
+              "price": {
+                "value": "18",
+                "currency": "EUR"
+              }
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "661e23fbb8b0b5ea2b8c8d18",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "EUR",
+              "value": "-180"
+            }
+          },
+          {
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "EUR",
+              "value": "20"
+            }
+          },
+          {
+            "title": "Packaging Charges",
+            "@ondc/org/title_type": "packing",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "EUR",
+              "value": "20"
+            }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "billing": {
+        "name": "Instrive Softlabs Private limited, Murugappa Road, Chitra Nagar, Kotturpuram, Chennai, Tamil Nadu, India",
+        "address": "2 Stadium Walk, Singapore 397691",
+        "state": {
+          "name": "Singapore"
+        },
+        "city": {
+          "name": "Singapore"
+        },
+        "tax_id": "WERTYUI123",
+        "email": "srijit@proxtera.com",
+        "phone": "+919999999999"
+      },
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "tin"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "WERTYUI123"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
