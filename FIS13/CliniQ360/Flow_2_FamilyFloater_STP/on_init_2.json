@@ -14,9 +14,9 @@
         "code": "*"
       }
     },
-    "message_id": "394b0cf5-54ba-4e09-8542-cab8cd552234",
-    "timestamp": "2024-04-06T07:13:48.425Z",
-    "transaction_id": "93249e8d-3a1b-4403-9667-3d5bc59bde4d",
+    "message_id": "a60168bb-4171-4f08-95a6-93875e230020",
+    "timestamp": "2024-04-26T08:49:28.458Z",
+    "transaction_id": "b708f72d-b415-4525-9081-6d47c7a64f21",
     "ttl": "PT24H",
     "version": "2.0.0"
   },
@@ -30,15 +30,15 @@
               "phone": "9511878113"
             }
           },
-          "id": "F20240406123907630"
+          "id": "F20240426141235910"
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
-          "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=9FD9529723204F3EA9BBF80B3751AA19324800864E9E4ADC905E2F39E3875DDDDA6247A2AFE5404F",
+          "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=CEDF5B5A5AAD463F8B27FFACB77E76A156C1B1022E3048688EBEBE8A42E91D7F24380C78F35946C6",
           "params": {
-            "amount": "18141",
+            "amount": "18140",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
             "currency": "INR"
@@ -111,12 +111,6 @@
                     "code": "OFFLINE_CONTRACT"
                   },
                   "value": "true"
-                },
-                {
-                  "descriptor": {
-                    "code": "BAP_OFFLINE_CONTRACT"
-                  },
-                  "value": "true"
                 }
               ]
             }
@@ -149,6 +143,60 @@
                     "code": "COVERAGE_AMOUNT"
                   },
                   "value": "2000000"
+                },
+                {
+                  "descriptor": {
+                    "code": "CO_PAYMENT"
+                  },
+                  "value": "No"
+                },
+                {
+                  "descriptor": {
+                    "code": "ROOM_RENT_CAP"
+                  },
+                  "value": "NOCAP"
+                },
+                {
+                  "descriptor": {
+                    "code": "RESTORATION_BENEFIT"
+                  },
+                  "value": "No"
+                },
+                {
+                  "descriptor": {
+                    "code": "CLAIM_SETTLEMENT_RATIO"
+                  },
+                  "value": "96"
+                },
+                {
+                  "descriptor": {
+                    "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                  },
+                  "value": "90"
+                },
+                {
+                  "descriptor": {
+                    "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                  },
+                  "value": "180"
+                },
+                {
+                  "descriptor": {
+                    "code": "MATERNITY_COVERAGE"
+                  },
+                  "value": "No"
+                },
+                {
+                  "descriptor": {
+                    "code": "INITIAL_WAITING_PERIOD"
+                  },
+                  "value": "Yes"
+                },
+                {
+                  "descriptor": {
+                    "code": "CASHLESS_HOSPITALS"
+                  },
+                  "value": "11000"
                 }
               ]
             }
@@ -164,23 +212,24 @@
               },
               "index": {
                 "min": 0,
-                "cur": 0,
-                "max": 0
+                "cur": 1,
+                "max": 1
               },
               "headings": [
+                "Proposer Details",
                 "Nominee Details"
               ]
             },
             "form": {
-              "id": "FO9",
+              "id": "FO8",
               "mime_type": "text/html",
-              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/paymentStatus.html?formId=20240406123907630",
+              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240426141235910",
               "resubmit": true
             },
             "required": true
           },
           "price": {
-            "value": "17081",
+            "value": "11744",
             "currency": "INR"
           },
           "add_ons": [
@@ -192,8 +241,11 @@
                 }
               },
               "descriptor": {
-                "name": "Super Credit",
-                "code": "SUPER_CREDIT"
+                "name": "Super Credit"
+              },
+              "price": {
+                "value": "0",
+                "currency": "INR"
               }
             },
             {
@@ -204,8 +256,11 @@
                 }
               },
               "descriptor": {
-                "name": "CRITICAL ILLNESS COVER",
-                "code": "CRITICAL_ILLNESS_COVER"
+                "name": "CRITICAL ILLNESS COVER"
+              },
+              "price": {
+                "value": "2455.2",
+                "currency": "INR"
               }
             }
           ]
@@ -230,7 +285,7 @@
         "breakup": [
           {
             "price": {
-              "value": "17081",
+              "value": "11744",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
@@ -247,22 +302,42 @@
               "value": "0",
               "currency": "INR"
             },
-            "title": "PROCESSING_FEE"
+            "title": "CONVIENCE_FEE"
           },
           {
             "price": {
-              "value": "0",
+              "value": "2455",
               "currency": "INR"
             },
-            "title": "CONVIENCE_FEE"
+            "item": {
+              "id": "I2",
+              "add_ons": [
+                {
+                  "id": "CRITICAL_ILLNESS_COVER"
+                },
+                {
+                  "id": "SUPER_CREDIT"
+                },
+                {
+                  "id": "ANNUAL_HEALTH_CHECK_UP"
+                }
+              ]
+            },
+            "title": "ADD_ONS"
+          },
+          {
+            "price": {
+              "value": "3629",
+              "currency": "INR"
+            },
+            "title": "PROCESSING_FEE"
           }
         ],
         "price": {
           "value": "18140",
           "currency": "INR"
         }
-      },
-      "id": "O93249e8d-3a1b-4403-9667-3d5bc59bde4d"
+      }
     }
   }
 }
