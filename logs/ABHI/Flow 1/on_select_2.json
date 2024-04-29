@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_init",
+        "action": "on_select",
         "bap_id": "staging.cliniq360.com",
         "bap_uri": "https://staging.cliniq360.com/bapl",
         "bpp_id": "api.abcscuat.com",
@@ -14,109 +14,14 @@
                 "code": "*"
             }
         },
-        "message_id": "7cfaa736-e1b0-4bc9-a1b6-346e302fba80",
-        "timestamp": "2024-04-16T11:47:05.170Z",
-        "transaction_id": "c49ab7a6-2048-44fa-93f0-98be889daa7d",
+        "message_id": "2b147ed9-4020-48cf-8e82-3ebeb2f8ec95",
+        "timestamp": "2024-04-25T11:50:00.400Z",
+        "transaction_id": "46e23001-ff76-4f1a-bf23-bc668d34d23c",
         "ttl": "PT24H",
         "version": "2.0.0"
     },
     "message": {
         "order": {
-            "fulfillments": [
-                {
-                    "customer": {
-                        "contact": {
-                            "email": "thakurbrajesh@dsjk.com",
-                            "phone": "9892400993"
-                        }
-                    },
-                    "id": "F20240416171216783"
-                }
-            ],
-            "payments": [
-                {
-                    "collected_by": "BPP",
-                    "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=15267405DB1C4450AEDF137855B7D8AD261815E861B04C03871D24FAB597C356AC0C4F7116EF4151",
-                    "params": {
-                        "amount": "0",
-                        "bank_account_number": "1800002341",
-                        "bank_code": "SBIN0001234",
-                        "currency": "INR"
-                    },
-                    "status": "NOT-PAID",
-                    "type": "PRE-ORDER",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_FINDER_FEES"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "BUYER_FINDER_FEES_TYPE"
-                                    },
-                                    "value": "percent-annualized"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                                    },
-                                    "value": "5"
-                                }
-                            ]
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_WINDOW"
-                                    },
-                                    "value": "PT60M"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_BASIS"
-                                    },
-                                    "value": "Delivery"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "upi"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "DELAY_INTEREST"
-                                    },
-                                    "value": "2.5"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "STATIC_TERMS"
-                                    },
-                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
-                                    },
-                                    "value": "400"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "OFFLINE_CONTRACT"
-                                    },
-                                    "value": "true"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
             "items": [
                 {
                     "category_ids": [
@@ -142,7 +47,7 @@
                                     "descriptor": {
                                         "code": "COVERAGE_AMOUNT"
                                     },
-                                    "value": "200000"
+                                    "value": "2000000"
                                 },
                                 {
                                     "descriptor": {
@@ -153,7 +58,8 @@
                                 {
                                     "descriptor": {
                                         "code": "ROOM_RENT_CAP"
-                                    }
+                                    },
+                                    "value": "NOCAP"
                                 },
                                 {
                                     "descriptor": {
@@ -211,47 +117,39 @@
                             },
                             "index": {
                                 "min": 0,
-                                "cur": 1,
-                                "max": 1
+                                "cur": 0,
+                                "max": 0
                             },
                             "headings": [
-                                "Proposer Details",
-                                "Nominee Details"
+                                "EKYC"
                             ]
                         },
                         "form": {
-                            "id": "FO8",
+                            "id": "FO4",
                             "mime_type": "text/html",
-                            "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240416171216783",
+                            "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/ondc/forms/kyc/iAgreeKyc?formId=20240425171916350",
                             "resubmit": true
                         },
                         "required": true
                     },
                     "price": {
-                        "value": "6285",
+                        "value": "7665",
                         "currency": "INR"
                     },
                     "add_ons": [
                         {
-                            "id": "CLAIM_PROTECT_(NON-MEDICAL_EXPENSE_WAIVER)",
+                            "id": "CRITICAL_ILLNESS_COVER",
                             "quantity": {
                                 "selected": {
                                     "count": 1
                                 }
                             },
                             "descriptor": {
-                                "name": "CLAIM PROTECT (NON-MEDICAL EXPENSE WAIVER)"
-                            }
-                        },
-                        {
-                            "id": "SUPER_CREDIT",
-                            "quantity": {
-                                "selected": {
-                                    "count": 1
-                                }
+                                "name": "CRITICAL ILLNESS COVER"
                             },
-                            "descriptor": {
-                                "name": "Super Credit"
+                            "price": {
+                                "value": "1228",
+                                "currency": "INR"
                             }
                         }
                     ]
@@ -273,17 +171,18 @@
             },
             "quote": {
                 "id": "Q1",
+                "ttl": "PT15D",
                 "breakup": [
                     {
                         "price": {
-                            "value": "6285",
+                            "value": "7665",
                             "currency": "INR"
                         },
                         "title": "BASE_PRICE"
                     },
                     {
                         "price": {
-                            "value": "1131",
+                            "value": "1601",
                             "currency": "INR"
                         },
                         "title": "TAX"
@@ -301,10 +200,25 @@
                             "currency": "INR"
                         },
                         "title": "CONVIENCE_FEE"
+                    },
+                    {
+                        "price": {
+                            "value": "1228",
+                            "currency": "INR"
+                        },
+                        "item": {
+                            "id": "I1",
+                            "add_ons": [
+                                {
+                                    "id": "CRITICAL_ILLNESS_COVER"
+                                }
+                            ]
+                        },
+                        "title": "ADD_ONS"
                     }
                 ],
                 "price": {
-                    "value": "7416",
+                    "value": "10494",
                     "currency": "INR"
                 }
             }

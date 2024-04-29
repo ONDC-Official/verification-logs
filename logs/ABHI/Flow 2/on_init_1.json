@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "on_confirm",
+    "action": "on_init",
     "bap_id": "staging.cliniq360.com",
     "bap_uri": "https://staging.cliniq360.com/bapl",
     "bpp_id": "api.abcscuat.com",
@@ -14,8 +14,8 @@
         "code": "*"
       }
     },
-    "message_id": "c79ed7d7-2a54-4425-aaf9-9182e99fba94",
-    "timestamp": "2024-04-26T08:51:17.858Z",
+    "message_id": "8f56dfc7-d9dd-46cb-b658-ad0bc3c7cf18",
+    "timestamp": "2024-04-26T08:49:00.162Z",
     "transaction_id": "b708f72d-b415-4525-9081-6d47c7a64f21",
     "ttl": "PT24H",
     "version": "2.0.0"
@@ -30,11 +30,6 @@
               "phone": "9511878113"
             }
           },
-          "state": {
-            "descriptor": {
-              "code": "GRANTED"
-            }
-          },
           "id": "F20240426141235910"
         }
       ],
@@ -42,13 +37,12 @@
         {
           "collected_by": "BPP",
           "params": {
-            "amount": "18140",
+            "amount": "16966",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
-            "currency": "INR",
-            "transaction_id": "pay_O3BuL1anIscEly"
+            "currency": "INR"
           },
-          "status": "PAID",
+          "status": "NOT-PAID",
           "type": "PRE-ORDER",
           "tags": [
             {
@@ -210,6 +204,29 @@
             "duration": "P1Y",
             "label": "TENURE"
           },
+          "xinput": {
+            "head": {
+              "descriptor": {
+                "name": "Customer Information"
+              },
+              "index": {
+                "min": 0,
+                "cur": 0,
+                "max": 1
+              },
+              "headings": [
+                "Proposer Details",
+                "Nominee Details"
+              ]
+            },
+            "form": {
+              "id": "FO5",
+              "mime_type": "text/html",
+              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/proposalinfo.html?formId=20240426141235910",
+              "resubmit": true
+            },
+            "required": true
+          },
           "price": {
             "value": "11744",
             "currency": "INR"
@@ -245,9 +262,6 @@
                 "currency": "INR"
               }
             }
-          ],
-          "fulfillment_ids": [
-            "F20240426141235910"
           ]
         }
       ],
@@ -284,13 +298,6 @@
           },
           {
             "price": {
-              "value": "3629",
-              "currency": "INR"
-            },
-            "title": "PROCESSING_FEE"
-          },
-          {
-            "price": {
               "value": "0",
               "currency": "INR"
             },
@@ -305,56 +312,31 @@
               "id": "I2",
               "add_ons": [
                 {
+                  "id": "CRITICAL_ILLNESS_COVER"
+                },
+                {
                   "id": "SUPER_CREDIT"
                 },
                 {
-                  "id": "CRITICAL_ILLNESS_COVER"
+                  "id": "ANNUAL_HEALTH_CHECK_UP"
                 }
               ]
             },
             "title": "ADD_ONS"
+          },
+          {
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "title": "PROCESSING_FEE"
           }
         ],
         "price": {
-          "value": "18140",
+          "value": "16966",
           "currency": "INR"
         }
-      },
-      "documents": [
-        {
-          "descriptor": {
-            "name": "Insurance Policy Document",
-            "code": "POLICY_DOC",
-            "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name",
-            "short_desc": "Download your digitally signed policy document here"
-          },
-          "mime_type": "application/pdf",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/homepage"
-        },
-        {
-          "descriptor": {
-            "name": "Claim Insurance Policy",
-            "code": "CLAIM_DOC",
-            "long_desc": "Buyer can renew their insurance by visiting the below url",
-            "short_desc": "Buyer can claim their insurance by visiting the below url"
-          },
-          "mime_type": "application/html",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/reimbursement-claims"
-        },
-        {
-          "descriptor": {
-            "name": "Renew Insurance Policy",
-            "code": "RENEW_DOC",
-            "short_desc": "Buyer can renew their insurance by visiting the below url"
-          },
-          "mime_type": "application/html",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/buy-insurance-online/v2/renewal-renew-policy?p=&m=Y7twZTTn0NnpQxiuDTgGDw==&s=oYoL/sbWfn/TxoAGblc7Tw==&d="
-        }
-      ],
-      "status": "ACTIVE",
-      "created_at": "2024-04-26T08:51:17.858Z",
-      "updated_at": "2024-04-26T08:51:17.858Z",
-      "id": "Ob708f72d-b415-4525-9081-6d47c7a64f21"
+      }
     }
   }
 }
