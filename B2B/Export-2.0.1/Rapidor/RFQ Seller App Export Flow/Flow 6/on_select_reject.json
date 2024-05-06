@@ -11,11 +11,11 @@
         },
         "action": "on_select",
         "version": "2.0.2",
-        "transaction_id": "e90b0a1d-9741-4d1b-bf2d-0030b138c8b3",
-        "message_id": "32eb255d-d6c0-48a4-8ebf-d7abd6e5e0bd",
-        "timestamp": "2024-01-15T14:15:55.038Z",
-        "bap_id": "devapi.proxtera.app",
-        "bap_uri": "https://devapi.proxtera.app/ondc",
+        "transaction_id": "eb892893-8fc3-4fa4-ba53-fa7a8c306515",
+        "message_id": "9f303715-396a-4321-9af7-0d542d2af0e7",
+        "timestamp": "2024-05-06T13:06:03.579Z",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
         "ttl": "P1D"
@@ -32,13 +32,16 @@
             },
             "items": [
                 {
-                    "id": "ITM04604",
+                    "id": "ITM02612",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
                     "location_ids": [
                         "L1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 2
+                            "count": 101
                         }
                     },
                     "tags": [
@@ -49,13 +52,13 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "ITEM_REQ"
+                                        "code": "PACKAGING_REQ"
                                     },
-                                    "value": "handle with care"
+                                    "value": "No special packaging & shipment needed"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "PACKAGING_REQ"
+                                        "code": "ITEM_REQ"
                                     },
                                     "value": "handle with care"
                                 }
@@ -66,16 +69,17 @@
             ],
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT"
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "F1",
+                    "id": "1",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
                     "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P2D",
+                    "@ondc/org/TAT": "P3D",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
@@ -86,53 +90,80 @@
             "quote": {
                 "breakup": [
                     {
-                        "title": "CHICKEN S/L DRUMSTICK-ASSRTD-13X2KG-PORNA TTA",
-                        "@ondc/org/item_id": "ITM04604",
+                        "title": "CHICKEN W/S WB-1000-V/W-SRFPL",
+                        "@ondc/org/item_id": "ITM02612",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "19500.00"
                         },
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 100
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "0.00"
+                                "value": "195.00"
                             },
                             "quantity": {
                                 "available": {
-                                    "count": "1000"
+                                    "count": "100"
                                 },
                                 "maximum": {
-                                    "count": "1000"
+                                    "count": "100"
                                 }
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "ITM04604",
+                        "@ondc/org/item_id": "ITM02612",
                         "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "975.00"
+                        }
+                    },
+                    {
+                        "title": "Discount",
+                        "@ondc/org/item_id": "ITM02612",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charge",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
                             "value": "0.00"
                         }
                     },
                     {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "ITM04604",
-                        "@ondc/org/title_type": "discount",
+                        "title": "Convenience Fee",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "-0.00"
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "Packing",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
                         }
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "0.00"
+                    "value": "20475.00"
                 },
                 "ttl": "P2D"
             }

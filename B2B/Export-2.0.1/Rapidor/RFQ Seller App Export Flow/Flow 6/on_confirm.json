@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "on_status",
+        "action": "on_confirm",
         "version": "2.0.2",
-        "transaction_id": "5d6a16de-5563-431e-af4e-f0fa6fcda987",
-        "message_id": "0sgKplOqhuc-uMOpMzvJD",
-        "timestamp": "2024-05-06T11:16:28.000Z",
+        "transaction_id": "eb892893-8fc3-4fa4-ba53-fa7a8c306515",
+        "message_id": "a5cbd344-faa6-4099-82ea-e9a168877c3a",
+        "timestamp": "2024-05-06T13:08:16.240Z",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
@@ -22,19 +22,19 @@
     },
     "message": {
         "order": {
-            "id": "RAP-0050911",
-            "state": "Completed",
+            "id": "RAP-0050971",
             "provider": {
                 "id": "abadfoodslive",
                 "locations": [
                     {
                         "id": "L1"
                     }
-                ]
+                ],
+                "rateable": false
             },
             "items": [
                 {
-                    "id": "ITM03603",
+                    "id": "ITM02612",
                     "fulfillment_ids": [
                         "1"
                     ],
@@ -42,7 +42,28 @@
                         "selected": {
                             "count": 1
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packaging & shipment needed"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "handle with care"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "billing": {
@@ -63,9 +84,10 @@
                     "type": "Delivery",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
+                    "rateable": false,
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Pending"
                         }
                     },
                     "stops": [
@@ -74,20 +96,19 @@
                             "location": {
                                 "id": "L1",
                                 "descriptor": {
-                                    "name": "PlaceOrder"
+                                    "name": "Abad Foods"
                                 },
                                 "gps": "12.933543,77.546509"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-05-06T11:15:33.000Z",
-                                    "end": "2024-05-06T13:15:33.000Z"
-                                },
-                                "timestamp": "2024-05-06T11:16:05.000Z"
+                                    "start": "2024-05-06T13:08:16.000Z",
+                                    "end": "2024-05-06T15:08:16.000Z"
+                                }
                             },
                             "contact": {
                                 "phone": "9072377660",
-                                "email": "care@acelrtech.com"
+                                "email": "sale3.kochi@abadfoods.com"
                             }
                         },
                         {
@@ -108,21 +129,12 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-05-08T11:15:33.000Z",
-                                    "end": "2024-05-08T13:15:33.000Z"
-                                },
-                                "timestamp": "2024-05-06T11:16:28.000Z"
+                                    "start": "2024-05-08T13:08:16.000Z",
+                                    "end": "2024-05-08T15:08:16.000Z"
+                                }
                             },
                             "contact": {
                                 "phone": "9947328084"
-                            },
-                            "instructions": {
-                                "name": "Proof of delivery",
-                                "short_desc": "handle with care",
-                                "long_desc": "handle with care",
-                                "images": [
-                                    "https://rapidor.s3-us-west-2.amazonaws.com/files/6NRvgIEgf-zAP6DS9x2Bj_11-sanu-jpg.JPG"
-                                ]
                             }
                         }
                     ],
@@ -142,50 +154,22 @@
                                     "descriptor": {
                                         "code": "NAMED_PLACE_OF_DELIVERY"
                                     },
-                                    "value": "handle with care"
+                                    "value": "singapore"
                                 }
                             ]
                         }
                     ]
                 }
             ],
-            "payments": [
-                {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "settlement_bank_account_no": "1234567890",
-                            "settlement_ifsc_code": "HDFC0000102",
-                            "beneficiary_name": "Thomson",
-                            "bank_name": "Test Bank"
-                        }
-                    ],
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
-                    "status": "PAID",
-                    "params": {
-                        "currency": "INR",
-                        "transaction_id": "IsGr5hccRJS2oIx-FPqIX",
-                        "amount": "252.00"
-                    }
-                }
-            ],
             "quote": {
                 "breakup": [
                     {
-                        "title": "CHICKEN WINGS-PREMIUM-15 X 2 KG-SRFPL",
-                        "@ondc/org/item_id": "ITM03603",
+                        "title": "CHICKEN W/S WB-1000-V/W-SRFPL",
+                        "@ondc/org/item_id": "ITM02612",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "240.00"
+                            "value": "195.00"
                         },
                         "@ondc/org/item_quantity": {
                             "count": 1
@@ -193,22 +177,22 @@
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "240.00"
+                                "value": "195.00"
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "ITM03603",
+                        "@ondc/org/item_id": "ITM02612",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "12.00"
+                            "value": "9.75"
                         }
                     },
                     {
                         "title": "Discount",
-                        "@ondc/org/item_id": "ITM03603",
+                        "@ondc/org/item_id": "ITM02612",
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
@@ -245,22 +229,111 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "252.00"
+                    "value": "204.75"
                 },
                 "ttl": "P2D"
             },
-            "documents": [
+            "payments": [
                 {
-                    "url": "https://ondcpreprodb2b.rapidor.co/static/pdf/RAP-0050911.pdf?v=1714994134",
-                    "label": "PROFORMA_INVOICE"
-                },
-                {
-                    "url": "https://rapidor.s3-us-west-2.amazonaws.com/invoices/IND/NA/RAP-0050911-abadfoodslive.pdf",
-                    "label": "Invoice"
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "0",
+                    "status": "NOT-PAID",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "204.75"
+                    }
                 }
             ],
-            "created_at": "2024-05-06T11:15:32.823Z",
-            "updated_at": "2024-05-06T11:16:28.000Z"
+            "state": "Accepted",
+            "created_at": "2024-05-06T13:08:15.490Z",
+            "updated_at": "2024-05-06T13:08:16.240Z",
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "22AAAAA0252A1Z5"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "max_liability"
+                            },
+                            "value": "2"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "10000"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "mandatory_arbitration"
+                            },
+                            "value": "false"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Kerala"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "1000"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
