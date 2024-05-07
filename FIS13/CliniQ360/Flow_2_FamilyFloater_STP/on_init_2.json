@@ -2,7 +2,7 @@
   "context": {
     "action": "on_init",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://staging.cliniq360.com/bapl",
+    "bap_uri": "https://staging.cliniq360.com/insurance",
     "bpp_id": "api.abcscuat.com",
     "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
@@ -14,10 +14,10 @@
         "code": "*"
       }
     },
-    "message_id": "a60168bb-4171-4f08-95a6-93875e230020",
-    "timestamp": "2024-04-26T08:49:28.458Z",
-    "transaction_id": "b708f72d-b415-4525-9081-6d47c7a64f21",
-    "ttl": "PT24H",
+    "message_id": "4252a69a-bad9-4395-a523-a747489e74fe",
+    "timestamp": "2024-05-06T10:57:22.036Z",
+    "transaction_id": "c9287035-91b7-4d13-84c0-51fe5f5093d4",
+    "ttl": "PT10M",
     "version": "2.0.0"
   },
   "message": {
@@ -26,19 +26,28 @@
         {
           "customer": {
             "contact": {
-              "email": "samarth@gmail.com",
+              "email": "test@gmail.com",
               "phone": "9511878113"
             }
           },
-          "id": "F20240426141235910"
+          "id": "F20240506161417090_9511878113_1"
+        },
+        {
+          "customer": {
+            "contact": {
+              "email": "rachit@gmail.com",
+              "phone": "9511878113"
+            }
+          },
+          "id": "F20240506161417090_9511878113_2"
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
-          "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=CEDF5B5A5AAD463F8B27FFACB77E76A156C1B1022E3048688EBEBE8A42E91D7F24380C78F35946C6",
+          "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=5136D2D10BE449BD9F87BC744ADDE3B46C89DE39581144C8BCA0D48DE99A64C54FBEDF7E000B49C7",
           "params": {
-            "amount": "18140",
+            "amount": "16755",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
             "currency": "INR"
@@ -55,7 +64,7 @@
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_TYPE"
                   },
-                  "value": "percent-annualized"
+                  "value": "percent"
                 },
                 {
                   "descriptor": {
@@ -104,7 +113,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "400"
+                  "value": "587.21"
                 },
                 {
                   "descriptor": {
@@ -155,6 +164,12 @@
                     "code": "ROOM_RENT_CAP"
                   },
                   "value": "NOCAP"
+                },
+                {
+                  "descriptor": {
+                    "code": "ROOM_CATEGORY"
+                  },
+                  "value": "ACTUALS_UP_TO_BASE_SUM_INSURED"
                 },
                 {
                   "descriptor": {
@@ -223,31 +238,16 @@
             "form": {
               "id": "FO8",
               "mime_type": "text/html",
-              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240426141235910",
+              "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/nomineeinfo.html?formId=20240506161417090",
               "resubmit": true
             },
             "required": true
           },
           "price": {
-            "value": "11744",
+            "value": "11744.1",
             "currency": "INR"
           },
           "add_ons": [
-            {
-              "id": "SUPER_CREDIT",
-              "quantity": {
-                "selected": {
-                  "count": 1
-                }
-              },
-              "descriptor": {
-                "name": "Super Credit"
-              },
-              "price": {
-                "value": "0",
-                "currency": "INR"
-              }
-            },
             {
               "id": "CRITICAL_ILLNESS_COVER",
               "quantity": {
@@ -285,14 +285,14 @@
         "breakup": [
           {
             "price": {
-              "value": "11744",
+              "value": "11744.1",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
           },
           {
             "price": {
-              "value": "2767",
+              "value": "2555.874",
               "currency": "INR"
             },
             "title": "TAX"
@@ -306,7 +306,7 @@
           },
           {
             "price": {
-              "value": "2455",
+              "value": "2455.2",
               "currency": "INR"
             },
             "item": {
@@ -314,12 +314,6 @@
               "add_ons": [
                 {
                   "id": "CRITICAL_ILLNESS_COVER"
-                },
-                {
-                  "id": "SUPER_CREDIT"
-                },
-                {
-                  "id": "ANNUAL_HEALTH_CHECK_UP"
                 }
               ]
             },
@@ -327,14 +321,14 @@
           },
           {
             "price": {
-              "value": "3629",
+              "value": "0",
               "currency": "INR"
             },
             "title": "PROCESSING_FEE"
           }
         ],
         "price": {
-          "value": "18140",
+          "value": "16755",
           "currency": "INR"
         }
       }

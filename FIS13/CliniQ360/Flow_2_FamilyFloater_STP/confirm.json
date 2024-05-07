@@ -2,7 +2,7 @@
   "context": {
     "action": "confirm",
     "bap_id": "staging.cliniq360.com",
-    "bap_uri": "https://staging.cliniq360.com/bapl",
+    "bap_uri": "https://staging.cliniq360.com/insurance",
     "bpp_id": "api.abcscuat.com",
     "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
     "domain": "ONDC:FIS13",
@@ -14,10 +14,10 @@
         "code": "*"
       }
     },
-    "transaction_id": "b708f72d-b415-4525-9081-6d47c7a64f21",
-    "message_id": "c79ed7d7-2a54-4425-aaf9-9182e99fba94",
-    "timestamp": "2024-04-26T08:51:15.876Z",
-    "ttl": "PT24H",
+    "transaction_id": "c9287035-91b7-4d13-84c0-51fe5f5093d4",
+    "message_id": "3f75f009-1ef7-4b95-a187-1850741f422b",
+    "timestamp": "2024-05-06T11:01:26.806Z",
+    "ttl": "PT10M",
     "version": "2.0.0"
   },
   "message": {
@@ -26,11 +26,20 @@
         {
           "customer": {
             "contact": {
-              "email": "samarth@gmail.com",
+              "email": "test@gmail.com",
               "phone": "9511878113"
             }
           },
-          "id": "F20240426141235910"
+          "id": "F20240506161417090_9511878113_1"
+        },
+        {
+          "customer": {
+            "contact": {
+              "email": "rachit@gmail.com",
+              "phone": "9511878113"
+            }
+          },
+          "id": "F20240506161417090_9511878113_2"
         }
       ],
       "items": [
@@ -39,25 +48,19 @@
             {
               "id": "CRITICAL_ILLNESS_COVER",
               "quantity": {
+                "available": {
+                  "count": 0
+                },
                 "selected": {
-                  "count": "1"
+                  "count": 1
                 }
-              }
-            },
-            {
-              "id": "SUPER_CREDIT",
-              "quantity": {
-                "selected": {
-                  "count": "1"
-                }
-              }
-            },
-            {
-              "id": "ANNUAL_HEALTH_CHECK_UP",
-              "quantity": {
-                "selected": {
-                  "count": "1"
-                }
+              },
+              "descriptor": {
+                "name": "CRITICAL ILLNESS COVER"
+              },
+              "price": {
+                "value": "2455.2",
+                "currency": "INR"
               }
             }
           ],
@@ -68,8 +71,8 @@
               "id": "FO8"
             },
             "form_response": {
-              "status": "APPROVED",
-              "submission_id": "20240426141235910"
+              "status": "SUCCESS",
+              "submission_id": "20240506161417090"
             }
           }
         }
@@ -78,7 +81,7 @@
         {
           "collected_by": "BPP",
           "params": {
-            "amount": 18140,
+            "amount": "16755",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
             "currency": "INR"
@@ -144,7 +147,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "400"
+                  "value": "587.21"
                 },
                 {
                   "descriptor": {
@@ -167,14 +170,14 @@
         "breakup": [
           {
             "price": {
-              "value": "11744",
+              "value": "11744.1",
               "currency": "INR"
             },
             "title": "BASE_PRICE"
           },
           {
             "price": {
-              "value": "2767",
+              "value": "2555.874",
               "currency": "INR"
             },
             "title": "TAX"
@@ -188,7 +191,7 @@
           },
           {
             "price": {
-              "value": "2455",
+              "value": "2455.2",
               "currency": "INR"
             },
             "item": {
@@ -196,12 +199,6 @@
               "add_ons": [
                 {
                   "id": "CRITICAL_ILLNESS_COVER"
-                },
-                {
-                  "id": "SUPER_CREDIT"
-                },
-                {
-                  "id": "ANNUAL_HEALTH_CHECK_UP"
                 }
               ]
             },
@@ -209,14 +206,14 @@
           },
           {
             "price": {
-              "value": "3629",
+              "value": "0",
               "currency": "INR"
             },
             "title": "PROCESSING_FEE"
           }
         ],
         "price": {
-          "value": "18140",
+          "value": "16755",
           "currency": "INR"
         }
       }
