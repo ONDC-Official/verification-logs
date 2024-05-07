@@ -1,0 +1,282 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_status",
+    "version": "2.0.2",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "transaction_id": "64368557-db1f-4d29-93a9-2cb476da12a4",
+    "message_id": "5188c65b-8331-4436-9586-93f8b0778b09",
+    "timestamp": "2024-05-03T04:51:57.234Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "PO3160916978",
+      "state": "Completed",
+      "provider": {
+        "id": "661ca9c6ff9903822baed0de",
+        "locations": [
+          {
+            "id": "P_L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "662f5dae23ffa9f5c31fb804",
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 100
+            }
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Plendify Wholesale Marketplace",
+          "tracking": false,
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P1D",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered"
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "DELIVERY_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "INCOTERMS"
+                  },
+                  "value": "EXW"
+                },
+                {
+                  "descriptor": {
+                    "code": "NAMED_PLACE_OF_DELIVERY"
+                  },
+                  "value": "La-Nkwantanang-Madina"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "start",
+              "location": {
+                "id": "P_L1",
+                "descriptor": {
+                  "name": "Proxtera"
+                },
+                "gps": "1.357107,103.8194992"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-05-03T04:51:19.353Z",
+                  "end": "2024-05-03T04:51:27.639Z"
+                },
+                "timestamp": "2024-05-03T04:51:44.829Z"
+              },
+              "contact": {
+                "phone": "+919875463019",
+                "email": "text@email.com"
+              },
+              "instructions": {
+                "name": "Proof of pickup",
+                "short_desc": "Picked up",
+                "long_desc": "Picked up",
+                "images": [
+                  "https://proxtera-seller-dev-uploads.s3.ap-southeast-1.amazonaws.com/661ca9c6ff9903822baed0de_1714711903868.xlsx"
+                ]
+              }
+            },
+            {
+              "type": "end",
+              "location": {
+                "gps": "5.686427, -0.169297",
+                "address": "Singapore",
+                "city": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                },
+                "area_code": "238858",
+                "state": {
+                  "name": "Singapore"
+                }
+              },
+              "contact": {
+                "phone": "9988776655",
+                "email": "test@proxtera.com"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-05-06T04:50:45.962Z",
+                  "end": "2024-05-06T04:50:45.962Z"
+                },
+                "timestamp": "2024-05-03T04:51:55.065Z"
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "SGD",
+          "value": "18200"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "662f5dae23ffa9f5c31fb804",
+            "@ondc/org/item_quantity": {
+              "count": 100
+            },
+            "title": "ONDC tech logs 4",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "value": "20000",
+              "currency": "SGD"
+            },
+            "item": {
+              "price": {
+                "value": "200",
+                "currency": "SGD"
+              }
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "662f5dae23ffa9f5c31fb804",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "SGD",
+              "value": "-2000"
+            }
+          },
+          {
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "SGD",
+              "value": "100"
+            }
+          },
+          {
+            "title": "Packaging Charges",
+            "@ondc/org/title_type": "packing",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "SGD",
+              "value": "100"
+            }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "billing": {
+        "name": "ABC Private Limited",
+        "address": "Singapore",
+        "state": {
+          "name": "Singapore"
+        },
+        "city": {
+          "name": "Singapore"
+        },
+        "tax_id": "BFGFG3R34534",
+        "email": "test@proxtera.com",
+        "phone": "9988776655"
+      },
+      "payments": [
+        {
+          "params": {
+            "currency": "SGD",
+            "amount": "18200",
+            "transaction_id": "plink_1PCE6CI57hJgX2QR1PKKcF0y"
+          },
+          "status": "PAID",
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "upi_address": "proxtera",
+              "settlement_bank_account_no": "NA",
+              "settlement_ifsc_code": "NA",
+              "beneficiary_name": "NA",
+              "bank_name": "NA",
+              "branch_name": "NA"
+            }
+          ],
+          "uri": "https://buy.stripe.com/test_9AQ01ucHVas29e89B3",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BPP_payment"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ttl"
+                  },
+                  "value": "PT48H"
+                },
+                {
+                  "descriptor": {
+                    "code": "signature"
+                  },
+                  "value": "ECUTkkK6kKrIomZtEJugMxtHI/uf+Raf21aaGNNwb4xAFHmFhVjuFK5CB9DIXc+d6SSUNsA50FSXGkKVyuaeDg=="
+                },
+                {
+                  "descriptor": {
+                    "code": "dsa"
+                  },
+                  "value": "ED25519"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://proxtera-seller-dev-uploads.s3.ap-southeast-1.amazonaws.com/661ca9c6ff9903822baed0de_1714711894793.xlsx",
+          "label": "PROFORMA_INVOICE"
+        },
+        {
+          "url": "https://proxtera-seller-dev-uploads.s3.ap-southeast-1.amazonaws.com/661ca9c6ff9903822baed0de_1714711903868.xlsx",
+          "label": "Invoice"
+        }
+      ],
+      "created_at": "2024-05-03T04:51:19.353Z",
+      "updated_at": "2024-05-03T04:51:55.065Z"
+    }
+  }
+}

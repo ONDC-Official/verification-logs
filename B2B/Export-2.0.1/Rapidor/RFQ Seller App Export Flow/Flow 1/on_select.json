@@ -11,11 +11,11 @@
         },
         "action": "on_select",
         "version": "2.0.2",
-        "transaction_id": "9b19554a-f323-4bb8-a77f-71f74e898679",
-        "message_id": "efabda50-5010-4f25-b249-ca5ab3a9865d",
-        "timestamp": "2024-01-15T13:19:17.946Z",
-        "bap_id": "devapi.proxtera.app",
-        "bap_uri": "https://devapi.proxtera.app/ondc",
+        "transaction_id": "5d6a16de-5563-431e-af4e-f0fa6fcda987",
+        "message_id": "8c734baa-ab2c-4bd7-90e5-65ad4e101d6b",
+        "timestamp": "2024-05-06T11:15:09.828Z",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "bpp_id": "ondcpreprodb2b.rapidor.co",
         "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
         "ttl": "P1D"
@@ -32,13 +32,16 @@
             },
             "items": [
                 {
-                    "id": "ITM05684",
+                    "id": "ITM03603",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
                     "location_ids": [
                         "L1"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 1.0
+                            "count": 1
                         }
                     },
                     "tags": [
@@ -51,7 +54,7 @@
                                     "descriptor": {
                                         "code": "PACKAGING_REQ"
                                     },
-                                    "value": "handle with care"
+                                    "value": "No special packaging & shipment needed"
                                 },
                                 {
                                     "descriptor": {
@@ -66,16 +69,17 @@
             ],
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT"
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "F1",
+                    "id": "1",
                     "@ondc/org/provider_name": "Rapidor",
                     "tracking": false,
                     "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P2D",
+                    "@ondc/org/TAT": "P3D",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
@@ -86,12 +90,12 @@
             "quote": {
                 "breakup": [
                     {
-                        "title": "CHICKEN BREAKFAST SAUSAGE 12X1KG NET AFS ASSRTD",
-                        "@ondc/org/item_id": "ITM05684",
+                        "title": "CHICKEN WINGS-PREMIUM-15 X 2 KG-SRFPL",
+                        "@ondc/org/item_id": "ITM03603",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "240.00"
                         },
                         "@ondc/org/item_quantity": {
                             "count": 1
@@ -99,30 +103,30 @@
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "0.00"
+                                "value": "240.00"
                             },
                             "quantity": {
                                 "available": {
-                                    "count": "1000"
+                                    "count": "100"
                                 },
                                 "maximum": {
-                                    "count": "1000"
+                                    "count": "100"
                                 }
                             }
                         }
                     },
                     {
                         "title": "Tax",
-                        "@ondc/org/item_id": "ITM05684",
+                        "@ondc/org/item_id": "ITM03603",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "12.00"
                         }
                     },
                     {
                         "title": "Discount",
-                        "@ondc/org/item_id": "ITM05684",
+                        "@ondc/org/item_id": "ITM03603",
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
@@ -130,8 +134,17 @@
                         }
                     },
                     {
+                        "title": "Delivery Charge",
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
                         "title": "Convenience Fee",
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
@@ -140,7 +153,7 @@
                     },
                     {
                         "title": "Packing",
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "1",
                         "@ondc/org/title_type": "packing",
                         "price": {
                             "currency": "INR",
@@ -150,7 +163,7 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "0.00"
+                    "value": "252.00"
                 },
                 "ttl": "P1D"
             }

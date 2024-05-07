@@ -1,0 +1,239 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:999"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_status",
+    "version": "2.0.2",
+    "bap_id": "devapi.proxtera.app",
+    "bap_uri": "https://devapi.proxtera.app/ondc",
+    "transaction_id": "d22346c4-9cbf-4bd0-b35a-c158d2e901af",
+    "message_id": "1ba63d92-b7a2-4f60-8b88-94131d186a7c",
+    "timestamp": "2024-05-03T04:56:46.385Z",
+    "bpp_id": "preprod-seller-api.proxtera.app",
+    "bpp_uri": "https://preprod-seller-api.proxtera.app",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "PO3859640094",
+      "state": "Accepted",
+      "provider": {
+        "id": "661ca9c6ff9903822baed0de",
+        "locations": [
+          {
+            "id": "P_L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "662f5dae23ffa9f5c31fb804",
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 100
+            }
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Plendify Wholesale Marketplace",
+          "tracking": false,
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P1D",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "DELIVERY_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "INCOTERMS"
+                  },
+                  "value": "CIF"
+                },
+                {
+                  "descriptor": {
+                    "code": "NAMED_PLACE_OF_DELIVERY"
+                  },
+                  "value": "Singapore"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "start",
+              "location": {
+                "id": "P_L1",
+                "descriptor": {
+                  "name": "Proxtera"
+                },
+                "gps": "1.357107,103.8194992"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-05-03T04:56:17.088Z",
+                  "end": "2024-05-03T04:56:34.855Z"
+                }
+              },
+              "contact": {
+                "phone": "+919875463019",
+                "email": "text@email.com"
+              }
+            },
+            {
+              "type": "end",
+              "location": {
+                "gps": "5.686427, -0.169297",
+                "address": "Singapore",
+                "city": {
+                  "name": "Singapore"
+                },
+                "country": {
+                  "code": "SGP"
+                },
+                "area_code": "238858",
+                "state": {
+                  "name": "Singapore"
+                }
+              },
+              "contact": {
+                "phone": "9988776655",
+                "email": "test@proxtera.com"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-05-06T04:56:00.848Z",
+                  "end": "2024-05-06T04:56:00.848Z"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "SGD",
+          "value": "19940"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "662f5dae23ffa9f5c31fb804",
+            "@ondc/org/item_quantity": {
+              "count": 100
+            },
+            "title": "ONDC tech logs 4",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "value": "20000",
+              "currency": "SGD"
+            },
+            "item": {
+              "price": {
+                "value": "200",
+                "currency": "SGD"
+              }
+            }
+          },
+          {
+            "title": "Discount",
+            "@ondc/org/item_id": "662f5dae23ffa9f5c31fb804",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "SGD",
+              "value": "-100"
+            }
+          },
+          {
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "SGD",
+              "value": "20"
+            }
+          },
+          {
+            "title": "Packaging Charges",
+            "@ondc/org/title_type": "packing",
+            "@ondc/org/item_id": "1",
+            "price": {
+              "currency": "SGD",
+              "value": "20"
+            }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "billing": {
+        "name": "ABC Private Limited",
+        "address": "Singapore",
+        "state": {
+          "name": "Singapore"
+        },
+        "city": {
+          "name": "Singapore"
+        },
+        "tax_id": "BFGFG3R34534",
+        "email": "test@proxtera.com",
+        "phone": "9988776655"
+      },
+      "payments": [
+        {
+          "params": {
+            "currency": "SGD",
+            "amount": "19940"
+          },
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "upi_address": "proxtera",
+              "settlement_bank_account_no": "NA",
+              "settlement_ifsc_code": "NA",
+              "beneficiary_name": "NA",
+              "bank_name": "NA",
+              "branch_name": "NA"
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://proxtera-seller-dev-uploads.s3.ap-southeast-1.amazonaws.com/661ca9c6ff9903822baed0de_1714712205333.xlsx",
+          "label": "PROFORMA_INVOICE"
+        }
+      ],
+      "created_at": "2024-05-03T04:56:17.088Z",
+      "updated_at": "2024-05-03T04:56:46.369Z"
+    }
+  }
+}
