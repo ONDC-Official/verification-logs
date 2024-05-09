@@ -14,9 +14,9 @@
         "bap_uri": "https://apiondcpreprod.insurancedekho.com/",
         "bpp_id": "bagic.api.finarkein.in",
         "bpp_uri": "https://bagic.api.finarkein.in/ondc/sn/bagic/",
-        "message_id": "398759ca-7605-4485-bdf3-0dcb410a2e14",
-        "timestamp": "2024-05-06T10:14:14.499Z",
-        "transaction_id": "769efc24-9ca2-41ae-bb57-b8e4155feed2",
+        "message_id": "5b492bac-456d-4d50-b2f6-7adf53d352b9",
+        "timestamp": "2024-05-09T08:48:59.168Z",
+        "transaction_id": "2a213e6b-9864-4825-a191-feb10d78b005",
         "ttl": "PT24H",
         "version": "2.0.0"
     },
@@ -30,7 +30,36 @@
                             "phone": "7888888888"
                         },
                         "person": {
-                            "name": "Mohit Pal Singh"
+                            "dob": "15-08-1947",
+                            "gender": "F",
+                            "name": "Mohit Pal Singh",
+                            "tags": [
+                                {
+                                    "descriptor": {
+                                        "code": "PERSON_ADDITIONAL_DETAILS",
+                                        "name": "person additional details"
+                                    },
+                                    "list": [
+                                        {
+                                            "descriptor": {
+                                                "name": "Politically exposed person",
+                                                "code": "POLITICALLY_EXPOSED_PERSON"
+                                            },
+                                            "value": "false"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "name": "Gstin",
+                                                "code": "GSTIN"
+                                            },
+                                            "value": "20JDVIEHVJDSN"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "organization": {
+                            "address": "Bajaj Allianz House, Airport Road, Yerawada, Pune-411006"
                         }
                     }
                 }
@@ -38,12 +67,17 @@
             "items": [
                 {
                     "id": "1002-ALL",
-                    "time": {
-                        "label": "Coverage Time",
-                        "range": {
-                            "start": "2024-05-01T00:00:00.000Z",
-                            "end": "2024-06-01T00:00:00.000Z"
-                        }
+                    "category_ids": [
+                        "BAGIC-MIII",
+                        "BAGIC-II"
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "500.00"
+                    },
+                    "descriptor": {
+                        "name": "Marine Insurance",
+                        "code": "MARINE_INSURANCE"
                     },
                     "xinput": {
                         "form": {
@@ -51,22 +85,87 @@
                         },
                         "form_response": {
                             "status": "SUCCESS",
-                            "submission_id": "3ef883cc-2e0e-35aa-b594-56ec299533cb"
+                            "submission_id": "488a179f-2061-3545-9fb6-7472e6009bf9"
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "name": "Policy Details",
+                                "code": "POLICY_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Commodity Type",
+                                        "code": "COMMODITY_TYPE"
+                                    },
+                                    "value": "New Machinery or mechanical/ electrical/ electronic equipment for industrial use",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Sum Insured",
+                                        "code": "SUM_INSURED"
+                                    },
+                                    "value": "300000",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Mode of Conveyance",
+                                        "code": "MODE_OF_CONVEYANCE"
+                                    },
+                                    "value": "air",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Basis of Valuation",
+                                        "code": "BASIS_OF_VALUATION"
+                                    },
+                                    "value": "5",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Invoice Date",
+                                        "code": "INVOICE_DATE"
+                                    },
+                                    "value": "2024-05-01",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Invoice Number",
+                                        "code": "INVOICE_NUMBER"
+                                    },
+                                    "value": "123456789",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Policy Start Date",
+                                        "code": "POLICY_START_DATE"
+                                    },
+                                    "value": "2024-05-15",
+                                    "display": true
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "payments": [
                 {
                     "collected_by": "BPP",
                     "params": {
-                        "amount": "591",
+                        "amount": "1000",
                         "bank_account_number": "1800002341",
                         "bank_code": "SBIN0001234",
                         "currency": "INR"
                     },
-                    "status": "NOT-PAID",
-                    "type": "PRE-ORDER",
+                    "status": "UNPAID",
                     "tags": [
                         {
                             "descriptor": {
@@ -78,13 +177,15 @@
                                     "descriptor": {
                                         "code": "BUYER_FINDER_FEES_TYPE"
                                     },
-                                    "value": "percent-annualized"
+                                    "value": "percent-annualized",
+                                    "display": true
                                 },
                                 {
                                     "descriptor": {
                                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                     },
-                                    "value": "1"
+                                    "value": "1",
+                                    "display": true
                                 }
                             ]
                         },
@@ -96,57 +197,59 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_WINDOW"
-                                    },
-                                    "value": "PT60M"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_BASIS"
-                                    },
-                                    "value": "Delivery"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "upi"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "MANDATORY_ARBITRATION"
-                                    },
-                                    "value": "true"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "COURT_JURISDICTION"
-                                    },
-                                    "value": "New Delhi"
-                                },
-                                {
-                                    "descriptor": {
                                         "code": "DELAY_INTEREST"
                                     },
-                                    "value": "2.5"
+                                    "value": "2.5",
+                                    "display": true
                                 },
                                 {
                                     "descriptor": {
                                         "code": "STATIC_TERMS"
                                     },
-                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
-                                    },
-                                    "value": "1000"
+                                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan",
+                                    "display": true
                                 },
                                 {
                                     "descriptor": {
                                         "code": "OFFLINE_CONTRACT"
                                     },
-                                    "value": "true"
+                                    "value": "true",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1000",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Pune",
+                                    "display": true
                                 }
                             ]
                         }
@@ -154,6 +257,7 @@
                 }
             ],
             "provider": {
+                "id": "BAGIC",
                 "descriptor": {
                     "name": "Bajaj Allianz General Insurance Co. Ltd.",
                     "short_desc": "Bajaj Allianz General Insurance Co. Ltd.",
@@ -164,36 +268,35 @@
                             "size_type": "sm"
                         }
                     ]
-                },
-                "id": "BAGIC"
+                }
             },
             "quote": {
                 "breakup": [
                     {
                         "price": {
                             "currency": "INR",
-                            "value": "500"
+                            "value": "500.00"
                         },
                         "title": "BASE_PRICE"
                     },
                     {
                         "price": {
                             "currency": "INR",
-                            "value": "90"
+                            "value": "90.18"
                         },
                         "title": "TAX"
                     },
                     {
                         "price": {
                             "currency": "INR",
-                            "value": "1"
+                            "value": "1.00"
                         },
                         "title": "PROCESSING_FEE"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "591"
+                    "value": "591.00"
                 }
             }
         }

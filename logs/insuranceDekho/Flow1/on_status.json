@@ -14,14 +14,37 @@
         "bap_uri": "https://apiondcpreprod.insurancedekho.com/",
         "bpp_id": "bagic.api.finarkein.in",
         "bpp_uri": "https://bagic.api.finarkein.in/ondc/sn/bagic/",
-        "message_id": "f9576499-9f93-435b-ae31-f5bf339d56fd",
-        "timestamp": "2024-05-06T10:14:11.653Z",
-        "transaction_id": "769efc24-9ca2-41ae-bb57-b8e4155feed2",
+        "message_id": "9c6099b1-4820-42fe-8980-95611cb6aa25",
+        "timestamp": "2024-05-09T08:48:57.465Z",
+        "transaction_id": "2a213e6b-9864-4825-a191-feb10d78b005",
         "ttl": "PT24H",
         "version": "2.0.0"
     },
     "message": {
         "order": {
+            "fulfillments": [
+                {
+                    "customer": {
+                        "contact": {
+                            "email": "mohit.pal@insurancedekho.com",
+                            "phone": "7888888888"
+                        },
+                        "person": {
+                            "dob": "15-08-1947",
+                            "gender": "F",
+                            "name": "Mohit Pal Singh"
+                        },
+                        "organization": {
+                            "address": "Bajaj Allianz House, Airport Road, Yerawada, Pune-411006"
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "PROCESSING"
+                        }
+                    }
+                }
+            ],
             "items": [
                 {
                     "id": "1002-ALL",
@@ -31,16 +54,19 @@
                     ],
                     "price": {
                         "currency": "INR",
-                        "value": "500.0"
+                        "value": "500.00"
                     },
                     "descriptor": {
                         "name": "Marine Insurance",
                         "code": "MARINE_INSURANCE"
                     },
                     "xinput": {
+                        "form": {
+                            "id": "F03"
+                        },
                         "form_response": {
                             "status": "SUCCESS",
-                            "submission_id": "3ef883cc-2e0e-35aa-b594-56ec299533cb"
+                            "submission_id": "488a179f-2061-3545-9fb6-7472e6009bf9"
                         }
                     },
                     "tags": [
@@ -111,6 +137,100 @@
                     ]
                 }
             ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent-annualized",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1",
+                                    "display": true
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
+                                    "value": "true",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1000",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE",
+                                    "display": true
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Pune",
+                                    "display": true
+                                }
+                            ]
+                        }
+                    ],
+                    "status": "UNPAID"
+                }
+            ],
             "provider": {
                 "id": "BAGIC",
                 "descriptor": {
@@ -130,30 +250,62 @@
                     {
                         "price": {
                             "currency": "INR",
-                            "value": "500"
+                            "value": "500.00"
                         },
                         "title": "BASE_PRICE"
                     },
                     {
                         "price": {
                             "currency": "INR",
-                            "value": "90"
+                            "value": "90.18"
                         },
                         "title": "TAX"
                     },
                     {
                         "price": {
                             "currency": "INR",
-                            "value": "1"
+                            "value": "1.00"
                         },
                         "title": "PROCESSING_FEE"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "591"
+                    "value": "591.00"
                 }
-            }
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "name": "Insurance processing",
+                            "code": "INSURANCE_PROCESSING"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "3"
+                    },
+                    "external_ref": {
+                        "mimetype": "text/html",
+                        "url": "https://icicibank.com/loan/tnc.html"
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "name": "Insurance_granted",
+                            "code": "INSURANCE_GRANTED"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "5"
+                    },
+                    "external_ref": {
+                        "mimetype": "text/html",
+                        "url": "https://icicibank.com/loan/tnc.html"
+                    }
+                }
+            ]
         }
     }
 }
