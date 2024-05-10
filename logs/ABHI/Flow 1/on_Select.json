@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_confirm",
+        "action": "on_select",
         "bap_id": "staging.cliniq360.com",
         "bap_uri": "https://staging.cliniq360.com/insurance",
         "bpp_id": "api.abcscuat.com",
@@ -14,114 +14,14 @@
                 "code": "*"
             }
         },
-        "message_id": "ebac50ea-0323-4ce9-b4ce-1a88c8941ce5",
-        "timestamp": "2024-05-09T06:52:21.962Z",
+        "message_id": "fabd4511-1c0b-4519-9c0e-75e097265c61",
+        "timestamp": "2024-05-09T06:48:02.978Z",
         "transaction_id": "1027604f-f35e-402f-8797-498ab115bfc5",
         "ttl": "PT10M",
         "version": "2.0.0"
     },
     "message": {
         "order": {
-            "fulfillments": [
-                {
-                    "customer": {
-                        "contact": {
-                            "email": "rachitkh04@gmail.com",
-                            "phone": "9511878113"
-                        }
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "GRANTED"
-                        }
-                    },
-                    "id": "F20240509121733617_9511878113_1"
-                }
-            ],
-            "payments": [
-                {
-                    "collected_by": "BPP",
-                    "params": {
-                        "amount": "10493",
-                        "bank_account_number": "1800002341",
-                        "bank_code": "SBIN0001234",
-                        "currency": "INR",
-                        "transaction_id": "pay_O8IpeEnNUdFPWX"
-                    },
-                    "status": "PAID",
-                    "type": "PRE-ORDER",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_FINDER_FEES"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "BUYER_FINDER_FEES_TYPE"
-                                    },
-                                    "value": "percent-annualized"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                                    },
-                                    "value": "5"
-                                }
-                            ]
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_WINDOW"
-                                    },
-                                    "value": "PT60M"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_BASIS"
-                                    },
-                                    "value": "Delivery"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "upi"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "DELAY_INTEREST"
-                                    },
-                                    "value": "2.5"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "STATIC_TERMS"
-                                    },
-                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
-                                    },
-                                    "value": "383.27"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "OFFLINE_CONTRACT"
-                                    },
-                                    "value": "true"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
             "items": [
                 {
                     "category_ids": [
@@ -216,6 +116,28 @@
                         "duration": "P1Y",
                         "label": "TENURE"
                     },
+                    "xinput": {
+                        "head": {
+                            "descriptor": {
+                                "name": "Customer Information"
+                            },
+                            "index": {
+                                "min": 0,
+                                "cur": 0,
+                                "max": 0
+                            },
+                            "headings": [
+                                "EKYC"
+                            ]
+                        },
+                        "form": {
+                            "id": "FO4",
+                            "mime_type": "application/html",
+                            "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/ondc/forms/kyc/iAgreeKyc?formId=20240509121733617",
+                            "resubmit": true
+                        },
+                        "required": true
+                    },
                     "price": {
                         "value": "7665.3",
                         "currency": "INR"
@@ -236,9 +158,6 @@
                                 "currency": "INR"
                             }
                         }
-                    ],
-                    "fulfillment_ids": [
-                        "F20240509121733617_9511878113_1"
                     ]
                 }
             ],
@@ -258,6 +177,7 @@
             },
             "quote": {
                 "id": "Q1",
+                "ttl": "PT15D",
                 "breakup": [
                     {
                         "price": {
@@ -304,45 +224,10 @@
                     }
                 ],
                 "price": {
-                    "value": "10493",
+                    "value": "10494",
                     "currency": "INR"
                 }
-            },
-            "documents": [
-                {
-                    "descriptor": {
-                        "name": "Insurance Policy Document",
-                        "code": "POLICY_DOC",
-                        "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name",
-                        "short_desc": "Download your digitally signed policy document here"
-                    },
-                    "mime_type": "application/pdf",
-                    "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/homepage"
-                },
-                {
-                    "descriptor": {
-                        "name": "Claim Insurance Policy",
-                        "code": "CLAIM_DOC",
-                        "long_desc": "Buyer can renew their insurance by visiting the below url",
-                        "short_desc": "Buyer can claim their insurance by visiting the below url"
-                    },
-                    "mime_type": "application/html",
-                    "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/reimbursement-claims"
-                },
-                {
-                    "descriptor": {
-                        "name": "Renew Insurance Policy",
-                        "code": "RENEW_DOC",
-                        "short_desc": "Buyer can renew their insurance by visiting the below url"
-                    },
-                    "mime_type": "application/html",
-                    "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/buy-insurance-online/v2/renewal-renew-policy?p=&m=Y7twZTTn0NnpQxiuDTgGDw==&s=oYoL/sbWfn/TxoAGblc7Tw==&d="
-                }
-            ],
-            "status": "ACTIVE",
-            "created_at": "2024-05-09T06:52:21.963Z",
-            "updated_at": "2024-05-09T06:52:21.963Z",
-            "id": "O1027604f-f35e-402f-8797-498ab115bfc5"
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "confirm",
+        "action": "init",
         "bap_id": "staging.cliniq360.com",
         "bap_uri": "https://staging.cliniq360.com/insurance",
         "bpp_id": "api.abcscuat.com",
@@ -15,8 +15,8 @@
             }
         },
         "transaction_id": "27c50935-b150-4a69-ac52-35f7f7142636",
-        "message_id": "3a7babd5-68d7-4322-85d0-918c74afcbbc",
-        "timestamp": "2024-05-09T07:06:53.676Z",
+        "message_id": "41f540fa-0bff-4e44-bc6d-90a4ffac1d81",
+        "timestamp": "2024-05-09T07:05:19.185Z",
         "ttl": "PT10M",
         "version": "2.0.0"
     },
@@ -26,20 +26,24 @@
                 {
                     "customer": {
                         "contact": {
-                            "email": "test@gmail.com",
+                            "email": "rachit@gmail.com",
                             "phone": "9511878113"
+                        },
+                        "person": {
+                            "name": "Rachit Khandelwal"
                         }
-                    },
-                    "id": "F20240509123058080_9511878113_1"
+                    }
                 },
                 {
                     "customer": {
                         "contact": {
-                            "email": "rachit@gmail.com",
+                            "email": "test@gmail.com",
                             "phone": "9511878113"
+                        },
+                        "person": {
+                            "name": "Test Testlast"
                         }
-                    },
-                    "id": "F20240509123058080_9511878113_2"
+                    }
                 }
             ],
             "items": [
@@ -65,18 +69,23 @@
                     "parent_item_id": "I2",
                     "xinput": {
                         "form": {
-                            "id": "FO8"
+                            "id": "FO4"
                         },
                         "form_response": {
-                            "status": "SUCCESS",
-                            "submission_id": "20240509123058080"
+                            "submission_id": "20240509123058080",
+                            "status": "SUCCESS"
                         }
                     }
                 }
             ],
+            "provider": {
+                "id": "P1"
+            },
             "payments": [
                 {
                     "collected_by": "BPP",
+                    "status": "NOT-PAID",
+                    "type": "PRE-ORDER",
                     "params": {
                         "amount": "16755",
                         "bank_account_number": "1800002341",
@@ -94,7 +103,7 @@
                                     "descriptor": {
                                         "code": "BUYER_FINDER_FEES_TYPE"
                                     },
-                                    "value": "percent-annualized"
+                                    "value": "percent"
                                 },
                                 {
                                     "descriptor": {
@@ -154,66 +163,9 @@
                                 }
                             ]
                         }
-                    ],
-                    "status": "NOT-PAID",
-                    "type": "PRE-ORDER"
+                    ]
                 }
-            ],
-            "provider": {
-                "id": "P1"
-            },
-            "quote": {
-                "id": "Q1",
-                "breakup": [
-                    {
-                        "price": {
-                            "value": "11744.1",
-                            "currency": "INR"
-                        },
-                        "title": "BASE_PRICE"
-                    },
-                    {
-                        "price": {
-                            "value": "2555.874",
-                            "currency": "INR"
-                        },
-                        "title": "TAX"
-                    },
-                    {
-                        "price": {
-                            "value": "0",
-                            "currency": "INR"
-                        },
-                        "title": "CONVIENCE_FEE"
-                    },
-                    {
-                        "price": {
-                            "value": "2455.2",
-                            "currency": "INR"
-                        },
-                        "item": {
-                            "id": "I2",
-                            "add_ons": [
-                                {
-                                    "id": "CRITICAL_ILLNESS_COVER"
-                                }
-                            ]
-                        },
-                        "title": "ADD_ONS"
-                    },
-                    {
-                        "price": {
-                            "value": "0",
-                            "currency": "INR"
-                        },
-                        "title": "PROCESSING_FEE"
-                    }
-                ],
-                "price": {
-                    "value": "16755",
-                    "currency": "INR"
-                }
-            }
+            ]
         }
     }
 }

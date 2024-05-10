@@ -1,8 +1,8 @@
 {
     "context": {
-        "action": "on_select",
+        "action": "on_status",
         "bap_id": "staging.cliniq360.com",
-        "bap_uri": "https://staging.cliniq360.com/bapl",
+        "bap_uri": "https://staging.cliniq360.com/insurance",
         "bpp_id": "api.abcscuat.com",
         "bpp_uri": "https://api.abcscuat.com/healthinsurance/ondc-preprod",
         "domain": "ONDC:FIS13",
@@ -14,18 +14,122 @@
                 "code": "*"
             }
         },
-        "message_id": "2b147ed9-4020-48cf-8e82-3ebeb2f8ec95",
-        "timestamp": "2024-04-25T11:50:00.400Z",
-        "transaction_id": "46e23001-ff76-4f1a-bf23-bc668d34d23c",
-        "ttl": "PT24H",
+        "message_id": "307bbb36-bfa7-4c2d-8164-6edd3a79cfda",
+        "timestamp": "2024-05-09T07:06:34.001Z",
+        "transaction_id": "27c50935-b150-4a69-ac52-35f7f7142636",
+        "ttl": "PT10M",
         "version": "2.0.0"
     },
     "message": {
         "order": {
+            "fulfillments": [
+                {
+                    "customer": {
+                        "contact": {
+                            "email": "test@gmail.com",
+                            "phone": "9511878113"
+                        }
+                    },
+                    "id": "F20240509123058080_9511878113_1"
+                },
+                {
+                    "customer": {
+                        "contact": {
+                            "email": "rachit@gmail.com",
+                            "phone": "9511878113"
+                        }
+                    },
+                    "id": "F20240509123058080_9511878113_2"
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "url": "https://mtpre.adityabirlahealth.com/healthinsurance/abh/GenericPayment/PaymentPocess?id=9ACE637E70484D9AAB81588EDE3A196D425D8310833E44C594DDDEFC4896FD0A0BA032A3FB2C43A8",
+                    "params": {
+                        "amount": "16755",
+                        "bank_account_number": "1800002341",
+                        "bank_code": "SBIN0001234",
+                        "currency": "INR"
+                    },
+                    "status": "NOT-PAID",
+                    "type": "PRE-ORDER",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "5"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "587.21"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
+                                    "value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
             "items": [
                 {
                     "category_ids": [
-                        "C1",
+                        "C2",
                         "C3"
                     ],
                     "descriptor": {
@@ -34,8 +138,8 @@
                         "long_desc": "Aditya Birla Health Insurance Activ One NXT",
                         "short_desc": "ABHI Activ One NXT"
                     },
-                    "id": "CODI_Digital_I1",
-                    "parent_item_id": "I1",
+                    "id": "CODI_Digital_I2",
+                    "parent_item_id": "I2",
                     "tags": [
                         {
                             "descriptor": {
@@ -60,6 +164,12 @@
                                         "code": "ROOM_RENT_CAP"
                                     },
                                     "value": "NOCAP"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROOM_CATEGORY"
+                                    },
+                                    "value": "ACTUALS_UP_TO_BASE_SUM_INSURED"
                                 },
                                 {
                                     "descriptor": {
@@ -111,29 +221,16 @@
                         "label": "TENURE"
                     },
                     "xinput": {
-                        "head": {
-                            "descriptor": {
-                                "name": "Customer Information"
-                            },
-                            "index": {
-                                "min": 0,
-                                "cur": 0,
-                                "max": 0
-                            },
-                            "headings": [
-                                "EKYC"
-                            ]
-                        },
                         "form": {
-                            "id": "FO4",
-                            "mime_type": "text/html",
-                            "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/ondc/forms/kyc/iAgreeKyc?formId=20240425171916350",
-                            "resubmit": true
+                            "id": "FO8"
                         },
-                        "required": true
+                        "form_response": {
+                            "status": "FORM_PROCESSED",
+                            "submission_id": "20240509123058080"
+                        }
                     },
                     "price": {
-                        "value": "7665",
+                        "value": "11744.1",
                         "currency": "INR"
                     },
                     "add_ons": [
@@ -148,7 +245,7 @@
                                 "name": "CRITICAL ILLNESS COVER"
                             },
                             "price": {
-                                "value": "1228",
+                                "value": "2455.2",
                                 "currency": "INR"
                             }
                         }
@@ -171,28 +268,20 @@
             },
             "quote": {
                 "id": "Q1",
-                "ttl": "PT15D",
                 "breakup": [
                     {
                         "price": {
-                            "value": "7665",
+                            "value": "11744.1",
                             "currency": "INR"
                         },
                         "title": "BASE_PRICE"
                     },
                     {
                         "price": {
-                            "value": "1601",
+                            "value": "2555.874",
                             "currency": "INR"
                         },
                         "title": "TAX"
-                    },
-                    {
-                        "price": {
-                            "value": "0",
-                            "currency": "INR"
-                        },
-                        "title": "PROCESSING_FEE"
                     },
                     {
                         "price": {
@@ -203,11 +292,11 @@
                     },
                     {
                         "price": {
-                            "value": "1228",
+                            "value": "2455.2",
                             "currency": "INR"
                         },
                         "item": {
-                            "id": "I1",
+                            "id": "I2",
                             "add_ons": [
                                 {
                                     "id": "CRITICAL_ILLNESS_COVER"
@@ -215,10 +304,17 @@
                             ]
                         },
                         "title": "ADD_ONS"
+                    },
+                    {
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "PROCESSING_FEE"
                     }
                 ],
                 "price": {
-                    "value": "10494",
+                    "value": "16755",
                     "currency": "INR"
                 }
             }
