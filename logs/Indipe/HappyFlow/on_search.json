@@ -1,9 +1,5 @@
 {
     "context": {
-      "action": "on_search",
-      "bap_id": "preprod.ondc.indipe.in",
-      "bap_uri": "https://preprod.ondc.indipe.in/api/v1/credit-buyer-app",
-      "domain": "ONDC:FIS12",
       "location": {
         "country": {
           "code": "IND"
@@ -12,36 +8,40 @@
           "code": "*"
         }
       },
-      "message_id": "ab8ce42a-136c-4a7d-8c5c-da2ef5e38cd4",
-      "transaction_id": "7be46e41-a8fb-448d-8477-9003e4b23109",
-      "timestamp": "2024-04-26T12:17:18.336Z",
+      "timestamp": "2024-05-10T03:59:53.757Z",
       "version": "2.0.0",
-      "ttl": "PT10M",
-      "bpp_id": "api.abcscuat.com",
-      "bpp_uri": "https://api.abcscuat.com/abfl-ondc-preprod"
+      "ttl": "PT30M",
+      "action": "on_search",
+      "domain": "ONDC:FIS12",
+      "transaction_id": "b96a2a0d-35f8-4445-b1e7-25c60bb749f2",
+      "message_id": "4d795cd1-b0ec-4808-9d88-d17293023bbf",
+      "bap_id": "preprod.ondc.indipe.in",
+      "bap_uri": "https://preprod.ondc.indipe.in/api/v1/credit-buyer-app",
+      "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+      "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
     },
     "message": {
       "catalog": {
         "descriptor": {
-          "name": "Aditya Birla Finance Limited"
+          "name": "ONDC Bank"
         },
         "providers": [
           {
-            "id": "ABFL_Provider",
+            "id": "c29d8cf3-5eeb-4aac-9eff-f5fadfd4dbc3",
             "descriptor": {
-              "name": "Aditya Birla Finance Limited",
-              "short_desc": "Aditya Birla Finance Limited",
-              "long_desc": "Aditya Birla Finance Limited",
               "images": [
                 {
-                  "url": "https://abcscprod.azureedge.net/-/media/Feature/ABCL/ABFL/Sticky-Tab-Content/ABFLLogov11.webp?extension=webp&revision=6d918649-4a8f-4754-8e00-cf7601b99ef8&modified=20221111111234&h=387&w=431&la=en&hash=5B3653A133488E98B636182FCB8A1908",
-                  "size_type": "sm"
+                  "size_type": "sm",
+                  "url": "https://www.ondcbank.com/content/dam/ondcbank/india/assets/images/header/logo.png"
                 }
-              ]
+              ],
+              "long_desc": "ONDC Bank Ltd, India.",
+              "name": "ONDC Bank",
+              "short_desc": "Ondc Bank Ltd"
             },
             "categories": [
               {
-                "id": "ABFL_PERSONAL_LOAN",
+                "id": "101123",
                 "descriptor": {
                   "code": "PERSONAL_LOAN",
                   "name": "Personal Loan"
@@ -50,33 +50,14 @@
             ],
             "items": [
               {
-                "id": "1d4b8433-8c2b-4e23-a53d-0db2cdca070e",
+                "id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
                 "descriptor": {
                   "code": "PERSONAL_LOAN",
                   "name": "Personal Loan"
                 },
-                "xinput": {
-                  "head": {
-                    "descriptor": {
-                      "name": "Customer Information"
-                    },
-                    "index": {
-                      "min": 0,
-                      "cur": 0,
-                      "max": 0
-                    },
-                    "headings": ["Personal Information"]
-                  },
-                  "form": {
-                    "id": "663ddfc4-d745-4cf1-ab4c-54a71d581b4d",
-                    "mime_type": "text/html",
-                    "url": "https://api.abcscuat.com/abfl-ondc-preprod/forms/personal-info/gijY2M4a2ApnHjiLtTWDDA",
-                    "resubmit": false,
-                    "multiple_sumbissions": false
-                  },
-                  "required": true
-                },
-                "category_ids": ["ABFL_PERSONAL_LOAN"],
+                "category_ids": [
+                  "101123"
+                ],
                 "tags": [
                   {
                     "descriptor": {
@@ -88,33 +69,33 @@
                         "descriptor": {
                           "code": "MIN_INTEREST_RATE",
                           "name": "Minimum Interest Rate",
-                          "short_desc": "Loans starting from 14% (p.a)"
+                          "short_desc": "Loans starting from 9% (p.a)"
                         },
-                        "value": "14%"
+                        "value": "9%"
                       },
                       {
                         "descriptor": {
                           "code": "MAX_INTEREST_RATE",
                           "name": "Maximum Interest Rate",
-                          "short_desc": "Loan Rate below from 32% (p.a)"
+                          "short_desc": "Loan Rate below from 15% (p.a)"
                         },
-                        "value": "32%"
+                        "value": "15%"
                       },
                       {
                         "descriptor": {
                           "code": "MIN_TENURE",
                           "name": "Minimum Tenure",
-                          "short_desc": "Loan Tenure starting form 12 months"
+                          "short_desc": "Loan Tenure starting form 5 months"
                         },
-                        "value": "12 months"
+                        "value": "5 months"
                       },
                       {
                         "descriptor": {
                           "code": "MAX_TENURE",
                           "name": "Maximum Tenure",
-                          "short_desc": "Loan Tenure upto 24 months"
+                          "short_desc": "Loan Tenure upto form 5 years"
                         },
-                        "value": "24 months"
+                        "value": "5 years"
                       },
                       {
                         "descriptor": {
@@ -128,16 +109,39 @@
                         "descriptor": {
                           "code": "MAX_LOAN_AMOUNT",
                           "name": "Minimum Loan Amount",
-                          "short_desc": "Loan Amount upto 5,00,000"
+                          "short_desc": "Loan Amount upto form 50,00,000"
                         },
-                        "value": "500000"
+                        "value": "5000000"
                       }
                     ],
                     "display": true
                   }
                 ],
                 "matched": true,
-                "recommended": true
+                "recommended": true,
+                "xinput": {
+                  "head": {
+                    "descriptor": {
+                      "name": "Customer Information"
+                    },
+                    "index": {
+                      "min": 0,
+                      "cur": 0,
+                      "max": 0
+                    },
+                    "headings": [
+                      "Personal Information"
+                    ]
+                  },
+                  "form": {
+                    "id": "b9d29a80-a39a-4696-a2f5-5a80571e1fc7",
+                    "mime_type": "text/html",
+                    "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/b9d29a80-a39a-4696-a2f5-5a80571e1fc7",
+                    "resubmit": false,
+                    "multiple_sumbissions": false
+                  },
+                  "required": true
+                }
               }
             ],
             "payments": [
@@ -174,7 +178,7 @@
                         "descriptor": {
                           "code": "SETTLEMENT_WINDOW"
                         },
-                        "value": "PT30D"
+                        "value": "PT60M"
                       },
                       {
                         "descriptor": {
@@ -199,6 +203,12 @@
                           "code": "STATIC_TERMS"
                         },
                         "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "OFFLINE_CONTRACT"
+                        },
+                        "value": "true"
                       }
                     ]
                   }
@@ -217,21 +227,21 @@
                       "code": "GRO_NAME",
                       "name": "Gro name"
                     },
-                    "value": "Ms. Shruti Sarraf"
+                    "value": "ONDC"
                   },
                   {
                     "descriptor": {
                       "code": "GRO_EMAIL",
                       "name": "Gro email"
                     },
-                    "value": "finance@adityabirlacapital.com"
+                    "value": "lifeline@ondc.com"
                   },
                   {
                     "descriptor": {
                       "code": "GRO_CONTACT_NUMBER",
                       "name": "Gro contact number"
                     },
-                    "value": "080 – 45860196"
+                    "value": "1860 266 7766"
                   },
                   {
                     "descriptor": {
@@ -245,28 +255,28 @@
                       "code": "GRO_ADDRESS",
                       "name": "Gro Address"
                     },
-                    "value": "Aditya Birla Finance Limited, Tower 1, 18th Floor Jupiter mill compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013"
+                    "value": "One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013"
                   },
                   {
                     "descriptor": {
                       "code": "CUSTOMER_SUPPORT_LINK",
                       "name": "Customer support link"
                     },
-                    "value": "https://finance.adityabirlacapital.com/customer-services"
+                    "value": "https://buy.ondc.org/buy/GrievanceRedStep.htm?execution=e1s1"
                   },
                   {
                     "descriptor": {
                       "code": "CUSTOMER_SUPPORT_CONTACT_NUMBER",
                       "name": "Customer support contact number"
                     },
-                    "value": "080 – 45860196"
+                    "value": "1800 1080"
                   },
                   {
                     "descriptor": {
                       "code": "CUSTOMER_SUPPORT_EMAIL",
                       "name": "Customer support email"
                     },
-                    "value": "finance@adityabirlacapital.com"
+                    "value": "customer.care@ondc.com"
                   }
                 ]
               },
@@ -281,28 +291,28 @@
                       "code": "LSP_NAME",
                       "name": "Lsp name"
                     },
-                    "value": "NA"
+                    "value": "ONDC_BANK_LSP"
                   },
                   {
                     "descriptor": {
                       "code": "LSP_EMAIL",
                       "name": "Lsp email"
                     },
-                    "value": "NA"
+                    "value": "lsp@ondcbank.com"
                   },
                   {
                     "descriptor": {
                       "code": "LSP_CONTACT_NUMBER",
                       "name": "Lsp contact number"
                     },
-                    "value": "NA"
+                    "value": "1860 266 7766"
                   },
                   {
                     "descriptor": {
                       "code": "LSP_ADDRESS",
                       "name": "Lsp Address"
                     },
-                    "value": "NA"
+                    "value": "One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013"
                   }
                 ]
               }
@@ -312,4 +322,3 @@
       }
     }
   }
-  
