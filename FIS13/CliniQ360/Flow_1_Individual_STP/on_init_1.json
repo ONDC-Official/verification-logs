@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_select",
+        "action": "on_init",
         "bap_id": "staging.cliniq360.com",
         "bap_uri": "https://staging.cliniq360.com/insurance",
         "bpp_id": "api.abcscuat.com",
@@ -14,14 +14,108 @@
                 "code": "*"
             }
         },
-        "message_id": "7f75e878-f572-4e8c-89d4-9695819360f5",
-        "timestamp": "2024-05-03T13:25:17.870Z",
-        "transaction_id": "b5f60815-4f2a-4d0c-a8cc-5d278e9f4dd9",
+        "message_id": "e1d3a1e1-9274-49bc-ab5b-5723910ddb33",
+        "timestamp": "2024-05-09T06:49:59.114Z",
+        "transaction_id": "1027604f-f35e-402f-8797-498ab115bfc5",
         "ttl": "PT10M",
         "version": "2.0.0"
     },
     "message": {
         "order": {
+            "fulfillments": [
+                {
+                    "customer": {
+                        "contact": {
+                            "email": "rachitkh04@gmail.com",
+                            "phone": "9511878113"
+                        }
+                    },
+                    "id": "F20240509121733617_9511878113_1"
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "10494",
+                        "bank_account_number": "1800002341",
+                        "bank_code": "SBIN0001234",
+                        "currency": "INR"
+                    },
+                    "status": "NOT-PAID",
+                    "type": "PRE-ORDER",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "5"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "383.27"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
+                                    "value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
             "items": [
                 {
                     "category_ids": [
@@ -124,22 +218,23 @@
                             "index": {
                                 "min": 0,
                                 "cur": 0,
-                                "max": 0
+                                "max": 1
                             },
                             "headings": [
-                                "EKYC"
+                                "Proposer Details",
+                                "Nominee Details"
                             ]
                         },
                         "form": {
-                            "id": "FO4",
+                            "id": "FO5",
                             "mime_type": "text/html",
-                            "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/ondc/forms/kyc/iAgreeKyc?formId=20240503185505373",
+                            "url": "https://api.abcscuat.com/healthinsurance/ondc-preprod/proposalinfo.html?formId=20240509121733617",
                             "resubmit": true
                         },
                         "required": true
                     },
                     "price": {
-                        "value": "7665",
+                        "value": "7665.3",
                         "currency": "INR"
                     },
                     "add_ons": [
@@ -177,28 +272,20 @@
             },
             "quote": {
                 "id": "Q1",
-                "ttl": "PT15D",
                 "breakup": [
                     {
                         "price": {
-                            "value": "7665",
+                            "value": "7665.3",
                             "currency": "INR"
                         },
                         "title": "BASE_PRICE"
                     },
                     {
                         "price": {
-                            "value": "1601",
+                            "value": "1600.722",
                             "currency": "INR"
                         },
                         "title": "TAX"
-                    },
-                    {
-                        "price": {
-                            "value": "0",
-                            "currency": "INR"
-                        },
-                        "title": "PROCESSING_FEE"
                     },
                     {
                         "price": {
@@ -209,7 +296,7 @@
                     },
                     {
                         "price": {
-                            "value": "1228",
+                            "value": "1227.6",
                             "currency": "INR"
                         },
                         "item": {
@@ -221,6 +308,13 @@
                             ]
                         },
                         "title": "ADD_ONS"
+                    },
+                    {
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "PROCESSING_FEE"
                     }
                 ],
                 "price": {
