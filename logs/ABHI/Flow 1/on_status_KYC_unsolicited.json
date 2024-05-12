@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "on_confirm",
+    "action": "on_status",
     "bap_id": "staging.cliniq360.com",
     "bap_uri": "https://staging.cliniq360.com/insurance",
     "bpp_id": "api.abcscuat.com",
@@ -14,114 +14,14 @@
         "code": "*"
       }
     },
-    "message_id": "3f7463a9-1682-494d-be1c-a25ce5404c37",
-    "timestamp": "2024-05-11T05:35:27.838Z",
+    "message_id": "7a7e1ebe-c26b-4253-b263-459f6693e2e7",
+    "timestamp": "2024-05-11T05:29:05.248Z",
     "transaction_id": "da8043ab-3761-4a9c-82c8-e6a5b085d2aa",
     "ttl": "PT10M",
     "version": "2.0.0"
   },
   "message": {
     "order": {
-      "fulfillments": [
-        {
-          "customer": {
-            "contact": {
-              "email": "rachitkh04@gmail.com",
-              "phone": "9511878113"
-            }
-          },
-          "state": {
-            "descriptor": {
-              "code": "GRANTED"
-            }
-          },
-          "id": "F20240511105105603_9511878113_1"
-        }
-      ],
-      "payments": [
-        {
-          "collected_by": "BPP",
-          "params": {
-            "amount": "10493",
-            "bank_account_number": "1800002341",
-            "bank_code": "SBIN0001234",
-            "currency": "INR",
-            "transaction_id": "pay_O94aIt3WiekSJL"
-          },
-          "status": "PAID",
-          "type": "PRE-ORDER",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_FINDER_FEES"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_TYPE"
-                  },
-                  "value": "percent"
-                },
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  },
-                  "value": "5"
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_WINDOW"
-                  },
-                  "value": "PT60M"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_BASIS"
-                  },
-                  "value": "Delivery"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "upi"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "2.5"
-                },
-                {
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
-                  },
-                  "value": "383.27"
-                },
-                {
-                  "descriptor": {
-                    "code": "OFFLINE_CONTRACT"
-                  },
-                  "value": "true"
-                }
-              ]
-            }
-          ]
-        }
-      ],
       "items": [
         {
           "category_ids": [
@@ -216,6 +116,15 @@
             "duration": "P1Y",
             "label": "TENURE"
           },
+          "xinput": {
+            "form": {
+              "id": "FO4"
+            },
+            "form_response": {
+              "status": "FORM_PROCESSED",
+              "submission_id": "20240511105105603"
+            }
+          },
           "price": {
             "value": "7665.3",
             "currency": "INR"
@@ -236,9 +145,6 @@
                 "currency": "INR"
               }
             }
-          ],
-          "fulfillment_ids": [
-            "F20240511105105603_9511878113_1"
           ]
         }
       ],
@@ -258,6 +164,7 @@
       },
       "quote": {
         "id": "Q1",
+        "ttl": "PT15D",
         "breakup": [
           {
             "price": {
@@ -304,45 +211,10 @@
           }
         ],
         "price": {
-          "value": "10493",
+          "value": "10494",
           "currency": "INR"
         }
-      },
-      "documents": [
-        {
-          "descriptor": {
-            "name": "Insurance Policy Document",
-            "code": "POLICY_DOC",
-            "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name",
-            "short_desc": "Download your digitally signed policy document here"
-          },
-          "mime_type": "application/pdf",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/homepage"
-        },
-        {
-          "descriptor": {
-            "name": "Claim Insurance Policy",
-            "code": "CLAIM_DOC",
-            "long_desc": "Buyer can renew their insurance by visiting the below url",
-            "short_desc": "Buyer can claim their insurance by visiting the below url"
-          },
-          "mime_type": "application/html",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/reimbursement-claims"
-        },
-        {
-          "descriptor": {
-            "name": "Renew Insurance Policy",
-            "code": "RENEW_DOC",
-            "short_desc": "Buyer can renew their insurance by visiting the below url"
-          },
-          "mime_type": "application/html",
-          "url": "https://abhi-digital-uat.adityabirlahealth.com/healthinsurance/buy-insurance-online/v2/renewal-renew-policy?p=&m=Y7twZTTn0NnpQxiuDTgGDw==&s=oYoL/sbWfn/TxoAGblc7Tw==&d="
-        }
-      ],
-      "status": "ACTIVE",
-      "created_at": "2024-05-11T05:35:27.838Z",
-      "updated_at": "2024-05-11T05:35:27.838Z",
-      "id": "Oda8043ab-3761-4a9c-82c8-e6a5b085d2aa"
+      }
     }
   }
 }

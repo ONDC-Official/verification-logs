@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "confirm",
+    "action": "init",
     "bap_id": "staging.cliniq360.com",
     "bap_uri": "https://staging.cliniq360.com/insurance",
     "bpp_id": "api.abcscuat.com",
@@ -15,8 +15,8 @@
       }
     },
     "transaction_id": "da8043ab-3761-4a9c-82c8-e6a5b085d2aa",
-    "message_id": "3f7463a9-1682-494d-be1c-a25ce5404c37",
-    "timestamp": "2024-05-11T05:35:25.933Z",
+    "message_id": "59792420-4036-4537-b557-e29cb3ddcb03",
+    "timestamp": "2024-05-11T05:31:45.070Z",
     "ttl": "PT10M",
     "version": "2.0.0"
   },
@@ -56,20 +56,25 @@
           "parent_item_id": "I1",
           "xinput": {
             "form": {
-              "id": "FO8"
+              "id": "FO5"
             },
             "form_response": {
-              "status": "SUCCESS",
-              "submission_id": "20240511105105603"
+              "submission_id": "20240511105105603",
+              "status": "SUCCESS"
             }
           }
         }
       ],
+      "provider": {
+        "id": "P1"
+      },
       "payments": [
         {
           "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
           "params": {
-            "amount": "10493",
+            "amount": "10494",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
             "currency": "INR"
@@ -145,66 +150,9 @@
                 }
               ]
             }
-          ],
-          "status": "NOT-PAID",
-          "type": "PRE-ORDER"
+          ]
         }
-      ],
-      "provider": {
-        "id": "P1"
-      },
-      "quote": {
-        "id": "Q1",
-        "breakup": [
-          {
-            "price": {
-              "value": "7665.3",
-              "currency": "INR"
-            },
-            "title": "BASE_PRICE"
-          },
-          {
-            "price": {
-              "value": "1600.72",
-              "currency": "INR"
-            },
-            "title": "TAX"
-          },
-          {
-            "price": {
-              "value": "0",
-              "currency": "INR"
-            },
-            "title": "CONVIENCE_FEE"
-          },
-          {
-            "price": {
-              "value": "1227.6",
-              "currency": "INR"
-            },
-            "item": {
-              "id": "I1",
-              "add_ons": [
-                {
-                  "id": "CRITICAL_ILLNESS_COVER"
-                }
-              ]
-            },
-            "title": "ADD_ONS"
-          },
-          {
-            "price": {
-              "value": "0",
-              "currency": "INR"
-            },
-            "title": "PROCESSING_FEE"
-          }
-        ],
-        "price": {
-          "value": "10493",
-          "currency": "INR"
-        }
-      }
+      ]
     }
   }
 }
