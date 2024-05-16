@@ -8,13 +8,13 @@
           "code": "*"
         }
       },
-      "timestamp": "2024-05-09T13:46:37.681Z",
+      "timestamp": "2024-05-16T08:03:10.668Z",
       "version": "2.0.0",
       "ttl": "PT10M",
       "action": "on_update",
       "domain": "ONDC:FIS12",
-      "transaction_id": "8bb8a9d7-6856-4761-9ff8-412d9230a913",
-      "message_id": "654f7824-e80c-4390-b7ce-dcd8bfc8ff02",
+      "transaction_id": "9776db22-9d19-4be4-8f56-e3b4c9264e59",
+      "message_id": "f2cb1a7c-e4dc-4fd0-892f-340bee042412",
       "bap_id": "preprod.ondc.indipe.in",
       "bap_uri": "https://preprod.ondc.indipe.in/api/v1/credit-buyer-app",
       "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
@@ -282,7 +282,7 @@
                       "code": "CONSENT_HANDLER",
                       "name": "Consent Handler"
                     },
-                    "value": "3657d01a-a312-4630-bb73-510dcb5dc089"
+                    "value": "32dcd99d-42ce-4b37-95fa-faf676170912"
                   }
                 ],
                 "display": false
@@ -291,7 +291,7 @@
           }
         ],
         "quote": {
-          "id": "7a050d9b-ff2c-4c63-996a-28afde01823c",
+          "id": "d72d0130-6fc5-408c-9329-a4dbbb280250",
           "price": {
             "currency": "INR",
             "value": "442300"
@@ -384,8 +384,8 @@
         ],
         "payments": [
           {
-            "id": "8cf7d8ce-6cff-4baa-adec-0f363a50eb6f",
-            "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=442300&order_id=7a050d9b-ff2c-4c63-996a-28afde01823c&label=FORECLOSURE",
+            "id": "5f340217-b398-4a0c-8c88-fb524d521342",
+            "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=442300&order_id=d72d0130-6fc5-408c-9329-a4dbbb280250&label=FORECLOSURE",
             "params": {
               "amount": "442300",
               "currency": "INR"
@@ -397,7 +397,7 @@
             "type": "POST_FULFILLMENT"
           },
           {
-            "id": "e1a5d8c2-5676-48c8-8533-b802b33b992f",
+            "id": "488e7429-2db1-468e-9805-97cd9ad1c104",
             "type": "ON_ORDER",
             "status": "NOT-PAID",
             "collected_by": "BPP",
@@ -485,8 +485,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-06-01T13:45:32.822Z",
-                "end": "2024-06-30T13:45:32.822Z"
+                "start": "2024-06-01T08:02:12.655Z",
+                "end": "2024-06-30T08:02:12.655Z"
               }
             }
           },
@@ -501,8 +501,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-07-01T13:45:32.822Z",
-                "end": "2024-07-31T13:45:32.822Z"
+                "start": "2024-07-01T08:02:12.655Z",
+                "end": "2024-07-31T08:02:12.655Z"
               }
             }
           },
@@ -517,8 +517,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-08-01T13:45:32.822Z",
-                "end": "2024-08-31T13:45:32.822Z"
+                "start": "2024-08-01T08:02:12.655Z",
+                "end": "2024-08-31T08:02:12.655Z"
               }
             }
           },
@@ -533,8 +533,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-09-01T13:45:32.822Z",
-                "end": "2024-09-30T13:45:32.822Z"
+                "start": "2024-09-01T08:02:12.655Z",
+                "end": "2024-09-30T08:02:12.655Z"
               }
             }
           },
@@ -549,8 +549,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-10-01T13:45:32.822Z",
-                "end": "2024-10-31T13:45:32.822Z"
+                "start": "2024-10-01T08:02:12.655Z",
+                "end": "2024-10-31T08:02:12.655Z"
               }
             }
           }
@@ -569,6 +569,20 @@
             "cancellation_fee": {
               "percentage": "3%"
             }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "DISBURSED"
+              }
+            },
+            "external_ref": {
+              "mimetype": "text/html",
+              "url": "https://bpp.credit.becknprotocol.org/tnc.html"
+            },
+            "cancellation_fee": {
+              "percentage": "5%"
+            }
           }
         ],
         "documents": [
@@ -581,8 +595,19 @@
             },
             "mime_type": "application/pdf",
             "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/agreement.pdf"
+          },
+          {
+            "descriptor": {
+              "code": "LOAN_CANCELLATION",
+              "name": "Loan Cancellation Document",
+              "short_desc": "Download your Loan Cancellation document here",
+              "long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
+            },
+            "mime_type": "application/pdf",
+            "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
           }
-        ]
+        ],
+        "id": "d72d0130-6fc5-408c-9329-a4dbbb280250"
       }
     }
   }
