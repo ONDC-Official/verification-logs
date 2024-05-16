@@ -9,14 +9,14 @@
       }
     },
     "version": "2.0.0",
+    "domain": "ONDC:FIS13",
     "action": "init",
-    "transaction_id": "cd325bee-995f-40c5-a227-8b4d8d2ddb1d",
-    "message_id": "16d2f5a7-283a-4c19-95ab-e55035a3f0a4",
-    "timestamp": "2024-05-08T20:29:23.036Z",
+    "transaction_id": "588f8ad5-d565-4ac7-acde-7ff41ee9e8a5",
+    "message_id": "b18c9f78-161a-4dc8-aaab-09d575173ca3",
+    "timestamp": "2024-05-16T18:07:48.785Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
-    "domain": "ONDC:FIS13",
     "bpp_id": "ondc.sequelstring.com/seller/protocol",
     "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
   },
@@ -29,8 +29,11 @@
         {
           "customer": {
             "contact": {
-              "email": "mail@mail.com",
-              "phone": "9876543210"
+              "email": "example@example.com",
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "John Doe"
             }
           }
         }
@@ -38,20 +41,20 @@
       "items": [
         {
           "id": "I5",
-          "xinput": {
-            "form": {
-              "id": "746735bc-52ce-4002-954b-86d73ff2c5cd"
-            },
-            "form_response": {
-              "status": "SUCCESS",
-              "submission_id": "f3fbe049-b23b-4339-b374-7b85824c50b4"
-            }
-          },
           "time": {
             "label": "Coverage Time",
             "range": {
-              "start": "2024-05-08T20:29:31.227Z",
-              "end": "2024-05-08T20:29:31.227Z"
+              "start": "2024-05-16T18:07:48.785Z",
+              "end": "2024-05-16T18:07:48.785Z"
+            }
+          },
+          "xinput": {
+            "form": {
+              "id": "f6d0db0f-3519-4c3c-946b-8cd841451b96"
+            },
+            "form_response": {
+              "status": "SUCCESS",
+              "submission_id": "e29009b6-80d5-453e-b10e-da5f7e2e7504"
             }
           }
         }
@@ -60,12 +63,12 @@
         {
           "collected_by": "BPP",
           "status": "NOT-PAID",
-          "type": "ON_ORDER",
+          "type": "PRE-ORDER",
           "params": {
-            "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx",
             "currency": "INR",
-            "amount": "1100"
+            "amount": "1000",
+            "bank_account_number": "1800002341",
+            "bank_code": "SBIN0001234"
           },
           "tags": [
             {
@@ -96,27 +99,51 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
+                    "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "1159"
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "neft"
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "5"
+                  "value": "2.5"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1000"
                 },
                 {
                   "descriptor": {

@@ -9,14 +9,14 @@
       }
     },
     "version": "2.0.0",
+    "domain": "ONDC:FIS13",
     "action": "on_init",
-    "transaction_id": "f0544225-2bb2-4677-8465-d10c2e494004",
-    "message_id": "104d0f8c-6b7e-4411-a67f-fce5c2a71721",
-    "timestamp": "2024-05-08T17:08:16.450Z",
+    "transaction_id": "588f8ad5-d565-4ac7-acde-7ff41ee9e8a5",
+    "message_id": "b18c9f78-161a-4dc8-aaab-09d575173ca3",
+    "timestamp": "2024-05-16T18:07:49.211Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30M",
-    "domain": "ONDC:FIS13",
     "bpp_id": "ondc.sequelstring.com/seller/protocol",
     "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
   },
@@ -49,51 +49,37 @@
           "tags": [
             {
               "descriptor": {
-                "name": "General Information",
-                "code": "GENERAL_INFO"
+                "name": "Policy Details",
+                "code": "POLICY_DETAILS"
               },
               "list": [
                 {
                   "descriptor": {
-                    "name": "Co-Payment",
-                    "code": "CO_PAYMENT"
+                    "name": "Commodity type",
+                    "code": "COMMODITY_TYPE"
                   },
-                  "value": "Yes"
+                  "value": "FOOD"
                 },
                 {
                   "descriptor": {
-                    "name": "Liability Coverage",
-                    "code": "LIABILITY_COVERAGE"
+                    "name": "Sum insured",
+                    "code": "SUM_INSURED"
                   },
                   "value": "100000"
                 },
                 {
                   "descriptor": {
-                    "name": "Protection and Indemnity",
-                    "code": "PROTECTION_AND_INDEMNITY"
+                    "name": "Mode of conveyance",
+                    "code": "MODE_OF_CONVEYANCE"
                   },
-                  "value": "50000"
+                  "value": "Cargo"
                 },
                 {
                   "descriptor": {
-                    "name": "Extended Coverage`u`",
-                    "code": "EXTENDED_COVERAGE"
+                    "name": "Basis of valuation",
+                    "code": "BASIS_OF_VALUATION"
                   },
-                  "value": "20000"
-                },
-                {
-                  "descriptor": {
-                    "name": "Deductibles and Excess",
-                    "code": "DEDUCTIBLES_AND_EXCESS"
-                  },
-                  "value": "2000"
-                },
-                {
-                  "descriptor": {
-                    "name": "Institute Cargo Clauses",
-                    "code": "INSTITUTE_CARGO_CLAUSE"
-                  },
-                  "value": "200000 "
+                  "value": "5"
                 }
               ]
             }
@@ -101,6 +87,13 @@
           "price": {
             "currency": "INR",
             "value": "100000"
+          },
+          "time": {
+            "label": "Coverage Time",
+            "range": {
+              "start": "2024-05-16T18:07:48.785Z",
+              "end": "2024-05-16T18:07:48.785Z"
+            }
           }
         }
       ],
@@ -145,23 +138,29 @@
         {
           "customer": {
             "contact": {
-              "email": "mail@mail.com",
-              "phone": "9876543210"
+              "email": "example@example.com",
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "John Doe"
+            },
+            "organization": {
+              "address": "1/4 ABC Society, XYZ Locality, Bangalore, Karnataka"
             }
           },
-          "id": "c02b7c42-bc87-46de-9ff6-592dd9cc7363"
+          "id": "58dde3fe-f496-4ddc-806a-70940a78515c"
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
           "status": "NOT-PAID",
-          "type": "ON_ORDER",
+          "type": "PRE-ORDER",
           "params": {
-            "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx",
             "currency": "INR",
-            "amount": "1100"
+            "amount": "1000",
+            "bank_account_number": "1800002341",
+            "bank_code": "SBIN0001234"
           },
           "tags": [
             {
@@ -192,27 +191,51 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
+                    "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "1159"
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "neft"
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "5"
+                  "value": "2.5"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1000"
                 },
                 {
                   "descriptor": {
@@ -223,7 +246,13 @@
               ]
             }
           ],
-          "url": "https://payment.fis.test.bpp.io"
+          "time": {
+            "range": {
+              "end": "2024-06-01T18:07:49.209Z",
+              "start": "2024-06-30T18:07:49.209Z"
+            }
+          },
+          "url": "https://ondc.sequelstring.com/seller/toPaymentUtility"
         }
       ]
     }

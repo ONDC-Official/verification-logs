@@ -9,14 +9,14 @@
             }
         },
         "version": "2.0.0",
+        "domain": "ONDC:FIS13",
         "action": "on_status",
-        "transaction_id": "cd325bee-995f-40c5-a227-8b4d8d2ddb1d",
-        "message_id": "64c4fd48-6f94-4e11-9a22-61c9e2183ce9",
-        "timestamp": "2024-05-08T20:29:45.836Z",
+        "transaction_id": "588f8ad5-d565-4ac7-acde-7ff41ee9e8a5",
+        "message_id": "0e4699ba-0ecd-458a-abb2-21d7366edd2f",
+        "timestamp": "2024-05-16T18:22:04.625Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT30M",
-        "domain": "ONDC:FIS13",
+        "ttl": "PT10M",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
         "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
     },
@@ -27,11 +27,17 @@
                 {
                     "customer": {
                         "contact": {
-                            "email": "mail@mail.com",
-                            "phone": "9876543210"
+                            "email": "example@example.com",
+                            "phone": "1234567890"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        },
+                        "organization": {
+                            "address": "1/4 ABC Society, XYZ Locality, Bangalore, Karnataka"
                         }
                     },
-                    "id": "2d2a78f7-0217-403b-8e6f-72b19cfec650"
+                    "id": "58dde3fe-f496-4ddc-806a-70940a78515c"
                 }
             ],
             "provider": {
@@ -54,51 +60,37 @@
                     "tags": [
                         {
                             "descriptor": {
-                                "name": "General Information",
-                                "code": "GENERAL_INFO"
+                                "name": "Policy Details",
+                                "code": "POLICY_DETAILS"
                             },
                             "list": [
                                 {
                                     "descriptor": {
-                                        "name": "Co-Payment",
-                                        "code": "CO_PAYMENT"
+                                        "name": "Commodity type",
+                                        "code": "COMMODITY_TYPE"
                                     },
-                                    "value": "Yes"
+                                    "value": "FOOD"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Liability Coverage",
-                                        "code": "LIABILITY_COVERAGE"
+                                        "name": "Sum insured",
+                                        "code": "SUM_INSURED"
                                     },
                                     "value": "100000"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Protection and Indemnity",
-                                        "code": "PROTECTION_AND_INDEMNITY"
+                                        "name": "Mode of conveyance",
+                                        "code": "MODE_OF_CONVEYANCE"
                                     },
-                                    "value": "50000"
+                                    "value": "Cargo"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Extended Coverage`u`",
-                                        "code": "EXTENDED_COVERAGE"
+                                        "name": "Basis of valuation",
+                                        "code": "BASIS_OF_VALUATION"
                                     },
-                                    "value": "20000"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Deductibles and Excess",
-                                        "code": "DEDUCTIBLES_AND_EXCESS"
-                                    },
-                                    "value": "2000"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Institute Cargo Clauses",
-                                        "code": "INSTITUTE_CARGO_CLAUSE"
-                                    },
-                                    "value": "200000 "
+                                    "value": "5"
                                 }
                             ]
                         }
@@ -106,6 +98,13 @@
                     "price": {
                         "currency": "INR",
                         "value": "100000"
+                    },
+                    "time": {
+                        "label": "Coverage Time",
+                        "range": {
+                            "start": "2024-05-16T18:07:48.785Z",
+                            "end": "2024-05-16T18:07:48.785Z"
+                        }
                     }
                 }
             ],
@@ -113,13 +112,13 @@
                 {
                     "collected_by": "BPP",
                     "status": "PAID",
-                    "type": "ON_ORDER",
+                    "type": "PRE-ORDER",
                     "params": {
-                        "bank_code": "XXXXXXXX",
-                        "bank_account_number": "xxxxxxxxxxxxxx",
                         "currency": "INR",
-                        "amount": "1100",
-                        "transaction_id": "cd325bee-995f-40c5-a227-8b4d8d2ddb1d"
+                        "amount": "1000",
+                        "bank_account_number": "1800002341",
+                        "bank_code": "SBIN0001234",
+                        "transaction_id": "588f8ad5-d565-4ac7-acde-7ff41ee9e8a5"
                     },
                     "tags": [
                         {
@@ -150,27 +149,51 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
+                                        "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "1159"
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_TYPE"
                                     },
-                                    "value": "neft"
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "DELAY_INTEREST"
                                     },
-                                    "value": "5"
+                                    "value": "2.5"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "STATIC_TERMS"
                                     },
-                                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1000"
                                 },
                                 {
                                     "descriptor": {
@@ -271,10 +294,20 @@
                         "long_desc": "Buyer can claim their insurance by visiting the below url"
                     },
                     "mime_type": "application/html",
-                    "url": "https://ondc.sequelstring.com/seller/form/claim/142541a8-af02-4268-87e5-f05fcf55ba31"
+                    "url": "https://ondc.sequelstring.com/seller/form/0f0040df-3f3c-416f-8f98-5ed13883eb04"
+                },
+                {
+                    "descriptor": {
+                        "code": "RENEW_DOC",
+                        "name": "Renew Insurance Policy",
+                        "short_desc": "Buyer can renew their insurance by visiting the below url",
+                        "long_desc": "Buyer can easily renew their insurance policies by visiting the following URL"
+                    },
+                    "mime_type": "application/html",
+                    "url": "https://ondc.sequelstring.com/seller/form/3e0e90cd-ae21-4b47-b612-6b6932763f50"
                 }
             ],
-            "id": "30011d43-905d-4747-a4ec-08490c03afd0"
+            "id": "9043829b-a59b-49e4-a9ba-9f1ec6cd29a0"
         }
     }
 }
