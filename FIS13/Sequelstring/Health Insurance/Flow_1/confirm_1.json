@@ -9,14 +9,14 @@
       }
     },
     "version": "2.0.0",
+    "domain": "ONDC:FIS13",
     "action": "confirm",
-    "transaction_id": "48fdeb1a-0fe5-4fdc-9003-9913289eb6c5",
-    "message_id": "5e2a1560-6925-4191-93c5-093562058315",
-    "timestamp": "2024-05-08T05:04:44.068Z",
+    "transaction_id": "7dfd7cc0-7802-4cbd-9b11-2db1ea592de2",
+    "message_id": "164570d8-2e95-4b35-8ff9-3cc494580ab6",
+    "timestamp": "2024-05-16T20:07:30.578Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
-    "ttl": "PT30M",
-    "domain": "ONDC:FIS13",
+    "ttl": "PT10M",
     "bpp_id": "ondc.sequelstring.com/seller/protocol",
     "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
   },
@@ -25,31 +25,13 @@
       "provider": {
         "id": "P1"
       },
-      "fulfillments": [
-        {
-          "customer": {
-            "contact": {
-              "email": "ayush@gmail.com",
-              "phone": "9103334800"
-            }
-          }
-        }
-      ],
       "items": [
         {
-          "id": "M1715144654628",
-          "xinput": {
-            "form": {
-              "id": "6fad39b2-de7a-487b-9708-13372d2157f3"
-            },
-            "form_response": {
-              "status": "SUCCESS",
-              "submission_id": "4a6e466b-6578-4e5c-b7db-8e9049b88a02"
-            }
-          },
+          "id": "M1715889997163",
+          "parent_item_id": "I2",
           "add_ons": [
             {
-              "id": "A1",
+              "id": "C1",
               "quantity": {
                 "selected": {
                   "count": 1
@@ -57,19 +39,95 @@
               }
             }
           ],
-          "parent_item_id": "I1"
+          "xinput": {
+            "form": {
+              "id": "98fbba13-75e3-4307-831c-3eab9c12af53"
+            },
+            "form_response": {
+              "status": "SUCCESS",
+              "submission_id": "4a264e92-667f-4eb6-a037-7786232ab5ab"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "id": "1dd0d22a-2810-4363-91d0-2594894c682a",
+        "breakup": [
+          {
+            "price": {
+              "value": "1000",
+              "currency": "INR"
+            },
+            "title": "BASE_PRICE"
+          },
+          {
+            "price": {
+              "value": "50",
+              "currency": "INR"
+            },
+            "title": "CONVIENCE_FEE"
+          },
+          {
+            "price": {
+              "value": "10",
+              "currency": "INR"
+            },
+            "title": "PROCESSING_FEE"
+          },
+          {
+            "price": {
+              "value": "40",
+              "currency": "INR"
+            },
+            "title": "TAX"
+          },
+          {
+            "title": "ADD_ONS",
+            "item": {
+              "id": "I2",
+              "add_ons": [
+                {
+                  "id": "C1"
+                }
+              ]
+            },
+            "price": {
+              "value": "100",
+              "currency": "INR"
+            }
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "1200"
+        },
+        "ttl": "PT15D"
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "email": "example@example.com",
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "abhinav"
+            }
+          },
+          "id": "94ef1811-3643-419c-a512-ebb2469ea8ee"
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
-          "status": "NOT-PAID",
-          "type": "ON_ORDER",
+          "status": "PAID",
+          "type": "PRE-ORDER",
           "params": {
-            "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx",
             "currency": "INR",
-            "amount": "1100"
+            "amount": "1200",
+            "bank_account_number": "1800002341",
+            "bank_code": "SBIN0001234",
+            "transaction_id": "7dfd7cc0-7802-4cbd-9b11-2db1ea592de2"
           },
           "tags": [
             {
@@ -100,27 +158,51 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
+                    "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "1159"
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "neft"
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "5"
+                  "value": "2.5"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1000"
                 },
                 {
                   "descriptor": {
