@@ -1,0 +1,242 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
+      }
+    },
+    "domain": "ONDC:TRV11",
+    "action": "on_confirm",
+    "version": "2.0.0",
+    "bap_id": "dev-ondc-buyer-api.chartr.in",
+    "bap_uri": "https://dev-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
+    "bpp_id": "dev-ondc-ticketing-api.delhitransport.in",
+    "bpp_uri": "https://dev-ondc-ticketing-api.delhitransport.in/",
+    "transaction_id": "d1388785-41a8-4edc-88ec-086daef1f9ca",
+    "message_id": "41820727-64c2-4d1e-ba19-83aba5eb2cef",
+    "timestamp": "2024-05-21T11:09:37.709Z"
+  },
+  "message": {
+    "order": {
+      "id": "I1",
+      "status": "ACTIVE",
+      "items": [
+        {
+          "id": "I1",
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT",
+            "images": [
+              {
+                "url": "https://transitsolutions.in/logos/logo.icon",
+                "size_type": "xs"
+              }
+            ]
+          },
+          "fulfillment_ids": [
+            "F1"
+          ],
+          "price": {
+            "currency": "INR",
+            "value": "4.5"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          }
+        }
+      ],
+      "provider": {
+        "id": "P1",
+        "descriptor": "Delhi Integrated Multi-Modal Transit System"
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "descriptor": {
+                  "name": "Rohini Sec 22 Terminal",
+                  "code": "ROHINI_SEC_22_TERMINAL"
+                },
+                "gps": "28.718025, 77.0638"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "T210520243711e91eb7",
+                "valid_to": "2024-05-22T03:00:00.754501+05:30"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "descriptor": {
+                  "name": "Avantika Xing",
+                  "code": "AVANTIKA_XING"
+                },
+                "gps": "28.698384, 77.097225"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "BUS"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ROUTE_ID"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "ROUTE_DIRECTION"
+                  },
+                  "value": "DOWN"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "cancel_by": {
+            "duration": "PT60M"
+          },
+          "cancellation_fee": {
+            "percentage": "0"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": 4.5,
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "Base Fare",
+            "item": {
+              "id": "I1"
+            },
+            "price": {
+              "currency": "INR",
+              "value": 4.5
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "PA1",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "240521163919VVG4",
+            "currency": "INR",
+            "amount": "4.5"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.abc.com/settlement-terms/"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "12505"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
