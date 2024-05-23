@@ -11,9 +11,9 @@
     "version": "2.0.0",
     "domain": "ONDC:FIS13",
     "action": "on_confirm",
-    "transaction_id": "34c0a54c-8cc8-4332-be3e-b0967a261c44",
-    "message_id": "09266ca0-5ce3-4a8b-9b9b-0519820cb376",
-    "timestamp": "2024-05-18T15:52:29.989Z",
+    "transaction_id": "c0453b83-38e7-4f64-9006-ad69e193d3d0",
+    "message_id": "d4e629d5-c2a5-47b5-9227-b67c4b853291",
+    "timestamp": "2024-05-23T04:37:59.449Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30M",
@@ -34,7 +34,7 @@
               "name": "John Doe"
             }
           },
-          "id": "aeaba95d-683a-498d-912f-db2eecbf8473",
+          "id": "2d5fd277-b2c4-44c4-bf28-3fe3551ffaab",
           "state": {
             "descriptor": {
               "code": "GRANTED"
@@ -42,9 +42,41 @@
           }
         }
       ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "name": "Insurance processing",
+              "code": "INSURANCE_PROCESSING"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "3%"
+          },
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://icicibank.com/loan/tnc.html"
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "name": "Insurance_granted",
+              "code": "INSURANCE_GRANTED"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "5%"
+          },
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://icicibank.com/loan/tnc.html"
+          }
+        }
+      ],
       "items": [
         {
-          "id": "M1716047296844",
+          "id": "M1716438997507",
           "descriptor": {
             "name": "Health Gain Plus Individual",
             "short_desc": "ABC Individual Health Insurance Class A with custom addon"
@@ -124,22 +156,56 @@
                 },
                 {
                   "descriptor": {
-                    "code": "PROPOSAL_ID"
+                    "code": "BASE_PRICE",
+                    "name": "Base Price",
+                    "short_desc": "Base Price"
                   },
-                  "value": "PRP_ID"
+                  "value": "900"
+                },
+                {
+                  "descriptor": {
+                    "code": "CONVIENCE_FEE",
+                    "name": "Convience Fee",
+                    "short_desc": "Convience Fee"
+                  },
+                  "value": "50"
+                },
+                {
+                  "descriptor": {
+                    "code": "PROCESSING_FEE",
+                    "name": "Processing Fee",
+                    "short_desc": "Processing Fee"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "TAX",
+                    "name": "Tax",
+                    "short_desc": "Tax"
+                  },
+                  "value": "40"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFER_VALIDITY",
+                    "name": "Offer validity",
+                    "short_desc": "Describes the offer validity"
+                  },
+                  "value": "PT15D"
                 }
               ]
             }
           ],
           "add_ons": [
             {
-              "id": "A1",
+              "id": "A4",
               "descriptor": {
-                "name": "No Claim Bonus",
-                "code": "NO_CLAIM_BONUS"
+                "name": "Domicialiary Expenses",
+                "code": "DOMICILIARY_EXPENSES"
               },
               "price": {
-                "value": "100",
+                "value": "400",
                 "currency": "INR"
               },
               "quantity": {
@@ -159,7 +225,7 @@
             "value": "900"
           },
           "fulfillment_ids": [
-            "aeaba95d-683a-498d-912f-db2eecbf8473"
+            "2d5fd277-b2c4-44c4-bf28-3fe3551ffaab"
           ]
         }
       ],
@@ -170,10 +236,10 @@
           "type": "PRE-ORDER",
           "params": {
             "currency": "INR",
-            "amount": "1100",
+            "amount": "1000",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234",
-            "transaction_id": "34c0a54c-8cc8-4332-be3e-b0967a261c44"
+            "transaction_id": "c0453b83-38e7-4f64-9006-ad69e193d3d0"
           },
           "tags": [
             {
@@ -248,7 +314,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "1100"
+                  "value": "9.00"
                 },
                 {
                   "descriptor": {
@@ -262,7 +328,7 @@
         }
       ],
       "provider": {
-        "id": "P1",
+        "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
         "descriptor": {
           "images": [
             {
@@ -276,7 +342,7 @@
         }
       },
       "quote": {
-        "id": "a137bc3a-f9f9-47e0-a443-9e221e00da37",
+        "id": "504e0c5c-2b78-4eef-a3f8-e3c9f4067491",
         "breakup": [
           {
             "price": {
@@ -312,19 +378,19 @@
               "id": "I1",
               "add_ons": [
                 {
-                  "id": "A1"
+                  "id": "A4"
                 }
               ]
             },
             "price": {
-              "value": "100",
+              "value": "400",
               "currency": "INR"
             }
           }
         ],
         "price": {
           "currency": "INR",
-          "value": "1100"
+          "value": "1400"
         },
         "ttl": "PT15D"
       },
@@ -347,7 +413,7 @@
             "long_desc": "Buyer can claim their insurance by visiting the below url"
           },
           "mime_type": "application/html",
-          "url": "https://ondc.sequelstring.com/seller/form/e7a303c0-e7a9-44d8-901c-34db8f509ce1"
+          "url": "https://ondc.sequelstring.com/seller/form/f5b00a30-86c1-4c38-9558-c83003fe2b93"
         },
         {
           "descriptor": {
@@ -357,12 +423,12 @@
             "long_desc": "Buyer can easily renew their insurance policies by visiting the following URL"
           },
           "mime_type": "application/html",
-          "url": "https://ondc.sequelstring.com/seller/form/6b5df287-681a-4162-92ba-9ef1800f388a"
+          "url": "https://ondc.sequelstring.com/seller/form/ff28325f-f7a7-4bc2-b7cb-bda0c8833486"
         }
       ],
-      "created_at": "2024-05-18T15:52:29.989Z",
-      "updated_at": "2024-05-18T15:52:29.989Z",
-      "id": "45fabac7-8f0d-497b-ad56-ddd48b58bfe9"
+      "created_at": "2023-07-24T05:41:32.487Z",
+      "updated_at": "2023-07-24T05:41:32.487Z",
+      "id": "c7bd86d6-b406-42be-bfa8-c792f316b5aa"
     }
   }
 }

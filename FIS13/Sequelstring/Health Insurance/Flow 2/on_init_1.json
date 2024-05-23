@@ -11,9 +11,9 @@
     "version": "2.0.0",
     "domain": "ONDC:FIS13",
     "action": "on_init",
-    "transaction_id": "34c0a54c-8cc8-4332-be3e-b0967a261c44",
-    "message_id": "60bdc19a-546c-4679-a623-f99b9ddba125",
-    "timestamp": "2024-05-18T15:51:50.331Z",
+    "transaction_id": "c0453b83-38e7-4f64-9006-ad69e193d3d0",
+    "message_id": "0d2be50f-e6e1-4f3a-9267-35cd03c641e2",
+    "timestamp": "2024-05-23T04:37:26.760Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30M",
@@ -23,7 +23,7 @@
   "message": {
     "order": {
       "provider": {
-        "id": "P1",
+        "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
         "descriptor": {
           "images": [
             {
@@ -38,7 +38,7 @@
       },
       "items": [
         {
-          "id": "M1716047296844",
+          "id": "M1716438997507",
           "descriptor": {
             "name": "Health Gain Plus Individual",
             "short_desc": "ABC Individual Health Insurance Class A with custom addon"
@@ -122,22 +122,56 @@
                 },
                 {
                   "descriptor": {
-                    "code": "PROPOSAL_ID"
+                    "code": "BASE_PRICE",
+                    "name": "Base Price",
+                    "short_desc": "Base Price"
                   },
-                  "value": "PRP_ID"
+                  "value": "900"
+                },
+                {
+                  "descriptor": {
+                    "code": "CONVIENCE_FEE",
+                    "name": "Convience Fee",
+                    "short_desc": "Convience Fee"
+                  },
+                  "value": "50"
+                },
+                {
+                  "descriptor": {
+                    "code": "PROCESSING_FEE",
+                    "name": "Processing Fee",
+                    "short_desc": "Processing Fee"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "TAX",
+                    "name": "Tax",
+                    "short_desc": "Tax"
+                  },
+                  "value": "40"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFER_VALIDITY",
+                    "name": "Offer validity",
+                    "short_desc": "Describes the offer validity"
+                  },
+                  "value": "PT15D"
                 }
               ]
             }
           ],
           "add_ons": [
             {
-              "id": "A1",
+              "id": "A4",
               "descriptor": {
-                "name": "No Claim Bonus",
-                "code": "NO_CLAIM_BONUS"
+                "name": "Domicialiary Expenses",
+                "code": "DOMICILIARY_EXPENSES"
               },
               "price": {
-                "value": "100",
+                "value": "400",
                 "currency": "INR"
               },
               "quantity": {
@@ -172,9 +206,9 @@
               ]
             },
             "form": {
-              "id": "71697ed2-f8f7-418d-b418-035485f689ff",
+              "id": "845bca44-81ec-4b96-870e-b601eab9c2d6",
               "mime_type": "text/html",
-              "url": "https://ondc.sequelstring.com/seller/form/71697ed2-f8f7-418d-b418-035485f689ff",
+              "url": "https://ondc.sequelstring.com/seller/form/845bca44-81ec-4b96-870e-b601eab9c2d6",
               "resubmit": false,
               "multiple_sumbissions": false
             },
@@ -183,7 +217,7 @@
         }
       ],
       "quote": {
-        "id": "a137bc3a-f9f9-47e0-a443-9e221e00da37",
+        "id": "504e0c5c-2b78-4eef-a3f8-e3c9f4067491",
         "breakup": [
           {
             "price": {
@@ -219,19 +253,19 @@
               "id": "I1",
               "add_ons": [
                 {
-                  "id": "A1"
+                  "id": "A4"
                 }
               ]
             },
             "price": {
-              "value": "100",
+              "value": "400",
               "currency": "INR"
             }
           }
         ],
         "price": {
           "currency": "INR",
-          "value": "1100"
+          "value": "1400"
         },
         "ttl": "PT15D"
       },
@@ -246,7 +280,7 @@
               "name": "John Doe"
             }
           },
-          "id": "0a54e6ae-f3a2-4588-ba80-6b5ead40ed01"
+          "id": "56106863-ffea-4df7-83db-184dbe636276"
         }
       ],
       "payments": [
@@ -256,7 +290,7 @@
           "type": "PRE-ORDER",
           "params": {
             "currency": "INR",
-            "amount": "1100",
+            "amount": "1000",
             "bank_account_number": "1800002341",
             "bank_code": "SBIN0001234"
           },
@@ -333,7 +367,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "1100"
+                  "value": "9.00"
                 },
                 {
                   "descriptor": {
@@ -345,6 +379,38 @@
             }
           ],
           "url": "https://ondc.sequelstring.com/seller/toPaymentUtility"
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "name": "Insurance processing",
+              "code": "INSURANCE_PROCESSING"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "3%"
+          },
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://icicibank.com/loan/tnc.html"
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "name": "Insurance_granted",
+              "code": "INSURANCE_GRANTED"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "5%"
+          },
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://icicibank.com/loan/tnc.html"
+          }
         }
       ]
     }
