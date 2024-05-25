@@ -1,0 +1,220 @@
+{
+  "context": {
+    "domain": "ONDC:FIS13",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "confirm",
+    "transaction_id": "fa97ea1a-80a1-43fd-a03d-12066d3bd79e",
+    "message_id": "0b85906c-3970-4828-80e2-5a2fb2b09a01",
+    "timestamp": "2024-05-25T15:11:45.208Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "quote": {
+        "id": "eaaf774b-7527-41a4-aa42-2d15b1f9d48a",
+        "breakup": [
+          {
+            "price": {
+              "value": "1000",
+              "currency": "INR"
+            },
+            "title": "BASE_PRICE"
+          },
+          {
+            "price": {
+              "value": "50",
+              "currency": "INR"
+            },
+            "title": "CONVIENCE_FEE"
+          },
+          {
+            "price": {
+              "value": "10",
+              "currency": "INR"
+            },
+            "title": "PROCESSING_FEE"
+          },
+          {
+            "price": {
+              "value": "40",
+              "currency": "INR"
+            },
+            "title": "TAX"
+          },
+          {
+            "title": "ADD_ONS",
+            "item": {
+              "id": "I2",
+              "add_ons": [
+                {
+                  "id": "C1"
+                }
+              ]
+            },
+            "price": {
+              "value": "100",
+              "currency": "INR"
+            }
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "1200.00"
+        },
+        "ttl": "PT15D"
+      },
+      "fulfillments": [
+        {
+          "id": "1990a040-f989-462c-bd34-cdde5982f269",
+          "customer": {
+            "contact": {
+              "email": "john@gmail.com",
+              "phone": "9876543210"
+            },
+            "person": {
+              "name": "Nirdosh Chauhan"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "M1716649811819",
+          "parent_item_id": "I2",
+          "add_ons": [
+            {
+              "id": "C1",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            }
+          ],
+          "xinput": {
+            "form": {
+              "id": "3060e77e-20f2-42d0-b897-8df949d303bf"
+            },
+            "form_response": {
+              "status": "SUCCESS",
+              "submission_id": "3612771a-340c-4807-82df-abcdf16290c0"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "currency": "INR",
+            "bank_account_number": "1800002341",
+            "bank_code": "SBIN0001234",
+            "amount": "1200.00",
+            "transaction_id": "fa97ea1a-80a1-43fd-a03d-12066d3bd79e"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "10.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "provider": {
+        "id": "P1"
+      }
+    }
+  }
+}
