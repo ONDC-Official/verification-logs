@@ -15,9 +15,9 @@
     "bap_uri": "https://dev-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
     "bpp_id": "dev-ondc-ticketing-api.delhitransport.in",
     "bpp_uri": "https://dev-ondc-ticketing-api.delhitransport.in/",
-    "transaction_id": "c64a3313-fe57-433c-9d09-e787cd945fbc",
-    "message_id": "4a79680a-6819-43d0-ab0e-01ce7e02da94",
-    "timestamp": "2024-05-25T14:03:33.500Z",
+    "transaction_id": "55211c69-79ad-441e-bbbb-9e32ded3d2fd",
+    "message_id": "8701d176-5de1-43f9-bc6f-99f6bcbc340f",
+    "timestamp": "2024-05-27T14:28:25.602Z",
     "ttl": "PT30S"
   },
   "message": {
@@ -46,6 +46,10 @@
             "selected": {
               "count": 1
             }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT2D"
           }
         }
       ],
@@ -64,6 +68,7 @@
       "fulfillments": [
         {
           "id": "F1",
+          "type": "TRIP",
           "stops": [
             {
               "type": "START",
@@ -231,18 +236,6 @@
                     "code": "ROUTE_DIRECTION"
                   },
                   "value": "DOWN"
-                },
-                {
-                  "descriptor": {
-                    "code": "OPERATIONAL_START_TIME"
-                  },
-                  "value": "2024-05-25T06:00:00.000Z"
-                },
-                {
-                  "descriptor": {
-                    "code": "OPERATIONAL_END_TIME"
-                  },
-                  "value": "2024-05-25T23:00:00.000Z"
                 }
               ]
             }
@@ -258,7 +251,16 @@
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "I1"
+              "id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "5.0"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
             },
             "price": {
               "currency": "INR",
@@ -267,9 +269,6 @@
           },
           {
             "title": "TOLL",
-            "item": {
-              "id": "I1"
-            },
             "price": {
               "currency": "INR",
               "value": "0.0"
@@ -277,9 +276,6 @@
           },
           {
             "title": "OFFER",
-            "item": {
-              "id": "I1"
-            },
             "price": {
               "currency": "INR",
               "value": "10"

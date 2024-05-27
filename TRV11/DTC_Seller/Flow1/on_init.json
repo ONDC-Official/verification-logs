@@ -15,9 +15,9 @@
     "bap_uri": "https://dev-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
     "bpp_id": "dev-ondc-ticketing-api.delhitransport.in",
     "bpp_uri": "https://dev-ondc-ticketing-api.delhitransport.in/",
-    "transaction_id": "c64a3313-fe57-433c-9d09-e787cd945fbc",
-    "message_id": "27e721e5-050b-458a-ac46-266ce8c972c9",
-    "timestamp": "2024-05-25T14:03:33.640Z",
+    "transaction_id": "55211c69-79ad-441e-bbbb-9e32ded3d2fd",
+    "message_id": "7c1f3cf9-f2df-4016-9e8d-d86b8c8e1067",
+    "timestamp": "2024-05-27T14:28:25.773Z",
     "ttl": "PT30S"
   },
   "message": {
@@ -46,6 +46,10 @@
             "selected": {
               "count": 1
             }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT2D"
           }
         }
       ],
@@ -64,6 +68,7 @@
       "fulfillments": [
         {
           "id": "F1",
+          "type": "TRIP",
           "stops": [
             {
               "type": "START",
@@ -231,18 +236,6 @@
                     "code": "ROUTE_DIRECTION"
                   },
                   "value": "DOWN"
-                },
-                {
-                  "descriptor": {
-                    "code": "OPERATIONAL_START_TIME"
-                  },
-                  "value": "2024-05-25T06:00:00.000Z"
-                },
-                {
-                  "descriptor": {
-                    "code": "OPERATIONAL_END_TIME"
-                  },
-                  "value": "2024-05-25T23:00:00.000Z"
                 }
               ]
             }
@@ -259,6 +252,11 @@
           }
         }
       ],
+      "billing": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
       "quote": {
         "price": {
           "value": "4.5",
@@ -268,7 +266,16 @@
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "I1"
+              "id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "5.0"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
             },
             "price": {
               "currency": "INR",
@@ -277,9 +284,6 @@
           },
           {
             "title": "TOLL",
-            "item": {
-              "id": "I1"
-            },
             "price": {
               "currency": "INR",
               "value": "0.0"
@@ -287,9 +291,6 @@
           },
           {
             "title": "OFFER",
-            "item": {
-              "id": "I1"
-            },
             "price": {
               "currency": "INR",
               "value": "10"
@@ -303,6 +304,11 @@
           "collected_by": "BAP",
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
+          "params": {
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "9777777777@okicic"
+          },
           "tags": [
             {
               "descriptor": {
@@ -315,6 +321,12 @@
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
                   "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
                 }
               ]
             },
