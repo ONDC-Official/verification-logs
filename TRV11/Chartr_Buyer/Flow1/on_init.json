@@ -11,13 +11,13 @@
     "domain": "ONDC:TRV11",
     "action": "on_init",
     "version": "2.0.0",
-    "bap_id": "dev-ondc-buyer-api.chartr.in",
-    "bap_uri": "https://dev-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
-    "bpp_id": "dev-ondc-ticketing-api.delhitransport.in",
-    "bpp_uri": "https://dev-ondc-ticketing-api.delhitransport.in/",
-    "transaction_id": "c64a3313-fe57-433c-9d09-e787cd945fbc",
-    "message_id": "27e721e5-050b-458a-ac46-266ce8c972c9",
-    "timestamp": "2024-05-25T14:03:33.640Z",
+    "bap_id": "pre-prod-ondc-buyer-api.chartr.in",
+    "bap_uri": "https://pre-prod-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
+    "bpp_id": "pre-prod-ondc-ticketing-api.delhitransport.in",
+    "bpp_uri": "https://pre-prod-ondc-ticketing-api.delhitransport.in/",
+    "transaction_id": "0d1381ba-f289-46ff-9cac-5c30cffe7646",
+    "message_id": "a63653cc-b7f7-4204-89f1-ece16a123823",
+    "timestamp": "2024-05-31T07:02:39.836Z",
     "ttl": "PT30S"
   },
   "message": {
@@ -40,12 +40,16 @@
           ],
           "price": {
             "currency": "INR",
-            "value": "4.5"
+            "value": "5.0"
           },
           "quantity": {
             "selected": {
               "count": 1
             }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT2D"
           }
         }
       ],
@@ -64,6 +68,7 @@
       "fulfillments": [
         {
           "id": "F1",
+          "type": "TRIP",
           "stops": [
             {
               "type": "START",
@@ -231,18 +236,6 @@
                     "code": "ROUTE_DIRECTION"
                   },
                   "value": "DOWN"
-                },
-                {
-                  "descriptor": {
-                    "code": "OPERATIONAL_START_TIME"
-                  },
-                  "value": "2024-05-25T06:00:00.000Z"
-                },
-                {
-                  "descriptor": {
-                    "code": "OPERATIONAL_END_TIME"
-                  },
-                  "value": "2024-05-25T23:00:00.000Z"
                 }
               ]
             }
@@ -268,7 +261,16 @@
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "I1"
+              "id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "5.0"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
             },
             "price": {
               "currency": "INR",
@@ -277,9 +279,6 @@
           },
           {
             "title": "TOLL",
-            "item": {
-              "id": "I1"
-            },
             "price": {
               "currency": "INR",
               "value": "0.0"
@@ -287,9 +286,6 @@
           },
           {
             "title": "OFFER",
-            "item": {
-              "id": "I1"
-            },
             "price": {
               "currency": "INR",
               "value": "10"
@@ -303,6 +299,11 @@
           "collected_by": "BAP",
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
+          "params": {
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "9777777777@okicic"
+          },
           "tags": [
             {
               "descriptor": {
@@ -315,6 +316,12 @@
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
                   "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
                 }
               ]
             },
@@ -358,7 +365,7 @@
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "2.5"
+                  "value": "0.0"
                 },
                 {
                   "descriptor": {
@@ -370,7 +377,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "12505"
+                  "value": "4.5"
                 }
               ]
             }
