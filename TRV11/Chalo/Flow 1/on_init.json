@@ -1,0 +1,189 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:0661"
+      }
+    },
+    "domain": "ONDC:TRV11",
+    "action": "on_init",
+    "ttl": "PT2S",
+    "timestamp": "2024-06-03T19:53:39.726Z",
+    "version": "2.0.0",
+    "bap_id": "dev-ondc.chalo.com",
+    "bap_uri": "https://dev-ondc.chalo.com/ondc/buyer/v1",
+    "transaction_id": "4c7507d2-3dd1-4f56-a06e-50f9b64941a0",
+    "message_id": "4fa67cea-5ce7-4fee-ab0d-14df74053785",
+    "bpp_id": "dev-ondc.chalo.com",
+    "bpp_uri": "https://dev-ondc.chalo.com/ondc/seller/v1"
+  },
+  "message": {
+    "order": {
+      "id": "oqyisn",
+      "status": "INITIATED",
+      "items": [
+        {
+          "id": "KcSCdaJaa-adult-EtrwckLc",
+          "descriptor": {
+            "name": "singleJourneyTicket",
+            "code": "singleJourneyTicket"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "5.0"
+          },
+          "quantity": {
+            "selected": {
+              "count": 4
+            }
+          },
+          "fulfillment_ids": [
+            "EtrwckLc"
+          ]
+        }
+      ],
+      "provider": {
+        "id": "CHALO",
+        "descriptor": {
+          "name": "CHALO"
+        }
+      },
+      "fulfillments": [
+        {
+          "id": "EtrwckLc",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "descriptor": {
+                  "name": "Rourkela Airport Chowk",
+                  "code": "gveMEYdp"
+                },
+                "gps": "22.252589842586374, 84.81380260921"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "BUDvHl5mbupVAGUDHXLD6tuK+m+3zQ==,-1,2",
+                "valid_to": "2024-06-04T19:52:15.020Z"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "descriptor": {
+                  "name": "Birsa Munda Stadium Gate 2",
+                  "code": "NjcqehkR"
+                },
+                "gps": "22.24910837846774, 84.81355674937963"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "BUS"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO"
+              },
+              "display": "false",
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ROUTE_ID"
+                  },
+                  "value": "101 NonAC"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "John Doe",
+        "email": "abcd@example.com",
+        "phone": "9406509858"
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "20.0"
+        },
+        "breakup": [
+          {
+            "title": "Base Fare",
+            "item": {
+              "id": "KcSCdaJaa-adult-EtrwckLc"
+            },
+            "price": {
+              "currency": "INR",
+              "value": "5.0"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "db96f824-b2be-434a-b3d0-535bb8f98455",
+          "params": {
+            "virtual_payment_address": "99881992@okicic"
+          },
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": "false",
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "display": "false",
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                }
+              ]
+            }
+          ],
+          "collected_by": "BAP"
+        }
+      ]
+    }
+  }
+}
