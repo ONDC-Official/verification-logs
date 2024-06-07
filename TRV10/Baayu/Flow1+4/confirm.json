@@ -1,0 +1,114 @@
+{
+  "context": {
+    "location": {
+      "country": { "code": "IND" },
+      "city": { "code": "std:020" }
+    },
+    "domain": "ONDC:TRV10",
+    "timestamp": "2024-06-06T07:32:16.919Z",
+    "transaction_id": "7d412b0a-de5d-4448-9cf0-eb64573adcb0",
+    "message_id": "cac4fb6c-5ed4-4eed-b4ec-128313c9f629",
+    "version": "2.0.0",
+    "action": "confirm",
+    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
+    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
+    "bpp_id": "staging-mobility-ondc.baayu.app",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "Baayu" },
+      "items": [{ "id": "663484504ba1d9a3c08f5afb" }],
+      "billing": { "name": "Rajat Gajbhiye" },
+      "fulfillments": [
+        {
+          "id": "77a1fa25-ee44-490f-863d-018eb42a2e7e",
+          "customer": {
+            "person": { "name": "Rajat Gajbhiye" },
+            "contact": { "phone": "9765242868" }
+          },
+          "stops": [
+            {
+              "type": "START",
+              "location": { "gps": "93.936493,24.778437" }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "93.935569,24.771121",
+                "address": "Kakwa, Imphal, Manipur, India"
+              }
+            }
+          ],
+          "vehicle": { "category": "AUTO_RICKSHAW" }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "ON-FULFILLMENT",
+          "status": "NOT-PAID",
+          "params": {
+            "bank_code": "ICIC000001",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "amit.sharma@upi"
+          },
+          "tags": [
+            {
+              "descriptor": { "code": "SETTLEMENT_TERMS" },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": { "code": "SETTLEMENT_WINDOW" },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": { "code": "SETTLEMENT_BASIS" },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": { "code": "SETTLEMENT_TYPE" },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": { "code": "DELAY_INTEREST" },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": { "code": "STATIC_TERMS" },
+                  "value": "https://mobitybuyer.sumasoft.com/booking/terms"
+                },
+                {
+                  "descriptor": { "code": "SETTLEMENT_AMOUNT" },
+                  "value": "0"
+                },
+                {
+                  "descriptor": { "code": "MANDATORY_ARBITRATION" },
+                  "value": "true"
+                },
+                {
+                  "descriptor": { "code": "COURT_JURISDICTION" },
+                  "value": "Pune"
+                }
+              ]
+            },
+            {
+              "descriptor": { "code": "BUYER_FINDER_FEES" },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "id": "83a091d3-60e0-4521-bcd7-b83ac15fefbb"
+        }
+      ]
+    }
+  }
+}

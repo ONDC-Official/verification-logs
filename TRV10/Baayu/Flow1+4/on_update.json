@@ -1,0 +1,306 @@
+{
+  "context": {
+    "message_id": "c242a65e-a29c-4105-8e65-13da83cdd683",
+    "timestamp": "2024-06-06T07:33:55.950Z",
+    "action": "on_update",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
+    "version": "2.0.0",
+    "domain": "ONDC:TRV10",
+    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
+    "ttl": "PT1M",
+    "location": {
+      "city": {
+        "code": "std:020"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
+    "transaction_id": "7d412b0a-de5d-4448-9cf0-eb64573adcb0",
+    "bpp_id": "staging-mobility-ondc.baayu.app"
+  },
+  "message": {
+    "order": {
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "reason_required": true,
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          }
+        },
+        {
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "value": "0.00",
+              "currency": "INR"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "reason_required": true,
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          }
+        }
+      ],
+      "id": "cbf5f99e-3361-460e-ac51-578325116744",
+      "quote": {
+        "ttl": "PT300s",
+        "price": {
+          "currency": "INR",
+          "value": "26"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "10"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": "16",
+              "currency": "INR"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "params": {
+            "virtual_payment_address": "amit.sharma@upi",
+            "bank_code": "ICIC000001",
+            "bank_account_number": "123456789012"
+          },
+          "id": "83a091d3-60e0-4521-bcd7-b83ac15fefbb",
+          "tags": [
+            {
+              "display": false,
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "list": [
+                {
+                  "value": "PT60M",
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "value": "2.5",
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://mobitybuyer.sumasoft.com/booking/terms"
+                }
+              ]
+            },
+            {
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0"
+                }
+              ],
+              "display": false,
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              }
+            }
+          ],
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "status": "NOT-PAID"
+        }
+      ],
+      "status": "ACTIVE",
+      "fulfillments": [
+        {
+          "state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "agent": {
+            "contact": {
+              "phone": "1234512345"
+            },
+            "person": {
+              "id": "662b4d5d571b9e0ef4deb8d5",
+              "name": "ONDC TEST "
+            }
+          },
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "make": "Bajaj",
+            "model": "Compact RE",
+            "registration": "KA-01-AD-9876"
+          },
+          "type": "DELIVERY",
+          "customer": {
+            "contact": {
+              "phone": "9765242868"
+            },
+            "person": {
+              "name": "Rajat Gajbhiye"
+            }
+          },
+          "stops": [
+            {
+              "location": {
+                "gps": "93.936493,24.778437"
+              },
+              "authorization": {
+                "type": "OTP",
+                "token": "8274"
+              },
+              "type": "START"
+            },
+            {
+              "type": "END",
+              "location": {
+                "address": "Kakwa, Imphal, Manipur, India",
+                "gps": "93.935569,24.771121"
+              }
+            }
+          ],
+          "id": "77a1fa25-ee44-490f-863d-018eb42a2e7e"
+        }
+      ],
+      "provider": {
+        "id": "Baayu"
+      },
+      "items": [
+        {
+          "price": {
+            "value": "19.54",
+            "currency": "INR"
+          },
+          "fulfillment_ids": ["77a1fa25-ee44-490f-863d-018eb42a2e7e"],
+          "id": "663484504ba1d9a3c08f5afb",
+          "payment_ids": ["83a091d3-60e0-4521-bcd7-b83ac15fefbb"],
+          "descriptor": {
+            "name": "Bike Taxi",
+            "code": "RIDE"
+          },
+          "tags": [
+            {
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "value": "9.00",
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "value": "0.00",
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "value": "0.00",
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  }
+                },
+                {
+                  "value": "0.00",
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "0.00"
+                }
+              ],
+              "display": true,
+              "descriptor": {
+                "code": "FARE_POLICY"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
