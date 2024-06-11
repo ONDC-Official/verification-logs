@@ -1,0 +1,274 @@
+{
+    "context": {
+        "action": "on_cancel",
+        "bap_id": "ondc.tummoc.in",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/bookTicket",
+        "bpp_id": "metrobox.preprod.triffy.in",
+        "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
+        "domain": "ONDC:TRV11",
+        "location": {
+            "city": {
+                "code": "std:0484"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "transaction_id": "e5b2891c-ddf6-46ca-9812-2f5d09e2255c",
+        "message_id": "4ffd47e6-7efb-44f9-9480-03e5efc62c62",
+        "timestamp": "2024-05-28T15:14:58.419Z",
+        "ttl": "PT300S",
+        "version": "2.0.0"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "name": "Maaz",
+                "phone": "8789012316"
+            },
+            "cancellation": {
+                "cancelled_by": "CONSUMER",
+                "time": "2024-05-28T15:14:58.419Z"
+            },
+            "cancellation_terms": [
+                {
+                    "external_ref": {
+                        "mimetype": "text/html",
+                        "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
+                    }
+                }
+            ],
+            "created_at": "2024-05-28T13:24:12.249Z",
+            "fulfillments": [
+                {
+                    "id": "aluva-companypady",
+                    "stops": [
+                        {
+                            "id": "1",
+                            "location": {
+                                "descriptor": {
+                                    "code": "wzSo8ZMX6FEbJzmvVcftl6KKXoiW4Y",
+                                    "name": "Aluva"
+                                },
+                                "gps": "10.109900, 76.349500"
+                            },
+                            "type": "START"
+                        },
+                        {
+                            "id": "2",
+                            "location": {
+                                "descriptor": {
+                                    "code": "uiz4ZGRq9tFZFysnc78pO56Kg6PNJM",
+                                    "name": "CompanyPady"
+                                },
+                                "gps": "10.087300, 76.342800"
+                            },
+                            "parent_stop_id": "1",
+                            "type": "END"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "8914.0.0.65"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "METRO"
+                    }
+                }
+            ],
+            "id": "TRF086fbffd1e1a481998facbfc25e4aae6",
+            "items": [
+                {
+                    "category_ids": [
+                        "TICKET"
+                    ],
+                    "descriptor": {
+                        "code": "SJT",
+                        "name": "Single Journey Ticket"
+                    },
+                    "fulfillment_ids": [
+                        "aluva-companypady"
+                    ],
+                    "id": "sjt-aluva-companypady",
+                    "price": {
+                        "currency": "INR",
+                        "value": "18"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "duration": "PT120M",
+                        "label": "Validity"
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BAP",
+                    "id": "ddc76ed7-a736-4154-97ea-600fa03ccc5b",
+                    "params": {
+                        "amount": "18",
+                        "bank_account_number": "00228130001XXXX",
+                        "bank_code": "XXXX0000022",
+                        "currency": "INR",
+                        "transaction_id": "34cc9b0b-6887-4c63-8397-2f4fcf03e50d"
+                    },
+                    "status": "PAID",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "INVOICE_RECIEPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Kochi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://metro-terms.triffy.in/kochi/index.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "18.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "NEFT"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "PRE-ORDER"
+                }
+            ],
+            "provider": {
+                "descriptor": {
+                    "name": "Kochi Metro Rail Limited"
+                },
+                "id": "triffy-kmrl-rail-metro",
+                "time": {
+                    "range": {
+                        "end": "2024-05-28T17:00:00Z",
+                        "start": "2024-05-27T23:00:00Z"
+                    }
+                }
+            },
+            "quote": {
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "sjt-aluva-companypady",
+                            "price": {
+                                "currency": "INR",
+                                "value": "18"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "18"
+                        },
+                        "title": "BASE_FARE"
+                    },
+                    {
+                        "item": {
+                            "id": "sjt-aluva-companypady",
+                            "price": {
+                                "currency": "INR",
+                                "value": "-18.00"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "-18.00"
+                        },
+                        "title": "REFUND"
+                    },
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "title": "CANCELLATION_CHARGES"
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "0.00"
+                }
+            },
+            "status": "SOFT_CANCEL",
+            "updated_at": "2024-05-28T15:14:58.419Z"
+        }
+    }
+}
