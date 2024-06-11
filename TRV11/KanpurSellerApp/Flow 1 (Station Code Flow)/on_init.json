@@ -1,24 +1,24 @@
 {
     "context": {
+        "action": "on_init",
+        "bap_id": "proapi.easemytrip.com/metroapp/ONDC",
+        "bap_uri": "https://proapi.easemytrip.com/metroapp/ONDC",
+        "bpp_id": "uat.kanpurmetrogosmartcard.com",
+        "bpp_uri": "https://uat.kanpurmetrogosmartcard.com/ondc/api/ondc",
+        "domain": "ONDC:TRV11",
         "location": {
-            "country": {
-                "code": "IND"
-            },
             "city": {
                 "code": "std:0512"
+            },
+            "country": {
+                "code": "IND"
             }
         },
-        "domain": "ONDC:TRV11",
-        "timestamp": "2024-04-16T10:36:40.065Z",
-        "bap_id": "proapi.easemytrip.com/metroapp/ONDC",
-        "transaction_id": "9943e9e2-4fb5-487c-92b7-13ba8018f176",
-        "message_id": "3f85b7d4-ee7c-46ff-86b2-d21e8260a4fc",
-        "version": "2.0.0",
-        "action": "on_init",
-        "bap_uri": "https://proapi.easemytrip.com/metroapp/ONDC",
-        "ttl": "PT30S",
-        "bpp_id": "uat.kanpurmetrogosmartcard.com",
-        "bpp_uri": "https://uat.kanpurmetrogosmartcard.com/afc/api/ondc"
+        "message_id": "a040faff-cb4d-4103-9538-92c4057261d0",
+        "timestamp": "2024-01-19T05:34:32.387Z",
+        "transaction_id": "8c1f9b0b-43a2-4130-92b3-cb5599fa04c7",
+        "ttl": "PT300S",
+        "version": "2.0.0"
     },
     "message": {
         "order": {
@@ -38,7 +38,6 @@
             "fulfillments": [
                 {
                     "id": "a3c7fd08-68d4-4e7c-b959-2aef071cf944",
-                    "type": "TRIP",
                     "stops": [
                         {
                             "id": "106",
@@ -47,7 +46,7 @@
                                     "code": "Rawatpur",
                                     "name": "Rawatpur"
                                 },
-                                "gps": "26.482962,80.299891"
+                                "gps": "26.482962, 80.299891"
                             },
                             "type": "START"
                         },
@@ -63,6 +62,7 @@
                             "type": "END"
                         }
                     ],
+                    "type": "TRIP",
                     "vehicle": {
                         "category": "METRO"
                     }
@@ -70,17 +70,17 @@
             ],
             "items": [
                 {
-                    "id": "SJT-Rawatpur-Kalyanpur",
-                    "categoryIds": [
+                    "category_ids": [
                         "f9bbc285-3d79-46d3-b541-2e01070e5605"
                     ],
                     "descriptor": {
-                        "name": "Single Journey",
-                        "code": "SJT"
+                        "code": "SJT",
+                        "name": "Single Journey Ticket"
                     },
-                    "fulfillmentIds": [
+                    "fulfillment_ids": [
                         "a3c7fd08-68d4-4e7c-b959-2aef071cf944"
                     ],
+                    "id": "SJT-Rawatpur-Kalyanpur",
                     "price": {
                         "currency": "INR",
                         "value": "20.0000"
@@ -91,22 +91,21 @@
                         }
                     },
                     "time": {
-                        "label": "Validity",
-                        "duration": "PT120M"
+                        "duration": "PT120M",
+                        "label": "Validity"
                     }
                 }
             ],
             "payments": [
                 {
-                    "id": "a3c7fd08-68d4-4e7c-b959-2aef071cf944",
                     "collected_by": "BAP",
-                    "status": "NOT-PAID",
-                    "type": "PRE-ORDER",
+                    "id": "f4f3d3a5-1cc4-4516-8d4c-de26105e7fb7",
                     "params": {
-                        "bank_code": "KKBK0000261",
                         "bank_account_number": "4323434556",
+                        "bank_code": "KKBK0000261",
                         "virtual_payment_address": "9988199772@okicic"
                     },
+                    "status": "NOT-PAID",
                     "tags": [
                         {
                             "descriptor": {
@@ -118,7 +117,7 @@
                                     "descriptor": {
                                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                     },
-                                    "value": "1"
+                                    "value": "0"
                                 }
                             ]
                         },
@@ -152,13 +151,13 @@
                                     "descriptor": {
                                         "code": "DELAY_INTEREST"
                                     },
-                                    "value": "2.5"
+                                    "value": "0"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_BASIS"
                                     },
-                                    "value": "INVOICE_RECEIPT"
+                                    "value": "INVOICE_RECIEPT"
                                 },
                                 {
                                     "descriptor": {
@@ -186,29 +185,25 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "type": "PRE-ORDER"
                 }
             ],
             "provider": {
-                "id": "kanpur-rail-metro",
                 "descriptor": {
                     "name": "Kanpur Metro Rail Limited"
                 },
+                "id": "b521d92e-2d78-4e7f-bb6c-8f15f8528991",
                 "time": {
                     "range": {
-                        "end": "2024-04-16T23:30:00.000Z",
-                        "start": "2024-04-16T05:30:00.000Z"
+                        "end": "2023-09-14T23:30:00.000Z",
+                        "start": "2023-09-14T05:30:00.000Z"
                     }
                 }
             },
             "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "20.0000"
-                },
                 "breakup": [
                     {
-                        "title": "BASE_FARE",
                         "item": {
                             "id": "SJT-Rawatpur-Kalyanpur",
                             "price": {
@@ -224,9 +219,14 @@
                         "price": {
                             "currency": "INR",
                             "value": "20.0000"
-                        }
+                        },
+                        "title": "BASE_FARE"
                     }
-                ]
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "20.0000"
+                }
             },
             "tags": [
                 {
