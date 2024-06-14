@@ -1,5 +1,5 @@
 {
-"context": {
+      "context": {
         "domain": "ONDC:FIS12",
         "location": {
           "city": {
@@ -16,9 +16,9 @@
         "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
         "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
         "transaction_id": "6a124348-21f6-4510-913f-3c0d13654256",
-        "message_id": "644326c4-9d07-4f95-bd60-8e1a4432824e",
+        "message_id": "1101c97a-9397-418e-a754-1730ba5a24ac",
         "ttl": "PT30M",
-        "timestamp": "2024-06-05T06:54:33.443Z"
+        "timestamp": "2024-06-05T06:57:58.355Z"
       },
       "message": {
         "order": {
@@ -361,8 +361,8 @@
               },
               "state": {
                 "descriptor": {
-                  "code": "CONSENT_REQUIRED",
-                  "name": "Consent Required"
+                  "code": "INITIATED",
+                  "name": "Loan Initiated"
                 }
               }
             }
@@ -541,6 +541,20 @@
               "cancellation_fee": {
                 "percentage": "3%"
               }
+            },
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "DISBURSED"
+                }
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://bpp.credit.becknprotocol.org/tnc.html"
+              },
+              "cancellation_fee": {
+                "percentage": "5%"
+              }
             }
           ],
           "documents": [
@@ -553,9 +567,19 @@
               },
               "mime_type": "application/pdf",
               "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/agreement.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "LOAN_CANCELLATION",
+                "name": "Loan Cancellation Document",
+                "short_desc": "Download your Loan Cancellation document here",
+                "long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
+              },
+              "mime_type": "application/pdf",
+              "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
             }
           ],
           "id": "7d6a6a59-5012-4acd-8c7e-d55dc122728c"
         }
       }
-    }
+}
