@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "on_select",
-        "transaction_id": "cd889a3a-99f8-45e8-88e2-9915578c2796",
-        "message_id": "e1b68822-bc74-47f2-bf97-fd9bf6374934",
-        "timestamp": "2024-06-17T17:20:36.027Z",
+        "action": "on_status",
+        "transaction_id": "18ec088a-f93d-4946-92ab-1847d3030a46",
+        "message_id": "17b76164-2b6d-4f38-bd62-90f1e15149a9",
+        "timestamp": "2024-06-17T11:40:39.583Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT30M",
@@ -23,22 +23,11 @@
     "message": {
         "order": {
             "provider": {
-                "id": "P1",
-                "descriptor": {
-                    "images": [
-                        {
-                            "size_type": "sm",
-                            "url": "https://www.abcinsurance.com/content/dam/abcinsurance/india/assets/images/header/logo.png"
-                        }
-                    ],
-                    "long_desc": "ABC Insurance Ltd",
-                    "name": "ABC Insurance Ltd",
-                    "short_desc": "ABC Insurance Ltd"
-                }
+                "id": "P1"
             },
             "items": [
                 {
-                    "id": "M1718643934737",
+                    "id": "M1718623921121",
                     "descriptor": {
                         "name": "4-Wheeler 3rd Party Motor Insurance",
                         "short_desc": "4-Wheeler 3rd Party Motor Insurance by ABC Insurance Provider"
@@ -254,64 +243,14 @@
                         "currency": "INR",
                         "value": "20000"
                     },
-                    "xinput": {
-                        "head": {
-                            "descriptor": {
-                                "name": "PAN & DOB"
-                            },
-                            "index": {
-                                "min": 0,
-                                "cur": 1,
-                                "max": 2
-                            },
-                            "headings": [
-                                "Manual Review",
-                                "PAN & DOB",
-                                "Know your Customer"
-                            ]
-                        },
-                        "form": {
-                            "id": "3420fb92-c619-4cb9-9d95-01c1b10d97cd",
-                            "mime_type": "text/html",
-                            "url": "https://ondc.sequelstring.com/seller/form/3420fb92-c619-4cb9-9d95-01c1b10d97cd",
-                            "resubmit": false,
-                            "multiple_sumbissions": false
-                        },
-                        "required": true
-                    }
+                    "fulfillment_ids": [
+                        "2b49080b-04ec-4b7f-83f8-d8ee8ae158cb"
+                    ]
                 }
             ],
             "quote": {
-                "id": "3785c957-67f3-46ea-a43c-0babd35ebe31",
+                "id": "12d11108-8096-4da4-bd32-3b96988bad02",
                 "breakup": [
-                    {
-                        "price": {
-                            "value": "20000",
-                            "currency": "INR"
-                        },
-                        "title": "BASE_PRICE"
-                    },
-                    {
-                        "price": {
-                            "value": "50",
-                            "currency": "INR"
-                        },
-                        "title": "CONVIENCE_FEE"
-                    },
-                    {
-                        "price": {
-                            "value": "20",
-                            "currency": "INR"
-                        },
-                        "title": "PROCESSING_FEE"
-                    },
-                    {
-                        "price": {
-                            "value": "3600",
-                            "currency": "INR"
-                        },
-                        "title": "TAX"
-                    },
                     {
                         "title": "ADD_ONS",
                         "item": {
@@ -326,6 +265,34 @@
                             "currency": "INR",
                             "value": "900"
                         }
+                    },
+                    {
+                        "title": "BASE_PRICE",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20000"
+                        }
+                    },
+                    {
+                        "title": "CONVIENCE_FEE",
+                        "price": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    },
+                    {
+                        "title": "PROCESSING_FEE",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20"
+                        }
+                    },
+                    {
+                        "title": "TAX",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3600"
+                        }
                     }
                 ],
                 "price": {
@@ -333,7 +300,125 @@
                     "value": "24570.00"
                 },
                 "ttl": "PT15D"
-            }
+            },
+            "fulfillments": [
+                {
+                    "customer": {
+                        "contact": {
+                            "email": "example@example.com",
+                            "phone": "1234567890"
+                        },
+                        "person": {
+                            "name": "abhinav sharma"
+                        }
+                    },
+                    "id": "2b49080b-04ec-4b7f-83f8-d8ee8ae158cb",
+                    "state": {
+                        "descriptor": {
+                            "name": "Insurance Initiated",
+                            "code": "INITIATED"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "status": "PAID",
+                    "type": "PRE-ORDER",
+                    "params": {
+                        "currency": "INR",
+                        "bank_account_number": "0987654321098765",
+                        "bank_code": "ICICI002234",
+                        "amount": "24570.00",
+                        "transaction_id": "33f00f72-0ef6-4872-a970-5f9c4d04cc12"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "amount"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_AMOUNT"
+                                    },
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "0.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
+                                    "value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

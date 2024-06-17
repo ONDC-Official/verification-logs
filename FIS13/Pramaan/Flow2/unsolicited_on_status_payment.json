@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "on_select",
+        "action": "on_status",
         "transaction_id": "cd889a3a-99f8-45e8-88e2-9915578c2796",
-        "message_id": "e1b68822-bc74-47f2-bf97-fd9bf6374934",
-        "timestamp": "2024-06-17T17:20:36.027Z",
+        "message_id": "ea64af1d-d859-4271-8369-72687fabe191",
+        "timestamp": "2024-06-17T17:23:22.058Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT30M",
@@ -23,18 +23,7 @@
     "message": {
         "order": {
             "provider": {
-                "id": "P1",
-                "descriptor": {
-                    "images": [
-                        {
-                            "size_type": "sm",
-                            "url": "https://www.abcinsurance.com/content/dam/abcinsurance/india/assets/images/header/logo.png"
-                        }
-                    ],
-                    "long_desc": "ABC Insurance Ltd",
-                    "name": "ABC Insurance Ltd",
-                    "short_desc": "ABC Insurance Ltd"
-                }
+                "id": "P1"
             },
             "items": [
                 {
@@ -254,31 +243,9 @@
                         "currency": "INR",
                         "value": "20000"
                     },
-                    "xinput": {
-                        "head": {
-                            "descriptor": {
-                                "name": "PAN & DOB"
-                            },
-                            "index": {
-                                "min": 0,
-                                "cur": 1,
-                                "max": 2
-                            },
-                            "headings": [
-                                "Manual Review",
-                                "PAN & DOB",
-                                "Know your Customer"
-                            ]
-                        },
-                        "form": {
-                            "id": "3420fb92-c619-4cb9-9d95-01c1b10d97cd",
-                            "mime_type": "text/html",
-                            "url": "https://ondc.sequelstring.com/seller/form/3420fb92-c619-4cb9-9d95-01c1b10d97cd",
-                            "resubmit": false,
-                            "multiple_sumbissions": false
-                        },
-                        "required": true
-                    }
+                    "fulfillment_ids": [
+                        "d6c6872f-4c63-4edc-b349-8eba88447cfa"
+                    ]
                 }
             ],
             "quote": {
@@ -333,7 +300,125 @@
                     "value": "24570.00"
                 },
                 "ttl": "PT15D"
-            }
+            },
+            "fulfillments": [
+                {
+                    "customer": {
+                        "contact": {
+                            "email": "example@example.com",
+                            "phone": "1234567890"
+                        },
+                        "person": {
+                            "name": "abhinav sharma"
+                        }
+                    },
+                    "id": "d6c6872f-4c63-4edc-b349-8eba88447cfa",
+                    "state": {
+                        "descriptor": {
+                            "name": "Insurance Initiated",
+                            "code": "INITIATED"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "status": "PAID",
+                    "type": "PRE-ORDER",
+                    "params": {
+                        "currency": "INR",
+                        "bank_account_number": "0987654321098765",
+                        "bank_code": "ICICI002234",
+                        "amount": "24570.00",
+                        "transaction_id": "7ea48ab6-a545-458f-bb68-c3c050118cc9"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "amount"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_AMOUNT"
+                                    },
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "0.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
+                                    "value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

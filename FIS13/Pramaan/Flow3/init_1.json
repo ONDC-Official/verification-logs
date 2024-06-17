@@ -1,160 +1,171 @@
 {
-    "context": {
-        "location": {
-          "country": {
-            "code": "IND"
-          },
-          "city": {
-            "code": "*"
-          }
-        },
-        "version": "2.0.0",
-        "domain": "ONDC:FIS13",
-        "action": "init",
-        "transaction_id": "f6e2a0b6-2af9-4d23-af3d-0dd8e3fc6245",
-        "message_id": "15e5c33a-a734-4f03-93a4-9dd8e5b0c08e",
-        "timestamp": "2024-05-24T10:46:02.257Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-        "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT10M",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  "context": {
+    "domain": "ONDC:FIS13",
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "message": {
-        "order": {
-          "provider": {
-            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3"
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "init",
+    "transaction_id": "18ec088a-f93d-4946-92ab-1847d3030a46",
+    "message_id": "17bab447-dafc-4a1b-85f2-f6a25a1400b5",
+    "timestamp": "2024-06-17T11:39:44.899Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "M1718623921121",
+          "category_ids": [
+            "M2",
+            "M3",
+            "M4",
+            "M7"
+          ],
+          "parent_item_id": "I4",
+          "add_ons": [
+            {
+              "id": "A1",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            }
+          ],
+          "xinput": {
+            "form": {
+              "id": "12edf111-c3e9-4121-bf90-61d3efe34b31"
+            },
+            "form_response": {
+              "status": "SUCCESS",
+              "submission_id": "5a12d530-48bb-4eb7-b47c-49cd2e3b0690"
+            }
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "email": "example@example.com",
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "abhinav sharma"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "currency": "INR",
+            "bank_account_number": "0987654321098765",
+            "bank_code": "ICICI002234",
+            "amount": "24570.00"
           },
-          "items": [
+          "tags": [
             {
-              "id": "M1716547501105",
-              "parent_item_id": "I3",
-              "add_ons": [
-                {
-                  "id": "A1"
-                }
-              ],
-              "xinput": {
-                "form": {
-                  "id": "c6b20f52-5599-44b6-b30b-fc585fcaca19"
-                },
-                "form_response": {
-                  "status": "SUCCESS",
-                  "submission_id": "e18f45d5-b771-4f37-b62d-e1775fe59c74"
-                }
-              }
-            }
-          ],
-          "fulfillments": [
-            {
-              "customer": {
-                "contact": {
-                  "email": "ayush@gmail.com",
-                  "phone": "9103334800"
-                },
-                "person": {
-                  "name": "John Doe"
-                }
-              }
-            }
-          ],
-          "payments": [
-            {
-              "collected_by": "BPP",
-              "status": "NOT-PAID",
-              "type": "PRE-ORDER",
-              "params": {
-                "currency": "INR",
-                "amount": "12531",
-                "bank_account_number": "1800002341",
-                "bank_code": "SBIN0001234"
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
               },
-              "tags": [
+              "display": false,
+              "list": [
                 {
                   "descriptor": {
-                    "code": "BUYER_FINDER_FEES"
+                    "code": "BUYER_FINDER_FEES_TYPE"
                   },
-                  "display": false,
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES_TYPE"
-                      },
-                      "value": "percent-annualized"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                      },
-                      "value": "1"
-                    }
-                  ]
+                  "value": "amount"
                 },
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_TERMS"
+                    "code": "BUYER_FINDER_FEES_AMOUNT"
                   },
-                  "display": false,
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_WINDOW"
-                      },
-                      "value": "PT60M"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_BASIS"
-                      },
-                      "value": "Delivery"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_TYPE"
-                      },
-                      "value": "upi"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MANDATORY_ARBITRATION"
-                      },
-                      "value": "true"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "COURT_JURISDICTION"
-                      },
-                      "value": "New Delhi"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "DELAY_INTEREST"
-                      },
-                      "value": "2.5"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "STATIC_TERMS"
-                      },
-                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_AMOUNT"
-                      },
-                      "value": "115.31"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "OFFLINE_CONTRACT"
-                      },
-                      "value": "true"
-                    }
-                  ]
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
                 }
               ]
             }
           ]
         }
-      }
+      ]
+    }
+  }
 }

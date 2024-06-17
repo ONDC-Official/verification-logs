@@ -1,122 +1,124 @@
 {
-    "context": {
-        "location": {
-          "country": {
-            "code": "IND"
-          },
-          "city": {
-            "code": "*"
-          }
-        },
-        "version": "2.0.0",
-        "domain": "ONDC:FIS13",
-        "action": "search",
-        "transaction_id": "f6e2a0b6-2af9-4d23-af3d-0dd8e3fc6245",
-        "message_id": "d1ef6c8e-b298-4891-914a-de7dafbfdcaa",
-        "timestamp": "2024-05-24T10:45:00.553Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-        "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT24M"
+  "context": {
+    "domain": "ONDC:FIS13",
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "message": {
-        "intent": {
-          "category": {
-            "descriptor": {
-              "code": "MOTOR_INSURANCE"
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "search",
+    "transaction_id": "18ec088a-f93d-4946-92ab-1847d3030a46",
+    "message_id": "76a1d8c2-a4d7-4919-bbed-53c1d61dde90",
+    "timestamp": "2024-06-17T11:32:01.049Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30M",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "intent": {
+      "category": {
+        "descriptor": {
+          "code": "MOTOR_INSURANCE"
+        }
+      },
+      "provider": {
+        "id": "P1",
+        "items": [
+          {
+            "id": "I3",
+            "xinput": {
+              "form": {
+                "id": "df2d854d-f6ca-40a9-9dcc-e9d9c42ae69b"
+              },
+              "form_response": {
+                "status": "SUCCESS",
+                "submission_id": "7757846d-4896-40ed-8c4d-d877a0fd9b80"
+              }
             }
           },
-          "provider": {
-            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
-            "items": [
+          {
+            "id": "I4",
+            "xinput": {
+              "form": {
+                "id": "df2d854d-f6ca-40a9-9dcc-e9d9c42ae69b"
+              },
+              "form_response": {
+                "status": "SUCCESS",
+                "submission_id": "50e632f1-ad16-47da-9feb-c2ba6e85099d"
+              }
+            }
+          }
+        ]
+      },
+      "payment": {
+        "collected_by": "BPP",
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "display": false,
+            "list": [
               {
-                "id": "I4",
-                "xinput": {
-                  "form": {
-                    "id": "bce79f01-82b0-4709-9a79-2c91f3c49542"
-                  },
-                  "form_response": {
-                    "status": "SUCCESS",
-                    "submission_id": "43969199-efbf-4e23-90b2-22de97cdb2d9"
-                  }
-                }
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "amount"
               },
               {
-                "id": "I3",
-                "xinput": {
-                  "form": {
-                    "id": "bce79f01-82b0-4709-9a79-2c91f3c49542"
-                  },
-                  "form_response": {
-                    "status": "SUCCESS",
-                    "submission_id": "2fb19b32-d5f6-4f43-9e94-7aa23dc266c9"
-                  }
-                }
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_AMOUNT"
+                },
+                "value": "0"
               }
             ]
           },
-          "payment": {
-            "collected_by": "BPP",
-            "tags": [
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
               {
                 "descriptor": {
-                  "code": "BUYER_FINDER_FEES"
+                  "code": "SETTLEMENT_WINDOW"
                 },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_TYPE"
-                    },
-                    "value": "percent-annualized"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                    },
-                    "value": "1"
-                  }
-                ]
+                "value": "PT60M"
               },
               {
                 "descriptor": {
-                  "code": "SETTLEMENT_TERMS"
+                  "code": "SETTLEMENT_BASIS"
                 },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_WINDOW"
-                    },
-                    "value": "PT60M"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_BASIS"
-                    },
-                    "value": "Delivery"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "DELAY_INTEREST"
-                    },
-                    "value": "2.5"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "STATIC_TERMS"
-                    },
-                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFLINE_CONTRACT"
-                    },
-                    "value": "true"
-                  }
-                ]
+                "value": "Delivery"
+              },
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+              },
+              {
+                "descriptor": {
+                  "code": "OFFLINE_CONTRACT"
+                },
+                "value": "true"
               }
             ]
           }
-        }
+        ]
       }
+    }
+  }
 }

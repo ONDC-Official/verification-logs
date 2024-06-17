@@ -10,10 +10,10 @@
       }
     },
     "version": "2.0.0",
-    "action": "on_init",
+    "action": "on_update",
     "transaction_id": "cd889a3a-99f8-45e8-88e2-9915578c2796",
-    "message_id": "058c8754-f3c2-4b85-b287-438486598e19",
-    "timestamp": "2024-06-17T17:21:27.042Z",
+    "message_id": "7e9e7d6e-1530-4825-95ad-8a7df562b8c8",
+    "timestamp": "2024-06-17T17:26:16.747Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30M",
@@ -22,9 +22,44 @@
   },
   "message": {
     "order": {
-      "provider": {
-        "id": "P1"
-      },
+      "status": "ACTIVE",
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "email": "example@example.com",
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "abhinav sharma"
+            }
+          },
+          "id": "d6c6872f-4c63-4edc-b349-8eba88447cfa",
+          "state": {
+            "descriptor": {
+              "code": "GRANTED"
+            }
+          }
+        },
+        {
+          "customer": {
+            "contact": {
+              "email": "example@example.com",
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "abhinav sharma"
+            }
+          },
+          "id": "bbff651c-b1ee-4255-8e06-88da86437882",
+          "state": {
+            "descriptor": {
+              "code": "RENEWAL_INITIATED"
+            }
+          },
+          "type": "RENEWAL"
+        }
+      ],
       "items": [
         {
           "id": "M1718643934737",
@@ -243,118 +278,119 @@
             "currency": "INR",
             "value": "20000"
           },
-          "xinput": {
-            "head": {
-              "descriptor": {
-                "name": "Personal Details"
-              },
-              "index": {
-                "min": 0,
-                "cur": 0,
-                "max": 1
-              },
-              "headings": [
-                "Vehicle & Nominee Details",
-                "Personal Info"
-              ]
-            },
-            "form": {
-              "id": "ca26a0e4-bd0e-4c71-a575-b045b9e8b5cb",
-              "mime_type": "text/html",
-              "url": "https://ondc.sequelstring.com/seller/form/ca26a0e4-bd0e-4c71-a575-b045b9e8b5cb",
-              "resubmit": false,
-              "multiple_sumbissions": false
-            },
-            "required": true
-          },
           "fulfillment_ids": [
-            "c991e241-f85d-44a3-9688-6e9959a11d09"
+            "d6c6872f-4c63-4edc-b349-8eba88447cfa",
+            "bbff651c-b1ee-4255-8e06-88da86437882"
           ]
-        }
-      ],
-      "quote": {
-        "id": "3785c957-67f3-46ea-a43c-0babd35ebe31",
-        "breakup": [
-          {
-            "price": {
-              "value": "20000",
-              "currency": "INR"
-            },
-            "title": "BASE_PRICE"
-          },
-          {
-            "price": {
-              "value": "50",
-              "currency": "INR"
-            },
-            "title": "CONVIENCE_FEE"
-          },
-          {
-            "price": {
-              "value": "20",
-              "currency": "INR"
-            },
-            "title": "PROCESSING_FEE"
-          },
-          {
-            "price": {
-              "value": "3600",
-              "currency": "INR"
-            },
-            "title": "TAX"
-          },
-          {
-            "title": "ADD_ONS",
-            "item": {
-              "id": "I4",
-              "add_ons": [
-                {
-                  "id": "A1"
-                }
-              ]
-            },
-            "price": {
-              "currency": "INR",
-              "value": "900"
-            }
-          }
-        ],
-        "price": {
-          "currency": "INR",
-          "value": "24570.00"
-        },
-        "ttl": "PT15D"
-      },
-      "fulfillments": [
-        {
-          "customer": {
-            "contact": {
-              "email": "example@example.com",
-              "phone": "1234567890"
-            },
-            "person": {
-              "name": "abhinav sharma"
-            }
-          },
-          "id": "c991e241-f85d-44a3-9688-6e9959a11d09",
-          "state": {
-            "descriptor": {
-              "name": "Insurance Initiated",
-              "code": "INITIATED"
-            }
-          }
         }
       ],
       "payments": [
         {
           "collected_by": "BPP",
-          "status": "NOT-PAID",
+          "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
             "currency": "INR",
             "bank_account_number": "0987654321098765",
             "bank_code": "ICICI002234",
-            "amount": "24570.00"
+            "amount": "24570.00",
+            "transaction_id": "7ea48ab6-a545-458f-bb68-c3c050118cc9"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "amount"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_AMOUNT"
+                  },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "PRE-FULFILLMENT",
+          "params": {
+            "currency": "INR",
+            "bank_account_number": "0987654321098765",
+            "bank_code": "ICICI002234",
+            "amount": "24570.00",
+            "transaction_id": "7ea48ab6-a545-458f-bb68-c3c050118cc9"
           },
           "tags": [
             {
@@ -440,9 +476,111 @@
               ]
             }
           ],
-          "url": "https://ondc.sequelstring.com/seller/toPaymentUtility?amount=24570.00&transaction_id=cd889a3a-99f8-45e8-88e2-9915578c2796&label=INSURANCE_PAYMENT"
+          "url": "https://ondc.sequelstring.com/seller/toPaymentUtility?amount=24570.00&order_id=2da0b221-d3b9-4866-b8b3-3a2f536361a0&label=RENEWAL"
         }
-      ]
+      ],
+      "provider": {
+        "id": "P1",
+        "descriptor": {
+          "images": [
+            {
+              "size_type": "sm",
+              "url": "https://www.abcinsurance.com/content/dam/abcinsurance/india/assets/images/header/logo.png"
+            }
+          ],
+          "long_desc": "ABC Insurance Ltd",
+          "name": "ABC Insurance Ltd",
+          "short_desc": "ABC Insurance Ltd"
+        }
+      },
+      "quote": {
+        "id": "3785c957-67f3-46ea-a43c-0babd35ebe31",
+        "breakup": [
+          {
+            "price": {
+              "value": "20000",
+              "currency": "INR"
+            },
+            "title": "BASE_PRICE"
+          },
+          {
+            "price": {
+              "value": "50",
+              "currency": "INR"
+            },
+            "title": "CONVIENCE_FEE"
+          },
+          {
+            "price": {
+              "value": "20",
+              "currency": "INR"
+            },
+            "title": "PROCESSING_FEE"
+          },
+          {
+            "price": {
+              "value": "3600",
+              "currency": "INR"
+            },
+            "title": "TAX"
+          },
+          {
+            "title": "ADD_ONS",
+            "item": {
+              "id": "I4",
+              "add_ons": [
+                {
+                  "id": "A1"
+                }
+              ]
+            },
+            "price": {
+              "currency": "INR",
+              "value": "900"
+            }
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "24570.00"
+        },
+        "ttl": "PT15D"
+      },
+      "documents": [
+        {
+          "descriptor": {
+            "code": "POLICY_DOC",
+            "name": "Insurance Policy Document",
+            "short_desc": "Download your digitally signed policy document here",
+            "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name"
+          },
+          "mime_type": "application/pdf",
+          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/tnc.pdf"
+        },
+        {
+          "descriptor": {
+            "code": "CLAIM_DOC",
+            "name": "Claim Insurance Policy",
+            "short_desc": "Buyer can claim their insurance by visiting the below url",
+            "long_desc": "Buyer can claim their insurance by visiting the below url"
+          },
+          "mime_type": "application/html",
+          "url": "https://ondc.sequelstring.com/seller/form/222a73e6-2f85-4980-96d3-c44cb6877f00"
+        },
+        {
+          "descriptor": {
+            "code": "RENEW_DOC",
+            "name": "Renew Insurance Policy",
+            "short_desc": "Buyer can renew their insurance by visiting the below url",
+            "long_desc": "Buyer can easily renew their insurance policies by visiting the following URL"
+          },
+          "mime_type": "application/html",
+          "url": "https://ondc.sequelstring.com/seller/form/99a9771e-5d07-4e24-b766-b415e941ba7d"
+        }
+      ],
+      "created_at": "2024-06-17T17:23:22.371Z",
+      "updated_at": "2024-06-17T17:26:16.747Z",
+      "id": "2da0b221-d3b9-4866-b8b3-3a2f536361a0"
     }
   }
 }
