@@ -9,21 +9,21 @@
         }
       },
       "domain": "ONDC:TRV11",
-      "action": "on_init",
+      "action": "on_confirm",
       "ttl": "PT2S",
-      "timestamp": "2024-06-18T16:37:19.473Z",
+      "timestamp": "2024-06-25T22:02:48.337Z",
       "bap_id": "preprod-ondc.chalo.com",
       "bap_uri": "https://preprod-ondc.chalo.com/ondc/buyer/v1",
-      "transaction_id": "fe2e5fbc-b521-4b4b-a83b-829ef7c3de80",
-      "message_id": "ef01ff46-3a80-4b20-9f4c-758c0272d7f9",
-      "core_version": "2.0.0",
+      "transaction_id": "aceb4182-8443-4fc3-911a-cba5de299d60",
+      "message_id": "d6f0987d-95fb-4a8e-8454-5c47a7a66008",
+      "version": "2.0.0",
       "bpp_id": "preprod-ondc.chalo.com",
       "bpp_uri": "https://preprod-ondc.chalo.com/ondc/seller/v1"
     },
     "message": {
       "order": {
         "id": "ozm5lx",
-        "status": "INITIATED",
+        "status": "ACTIVE",
         "items": [
           {
             "id": "KcSCdaJaa-adult-EtrwckLc",
@@ -63,6 +63,11 @@
                         "code": "gveMEYdp"
                       },
                       "gps": "22.252589842586374, 84.81380260921"
+                    },
+                    "authorization": {
+                      "type": "QR",
+                      "token": "BUC9H15mGSHUIyd0GNaGxmGyQ9dsoA==,-1,2",
+                      "valid_to": "2024-06-04T19:55:41.684Z"
                     },
                     "id": "1"
                   },
@@ -148,11 +153,6 @@
                 ]
               }
         ],
-        "billing": {
-          "name": "John Doe",
-          "email": "abcd@example.com",
-          "phone": "9406509858"
-        },
         "quote": {
           "price": {
             "currency": "INR",
@@ -182,18 +182,21 @@
         },
         "payments": [
           {
-            "id": "2e3aebbb-a141-4efc-8721-994909f668e3",
+            "id": "pay_OIPUId5BFczhXk",
             "params": {
+              "currency": "INR",
+              "amount": "20",
+              "transaction_id": "pay_OIPUId5BFczhXk",
               "virtual_payment_address": "99881992@okicic"
             },
-            "status": "NOT-PAID",
+            "status": "PAID",
             "type": "PRE-ORDER",
             "tags": [
               {
                 "descriptor": {
                   "code": "BUYER_FINDER_FEES"
                 },
-                "display": "false",
+                "display": false,
                 "list": [
                   {
                     "descriptor": {
@@ -207,7 +210,7 @@
                 "descriptor": {
                   "code": "SETTLEMENT_DETAILS"
                 },
-                "display": "false",
+                "display": false,
                 "list": [
                   {
                     "descriptor": {
@@ -217,15 +220,15 @@
                   },
                   {
                     "descriptor": {
-                      "code": "SETTLEMENT_BASIS"
-                    },
-                    "value": "Delivery"
-                  },
-                  {
-                    "descriptor": {
                       "code": "SETTLEMENT_TYPE"
                     },
                     "value": "UPI"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "Delivery"
                   },
                   {
                     "descriptor": {
