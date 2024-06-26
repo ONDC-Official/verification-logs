@@ -9,36 +9,36 @@
             }
         },
         "domain": "ONDC:TRV11",
-        "timestamp": "2024-01-19T05:34:32.243Z",
-        "bap_id": "proapi.easemytrip.com/metroapp/ONDC",
-        "bpp_id": "uat.kanpurmetrogosmartcard.com",
-        "bpp_uri": "https://uat.kanpurmetrogosmartcard.com/ondc/api/ondc",
-        "transaction_id": "8c1f9b0b-43a2-4130-92b3-cb5599fa04c7",
-        "message_id": "a040faff-cb4d-4103-9538-92c4057261d0",
+        "timestamp": "2024-06-26T12:34:35.317Z",
+        "bap_id": "ondc.tummoc.in",
+        "transaction_id": "d9d47782-1355-4e30-834c-26cbe9cea088",
+        "message_id": "1984d585-3964-4814-98e6-4c9ed93268e6",
         "version": "2.0.0",
         "action": "init",
-        "bap_uri": "https://proapi.easemytrip.com/metroapp/ONDC",
-        "ttl": "PT30S"
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/bookTicket",
+        "ttl": "PT30S",
+        "bpp_id": "uat.kanpurmetrogosmartcard.com",
+        "bpp_uri": "https://uat.kanpurmetrogosmartcard.com/ondc/api/ondc"
     },
     "message": {
         "order": {
             "items": [
                 {
-                    "id": "SJT-Rawatpur-Kalyanpur",
+                    "id": "SJT-IIT Kanpur-Gurudev Chauraha",
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 3
                         }
                     }
                 }
             ],
             "provider": {
-                "id": "b521d92e-2d78-4e7f-bb6c-8f15f8528991"
+                "id": "kanpur-rail-metro"
             },
             "billing": {
-                "name": "John Doe",
-                "email": "john.doe@example.com",
-                "phone": "+91-9897867564"
+                "name": "Maaz",
+                "email": "maazdgr6@gmail.com",
+                "phone": "8789012316"
             },
             "payments": [
                 {
@@ -46,22 +46,22 @@
                     "status": "NOT-PAID",
                     "type": "PRE-ORDER",
                     "params": {
-                        "bank_code": "KKBK0000261",
-                        "bank_account_number": "4323434556",
-                        "virtual_payment_address": "9988199772@okicic"
+                        "bank_code": "ICIC0001422",
+                        "bank_account_number": "918789012316",
+                        "virtual_payment_address": "8789012316@ybl"
                     },
                     "tags": [
                         {
                             "descriptor": {
-                                "code": "BUYER_FINDER_FEES"
+                                "code": "SETTLEMENT_DETAILS"
                             },
                             "display": false,
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                        "code": "SETTLEMENT_TYPE"
                                     },
-                                    "value": "0"
+                                    "value": "UPI"
                                 }
                             ]
                         },
@@ -73,15 +73,21 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
+                                        "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "20"
+                                    "value": "PT1D"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_TYPE"
                                     },
                                     "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "60.00"
                                 },
                                 {
                                     "descriptor": {
@@ -93,7 +99,39 @@
                                     "descriptor": {
                                         "code": "STATIC_TERMS"
                                     },
-                                    "value": "https://www.abc.com/settlement-terms/"
+                                    "value": "https://metro-terms.triffy.in/kochi/index.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "INVOICE_RECIEPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Kochi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
                                 }
                             ]
                         }
