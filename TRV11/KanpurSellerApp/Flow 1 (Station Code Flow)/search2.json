@@ -9,24 +9,27 @@
             }
         },
         "domain": "ONDC:TRV11",
-        "timestamp": "2024-01-19T05:34:30.557Z",
-        "bap_id": "proapi.easemytrip.com/metroapp/ONDC",
-        "transaction_id": "8c1f9b0b-43a2-4130-92b3-cb5599fa04c7",
-        "message_id": "cfdaa631-791e-4637-9765-418c721a1d86",
+        "timestamp": "2024-06-26T12:34:26.418Z",
+        "bap_id": "ondc.tummoc.in",
+        "transaction_id": "d9d47782-1355-4e30-834c-26cbe9cea088",
+        "message_id": "b11eb80c-a209-42bc-9858-f29d2dad23ff",
         "version": "2.0.0",
         "action": "search",
-        "bap_uri": "https://proapi.easemytrip.com/metroapp/ONDC",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/getFare",
         "ttl": "PT30S"
     },
     "message": {
         "intent": {
             "fulfillment": {
+                "vehicle": {
+                    "category": "METRO"
+                },
                 "stops": [
                     {
                         "type": "START",
                         "location": {
                             "descriptor": {
-                                "code": "Rawatpur"
+                                "code": "IIT Kanpur"
                             }
                         }
                     },
@@ -34,16 +37,14 @@
                         "type": "END",
                         "location": {
                             "descriptor": {
-                                "code": "Kalyanpur"
+                                "code": "Gurudev Chauraha"
                             }
                         }
                     }
-                ],
-                "vehicle": {
-                    "category": "METRO"
-                }
+                ]
             },
             "payment": {
+                "collected_by": null,
                 "tags": [
                     {
                         "descriptor": {
@@ -55,7 +56,7 @@
                                 "descriptor": {
                                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                 },
-                                "value": "0"
+                                "value": "1"
                             }
                         ]
                     },
@@ -69,13 +70,13 @@
                                 "descriptor": {
                                     "code": "DELAY_INTEREST"
                                 },
-                                "value": "0"
+                                "value": "2.5"
                             },
                             {
                                 "descriptor": {
                                     "code": "STATIC_TERMS"
                                 },
-                                "value": "https://api.example-bap.com/booking/terms"
+                                "value": "https://ondc.tummoc.in"
                             }
                         ]
                     }
