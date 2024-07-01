@@ -1,0 +1,171 @@
+{
+  "context": {
+    "domain": "ONDC:RET13",
+    "country": "IND",
+    "city": "std:020",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp4",
+    "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp4/bpp",
+    "transaction_id": "aa5f68f0-388c-4763-b0e8-1fcdbae491ab",
+    "message_id": "5552c8c-c62-4fa-915-d60136d97c59",
+    "timestamp": "2024-07-01T19:24:59.222Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-07-01-670131",
+      "state": "In-progress",
+      "provider": {
+        "id": "a080a2be-be01-4c4b-b844-c8b03e626ce0",
+        "locations": [{ "id": "6ea3fbcd-95b6-41f3-92f1-1532a363e149" }]
+      },
+      "items": [
+        {
+          "id": "26562ce9-fa82-4c2d-af6a-a18abca7693a",
+          "quantity": { "count": 1 },
+          "fulfillment_id": "a2135379-30e8-4d41-8928-49b06fcfc740"
+        },
+        {
+          "id": "777e2dde-4d68-4086-8d4b-97e7ee96dcdc",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "a2135379-30e8-4d41-8928-49b06fcfc740"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "a2135379-30e8-4d41-8928-49b06fcfc740",
+          "state": { "descriptor": { "code": "Packed" } },
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "gps": "18.5708499,73.7716326",
+              "address": {
+                "locality": "Balewadi High St",
+                "city": "Pune",
+                "area_code": "411045",
+                "state": "Maharashtra"
+              },
+              "descriptor": { "name": "Protean Store" }
+            },
+            "contact": {
+              "phone": "9900990099",
+              "email": "support@protean.in"
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-01T19:35:25.445Z",
+                "end": "2024-07-02T23:00:00.445Z"
+              }
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.998738,77.582043",
+              "address": {
+                "name": "Testing Protean",
+                "country": "IND",
+                "locality": "1st Main Road",
+                "building": "Main Building",
+                "city": "Bengaluru",
+                "area_code": "560020",
+                "state": "Karnataka"
+              }
+            },
+            "contact": { "phone": "9988998899", "email": "test@protean.com" },
+            "time": {
+              "range": {
+                "start": "2024-07-03T10:00:00.445Z",
+                "end": "2024-07-06T23:00:00.445Z"
+              }
+            },
+            "person": { "name": "Testing Protean" }
+          },
+          "@ondc/org/provider_name": "Protean Store",
+          "@ondc/org/TAT": "PT136H"
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Testing Protean",
+          "country": "IND",
+          "locality": "1st Main Road",
+          "building": "Main Building",
+          "city": "Bengaluru",
+          "area_code": "560020",
+          "state": "Karnataka"
+        },
+        "phone": "9988998899",
+        "name": "Testing Protean",
+        "email": "test@protean.com",
+        "created_at": "2024-07-01T19:20:04.470Z",
+        "updated_at": "2024-07-01T19:20:04.470Z"
+      },
+      "quote": {
+        "ttl": "PT24H",
+        "price": { "currency": "INR", "value": "440.0" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "26562ce9-fa82-4c2d-af6a-a18abca7693a",
+            "title": "Ponds Mosturizer 200g - female",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "80.0" },
+            "@ondc/org/item_quantity": { "count": 1 },
+            "item": { "price": { "currency": "INR", "value": "80.0" } }
+          },
+          {
+            "@ondc/org/item_id": "777e2dde-4d68-4086-8d4b-97e7ee96dcdc",
+            "title": "Loreal Mosturizer 200g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "160.0" },
+            "@ondc/org/item_quantity": { "count": 2 },
+            "item": { "price": { "currency": "INR", "value": "80.0" } }
+          },
+          {
+            "@ondc/org/item_id": "a2135379-30e8-4d41-8928-49b06fcfc740",
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "100.0" }
+          },
+          {
+            "@ondc/org/item_id": "a2135379-30e8-4d41-8928-49b06fcfc740",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "100.0" }
+          }
+        ]
+      },
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "params": {
+          "amount": "440.0",
+          "currency": "INR",
+          "transaction_id": "order_OTTtGeeb6LbKS5"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "tl_method": "http/get",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "protean tech",
+            "settlement_bank_account_no": "9900990099009",
+            "settlement_ifsc_code": "SBIN0050007",
+            "bank_name": "SBI BANK",
+            "branch_name": "City Pune"
+          }
+        ]
+      },
+      "created_at": "2024-07-01T19:20:24.253Z",
+      "updated_at": "2024-07-01T19:24:59.190Z"
+    }
+  }
+}
