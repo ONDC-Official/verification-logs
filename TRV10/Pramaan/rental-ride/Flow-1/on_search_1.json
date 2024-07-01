@@ -1,0 +1,183 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "action": "on_search",
+    "version": "2.0.0",
+    "transaction_id": "69d60e9f-b0fb-4968-8f3d-971cd4134203",
+    "message_id": "f5452cbf-f046-4d92-afba-41e43d082f60",
+    "timestamp": "2024-07-01T06:40:02.502Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "catalog": {
+      "descriptor": {
+        "name": "Mobility Servies BPP"
+      },
+      "providers": [
+        {
+          "id": "P1",
+          "locations": [
+            {
+              "id": "L1",
+              "gps": "12.916468,77.608998"
+            },
+            {
+              "id": "L2",
+              "gps": "12.916714,77.609298"
+            },
+            {
+              "id": "L3",
+              "gps": "12.916573,77.615216"
+            },
+            {
+              "id": "L4",
+              "gps": "12.906857,77.604456"
+            }
+          ],
+          "items": [
+            {
+              "id": "I1",
+              "descriptor": {
+                "name": "Rental Ride",
+                "code": "RIDE"
+              },
+              "price": {
+                "maximum_value": "236",
+                "currency": "INR",
+                "minimum_value": "206",
+                "value": "206"
+              },
+              "location_ids": [
+                "L2",
+                "L4"
+              ],
+              "fulfillment_ids": [
+                "F1"
+              ]
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "F1",
+              "type": "DELIVERY",
+              "stops": [
+                {
+                  "time": {
+                    "duration": "PT2H"
+                  },
+                  "type": "START",
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  }
+                }
+              ],
+              "vehicle": {
+                "category": "CAB"
+              }
+            },
+            {
+              "id": "F2",
+              "type": "DELIVERY",
+              "stops": [
+                {
+                  "time": {
+                    "duration": "PT4H"
+                  },
+                  "type": "START",
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  }
+                }
+              ],
+              "vehicle": {
+                "category": "CAB"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MANDATORY_ARBITRATION"
+                      },
+                      "value": "true"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "COURT_JURISDICTION"
+                      },
+                      "value": "New Delhi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.abc.com/settlement-terms/"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

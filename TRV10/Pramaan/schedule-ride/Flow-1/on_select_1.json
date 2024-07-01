@@ -1,0 +1,206 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "action": "on_select",
+    "version": "2.0.0",
+    "transaction_id": "2a2e314c-c5c9-4d69-8001-91e135b86c80",
+    "message_id": "0ad28255-120d-4327-8abc-6bcf3c262638",
+    "timestamp": "2024-07-01T05:33:21.728Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "I1",
+          "descriptor": {
+            "name": "Schedule Ride",
+            "code": "RIDE"
+          },
+          "price": {
+            "maximum_value": "176",
+            "currency": "INR",
+            "minimum_value": "156",
+            "value": "146"
+          },
+          "location_ids": [
+            "L1",
+            "L3"
+          ],
+          "fulfillment_ids": [
+            "F1"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "DELIVERY",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "time": {
+                "timestamp": "2023-08-23T13:00:40.065Z"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "12.971186, 77.586812"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "AUTO_RICKSHAW"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "encoded_polyline",
+                    "name": "Path"
+                  },
+                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
+                },
+                {
+                  "descriptor": {
+                    "code": "waypoints",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "176",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": "30",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": "146",
+              "currency": "INR"
+            }
+          }
+        ],
+        "ttl": "P200S"
+      }
+    }
+  }
+}

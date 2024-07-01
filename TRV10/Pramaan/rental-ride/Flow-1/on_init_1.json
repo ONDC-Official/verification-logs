@@ -1,0 +1,355 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "action": "on_init",
+    "version": "2.0.0",
+    "transaction_id": "69d60e9f-b0fb-4968-8f3d-971cd4134203",
+    "message_id": "0691d998-22d2-4254-8225-11fca9cb18f8",
+    "timestamp": "2024-07-01T06:40:18.046Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "id": "86e2492c-8552-4c5c-a7e4-1fb73ba4395a",
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "I1",
+          "descriptor": {
+            "name": "Cab Ride",
+            "code": "RIDE"
+          },
+          "location_ids": [
+            "L1",
+            "L3"
+          ],
+          "price": {
+            "maximum_value": "176",
+            "currency": "INR",
+            "minimum_value": "156",
+            "value": "146"
+          },
+          "fulfillment_ids": [
+            "F1"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "3"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "fe45efd0-8d24-4e78-a429-1ece10d4d2b8"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "DELIVERY",
+          "stops": [
+            {
+              "time": {
+                "duration": "PT2H"
+              },
+              "type": "START",
+              "location": {
+                "gps": "13.008935, 77.644408"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "CAB"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "encoded_polyline",
+                    "name": "Path"
+                  },
+                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
+                },
+                {
+                  "descriptor": {
+                    "code": "waypoints",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "176",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": "30",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": "146",
+              "currency": "INR"
+            }
+          }
+        ],
+        "ttl": "P200S"
+      },
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.abc.com/settlement-terms/"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "176"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            }
+          ],
+          "params": {
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "9988199772@okicic"
+          },
+          "id": "2a92f387-ce61-49f2-a777-7362477a51ce"
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "0"
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "100"
+          }
+        }
+      ]
+    }
+  }
+}
