@@ -1,0 +1,128 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp1",
+    "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp1/bap",
+    "bpp_id": "ondcseller-staging.costbo.com",
+    "bpp_uri": "https://ondcseller-staging.costbo.com/ondc/v1/seller",
+    "transaction_id": "5f105f61-8764-4dea-a3a4-a976818690a5",
+    "message_id": "c7d9bb53-7ec6-4b9c-8070-92b01cd5b1a4",
+    "timestamp": "2024-07-01T16:27:27.545Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "7bf9b561199f4a898b3f8a3cef91b6e6",
+        "locations": [{ "id": "7bf9b561199f4a898b3f8a3cef91b6e6-loc1" }]
+      },
+      "items": [
+        {
+          "id": "b51b38600f704f918e46d87ac1b07d0f",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "F1"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "Delivery",
+          "tracking": false,
+          "end": {
+            "location": {
+              "gps": "12.981013,77.594931",
+              "address": {
+                "name": "Protean",
+                "country": "IND",
+                "locality": "Dr Ambedkar Road",
+                "building": "Bengaluru",
+                "city": "Bengaluru",
+                "area_code": "560001",
+                "state": "Karnataka"
+              }
+            },
+            "contact": { "phone": "9842798472", "email": "Test@Protean.com" }
+          }
+        }
+      ],
+      "quote": {
+        "ttl": "P1D",
+        "price": { "currency": "INR", "value": "700.0" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "b51b38600f704f918e46d87ac1b07d0f",
+            "title": "Bhuira Apple Cinnamon Jelly 250g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "500.0" },
+            "@ondc/org/item_quantity": { "count": 2 },
+            "item": { "price": { "currency": "INR", "value": "250.0" } }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "0.0" }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "100.0" }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "100.0" }
+          }
+        ]
+      },
+      "billing": {
+        "address": {
+          "name": "Protean",
+          "country": "IND",
+          "locality": "Dr Ambedkar Road",
+          "building": "Bengaluru",
+          "city": "Bengaluru",
+          "area_code": "560001",
+          "state": "Karnataka"
+        },
+        "phone": "9842798472",
+        "name": "Protean",
+        "email": "Test@Protean.com",
+        "created_at": "2024-07-01T16:27:26.416Z",
+        "updated_at": "2024-07-01T16:27:26.416Z"
+      },
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "costbo services private limited",
+            "settlement_bank_account_no": "50200024950556",
+            "settlement_ifsc_code": "HDFC0000523",
+            "bank_name": "HDFC Bank",
+            "branch_name": "Richmond Road",
+            "upi_address": ""
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "29AAGCC6260P1Z1" },
+            { "code": "provider_tax_number", "value": "AAECB8977F" }
+          ]
+        }
+      ]
+    }
+  }
+}

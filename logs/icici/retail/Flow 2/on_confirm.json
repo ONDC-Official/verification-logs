@@ -1,0 +1,179 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp1",
+    "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp1/bap",
+    "bpp_id": "ondcseller-staging.costbo.com",
+    "bpp_uri": "https://ondcseller-staging.costbo.com/ondc/v1/seller",
+    "transaction_id": "a850b27d-cd23-428e-b440-a339651b598a",
+    "message_id": "7685c69d-a345-4ebd-a46a-282f977b0bb4",
+    "timestamp": "2024-07-01T14:36:21.432Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-07-01-809950",
+      "state": "Created",
+      "billing": {
+        "address": {
+          "name": "Protean",
+          "country": "IND",
+          "locality": "Dr Ambedkar Road",
+          "building": "Bengaluru",
+          "city": "Bengaluru",
+          "area_code": "560001",
+          "state": "Karnataka"
+        },
+        "phone": "9842798472",
+        "name": "Protean",
+        "email": "Test@Protean.com",
+        "created_at": "2024-07-01T14:35:26.408Z",
+        "updated_at": "2024-07-01T14:35:26.408Z"
+      },
+      "items": [
+        {
+          "id": "b51b38600f704f918e46d87ac1b07d0f",
+          "quantity": { "count": 1 },
+          "fulfillment_id": "F1"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "F1",
+          "state": { "descriptor": { "code": "Pending" } },
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "7bf9b561199f4a898b3f8a3cef91b6e6-loc1",
+              "gps": "12.968707,77.577196",
+              "address": {
+                "locality": "chickpet",
+                "building": "202, D. M. Arcade, Chickpet Rd, Ragipet, Mamulpet, Chickpet, Bengaluru, Karnataka 560053, India",
+                "city": "Bengaluru",
+                "area_code": "560053",
+                "state": "KA"
+              },
+              "descriptor": { "name": "Himachal Factory" }
+            },
+            "contact": {
+              "phone": "9970968305",
+              "email": "marketing@costbo.com"
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-01T14:51:21.422Z",
+                "end": "2024-07-02T23:00:00.422Z"
+              }
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.981013,77.594931",
+              "address": {
+                "name": "Protean",
+                "country": "IND",
+                "locality": "Dr Ambedkar Road",
+                "building": "Bengaluru",
+                "city": "Bengaluru",
+                "area_code": "560001",
+                "state": "Karnataka"
+              }
+            },
+            "contact": { "phone": "9842798472", "email": "Test@Protean.com" },
+            "time": {
+              "range": {
+                "start": "2024-07-03T10:00:00.422Z",
+                "end": "2024-07-06T23:00:00.422Z"
+              }
+            },
+            "person": { "name": "Protean" }
+          },
+          "@ondc/org/provider_name": "Himachal Factory",
+          "@ondc/org/TAT": "P5DT16H"
+        }
+      ],
+      "payment": {
+        "params": {
+          "amount": "450.00",
+          "currency": "INR",
+          "transaction_id": "order_OTP2bmnwq1x8qc"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "costbo services private limited",
+            "settlement_bank_account_no": "50200024950556",
+            "settlement_ifsc_code": "HDFC0000523",
+            "bank_name": "HDFC Bank",
+            "branch_name": "Richmond Road",
+            "upi_address": ""
+          }
+        ]
+      },
+      "quote": {
+        "ttl": "P1D",
+        "price": { "currency": "INR", "value": "450.0" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "b51b38600f704f918e46d87ac1b07d0f",
+            "title": "Bhuira Apple Cinnamon Jelly 250g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "250.0" },
+            "@ondc/org/item_quantity": { "count": 1 },
+            "item": { "price": { "currency": "INR", "value": "250.0" } }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "0.0" }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "100.0" }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "100.0" }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "29AAGCC6260P1Z1" },
+            { "code": "provider_tax_number", "value": "AAECB8977F" },
+            { "code": "np_type", "value": "MSN" }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "38VZKPY3117K9Z5" }]
+        }
+      ],
+      "created_at": "2024-07-01T14:36:20.273Z",
+      "updated_at": "2024-07-01T14:36:21.432Z",
+      "provider": {
+        "id": "7bf9b561199f4a898b3f8a3cef91b6e6",
+        "locations": [{ "id": "7bf9b561199f4a898b3f8a3cef91b6e6-loc1" }]
+      }
+    }
+  }
+}
