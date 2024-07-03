@@ -28,7 +28,7 @@
           "id": "KcSCdaJaa-adult-EtrwckLc",
           "descriptor": {
             "name": "singleJourneyTicket",
-            "code": "singleJourneyTicket"
+            "code": "SJT"
           },
           "price": {
             "currency": "INR",
@@ -62,7 +62,7 @@
                   "name": "Rourkela Airport Chowk",
                   "code": "gveMEYdp"
                 },
-                "gps": "22.252589842586374, 84.81380260921"
+                "gps": "22.252590, 84.813803"
               },
               "id": "1"
             },
@@ -73,7 +73,7 @@
                   "name": "Birsa Munda Stadium Gate 2",
                   "code": "NjcqehkR"
                 },
-                "gps": "22.24910837846774, 84.81355674937963"
+                "gps": "22.249108, 84.813557"
               },
               "id": "2",
               "parent_stop_id": "1"
@@ -85,7 +85,7 @@
                   "name": "Birsa Munda Stadium Gate 4",
                   "code": "asIsFKhQ"
                 },
-                "gps": "22.2457, 84.8124"
+                "gps": "22.245700, 84.812400"
               },
               "id": "3",
               "parent_stop_id": "2"
@@ -97,7 +97,7 @@
                   "name": "Tisco Road",
                   "code": "AeOqrFeb"
                 },
-                "gps": "22.247731927687497, 84.80647725281334"
+                "gps": "22.247732, 84.806477"
               },
               "id": "4",
               "parent_stop_id": "3"
@@ -109,7 +109,7 @@
                   "name": "Kalinga Vihar Shiva Temple",
                   "code": "hHoIIFyQ"
                 },
-                "gps": "22.246555355649427, 84.8058634429569"
+                "gps": "22.246555, 84.805863"
               },
               "id": "5",
               "parent_stop_id": "4"
@@ -121,7 +121,7 @@
                   "name": "Kalinga Vihar",
                   "code": "kpWmAUTU"
                 },
-                "gps": "22.2436889889735, 84.80592546350049"
+                "gps": "22.243689, 84.805925"
               },
               "id": "6",
               "parent_stop_id": "5"
@@ -142,10 +142,26 @@
                     "code": "ROUTE_ID"
                   },
                   "value": "101 NonAC"
+                },
+                {
+                  "descriptor": {
+                    "code": "ROUTE_DIRECTION"
+                  },
+                  "value": "UP"
                 }
               ]
             }
           ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "cancel_by": {
+            "duration": "PT0M"
+          },
+          "cancellation_fee": {
+            "percentage": "100"
+          }
         }
       ],
       "billing": {
@@ -160,7 +176,7 @@
         },
         "breakup": [
           {
-            "title": "Base Fare",
+            "title": "BASE_FARE",
             "item": {
               "id": "KcSCdaJaa-adult-EtrwckLc",
               "price": {
@@ -176,6 +192,20 @@
             "price": {
               "currency": "INR",
               "value": "20.0"
+            }
+          },
+          {
+            "title": "OFFER",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          },
+          {
+            "title": "TOLL",
+            "price": {
+              "currency": "INR",
+              "value": "0"
             }
           }
         ]
@@ -199,12 +229,18 @@
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
                   "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
                 }
               ]
             },
             {
               "descriptor": {
-                "code": "SETTLEMENT_DETAILS"
+                "code": "SETTLEMENT_TERMS"
               },
               "display": false,
               "list": [
@@ -231,6 +267,12 @@
                     "code": "DELAY_INTEREST"
                   },
                   "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "20.0"
                 }
               ]
             }
