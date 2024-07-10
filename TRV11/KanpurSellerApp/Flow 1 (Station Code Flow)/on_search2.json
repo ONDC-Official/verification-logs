@@ -9,10 +9,10 @@
             }
         },
         "domain": "ONDC:TRV11",
-        "timestamp": "2024-07-02T12:40:40.904Z",
+        "timestamp": "2024-07-10T07:29:43.410Z",
         "bap_id": "ondc.tummoc.in",
-        "transaction_id": "de4180c1-0298-415e-9302-0b73ce68d24e",
-        "message_id": "ac1060fa-c1c6-4767-8e2e-242252d2d244",
+        "transaction_id": "221c09b4-0e08-47f9-8057-b1ae2436edce",
+        "message_id": "85474bcc-d682-4d2e-98b1-4937984e6f2f",
         "version": "2.0.0",
         "action": "on_search",
         "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/getFare/on_search",
@@ -53,45 +53,57 @@
                     },
                     "fulfillments": [
                         {
-                            "id": "9b780b55-e51d-4537-89bf-93204ab7c198",
+                            "id": "80785a69-afe9-4658-9ddc-2aec21d17aff",
                             "stops": [
                                 {
-                                    "id": "Rawatpur",
+                                    "id": "Vishwavidyalaya",
                                     "location": {
                                         "descriptor": {
-                                            "code": "Rawatpur",
-                                            "name": "Rawatpur"
+                                            "code": "Vishwavidyalaya",
+                                            "name": "Vishwavidyalaya"
                                         },
-                                        "gps": "26.48296221,80.29989137"
+                                        "gps": "26.497238,80.264891"
                                     },
                                     "type": "START"
                                 },
                                 {
-                                    "id": "Geeta Nagar",
+                                    "id": "SPM Hospital",
                                     "location": {
                                         "descriptor": {
-                                            "code": "Geeta Nagar",
-                                            "name": "Geeta Nagar"
+                                            "code": "SPM Hospital",
+                                            "name": "SPM Hospital"
                                         },
-                                        "gps": "26.48729201,80.29216188"
+                                        "gps": "26.498823,80.259113"
                                     },
                                     "type": "INTERMEDIATE_STOP",
                                     "parent_stop_id": "1"
                                 },
                                 {
-                                    "id": "Gurudev Chauraha",
+                                    "id": "Kalyanpur",
                                     "location": {
                                         "descriptor": {
-                                            "code": "Gurudev Chauraha",
-                                            "name": "Gurudev Chauraha"
+                                            "code": "Kalyanpur",
+                                            "name": "Kalyanpur"
                                         },
-                                        "gps": "26.4916344,80.28450218"
+                                        "gps": "26.50358,80.252865"
+                                    },
+                                    "type": "INTERMEDIATE_STOP",
+                                    "parent_stop_id": "2"
+                                },
+                                {
+                                    "id": "IIT Kanpur",
+                                    "location": {
+                                        "descriptor": {
+                                            "code": "IIT Kanpur",
+                                            "name": "IIT Kanpur"
+                                        },
+                                        "gps": "26.509252,80.248194"
                                     },
                                     "type": "END",
-                                    "parent_stop_id": "2"
+                                    "parent_stop_id": "3"
                                 }
                             ],
-                            "type": "ROUTE",
+                            "type": "TRIP",
                             "vehicle": {
                                 "category": "METRO"
                             }
@@ -113,6 +125,12 @@
                                                 "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                             },
                                             "value": "1"
+                                        },
+                                        {
+                                            "descriptor": {
+                                                "code": "BUYER_FINDER_FEES_TYPE"
+                                            },
+                                            "value": "percent"
                                         }
                                     ]
                                 },
@@ -181,8 +199,8 @@
                     ],
                     "time": {
                         "range": {
-                            "end": "2024-07-02T23:51:00.000Z",
-                            "start": "2024-07-02T05:00:00.000Z"
+                            "end": "2024-07-10T23:51:00.000Z",
+                            "start": "2024-07-10T05:00:00.000Z"
                         }
                     },
                     "items": [
@@ -195,12 +213,12 @@
                                 "name": "Single Journey"
                             },
                             "fulfillment_ids": [
-                                "9b780b55-e51d-4537-89bf-93204ab7c198"
+                                "80785a69-afe9-4658-9ddc-2aec21d17aff"
                             ],
-                            "id": "SJT-Rawatpur-Gurudev Chauraha",
+                            "id": "SJT-Vishwavidyalaya-IIT Kanpur",
                             "price": {
                                 "currency": "INR",
-                                "value": "15.0000"
+                                "value": "20"
                             },
                             "quantity": {
                                 "maximum": {
@@ -224,45 +242,16 @@
                                 "name": "Return Journey"
                             },
                             "fulfillment_ids": [
-                                "9b780b55-e51d-4537-89bf-93204ab7c198"
+                                "80785a69-afe9-4658-9ddc-2aec21d17aff"
                             ],
-                            "id": "RJT-Rawatpur-Gurudev Chauraha",
+                            "id": "RJT-Vishwavidyalaya-IIT Kanpur",
                             "price": {
                                 "currency": "INR",
-                                "value": "100"
+                                "value": "20"
                             },
                             "quantity": {
                                 "maximum": {
-                                    "count": 1
-                                },
-                                "minimum": {
-                                    "count": 1
-                                }
-                            },
-                            "time": {
-                                "duration": "PT120M",
-                                "label": "Validity"
-                            }
-                        },
-                        {
-                            "category_ids": [
-                                "TICKET-4f2b2937-31bb-4b7d-aa98-b3e62c6fa4db"
-                            ],
-                            "descriptor": {
-                                "code": "GROUP",
-                                "name": "Group Journey"
-                            },
-                            "fulfillment_ids": [
-                                "9b780b55-e51d-4537-89bf-93204ab7c198"
-                            ],
-                            "id": "GROUP-Rawatpur-Gurudev Chauraha",
-                            "price": {
-                                "currency": "INR",
-                                "value": "15.0000"
-                            },
-                            "quantity": {
-                                "maximum": {
-                                    "count": 1
+                                    "count": 30
                                 },
                                 "minimum": {
                                     "count": 1
