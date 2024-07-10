@@ -9,13 +9,13 @@
             }
         },
         "domain": "ONDC:TRV11",
-        "timestamp": "2024-07-10T07:29:58.996Z",
+        "timestamp": "2024-07-10T07:30:01.525Z",
         "bap_id": "ondc.tummoc.in",
         "transaction_id": "984db11f-d395-4ed2-a10c-8f8bb6f6a4e2",
-        "message_id": "407b56d6-d033-4bc9-b55d-e08d0c66437a",
+        "message_id": "3786f9ac-1b16-4e1b-a2f4-c69d56194fa3",
         "version": "2.0.0",
-        "action": "on_confirm",
-        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/bookTicket/on_confirm",
+        "action": "on_status",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/bookTicket/on_status",
         "ttl": "PT30S",
         "bpp_id": "uat.kanpurmetrogosmartcard.com",
         "bpp_uri": "https://uat.kanpurmetrogosmartcard.com/ondc/api/ondc"
@@ -35,14 +35,14 @@
                     }
                 }
             ],
-            "created_at": "2024-07-10T07:29:59.000Z",
+            "created_at": "2024-07-10T07:30:02.491Z",
             "fulfillments": [
                 {
                     "id": "c5ae3b9d-19f9-4201-bb65-68a1ea129798",
                     "stops": [
                         {
                             "authorization": {
-                                "status": "UNCLAIMED",
+                                "status": "UNUSED",
                                 "token": "EbjCAsoEeKn101quxlq/NiWB5SYJbMSGQcRtyw232w8WdjkZ3hzmuwgZFfbjRPeXmUlj",
                                 "type": "QR",
                                 "valid_to": "2024-07-10T23:51:59.000Z"
@@ -120,7 +120,7 @@
                     "stops": [
                         {
                             "authorization": {
-                                "status": "UNCLAIMED",
+                                "status": "UNUSED",
                                 "token": "EcOpAsoEeKn101quxlq/NiWB5bhnvYabhbxgc6MeEBfKy39zZnCMGpu/7kbkJw0WDsJs",
                                 "type": "QR",
                                 "valid_to": "2024-07-10T23:51:59.000Z"
@@ -201,8 +201,8 @@
                         "TICKET-4f2b2937-31bb-4b7d-aa98-b3e62c6fa4db"
                     ],
                     "descriptor": {
-                        "name": "SJT",
-                        "code": "Single Journey"
+                        "name": "Single Journey",
+                        "code": "SJT"
                     },
                     "fulfillment_ids": [
                         "c5ae3b9d-19f9-4201-bb65-68a1ea129798",
@@ -229,7 +229,7 @@
                     "collected_by": "BAP",
                     "id": "5e0d629d-50d0-4c85-a7e1-013837115177",
                     "params": {
-                        "amount": "20",
+                        "amount": "40",
                         "bank_account_number": "XXXXXXXX",
                         "bank_code": "xxxxxxxxxxxxxx",
                         "currency": "INR",
@@ -267,7 +267,13 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "P30D"
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
                                 },
                                 {
                                     "descriptor": {
@@ -297,13 +303,13 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "20"
+                                    "value": "40"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
+                                        "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "UPI"
+                                    "value": "NEFT"
                                 }
                             ]
                         }
@@ -326,7 +332,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "20"
+                    "value": "40"
                 },
                 "breakup": [
                     {
@@ -345,7 +351,7 @@
                         },
                         "price": {
                             "currency": "INR",
-                            "value": "20"
+                            "value": "40"
                         }
                     }
                 ]
@@ -362,12 +368,12 @@
                             "descriptor": {
                                 "code": "GTFS"
                             },
-                            "value": "https://kanpurmetrorail.org/time-table/"
+                            "value": "https://lmrcl.com/"
                         }
                     ]
                 }
             ],
-            "updated_at": "2024-07-10T07:29:59.000Z"
+            "updated_at": "2024-07-10T07:30:02.491Z"
         }
     }
 }
