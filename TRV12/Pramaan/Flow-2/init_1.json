@@ -1,19 +1,19 @@
 {
   "context": {
+    "domain": "ONDC:TRV12",
     "location": {
       "country": {
         "code": "IND"
       },
       "city": {
-        "code": "std:080"
+        "code": "*"
       }
     },
-    "domain": "ONDC:TRV12",
-    "action": "init",
     "version": "2.0.0",
-    "transaction_id": "f0b8b303-53f0-475f-96db-2aaa7916793d",
-    "message_id": "8a752f5e-2dfc-41bb-9422-e390dc8ce3b9",
-    "timestamp": "2024-07-02T11:41:54.567Z",
+    "action": "init",
+    "transaction_id": "eba7f492-aca5-4447-8ba3-8e14782c0190",
+    "message_id": "117e854d-b46d-479d-b7cf-08aa9a01383e",
+    "timestamp": "2024-07-10T10:32:52.266Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
@@ -27,10 +27,27 @@
       },
       "items": [
         {
-          "id": "623ecd93-e53f-4f16-81d6-3363cbeeeb5e",
+          "id": "I1",
           "quantity": {
             "selected": {
-              "count": 3
+              "count": 2
+            }
+          }
+        },
+        {
+          "id": "I2",
+          "quantity": {
+            "selected": {
+              "count": 4
+            }
+          }
+        },
+        {
+          "id": "SS1720607567221",
+          "parent_item_id": "I2",
+          "quantity": {
+            "selected": {
+              "count": 2
             }
           },
           "add_ons": [
@@ -45,15 +62,16 @@
           ]
         },
         {
-          "id": "623295bf-efb3-4874-9a8f-69d2ffc4b193",
+          "id": "SS1720607567221",
+          "parent_item_id": "I2",
           "quantity": {
             "selected": {
-              "count": 4
+              "count": 2
             }
           },
           "add_ons": [
             {
-              "id": "A5",
+              "id": "A3",
               "quantity": {
                 "selected": {
                   "count": 1
@@ -65,19 +83,92 @@
       ],
       "fulfillments": [
         {
-          "id": "9b67f337-be77-4c44-8493-9bacc92e7a17",
+          "id": "aedc99c8-a2ab-4e88-9939-31b2fbe69102",
           "vehicle": {
             "category": "AIRLINE",
             "code": "6E284"
           },
           "stops": [
             {
-              "id": "STR1719920473638"
+              "id": "STR"
             },
             {
-              "id": "END1719920473639"
+              "id": "END"
             }
-          ],
+          ]
+        },
+        {
+          "id": "11e465f0-b44b-496d-ad8e-c2e82df71d21",
+          "customer": {
+            "person": {
+              "name": "abhay",
+              "age": "27",
+              "gender": "Male"
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "abhay@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "afb6031e-3dff-4fef-a188-60fef0b95016",
+          "customer": {
+            "person": {
+              "name": "abhay",
+              "age": "27",
+              "gender": "Male"
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "abhay@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "3fd93514-13df-4bb3-9b4a-921a195d4497",
+          "customer": {
+            "person": {
+              "name": "abhay",
+              "age": "27",
+              "gender": "Male"
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "abhay@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "4f8db660-6615-4628-92d1-2f4d02187cea",
+          "customer": {
+            "person": {
+              "name": "abhay",
+              "age": "27",
+              "gender": "Male"
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "abhay@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "c50d6e92-fe1d-4c1a-b8ba-5c2e0389a319",
+          "customer": {
+            "person": {
+              "name": "abhay",
+              "age": "27",
+              "gender": "Male"
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "abhay@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "2a6c949e-74f2-499f-b42b-cb0566d9f939",
           "customer": {
             "person": {
               "name": "abhay",
@@ -93,7 +184,7 @@
       ],
       "billing": {
         "name": "Tarun Verma",
-        "email": "Tr123@gmail.com",
+        "tax_id": "GSTIN:22AAAAA0000A1Z5",
         "phone": "+91 9026123456"
       },
       "payments": [
@@ -101,11 +192,6 @@
           "collected_by": "BAP",
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
-          "params": {
-            "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx",
-            "virtual_payment_address": "9988199772@okicic"
-          },
           "tags": [
             {
               "descriptor": {
@@ -129,6 +215,12 @@
               "list": [
                 {
                   "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "neft"
+                },
+                {
+                  "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
                   "value": "2.5"
@@ -141,15 +233,9 @@
                 },
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "neft"
-                },
-                {
-                  "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "42159"
+                  "value": "52041.33"
                 }
               ]
             }
