@@ -1,0 +1,251 @@
+{
+    "context": {
+        "action": "on_confirm",
+        "bap_id": "preprod-ondc.yatrirailways.com",
+        "bap_uri": "https://preprod-ondc.yatrirailways.com/api/v1/ondc/metro",
+        "bpp_id": "metrobox.preprod.triffy.in",
+        "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
+        "domain": "ONDC:TRV11",
+        "location": {
+            "city": {
+                "code": "std:0484"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "message_id": "bada7b69-2bfc-454e-b9ea-77d9a53475eb",
+        "timestamp": "2024-07-17T11:52:45.764Z",
+        "transaction_id": "e313c813-1bfa-4e00-b8e7-ed1cb8ac07bc",
+        "ttl": "PT300S",
+        "version": "2.0.0"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "email": "porrewini27@gmail.com",
+                "name": "wini",
+                "phone": "+91-8657864215"
+            },
+            "cancellation_terms": [
+                {
+                    "external_ref": {
+                        "mimetype": "text/html",
+                        "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
+                    }
+                }
+            ],
+            "created_at": "2024-07-17T11:52:45.608Z",
+            "fulfillments": [
+                {
+                    "id": "pathadipalam-pulinchudu",
+                    "stops": [
+                        {
+                            "authorization": {
+                                "status": "UNCLAIMED",
+                                "token": "38AdIQ1I1/pB5ArR3HHWYnrNXlwlobCwgAAgAAAAAAAAAUABsAAAAAm7E=",
+                                "type": "QR",
+                                "valid_to": "2024-07-17T13:52:45.608Z"
+                            },
+                            "id": "1",
+                            "location": {
+                                "descriptor": {
+                                    "code": "qr2sLsSjCuVxXNxXRbEG3W3ffK10XR",
+                                    "name": "Pathadipalam"
+                                },
+                                "gps": "10.036100, 76.314400"
+                            },
+                            "type": "START"
+                        },
+                        {
+                            "id": "2",
+                            "location": {
+                                "descriptor": {
+                                    "code": "8m3SWvdtmpEh16IziODHdkb0nUo8qU",
+                                    "name": "Pulinchudu"
+                                },
+                                "gps": "10.095100, 76.346600"
+                            },
+                            "parent_stop_id": "1",
+                            "type": "END"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "8964.0.0.20"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "METRO"
+                    }
+                }
+            ],
+            "id": "TRFe892c6f5fa3d4ab4868355f5d721390e",
+            "items": [
+                {
+                    "category_ids": [
+                        "TICKET"
+                    ],
+                    "descriptor": {
+                        "code": "SJT",
+                        "name": "Single Journey Ticket"
+                    },
+                    "fulfillment_ids": [
+                        "pathadipalam-pulinchudu"
+                    ],
+                    "id": "sjt-pathadipalam-pulinchudu",
+                    "price": {
+                        "currency": "INR",
+                        "value": "27"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "duration": "PT120M",
+                        "label": "Validity"
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BAP",
+                    "id": "afbaf33c-9424-4497-b1eb-fd217025d0a0",
+                    "params": {
+                        "amount": "27",
+                        "bank_account_number": "00228130001XXXX",
+                        "bank_code": "XXXX0000022",
+                        "currency": "INR",
+                        "transaction_id": "a85abc49-4c09-4fb7-bae4-cf2a690d40b9"
+                    },
+                    "status": "PAID",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "INVOICE_RECIEPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Kochi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://metro-terms.triffy.in/kochi/index.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "27"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "NEFT"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "PRE-ORDER"
+                }
+            ],
+            "provider": {
+                "descriptor": {
+                    "name": "Kochi Metro Rail Limited"
+                },
+                "id": "triffy-kmrl-rail-metro",
+                "time": {
+                    "range": {
+                        "end": "2024-07-17T17:00:00Z",
+                        "start": "2024-07-16T23:00:00Z"
+                    }
+                }
+            },
+            "quote": {
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "sjt-pathadipalam-pulinchudu",
+                            "price": {
+                                "currency": "INR",
+                                "value": "27"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "27"
+                        },
+                        "title": "BASE_FARE"
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "27"
+                }
+            },
+            "status": "ACTIVE",
+            "updated_at": "2024-07-17T11:52:45.608Z"
+        }
+    }
+}
