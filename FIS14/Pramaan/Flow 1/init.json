@@ -1,0 +1,140 @@
+{
+    "context": {
+        "domain": "ONDC:FIS14",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "version": "2.0.0",
+        "action": "init",
+        "transaction_id": "eb76531b-8b9d-45b1-9019-dae8921e782d",
+        "message_id": "507712fa-fb34-4413-b355-44f27723fedf",
+        "timestamp": "2024-07-16T10:09:04.702Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "ttl": "PT10M",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "amc_1"
+            },
+            "items": [
+                {
+                    "id": "12391",
+                    "quantity": {
+                        "selected": {
+                            "measure": {
+                                "value": "3000",
+                                "unit": "amount"
+                            }
+                        }
+                    },
+                    "time": {
+                        "schedule": {
+                            "frequency": "R6/2024-05-15/P1M"
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "ff_123"
+                    ]
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "ff_123",
+                    "type": "SIP",
+                    "customer": {
+                        "person": {
+                            "id": "PAN:EKLZS12EET"
+                        },
+                        "contact": {
+                            "phone": "8088980788"
+                        }
+                    },
+                    "agent": {
+                        "person": {
+                            "id": "EUIN:1234"
+                        },
+                        "organization": {
+                            "creds": [
+                                {
+                                    "id": "ARN-124567",
+                                    "type": "ARN"
+                                },
+                                {
+                                    "id": "ARN-123456",
+                                    "type": "SUB_BROKER_ARN"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "xinput": {
+                "form": {
+                    "id": "884ed307-5865-472c-9db4-bb72afc13683"
+                },
+                "form_response": {
+                    "status": "SUCCESS",
+                    "submission_id": "1c38b5dc-144a-4ae2-93b7-e1615d66f24f"
+                }
+            },
+            "payments": [
+                {
+                    "id": "pmt_123",
+                    "collected_by": "bpp",
+                    "params": {
+                        "amount": "3000",
+                        "currency": "inr",
+                        "source_bank_code": "icic0000047",
+                        "source_bank_account_number": "004701563111",
+                        "source_bank_account_name": "harish gupta"
+                    },
+                    "type": "PRE_FULFILLMENT"
+                }
+            ],
+            "documents": [
+                {
+                    "descriptor": {
+                        "name": "Terms & Conditions",
+                        "code": "TERMS"
+                    },
+                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4",
+                    "mime_type": "text/html"
+                }
+            ],
+            "tags": [
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BAP Terms of Engagement",
+                        "code": "BAP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
