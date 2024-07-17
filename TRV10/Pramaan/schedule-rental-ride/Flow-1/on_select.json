@@ -11,9 +11,9 @@
     "domain": "ONDC:TRV10",
     "action": "on_select",
     "version": "2.0.0",
-    "transaction_id": "2a2e314c-c5c9-4d69-8001-91e135b86c80",
-    "message_id": "0ad28255-120d-4327-8abc-6bcf3c262638",
-    "timestamp": "2024-07-01T05:33:21.728Z",
+    "transaction_id": "052b14cd-5f1e-4308-b0f3-684898274374",
+    "message_id": "68e26f29-0b54-42b1-947c-d02923c1c5b3",
+    "timestamp": "2024-07-17T11:04:15.477Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30S",
@@ -23,27 +23,73 @@
   "message": {
     "order": {
       "provider": {
-        "id": "P1"
+        "id": "OD_101"
       },
+      "fulfillments": [
+        {
+          "id": "55eb5737-1609-4141-9d8a-8600c5cd7f3e",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "time": {
+                "duration": "PT2H",
+                "timestamp": "2023-08-23T12:00:40.065Z"
+              }
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "CAB"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "encoded_polyline",
+                    "name": "Path"
+                  },
+                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
+                },
+                {
+                  "descriptor": {
+                    "code": "waypoints",
+                    "name": "waypoints"
+                  },
+                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "items": [
         {
           "id": "I1",
           "descriptor": {
-            "name": "Schedule Ride",
-            "code": "RIDE"
+            "code": "RIDE",
+            "name": "Rental-Scheduled Ride"
           },
+          "fulfillment_ids": [
+            "55eb5737-1609-4141-9d8a-8600c5cd7f3e"
+          ],
           "price": {
-            "maximum_value": "176",
             "currency": "INR",
-            "minimum_value": "156",
-            "value": "146"
+            "value": "210.00",
+            "minimum_value": "136",
+            "maximum_value": "230.00"
           },
           "location_ids": [
-            "L1",
-            "L3"
-          ],
-          "fulfillment_ids": [
-            "F1"
+            "5dc8a0e2-b368-4307-91fe-059eb622ece0",
+            "e605d7d5-2db6-4f5e-8c40-31bf9f8c0e97"
           ],
           "tags": [
             {
@@ -127,79 +173,28 @@
           ]
         }
       ],
-      "fulfillments": [
-        {
-          "id": "F1",
-          "type": "DELIVERY",
-          "stops": [
-            {
-              "type": "START",
-              "location": {
-                "gps": "13.008935, 77.644408"
-              },
-              "time": {
-                "timestamp": "2023-08-23T13:00:40.065Z"
-              }
-            },
-            {
-              "type": "END",
-              "location": {
-                "gps": "12.971186, 77.586812"
-              }
-            }
-          ],
-          "vehicle": {
-            "category": "AUTO_RICKSHAW"
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "ROUTE_INFO",
-                "name": "Route Information"
-              },
-              "display": true,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "encoded_polyline",
-                    "name": "Path"
-                  },
-                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
-                },
-                {
-                  "descriptor": {
-                    "code": "waypoints",
-                    "name": "Waypoints"
-                  },
-                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
-                }
-              ]
-            }
-          ]
-        }
-      ],
       "quote": {
         "price": {
-          "value": "176",
-          "currency": "INR"
+          "currency": "INR",
+          "value": "210.00"
         },
         "breakup": [
           {
-            "title": "BASE_FARE",
+            "title": "DISTANCE_FARE",
             "price": {
-              "value": "30",
-              "currency": "INR"
+              "currency": "INR",
+              "value": "180.00"
             }
           },
           {
-            "title": "DISTANCE_FARE",
+            "title": "BASE_FARE",
             "price": {
-              "value": "146",
-              "currency": "INR"
+              "currency": "INR",
+              "value": "30"
             }
           }
         ],
-        "ttl": "P200S"
+        "ttl": "PT200S"
       }
     }
   }

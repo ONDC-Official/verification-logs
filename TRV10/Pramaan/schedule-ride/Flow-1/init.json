@@ -11,85 +11,65 @@
     "domain": "ONDC:TRV10",
     "action": "init",
     "version": "2.0.0",
-    "transaction_id": "69d60e9f-b0fb-4968-8f3d-971cd4134203",
-    "message_id": "0691d998-22d2-4254-8225-11fca9cb18f8",
-    "timestamp": "2024-07-01T06:40:17.800Z",
+    "transaction_id": "82827a71-58cb-4e40-935f-9e1fc3ec05a0",
+    "message_id": "6904d590-34ee-4aeb-b6b7-b7bca62af629",
+    "timestamp": "2024-07-17T11:33:29.678Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
-    "ttl": "PT10M",
+    "ttl": "PT15S",
     "bpp_id": "ondc.sequelstring.com/seller/protocol",
     "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
   },
   "message": {
     "order": {
-      "id": "86e2492c-8552-4c5c-a7e4-1fb73ba4395a",
       "provider": {
-        "id": "P1"
+        "id": "OD_101"
       },
+      "billing": {
+        "name": "abhay"
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "phone": "+91-9988776655"
+            },
+            "person": {
+              "name": "abhay"
+            }
+          },
+          "id": "9c9dde4f-8f6e-4dfd-bf53-fb87c50e1b02",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "time": {
+                "timestamp": "2023-08-23T13:00:40.065Z"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "12.971186, 77.586812"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "AUTO_RICKSHAW"
+          }
+        }
+      ],
       "items": [
         {
           "id": "I1"
         }
       ],
-      "fulfillments": [
-        {
-          "id": "F1",
-          "stops": [
-            {
-              "time": {
-                "duration": "PT2H"
-              },
-              "type": "START",
-              "location": {
-                "gps": "13.008935, 77.644408"
-              }
-            }
-          ],
-          "vehicle": {
-            "category": "CAB"
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "ROUTE_INFO",
-                "name": "Route Information"
-              },
-              "display": true,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "encoded_polyline",
-                    "name": "Path"
-                  },
-                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
-                },
-                {
-                  "descriptor": {
-                    "code": "waypoints",
-                    "name": "Waypoints"
-                  },
-                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
-                }
-              ]
-            }
-          ],
-          "customer": {
-            "person": {
-              "name": "abhay"
-            },
-            "contact": {
-              "phone": "+91-9988776655"
-            }
-          }
-        }
-      ],
-      "billing": {
-        "name": "Tarun Verma"
-      },
       "payments": [
         {
           "collected_by": "BAP",
-          "status": "NOT-PAID",
+          "status": "PAID",
           "type": "PRE-ORDER",
           "tags": [
             {
@@ -114,6 +94,18 @@
               "list": [
                 {
                   "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.abc.com/settlement-terms/"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "207.90"
+                },
+                {
+                  "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
                   "value": "PT60M"
@@ -122,19 +114,13 @@
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "Delivery"
+                  "value": "DELIVERY"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "upi"
-                },
-                {
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://www.abc.com/settlement-terms/"
+                  "value": "UPI"
                 },
                 {
                   "descriptor": {
@@ -152,13 +138,7 @@
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "2.5"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
-                  },
-                  "value": "176"
+                  "value": "5"
                 }
               ]
             }

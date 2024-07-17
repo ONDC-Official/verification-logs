@@ -11,9 +11,9 @@
     "domain": "ONDC:TRV10",
     "action": "on_search",
     "version": "2.0.0",
-    "transaction_id": "2a2e314c-c5c9-4d69-8001-91e135b86c80",
-    "message_id": "329a8874-fd36-4806-a9c6-6ad5ef0cb9c8",
-    "timestamp": "2024-07-01T05:33:17.974Z",
+    "transaction_id": "bf1cf545-664e-49a6-92e5-3ec6437f9076",
+    "message_id": "78d43c31-dea4-4004-873c-dd461c5ee6b6",
+    "timestamp": "2024-07-17T11:15:26.903Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30S",
@@ -23,81 +23,90 @@
   "message": {
     "catalog": {
       "descriptor": {
-        "name": "Mobility Services BPP"
+        "name": "Sequelstring Solutions",
+        "images": [
+          {
+            "url": "https://sequelstring.com/logos/logo.ico",
+            "size_type": "xs"
+          }
+        ]
       },
       "providers": [
         {
-          "id": "P1",
-          "locations": [
+          "id": "OD_101",
+          "fulfillments": [
             {
-              "id": "L1",
-              "gps": "12.916468,77.608998"
+              "id": "6cd49c69-b02c-4cb7-b6c7-86faca7a784b",
+              "stops": [
+                {
+                  "type": "START",
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  },
+                  "time": {
+                    "duration": "PT2H"
+                  }
+                }
+              ],
+              "type": "DELIVERY",
+              "vehicle": {
+                "category": "CAB"
+              }
             },
             {
-              "id": "L2",
-              "gps": "12.916714,77.609298"
-            },
-            {
-              "id": "L3",
-              "gps": "12.916573,77.615216"
-            },
-            {
-              "id": "L4",
-              "gps": "12.906857,77.604456"
+              "id": "2787322c-b500-4e41-8349-4bee9a707ab7",
+              "stops": [
+                {
+                  "type": "START",
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  },
+                  "time": {
+                    "duration": "PT2H"
+                  }
+                }
+              ],
+              "type": "DELIVERY",
+              "vehicle": {
+                "category": "AUTO_RICKSHAW"
+              }
             }
           ],
           "items": [
             {
               "id": "I1",
               "descriptor": {
-                "name": "Schedule Ride",
-                "code": "RIDE"
+                "code": "RIDE",
+                "name": "Rental Ride"
               },
+              "fulfillment_ids": [
+                "6cd49c69-b02c-4cb7-b6c7-86faca7a784b"
+              ],
               "price": {
-                "maximum_value": "236",
                 "currency": "INR",
-                "minimum_value": "206",
-                "value": "206"
+                "value": "146",
+                "minimum_value": "136",
+                "maximum_value": "176"
               },
               "location_ids": [
-                "L2",
-                "L4"
-              ],
-              "fulfillment_ids": [
-                "F1"
+                "747123c5-e6b6-479c-87f6-fa1bebfa0e84",
+                "fd7e65ca-f083-4821-b165-ad1ca815ef7b"
               ]
             }
           ],
-          "fulfillments": [
+          "locations": [
             {
-              "id": "F1",
-              "type": "DELIVERY",
-              "stops": [
-                {
-                  "time": {
-                    "range": {
-                      "start": "2023-08-23T12:00:40.065Z"
-                    }
-                  }
-                }
-              ]
+              "gps": "12.916468,77.608998",
+              "id": "747123c5-e6b6-479c-87f6-fa1bebfa0e84"
             },
             {
-              "id": "F2",
-              "type": "DELIVERY",
-              "stops": [
-                {
-                  "time": {
-                    "range": {
-                      "start": "2023-08-23T03:50:40.065Z"
-                    }
-                  }
-                }
-              ]
+              "gps": "12.916714,77.609298",
+              "id": "fd7e65ca-f083-4821-b165-ad1ca815ef7b"
             }
           ],
           "payments": [
             {
+              "collected_by": "BPP",
               "tags": [
                 {
                   "descriptor": {
@@ -129,13 +138,13 @@
                       "descriptor": {
                         "code": "SETTLEMENT_BASIS"
                       },
-                      "value": "Delivery"
+                      "value": "DELIVERY"
                     },
                     {
                       "descriptor": {
                         "code": "SETTLEMENT_TYPE"
                       },
-                      "value": "upi"
+                      "value": "UPI"
                     },
                     {
                       "descriptor": {
@@ -153,13 +162,13 @@
                       "descriptor": {
                         "code": "DELAY_INTEREST"
                       },
-                      "value": "2.5"
+                      "value": "5"
                     },
                     {
                       "descriptor": {
                         "code": "STATIC_TERMS"
                       },
-                      "value": "https://www.abc.com/settlement-terms/"
+                      "value": "https://example-test-bpp.com/static-terms.txt"
                     }
                   ]
                 }

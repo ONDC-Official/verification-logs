@@ -11,38 +11,106 @@
     "domain": "ONDC:TRV10",
     "action": "on_confirm",
     "version": "2.0.0",
-    "transaction_id": "09192ed3-4064-4a4f-a63e-7c6e08c58906",
-    "message_id": "5c37ec3b-7546-46f8-a01d-2a6520aad998",
-    "timestamp": "2024-07-01T05:37:06.971Z",
+    "transaction_id": "052b14cd-5f1e-4308-b0f3-684898274374",
+    "message_id": "2d9eb0bf-ac03-4d7f-ba1f-afd3ce87499d",
+    "timestamp": "2024-07-17T11:04:49.584Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
     "bpp_id": "ondc.sequelstring.com/seller/protocol",
     "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
   },
   "message": {
     "order": {
+      "id": "08f57842-2f9b-4d8c-a99a-995c135fd815",
       "provider": {
-        "id": "P1"
+        "id": "OD_101"
       },
+      "fulfillments": [
+        {
+          "id": "55eb5737-1609-4141-9d8a-8600c5cd7f3e",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "time": {
+                "duration": "PT2H",
+                "timestamp": "2023-08-23T12:00:40.065Z"
+              },
+              "authorization": {
+                "type": "OTP",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+              }
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "CAB",
+            "make": "Maruti",
+            "model": "WagonR",
+            "registration": "KA-01-AD-9876"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "encoded_polyline",
+                    "name": "Path"
+                  },
+                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
+                },
+                {
+                  "descriptor": {
+                    "code": "waypoints",
+                    "name": "waypoints"
+                  },
+                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
+                }
+              ]
+            }
+          ],
+          "state": {
+            "descriptor": {
+              "code": "RIDE_CONFIRMED"
+            }
+          },
+          "customer": {
+            "contact": {
+              "phone": "+91-9988776655"
+            },
+            "person": {
+              "name": "abhay"
+            }
+          }
+        }
+      ],
       "items": [
         {
           "id": "I1",
           "descriptor": {
-            "name": "Rental-Scheduled Ride",
-            "code": "RIDE"
+            "code": "RIDE",
+            "name": "Rental-Scheduled Ride"
           },
+          "fulfillment_ids": [
+            "55eb5737-1609-4141-9d8a-8600c5cd7f3e"
+          ],
           "price": {
-            "maximum_value": "236",
             "currency": "INR",
-            "minimum_value": "206",
-            "value": "206"
+            "value": "210.00",
+            "minimum_value": "136",
+            "maximum_value": "230.00"
           },
           "location_ids": [
-            "L2",
-            "L4"
-          ],
-          "fulfillment_ids": [
-            "F1"
+            "5dc8a0e2-b368-4307-91fe-059eb622ece0",
+            "e605d7d5-2db6-4f5e-8c40-31bf9f8c0e97"
           ],
           "tags": [
             {
@@ -125,173 +193,91 @@
             }
           ],
           "payment_ids": [
-            "PA1"
+            "aad8cf2a-48e6-4f29-a7d8-f0cc42b410a1"
           ]
-        }
-      ],
-      "fulfillments": [
-        {
-          "id": "F1",
-          "type": "DELIVERY",
-          "stops": [
-            {
-              "time": {
-                "duration": "PT2H",
-                "timestamp": "2023-08-23T12:00:40.065Z"
-              },
-              "type": "START",
-              "location": {
-                "gps": "13.008935, 77.644408"
-              },
-              "authorization": {
-                "type": "QR",
-                "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg=="
-              }
-            }
-          ],
-          "vehicle": {
-            "category": "CAB",
-            "model": "Compact RE",
-            "registration": "KA-01-AD-9876",
-            "make": "Bajaj"
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "ROUTE_INFO",
-                "name": "Route Information"
-              },
-              "display": true,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "encoded_polyline",
-                    "name": "Path"
-                  },
-                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
-                },
-                {
-                  "descriptor": {
-                    "code": "waypoints",
-                    "name": "Waypoints"
-                  },
-                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
-                }
-              ]
-            }
-          ],
-          "state": {
-            "descriptor": {
-              "code": "RIDE_CONFIRMED"
-            }
-          },
-          "customer": {
-            "person": {
-              "name": "abhay"
-            },
-            "contact": {
-              "phone": "+91-9988776655"
-            }
-          }
         }
       ],
       "quote": {
         "price": {
-          "value": "176",
-          "currency": "INR"
+          "currency": "INR",
+          "value": "210.00"
         },
         "breakup": [
           {
-            "title": "BASE_FARE",
+            "title": "DISTANCE_FARE",
             "price": {
-              "value": "30",
-              "currency": "INR"
+              "currency": "INR",
+              "value": "180.00"
             }
           },
           {
-            "title": "DISTANCE_FARE",
+            "title": "BASE_FARE",
             "price": {
-              "value": "146",
-              "currency": "INR"
+              "currency": "INR",
+              "value": "30"
             }
           }
         ],
-        "ttl": "P200S"
+        "ttl": "PT200S"
       },
-      "id": "6384b8b1-c86e-4c43-9d24-dba691f9bce0",
       "cancellation_terms": [
         {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
           "fulfillment_state": {
             "descriptor": {
               "code": "RIDE_ASSIGNED"
             }
           },
-          "reason_required": true,
-          "cancellation_fee": {
-            "percentage": "0"
-          }
+          "reason_required": true
         },
         {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ENROUTE_PICKUP"
-            }
-          },
-          "reason_required": true,
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
               "value": "30"
             }
-          }
-        },
-        {
+          },
           "fulfillment_state": {
             "descriptor": {
-              "code": "RIDE_ARRIVED_PICKUP"
+              "code": "RIDE_ENROUTE_PICKUP"
             }
           },
-          "reason_required": true,
+          "reason_required": true
+        },
+        {
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
               "value": "50"
             }
-          }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
         },
         {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
           "fulfillment_state": {
             "descriptor": {
               "code": "RIDE_STARTED"
             }
           },
-          "reason_required": true,
-          "cancellation_fee": {
-            "percentage": "100"
-          }
+          "reason_required": true
         }
       ],
       "payments": [
         {
-          "id": "PA1",
           "collected_by": "BAP",
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
           "tags": [
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_DETAILS"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "UPI"
-                }
-              ]
-            },
             {
               "descriptor": {
                 "code": "BUYER_FINDER_FEES"
@@ -322,13 +308,13 @@
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "Delivery"
+                  "value": "DELIVERY"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "upi"
+                  "value": "UPI"
                 },
                 {
                   "descriptor": {
@@ -346,27 +332,28 @@
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "2.5"
+                  "value": "5"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://www.abc.com/settlement-terms/"
+                  "value": "https://example-test-bpp.com/static-terms.txt"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "206"
+                  "value": "207.90"
                 }
               ]
             }
           ],
+          "id": "aad8cf2a-48e6-4f29-a7d8-f0cc42b410a1",
           "params": {
-            "bank_code": "xxxxx",
-            "bank_account_number": "xxxxxxxxxxxxxx",
-            "virtual_payment_address": "9988199772@okicic.in"
+            "bank_code": "SBI88122340",
+            "bank_account_number": "544687212294",
+            "virtual_payment_address": "9988776655@okicic"
           }
         }
       ]
