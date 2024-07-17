@@ -10,10 +10,10 @@
       }
     },
     "version": "2.0.0",
-    "action": "on_cancel",
+    "action": "on_select",
     "transaction_id": "a3ba435d-1800-43ea-8f7e-0e65623463c3",
-    "message_id": "185cb445-fbaa-4444-a9a7-97e89e6be87e",
-    "timestamp": "2024-07-17T10:01:47.844Z",
+    "message_id": "e5999f06-d14c-480c-b742-116d2dec9c9e",
+    "timestamp": "2024-07-17T09:48:51.488Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
@@ -33,10 +33,6 @@
               "type": "START",
               "location": {
                 "gps": "13.008935, 77.644408"
-              },
-              "authorization": {
-                "token": "123456",
-                "type": "OTP"
               }
             },
             {
@@ -48,10 +44,7 @@
           ],
           "type": "DELIVERY",
           "vehicle": {
-            "category": "CAB",
-            "make": "Maruti",
-            "model": "WagonR",
-            "registration": "KA-01-AD-9876"
+            "category": "CAB"
           },
           "tags": [
             {
@@ -77,28 +70,7 @@
                 }
               ]
             }
-          ],
-          "customer": {
-            "contact": {
-              "phone": "9876543210"
-            },
-            "person": {
-              "name": "Nirdosh Chauhan"
-            }
-          },
-          "state": {
-            "descriptor": {
-              "code": "RIDE_ASSIGNED"
-            }
-          },
-          "agent": {
-            "contact": {
-              "phone": "8976543210"
-            },
-            "person": {
-              "name": "John Doe"
-            }
-          }
+          ]
         }
       ],
       "items": [
@@ -200,16 +172,13 @@
                 }
               ]
             }
-          ],
-          "payment_ids": [
-            "679216c3-76df-4ab0-8a6d-da2b2dd689ac"
           ]
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "210"
+          "value": "210.00"
         },
         "breakup": [
           {
@@ -225,161 +194,10 @@
               "currency": "INR",
               "value": "30"
             }
-          },
-          {
-            "title": "CANCELLATION_CHARGES",
-            "price": {
-              "currency": "INR",
-              "value": "0.00"
-            }
           }
         ],
         "ttl": "PT200S"
-      },
-      "billing": {
-        "name": "Nirdosh Chauhan"
-      },
-      "cancellation_terms": [
-        {
-          "cancellation_fee": {
-            "percentage": "0"
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ASSIGNED"
-            }
-          },
-          "reason_required": true
-        },
-        {
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "30"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ENROUTE_PICKUP"
-            }
-          },
-          "reason_required": true
-        },
-        {
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "50"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ARRIVED_PICKUP"
-            }
-          },
-          "reason_required": true
-        },
-        {
-          "cancellation_fee": {
-            "percentage": "100"
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_STARTED"
-            }
-          },
-          "reason_required": true
-        }
-      ],
-      "payments": [
-        {
-          "collected_by": "BPP",
-          "status": "NOT-PAID",
-          "type": "ON-FULFILLMENT",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_FINDER_FEES"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  },
-                  "value": "1"
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_TERMS"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_WINDOW"
-                  },
-                  "value": "PT60M"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_BASIS"
-                  },
-                  "value": "DELIVERY"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "UPI"
-                },
-                {
-                  "descriptor": {
-                    "code": "MANDATORY_ARBITRATION"
-                  },
-                  "value": "true"
-                },
-                {
-                  "descriptor": {
-                    "code": "COURT_JURISDICTION"
-                  },
-                  "value": "New Delhi"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "5"
-                },
-                {
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://example-test-bpp.com/static-terms.txt"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
-                  },
-                  "value": "0"
-                }
-              ]
-            }
-          ],
-          "params": {
-            "bank_code": "SBI88122340",
-            "bank_account_number": "544687212294",
-            "virtual_payment_address": "9988776655@okicic"
-          },
-          "id": "679216c3-76df-4ab0-8a6d-da2b2dd689ac"
-        }
-      ],
-      "id": "2b42e43c-cd3f-460a-bbf7-1092bee0527c",
-      "status": "CANCELLED",
-      "created_at": "2024-07-17T09:51:29.378Z",
-      "updated_at": "2024-07-17T10:01:47.844Z"
+      }
     }
   }
 }
