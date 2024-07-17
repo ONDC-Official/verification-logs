@@ -1,0 +1,4209 @@
+{
+  "domain": "ONDC:FIS13",
+  "version": "2.0.0",
+  "flow": "HEALTH_INSURANCE",
+  "payload": {
+    "search_1": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721130019\",expires=\"1721133619\",headers=\"(created) (expires) digest\",signature=\"7VU/pcuy8ELOO3ZlZQJgZR7HtFUDDOgv+3Abp2hnySgIYY+B1jMTfAEn9RrhM0C9YIItnKep4S1DgzycmtDcDg==\"",
+      "context": {
+        "action": "search",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "399a650f-8dd5-4268-a833-ae5711b41cd1",
+        "timestamp": "2024-07-14T11:32:35.859Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT20M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "intent": {
+          "category": {
+            "descriptor": {
+              "code": "HEALTH_INSURANCE"
+            }
+          },
+          "payment": {
+            "collected_by": "BPP",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_TYPE"
+                    },
+                    "value": "percent-annualized"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                    },
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_TERMS"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_WINDOW"
+                    },
+                    "value": "PT60M"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "Delivery"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "DELAY_INTEREST"
+                    },
+                    "value": "2.5"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "STATIC_TERMS"
+                    },
+                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "OFFLINE_CONTRACT"
+                    },
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "on_search_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721130020\",expires=\"1721133620\",headers=\"(created) (expires) digest\",signature=\"ppCN9PJ99ABs8xpX3DnvyrVXNiVlG82e9xWW92WEaOPYVSUOATcO8WJS0scn5a7sKf//X9xoJkGfB9P2bRJCDw==\"",
+      "context": {
+        "action": "on_search",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "399a650f-8dd5-4268-a833-ae5711b41cd1",
+        "timestamp": "2024-07-16T11:40:20.491Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+      },
+      "message": {
+        "catalog": {
+          "descriptor": {
+            "name": "ONDC Insurance Ltd"
+          },
+          "providers": [
+            {
+              "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+              "categories": [
+                {
+                  "descriptor": {
+                    "name": "Individual Insurance",
+                    "code": "INDIVIDUAL_INSURANCE"
+                  },
+                  "id": "H1"
+                },
+                {
+                  "descriptor": {
+                    "name": "Family Insurance",
+                    "code": "FAMILY_INSURANCE"
+                  },
+                  "id": "H2"
+                },
+                {
+                  "descriptor": {
+                    "name": "Health Insurance",
+                    "code": "HEALTH_INSURANCE"
+                  },
+                  "id": "H3"
+                }
+              ],
+              "descriptor": {
+                "images": [
+                  {
+                    "size_type": "sm",
+                    "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                  }
+                ],
+                "long_desc": "ONDC Insurance Ltd",
+                "name": "ONDC Insurance Ltd",
+                "short_desc": "ONDC Insurance Ltd"
+              },
+              "items": [
+                {
+                  "id": "I1",
+                  "descriptor": {
+                    "name": "Health Gain Plus Individual",
+                    "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+                  },
+                  "category_ids": [
+                    "H1",
+                    "H3"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "name": "General Information",
+                        "code": "GENERAL_INFO"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "COVERAGE_AMOUNT"
+                          },
+                          "value": "10000000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CO_PAYMENT"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_RENT_CAP"
+                          },
+                          "value": "25000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "RESTORATION_BENEFIT"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CLAIM_SETTLEMENT_RATIO"
+                          },
+                          "value": "0.8"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "2"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "5"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MATERNITY_COVERAGE"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "INITIAL_WAITING_PERIOD"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CASHLESS_HOSPITALS"
+                          },
+                          "value": "50"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_CATEGORY"
+                          },
+                          "value": "Deluxe"
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "head": {
+                      "descriptor": {
+                        "name": "Customer Information"
+                      },
+                      "index": {
+                        "min": 0,
+                        "cur": 0,
+                        "max": 0
+                      },
+                      "headings": [
+                        "Insured Personal Details"
+                      ]
+                    },
+                    "form": {
+                      "id": "b9617c73-668e-49f1-8e90-6d8e79252dcd",
+                      "mime_type": "text/html",
+                      "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/b9617c73-668e-49f1-8e90-6d8e79252dcd",
+                      "resubmit": false,
+                      "multiple_sumbissions": false
+                    },
+                    "required": true
+                  },
+                  "add_ons": [
+                    {
+                      "id": "A1",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "No Claim Bonus",
+                        "code": "NO_CLAIM_BONUS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A2",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daycare Cover",
+                        "code": "DAYCARE_COVER"
+                      },
+                      "price": {
+                        "value": "200",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A3",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daily Cash Allowance",
+                        "code": "DAILY_CASH_ALLOWANCE"
+                      },
+                      "price": {
+                        "value": "1000",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A4",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Domicialiary Expenses",
+                        "code": "DOMICILIARY_EXPENSES"
+                      },
+                      "price": {
+                        "value": "400",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A5",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Health Check-ups",
+                        "code": "HEALTH_CHECK_UPS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    }
+                  ],
+                  "time": {
+                    "duration": "P1Y",
+                    "label": "TENURE"
+                  }
+                },
+                {
+                  "id": "I2",
+                  "descriptor": {
+                    "name": "Health Gain Plus Family",
+                    "short_desc": "short description of the Family Insurance Type 1"
+                  },
+                  "category_ids": [
+                    "H2",
+                    "H3"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "name": "General Information",
+                        "code": "GENERAL_INFO"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "COVERAGE_AMOUNT"
+                          },
+                          "value": "10000000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CO_PAYMENT"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_RENT_CAP"
+                          },
+                          "value": "25000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "RESTORATION_BENEFIT"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CLAIM_SETTLEMENT_RATIO"
+                          },
+                          "value": "0.8"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "2"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "5"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MATERNITY_COVERAGE"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "INITIAL_WAITING_PERIOD"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CASHLESS_HOSPITALS"
+                          },
+                          "value": "50"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_CATEGORY"
+                          },
+                          "value": "Deluxe"
+                        }
+                      ]
+                    }
+                  ],
+                  "xinput": {
+                    "head": {
+                      "descriptor": {
+                        "name": "Customer Information"
+                      },
+                      "index": {
+                        "min": 0,
+                        "cur": 0,
+                        "max": 0
+                      },
+                      "headings": [
+                        "Insured Personal Details"
+                      ]
+                    },
+                    "form": {
+                      "id": "b9617c73-668e-49f1-8e90-6d8e79252dcd",
+                      "mime_type": "text/html",
+                      "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/b9617c73-668e-49f1-8e90-6d8e79252dcd",
+                      "resubmit": false,
+                      "multiple_sumbissions": false
+                    },
+                    "required": true
+                  },
+                  "add_ons": [
+                    {
+                      "id": "C1",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "No Claim Bonus",
+                        "code": "NO_CLAIM_BONUS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "C2",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daycare Cover",
+                        "code": "DAYCARE_COVER"
+                      },
+                      "price": {
+                        "value": "200",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "C3",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daily Cash Allowance",
+                        "code": "DAILY_CASH_ALLOWANCE"
+                      },
+                      "price": {
+                        "value": "1000",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "4",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Domicialiary Expenses",
+                        "code": "DOMICILIARY_EXPENSES"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "5",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Health Check-ups",
+                        "code": "HEALTH_CHECK_UPS"
+                      },
+                      "price": {
+                        "value": "400",
+                        "currency": "INR"
+                      }
+                    }
+                  ],
+                  "time": {
+                    "duration": "P1Y",
+                    "label": "TENURE"
+                  }
+                }
+              ],
+              "payments": [
+                {
+                  "collected_by": "BPP",
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES"
+                      },
+                      "display": false,
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_TYPE"
+                          },
+                          "value": "percent-annualized"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                          },
+                          "value": "1"
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TERMS"
+                      },
+                      "display": false,
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "SETTLEMENT_WINDOW"
+                          },
+                          "value": "PT60M"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "SETTLEMENT_BASIS"
+                          },
+                          "value": "Delivery"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "DELAY_INTEREST"
+                          },
+                          "value": "2.5"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MANDATORY_ARBITRATION"
+                          },
+                          "value": "TRUE"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "COURT_JURISDICTION"
+                          },
+                          "value": "New Delhi"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "STATIC_TERMS"
+                          },
+                          "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "OFFLINE_CONTRACT"
+                          },
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "search_2": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721130334\",expires=\"1721133934\",headers=\"(created) (expires) digest\",signature=\"TC3/WsvI2SIZRCpQlMHHUpWLcEcfGd2/KTM2HK3Rnr1PMfBy5/gdeBa2Cc0p2sgrANT5RHW9xsxJjUY/ahMCAQ==\"",
+      "context": {
+        "action": "search",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "0a8babd1-ee83-4dfb-bd37-de30f86f8764",
+        "timestamp": "2024-07-16T11:45:34.078Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT20M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "intent": {
+          "category": {
+            "descriptor": {
+              "code": "HEALTH_INSURANCE"
+            }
+          },
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "items": [
+              {
+                "id": "I1",
+                "xinput": {
+                  "form": {
+                    "id": "b9617c73-668e-49f1-8e90-6d8e79252dcd"
+                  },
+                  "form_response": {
+                    "status": "SUCCESS",
+                    "submission_id": "bb96fab9-6156-4c86-8ba4-e7030647bb20"
+                  }
+                }
+              }
+            ]
+          },
+          "payment": {
+            "collected_by": "BPP",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_TYPE"
+                    },
+                    "value": "percent-annualized"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                    },
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_TERMS"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_WINDOW"
+                    },
+                    "value": "PT60M"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "Delivery"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "DELAY_INTEREST"
+                    },
+                    "value": "2.5"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "STATIC_TERMS"
+                    },
+                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "OFFLINE_CONTRACT"
+                    },
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "on_search_2": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721130334\",expires=\"1721133934\",headers=\"(created) (expires) digest\",signature=\"Rv+djo6oXbv2kaEy5muduLN69FQdvnlgwH8Wg7JfBJzdJIeGnHFJdtZUjU74QjnkPdW+jiM5/puseRHK4PA7BQ==\"",
+      "context": {
+        "action": "on_search",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "0a8babd1-ee83-4dfb-bd37-de30f86f8764",
+        "timestamp": "2024-07-16T11:45:34.650Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "catalog": {
+          "descriptor": {
+            "name": "ONDC Insurance Ltd"
+          },
+          "providers": [
+            {
+              "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+              "categories": [
+                {
+                  "descriptor": {
+                    "name": "Individual Insurance",
+                    "code": "INDIVIDUAL_INSURANCE"
+                  },
+                  "id": "H1"
+                },
+                {
+                  "descriptor": {
+                    "name": "Family Insurance",
+                    "code": "FAMILY_INSURANCE"
+                  },
+                  "id": "H2"
+                },
+                {
+                  "descriptor": {
+                    "name": "Health Insurance",
+                    "code": "HEALTH_INSURANCE"
+                  },
+                  "id": "H3"
+                }
+              ],
+              "descriptor": {
+                "images": [
+                  {
+                    "size_type": "sm",
+                    "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                  }
+                ],
+                "long_desc": "ONDC Insurance Ltd",
+                "name": "ONDC Insurance Ltd",
+                "short_desc": "ONDC Insurance Ltd"
+              },
+              "items": [
+                {
+                  "id": "I1",
+                  "descriptor": {
+                    "name": "Health Gain Plus Individual",
+                    "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+                  },
+                  "category_ids": [
+                    "H1",
+                    "H3"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "name": "General Information",
+                        "code": "GENERAL_INFO"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "COVERAGE_AMOUNT"
+                          },
+                          "value": "10000000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CO_PAYMENT"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_RENT_CAP"
+                          },
+                          "value": "25000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "RESTORATION_BENEFIT"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CLAIM_SETTLEMENT_RATIO"
+                          },
+                          "value": "0.8"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "2"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "5"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MATERNITY_COVERAGE"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "INITIAL_WAITING_PERIOD"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CASHLESS_HOSPITALS"
+                          },
+                          "value": "50"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_CATEGORY"
+                          },
+                          "value": "Deluxe"
+                        }
+                      ]
+                    }
+                  ],
+                  "add_ons": [
+                    {
+                      "id": "A1",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "No Claim Bonus",
+                        "code": "NO_CLAIM_BONUS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A2",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daycare Cover",
+                        "code": "DAYCARE_COVER"
+                      },
+                      "price": {
+                        "value": "200",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A3",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daily Cash Allowance",
+                        "code": "DAILY_CASH_ALLOWANCE"
+                      },
+                      "price": {
+                        "value": "1000",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A4",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Domicialiary Expenses",
+                        "code": "DOMICILIARY_EXPENSES"
+                      },
+                      "price": {
+                        "value": "400",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A5",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Health Check-ups",
+                        "code": "HEALTH_CHECK_UPS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    }
+                  ],
+                  "time": {
+                    "duration": "P1Y",
+                    "label": "TENURE"
+                  }
+                },
+                {
+                  "id": "M1721130334650",
+                  "descriptor": {
+                    "name": "Health Gain Plus Individual",
+                    "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+                  },
+                  "category_ids": [
+                    "H1",
+                    "H3"
+                  ],
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "name": "General Information",
+                        "code": "GENERAL_INFO"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "COVERAGE_AMOUNT"
+                          },
+                          "value": "700000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CO_PAYMENT"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_RENT_CAP"
+                          },
+                          "value": "25000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "RESTORATION_BENEFIT"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CLAIM_SETTLEMENT_RATIO"
+                          },
+                          "value": "0.8"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "2"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                          },
+                          "value": "5"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MATERNITY_COVERAGE"
+                          },
+                          "value": "Yes"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "INITIAL_WAITING_PERIOD"
+                          },
+                          "value": "No"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CASHLESS_HOSPITALS"
+                          },
+                          "value": "50"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "ROOM_CATEGORY"
+                          },
+                          "value": "Deluxe"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "BASE_PRICE",
+                            "name": "Base Price",
+                            "short_desc": "Base Price"
+                          },
+                          "value": "14000"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "CONVIENCE_FEE",
+                            "name": "Convience Fee",
+                            "short_desc": "Convience Fee"
+                          },
+                          "value": "50"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "PROCESSING_FEE",
+                            "name": "Processing Fee",
+                            "short_desc": "Processing Fee"
+                          },
+                          "value": "10"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "TAX",
+                            "name": "Tax",
+                            "short_desc": "Tax"
+                          },
+                          "value": "2520"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "OFFER_VALIDITY",
+                            "name": "Offer validity",
+                            "short_desc": "Describes the offer validity"
+                          },
+                          "value": "PT15D"
+                        }
+                      ]
+                    }
+                  ],
+                  "add_ons": [
+                    {
+                      "id": "A1",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "No Claim Bonus",
+                        "code": "NO_CLAIM_BONUS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A2",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daycare Cover",
+                        "code": "DAYCARE_COVER"
+                      },
+                      "price": {
+                        "value": "200",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A3",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Daily Cash Allowance",
+                        "code": "DAILY_CASH_ALLOWANCE"
+                      },
+                      "price": {
+                        "value": "1000",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A4",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Domicialiary Expenses",
+                        "code": "DOMICILIARY_EXPENSES"
+                      },
+                      "price": {
+                        "value": "400",
+                        "currency": "INR"
+                      }
+                    },
+                    {
+                      "id": "A5",
+                      "quantity": {
+                        "available": {
+                          "count": 1
+                        }
+                      },
+                      "descriptor": {
+                        "name": "Health Check-ups",
+                        "code": "HEALTH_CHECK_UPS"
+                      },
+                      "price": {
+                        "value": "100",
+                        "currency": "INR"
+                      }
+                    }
+                  ],
+                  "time": {
+                    "duration": "P1Y",
+                    "label": "TENURE"
+                  },
+                  "parent_item_id": "I1",
+                  "price": {
+                    "currency": "INR",
+                    "value": "14000"
+                  }
+                }
+              ],
+              "payments": [
+                {
+                  "collected_by": "BPP",
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES"
+                      },
+                      "display": false,
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_TYPE"
+                          },
+                          "value": "percent-annualized"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                          },
+                          "value": "1"
+                        }
+                      ]
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TERMS"
+                      },
+                      "display": false,
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "SETTLEMENT_WINDOW"
+                          },
+                          "value": "PT60M"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "SETTLEMENT_BASIS"
+                          },
+                          "value": "Delivery"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "DELAY_INTEREST"
+                          },
+                          "value": "2.5"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MANDATORY_ARBITRATION"
+                          },
+                          "value": "TRUE"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "COURT_JURISDICTION"
+                          },
+                          "value": "New Delhi"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "STATIC_TERMS"
+                          },
+                          "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "OFFLINE_CONTRACT"
+                          },
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "select_1": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721130591\",expires=\"1721134191\",headers=\"(created) (expires) digest\",signature=\"y9cHgOOY3B1KSBqRf5N7+ZHRkO4tDrK2jaGTsrmMdpOk4LTMMm7Hv3l0wDsa6/60jqV0EjZDk+5YhyX4IPgfAg==\"",
+      "context": {
+        "action": "select",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "a657759e-3d65-4d3e-b5ab-42039635c900",
+        "timestamp": "2024-07-16T11:49:51.313Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT20M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "items": [
+            {
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "id": "M1721130334650",
+              "parent_item_id": "I1"
+            }
+          ],
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3"
+          }
+        }
+      }
+    },
+    "on_select_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721130592\",expires=\"1721134192\",headers=\"(created) (expires) digest\",signature=\"AIJsYLqwTlYdGubHOuxn8NABUUNiAC3QZhQiz0PUUQfvWR29IC/yCfEmY/g5d6EGZVaDpG2F5lFr2/qE0y6xAg==\"",
+      "context": {
+        "action": "on_select",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "a657759e-3d65-4d3e-b5ab-42039635c900",
+        "timestamp": "2024-07-16T11:49:52.250Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "category_ids": [
+                "H1",
+                "H3"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              },
+              "xinput": {
+                "head": {
+                  "descriptor": {
+                    "name": "Customer Information"
+                  },
+                  "index": {
+                    "min": 0,
+                    "cur": 0,
+                    "max": 0
+                  },
+                  "headings": [
+                    "EKYC"
+                  ]
+                },
+                "form": {
+                  "id": "989ac819-0e01-41fe-ac90-d214eb6352f7",
+                  "mime_type": "application/html",
+                  "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/989ac819-0e01-41fe-ac90-d214eb6352f7",
+                  "resubmit": false,
+                  "multiple_sumbissions": false
+                },
+                "required": true
+              }
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          }
+        }
+      }
+    },
+    "on_status_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721131196\",expires=\"1721134796\",headers=\"(created) (expires) digest\",signature=\"IItsT+5NCROdby9CIRr67gQ1KUxk3MAZIefRxFQtPT/lUVQ9RV/fb5sIBpUcKHq+mtnSlBEJA8PtWsXTd5W/Cw==\"",
+      "context": {
+        "action": "on_status",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "8149ae6b-4802-4532-a63d-a433b706b732",
+        "timestamp": "2024-07-16T11:59:56.791Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "category_ids": [
+                "H1",
+                "H3"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              },
+              "xinput": {
+                "form": {
+                  "id": "989ac819-0e01-41fe-ac90-d214eb6352f7"
+                },
+                "form_response": {
+                  "status": "APPROVED",
+                  "submission_id": "5d98d587-0519-4b54-8af6-63438c025f89"
+                }
+              }
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          }
+        }
+      }
+    },
+    "init_1": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721131272\",expires=\"1721134872\",headers=\"(created) (expires) digest\",signature=\"vjjvD2FCMwwvxIsuRACmFSim+7nSGA5OT85nnZ4OvrtqsBPB4+b5ArAUtUZrNrokMDRKzvspi1GSZ9L5jOnpDA==\"",
+      "context": {
+        "action": "init",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "7f5db906-c5ae-46e7-8554-77558f112fbe",
+        "timestamp": "2024-07-16T12:01:09.498Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT15M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              }
+            }
+          ],
+          "items": [
+            {
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "id": "M1721130334650",
+              "parent_item_id": "I1",
+              "xinput": {
+                "form": {
+                  "id": "989ac819-0e01-41fe-ac90-d214eb6352f7"
+                },
+                "form_response": {
+                  "status": "SUCCESS",
+                  "submission_id": "5d98d587-0519-4b54-8af6-63438c025f89"
+                }
+              }
+            }
+          ],
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3"
+          },
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "NOT-PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "on_init_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721131275\",expires=\"1721134875\",headers=\"(created) (expires) digest\",signature=\"BeWt8Tlsi7D/tP4KAEluxg0PKqTL9o363XKUSO7BpcY9ca0f39JUbQuawsUtgi/IKuab6Pc7wiZfUf2RjpC3BA==\"",
+      "context": {
+        "action": "on_init",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "7f5db906-c5ae-46e7-8554-77558f112fbe",
+        "timestamp": "2024-07-16T12:01:15.682Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "category_ids": [
+                "H1",
+                "H3"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              },
+              "xinput": {
+                "head": {
+                  "descriptor": {
+                    "name": "Customer Information"
+                  },
+                  "index": {
+                    "min": 0,
+                    "cur": 0,
+                    "max": 1
+                  },
+                  "headings": [
+                    "Proposer Details",
+                    "Nominee Details"
+                  ]
+                },
+                "form": {
+                  "id": "797ea3ee-8c2c-4983-82d9-d14a963f9911",
+                  "mime_type": "text/html",
+                  "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/797ea3ee-8c2c-4983-82d9-d14a963f9911",
+                  "resubmit": false,
+                  "multiple_sumbissions": false
+                },
+                "required": true
+              }
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          },
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "880b9fd8-0152-4366-ab03-62447be67a0c"
+            }
+          ],
+          "cancellation_terms": [
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance processing",
+                  "code": "INSURANCE_PROCESSING"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "3%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            },
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance_granted",
+                  "code": "INSURANCE_GRANTED"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "5%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "NOT-PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ],
+              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=16680.00&transaction_id=5944de40-9bd2-42b6-9e46-076971b167b3&label=INSURANCE_PAYMENT"
+            }
+          ]
+        }
+      }
+    },
+    "init_2": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721131550\",expires=\"1721135150\",headers=\"(created) (expires) digest\",signature=\"nSOtIgHefvMsb9vtb3t8k2SOzbJeD9eAK1B5tyn6AhgQWdSkJGkp5fei+IbcASrYqXwjFfGuSu+EKC4m8MXqDg==\"",
+      "context": {
+        "action": "init",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "cfdb2cb8-57c2-4c87-8c3b-5fb7f1c0eca8",
+        "timestamp": "2024-07-16T12:05:47.158Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT15M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "880b9fd8-0152-4366-ab03-62447be67a0c"
+            }
+          ],
+          "items": [
+            {
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "id": "M1721130334650",
+              "parent_item_id": "I1",
+              "xinput": {
+                "form": {
+                  "id": "797ea3ee-8c2c-4983-82d9-d14a963f9911"
+                },
+                "form_response": {
+                  "status": "SUCCESS",
+                  "submission_id": "80dc657e-c67e-42fc-a190-c6b13cd5b2a5"
+                }
+              }
+            }
+          ],
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3"
+          },
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "NOT-PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "on_init_2": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721131550\",expires=\"1721135150\",headers=\"(created) (expires) digest\",signature=\"F9cv8e9PeaxtjUMk4eszSCTkahN5gE8CH5nM8b7YK3HEg10Nyir3uJJN0Nj7wbPVw8AMpOU5GpISfqOyR5PkAw==\"",
+      "context": {
+        "action": "on_init",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "cfdb2cb8-57c2-4c87-8c3b-5fb7f1c0eca8",
+        "timestamp": "2024-07-16T12:05:50.722Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "category_ids": [
+                "H1",
+                "H3"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              },
+              "xinput": {
+                "head": {
+                  "descriptor": {
+                    "name": "Customer Information"
+                  },
+                  "index": {
+                    "min": 0,
+                    "cur": 1,
+                    "max": 1
+                  },
+                  "headings": [
+                    "Proposer Details",
+                    "Nominee Details"
+                  ]
+                },
+                "form": {
+                  "id": "32903de8-0c22-471c-91a0-fab88391a1f7",
+                  "mime_type": "text/html",
+                  "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/32903de8-0c22-471c-91a0-fab88391a1f7",
+                  "resubmit": false,
+                  "multiple_sumbissions": false
+                },
+                "required": true
+              }
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          },
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf"
+            }
+          ],
+          "cancellation_terms": [
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance processing",
+                  "code": "INSURANCE_PROCESSING"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "3%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            },
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance_granted",
+                  "code": "INSURANCE_GRANTED"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "5%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "NOT-PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ],
+              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=16680.00&transaction_id=5944de40-9bd2-42b6-9e46-076971b167b3&label=INSURANCE_PAYMENT"
+            }
+          ]
+        }
+      }
+    },
+    "on_status_2": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721131750\",expires=\"1721135350\",headers=\"(created) (expires) digest\",signature=\"aw1ksrJqp0lv3Dd2qr0GYsfddimO1Tuy1mRwixl+XllnCIUJVIJEEz7LrXVHVtRAVbhAi3FSNDO2g79ru/LQBA==\"",
+      "context": {
+        "action": "on_status",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "0fdcaf95-50fe-474c-9ab8-e2eccd7ede21",
+        "timestamp": "2024-07-16T12:09:10.231Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "category_ids": [
+                "H1",
+                "H3"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              }
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          },
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf"
+            }
+          ],
+          "cancellation_terms": [
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance processing",
+                  "code": "INSURANCE_PROCESSING"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "3%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            },
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance_granted",
+                  "code": "INSURANCE_GRANTED"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "5%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR",
+                "transaction_id": "352b913a-91de-4492-8b40-25d8f6d0baaf"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "confirm_1": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721132456\",expires=\"1721136056\",headers=\"(created) (expires) digest\",signature=\"k36DC3b7RJW3kO23Lg/bsvMr8DKmGvIYhC5+tftZDSR/pd/RPSzmghkgve9Z8Bm2S1FKPhEMxKnzBuFF9KNdAg==\"",
+      "context": {
+        "action": "confirm",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "b9ec1e00-9554-4747-a678-a0e84fc8f411",
+        "timestamp": "2024-07-16T12:20:24.454Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT15M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf"
+            }
+          ],
+          "items": [
+            {
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "id": "M1721130334650",
+              "parent_item_id": "I1",
+              "xinput": {
+                "form": {
+                  "id": "32903de8-0c22-471c-91a0-fab88391a1f7"
+                },
+                "form_response": {
+                  "status": "SUCCESS",
+                  "submission_id": "e8ebf480-3afb-4152-a621-695540cd549f"
+                }
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR"
+              },
+              "status": "NOT-PAID",
+              "type": "PRE-ORDER",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3"
+          },
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "P15D"
+          }
+        }
+      }
+    },
+    "on_confirm_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721132459\",expires=\"1721136059\",headers=\"(created) (expires) digest\",signature=\"1vXpl9bB2JS2lEnXUzeUvD5qTbfqYnaUOGGhs3MOJfE6FQOMM3sD9QYsf0oBWwma9/nwLZKrinmO8vYNCI/3BA==\"",
+      "context": {
+        "action": "on_confirm",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "b9ec1e00-9554-4747-a678-a0e84fc8f411",
+        "timestamp": "2024-07-16T12:20:59.170Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              },
+              "fulfillment_ids": [
+                "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf"
+              ]
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          },
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf",
+              "state": {
+                "descriptor": {
+                  "code": "GRANTED"
+                }
+              }
+            }
+          ],
+          "cancellation_terms": [
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance processing",
+                  "code": "INSURANCE_PROCESSING"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "3%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            },
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance_granted",
+                  "code": "INSURANCE_GRANTED"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "5%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR",
+                "transaction_id": "352b913a-91de-4492-8b40-25d8f6d0baaf"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "ACTIVE",
+          "documents": [
+            {
+              "descriptor": {
+                "code": "POLICY_DOC",
+                "name": "Insurance Policy Document",
+                "short_desc": "Download your digitally signed policy document here",
+                "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name"
+              },
+              "mime_type": "application/pdf",
+              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/tnc.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "CLAIM_DOC",
+                "name": "Claim Insurance Policy",
+                "short_desc": "Buyer can claim their insurance by visiting the below url",
+                "long_desc": "Buyer can claim their insurance by visiting the below url"
+              },
+              "mime_type": "application/html",
+              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/77777e65-dfb7-46a9-ab3f-a272471c792a"
+            },
+            {
+              "descriptor": {
+                "code": "RENEW_DOC",
+                "name": "Renew Insurance Policy",
+                "short_desc": "Buyer can renew their insurance by visiting the below url",
+                "long_desc": "Buyer can easily renew their insurance policies by visiting the following URL"
+              },
+              "mime_type": "application/html",
+              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/34bafffb-feae-4fd3-8d9d-ec2acac4ec9e"
+            }
+          ],
+          "created_at": "2024-07-16T12:20:59.127Z",
+          "updated_at": "2024-07-16T12:20:59.127Z",
+          "id": "ecc28136-46cf-4368-80da-90ba019506b8"
+        }
+      }
+    },
+    "cancel_1": {
+      "signature": "Signature keyId=\"uat-ondc.cateina.com|8db7b978-fc19-4344-949b-90e9561dc80a|ed25519\",algorithm=\"ed25519\",created=\"1721133570\",expires=\"1721137170\",headers=\"(created) (expires) digest\",signature=\"urqvnT+1R8RpTtcJZdkQX9uqL8jFy7ipwhUz5La552tYzTNZNfiKUEv2qcFlwReicVNZoSAJdKQqQ8GAokBOAg==\"",
+      "context": {
+        "action": "cancel",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "868a6f17-86eb-4591-936d-e0e6de1dfa5f",
+        "timestamp": "2024-07-16T12:39:30.178Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT15M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "cancellation_reason_id": "5",
+        "descriptor": {
+          "short_desc": "User bought other policy"
+        },
+        "order_id": "ecc28136-46cf-4368-80da-90ba019506b8"
+      }
+    },
+    "on_cancel_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1721133571\",expires=\"1721137171\",headers=\"(created) (expires) digest\",signature=\"eosLhOToEas1Roj8sH45gI3YWIGMDEtpkMJ9v7RtBgp498w90Y1oOHYCV4xD6OI8++gksnLIg1fL+JloWsRqBQ==\"",
+      "context": {
+        "action": "on_cancel",
+        "bap_id": "uat-ondc.cateina.com",
+        "bap_uri": "https://uat-ondc.cateina.com/bap",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:FIS13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "message_id": "868a6f17-86eb-4591-936d-e0e6de1dfa5f",
+        "timestamp": "2024-07-16T12:39:30.990Z",
+        "transaction_id": "5944de40-9bd2-42b6-9e46-076971b167b3",
+        "ttl": "PT30M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "59fe2d3a-5546-410d-9903-51037fbc87c3",
+            "descriptor": {
+              "images": [
+                {
+                  "size_type": "sm",
+                  "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                }
+              ],
+              "long_desc": "ONDC Insurance Ltd",
+              "name": "ONDC Insurance Ltd",
+              "short_desc": "ONDC Insurance Ltd"
+            }
+          },
+          "items": [
+            {
+              "id": "M1721130334650",
+              "descriptor": {
+                "name": "Health Gain Plus Individual",
+                "short_desc": "ONDC Individual Health Insurance Class A with custom addon"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "name": "General Information",
+                    "code": "GENERAL_INFO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COVERAGE_AMOUNT"
+                      },
+                      "value": "700000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CO_PAYMENT"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_RENT_CAP"
+                      },
+                      "value": "25000"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "RESTORATION_BENEFIT"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CLAIM_SETTLEMENT_RATIO"
+                      },
+                      "value": "0.8"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PRE_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "2"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "POST_HOSPITALIZATION_COVERAGE_DAYS"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MATERNITY_COVERAGE"
+                      },
+                      "value": "Yes"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "INITIAL_WAITING_PERIOD"
+                      },
+                      "value": "No"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "CASHLESS_HOSPITALS"
+                      },
+                      "value": "50"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "ROOM_CATEGORY"
+                      },
+                      "value": "Deluxe"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "PROPOSAL_ID"
+                      },
+                      "value": "da21c51e-f366-42db-8ecf-393e1f57b981"
+                    }
+                  ]
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "descriptor": {
+                    "name": "No Claim Bonus",
+                    "code": "NO_CLAIM_BONUS"
+                  },
+                  "price": {
+                    "value": "100",
+                    "currency": "INR"
+                  },
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  }
+                }
+              ],
+              "time": {
+                "duration": "P1Y",
+                "label": "TENURE"
+              },
+              "parent_item_id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "14000"
+              },
+              "fulfillment_ids": [
+                "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf"
+              ]
+            }
+          ],
+          "quote": {
+            "id": "da21c51e-f366-42db-8ecf-393e1f57b981",
+            "breakup": [
+              {
+                "price": {
+                  "value": "14000",
+                  "currency": "INR"
+                },
+                "title": "BASE_PRICE"
+              },
+              {
+                "price": {
+                  "value": "50",
+                  "currency": "INR"
+                },
+                "title": "CONVIENCE_FEE"
+              },
+              {
+                "price": {
+                  "value": "10",
+                  "currency": "INR"
+                },
+                "title": "PROCESSING_FEE"
+              },
+              {
+                "price": {
+                  "value": "2520",
+                  "currency": "INR"
+                },
+                "title": "TAX"
+              },
+              {
+                "title": "ADD_ONS",
+                "item": {
+                  "id": "I1",
+                  "add_ons": [
+                    {
+                      "id": "A1"
+                    }
+                  ]
+                },
+                "price": {
+                  "value": "100",
+                  "currency": "INR"
+                }
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "16680.00"
+            },
+            "ttl": "PT15D"
+          },
+          "fulfillments": [
+            {
+              "customer": {
+                "contact": {
+                  "email": "rohitsere@gmail.com",
+                  "phone": "+91-9977755555"
+                },
+                "person": {
+                  "name": "rohit mankar"
+                }
+              },
+              "id": "d63ff1ad-74b8-468e-9abf-f4e08ae97dcf",
+              "state": {
+                "descriptor": {
+                  "code": "GRANTED"
+                }
+              }
+            }
+          ],
+          "cancellation_terms": [
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance processing",
+                  "code": "INSURANCE_PROCESSING"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "3%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            },
+            {
+              "fulfillment_state": {
+                "descriptor": {
+                  "name": "Insurance_granted",
+                  "code": "INSURANCE_GRANTED"
+                }
+              },
+              "cancellation_fee": {
+                "percentage": "5%"
+              },
+              "external_ref": {
+                "mimetype": "text/html",
+                "url": "https://icicibank.com/loan/tnc.html"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "PAID",
+              "type": "PRE-ORDER",
+              "params": {
+                "amount": "16680.00",
+                "bank_account_number": "1800002341",
+                "bank_code": "SBIN0001234",
+                "currency": "INR",
+                "transaction_id": "352b913a-91de-4492-8b40-25d8f6d0baaf"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent-annualized"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "166.80"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OFFLINE_CONTRACT"
+                      },
+                      "value": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "CANCELLED",
+          "documents": [
+            {
+              "descriptor": {
+                "code": "POLICY_DOC",
+                "name": "Insurance Policy Document",
+                "short_desc": "Download your digitally signed policy document here",
+                "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name"
+              },
+              "mime_type": "application/pdf",
+              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/tnc.pdf"
+            }
+          ],
+          "created_at": "2024-07-16T12:20:59.127Z",
+          "updated_at": "2024-07-16T12:20:59.127Z",
+          "id": "ecc28136-46cf-4368-80da-90ba019506b8"
+        }
+      }
+    }
+  }
+}
