@@ -1,16 +1,11 @@
 {
   "context": {
-    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
-    "timestamp": "2024-06-06T07:43:11.259Z",
-    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
-    "domain": "ONDC:TRV10",
-    "version": "2.0.0",
-    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
-    "message_id": "e28cc9a5-4477-4c48-9a5f-c2df2ac1f44b",
-    "transaction_id": "8e9b17d2-ad4f-4c4e-83ce-3b4f9fc6b5a0",
-    "bpp_id": "staging-mobility-ondc.baayu.app",
     "action": "on_init",
-    "ttl": "PT30S",
+    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
+    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
+    "bpp_id": "staging-mobility-ondc.baayu.app",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
+    "domain": "ONDC:TRV10",
     "location": {
       "city": {
         "code": "std:020"
@@ -18,23 +13,153 @@
       "country": {
         "code": "IND"
       }
-    }
+    },
+    "message_id": "8f004400-91b9-46ea-a19f-4c8c68481a84",
+    "timestamp": "2024-07-19T11:34:29.916Z",
+    "transaction_id": "877dca1d-d2e6-41fc-a7c5-ccad27f7e002",
+    "ttl": "PT30S",
+    "version": "2.0.0"
   },
   "message": {
     "order": {
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "phone": "9765242868"
+            },
+            "person": {
+              "name": "Rajat Gajbhiye"
+            }
+          },
+          "id": "7e87585d-889f-46a1-bf43-6adaacb6cc56",
+          "stops": [
+            {
+              "location": {
+                "address": "Kakwa, Imphal, Manipur, India",
+                "gps": "93.935569,24.771121"
+              },
+              "type": "END"
+            },
+            {
+              "location": {
+                "gps": "93.936493,24.778437"
+              },
+              "type": "START"
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "AUTO_RICKSHAW"
+          }
+        }
+      ],
+      "id": "b2b1bcc7-2118-449e-916b-55dff2a96288",
       "items": [
         {
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Bike Taxi"
+          },
+          "fulfillment_ids": ["7e87585d-889f-46a1-bf43-6adaacb6cc56"],
+          "id": "663484504ba1d9a3c08f5afb",
+          "payment_ids": ["5db65796-96c7-46e5-9379-74ea262f5f99"],
           "price": {
-            "value": "19.54",
-            "currency": "INR"
+            "currency": "INR",
+            "value": "19.54"
           },
           "tags": [
             {
+              "descriptor": {
+                "code": "FARE_POLICY"
+              },
               "display": true,
               "list": [
                 {
                   "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
                     "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
                   },
                   "value": "0.00"
                 },
@@ -51,124 +176,70 @@
                   "value": "0.00"
                 },
                 {
-                  "value": "0.00",
                   "descriptor": {
                     "code": "WAITING_CHARGE_PER_MIN"
-                  }
-                },
-                {
-                  "value": "0.00",
-                  "descriptor": {
-                    "code": "NIGHT_CHARGE_MULTIPLIER"
-                  }
-                },
-                {
-                  "value": "0.00",
-                  "descriptor": {
-                    "code": "NIGHT_SHIFT_START_TIME"
-                  }
-                },
-                {
-                  "value": "0.00",
-                  "descriptor": {
-                    "code": "NIGHT_SHIFT_END_TIME"
-                  }
-                },
-                {
-                  "descriptor": {
-                    "code": "MIN_FARE"
                   },
                   "value": "0.00"
                 }
-              ],
-              "descriptor": {
-                "code": "FARE_POLICY"
-              }
+              ]
             }
-          ],
-          "payment_ids": ["bb29f32f-8bab-439b-8454-0c983a4b14f9"],
-          "fulfillment_ids": ["0746d85c-2457-4de6-a3b5-4e0fd7bcdc3b"],
-          "descriptor": {
-            "name": "Bike Taxi",
-            "code": "RIDE"
-          },
-          "id": "663484504ba1d9a3c08f5afb"
+          ]
         }
       ],
-      "fulfillments": [
-        {
-          "stops": [
-            {
-              "type": "START",
-              "location": {
-                "gps": "93.936493,24.778437"
-              }
-            },
-            {
-              "type": "END",
-              "location": {
-                "gps": "93.935569,24.771121",
-                "address": "Kakwa, Imphal, Manipur, India"
-              }
-            }
-          ],
-          "vehicle": {
-            "category": "AUTO_RICKSHAW"
-          },
-          "customer": {
-            "person": {
-              "name": "Rajat Gajbhiye"
-            },
-            "contact": {
-              "phone": "9765242868"
-            }
-          },
-          "id": "0746d85c-2457-4de6-a3b5-4e0fd7bcdc3b",
-          "type": "DELIVERY"
-        }
-      ],
-      "provider": {
-        "id": "Baayu"
-      },
-      "id": "ab1261b5-f2e6-4e05-981a-822b28cd966f",
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "19.54"
-        },
-        "ttl": "PT300s",
-        "breakup": [
-          {
-            "title": "BASE_FARE",
-            "price": {
-              "currency": "INR",
-              "value": "10.00"
-            }
-          },
-          {
-            "title": "DISTANCE_FARE",
-            "price": {
-              "currency": "INR",
-              "value": "9.54"
-            }
-          }
-        ]
-      },
       "payments": [
         {
-          "id": "bb29f32f-8bab-439b-8454-0c983a4b14f9",
+          "collected_by": "BPP",
+          "id": "5db65796-96c7-46e5-9379-74ea262f5f99",
+          "params": {
+            "bank_account_number": "123456789012",
+            "bank_code": "ICIC000001",
+            "virtual_payment_address": "amit.sharma@upi"
+          },
+          "status": "NOT-PAID",
           "tags": [
             {
-              "display": false,
               "descriptor": {
-                "code": "SETTLEMENT_TERMS"
+                "code": "BUYER_FINDER_FEES"
               },
+              "display": false,
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_WINDOW"
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "PT60M"
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "GUWAHATI"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "false"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "19.54"
                 },
                 {
                   "descriptor": {
@@ -184,9 +255,9 @@
                 },
                 {
                   "descriptor": {
-                    "code": "DELAY_INTEREST"
+                    "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "2.5"
+                  "value": "PT60M"
                 },
                 {
                   "descriptor": {
@@ -195,90 +266,37 @@
                   "value": "https://mobitybuyer.sumasoft.com/booking/terms"
                 }
               ]
-            },
-            {
-              "display": false,
-              "list": [
-                {
-                  "value": "0",
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  }
-                }
-              ],
-              "descriptor": {
-                "code": "BUYER_FINDER_FEES"
-              }
             }
           ],
-          "params": {
-            "bank_account_number": "123456789012",
-            "virtual_payment_address": "amit.sharma@upi",
-            "bank_code": "ICIC000001"
-          },
-          "status": "NOT-PAID",
-          "collected_by": "BPP",
           "type": "ON-FULFILLMENT"
         }
       ],
-      "cancellation_terms": [
-        {
-          "reason_required": true,
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ASSIGNED"
-            }
-          },
-          "cancellation_fee": {
-            "amount": {
+      "provider": {
+        "id": "Baayu"
+      },
+      "quote": {
+        "breakup": [
+          {
+            "price": {
               "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ENROUTE_PICKUP"
-            }
+              "value": "10.00"
+            },
+            "title": "BASE_FARE"
           },
-          "cancellation_fee": {
-            "amount": {
+          {
+            "price": {
               "currency": "INR",
-              "value": "0.00"
-            }
+              "value": "9.54"
+            },
+            "title": "DISTANCE_FARE"
           }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "19.54"
         },
-        {
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          },
-          "reason_required": true,
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ARRIVED_PICKUP"
-            }
-          }
-        },
-        {
-          "cancellation_fee": {
-            "amount": {
-              "value": "0.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_STARTED"
-            }
-          },
-          "reason_required": true
-        }
-      ]
+        "ttl": "PT300s"
+      }
     }
   }
 }

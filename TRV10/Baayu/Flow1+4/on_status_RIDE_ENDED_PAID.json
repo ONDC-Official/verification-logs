@@ -1,9 +1,11 @@
 {
   "context": {
-    "message_id": "3bce33bb-2dab-4bdc-a0d6-0c357bbc9d23",
-    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
-    "bpp_id": "staging-mobility-ondc.baayu.app",
     "action": "on_status",
+    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
+    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
+    "bpp_id": "staging-mobility-ondc.baayu.app",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
+    "domain": "ONDC:TRV10",
     "location": {
       "city": {
         "code": "std:0361"
@@ -12,130 +14,44 @@
         "code": "IND"
       }
     },
-    "transaction_id": "7d412b0a-de5d-4448-9cf0-eb64573adcb0",
-    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
-    "version": "2.0.0",
-    "domain": "ONDC:TRV10",
-    "timestamp": "2024-06-06T07:33:57.035Z",
-    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
-    "ttl": "PT1M"
+    "message_id": "b2b9ecf1-69bb-432e-9957-ebe16509c92e",
+    "timestamp": "2024-07-19T10:44:48.486Z",
+    "transaction_id": "b1f1104b-eb91-4a57-9f57-e9586b63d3ba",
+    "ttl": "PT1M",
+    "version": "2.0.0"
   },
   "message": {
     "order": {
-      "status": "COMPLETE",
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "26"
-        },
-        "breakup": [
-          {
-            "title": "BASE_FARE",
-            "price": {
-              "currency": "INR",
-              "value": "10"
-            }
-          },
-          {
-            "title": "DISTANCE_FARE",
-            "price": {
-              "currency": "INR",
-              "value": "16"
-            }
-          }
-        ],
-        "ttl": "PT300s"
-      },
-      "payments": [
-        {
-          "collected_by": "BPP",
-          "id": "83a091d3-60e0-4521-bcd7-b83ac15fefbb",
-          "type": "ON-FULFILLMENT",
-          "status": "PAID",
-          "params": {
-            "bank_account_number": "123456789012",
-            "virtual_payment_address": "amit.sharma@upi",
-            "bank_code": "ICIC000001"
-          },
-          "tags": [
-            {
-              "list": [
-                {
-                  "value": "PT60M",
-                  "descriptor": {
-                    "code": "SETTLEMENT_WINDOW"
-                  }
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_BASIS"
-                  },
-                  "value": "Delivery"
-                },
-                {
-                  "value": "upi",
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  }
-                },
-                {
-                  "value": "2.5",
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  }
-                },
-                {
-                  "value": "https://mobitybuyer.sumasoft.com/booking/terms",
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  }
-                }
-              ],
-              "display": false,
-              "descriptor": {
-                "code": "SETTLEMENT_TERMS"
-              }
-            },
-            {
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  },
-                  "value": "0"
-                }
-              ],
-              "display": false,
-              "descriptor": {
-                "code": "BUYER_FINDER_FEES"
-              }
-            }
-          ]
-        }
-      ],
-      "id": "cbf5f99e-3361-460e-ac51-578325116744",
-      "provider": {
-        "id": "Baayu"
-      },
-      "updated_at": "2024-06-06T07:32:17.602Z",
-      "created_at": "2024-06-06T07:32:17.551Z",
       "cancellation_terms": [
         {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ASSIGNED"
-            }
-          },
           "cancellation_fee": {
             "amount": {
-              "value": "0.00",
-              "currency": "INR"
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
             }
           },
           "reason_required": true
         },
         {
-          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
@@ -146,50 +62,126 @@
             "descriptor": {
               "code": "RIDE_ENROUTE_PICKUP"
             }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ARRIVED_PICKUP"
-            }
-          },
-          "cancellation_fee": {
-            "amount": {
-              "value": "0.00",
-              "currency": "INR"
-            }
           },
           "reason_required": true
         },
         {
-          "reason_required": true,
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_STARTED"
-            }
-          },
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
               "value": "0.00"
             }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "created_at": "2024-07-19T10:43:23.932Z",
+      "fulfillments": [
+        {
+          "agent": {
+            "contact": {
+              "phone": "1234567890"
+            },
+            "person": {
+              "id": "662b4d5d571b9e0ef4deb8d5",
+              "name": "ONDC TEST "
+            }
+          },
+          "customer": {
+            "contact": {
+              "phone": "9765242868"
+            },
+            "person": {
+              "name": "Rajat Gajbhiye"
+            }
+          },
+          "id": "67f2af78-c63b-4a36-ace3-152a1837fdee",
+          "state": {
+            "descriptor": {
+              "code": "RIDE_ENDED"
+            }
+          },
+          "stops": [
+            {
+              "authorization": {
+                "token": "8266",
+                "type": "OTP"
+              },
+              "location": {
+                "gps": "93.936493,24.778437"
+              },
+              "type": "START"
+            },
+            {
+              "location": {
+                "address": "Kakwa, Imphal, Manipur, India",
+                "gps": "93.935569,24.771121"
+              },
+              "type": "END"
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "make": "Ola Electric",
+            "model": "S1 Air",
+            "registration": "AS12KN9876"
           }
         }
       ],
+      "id": "f5159afc-8a13-460a-abcf-8c3750279268",
       "items": [
         {
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Bike Taxi"
+          },
+          "fulfillment_ids": ["67f2af78-c63b-4a36-ace3-152a1837fdee"],
           "id": "663484504ba1d9a3c08f5afb",
+          "payment_ids": ["b8c94c40-9028-48ec-8c1b-7468b7bee93e"],
+          "price": {
+            "currency": "INR",
+            "value": "19.54"
+          },
           "tags": [
             {
-              "display": true,
               "descriptor": {
                 "code": "FARE_POLICY"
               },
+              "display": true,
               "list": [
                 {
                   "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
                     "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
                   },
                   "value": "0.00"
                 },
@@ -206,103 +198,129 @@
                   "value": "0.00"
                 },
                 {
-                  "value": "0.00",
                   "descriptor": {
                     "code": "WAITING_CHARGE_PER_MIN"
-                  }
-                },
-                {
-                  "descriptor": {
-                    "code": "NIGHT_CHARGE_MULTIPLIER"
                   },
                   "value": "0.00"
-                },
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "id": "b8c94c40-9028-48ec-8c1b-7468b7bee93e",
+          "params": {
+            "bank_account_number": "123456789012",
+            "bank_code": "ICIC000001",
+            "virtual_payment_address": "amit.sharma@upi"
+          },
+          "status": "PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
                 {
                   "descriptor": {
-                    "code": "NIGHT_SHIFT_START_TIME"
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "0.00"
-                },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
                 {
                   "descriptor": {
-                    "code": "NIGHT_SHIFT_END_TIME"
+                    "code": "COURT_JURISDICTION"
                   },
-                  "value": "0.00"
+                  "value": "GUWAHATI"
                 },
                 {
-                  "value": "0.00",
                   "descriptor": {
-                    "code": "MIN_FARE"
-                  }
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "false"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "27"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://mobitybuyer.sumasoft.com/booking/terms"
                 }
               ]
             }
           ],
-          "descriptor": {
-            "name": "Bike Taxi",
-            "code": "RIDE"
-          },
-          "fulfillment_ids": ["77a1fa25-ee44-490f-863d-018eb42a2e7e"],
-          "payment_ids": ["83a091d3-60e0-4521-bcd7-b83ac15fefbb"],
-          "price": {
-            "value": "19.54",
-            "currency": "INR"
-          }
+          "type": "ON-FULFILLMENT"
         }
       ],
-      "fulfillments": [
-        {
-          "state": {
-            "descriptor": {
-              "code": "RIDE_ENDED"
-            }
-          },
-          "stops": [
-            {
-              "location": {
-                "gps": "93.936493,24.778437"
-              },
-              "authorization": {
-                "token": "8274",
-                "type": "OTP"
-              },
-              "type": "START"
+      "provider": {
+        "id": "Baayu"
+      },
+      "quote": {
+        "breakup": [
+          {
+            "price": {
+              "currency": "INR",
+              "value": "10"
             },
-            {
-              "location": {
-                "gps": "93.935569,24.771121",
-                "address": "Kakwa, Imphal, Manipur, India"
-              },
-              "type": "END"
-            }
-          ],
-          "type": "DELIVERY",
-          "id": "77a1fa25-ee44-490f-863d-018eb42a2e7e",
-          "vehicle": {
-            "make": "Bajaj",
-            "registration": "KA-01-AD-9876",
-            "model": "Compact RE",
-            "category": "AUTO_RICKSHAW"
+            "title": "BASE_FARE"
           },
-          "agent": {
-            "person": {
-              "name": "ONDC TEST ",
-              "id": "662b4d5d571b9e0ef4deb8d5"
+          {
+            "price": {
+              "currency": "INR",
+              "value": "17"
             },
-            "contact": {
-              "phone": "1234512345"
-            }
-          },
-          "customer": {
-            "contact": {
-              "phone": "9765242868"
-            },
-            "person": {
-              "name": "Rajat Gajbhiye"
-            }
+            "title": "DISTANCE_FARE"
           }
-        }
-      ]
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "27"
+        },
+        "ttl": "PT300s"
+      },
+      "status": "COMPLETE",
+      "updated_at": "2024-07-19T10:43:24.001Z"
     }
   }
 }

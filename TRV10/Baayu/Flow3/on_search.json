@@ -1,16 +1,11 @@
 {
   "context": {
-    "ttl": "PT30S",
-    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
     "action": "on_search",
-    "version": "2.0.0",
-    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
     "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
+    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
     "bpp_id": "staging-mobility-ondc.baayu.app",
-    "transaction_id": "8e9b17d2-ad4f-4c4e-83ce-3b4f9fc6b5a0",
-    "timestamp": "2024-06-06T07:43:06.742Z",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
     "domain": "ONDC:TRV10",
-    "message_id": "0a7769d9-17e7-47a5-a045-f3c3248bb911",
     "location": {
       "city": {
         "code": "std:020"
@@ -18,92 +13,62 @@
       "country": {
         "code": "IND"
       }
-    }
+    },
+    "message_id": "569d56e2-2b1c-4654-aace-e86852f38d94",
+    "timestamp": "2024-07-19T11:34:16.394Z",
+    "transaction_id": "877dca1d-d2e6-41fc-a7c5-ccad27f7e002",
+    "ttl": "PT30S",
+    "version": "2.0.0"
   },
   "message": {
     "catalog": {
+      "descriptor": {
+        "name": "Panda Ride Hailing"
+      },
       "providers": [
         {
-          "items": [
-            {
-              "id": "663484504ba1d9a3c08f5afb",
-              "price": {
-                "currency": "INR",
-                "value": "19.54"
-              },
-              "fulfillment_ids": ["0746d85c-2457-4de6-a3b5-4e0fd7bcdc3b"],
-              "descriptor": {
-                "code": "RIDE",
-                "name": "Bike Taxi"
-              }
-            }
-          ],
           "fulfillments": [
             {
-              "vehicle": {
-                "category": "AUTO_RICKSHAW"
-              },
-              "id": "0746d85c-2457-4de6-a3b5-4e0fd7bcdc3b",
+              "id": "7e87585d-889f-46a1-bf43-6adaacb6cc56",
               "stops": [
-                {
-                  "location": {
-                    "gps": "93.936493,24.778437"
-                  },
-                  "type": "START"
-                },
                 {
                   "location": {
                     "gps": "93.935569,24.771121"
                   },
                   "type": "END"
+                },
+                {
+                  "location": {
+                    "gps": "93.936493,24.778437"
+                  },
+                  "type": "START"
                 }
               ],
-              "type": "DELIVERY"
+              "type": "DELIVERY",
+              "vehicle": {
+                "category": "AUTO_RICKSHAW"
+              }
             }
           ],
           "id": "Baayu",
+          "items": [
+            {
+              "descriptor": {
+                "code": "RIDE",
+                "name": "Bike Taxi"
+              },
+              "fulfillment_ids": ["7e87585d-889f-46a1-bf43-6adaacb6cc56"],
+              "id": "663484504ba1d9a3c08f5afb",
+              "price": {
+                "currency": "INR",
+                "value": "19.54"
+              }
+            }
+          ],
           "payments": [
             {
               "collected_by": "BPP",
               "tags": [
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TERMS"
-                  },
-                  "list": [
-                    {
-                      "value": "PT60M",
-                      "descriptor": {
-                        "code": "SETTLEMENT_WINDOW"
-                      }
-                    },
-                    {
-                      "value": "Delivery",
-                      "descriptor": {
-                        "code": "SETTLEMENT_BASIS"
-                      }
-                    },
-                    {
-                      "value": "upi",
-                      "descriptor": {
-                        "code": "SETTLEMENT_TYPE"
-                      }
-                    },
-                    {
-                      "descriptor": {
-                        "code": "DELAY_INTEREST"
-                      },
-                      "value": "2.5"
-                    },
-                    {
-                      "value": "https://mobitybuyer.sumasoft.com/booking/terms",
-                      "descriptor": {
-                        "code": "STATIC_TERMS"
-                      }
-                    }
-                  ],
-                  "display": false
-                },
                 {
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES"
@@ -111,10 +76,48 @@
                   "display": false,
                   "list": [
                     {
-                      "value": "0",
                       "descriptor": {
                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                      }
+                      },
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "upi"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "PT60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://mobitybuyer.sumasoft.com/booking/terms"
                     }
                   ]
                 }
@@ -122,10 +125,7 @@
             }
           ]
         }
-      ],
-      "descriptor": {
-        "name": "Panda Ride Hailing"
-      }
+      ]
     }
   }
 }

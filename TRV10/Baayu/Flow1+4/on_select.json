@@ -1,10 +1,11 @@
 {
   "context": {
-    "domain": "ONDC:TRV10",
-    "transaction_id": "7d412b0a-de5d-4448-9cf0-eb64573adcb0",
+    "action": "on_select",
     "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
-    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
     "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
+    "bpp_id": "staging-mobility-ondc.baayu.app",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
+    "domain": "ONDC:TRV10",
     "location": {
       "city": {
         "code": "std:020"
@@ -13,61 +14,55 @@
         "code": "IND"
       }
     },
-    "action": "on_select",
-    "timestamp": "2024-06-06T07:32:07.458Z",
-    "message_id": "24308b7a-c6ce-4371-93be-37c72b8f43e5",
-    "version": "2.0.0",
+    "message_id": "524c9419-f37a-4232-93e2-8ea881d3a03b",
+    "timestamp": "2024-07-19T10:43:16.514Z",
+    "transaction_id": "b1f1104b-eb91-4a57-9f57-e9586b63d3ba",
     "ttl": "PT30S",
-    "bpp_id": "staging-mobility-ondc.baayu.app"
+    "version": "2.0.0"
   },
   "message": {
     "order": {
-      "provider": {
-        "id": "Baayu"
-      },
+      "fulfillments": [
+        {
+          "id": "67f2af78-c63b-4a36-ace3-152a1837fdee",
+          "stops": [
+            {
+              "location": {
+                "gps": "93.935569,24.771121"
+              },
+              "type": "END"
+            },
+            {
+              "location": {
+                "gps": "93.936493,24.778437"
+              },
+              "type": "START"
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "AUTO_RICKSHAW"
+          }
+        }
+      ],
       "items": [
         {
           "descriptor": {
             "code": "RIDE",
             "name": "Bike Taxi"
           },
+          "fulfillment_ids": ["67f2af78-c63b-4a36-ace3-152a1837fdee"],
           "id": "663484504ba1d9a3c08f5afb",
-          "fulfillment_ids": ["77a1fa25-ee44-490f-863d-018eb42a2e7e"],
           "price": {
             "currency": "INR",
             "value": "19.54"
           }
         }
       ],
-      "fulfillments": [
-        {
-          "vehicle": {
-            "category": "AUTO_RICKSHAW"
-          },
-          "stops": [
-            {
-              "type": "START",
-              "location": {
-                "gps": "93.936493,24.778437"
-              }
-            },
-            {
-              "location": {
-                "gps": "93.935569,24.771121"
-              },
-              "type": "END"
-            }
-          ],
-          "id": "77a1fa25-ee44-490f-863d-018eb42a2e7e",
-          "type": "DELIVERY"
-        }
-      ],
+      "provider": {
+        "id": "Baayu"
+      },
       "quote": {
-        "ttl": "PT300s",
-        "price": {
-          "value": "19.54",
-          "currency": "INR"
-        },
         "breakup": [
           {
             "price": {
@@ -83,7 +78,12 @@
             },
             "title": "DISTANCE_FARE"
           }
-        ]
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "19.54"
+        },
+        "ttl": "PT300s"
       }
     }
   }
