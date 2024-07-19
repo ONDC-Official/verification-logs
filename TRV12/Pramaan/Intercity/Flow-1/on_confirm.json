@@ -3,14 +3,17 @@
     "location": {
       "country": {
         "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
       }
     },
     "domain": "ONDC:TRV12",
     "action": "on_confirm",
     "version": "2.0.0",
-    "transaction_id": "ab1c354f-9b14-4d99-bb3d-2886ec4bc0cd",
-    "message_id": "f97c9ced-20a1-4ca0-8409-6655306c20dc",
-    "timestamp": "2024-07-05T17:45:41.053Z",
+    "transaction_id": "73269105-4c95-4be1-9ade-48e2a9f5d94d",
+    "message_id": "c7d5fbb1-53a0-41b0-81b1-461f95e1edbe",
+    "timestamp": "2024-07-19T07:16:11.936Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30S",
@@ -29,11 +32,11 @@
           },
           "descriptor": {
             "name": "Seater Ticket",
-            "code": "SEAT"
+            "code": "SEATER"
           },
           "price": {
             "currency": "INR",
-            "value": "899"
+            "value": "941"
           },
           "fulfillment_ids": [
             "F1"
@@ -155,15 +158,15 @@
                 },
                 {
                   "descriptor": {
-                    "code": "SELECTED_SEAT"
-                  },
-                  "value": "A1"
-                },
-                {
-                  "descriptor": {
                     "code": "ITEM_ID"
                   },
                   "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "SELECTED_SEAT"
+                  },
+                  "value": "A1"
                 }
               ]
             }
@@ -186,7 +189,7 @@
       ],
       "quote": {
         "price": {
-          "value": "1057.9",
+          "value": "941",
           "currency": "INR"
         },
         "breakup": [
@@ -194,21 +197,37 @@
             "title": "BASE_FARE",
             "price": {
               "currency": "INR",
-              "value": "899"
+              "value": "800"
             }
           },
           {
-            "title": "CGST @ 5%",
+            "title": "TAX",
             "price": {
               "currency": "INR",
-              "value": "44.95"
-            }
-          },
-          {
-            "title": "SGST @ 5%",
-            "price": {
-              "currency": "INR",
-              "value": "44.95"
+              "value": "40"
+            },
+            "item": {
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "TAX"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "CGST"
+                      },
+                      "value": "2%"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SGST"
+                      },
+                      "value": "2%"
+                    }
+                  ]
+                }
+              ]
             }
           },
           {
@@ -219,10 +238,10 @@
             }
           },
           {
-            "title": "Seat Fare",
+            "title": "SEAT_FARE",
             "price": {
-              "currency": "INR",
-              "value": "50"
+              "value": "50",
+              "currency": "INR"
             }
           }
         ]
@@ -239,10 +258,8 @@
       ],
       "payments": [
         {
-          "id": "8a82a852-2cba-4af3-bda7-02023298ef13",
-          "collected_by": "BAP",
-          "status": "PAID",
-          "type": "PRE-ORDER",
+          "id": "2fd4314e-fe3c-47ca-9c63-ac9dac7b24b8",
+          "collected_by": "BPP",
           "tags": [
             {
               "descriptor": {
@@ -255,6 +272,12 @@
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
                   "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
                 }
               ]
             },
@@ -268,25 +291,19 @@
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT60M"
+                  "value": "P30D"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "Delivery"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "upi"
+                  "value": "INVOICE_RECEIPT"
                 },
                 {
                   "descriptor": {
                     "code": "MANDATORY_ARBITRATION"
                   },
-                  "value": "true"
+                  "value": "TRUE"
                 },
                 {
                   "descriptor": {
@@ -296,36 +313,44 @@
                 },
                 {
                   "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
                   "value": "2.5"
                 },
                 {
                   "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://www.abc.com/settlement-terms/"
-                },
-                {
-                  "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "1047.32"
+                  "value": "940"
                 }
               ]
             }
           ],
+          "status": "PAID",
+          "type": "PRE-ORDER",
           "params": {
             "bank_code": "XXXXXXXX",
             "bank_account_number": "xxxxxxxxxxxxxx",
             "virtual_payment_address": "9988199772@okicic",
-            "amount": "1057.9",
+            "amount": "941",
             "currency": "INR",
-            "transaction_id": "ab1c354f-9b14-4d99-bb3d-2886ec4bc0cd"
+            "transaction_id": "73269105-4c95-4be1-9ade-48e2a9f5d94d"
           }
         }
       ],
-      "id": "622088c6-0477-4f3c-84be-bdb87faa0dab",
+      "id": "ff920632-88fc-49d8-a043-b4acfe73a795",
       "status": "ACTIVE"
     }
   }

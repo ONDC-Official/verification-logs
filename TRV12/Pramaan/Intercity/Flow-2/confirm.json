@@ -3,14 +3,17 @@
     "location": {
       "country": {
         "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
       }
     },
     "domain": "ONDC:TRV12",
     "action": "confirm",
     "version": "2.0.0",
-    "transaction_id": "ab1c354f-9b14-4d99-bb3d-2886ec4bc0cd",
-    "message_id": "f97c9ced-20a1-4ca0-8409-6655306c20dc",
-    "timestamp": "2024-07-05T17:45:40.892Z",
+    "transaction_id": "73269105-4c95-4be1-9ade-48e2a9f5d94d",
+    "message_id": "c7d5fbb1-53a0-41b0-81b1-461f95e1edbe",
+    "timestamp": "2024-07-19T07:16:11.501Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30S",
@@ -19,7 +22,7 @@
   },
   "message": {
     "order": {
-      "id": "b3223440-3e45-40c0-a9b2-4ae59bf0e490",
+      "id": "0122",
       "items": [
         {
           "id": "I1",
@@ -80,17 +83,7 @@
       },
       "payments": [
         {
-          "collected_by": "BAP",
-          "status": "PAID",
-          "type": "PRE-ORDER",
-          "params": {
-            "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx",
-            "virtual_payment_address": "9988199772@okicic",
-            "transaction_id": "a1644304-d150-4a58-93fe-69e8ab6e3cdc",
-            "currency": "INR",
-            "amount": "1057.9"
-          },
+          "collected_by": "BPP",
           "tags": [
             {
               "descriptor": {
@@ -103,6 +96,12 @@
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
                   "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
                 }
               ]
             },
@@ -116,25 +115,19 @@
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT60M"
+                  "value": "P30D"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "Delivery"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "upi"
+                  "value": "INVOICE_RECEIPT"
                 },
                 {
                   "descriptor": {
                     "code": "MANDATORY_ARBITRATION"
                   },
-                  "value": "true"
+                  "value": "TRUE"
                 },
                 {
                   "descriptor": {
@@ -144,25 +137,41 @@
                 },
                 {
                   "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
                   "value": "2.5"
                 },
                 {
                   "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://www.abc.com/settlement-terms/"
-                },
-                {
-                  "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "1047.32"
+                  "value": "940"
                 }
               ]
             }
-          ]
+          ],
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "bf23ecec-f548-4717-9436-51a6b1c385bb",
+            "currency": "INR",
+            "amount": "949",
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "9988199772@okicic"
+          }
         }
       ]
     }
