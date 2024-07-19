@@ -1,0 +1,354 @@
+{
+  "context": {
+    "location": { "country": { "code": "IND" }, "city": { "code": "std:079" } },
+    "action": "on_cancel",
+    "domain": "ONDC:TRV11",
+    "version": "2.0.0",
+    "bap_id": "api.example-bap.com",
+    "bap_uri": "https://mobility-staging.ondc.org/api/ondc/",
+    "bpp_id": "ondc.dev.innvonix.in",
+    "bpp_uri": "https://ondc.dev.innvonix.in/",
+    "transaction_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
+    "message_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
+    "timestamp": "2024-07-19T07:18:53.876Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://www.gujaratmetrorail.com/ahmedabad/route-and-fares"
+          }
+        }
+      ],
+      "provider": {
+        "id": "Gujarat-Metro-Rail-Corporation-Limited",
+        "descriptor": {
+          "name": "Gujarat Metro Rail Corporation (GMRC) Limited",
+          "image": [
+            {
+              "url": "https://www.gujaratmetrorail.com/wp-content/uploads/HomePageImage/gmrc-logo-WBG-180x208-1.png"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2024-07-19T01:30:00.000Z",
+            "end": "2024-07-19T16:30:00.000Z"
+          }
+        }
+      },
+      "id": "41bf4446-08a2-4ac1-9555-569f31b98ff8",
+      "status": "SOFT_CANCELLED",
+      "billing": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+91-9897867564"
+      },
+      "payments": [
+        {
+          "id": "47ca8b5b-85fc-4906-9422-ebc4cc2bc202",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "collected_by": "api.example-bap.com",
+          "params": {
+            "currency": "INR",
+            "transaction_id": "34cc9b0b-6887-4c63-8397-2f4fcf03e50d",
+            "amount": 80,
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "innvonix@paytm"
+          },
+          "tags": [
+            { "descriptor": { "code": "SETTLEMENT_WINDOW" }, "value": "P1D" },
+            { "descriptor": { "code": "DELAY_INTEREST" }, "value": "0" },
+            {
+              "descriptor": { "code": "SETTLEMENT_BASIS" },
+              "value": "INVOICE_RECEIPT"
+            },
+            {
+              "descriptor": { "code": "MANDATORY_ARBITRATION" },
+              "value": "TRUE"
+            },
+            {
+              "descriptor": { "code": "COURT_JURISDICTION" },
+              "value": "Gujarat High Court"
+            },
+            {
+              "descriptor": { "code": "STATIC_TERMS" },
+              "value": "https://www.gujaratmetrorail.com/terms-condition/"
+            },
+            { "descriptor": { "code": "SETTLEMENT_AMOUNT" }, "value": "80" },
+            { "descriptor": { "code": "SETTLEMENT_TYPE" }, "value": "NEFT" }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "TRPEW001-SJT-RNMS-VRMS",
+          "category_ids": ["C1"],
+          "descriptor": { "name": "Single Journey Ticket", "code": "SJT" },
+          "fulfillment_ids": [
+            "TRPEW001",
+            "TRPEW001-1",
+            "TRPEW001-2",
+            "TRPEW001-3"
+          ],
+          "price": { "currency": "INR", "value": "80" },
+          "quantity": { "selected": { "count": "4" } },
+          "time": { "label": "Validity", "duration": "PT2D" }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "TRPEW001",
+          "type": "ROUTE",
+          "vehicle": { "category": "METRO" },
+          "stops": [
+            {
+              "id": "RNMS",
+              "type": "START",
+              "instruction": {
+                "name": "Rajivnagar",
+                "short_desc": "Rajivnagar"
+              },
+              "location": {
+                "descriptor": { "name": "Rajivnagar", "code": "RNMS" },
+                "gps": "23.0201,72.5519"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
+                "valid_to": "2024-07-26T07:15:34.650Z",
+                "status": "UNCLAIMED"
+              }
+            },
+            {
+              "id": "OHCI",
+              "type": "TRANSIT",
+              "instruction": {
+                "name": "Old High Court Interchange",
+                "short_desc": "Please Change here for Red Line"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Old High Court Interchange",
+                  "code": "OHCI"
+                },
+                "gps": "23.0368,72.5754"
+              }
+            },
+            {
+              "id": "VRMS",
+              "type": "END",
+              "instruction": {
+                "name": "Vijaynagar",
+                "short_desc": "Vijaynagar"
+              },
+              "location": {
+                "descriptor": { "name": "Vijaynagar", "code": "VRMS" },
+                "gps": "23.0482,72.5708"
+              }
+            }
+          ]
+        },
+        {
+          "id": "TRPEW001-1",
+          "type": "ROUTE",
+          "vehicle": { "category": "METRO" },
+          "stops": [
+            {
+              "id": "RNMS",
+              "type": "START",
+              "instruction": {
+                "name": "Rajivnagar",
+                "short_desc": "Rajivnagar"
+              },
+              "location": {
+                "descriptor": { "name": "Rajivnagar", "code": "RNMS" },
+                "gps": "23.0201,72.5519"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
+                "valid_to": "2024-07-26T07:15:34.650Z",
+                "status": "UNCLAIMED"
+              }
+            },
+            {
+              "id": "OHCI",
+              "type": "TRANSIT",
+              "instruction": {
+                "name": "Old High Court Interchange",
+                "short_desc": "Please Change here for Red Line"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Old High Court Interchange",
+                  "code": "OHCI"
+                },
+                "gps": "23.0368,72.5754"
+              }
+            },
+            {
+              "id": "VRMS",
+              "type": "END",
+              "instruction": {
+                "name": "Vijaynagar",
+                "short_desc": "Vijaynagar"
+              },
+              "location": {
+                "descriptor": { "name": "Vijaynagar", "code": "VRMS" },
+                "gps": "23.0482,72.5708"
+              }
+            }
+          ]
+        },
+        {
+          "id": "TRPEW001-2",
+          "type": "ROUTE",
+          "vehicle": { "category": "METRO" },
+          "stops": [
+            {
+              "id": "RNMS",
+              "type": "START",
+              "instruction": {
+                "name": "Rajivnagar",
+                "short_desc": "Rajivnagar"
+              },
+              "location": {
+                "descriptor": { "name": "Rajivnagar", "code": "RNMS" },
+                "gps": "23.0201,72.5519"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
+                "valid_to": "2024-07-26T07:15:34.650Z",
+                "status": "UNCLAIMED"
+              }
+            },
+            {
+              "id": "OHCI",
+              "type": "TRANSIT",
+              "instruction": {
+                "name": "Old High Court Interchange",
+                "short_desc": "Please Change here for Red Line"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Old High Court Interchange",
+                  "code": "OHCI"
+                },
+                "gps": "23.0368,72.5754"
+              }
+            },
+            {
+              "id": "VRMS",
+              "type": "END",
+              "instruction": {
+                "name": "Vijaynagar",
+                "short_desc": "Vijaynagar"
+              },
+              "location": {
+                "descriptor": { "name": "Vijaynagar", "code": "VRMS" },
+                "gps": "23.0482,72.5708"
+              }
+            }
+          ]
+        },
+        {
+          "id": "TRPEW001-3",
+          "type": "ROUTE",
+          "vehicle": { "category": "METRO" },
+          "stops": [
+            {
+              "id": "RNMS",
+              "type": "START",
+              "instruction": {
+                "name": "Rajivnagar",
+                "short_desc": "Rajivnagar"
+              },
+              "location": {
+                "descriptor": { "name": "Rajivnagar", "code": "RNMS" },
+                "gps": "23.0201,72.5519"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
+                "valid_to": "2024-07-26T07:15:34.650Z",
+                "status": "UNCLAIMED"
+              }
+            },
+            {
+              "id": "OHCI",
+              "type": "TRANSIT",
+              "instruction": {
+                "name": "Old High Court Interchange",
+                "short_desc": "Please Change here for Red Line"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Old High Court Interchange",
+                  "code": "OHCI"
+                },
+                "gps": "23.0368,72.5754"
+              }
+            },
+            {
+              "id": "VRMS",
+              "type": "END",
+              "instruction": {
+                "name": "Vijaynagar",
+                "short_desc": "Vijaynagar"
+              },
+              "location": {
+                "descriptor": { "name": "Vijaynagar", "code": "VRMS" },
+                "gps": "23.0482,72.5708"
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": { "value": "10", "currency": "INR" },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "TRPEW001-SJT-RNMS-VRMS",
+              "price": { "currency": "INR", "value": "20" },
+              "quantity": { "selected": { "count": "4" } }
+            },
+            "price": { "currency": "INR", "value": "80" }
+          },
+          {
+            "title": "REFUND",
+            "item": {
+              "id": "TRPEW001-SJT-RNMS-VRMS",
+              "price": { "currency": "INR", "value": "-20" },
+              "quantity": { "selected": { "count": "4" } }
+            },
+            "price": { "currency": "INR", "value": "-80" }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": { "currency": "INR", "value": "10" }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "descriptor": { "code": "SCHEDULED_INFO" },
+          "list": [
+            {
+              "descriptor": { "code": "GTFS" },
+              "value": "https://www.gujaratmetrorail.com/"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
