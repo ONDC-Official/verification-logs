@@ -16,7 +16,9 @@
         "timestamp": "2024-06-07T11:19:11.887Z",
         "transaction_id": "a6067b0a-1b7c-4be8-917a-3655657ccbun",
         "ttl": "PT30M",
-        "version": "2.0.0"
+        "version": "2.0.0",
+        "bpp_id": "seller.passdn.com",
+        "bpp_uri": "https://seller.passdn.com"
     },
     "message": {
         "order": {
@@ -35,7 +37,7 @@
                     "id": "dabb5e13-481a-4596-a0be-ee90f0e3564c",
                     "price": {
                         "currency": "INR",
-                        "value": 79
+                        "value": "80"
                     },
                     "tags": [
                         {
@@ -63,7 +65,7 @@
                                         "code": "WAITING_CHARGE_PER_MIN"
                                     },
                                     "display": true,
-                                    "value": 0
+                                    "value": "0"
                                 },
                                 {
                                     "descriptor": {
@@ -116,44 +118,150 @@
                     "stops": [
                         {
                             "location": {
-                                "gps": "37.77495, -122.4194"
+                                "gps": "12.898039, 77.606804"
                             },
                             "type": "START"
                         },
                         {
                             "location": {
-                                "gps": "37.7750, -122.4190"
+                                "gps": "12.932540, 77.628752"
                             },
                             "type": "END"
                         }
                     ],
-                    "customer": {
-                        "person": {
-                            "name": "ashish Choudhari "
-                        },
-                        "contact": {
-                            "phone": "8668266350"
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO"
+                            },
+                            "display": true,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_DISTANCE"
+                                    },
+                                    "value": "10.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_TIME"
+                                    },
+                                    "value": "55.0"
+                                }
+                            ]
                         }
-                    }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "params": {
+                        "bank_account_number": "xxxxxxxxxxxxxx",
+                        "bank_code": "XXXXXXXX",
+                        "virtual_payment_address": "7752908763@okicic"
+                    },
+                    "status": "NOT-PAID",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "display": false,
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "display": false,
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "display": false,
+                                    "value": "INVOICE_RECIEPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "display": false,
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "display": false,
+                                    "value": "Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "display": false,
+                                    "value": "https://api.example-bap.com/booking/terms"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT"
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": 79
+                    "value": "80"
                 },
                 "breakup": [
                     {
                         "title": "BASE_FARE",
                         "price": {
-                            "value": "25",
+                            "value": "10",
                             "currency": "INR"
                         }
                     },
                     {
                         "title": "DISTANCE_FARE",
                         "price": {
-                            "value": "54.97",
+                            "value": "70",
+                            "currency": "INR"
+                        }
+                    },
+                    {
+                        "title": "WAITING_FARE",
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        }
+                    },
+                    {
+                        "title": "PICKUP_CHARGE",
+                        "price": {
+                            "value": "10",
                             "currency": "INR"
                         }
                     }

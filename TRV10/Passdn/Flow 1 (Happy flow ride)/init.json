@@ -16,93 +16,21 @@
         "timestamp": "2024-06-07T11:19:11.887Z",
         "transaction_id": "a6067b0a-1b7c-4be8-917a-3655657ccbun",
         "ttl": "PT30M",
-        "version": "2.0.0"
+        "version": "2.0.0",
+        "bpp_id": "seller.passdn.com",
+        "bpp_uri": "https://seller.passdn.com"
     },
     "message": {
         "order": {
             "provider": {
                 "id": "passdn"
             },
+            "billing": {
+                "name": "ashish Choudhari"
+            },
             "items": [
                 {
-                    "descriptor": {
-                        "code": "RIDE",
-                        "name": "PASSDN RIDE"
-                    },
-                    "fulfillment_ids": [
-                        "90be1efd-c030-4c1e-bf86-7c8bcc6ee70a"
-                    ],
-                    "id": "cac72229-455e-4a97-bcc1-d9a30d187647",
-                    "price": {
-                        "currency": "INR",
-                        "value": 79
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "FARE_POLICY",
-                                "name": "Daytime Charges"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "MIN_FARE"
-                                    },
-                                    "display": true,
-                                    "value": "25"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PER_KM_CHARGE"
-                                    },
-                                    "display": true,
-                                    "value": "17"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "WAITING_CHARGE_PER_MIN"
-                                    },
-                                    "display": true,
-                                    "value": 0
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "NIGHT_CHARGE_MULTIPLIER"
-                                    },
-                                    "display": true,
-                                    "value": "0.5"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "NIGHT_SHIFT_START_TIME"
-                                    },
-                                    "display": true,
-                                    "value": "23:00"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "NIGHT_SHIFT_END_TIME"
-                                    },
-                                    "display": true,
-                                    "value": "05:00"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "MIN_FARE_DISTANCE_KM"
-                                    },
-                                    "display": true,
-                                    "value": "1.6"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PICKUP_CHARGE"
-                                    },
-                                    "display": true,
-                                    "value": "10"
-                                }
-                            ]
-                        }
-                    ]
+                    "id": "cac72229-455e-4a97-bcc1-d9a30d187647"
                 }
             ],
             "fulfillments": [
@@ -110,8 +38,8 @@
                     "id": "90be1efd-c030-4c1e-bf86-7c8bcc6ee70a",
                     "type": "DELIVERY",
                     "vehicle": {
-                        "category": "AUTO_RICKSHAW",
-                        "variant": "AUTO"
+                        "category": "AUTO",
+                        "variant": "AUTO_RICKSHAW"
                     },
                     "stops": [
                         {
@@ -137,112 +65,82 @@
                     }
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": 79
-                },
-                "breakup": [
-                    {
-                        "title": "BASE_FARE",
-                        "price": {
-                            "value": "25",
-                            "currency": "INR"
-                        }
-                    },
-                    {
-                        "title": "DISTANCE_FARE",
-                        "price": {
-                            "value": "54.97",
-                            "currency": "INR"
-                        }
-                    }
-                ]
-            },
-            "cancellation_terms": [
+            "payments": [
                 {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_ASSIGNED"
-                        }
+                    "collected_by": "BPP",
+                    "params": {
+                        "bank_account_number": "xxxxxxxxxxxxxx",
+                        "bank_code": "XXXXXXXX",
+                        "virtual_payment_address": "7752908763@okicic"
                     },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
+                    "status": "NOT-PAID",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "display": false,
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "display": false,
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "display": false,
+                                    "value": "INVOICE_RECIEPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "display": false,
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "display": false,
+                                    "value": "Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "display": false,
+                                    "value": "https://api.example-bap.com/booking/terms"
+                                }
+                            ]
                         }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_ARRIVED_PICKUP"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_STARTED"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_ENDED"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_ENROUTE_PICKUP"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_CANCELLED"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
+                    ],
+                    "type": "ON-FULFILLMENT"
                 }
             ]
         }

@@ -108,6 +108,85 @@
           ]
         }
       ],
+      "payments": [
+        {
+          "id": "5e84df9d-5c91-48b9-9309-090908d0a9bf",
+          "collected_by": "BPP",
+          "params": {
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "bank_code": "XXXXXXXX",
+            "virtual_payment_address": "7752908763@okicic"
+          },
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "display": false,
+                  "value": "PT1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "display": false,
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "display": false,
+                  "value": "INVOICE_RECIEPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "display": false,
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "display": false,
+                  "value": "Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "display": false,
+                  "value": "https://api.example-bap.com/booking/terms"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT"
+        }
+      ],
       "fulfillments": [
         {
           "id": "73f92918-d44b-4009-a2d8-8c2b590a7b4a",
@@ -122,7 +201,7 @@
           "stops": [
             {
               "location": {
-                "gps": "37.77495, -122.4194"
+                "gps": "12.898039, 77.606804"
               },
               "type": "START",
               "authorization": {
@@ -132,9 +211,31 @@
             },
             {
               "location": {
-                "gps": "37.7750, -122.4190"
+                "gps": "12.932540, 77.628752"
               },
               "type": "END"
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ROUTE_DISTANCE"
+                  },
+                  "value": "10.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "ROUTE_TIME"
+                  },
+                  "value": "55.0"
+                }
+              ]
             }
           ],
           "customer": {
@@ -164,20 +265,34 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": 79
+          "value": "80"
         },
         "breakup": [
           {
             "title": "BASE_FARE",
             "price": {
-              "value": "25",
+              "value": "10",
               "currency": "INR"
             }
           },
           {
             "title": "DISTANCE_FARE",
             "price": {
-              "value": "54.97",
+              "value": "70",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "WAITING_FARE",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "PICKUP_CHARGE",
+            "price": {
+              "value": "10",
               "currency": "INR"
             }
           }
