@@ -12,9 +12,9 @@
         "code": "IND"
       }
     },
-    "message_id": "4e142173-28cb-4e90-b3cc-f9884f3e289y",
-    "timestamp": "2024-06-07T11:19:11.997Z",
-    "transaction_id": "a6067b0a-1b7c-4be8-917a-3655657ccbun",
+    "message_id": "4e142173-28cb-4e90-b3cc-f9225f3e592f",
+    "timestamp": "2024-10-07T11:19:12.997Z",
+    "transaction_id": "2d956c26-0565-467f-98d8-4347aca891bd",
     "bpp_id": "seller.passdn.com",
     "bpp_uri": "https://seller.passdn.com",
     "ttl": "PT30M",
@@ -38,7 +38,7 @@
           "id": "dabb5e13-481a-4596-a0be-ee90f0e3564c",
           "price": {
             "currency": "INR",
-            "value": 0
+            "value": "80"
           },
           "tags": [
             {
@@ -66,7 +66,7 @@
                     "code": "WAITING_CHARGE_PER_MIN"
                   },
                   "display": true,
-                  "value": 0
+                  "value": "0"
                 },
                 {
                   "descriptor": {
@@ -110,7 +110,6 @@
       ],
       "payments": [
         {
-          "id": "5e84df9d-5c91-48b9-9309-090908d0a9bf",
           "collected_by": "BPP",
           "params": {
             "bank_account_number": "xxxxxxxxxxxxxx",
@@ -143,43 +142,49 @@
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "display": false,
-                  "value": "PT1D"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "display": false,
-                  "value": "0"
+                  "value": "PT60M"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "display": false,
-                  "value": "INVOICE_RECIEPT"
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "80"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
                 },
                 {
                   "descriptor": {
                     "code": "MANDATORY_ARBITRATION"
                   },
-                  "display": false,
-                  "value": "TRUE"
+                  "value": "true"
                 },
                 {
                   "descriptor": {
                     "code": "COURT_JURISDICTION"
                   },
-                  "display": false,
-                  "value": "Delhi"
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "5"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "display": false,
-                  "value": "https://api.example-bap.com/booking/terms"
+                  "value": "https://example-test-bpp.com/static-terms.txt"
                 }
               ]
             }
@@ -239,11 +244,11 @@
             }
           ],
           "customer": {
-            "person": {
-              "name": "ashish Choudhari "
-            },
             "contact": {
-              "phone": "8668266350"
+              "phone": "7752908763"
+            },
+            "person": {
+              "name": "Umesh kumar"
             }
           },
           "state": {
@@ -292,7 +297,7 @@
           {
             "title": "PICKUP_CHARGE",
             "price": {
-              "value": "10",
+              "value": "0",
               "currency": "INR"
             }
           }
@@ -300,88 +305,54 @@
       },
       "cancellation_terms": [
         {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
           "fulfillment_state": {
             "descriptor": {
               "code": "RIDE_ASSIGNED"
             }
           },
-          "reason_required": true,
+          "reason_required": true
+        },
+        {
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ARRIVED_PICKUP"
+              "value": "30"
             }
           },
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_STARTED"
-            }
-          },
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_ENDED"
-            }
-          },
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
           "fulfillment_state": {
             "descriptor": {
               "code": "RIDE_ENROUTE_PICKUP"
             }
           },
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          }
+          "reason_required": true
         },
         {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "RIDE_CANCELLED"
-            }
-          },
-          "reason_required": true,
           "cancellation_fee": {
             "amount": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "50"
             }
-          }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
         }
       ],
       "status": "ACTIVE",
