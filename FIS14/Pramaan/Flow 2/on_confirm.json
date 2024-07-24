@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "on_select",
-        "transaction_id": "9213f2c1-abf5-4026-a6ef-440d15bb5a03",
-        "message_id": "00f0ae0f-32d0-43ed-bcf6-edff66f721dd",
-        "timestamp": "2024-07-22T11:07:28.371Z",
+        "action": "on_confirm",
+        "transaction_id": "d52a3649-3775-44f0-80ca-30209341d1ec",
+        "message_id": "7526d75d-09fd-4a52-b1d4-b3f4faf43d87",
+        "timestamp": "2024-07-23T05:38:36.264Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -22,6 +22,8 @@
     },
     "message": {
         "order": {
+            "id": "mfpp_213adf123af",
+            "status": "ACCEPTED",
             "provider": {
                 "id": "amc_1",
                 "descriptor": {
@@ -110,6 +112,12 @@
                                 }
                             ]
                         }
+                    ],
+                    "fulfillment_ids": [
+                        "ff_123"
+                    ],
+                    "payment_ids": [
+                        "pmt_123"
                     ]
                 }
             ],
@@ -119,7 +127,16 @@
                     "type": "SIP",
                     "customer": {
                         "person": {
-                            "id": "PAN:EKLZS12EET"
+                            "id": "pan:arrpp7771n",
+                            "creds": [
+                                {
+                                    "id": "78953432/32",
+                                    "type": "FOLIO"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "phone": "8088980788"
                         }
                     },
                     "agent": {
@@ -140,6 +157,57 @@
                         }
                     },
                     "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Folio",
+                                "code": "FOLIO_INFORMATION"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Folio Number",
+                                        "code": "MASKED_FOLIO_NUMBER"
+                                    },
+                                    "value": "******1234"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Holding Pattern",
+                                        "code": "HOLDING_PATTERN"
+                                    },
+                                    "value": "SINGLE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Holder Name",
+                                        "code": "HOLDER_NAME"
+                                    },
+                                    "value": "Satish K Perala"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Created On",
+                                        "code": "CREATED_ON"
+                                    },
+                                    "value": "25/11/2019"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Email Address for 2FA",
+                                        "code": "2FA_EMAIL_ADDRESS_MASKED"
+                                    },
+                                    "value": "****sha@gmail.com"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Mobile Number for 2FA",
+                                        "code": "2FA_MOBILE_NUMBER_MASKED"
+                                    },
+                                    "value": "***9345"
+                                }
+                            ]
+                        },
                         {
                             "display": true,
                             "descriptor": {
@@ -208,20 +276,19 @@
                     ]
                 }
             ],
-            "xinput": {
-                "form": {
-                    "id": "8336ef9e-1a9a-4e5d-b2e7-65d6beeeb1d3"
-                },
-                "form_response": {
-                    "status": "SUCCESS",
-                    "submission_id": "3f0e4588-15a9-40dd-a001-49b762fde003"
-                }
-            },
             "payments": [
                 {
                     "id": "pmt_123",
                     "collected_by": "bpp",
+                    "params": {
+                        "amount": "3000",
+                        "currency": "inr",
+                        "source_bank_code": "icic0000047",
+                        "source_bank_account_number": "004701563111",
+                        "source_bank_account_name": "harish gupta"
+                    },
                     "type": "PRE_FULFILLMENT",
+                    "status": "PAID",
                     "tags": [
                         {
                             "descriptor": {
@@ -234,51 +301,6 @@
                                         "code": "MODE"
                                     },
                                     "value": "MANDATE_REGISTRATION"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "id": "pmt_456",
-                    "collected_by": "bpp",
-                    "type": "PRE_FULFILLMENT",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "name": "Payment Method",
-                                "code": "PAYMENT_METHOD"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "MODE"
-                                    },
-                                    "value": "MANDATE_EXISTING"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "TYPE"
-                                    },
-                                    "value": "ENACH_MANDATE"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "MASKED_BANK_ACCOUNT_NUMBER"
-                                    },
-                                    "value": "********3111"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "BANK_ACCOUNT_NAME"
-                                    },
-                                    "value": "Harish Gupta"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "BANK_NAME"
-                                    },
-                                    "value": "ICICI Bank"
                                 }
                             ]
                         }

@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "select",
-        "transaction_id": "9213f2c1-abf5-4026-a6ef-440d15bb5a03",
-        "message_id": "00f0ae0f-32d0-43ed-bcf6-edff66f721dd",
-        "timestamp": "2024-07-22T11:07:27.995Z",
+        "action": "init",
+        "transaction_id": "d52a3649-3775-44f0-80ca-30209341d1ec",
+        "message_id": "ba398951-22c2-45a4-b04a-4971bfb7c16f",
+        "timestamp": "2024-07-23T05:38:33.855Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -40,7 +40,10 @@
                         "schedule": {
                             "frequency": "R6/2024-05-15/P1M"
                         }
-                    }
+                    },
+                    "fulfillment_ids": [
+                        "ff_123"
+                    ]
                 }
             ],
             "fulfillments": [
@@ -49,7 +52,16 @@
                     "type": "SIP",
                     "customer": {
                         "person": {
-                            "id": "PAN:EKLZS12EET"
+                            "id": "pan:arrpp7771n",
+                            "creds": [
+                                {
+                                    "id": "78953432/32",
+                                    "type": "FOLIO"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "phone": "8088980788"
                         }
                     },
                     "agent": {
@@ -71,14 +83,30 @@
                     }
                 }
             ],
-            "xinput": {
-                "form": {
-                    "id": "8336ef9e-1a9a-4e5d-b2e7-65d6beeeb1d3"
-                },
-                "form_response": {
-                    "submission_id": "3f0e4588-15a9-40dd-a001-49b762fde003"
+            "payments": [
+                {
+                    "id": "pmt_123",
+                    "collected_by": "bpp",
+                    "params": {
+                        "amount": "3000",
+                        "currency": "inr",
+                        "source_bank_code": "icic0000047",
+                        "source_bank_account_number": "004701563111",
+                        "source_bank_account_name": "harish gupta"
+                    },
+                    "type": "PRE_FULFILLMENT"
                 }
-            },
+            ],
+            "documents": [
+                {
+                    "descriptor": {
+                        "name": "Terms & Conditions",
+                        "code": "TERMS"
+                    },
+                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4",
+                    "mime_type": "text/html"
+                }
+            ],
             "tags": [
                 {
                     "display": false,
@@ -93,29 +121,6 @@
                                 "code": "STATIC_TERMS"
                             },
                             "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                },
-                {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BPP Terms of Engagement",
-                        "code": "BPP_TERMS"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
                         },
                         {
                             "descriptor": {
