@@ -9,39 +9,89 @@
                 "code": "IND"
             }
         },
-        "version": "2.0.2",
         "action": "on_confirm",
+        "version": "2.0.2",
         "bap_id": "ondcpreprodb2b.rapidor.co",
         "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
-        "bpp_id": "preprod-seller-api.proxtera.app",
-        "bpp_uri": "https://preprod-seller-api.proxtera.app",
-        "transaction_id": "1f1ecc8a-d82e-4347-92b9-8c2aa8c84983",
-        "message_id": "deda94f9-c8ed-4e03-b91e-d1ff8db392e7",
-        "timestamp": "2024-05-28T09:58:45.574Z",
+        "bpp_id": "preprod-seller.signcatch.com",
+        "bpp_uri": "https://preprod-seller.signcatch.com/",
+        "transaction_id": "5f8df424-24d4-4f98-9591-b60137c9e024",
+        "message_id": "c52bbb31-1bcc-4995-b178-2536452b5289",
+        "timestamp": "2024-06-25T08:26:53.681Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "RAP-0052287",
+            "id": "RAP-0053878",
             "state": "Accepted",
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "44400.00"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "444.00"
+                            }
+                        },
+                        "@ondc/org/item_id": "4612",
+                        "title": "CHAIOM Digestive Green Tea 100gm loose tea",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 100
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "44400.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "4612",
+                        "title": "Discount",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-0.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "5GJDELHSQNOPMG9",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "5GJDELHSQNOPMG9",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
             "provider": {
-                "id": "64d4c77ac48ec90008444244",
+                "id": "SW10000378",
                 "locations": [
                     {
-                        "id": "P_L1"
+                        "id": "LSIN000378"
                     }
                 ]
             },
             "items": [
                 {
-                    "id": "663b3f24b939493399d8698e",
-                    "fulfillment_ids": [
-                        "1",
-                        "2"
-                    ],
+                    "id": "4612",
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 100
                         }
                     },
                     "tags": [
@@ -64,22 +114,74 @@
                                 }
                             ]
                         }
+                    ],
+                    "fulfillment_ids": [
+                        "5GJDELHSQNOPMG9"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "1",
-                    "@ondc/org/provider_name": "sanu",
+                    "id": "5GJDELHSQNOPMG9",
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "1.332002,103.849434",
+                                "address": "singapore, singapore, 3943+6WH, singapore, Singapore, 310470",
+                                "city": {
+                                    "name": "Singapore"
+                                },
+                                "state": {
+                                    "name": "Central Singapore Community Development Council"
+                                },
+                                "country": {
+                                    "code": "SGP"
+                                },
+                                "area_code": "310470"
+                            },
+                            "contact": {
+                                "phone": "9947328084"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-06-25T08:26:53.627Z",
+                                    "end": "2024-07-05T08:26:53.627Z"
+                                }
+                            }
+                        },
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "LSIN000378",
+                                "gps": "28.560284,77.161789",
+                                "area_code": "110057",
+                                "descriptor": {
+                                    "name": "Chaiom"
+                                }
+                            },
+                            "contact": {
+                                "email": "ondcsupport@signcatch.com",
+                                "phone": "01143099716"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-06-25T08:26:53.657Z",
+                                    "end": "2024-06-27T08:26:53.657Z"
+                                }
+                            }
+                        }
+                    ],
                     "tracking": false,
-                    "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "P30D",
-                    "type": "Delivery",
                     "state": {
                         "descriptor": {
                             "code": "Pending"
                         }
                     },
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "san7",
+                    "@ondc/org/category": "Express Delivery",
+                    "@ondc/org/TAT": "P7D",
                     "tags": [
                         {
                             "descriptor": {
@@ -96,163 +198,25 @@
                                     "descriptor": {
                                         "code": "NAMED_PLACE_OF_DELIVERY"
                                     },
-                                    "value": "singapore"
+                                    "value": "india"
                                 }
                             ]
-                        }
-                    ],
-                    "stops": [
-                        {
-                            "type": "start",
-                            "location": {
-                                "id": "P_L1",
-                                "descriptor": {
-                                    "name": "sanu"
-                                },
-                                "gps": "11.135040,76.033142"
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-05-28T09:58:19.489Z",
-                                    "end": "2024-05-28T09:58:45.512Z"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9562279968",
-                                "email": "9562279968"
-                            }
-                        },
-                        {
-                            "type": "end",
-                            "location": {
-                                "address": "singapore, singapore, 3943+6WH, singapore, Singapore, 310470",
-                                "gps": "1.332002,103.849434",
-                                "area_code": "310470",
-                                "state": {
-                                    "name": "Central Singapore Community Development Council"
-                                },
-                                "city": {
-                                    "name": "Singapore"
-                                },
-                                "country": {
-                                    "code": "SGP"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9947328084"
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-05-29T09:57:40.080Z",
-                                    "end": "2024-05-29T09:57:40.080Z"
-                                }
-                            }
                         }
                     ]
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "12.00"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "663b3f24b939493399d8698e",
-                        "@ondc/org/item_quantity": {
-                            "count": 1
-                        },
-                        "title": "TRADEINDIA PRDUCT 19114",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "value": "12.00",
-                            "currency": "INR"
-                        },
-                        "item": {
-                            "price": {
-                                "value": "12.00",
-                                "currency": "INR"
-                            }
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "663b3f24b939493399d8698e",
-                        "@ondc/org/title_type": "tax",
-                        "title": "Tax",
-                        "price": {
-                            "value": "0.00",
-                            "currency": "INR"
-                        }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "663b3f24b939493399d8698e",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-0.00"
-                        }
-                    },
-                    {
-                        "title": "Delivery Charges",
-                        "@ondc/org/title_type": "delivery",
-                        "@ondc/org/item_id": "1",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "title": "Packaging Charges",
-                        "@ondc/org/title_type": "packing",
-                        "@ondc/org/item_id": "1",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                ],
-                "ttl": "P4D"
-            },
             "billing": {
-                "name": "RAMAKRISHNAN SATHISH KUMAR",
                 "address": "singapore, singapore, 3943+6WH, singapore, Singapore, 310470",
                 "phone": "9947328084",
-                "tax_id": "07AAGFF2194N1Z1",
+                "name": "RAMAKRISHNAN SATHISH KUMAR",
                 "state": {
                     "name": "Central Singapore Community Development Council"
                 },
                 "city": {
                     "name": "Singapore"
-                }
+                },
+                "tax_id": "07AAGFF2194N1Z1"
             },
-            "payments": [
-                {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "settlement_bank_account_no": "1234567890",
-                            "settlement_ifsc_code": "HDFC0000102",
-                            "beneficiary_name": "Thomson",
-                            "bank_name": "Test Bank"
-                        }
-                    ],
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
-                    "status": "NOT-PAID",
-                    "params": {
-                        "currency": "INR",
-                        "amount": "12.00"
-                    }
-                }
-            ],
             "tags": [
                 {
                     "descriptor": {
@@ -282,13 +246,31 @@
                             "descriptor": {
                                 "code": "max_liability"
                             },
-                            "value": "2"
+                            "value": "0"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "0"
                         },
                         {
                             "descriptor": {
                                 "code": "mandatory_arbitration"
                             },
                             "value": "false"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Delhi"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "0.0"
                         }
                     ]
                 },
@@ -306,8 +288,59 @@
                     ]
                 }
             ],
-            "created_at": "2024-05-28T09:58:18.868Z",
-            "updated_at": "2024-05-28T09:58:45.512Z"
+            "created_at": "2024-06-25T08:26:53.438Z",
+            "updated_at": "2024-06-25T08:26:53.680Z",
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "0"
+                    },
+                    "reason_required": false
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "0"
+                    },
+                    "reason_required": false
+                }
+            ],
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "status": "NOT-PAID",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P7D",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "params": {
+                        "currency": "INR",
+                        "amount": "44400.00"
+                    }
+                }
+            ]
         }
     }
 }
