@@ -11,9 +11,9 @@
     "domain": "ONDC:TRV12",
     "action": "on_cancel",
     "version": "2.0.0",
-    "transaction_id": "17dc37bb-a5c4-4444-8db6-c75eba923e4e",
-    "message_id": "a37cb933-43dc-4218-a56b-71db0e13a1f6",
-    "timestamp": "2024-07-25T07:02:47.000Z",
+    "transaction_id": "598c3a7a-a21c-4cfb-9b13-e89355041845",
+    "message_id": "80d7daac-e2a6-422f-9dfd-92efc51c4067",
+    "timestamp": "2024-07-29T08:14:43.011Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30S",
@@ -195,12 +195,19 @@
       ],
       "quote": {
         "price": {
-          "value": "901",
+          "value": "10",
           "currency": "INR"
         },
         "breakup": [
           {
             "title": "BASE_FARE",
+            "item": {
+              "id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "800"
+              }
+            },
             "price": {
               "currency": "INR",
               "value": "800"
@@ -249,6 +256,19 @@
               "value": "50",
               "currency": "INR"
             }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": {
+              "value": "10",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "REFUND",
+            "price": {
+              "value": "-891"
+            }
           }
         ]
       },
@@ -264,7 +284,7 @@
       ],
       "payments": [
         {
-          "id": "3aed5747-a839-4da6-9274-4b133bc20727",
+          "id": "1f181fe4-0312-4525-92da-d8b6a1db2302",
           "collected_by": "BPP",
           "tags": [
             {
@@ -342,6 +362,20 @@
                   "value": "9.01"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
             }
           ],
           "status": "PAID",
@@ -352,32 +386,16 @@
             "virtual_payment_address": "9988199772@okicic",
             "amount": "901",
             "currency": "INR",
-            "transaction_id": "17dc37bb-a5c4-4444-8db6-c75eba923e4e"
+            "transaction_id": "598c3a7a-a21c-4cfb-9b13-e89355041845"
           }
         }
       ],
-      "id": "b11180c9-c813-4082-bb09-7b954d81ba79",
-      "status": "CANCELLED",
+      "id": "9ce60990-d02d-40f6-97bd-72b7c8417f73",
+      "status": "SOFT_CANCEL",
       "cancellation": {
         "cancelled_by": "CONSUMER",
-        "time": "2024-07-25T07:02:46.999Z"
-      },
-      "refund_terms": [
-        {
-          "fulfillment_state": {
-            "name": "Ride Cancelled",
-            "code": "RIDE_CANCELLED"
-          },
-          "refund_eligible": true,
-          "refund_within": {
-            "duration": "PT1440M"
-          },
-          "refund_amount": {
-            "currency": "INR",
-            "value": "901"
-          }
-        }
-      ]
+        "time": "2024-07-29T08:14:43.010Z"
+      }
     }
   }
 }

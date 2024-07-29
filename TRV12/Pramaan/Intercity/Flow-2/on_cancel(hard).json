@@ -9,11 +9,11 @@
       }
     },
     "domain": "ONDC:TRV12",
-    "action": "on_confirm",
+    "action": "on_cancel",
     "version": "2.0.0",
     "transaction_id": "598c3a7a-a21c-4cfb-9b13-e89355041845",
-    "message_id": "f5e4a9c5-7399-41e6-a3d3-730cd7ce1d90",
-    "timestamp": "2024-07-29T08:14:33.762Z",
+    "message_id": "fe7c8be3-2e58-4f88-80cb-cee9788a74fc",
+    "timestamp": "2024-07-29T08:14:48.345Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT30S",
@@ -167,6 +167,12 @@
                     "code": "SELECTED_SEAT"
                   },
                   "value": "A1"
+                },
+                {
+                  "descriptor": {
+                    "code": "SELECTED"
+                  },
+                  "value": "true"
                 }
               ]
             }
@@ -189,7 +195,7 @@
       ],
       "quote": {
         "price": {
-          "value": "901",
+          "value": "10",
           "currency": "INR"
         },
         "breakup": [
@@ -249,6 +255,19 @@
             "price": {
               "value": "50",
               "currency": "INR"
+            }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": {
+              "value": "10",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "REFUND",
+            "price": {
+              "value": "-891"
             }
           }
         ]
@@ -343,6 +362,20 @@
                   "value": "9.01"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
             }
           ],
           "status": "PAID",
@@ -358,7 +391,11 @@
         }
       ],
       "id": "9ce60990-d02d-40f6-97bd-72b7c8417f73",
-      "status": "ACTIVE"
+      "status": "CANCELLED",
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-07-29T08:14:48.345Z"
+      }
     }
   }
 }
