@@ -1,90 +1,57 @@
 {
   "context": {
-    "action": "on_init",
-    "bap_id": "preprod-ondc.yatrirailways.com",
-    "bap_uri": "https://preprod-ondc.yatrirailways.com/api/v1/ondc/metro",
-    "bpp_id": "metrobox.preprod.triffy.in",
-    "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
-    "domain": "ONDC:TRV11",
     "location": {
-      "city": {
-        "code": "std:0484"
-      },
       "country": {
         "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
       }
     },
-    "message_id": "abc01f74-aeb5-4885-ba14-4673ed026bc4",
-    "timestamp": "2024-07-29T10:13:00.939Z",
-    "transaction_id": "dad3e47a-f98e-44ec-ac86-ffd9ac64303e",
-    "ttl": "PT300S",
-    "version": "2.0.0"
+    "domain": "ONDC:TRV11",
+    "action": "on_init",
+    "version": "2.0.0",
+    "bap_id": "preprod-ondc.yatrirailways.com",
+    "bap_uri": "https://preprod-ondc.yatrirailways.com/api/v1/ondc/metro",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "6923aa0d-dd44-401e-b55b-9a5fd3e72579",
+    "message_id": "07e399fc-ddfb-41e2-bb12-48553d2f7393",
+    "timestamp": "2024-08-01T11:27:56.043Z",
+    "ttl": "PT10M"
   },
   "message": {
     "order": {
-      "billing": {
-        "email": "porrewini27@gmail.com",
-        "name": "wini",
-        "phone": "+91-8657864215"
-      },
-      "cancellation_terms": [
-        {
-          "external_ref": {
-            "mimetype": "text/html",
-            "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
-          }
-        }
-      ],
-      "fulfillments": [
-        {
-          "id": "jlnstadium-snjunction",
-          "stops": [
+      "provider": {
+        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "descriptor": {
+          "name": "ONDC Delhi Metro Limited",
+          "images": [
             {
-              "id": "1",
-              "location": {
-                "descriptor": {
-                  "code": "R4HCpMKg2fPr8hEpczuM8CT2FaDMBc",
-                  "name": "JLN Stadium"
-                },
-                "gps": "10.000200, 76.298900"
-              },
-              "type": "START"
-            },
-            {
-              "id": "2",
-              "location": {
-                "descriptor": {
-                  "code": "M4JSk7OupPIKYrnFPFGRWnlUqTrCZm",
-                  "name": "SN Junction"
-                },
-                "gps": "9.954700, 76.346100"
-              },
-              "parent_stop_id": "1",
-              "type": "END"
+              "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
             }
-          ],
-          "type": "TRIP",
-          "vehicle": {
-            "category": "METRO"
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2024-08-01T05:30:00.000Z",
+            "end": "2024-08-01T23:30:00.000Z"
           }
         }
-      ],
+      },
       "items": [
         {
+          "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
           "category_ids": [
-            "TICKET"
+            "C2"
           ],
           "descriptor": {
-            "code": "SJT",
-            "name": "Single Journey Ticket"
+            "name": "Single Journey Ticket",
+            "code": "SJT"
           },
-          "fulfillment_ids": [
-            "jlnstadium-snjunction"
-          ],
-          "id": "sjt-jlnstadium-snjunction",
           "price": {
             "currency": "INR",
-            "value": "45"
+            "value": "56"
           },
           "quantity": {
             "selected": {
@@ -92,25 +59,493 @@
             }
           },
           "time": {
-            "duration": "PT120M",
-            "label": "Validity"
+            "label": "Validity",
+            "duration": "PT5M"
+          },
+          "fulfillment_ids": [
+            "69767be9-bba2-4ec6-b8b2-4474cd8236a1",
+            "12c48fa1-a3ef-4d18-b30d-bd28234534ba"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "69767be9-bba2-4ec6-b8b2-4474cd8236a1",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "ARTHALA",
+                  "code": "ATHA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 3"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MOHAN NAGAR",
+                  "code": "MNGM"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 4"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHYAM PARK",
+                  "code": "SMPK"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "4",
+              "parent_stop_id": "3"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 5"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MAJOR MOHIT SHARMA RAJENDRA NAGAR",
+                  "code": "RJNM"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "5",
+              "parent_stop_id": "4"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 6"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "RAJ BAGH",
+                  "code": "RJBH"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "6",
+              "parent_stop_id": "5"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 7"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHEED NAGAR",
+                  "code": "SHDN"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "7",
+              "parent_stop_id": "6"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 8"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "DILSHAD GARDEN",
+                  "code": "DSG"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "8",
+              "parent_stop_id": "7"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 9"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "JHILMIL",
+                  "code": "JLML"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "9",
+              "parent_stop_id": "8"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 10"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MANSAROVAR PARK",
+                  "code": "MPK"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "10",
+              "parent_stop_id": "9"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 11"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHDARA",
+                  "code": "SHD"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "11",
+              "parent_stop_id": "10"
+            },
+            {
+              "type": "TRANSIT_STOP",
+              "instructions": {
+                "name": "Stop 12",
+                "short_desc": "Change Lines here"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "WELCOME",
+                  "code": "WC"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "12",
+              "parent_stop_id": "11"
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 13"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SEELAMPUR",
+                  "code": "SLAP"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "13",
+              "parent_stop_id": "12"
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
+          }
+        },
+        {
+          "id": "12c48fa1-a3ef-4d18-b30d-bd28234534ba",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "ARTHALA",
+                  "code": "ATHA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 3"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MOHAN NAGAR",
+                  "code": "MNGM"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 4"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHYAM PARK",
+                  "code": "SMPK"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "4",
+              "parent_stop_id": "3"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 5"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MAJOR MOHIT SHARMA RAJENDRA NAGAR",
+                  "code": "RJNM"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "5",
+              "parent_stop_id": "4"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 6"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "RAJ BAGH",
+                  "code": "RJBH"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "6",
+              "parent_stop_id": "5"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 7"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHEED NAGAR",
+                  "code": "SHDN"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "7",
+              "parent_stop_id": "6"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 8"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "DILSHAD GARDEN",
+                  "code": "DSG"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "8",
+              "parent_stop_id": "7"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 9"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "JHILMIL",
+                  "code": "JLML"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "9",
+              "parent_stop_id": "8"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 10"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MANSAROVAR PARK",
+                  "code": "MPK"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "10",
+              "parent_stop_id": "9"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 11"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHDARA",
+                  "code": "SHD"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "11",
+              "parent_stop_id": "10"
+            },
+            {
+              "type": "TRANSIT_STOP",
+              "instructions": {
+                "name": "Stop 12",
+                "short_desc": "Change Lines here"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "WELCOME",
+                  "code": "WC"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "12",
+              "parent_stop_id": "11"
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 13"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SEELAMPUR",
+                  "code": "SLAP"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "13",
+              "parent_stop_id": "12"
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
           }
         }
       ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "112.00"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "price": {
+                "currency": "INR",
+                "value": "56"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 2
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "112"
+            }
+          }
+        ]
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://sequelstringsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "wini",
+        "email": "porrewini27@gmail.com",
+        "phone": "+91-8657864215"
+      },
       "payments": [
         {
+          "id": "5d158f3c-368a-4ad4-af62-bc4d872a88e1",
           "collected_by": "BAP",
-          "id": "2375c045-2f91-4a50-9127-682651cb662a",
-          "params": {
-            "bank_account_number": "00228130001XXXX",
-            "bank_code": "XXXX0000022"
-          },
           "status": "NOT-PAID",
+          "type": "PRE-ORDER",
           "tags": [
             {
               "descriptor": {
                 "code": "BUYER_FINDER_FEES"
               },
+              "display": false,
               "list": [
                 {
                   "descriptor": {
@@ -122,7 +557,7 @@
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_TYPE"
                   },
-                  "value": "percent-annualized"
+                  "value": "percent"
                 }
               ]
             },
@@ -130,18 +565,13 @@
               "descriptor": {
                 "code": "SETTLEMENT_TERMS"
               },
+              "display": false,
               "list": [
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT1D"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "0"
+                  "value": "P30D"
                 },
                 {
                   "descriptor": {
@@ -153,77 +583,42 @@
                   "descriptor": {
                     "code": "MANDATORY_ARBITRATION"
                   },
-                  "value": "TRUE"
+                  "value": "true"
                 },
                 {
                   "descriptor": {
                     "code": "COURT_JURISDICTION"
                   },
-                  "value": "Kochi"
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://metro-terms.triffy.in/kochi/index.html"
+                  "value": "https://api.example-bpp.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "5"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "90"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "NEFT"
+                  "value": "112"
                 }
               ]
             }
           ],
-          "type": "PRE-ORDER"
-        }
-      ],
-      "provider": {
-        "descriptor": {
-          "name": "Kochi Metro Rail Limited"
-        },
-        "id": "triffy-kmrl-rail-metro",
-        "time": {
-          "range": {
-            "end": "2024-07-29T17:00:00Z",
-            "start": "2024-07-28T23:00:00Z"
+          "params": {
+            "bank_code": "SBI5448270",
+            "bank_account_number": "562391273445",
+            "virtual_payment_address": "8667777799@oksbi"
           }
         }
-      },
-      "quote": {
-        "breakup": [
-          {
-            "item": {
-              "id": "sjt-jlnstadium-snjunction",
-              "price": {
-                "currency": "INR",
-                "value": "45"
-              },
-              "quantity": {
-                "selected": {
-                  "count": 2
-                }
-              }
-            },
-            "price": {
-              "currency": "INR",
-              "value": "90"
-            },
-            "title": "BASE_FARE"
-          }
-        ],
-        "price": {
-          "currency": "INR",
-          "value": "90"
-        }
-      }
+      ]
     }
   }
 }
