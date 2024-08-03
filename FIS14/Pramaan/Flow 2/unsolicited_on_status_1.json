@@ -11,9 +11,9 @@
         },
         "version": "2.0.0",
         "action": "on_status",
-        "transaction_id": "d52a3649-3775-44f0-80ca-30209341d1ec",
-        "message_id": "7526d75d-09fd-4a52-b1d4-b3f4faf43d87",
-        "timestamp": "2024-07-23T05:38:38.474Z",
+        "transaction_id": "e5297155-7017-4218-8e4f-470fe468fbb9",
+        "message_id": "cb63d16a-ca7b-4c9e-8b2c-a5aaed2017b3",
+        "timestamp": "2024-08-03T11:33:26.658Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -27,8 +27,7 @@
             "provider": {
                 "id": "amc_1",
                 "descriptor": {
-                    "name": "ABC Mutual Fund",
-                    "code": "ABC_MF"
+                    "name": "ABC Mutual Fund"
                 }
             },
             "items": [
@@ -42,21 +41,32 @@
                         "selected": {
                             "measure": {
                                 "value": "3000",
-                                "unit": "amount"
+                                "unit": "INR"
                             }
-                        }
-                    },
-                    "time": {
-                        "schedule": {
-                            "frequency": "R6/2024-05-15/P1M"
                         }
                     },
                     "tags": [
                         {
                             "display": true,
                             "descriptor": {
-                                "name": "Identifiers",
-                                "code": "IDENTIFIERS"
+                                "name": "Plan Information",
+                                "code": "PLAN_INFORMATION"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Consumer Terms & Conditions",
+                                        "code": "CONSUMER_TNC"
+                                    },
+                                    "value": "https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html"
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Plan Identifiers",
+                                "code": "PLAN_IDENTIFIERS"
                             },
                             "list": [
                                 {
@@ -85,8 +95,8 @@
                         {
                             "display": true,
                             "descriptor": {
-                                "name": "Options",
-                                "code": "OPTIONS"
+                                "name": "Plan Options",
+                                "code": "PLAN_OPTIONS"
                             },
                             "list": [
                                 {
@@ -136,7 +146,7 @@
                             ]
                         },
                         "contact": {
-                            "phone": "8088980788"
+                            "phone": "9916599123"
                         }
                     },
                     "agent": {
@@ -156,6 +166,15 @@
                             ]
                         }
                     },
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R6/2024-05-15/P1M"
+                                }
+                            }
+                        }
+                    ],
                     "tags": [
                         {
                             "display": true,
@@ -167,9 +186,9 @@
                                 {
                                     "descriptor": {
                                         "name": "Folio Number",
-                                        "code": "MASKED_FOLIO_NUMBER"
+                                        "code": "FOLIO_NUMBER"
                                     },
-                                    "value": "******1234"
+                                    "value": "1232132132/32"
                                 },
                                 {
                                     "descriptor": {
@@ -220,7 +239,7 @@
                                         "name": "Frequency",
                                         "code": "FREQUENCY"
                                     },
-                                    "value": "monthly"
+                                    "value": "P1M"
                                 },
                                 {
                                     "descriptor": {
@@ -279,13 +298,14 @@
             "payments": [
                 {
                     "id": "pmt_123",
-                    "collected_by": "bpp",
+                    "collected_by": "BPP",
                     "params": {
                         "amount": "3000",
-                        "currency": "inr",
+                        "currency": "INR",
                         "source_bank_code": "icic0000047",
                         "source_bank_account_number": "004701563111",
-                        "source_bank_account_name": "harish gupta"
+                        "source_bank_account_name": "harish gupta",
+                        "transaction_id": "ba9d5aa7-f4b8-4a28-9fdb-b8c115f4758a"
                     },
                     "type": "PRE_FULFILLMENT",
                     "status": "PAID",
@@ -307,16 +327,28 @@
                     ]
                 }
             ],
-            "documents": [
-                {
-                    "descriptor": {
-                        "name": "Terms & Conditions",
-                        "code": "TERMS"
-                    },
-                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4",
-                    "mime_type": "text/html"
-                }
-            ]
+            "quote": {
+                "id": "q1",
+                "price": {
+                    "currency": "INR",
+                    "value": "0"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "12391",
+                            "fulfillment_ids": [
+                                "ff_123"
+                            ]
+                        },
+                        "title": "SIP",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ]
+            }
         }
     }
 }

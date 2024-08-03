@@ -11,9 +11,9 @@
         },
         "version": "2.0.0",
         "action": "on_select",
-        "transaction_id": "d52a3649-3775-44f0-80ca-30209341d1ec",
-        "message_id": "a4cab8e8-95e5-4b7a-a928-52d25347f81d",
-        "timestamp": "2024-07-23T05:38:32.194Z",
+        "transaction_id": "e5297155-7017-4218-8e4f-470fe468fbb9",
+        "message_id": "c99ed567-0a8a-4c2c-9fa1-45eb35576a0c",
+        "timestamp": "2024-08-03T11:33:16.630Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -25,8 +25,7 @@
             "provider": {
                 "id": "amc_1",
                 "descriptor": {
-                    "name": "ABC Mutual Fund",
-                    "code": "ABC_MF"
+                    "name": "ABC Mutual Fund"
                 }
             },
             "items": [
@@ -40,21 +39,32 @@
                         "selected": {
                             "measure": {
                                 "value": "3000",
-                                "unit": "amount"
+                                "unit": "INR"
                             }
-                        }
-                    },
-                    "time": {
-                        "schedule": {
-                            "frequency": "R6/2024-05-15/P1M"
                         }
                     },
                     "tags": [
                         {
                             "display": true,
                             "descriptor": {
-                                "name": "Identifiers",
-                                "code": "IDENTIFIERS"
+                                "name": "Plan Information",
+                                "code": "PLAN_INFORMATION"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Consumer Terms & Conditions",
+                                        "code": "CONSUMER_TNC"
+                                    },
+                                    "value": "https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html"
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Plan Identifiers",
+                                "code": "PLAN_IDENTIFIERS"
                             },
                             "list": [
                                 {
@@ -83,8 +93,8 @@
                         {
                             "display": true,
                             "descriptor": {
-                                "name": "Options",
-                                "code": "OPTIONS"
+                                "name": "Plan Options",
+                                "code": "PLAN_OPTIONS"
                             },
                             "list": [
                                 {
@@ -152,7 +162,7 @@
                                         "name": "Frequency",
                                         "code": "FREQUENCY"
                                     },
-                                    "value": "monthly"
+                                    "value": "P1M"
                                 },
                                 {
                                     "descriptor": {
@@ -215,9 +225,9 @@
                                 {
                                     "descriptor": {
                                         "name": "Folio Number",
-                                        "code": "MASKED_FOLIO_NUMBER"
+                                        "code": "FOLIO_NUMBER"
                                     },
-                                    "value": "******1234"
+                                    "value": "1232132132/32"
                                 },
                                 {
                                     "descriptor": {
@@ -266,9 +276,9 @@
                                 {
                                     "descriptor": {
                                         "name": "Folio Number",
-                                        "code": "MASKED_FOLIO_NUMBER"
+                                        "code": "FOLIO_NUMBER"
                                     },
-                                    "value": "******1564"
+                                    "value": "23234132/23"
                                 },
                                 {
                                     "descriptor": {
@@ -307,6 +317,15 @@
                                 }
                             ]
                         }
+                    ],
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R6/2024-05-15/P1M"
+                                }
+                            }
+                        }
                     ]
                 }
             ],
@@ -319,19 +338,19 @@
                         "max": 0
                     },
                     "headings": [
-                        "New Account"
+                        "APPLICATION_FORM"
                     ]
                 },
                 "form": {
-                    "id": "8c320e50-2eac-4656-a154-52d28debf7e9",
+                    "id": "6ff64842-dc63-457f-b082-961bc70e0a21",
                     "mime_type": "text/html",
-                    "url": "https://ondc.sequelstring.com/seller/form/8c320e50-2eac-4656-a154-52d28debf7e9"
+                    "url": "https://ondc.sequelstring.com/seller/form/6ff64842-dc63-457f-b082-961bc70e0a21"
                 }
             },
             "payments": [
                 {
                     "id": "pmt_123",
-                    "collected_by": "bpp",
+                    "collected_by": "BPP",
                     "type": "PRE_FULFILLMENT",
                     "tags": [
                         {
@@ -352,7 +371,7 @@
                 },
                 {
                     "id": "pmt_456",
-                    "collected_by": "bpp",
+                    "collected_by": "BPP",
                     "type": "PRE_FULFILLMENT",
                     "tags": [
                         {
@@ -394,16 +413,6 @@
                             ]
                         }
                     ]
-                }
-            ],
-            "documents": [
-                {
-                    "descriptor": {
-                        "name": "Terms & Conditions",
-                        "code": "TERMS"
-                    },
-                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4",
-                    "mime_type": "text/html"
                 }
             ],
             "tags": [
@@ -453,7 +462,29 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "quote": {
+                "id": "q1",
+                "price": {
+                    "currency": "INR",
+                    "value": "0"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "12391",
+                            "fulfillment_ids": [
+                                "ff_123"
+                            ]
+                        },
+                        "title": "SIP",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ]
+            }
         }
     }
 }
