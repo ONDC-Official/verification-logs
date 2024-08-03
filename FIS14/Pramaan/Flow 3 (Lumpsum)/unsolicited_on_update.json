@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "on_status",
-        "transaction_id": "8e219620-59f2-4dfe-b2ee-9265d088c3bf",
-        "message_id": "4d1f643f-2253-49ee-a7f1-e731a453cb22",
-        "timestamp": "2024-07-30T09:38:36.302Z",
+        "action": "on_update",
+        "transaction_id": "035c60fb-15dd-41a1-8e21-e0c5bee3fb28",
+        "message_id": "ea58a93d-a494-4164-8173-bf8b294d63b3",
+        "timestamp": "2024-07-31T10:31:16.067Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -22,7 +22,10 @@
     },
     "message": {
         "order": {
-            "id": "mfpp_213adf123af",
+            "id": "mfp_3454dfadssf435345",
+            "ref_order_ids": [
+                "mfpp_213adf123af"
+            ],
             "status": "ACCEPTED",
             "provider": {
                 "id": "amc_1",
@@ -43,8 +46,17 @@
                                 "value": "3000",
                                 "unit": "INR"
                             }
+                        },
+                        "allocated": {
+                            "measure": {
+                                "value": "150.0000",
+                                "unit": "MF_UNITS"
+                            }
                         }
                     },
+                    "fulfillment_ids": [
+                        "ff_122"
+                    ],
                     "tags": [
                         {
                             "display": true,
@@ -123,21 +135,33 @@
                             ]
                         }
                     ],
-                    "fulfillment_ids": [
-                        "ff_123"
-                    ],
                     "payment_ids": [
                         "pmt_123"
-                    ]
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "20.0000",
+                        "listed_value": "20.0000"
+                    },
+                    "time": {
+                        "label": "NAV Date",
+                        "timestamp": "2024-07-31T10:31:16.066Z"
+                    }
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "ff_123",
-                    "type": "SIP",
+                    "id": "ff_122",
+                    "type": "LUMPSUM",
                     "customer": {
                         "person": {
-                            "id": "PAN:EKLZS12EET"
+                            "id": "pan:arrpp7771n",
+                            "creds": [
+                                {
+                                    "id": "78953432/32",
+                                    "type": "FOLIO"
+                                }
+                            ]
                         },
                         "contact": {
                             "phone": "8088980788"
@@ -164,37 +188,74 @@
                         {
                             "display": true,
                             "descriptor": {
+                                "name": "Folio",
+                                "code": "FOLIO_INFORMATION"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Folio Number",
+                                        "code": "FOLIO_NUMBER"
+                                    },
+                                    "value": "1232132132/32"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Holding Pattern",
+                                        "code": "HOLDING_PATTERN"
+                                    },
+                                    "value": "SINGLE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Holder Name",
+                                        "code": "HOLDER_NAME"
+                                    },
+                                    "value": "Satish K Perala"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Created On",
+                                        "code": "CREATED_ON"
+                                    },
+                                    "value": "25/11/2019"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Email Address for 2FA",
+                                        "code": "2FA_EMAIL_ADDRESS_MASKED"
+                                    },
+                                    "value": "****sha@gmail.com"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Mobile Number for 2FA",
+                                        "code": "2FA_MOBILE_NUMBER_MASKED"
+                                    },
+                                    "value": "***9345"
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
                                 "name": "Thresholds",
                                 "code": "THRESHOLDS"
                             },
                             "list": [
                                 {
                                     "descriptor": {
-                                        "name": "Frequency",
-                                        "code": "FREQUENCY"
-                                    },
-                                    "value": "P1M"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Frequency Dates",
-                                        "code": "FREQUENCY_DATES"
-                                    },
-                                    "value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28"
-                                },
-                                {
-                                    "descriptor": {
                                         "name": "Amount Minimum",
                                         "code": "AMOUNT_MIN"
                                     },
-                                    "value": "5000"
+                                    "value": "1000"
                                 },
                                 {
                                     "descriptor": {
                                         "name": "Amount Maximum",
                                         "code": "AMOUNT_MAX"
                                     },
-                                    "value": "50000"
+                                    "value": "10000"
                                 },
                                 {
                                     "descriptor": {
@@ -202,51 +263,33 @@
                                         "code": "AMOUNT_MULTIPLES"
                                     },
                                     "value": "1"
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Information"
+                            },
+                            "list": [
                                 {
                                     "descriptor": {
-                                        "name": "Installments Count Minimum",
-                                        "code": "INSTALMENTS_COUNT_MIN"
+                                        "name": "Folio number",
+                                        "code": "FOLIO_NUMBER"
                                     },
-                                    "value": "6"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Installments Count Maximum",
-                                        "code": "INSTALMENTS_COUNT_MAX"
-                                    },
-                                    "value": "12"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Cumulative Amount Minimum",
-                                        "code": "CUMULATIVE_AMOUNT_MIN"
-                                    },
-                                    "value": "30000"
+                                    "value": "78953432/32"
                                 }
                             ]
                         }
                     ],
-                    "stops": [
-                        {
-                            "time": {
-                                "schedule": {
-                                    "frequency": "R6/2024-05-15/P1M"
-                                }
-                            }
+                    "state": {
+                        "descriptor": {
+                            "name": "Successful",
+                            "code": "SUCCESSFUL"
                         }
-                    ]
+                    }
                 }
             ],
-            "xinput": {
-                "form": {
-                    "id": "20324ede-59ae-42fe-91a0-0776f724fe4a"
-                },
-                "form_response": {
-                    "status": "SUCCESS",
-                    "submission_id": "46991294-d33a-4aa3-9437-ecdb064aa507"
-                }
-            },
             "payments": [
                 {
                     "id": "pmt_123",
@@ -257,7 +300,7 @@
                         "source_bank_code": "icic0000047",
                         "source_bank_account_number": "004701563111",
                         "source_bank_account_name": "harish gupta",
-                        "transaction_id": "c5128302-46b4-441b-a6b5-1af6c1880f4d"
+                        "transaction_id": "ad7f74c2-8211-4ed3-9db8-8a818f74975f"
                     },
                     "type": "PRE_FULFILLMENT",
                     "status": "PAID",
@@ -272,7 +315,7 @@
                                     "descriptor": {
                                         "code": "MODE"
                                     },
-                                    "value": "MANDATE_REGISTRATION"
+                                    "value": "NETBANKING"
                                 }
                             ]
                         }
@@ -283,20 +326,20 @@
                 "id": "q1",
                 "price": {
                     "currency": "INR",
-                    "value": "0"
+                    "value": "3000"
                 },
                 "breakup": [
                     {
                         "item": {
                             "id": "12391",
                             "fulfillment_ids": [
-                                "ff_123"
+                                "ff_122"
                             ]
                         },
-                        "title": "SIP",
+                        "title": "Investment",
                         "price": {
                             "currency": "INR",
-                            "value": "0"
+                            "value": "3000"
                         }
                     }
                 ]

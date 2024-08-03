@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "confirm",
-        "transaction_id": "8e219620-59f2-4dfe-b2ee-9265d088c3bf",
-        "message_id": "4d1f643f-2253-49ee-a7f1-e731a453cb22",
-        "timestamp": "2024-07-30T09:38:33.098Z",
+        "action": "init",
+        "transaction_id": "035c60fb-15dd-41a1-8e21-e0c5bee3fb28",
+        "message_id": "5b66d884-77bd-4b7f-be9d-16f179f0d2fd",
+        "timestamp": "2024-07-31T10:31:05.478Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -22,7 +22,6 @@
     },
     "message": {
         "order": {
-            "id": "mfpp_213adf123af",
             "provider": {
                 "id": "amc_1"
             },
@@ -38,20 +37,23 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "ff_123"
-                    ],
-                    "payment_ids": [
-                        "pmt_123"
+                        "ff_122"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "ff_123",
-                    "type": "SIP",
+                    "id": "ff_122",
+                    "type": "LUMPSUM",
                     "customer": {
                         "person": {
-                            "id": "PAN:EKLZS12EET"
+                            "id": "pan:arrpp7771n",
+                            "creds": [
+                                {
+                                    "id": "78953432/32",
+                                    "type": "FOLIO"
+                                }
+                            ]
                         },
                         "contact": {
                             "phone": "8088980788"
@@ -73,27 +75,9 @@
                                 }
                             ]
                         }
-                    },
-                    "stops": [
-                        {
-                            "time": {
-                                "schedule": {
-                                    "frequency": "R6/2024-05-15/P1M"
-                                }
-                            }
-                        }
-                    ]
+                    }
                 }
             ],
-            "xinput": {
-                "form": {
-                    "id": "20324ede-59ae-42fe-91a0-0776f724fe4a"
-                },
-                "form_response": {
-                    "submission_id": "46991294-d33a-4aa3-9437-ecdb064aa507",
-                    "status": "SUCCESS"
-                }
-            },
             "payments": [
                 {
                     "id": "pmt_123",
@@ -103,27 +87,9 @@
                         "currency": "INR",
                         "source_bank_code": "icic0000047",
                         "source_bank_account_number": "004701563111",
-                        "source_bank_account_name": "harish gupta",
-                        "transaction_id": "c5128302-46b4-441b-a6b5-1af6c1880f4d"
+                        "source_bank_account_name": "harish gupta"
                     },
-                    "type": "PRE_FULFILLMENT",
-                    "status": "PAID",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "name": "Payment Method",
-                                "code": "PAYMENT_METHOD"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "MODE"
-                                    },
-                                    "value": "MANDATE_REGISTRATION"
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "PRE_FULFILLMENT"
                 }
             ],
             "tags": [
@@ -140,29 +106,6 @@
                                 "code": "STATIC_TERMS"
                             },
                             "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                },
-                {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BPP Terms of Engagement",
-                        "code": "BPP_TERMS"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
                         },
                         {
                             "descriptor": {
