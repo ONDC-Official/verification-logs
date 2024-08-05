@@ -55,7 +55,7 @@
                                         "code": "MIN_FARE"
                                     },
                                     "display": true,
-                                    "value": "25"
+                                    "value": "30"
                                 },
                                 {
                                     "descriptor": {
@@ -110,21 +110,22 @@
                         },
                         {
                             "descriptor": {
-                                "code": "ROUTE_INFO"
+                                "code": "INFO",
+                                "name": "General Information"
                             },
                             "display": true,
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "ROUTE_DISTANCE"
+                                        "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
                                     },
-                                    "value": "10.00"
+                                    "value": "661"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "ROUTE_TIME"
+                                        "code": "ETA_TO_NEAREST_DRIVER_MIN"
                                     },
-                                    "value": "55.0"
+                                    "value": "3"
                                 }
                             ]
                         }
@@ -133,13 +134,13 @@
             ],
             "payments": [
                 {
-                    "id": "86508a6c-098a-4d29-811e-721787ca75ae",
                     "collected_by": "BPP",
                     "params": {
                         "bank_account_number": "xxxxxxxxxxxxxx",
                         "bank_code": "XXXXXXXX",
                         "virtual_payment_address": "7752908763@okicic"
                     },
+                    "id": "86508a6c-098a-4d29-811e-721787ca75ae",
                     "status": "NOT-PAID",
                     "tags": [
                         {
@@ -172,25 +173,25 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_BASIS"
                                     },
-                                    "value": "Delivery"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
-                                    },
-                                    "value": "80"
+                                    "value": "DELIVERY"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_TYPE"
                                     },
-                                    "value": "upi"
+                                    "value": "UPI"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "MANDATORY_ARBITRATION"
                                     },
                                     "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "0.8"
                                 },
                                 {
                                     "descriptor": {
@@ -222,7 +223,6 @@
                     "type": "DELIVERY",
                     "vehicle": {
                         "category": "CAB",
-                        "variant": "SEDAN",
                         "make": "Bajaj",
                         "model": "RE Compact",
                         "registration": "AP84837001"
@@ -245,31 +245,6 @@
                             "type": "END"
                         }
                     ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "ROUTE_INFO",
-                                "name": "Route Information"
-                            },
-                            "display": true,
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "ENCODED_POLYLINE",
-                                        "name": "Path"
-                                    },
-                                    "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "WAYPOINTS",
-                                        "name": "Waypoints"
-                                    },
-                                    "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
-                                }
-                            ]
-                        }
-                    ],
                     "customer": {
                         "contact": {
                             "phone": "7752908763"
@@ -285,7 +260,6 @@
                     },
                     "agent": {
                         "person": {
-                            "id": "8807d684-a790-490b-9fd3-7d514fbf839b",
                             "name": "Sanskar singh"
                         },
                         "contact": {
@@ -303,14 +277,14 @@
                     {
                         "title": "BASE_FARE",
                         "price": {
-                            "value": "10",
+                            "value": "30",
                             "currency": "INR"
                         }
                     },
                     {
                         "title": "DISTANCE_FARE",
                         "price": {
-                            "value": "70",
+                            "value": "50",
                             "currency": "INR"
                         }
                     }
@@ -318,88 +292,54 @@
             },
             "cancellation_terms": [
                 {
+                    "cancellation_fee": {
+                        "percentage": "0"
+                    },
                     "fulfillment_state": {
                         "descriptor": {
                             "code": "RIDE_ASSIGNED"
                         }
                     },
-                    "reason_required": true,
+                    "reason_required": true
+                },
+                {
                     "cancellation_fee": {
                         "amount": {
                             "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_ARRIVED_PICKUP"
+                            "value": "30"
                         }
                     },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_STARTED"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_ENDED"
-                        }
-                    },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
                     "fulfillment_state": {
                         "descriptor": {
                             "code": "RIDE_ENROUTE_PICKUP"
                         }
                     },
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
+                    "reason_required": true
                 },
                 {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "RIDE_CANCELLED"
-                        }
-                    },
-                    "reason_required": true,
                     "cancellation_fee": {
                         "amount": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "50"
                         }
-                    }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ARRIVED_PICKUP"
+                        }
+                    },
+                    "reason_required": true
+                },
+                {
+                    "cancellation_fee": {
+                        "percentage": "100"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_STARTED"
+                        }
+                    },
+                    "reason_required": true
                 }
             ],
             "status": "CANCELLED",
