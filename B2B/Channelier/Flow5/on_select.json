@@ -15,13 +15,43 @@
     "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
     "bpp_id": "integrations-preprod.channelier.com",
     "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-    "transaction_id": "22c9a4ae-78fb-465e-b027-06ec946f7ee2",
-    "message_id": "1bd6413e-f583-4e0f-8a6e-cb4731805111",
-    "timestamp": "2024-07-23T09:45:08.094Z",
+    "transaction_id": "d2f5543d-5ff5-42de-8dcb-1792699fd6b0",
+    "message_id": "564dadd1-f0b7-4fc6-b540-847a23a9ca90",
+    "timestamp": "2024-07-31T12:28:59.167Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Cornitos",
+          "@ondc/org/category": "Standard Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "P7DT2H",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "CU2I2",
+          "location_ids": [
+            "L1"
+          ],
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 2
+            }
+          }
+        }
+      ],
       "provider": {
         "id": "CU2",
         "locations": [
@@ -30,87 +60,12 @@
           }
         ]
       },
-      "fulfillments": [
-        {
-          "id": "1",
-          "@ondc/org/category": "Standard Delivery",
-          "@ondc/org/TAT": "P7DT2H",
-          "@ondc/org/provider_name": "Cornitos",
-          "state": {
-            "descriptor": {
-              "code": "Serviceable"
-            }
-          },
-          "tracking": false
-        }
-      ],
-      "items": [
-        {
-          "id": "CU2I2",
-          "quantity": {
-            "selected": {
-              "count": 1
-            }
-          },
-          "fulfillment_ids": [
-            "1"
-          ],
-          "location_ids": [
-            "L1"
-          ],
-          "tags": []
-        }
-      ],
       "payments": [
         {
           "type": "ON-FULFILLMENT",
           "collected_by": "BPP"
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "227.62"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "CU2I2",
-            "@ondc/org/item_quantity": {
-              "count": 1
-            },
-            "@ondc/org/title_type": "item",
-            "item": {
-              "price": {
-                "currency": "INR",
-                "value": "120.00"
-              },
-              "quantity": {
-                "available": {
-                  "count": "9"
-                },
-                "maximum": {
-                  "count": "9"
-                }
-              }
-            },
-            "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
-            "price": {
-              "currency": "INR",
-              "value": "120.00"
-            }
-          },
-          {
-            "@ondc/org/item_id": "1",
-            "@ondc/org/title_type": "delivery",
-            "title": "Delivery Charges",
-            "price": {
-              "currency": "INR",
-              "value": "107.62"
-            }
-          }
-        ],
-        "ttl": "P1D"
-      },
       "tags": [
         {
           "descriptor": {
@@ -131,12 +86,51 @@
             }
           ]
         }
-      ]
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "347.62"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "CU2I2",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item",
+            "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "7"
+                },
+                "maximum": {
+                  "count": "7"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "240.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "107.62"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      }
     }
-  },
-  "error": {
-    "type": "DOMAIN-ERROR",
-    "code": "50005",
-    "message": "Terms and Conditions unacceptable, prices not acceptable for items"
   }
 }
