@@ -1,44 +1,57 @@
 {
   "context": {
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:079" } },
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:079"
+      }
+    },
     "action": "on_search",
     "domain": "ONDC:TRV11",
     "version": "2.0.0",
-    "bap_id": "api.example-bap.com",
-    "bap_uri": "https://mobility-staging.ondc.org/api/ondc/",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
     "bpp_uri": "https://ondc.dev.innvonix.in/",
-    "transaction_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
-    "message_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
-    "timestamp": "2024-07-19T07:07:11.594Z",
+    "transaction_id": "82692b8a-f1ca-4dde-9b31-27e8cc6b5959",
+    "message_id": "17bbfa05-5f50-40eb-a3d8-a673b299a449",
+    "timestamp": "2024-08-06T04:54:50.228Z",
     "ttl": "PT10M"
   },
   "message": {
     "catalog": {
-      "descriptor": "Innvonix tech solution",
-      "images": [
-        {
-          "url": "https://www.innvonix.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.1a5bf2f1.png&w=256&q=75"
-        }
-      ],
+      "descriptor": {
+        "name": "Innvonix tech solution",
+        "images": [
+          {
+            "url": "https://www.innvonix.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo.1a5bf2f1.png&w=256&q=75"
+          }
+        ]
+      },
       "providers": [
         {
           "id": "Gujarat-Metro-Rail-Corporation-Limited",
-          "cancellation_terms": [
-            {
-              "external_ref": {
-                "mimetype": "text/html",
-                "url": "https://www.gujaratmetrorail.com/ahmedabad/route-and-fares"
-              }
-            }
-          ],
           "categories": [
-            { "descriptor": { "name": "Ticket", "code": "C1" }, "id": "C1" },
-            { "descriptor": { "name": "Pass", "code": "C2" }, "id": "C2" }
+            {
+              "descriptor": {
+                "name": "Ticket",
+                "code": "C1"
+              },
+              "id": "C1"
+            },
+            {
+              "descriptor": {
+                "name": "Pass",
+                "code": "C2"
+              },
+              "id": "C2"
+            }
           ],
           "descriptor": {
             "name": "Gujarat Metro Rail Corporation (GMRC) Limited",
-            "image": [
+            "images": [
               {
                 "url": "https://www.gujaratmetrorail.com/wp-content/uploads/HomePageImage/gmrc-logo-WBG-180x208-1.png"
               }
@@ -46,54 +59,82 @@
           },
           "time": {
             "range": {
-              "start": "2024-07-19T01:30:00.000Z",
-              "end": "2024-07-19T16:30:00.000Z"
+              "start": "2024-08-05T07:00:00.000Z",
+              "end": "2024-08-05T22:00:00.000Z"
             }
           },
           "fulfillments": [
             {
               "id": "TRPEW001",
-              "type": "ROUTE",
-              "vehicle": { "category": "METRO" },
-              "stops": [
+              "type": "TRIP",
+              "vehicle": {
+                "category": "METRO"
+              },
+              "tags": [
                 {
-                  "id": "RNMS",
-                  "type": "START",
-                  "instruction": {
-                    "name": "Rajivnagar",
-                    "short_desc": "Rajivnagar"
+                  "descriptor": {
+                    "code": "TICKET_INFO"
                   },
-                  "location": {
-                    "descriptor": { "name": "Rajivnagar", "code": "RNMS" },
-                    "gps": "23.0201,72.5519"
-                  }
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "NUMBER"
+                      },
+                      "value": "NUMGRMCL1"
+                    }
+                  ]
                 },
                 {
-                  "id": "OHCI",
-                  "type": "TRANSIT",
-                  "instruction": {
-                    "name": "Old High Court Interchange",
-                    "short_desc": "Please Change here for Red Line"
+                  "descriptor": {
+                    "code": "TRIP_DETAILS"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "AVAILABLE_TRIPS"
+                      },
+                      "value": "YES"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "UTILIZED_TRIPS"
+                      },
+                      "value": "NO"
+                    }
+                  ]
+                }
+              ],
+              "stops": [
+                {
+                  "id": "APMC",
+                  "type": "START",
+                  "instructions": {
+                    "name": "APMC",
+                    "short_desc": "APMC"
                   },
                   "location": {
                     "descriptor": {
-                      "name": "Old High Court Interchange",
-                      "code": "OHCI"
+                      "name": "APMC",
+                      "code": "APMC"
                     },
-                    "gps": "23.0368,72.5754"
+                    "gps": "23.0358,72.5637"
                   }
                 },
                 {
-                  "id": "VRMS",
+                  "id": "JVRJ",
                   "type": "END",
-                  "instruction": {
-                    "name": "Vijaynagar",
-                    "short_desc": "Vijaynagar"
+                  "instructions": {
+                    "name": "Jivraj Park",
+                    "short_desc": "Jivraj Park"
                   },
                   "location": {
-                    "descriptor": { "name": "Vijaynagar", "code": "VRMS" },
-                    "gps": "23.0482,72.5708"
-                  }
+                    "descriptor": {
+                      "name": "Jivraj Park",
+                      "code": "JVRJ"
+                    },
+                    "gps": "23.0166,72.5494"
+                  },
+                  "parent_stop_id": "APMC"
                 }
               ]
             }
@@ -101,107 +142,201 @@
           "items": [
             {
               "category_ids": ["C1"],
-              "descriptor": { "code": "SJT", "name": "Single Journey Ticket" },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-SJT-RNMS-VRMS",
-              "price": { "currency": "INR", "value": 20 },
-              "quantity": {
-                "maximum": { "count": 6 },
-                "minimum": { "count": 1 }
+              "descriptor": {
+                "code": "SJT",
+                "name": "Single Journey Ticket"
               },
-              "time": { "duration": "PT20M", "label": "Validity" }
+              "fulfillment_ids": ["TRPEW001"],
+              "id": "TRPEW001-SJT-APMC-JVRJ",
+              "price": {
+                "currency": "INR",
+                "value": "10"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": 6
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "time": {
+                "duration": "PT20M",
+                "label": "Validity"
+              }
             },
             {
               "category_ids": ["C1"],
-              "descriptor": { "code": "RJT", "name": "Return Journey Ticket" },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-RJT-RNMS-VRMS",
-              "price": { "currency": "INR", "value": 30 },
-              "quantity": {
-                "maximum": { "count": 6 },
-                "minimum": { "count": 1 }
+              "descriptor": {
+                "code": "RJT",
+                "name": "Return Journey Ticket"
               },
-              "time": { "duration": "PT20M", "label": "Validity" }
+              "fulfillment_ids": ["TRPEW001"],
+              "id": "TRPEW001-RJT-APMC-JVRJ",
+              "price": {
+                "currency": "INR",
+                "value": "20"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": 6
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "time": {
+                "duration": "PT20M",
+                "label": "Validity"
+              }
             },
             {
               "category_ids": ["C2"],
-              "descriptor": { "code": "PASS", "name": "Pass" },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-PASS-RNMS-VRMS",
-              "price": { "currency": "INR", "value": 500 },
-              "quantity": {
-                "maximum": { "count": 1 },
-                "minimum": { "count": 1 }
+              "descriptor": {
+                "code": "PASS",
+                "name": "Pass"
               },
-              "time": { "duration": "PT20M", "label": "Validity" }
+              "fulfillment_ids": ["TRPEW001"],
+              "id": "TRPEW001-PASS-APMC-JVRJ",
+              "price": {
+                "currency": "INR",
+                "value": "500"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": 1
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "time": {
+                "duration": "PT20M",
+                "label": "Validity"
+              }
             },
             {
               "category_ids": ["C1"],
               "descriptor": {
                 "code": "SFJT",
-                "name": "Single Fare Journey Ticket"
+                "name": "Special Fare Journey Ticket"
               },
               "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-SFJT-RNMS-VRMS",
-              "price": { "currency": "INR", "value": 10 },
-              "quantity": {
-                "maximum": { "count": 6 },
-                "minimum": { "count": 1 }
+              "id": "TRPEW001-SFJT-APMC-JVRJ",
+              "price": {
+                "currency": "INR",
+                "value": "10"
               },
-              "time": { "duration": "PT20M", "label": "Validity" }
+              "quantity": {
+                "maximum": {
+                  "count": 6
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "time": {
+                "duration": "PT20M",
+                "label": "Validity"
+              }
             }
           ],
-          "payment": {
-            "collected_by": "BAP",
-            "tags": [
-              {
-                "descriptor": { "code": "BUYER_FINDER_FEES" },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" },
-                    "value": "1"
+          "payments": [
+            {
+              "collected_by": "BAP",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
                   },
-                  {
-                    "descriptor": { "code": "BUYER_FINDER_FEES_TYPE" },
-                    "value": "percent"
-                  }
-                ]
-              },
-              {
-                "descriptor": { "code": "SETTLEMENT_TERMS" },
-                "list": [
-                  {
-                    "descriptor": { "code": "SETTLEMENT_WINDOW" },
-                    "value": "P1D"
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "P1D"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "0"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "INVOICE_RECEIPT"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MANDATORY_ARBITRATION"
+                      },
+                      "value": "TRUE"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "COURT_JURISDICTION"
+                      },
+                      "value": "Gujarat High Court"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://www.gujaratmetrorail.com/terms-condition/"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_DETAILS"
                   },
-                  { "descriptor": { "code": "DELAY_INTEREST" }, "value": "0" },
-                  {
-                    "descriptor": { "code": "SETTLEMENT_BASIS" },
-                    "value": "INVOICE_RECEIPT"
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "UPI"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
                   },
-                  {
-                    "descriptor": { "code": "MANDATORY_ARBITRATION" },
-                    "value": "TRUE"
-                  },
-                  {
-                    "descriptor": { "code": "COURT_JURISDICTION" },
-                    "value": "Gujarat High Court"
-                  },
-                  {
-                    "descriptor": { "code": "STATIC_TERMS" },
-                    "value": "https://www.gujaratmetrorail.com/terms-condition/"
-                  }
-                ]
-              }
-            ]
-          },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
           "tags": [
             {
-              "descriptor": { "code": "SCHEDULED_INFO" },
+              "descriptor": {
+                "code": "SCHEDULED_INFO"
+              },
+              "display": false,
               "list": [
                 {
-                  "descriptor": { "code": "GTFS" },
+                  "descriptor": {
+                    "code": "GTFS"
+                  },
                   "value": "https://www.gujaratmetrorail.com/"
                 }
               ]

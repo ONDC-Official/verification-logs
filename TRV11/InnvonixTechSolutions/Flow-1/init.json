@@ -1,27 +1,40 @@
 {
   "context": {
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:079" } },
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:079"
+      }
+    },
+    "action": "init",
     "domain": "ONDC:TRV11",
-    "timestamp": "2024-07-09T04:41:16.000Z",
-    "bap_id": "api.example-bap.com",
-    "transaction_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
-    "message_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
     "version": "2.0.0",
-    "action": "search",
-    "bap_uri": "https://mobility-staging.ondc.org/api/ondc/",
-    "ttl": "PT30S",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
-    "bpp_uri": "https://ondc.dev.innvonix.in"
+    "bpp_uri": "https://ondc.dev.innvonix.in/",
+    "transaction_id": "82692b8a-f1ca-4dde-9b31-27e8cc6b5959",
+    "message_id": "167f2663-7817-48f2-9c9e-fd4fea73be90",
+    "timestamp": "2024-08-06T04:55:10.714Z",
+    "ttl": "PT10M"
   },
   "message": {
     "order": {
+      "provider": {
+        "id": "Gujarat-Metro-Rail-Corporation-Limited"
+      },
       "items": [
         {
-          "id": "TRPEW001-SJT-RNMS-VRMS",
-          "quantity": { "selected": { "count": 4 } }
+          "id": "TRPEW001-SJT-APMC-JVRJ",
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          }
         }
       ],
-      "provider": { "id": "Gujarat-Metro-Rail-Corporation-Limited" },
       "billing": {
         "name": "John Doe",
         "email": "john.doe@example.com",
@@ -32,45 +45,85 @@
           "collected_by": "BAP",
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
+          "params": {
+            "bank_code": "AXS889912340",
+            "bank_account_number": "877622149912",
+            "virtual_payment_address": "9999977777@okaxis"
+          },
           "tags": [
             {
-              "descriptor": { "code": "BUYER_FINDER_FEES" },
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
               "display": false,
               "list": [
                 {
-                  "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" },
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
                   "value": "1"
                 },
                 {
-                  "descriptor": { "code": "BUYER_FINDER_FEES_TYPE" },
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
                   "value": "percent"
                 }
               ]
             },
             {
-              "descriptor": { "code": "SETTLEMENT_TERMS" },
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
               "display": false,
               "list": [
                 {
-                  "descriptor": { "code": "SETTLEMENT_AMOUNT" },
-                  "value": "80"
-                },
-                {
-                  "descriptor": { "code": "SETTLEMENT_TYPE" },
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
                   "value": "NEFT"
                 },
-                { "descriptor": { "code": "DELAY_INTEREST" }, "value": "2.5" },
                 {
-                  "descriptor": { "code": "STATIC_TERMS" },
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
                   "value": "https://api.example-bap.com/booking/terms"
                 },
                 {
-                  "descriptor": { "code": "MANDATORY_ARBITRATION" },
-                  "value": "true"
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "P1D"
                 },
                 {
-                  "descriptor": { "code": "COURT_JURISDICTION" },
-                  "value": "New Delhi"
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Gujarat High Court"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Gujarat High Court"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "9.90"
                 }
               ]
             }

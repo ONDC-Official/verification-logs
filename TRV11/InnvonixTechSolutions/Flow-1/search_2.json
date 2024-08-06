@@ -1,38 +1,87 @@
 {
   "context": {
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:079" } },
     "domain": "ONDC:TRV11",
-    "timestamp": "2024-07-09T04:41:16.000Z",
-    "bap_id": "api.example-bap.com",
-    "transaction_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
-    "message_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
     "version": "2.0.0",
     "action": "search",
-    "bap_uri": "https://mobility-staging.ondc.org/api/ondc/",
-    "ttl": "PT30S"
+    "transaction_id": "82692b8a-f1ca-4dde-9b31-27e8cc6b5959",
+    "message_id": "17bbfa05-5f50-40eb-a3d8-a673b299a449",
+    "timestamp": "2024-08-06T04:54:49.654Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT10S"
   },
   "message": {
     "intent": {
       "fulfillment": {
-        "vehicle": { "category": "METRO" },
         "stops": [
-          { "type": "START", "location": { "descriptor": { "code": "RNMS" } } },
-          { "type": "END", "location": { "descriptor": { "code": "VRMS" } } }
-        ]
+          {
+            "type": "START",
+            "location": {
+              "descriptor": {
+                "code": "APMC"
+              }
+            }
+          },
+          {
+            "type": "END",
+            "location": {
+              "descriptor": {
+                "code": "JVRJ"
+              }
+            }
+          }
+        ],
+        "vehicle": {
+          "category": "METRO"
+        }
       },
       "payment": {
         "tags": [
           {
-            "descriptor": { "code": "BUYER_FINDER_FEES" },
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
             "display": false,
             "list": [
               {
-                "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" },
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
                 "value": "1"
               },
               {
-                "descriptor": { "code": "BUYER_FINDER_FEES_TYPE" },
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
                 "value": "percent"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
               }
             ]
           }

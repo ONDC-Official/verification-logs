@@ -1,16 +1,23 @@
 {
   "context": {
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:079" } },
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:079"
+      }
+    },
     "action": "on_select",
     "domain": "ONDC:TRV11",
     "version": "2.0.0",
-    "bap_id": "api.example-bap.com",
-    "bap_uri": "https://mobility-staging.ondc.org/api/ondc/",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
     "bpp_uri": "https://ondc.dev.innvonix.in/",
-    "transaction_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
-    "message_id": "7853e9e2-4fb5-487c-92b7-13ba8018f176",
-    "timestamp": "2024-07-19T07:11:39.486Z",
+    "transaction_id": "82692b8a-f1ca-4dde-9b31-27e8cc6b5959",
+    "message_id": "091f786e-9b29-4944-9e08-e9842d0c0e25",
+    "timestamp": "2024-08-06T04:55:01.743Z",
     "ttl": "PT10M"
   },
   "message": {
@@ -27,7 +34,7 @@
         "id": "Gujarat-Metro-Rail-Corporation-Limited",
         "descriptor": {
           "name": "Gujarat Metro Rail Corporation (GMRC) Limited",
-          "image": [
+          "images": [
             {
               "url": "https://www.gujaratmetrorail.com/wp-content/uploads/HomePageImage/gmrc-logo-WBG-180x208-1.png"
             }
@@ -35,94 +42,149 @@
         },
         "time": {
           "range": {
-            "start": "2024-07-19T01:30:00.000Z",
-            "end": "2024-07-19T16:30:00.000Z"
+            "start": "2024-08-05T07:00:00.000Z",
+            "end": "2024-08-05T22:00:00.000Z"
           }
         }
       },
       "items": [
         {
-          "id": "TRPEW001-SJT-RNMS-VRMS",
+          "id": "TRPEW001-SJT-APMC-JVRJ",
           "category_ids": ["C1"],
-          "descriptor": { "name": "Single Journey Ticket", "code": "SJT" },
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT"
+          },
           "fulfillment_ids": ["TRPEW001"],
-          "price": { "currency": "INR", "value": "80" },
-          "quantity": { "selected": { "count": "4" } },
-          "time": { "label": "Validity", "duration": "PT2D" }
+          "price": {
+            "currency": "INR",
+            "value": "10"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT2D"
+          }
         }
       ],
       "fulfillments": [
-        [
-          {
-            "id": "TRPEW001",
-            "type": "ROUTE",
-            "vehicle": { "category": "METRO" },
-            "stops": [
-              {
-                "id": "RNMS",
-                "type": "START",
-                "instruction": {
-                  "name": "Rajivnagar",
-                  "short_desc": "Rajivnagar"
-                },
-                "location": {
-                  "descriptor": { "name": "Rajivnagar", "code": "RNMS" },
-                  "gps": "23.0201,72.5519"
-                }
+        {
+          "id": "TRPEW001",
+          "type": "TRIP",
+          "vehicle": {
+            "category": "METRO"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
               },
-              {
-                "id": "OHCI",
-                "type": "TRANSIT",
-                "instruction": {
-                  "name": "Old High Court Interchange",
-                  "short_desc": "Please Change here for Red Line"
-                },
-                "location": {
+              "list": [
+                {
                   "descriptor": {
-                    "name": "Old High Court Interchange",
-                    "code": "OHCI"
+                    "code": "NUMBER"
                   },
-                  "gps": "23.0368,72.5754"
+                  "value": "NUMGRMCL1"
                 }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TRIP_DETAILS"
               },
-              {
-                "id": "VRMS",
-                "type": "END",
-                "instruction": {
-                  "name": "Vijaynagar",
-                  "short_desc": "Vijaynagar"
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "AVAILABLE_TRIPS"
+                  },
+                  "value": "YES"
                 },
-                "location": {
-                  "descriptor": { "name": "Vijaynagar", "code": "VRMS" },
-                  "gps": "23.0482,72.5708"
+                {
+                  "descriptor": {
+                    "code": "UTILIZED_TRIPS"
+                  },
+                  "value": "NO"
                 }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "id": "APMC",
+              "type": "START",
+              "instructions": {
+                "name": "APMC",
+                "short_desc": "APMC"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "APMC",
+                  "code": "APMC"
+                },
+                "gps": "23.0358,72.5637"
               }
-            ]
-          }
-        ]
+            },
+            {
+              "id": "JVRJ",
+              "type": "END",
+              "instructions": {
+                "name": "Jivraj Park",
+                "short_desc": "Jivraj Park"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Jivraj Park",
+                  "code": "JVRJ"
+                },
+                "gps": "23.0166,72.5494"
+              },
+              "parent_stop_id": "APMC"
+            }
+          ]
+        }
       ],
       "quote": {
-        "price": { "value": "80", "currency": "INR" },
+        "price": {
+          "value": "10",
+          "currency": "INR"
+        },
         "breakup": [
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "TRPEW001-SJT-RNMS-VRMS",
-              "price": { "currency": "INR", "value": "20" },
-              "quantity": { "selected": { "count": "4" } }
+              "id": "TRPEW001-SJT-APMC-JVRJ",
+              "price": {
+                "currency": "INR",
+                "value": "10"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
             },
-            "price": { "currency": "INR", "value": "80" }
-          },
-          { "title": "OFFER", "price": { "currency": "INR", "value": "0" } },
-          { "title": "TOLL", "price": { "currency": "INR", "value": "0" } }
+            "price": {
+              "currency": "INR",
+              "value": "10"
+            }
+          }
         ]
       },
       "tags": [
         {
-          "descriptor": { "code": "SCHEDULED_INFO" },
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
           "list": [
             {
-              "descriptor": { "code": "GTFS" },
+              "descriptor": {
+                "code": "GTFS"
+              },
               "value": "https://www.gujaratmetrorail.com/"
             }
           ]
