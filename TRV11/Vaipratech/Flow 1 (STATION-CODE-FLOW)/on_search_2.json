@@ -9,16 +9,16 @@
       }
     },
     "domain": "ONDC:TRV11",
-    "timestamp": "2024-07-31T03:24:15.017Z",
-    "bap_id": "apidev.outpathprod.com",
-    "transaction_id": "5567c2a9-0db2-40ba-9600-1ee3bda39521",
-    "message_id": "75b6bebe-73a9-44e2-a7f7-6572820169c4",
-    "version": "2.0.0",
     "action": "on_search",
-    "bap_uri": "https://apidev.outpathprod.com/ondc/metro/callback",
-    "ttl": "PT30S",
-    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+    "version": "2.0.0",
+    "bapId": "apidev.outpathprod.com",
+    "bppId": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bapUri": "https://apidev.outpathprod.com/ondc/metro/callback",
+    "bppUri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transactionId": "13a93941-6d73-4883-bc63-c1b3ca829bb7",
+    "messageId": "e68037fe-5581-410a-ac24-5cc2c70b5378",
+    "timestamp": "2024-08-07T05:34:48.810Z",
+    "ttl": "PT30S"
   },
   "message": {
     "catalog": {
@@ -32,30 +32,30 @@
       },
       "providers": [
         {
-          "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+          "_id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
           "categories": [
             {
+              "_id": "C1",
               "descriptor": {
                 "name": "Travel Pass",
                 "code": "PASS"
-              },
-              "id": "C1"
+              }
             },
             {
+              "_id": "C2",
               "descriptor": {
                 "name": "Ticket",
                 "code": "TICKET"
-              },
-              "id": "C2"
+              }
             }
           ],
-          "time": {
-            "range": {
-              "start": "2024-07-31T05:30:00.000Z",
-              "end": "2024-07-31T23:30:00.000Z"
+          "providerTime": {
+            "providerTimeRange": {
+              "start": "2024-08-07T05:30:00.000Z",
+              "end": "2024-08-07T23:30:00.000Z"
             }
           },
-          "descriptor": {
+          "providerDescriptor": {
             "name": "ONDC Delhi Metro Limited",
             "images": [
               {
@@ -63,9 +63,227 @@
               }
             ]
           },
+          "items": [
+            {
+              "_id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
+              "categoryIds": [
+                "C1"
+              ],
+              "descriptor": {
+                "name": "Journey Pass",
+                "code": "PASS"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "500"
+              },
+              "quantity": {
+                "maxValue": {
+                  "count": 10
+                },
+                "minValue": {
+                  "count": 1
+                }
+              },
+              "fulfillmentIds": [
+                "858d2b48-e9f4-4f28-8ecc-d6c0ae2c1242"
+              ],
+              "itemsTime": {
+                "label": "Validity",
+                "duration": "PT5M"
+              }
+            },
+            {
+              "_id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "categoryIds": [
+                "C2"
+              ],
+              "descriptor": {
+                "name": "Single Journey Ticket",
+                "code": "SJT"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "29"
+              },
+              "quantity": {
+                "maxValue": {
+                  "count": 10
+                },
+                "minValue": {
+                  "count": 1
+                }
+              },
+              "fulfillmentIds": [
+                "03952961-0b2c-4ab4-a8c2-925a799e7a76"
+              ],
+              "itemsTime": {
+                "label": "Validity",
+                "duration": "PT5M"
+              }
+            },
+            {
+              "_id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
+              "categoryIds": [
+                "C2"
+              ],
+              "descriptor": {
+                "name": "Return Journey Ticket",
+                "code": "RJT"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "58"
+              },
+              "quantity": {
+                "maxValue": {
+                  "count": 10
+                },
+                "minValue": {
+                  "count": 1
+                }
+              },
+              "fulfillmentIds": [
+                "03952961-0b2c-4ab4-a8c2-925a799e7a76"
+              ],
+              "itemsTime": {
+                "label": "Validity",
+                "duration": "PT5M"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "_id": "03952961-0b2c-4ab4-a8c2-925a799e7a76",
+              "type": "TRIP",
+              "stops": [
+                {
+                  "_id": "1",
+                  "type": "START",
+                  "instructions": {
+                    "name": "Stop 1"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "RAJ BAGH",
+                      "code": "RJBH"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  }
+                },
+                {
+                  "_id": "2",
+                  "type": "INTERMEDIATE_STOP",
+                  "parentStopId": "1",
+                  "instructions": {
+                    "name": "Stop 2"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "SHAHEED NAGAR",
+                      "code": "SHDN"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  }
+                },
+                {
+                  "_id": "3",
+                  "type": "INTERMEDIATE_STOP",
+                  "parentStopId": "2",
+                  "instructions": {
+                    "name": "Stop 3"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "DILSHAD GARDEN",
+                      "code": "DSG"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  }
+                },
+                {
+                  "_id": "4",
+                  "type": "END",
+                  "parentStopId": "3",
+                  "instructions": {
+                    "name": "Stop 4"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "JHILMIL",
+                      "code": "JLML"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  }
+                }
+              ],
+              "vehicle": {
+                "category": "METRO"
+              }
+            },
+            {
+              "_id": "858d2b48-e9f4-4f28-8ecc-d6c0ae2c1242",
+              "type": "TRIP",
+              "stops": [
+                {
+                  "_id": "1",
+                  "type": "START",
+                  "instructions": {
+                    "name": "Stop 1"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "RAJ BAGH",
+                      "code": "RJBH"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  }
+                },
+                {
+                  "_id": "4",
+                  "type": "END",
+                  "parentStopId": "3",
+                  "instructions": {
+                    "name": "Stop 4"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "JHILMIL",
+                      "code": "JLML"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  }
+                }
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "TRIP_DETAILS"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "AVAILABLE_TRIPS"
+                      },
+                      "value": "30"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "UTILIZED_TRIPS"
+                      },
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "vehicle": {
+                "category": "METRO"
+              }
+            }
+          ],
           "payments": [
             {
-              "collected_by": "BAP",
+              "collectedBy": "BAP",
               "tags": [
                 {
                   "descriptor": {
@@ -132,197 +350,6 @@
                   ]
                 }
               ]
-            }
-          ],
-          "items": [
-            {
-              "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
-              "category_ids": ["C1"],
-              "descriptor": {
-                "name": "Journey Pass",
-                "code": "PASS"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "500"
-              },
-              "quantity": {
-                "maximum": {
-                  "count": 10
-                },
-                "minimum": {
-                  "count": 1
-                }
-              },
-              "time": {
-                "label": "Validity",
-                "duration": "PT5M"
-              },
-              "fulfillment_ids": ["043fd3ca-b03a-4543-bb09-f62424332537"]
-            },
-            {
-              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
-              "category_ids": ["C2"],
-              "descriptor": {
-                "name": "Single Journey Ticket",
-                "code": "SJT"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "26"
-              },
-              "quantity": {
-                "maximum": {
-                  "count": 10
-                },
-                "minimum": {
-                  "count": 1
-                }
-              },
-              "time": {
-                "label": "Validity",
-                "duration": "PT5M"
-              },
-              "fulfillment_ids": ["895b2b00-edad-4407-81a5-2b616fb5cab2"]
-            },
-            {
-              "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
-              "category_ids": ["C2"],
-              "descriptor": {
-                "name": "Return Journey Ticket",
-                "code": "RJT"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "52"
-              },
-              "quantity": {
-                "maximum": {
-                  "count": 10
-                },
-                "minimum": {
-                  "count": 1
-                }
-              },
-              "time": {
-                "label": "Validity",
-                "duration": "PT5M"
-              },
-              "fulfillment_ids": ["895b2b00-edad-4407-81a5-2b616fb5cab2"]
-            }
-          ],
-          "fulfillments": [
-            {
-              "id": "895b2b00-edad-4407-81a5-2b616fb5cab2",
-              "type": "TRIP",
-              "stops": [
-                {
-                  "type": "START",
-                  "instructions": {
-                    "name": "Stop 1"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "ARTHALA",
-                      "code": "ATHA"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "1"
-                },
-                {
-                  "type": "INTERMEDIATE_STOP",
-                  "instructions": {
-                    "name": "Stop 2"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "MOHAN NAGAR",
-                      "code": "MNGM"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "2",
-                  "parent_stop_id": "1"
-                },
-                {
-                  "type": "END",
-                  "instructions": {
-                    "name": "Stop 3"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "SHYAM PARK",
-                      "code": "SMPK"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "3",
-                  "parent_stop_id": "2"
-                }
-              ],
-              "vehicle": {
-                "category": "METRO"
-              }
-            },
-            {
-              "id": "043fd3ca-b03a-4543-bb09-f62424332537",
-              "type": "TRIP",
-              "stops": [
-                {
-                  "type": "START",
-                  "instructions": {
-                    "name": "Stop 1"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "ARTHALA",
-                      "code": "ATHA"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "1"
-                },
-                {
-                  "type": "END",
-                  "instructions": {
-                    "name": "Stop 3"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "SHYAM PARK",
-                      "code": "SMPK"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "3",
-                  "parent_stop_id": "2"
-                }
-              ],
-              "tags": [
-                {
-                  "descriptor": {
-                    "code": "TRIP_DETAILS"
-                  },
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "AVAILABLE_TRIPS"
-                      },
-                      "value": "30"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "UTILIZED_TRIPS"
-                      },
-                      "value": "0"
-                    }
-                  ]
-                }
-              ],
-              "vehicle": {
-                "category": "METRO"
-              }
             }
           ],
           "tags": [

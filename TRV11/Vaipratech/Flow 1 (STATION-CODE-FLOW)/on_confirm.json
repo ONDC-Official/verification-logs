@@ -11,19 +11,49 @@
     "domain": "ONDC:TRV11",
     "action": "on_confirm",
     "version": "2.0.0",
-    "bap_id": "apidev.outpathprod.com",
-    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-    "bap_uri": "https://apidev.outpathprod.com/ondc/metro/callback",
-    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "5567c2a9-0db2-40ba-9600-1ee3bda39521",
-    "message_id": "f4f73ccb-c039-4459-819b-a6881bc8258b",
-    "timestamp": "2024-07-31T03:25:17.993Z",
+    "bapId": "apidev.outpathprod.com",
+    "bppId": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bapUri": "https://apidev.outpathprod.com/ondc/metro/callback",
+    "bppUri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transactionId": "13a93941-6d73-4883-bc63-c1b3ca829bb7",
+    "messageId": "1a5ab38a-591d-4ed3-9077-0cdd1946cf9a",
+    "timestamp": "2024-08-07T05:35:33.290Z",
     "ttl": "PT10M"
   },
   "message": {
     "order": {
+      "_id": "dffd010a-5582-49ff-9b12-c518f3475e12",
+      "status": "ACTIVE",
+      "items": [
+        {
+          "_id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+          "categoryIds": [
+            "C2"
+          ],
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "29"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "fulfillmentIds": [
+            "046afe2c-8e89-4bf5-acec-902c87cd0d95"
+          ],
+          "itemsTime": {
+            "label": "Validity",
+            "duration": "PT5M"
+          }
+        }
+      ],
       "provider": {
-        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "_id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
         "descriptor": {
           "name": "ONDC Delhi Metro Limited",
           "images": [
@@ -34,94 +64,82 @@
         },
         "time": {
           "range": {
-            "start": "2024-07-31T05:30:00.000Z",
-            "end": "2024-07-31T23:30:00.000Z"
+            "start": "2024-08-07T05:30:00.000Z",
+            "end": "2024-08-07T23:30:00.000Z"
           }
         }
       },
-      "items": [
-        {
-          "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
-          "category_ids": ["C2"],
-          "descriptor": {
-            "name": "Single Journey Ticket",
-            "code": "SJT"
-          },
-          "price": {
-            "currency": "INR",
-            "value": "26"
-          },
-          "quantity": {
-            "selected": {
-              "count": 1
-            }
-          },
-          "time": {
-            "label": "Validity",
-            "duration": "PT5M"
-          },
-          "fulfillment_ids": ["241f87a6-893e-4c21-b571-47acaeb2ec7f"]
-        }
-      ],
       "fulfillments": [
         {
-          "id": "241f87a6-893e-4c21-b571-47acaeb2ec7f",
+          "_id": "046afe2c-8e89-4bf5-acec-902c87cd0d95",
           "type": "TRIP",
           "stops": [
             {
+              "_id": "1",
               "type": "START",
               "instructions": {
                 "name": "Stop 1"
               },
               "location": {
                 "descriptor": {
-                  "name": "ARTHALA",
-                  "code": "ATHA"
+                  "name": "RAJ BAGH",
+                  "code": "RJBH"
                 },
                 "gps": "28.744676, 77.138332"
               },
-              "id": "1",
               "authorization": {
                 "type": "QR",
                 "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
-                "valid_to": "2024-07-31T04:25:17.992Z",
+                "validTo": "2024-08-07T06:35:33.290Z",
                 "status": "UNCLAIMED"
               }
             },
             {
+              "_id": "2",
               "type": "INTERMEDIATE_STOP",
+              "parentStopId": "1",
               "instructions": {
                 "name": "Stop 2"
               },
               "location": {
                 "descriptor": {
-                  "name": "MOHAN NAGAR",
-                  "code": "MNGM"
+                  "name": "SHAHEED NAGAR",
+                  "code": "SHDN"
                 },
                 "gps": "28.744676, 77.138332"
-              },
-              "id": "2",
-              "parent_stop_id": "1"
+              }
             },
             {
-              "type": "END",
+              "_id": "3",
+              "type": "INTERMEDIATE_STOP",
+              "parentStopId": "2",
               "instructions": {
                 "name": "Stop 3"
               },
               "location": {
                 "descriptor": {
-                  "name": "SHYAM PARK",
-                  "code": "SMPK"
+                  "name": "DILSHAD GARDEN",
+                  "code": "DSG"
                 },
                 "gps": "28.744676, 77.138332"
+              }
+            },
+            {
+              "_id": "4",
+              "type": "END",
+              "parentStopId": "3",
+              "instructions": {
+                "name": "Stop 4"
               },
-              "id": "3",
-              "parent_stop_id": "2"
+              "location": {
+                "descriptor": {
+                  "name": "JHILMIL",
+                  "code": "JLML"
+                },
+                "gps": "28.744676, 77.138332"
+              }
             }
           ],
-          "vehicle": {
-            "category": "METRO"
-          },
           "tags": [
             {
               "descriptor": {
@@ -133,26 +151,34 @@
                   "descriptor": {
                     "code": "NUMBER"
                   },
-                  "value": "2322d64c-13be-44a4-967a-4f026b955a18"
+                  "value": "fc193be1-32cb-496d-93e8-071e6102fb6a"
                 }
               ]
             }
-          ]
+          ],
+          "vehicle": {
+            "category": "METRO"
+          }
         }
       ],
+      "billing": {
+        "name": "Janak",
+        "email": "janak@gmail.com",
+        "phone": "7039335323"
+      },
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "26.00"
+          "value": "29.00"
         },
         "breakup": [
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "_id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
               "price": {
                 "currency": "INR",
-                "value": "26"
+                "value": "29"
               },
               "quantity": {
                 "selected": {
@@ -162,53 +188,24 @@
             },
             "price": {
               "currency": "INR",
-              "value": "26"
+              "value": "29"
             }
           }
         ]
       },
-      "cancellation_terms": [
-        {
-          "external_ref": {
-            "mimetype": "text/html",
-            "url": "https://sequelstringsolutions.com/mf/tnc.html"
-          }
-        }
-      ],
-      "tags": [
-        {
-          "descriptor": {
-            "code": "SCHEDULED_INFO"
-          },
-          "display": false,
-          "list": [
-            {
-              "descriptor": {
-                "code": "GTFS"
-              },
-              "value": "https://metro-transit/gtfs-realtime"
-            }
-          ]
-        }
-      ],
-      "billing": {
-        "name": "Janak",
-        "email": "janak@gmail.com",
-        "phone": "7039335323"
-      },
       "payments": [
         {
-          "id": "d45b4075-1130-448d-9b3e-d5ecbffe8d11",
-          "collected_by": "BAP",
+          "_id": "0eaca776-1e8f-4b9f-bb71-ab8731dcfdf8",
+          "collectedBy": "BAP",
           "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
-            "transaction_id": "e78b66d4-817c-4527-bcc1-4c463b173e2f",
+            "transactionId": "4c559a12-a00c-4ecf-9694-511f56e7a0ba",
             "currency": "INR",
-            "amount": "26.00",
-            "bank_code": "SBI5448270",
-            "bank_account_number": "562391273445",
-            "virtual_payment_address": "8667777799@oksbi"
+            "amount": "29.00",
+            "bankCode": "SBI5448270",
+            "bankAccountNumber": "562391273445",
+            "virtualPaymentAddress": "8667777799@oksbi"
           },
           "tags": [
             {
@@ -222,6 +219,12 @@
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
                   "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
                 }
               ]
             },
@@ -247,7 +250,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "26.00"
+                  "value": "29.00"
                 },
                 {
                   "descriptor": {
@@ -284,10 +287,32 @@
           ]
         }
       ],
-      "id": "1908aad3-d45b-45f5-ae7a-854d1233f4a5",
-      "status": "ACTIVE",
-      "created_at": "2024-07-31T03:25:17.993Z",
-      "updated_at": "2024-07-31T03:25:17.993Z"
+      "cancellationTerms": [
+        {
+          "externalRef": {
+            "mimetype": "text/html",
+            "url": "https://sequelstringsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2024-08-07T05:35:33.290Z",
+      "updatedAt": "2024-08-07T05:35:33.290Z"
     }
   }
 }
