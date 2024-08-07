@@ -11,9 +11,9 @@
         },
         "version": "2.0.0",
         "action": "confirm",
-        "transaction_id": "6c59b089-b553-4c5f-9c6b-43618a25f632",
-        "message_id": "c521142c-a630-4c72-9293-8447384c202e",
-        "timestamp": "2024-08-06T10:14:12.618Z",
+        "transaction_id": "4779e069-3703-47c1-9a28-41468f8412a6",
+        "message_id": "82a49905-f6b5-4af5-93e1-a6edb4b07c9e",
+        "timestamp": "2024-08-06T11:35:13.933Z",
         "bap_uri": "https://sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -38,7 +38,7 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "ff_122"
+                        "ff_123"
                     ],
                     "payment_ids": [
                         "pmt_123"
@@ -47,17 +47,11 @@
             ],
             "fulfillments": [
                 {
-                    "id": "ff_122",
-                    "type": "LUMPSUM",
+                    "id": "ff_123",
+                    "type": "SIP",
                     "customer": {
                         "person": {
-                            "id": "pan:arrpp7771n",
-                            "creds": [
-                                {
-                                    "id": "78953432/32",
-                                    "type": "FOLIO"
-                                }
-                            ]
+                            "id": "PAN:EKLZS12EET"
                         },
                         "contact": {
                             "phone": "9916599123"
@@ -79,9 +73,27 @@
                                 }
                             ]
                         }
-                    }
+                    },
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R6/2024-05-15/P1M"
+                                }
+                            }
+                        }
+                    ]
                 }
             ],
+            "xinput": {
+                "form": {
+                    "id": "16de603f-6683-4391-86cd-048823acb149"
+                },
+                "form_response": {
+                    "submission_id": "efd03802-525e-47bd-843b-fa38ec1dfa5b",
+                    "status": "SUCCESS"
+                }
+            },
             "payments": [
                 {
                     "id": "pmt_123",
@@ -91,10 +103,27 @@
                         "currency": "INR",
                         "source_bank_code": "icic0000047",
                         "source_bank_account_number": "004701563111",
-                        "source_bank_account_name": "harish gupta"
+                        "source_bank_account_name": "harish gupta",
+                        "transaction_id": "cb7be546-84bd-495e-88d5-0113798bad86"
                     },
                     "type": "PRE_FULFILLMENT",
-                    "status": "NOT-PAID"
+                    "status": "PAID",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "MANDATE_REGISTRATION"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "tags": [

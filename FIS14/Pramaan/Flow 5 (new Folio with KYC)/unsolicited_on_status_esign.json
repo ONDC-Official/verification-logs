@@ -11,9 +11,9 @@
         },
         "version": "2.0.0",
         "action": "on_status",
-        "transaction_id": "7f4cf1cb-4701-4751-9df7-727360fd7b52",
-        "message_id": "03d7681d-e9ad-4d2c-b8d9-7d03f4892f6a",
-        "timestamp": "2024-08-06T10:36:44.987Z",
+        "transaction_id": "4779e069-3703-47c1-9a28-41468f8412a6",
+        "message_id": "0ee16e8a-ed26-4e57-abe0-c432aa952b56",
+        "timestamp": "2024-08-06T11:34:29.208Z",
         "bap_uri": "https://sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
@@ -22,8 +22,6 @@
     },
     "message": {
         "order": {
-            "id": "mfpp_213adf123af",
-            "status": "ACCEPTED",
             "provider": {
                 "id": "amc_1",
                 "descriptor": {
@@ -123,12 +121,12 @@
                             ]
                         }
                     ],
-                    "fulfillment_ids": [
-                        "ff_123"
-                    ],
-                    "payment_ids": [
-                        "pmt_123"
-                    ]
+                    "xinput": {
+                        "form_response": {
+                            "status": "APPROVED",
+                            "submission_id": "efd03802-525e-47bd-843b-fa38ec1dfa5b"
+                        }
+                    }
                 }
             ],
             "fulfillments": [
@@ -138,9 +136,6 @@
                     "customer": {
                         "person": {
                             "id": "PAN:EKLZS12EET"
-                        },
-                        "contact": {
-                            "phone": "9916599123"
                         }
                     },
                     "agent": {
@@ -239,68 +234,73 @@
                 }
             ],
             "xinput": {
-                "form": {
-                    "id": "91995bd9-94be-4232-b1fb-d35e79614e0d"
+                "required": true,
+                "head": {
+                    "index": {
+                        "min": 0,
+                        "cur": 2,
+                        "max": 2
+                    },
+                    "headings": [
+                        "APPLICATION_FORM",
+                        "KYC",
+                        "ESIGN"
+                    ]
                 },
-                "form_response": {
-                    "status": "SUCCESS",
-                    "submission_id": "ba74be1b-6dd5-4bff-b93c-140e0c5c8805"
+                "form": {
+                    "id": "16de603f-6683-4391-86cd-048823acb149",
+                    "mime_type": "application/html",
+                    "url": "https://sequelstring.com/seller/form/16de603f-6683-4391-86cd-048823acb149"
                 }
             },
-            "payments": [
+            "tags": [
                 {
-                    "id": "pmt_123",
-                    "collected_by": "BPP",
-                    "params": {
-                        "amount": "3000",
-                        "currency": "INR",
-                        "source_bank_code": "icic0000047",
-                        "source_bank_account_number": "004701563111",
-                        "source_bank_account_name": "harish gupta",
-                        "transaction_id": "b6907c9f-89cb-4620-aa4c-731faedc4b30"
+                    "display": false,
+                    "descriptor": {
+                        "name": "BAP Terms of Engagement",
+                        "code": "BAP_TERMS"
                     },
-                    "type": "PRE_FULFILLMENT",
-                    "status": "PAID",
-                    "tags": [
+                    "list": [
                         {
                             "descriptor": {
-                                "name": "Payment Method",
-                                "code": "PAYMENT_METHOD"
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
                             },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "MODE"
-                                    },
-                                    "value": "MANDATE_REGISTRATION"
-                                }
-                            ]
+                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BPP Terms of Engagement",
+                        "code": "BPP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
                         }
                     ]
                 }
-            ],
-            "quote": {
-                "id": "q1",
-                "price": {
-                    "currency": "INR",
-                    "value": "0"
-                },
-                "breakup": [
-                    {
-                        "item": {
-                            "id": "12391",
-                            "fulfillment_ids": [
-                                "ff_123"
-                            ]
-                        },
-                        "title": "SIP",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    }
-                ]
-            }
+            ]
         }
     }
 }
