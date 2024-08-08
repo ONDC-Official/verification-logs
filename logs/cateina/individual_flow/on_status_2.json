@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_update",
+        "action": "on_status",
         "bap_id": "uat-ondc.cateina.com",
         "bap_uri": "https://uat-ondc.cateina.com/bap",
         "domain": "ONDC:FIS13",
@@ -12,10 +12,10 @@
                 "code": "*"
             }
         },
-        "message_id": "0097b643-ec32-4743-bd9b-e68b6772e9b3",
-        "timestamp": "2024-08-08T12:01:29.269Z",
-        "transaction_id": "69792ac3-c288-4bb9-80bf-aaeed95e4511",
-        "ttl": "PT60M",
+        "message_id": "1f43e7ea-a1fc-4240-8c97-c93ff6f3361c",
+        "timestamp": "2024-08-08T10:28:06.021Z",
+        "transaction_id": "cb0a7297-b7a0-4258-bdba-7d648357f0e6",
+        "ttl": "PT20M",
         "version": "2.0.0",
         "bpp_id": "uat-ondc.cateina.com",
         "bpp_uri": "https://uat-ondc.cateina.com/bpp"
@@ -24,42 +24,29 @@
         "order": {
             "fulfillments": [
                 {
-                    "state": {
-                        "descriptor": {
-                            "code": "GRANTED"
-                        }
-                    },
                     "customer": {
                         "contact": {
-                            "email": "rohit@gmail.com",
-                            "phone": "+91-9876543323"
+                            "email": "rohitmankar@gmail.com",
+                            "phone": "9349834683"
+                        },
+                        "person": {
+                            "name": "rohit mankar"
+                        },
+                        "organization": {
+                            "address": "Bajaj Allianz House, Airport Road, Yerawada, Pune-411006"
                         }
                     },
-                    "id": "f42cd1aa-b483-4a85-838d-2b7efaacb06b",
-                    "type": "POLICY"
-                },
-                {
+                    "id": "a716a2c7-2356-472d-9158-29eec2153488",
+                    "type": "POLICY",
                     "state": {
                         "descriptor": {
-                            "code": "INITIATED"
+                            "code": "PROCESSING"
                         }
-                    },
-                    "type": "RENEWAL",
-                    "customer": {
-                        "contact": {
-                            "email": "rohit@gmail.com",
-                            "phone": "+91-9876543323"
-                        }
-                    },
-                    "id": "262c3325-4159-40be-a93e-1e2e8810005c"
+                    }
                 }
             ],
             "items": [
                 {
-                    "fulfillment_ids": [
-                        "f42cd1aa-b483-4a85-838d-2b7efaacb06b",
-                        "262c3325-4159-40be-a93e-1e2e8810005c"
-                    ],
                     "add_ons": [
                         {
                             "id": "prod_01HXBQR3V68ETHTEMJ8WFP7HMA",
@@ -83,6 +70,7 @@
                         "short_desc": " Ut enim ad minim veniam."
                     },
                     "id": "prod_01HWQ86NMZT9W6J4NC5R5RD6JW",
+                    "parent_item_id": "prod_01HWQ68010MWZ8RCEZJ4NB9KMP",
                     "price": {
                         "currency": "INR",
                         "value": "900"
@@ -160,7 +148,7 @@
                                     "descriptor": {
                                         "code": "PROPOSAL_ID"
                                     },
-                                    "value": "e8ebe8ec-c668-4d22-a28e-d77aca23910b"
+                                    "value": "1a7c9dec-807e-441c-8b73-f0adf17f672f"
                                 }
                             ],
                             "descriptor": {
@@ -173,16 +161,41 @@
                         "duration": "P1Y",
                         "label": "TENURE"
                     },
+                    "fulfillment_ids": [
+                        "a716a2c7-2356-472d-9158-29eec2153488"
+                    ],
                     "category_ids": [
                         "pcat_01HWPZ10DZ5GPEVW4W0Q2SK5VN",
                         "pcat_01HWPXG21WXDBAKMPCATC6YXRY"
                     ]
                 }
             ],
-            "id": "d4fb14d2-cee6-4b55-a661-3253d7139369",
+            "provider": {
+                "descriptor": {
+                    "long_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "name": "Health Edge",
+                    "short_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "images": [
+                        {
+                            "url": "https://ifpa.eiss.co.in/wp-content/uploads/2019/03/health-insurance.png",
+                            "size_type": "xs"
+                        }
+                    ]
+                },
+                "id": "P1"
+            },
             "payments": [
                 {
                     "collected_by": "BPP",
+                    "status": "PAID",
+                    "type": "PRE-ORDER",
+                    "params": {
+                        "bank_account_number": "1800002341",
+                        "bank_code": "SBIN0001234",
+                        "currency": "INR",
+                        "transaction_id": "017b1d5d-0e74-43a7-96f9-698c3795e71c",
+                        "amount": "1100"
+                    },
                     "tags": [
                         {
                             "descriptor": {
@@ -224,6 +237,12 @@
                                 },
                                 {
                                     "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
                                         "code": "DELAY_INTEREST"
                                     },
                                     "value": "2.5"
@@ -232,25 +251,19 @@
                                     "descriptor": {
                                         "code": "STATIC_TERMS"
                                     },
-                                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "OFFLINE_CONTRACT"
-                                    },
-                                    "value": "true"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "upi"
+                                    "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_AMOUNT"
                                     },
                                     "value": "11"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
+                                    "value": "true"
                                 },
                                 {
                                     "value": "TRUE",
@@ -267,43 +280,11 @@
                             ]
                         }
                     ],
-                    "status": "PAID",
-                    "type": "PRE-ORDER",
-                    "params": {
-                        "amount": "1100",
-                        "bank_account_number": "1800002341",
-                        "bank_code": "SBIN0001234",
-                        "currency": "INR",
-                        "transaction_id": "5580a503-f480-4b1e-b37b-b6e422426f93"
-                    }
-                },
-                {
-                    "collected_by": "BPP",
-                    "params": {
-                        "amount": "1000",
-                        "currency": "INR",
-                        "transaction_id": "69792ac3-c288-4bb9-80bf-aaeed95e4511"
-                    },
-                    "status": "PAID",
-                    "type": "POST_FULFILLMENT"
+                    "url": "https://rzp.io/i/s13kaKu"
                 }
             ],
-            "provider": {
-                "descriptor": {
-                    "long_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "name": "Health Edge",
-                    "short_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "images": [
-                        {
-                            "url": "https://ifpa.eiss.co.in/wp-content/uploads/2019/03/health-insurance.png",
-                            "size_type": "xs"
-                        }
-                    ]
-                },
-                "id": "P1"
-            },
             "quote": {
-                "id": "e8ebe8ec-c668-4d22-a28e-d77aca23910b",
+                "id": "e6f45f41-1e7b-475b-b735-c2961cae6958",
                 "breakup": [
                     {
                         "price": {
@@ -352,51 +333,9 @@
                 "price": {
                     "currency": "INR",
                     "value": "1100"
-                }
-            },
-            "status": "ACTIVE",
-            "documents": [
-                {
-                    "url": "https://abcinsurance.com/policies/O1.pdf",
-                    "mime_type": "application/pdf",
-                    "descriptor": {
-                        "code": "POLICY_DOC",
-                        "name": "Insurance Policy Document",
-                        "long_desc": "Download you digitally signed policy document here. This document is password protected. To open this document, please type in your password in DDMMMYYYYXXXX format where DDMMMYYYY represents your date of birth, and XXXX represents the first four letters of your name",
-                        "short_desc": "Download your digitally signed policy document here"
-                    }
                 },
-                {
-                    "url": "https://uat-ondc.cateina.com/bpp/claim/69792ac3-c288-4bb9-80bf-aaeed95e4511/INITIATED",
-                    "mime_type": "application/html",
-                    "descriptor": {
-                        "code": "CLAIM_DOC",
-                        "name": "Claim Insurance Policy",
-                        "long_desc": "Buyer can claim their insurance by visiting the below url",
-                        "short_desc": "Buyer can claim their insurance by visiting the below url"
-                    }
-                },
-                {
-                    "url": "https://uat-ondc.cateina.com/bpp/renew/69792ac3-c288-4bb9-80bf-aaeed95e4511/INITIATED",
-                    "mime_type": "application/html",
-                    "descriptor": {
-                        "code": "RENEW_DOC",
-                        "name": "Renew Insurance Policy",
-                        "long_desc": "Buyer can easily renew their insurance policies by visiting the following URL",
-                        "short_desc": "Buyer can renew their insurance by visiting the below url"
-                    }
-                }
-            ],
-            "created_at": "2024-08-08T11:56:34.461Z",
-            "updated_at": "2024-08-08T12:01:29.269Z",
-            "cancellation_terms": [
-                {
-                    "external_ref": {
-                        "url": "https://fis.test.bpp.io/cancellation-terms",
-                        "mimetype": "text/html"
-                    }
-                }
-            ]
+                "ttl": "P15D"
+            }
         }
     }
 }
