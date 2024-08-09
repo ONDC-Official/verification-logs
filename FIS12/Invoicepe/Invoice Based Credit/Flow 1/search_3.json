@@ -1,0 +1,100 @@
+{
+    "context": {
+        "domain": "ONDC:FIS12",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "version": "2.1.0",
+        "action": "search",
+        "bap_id": "ondc.invoicepe.in",
+        "bap_uri": "https://ondc.invoicepe.in/financial-services/invoice-based-credit",
+        "transaction_id": "a0ce7635-5ddd-4f0d-afab-670dbc6507d9",
+        "message_id": "255e8b3a-720a-4ea9-9388-12d9b8c6b1f8",
+        "ttl": "PT90M",
+        "timestamp": "2024-07-17T05:32:11.367Z",
+        "bpp_id": "kotak-ondc-pre-prod.perfios.com",
+        "bpp_uri": "https://kotak-ondc-pre-prod.perfios.com/ondc/kotak-ondc-seller"
+    },
+    "message": {
+        "intent": {
+            "category": {
+                "descriptor": {
+                    "code": "INVOICE_BASED_LOAN"
+                }
+            },
+            "provider": {
+                "id": "kotak",
+                "items": [
+                    {
+                        "id": "KOTAK_INVOICE_BASED_LOAN_C1",
+                        "xinput": {
+                            "form": {
+                                "id": "submit_personal_info"
+                            },
+                            "form_response": {
+                                "status": "APPROVED",
+                                "submission_id": "ca58bd2e-2a2e-4515-904c-067e6a3e7032"
+                            }
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "collected_by": "BPP",
+                "tags": [
+                    {
+                        "descriptor": {
+                            "code": "BUYER_FINDER_FEES"
+                        },
+                        "list": [
+                            {
+                                "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_TYPE"
+                                },
+                                "value": "PERCENT_ANNUALIZED"
+                            },
+                            {
+                                "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                },
+                                "value": "1"
+                            }
+                        ],
+                        "display": false
+                    },
+                    {
+                        "descriptor": {
+                            "code": "SETTLEMENT_TERMS"
+                        },
+                        "list": [
+                            {
+                                "descriptor": {
+                                    "code": "DELAY_INTEREST"
+                                },
+                                "value": "2.5"
+                            },
+                            {
+                                "descriptor": {
+                                    "code": "STATIC_TERMS"
+                                },
+                                "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                            },
+                            {
+                                "descriptor": {
+                                    "code": "OFFLINE_CONTRACT"
+                                },
+                                "value": "true"
+                            }
+                        ],
+                        "display": false
+                    }
+                ]
+            }
+        }
+    }
+}
