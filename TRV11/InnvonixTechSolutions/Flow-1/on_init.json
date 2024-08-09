@@ -1,0 +1,292 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:079"
+      }
+    },
+    "action": "on_init",
+    "domain": "ONDC:TRV11",
+    "version": "2.0.0",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "ondc.dev.innvonix.in",
+    "bpp_uri": "https://ondc.dev.innvonix.in/",
+    "transaction_id": "d5bd4405-829b-44d2-a136-03cae6bae7d1",
+    "message_id": "dbeb94c9-bb16-475a-84d2-38ca61a56f16",
+    "timestamp": "2024-08-08T12:39:45.381Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://www.gujaratmetrorail.com/ahmedabad/route-and-fares"
+          }
+        }
+      ],
+      "provider": {
+        "id": "Gujarat-Metro-Rail-Corporation-Limited",
+        "descriptor": {
+          "name": "Gujarat Metro Rail Corporation (GMRC) Limited",
+          "images": [
+            {
+              "url": "https://www.gujaratmetrorail.com/wp-content/uploads/HomePageImage/gmrc-logo-WBG-180x208-1.png"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2024-08-08T07:00:00.000Z",
+            "end": "2024-08-08T22:00:00.000Z"
+          }
+        }
+      },
+      "billing": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+91-9897867564"
+      },
+      "items": [
+        {
+          "id": "TRPEW001-SJT-APMC-GRMS",
+          "category_ids": ["C1"],
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT"
+          },
+          "fulfillment_ids": ["TRPEW001"],
+          "price": {
+            "currency": "INR",
+            "value": "15"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT2D"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "TRPEW001",
+          "type": "TRIP",
+          "vehicle": {
+            "category": "METRO"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TRIP_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "AVAILABLE_TRIPS"
+                  },
+                  "value": "YES"
+                },
+                {
+                  "descriptor": {
+                    "code": "UTILIZED_TRIPS"
+                  },
+                  "value": "NO"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "id": "APMC",
+              "type": "START",
+              "instructions": {
+                "name": "APMC",
+                "short_desc": "APMC"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "APMC",
+                  "code": "APMC"
+                },
+                "gps": "23.003263,72.536293"
+              }
+            },
+            {
+              "id": "GRMS",
+              "type": "END",
+              "instructions": {
+                "name": "Gandhigram",
+                "short_desc": "Gandhigram"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Gandhigram",
+                  "code": "GRMS"
+                },
+                "gps": "23.028591,72.568724"
+              },
+              "parent_stop_id": "APMC"
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "id": "69ea88ea-8221-4929-96dd-77a98843614c",
+          "collected_by": "BAP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "innvonix@paytm"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "P1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Gujarat High Court"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.gujaratmetrorail.com/terms-condition/"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "NEFT"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "14.85"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "15",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "TRPEW001-SJT-APMC-GRMS",
+              "price": {
+                "currency": "INR",
+                "value": "15"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "15"
+            }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://www.gujaratmetrorail.com/"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
