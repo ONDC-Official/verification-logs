@@ -9,11 +9,11 @@
         }
       },
       "domain": "ONDC:TRV12",
-      "action": "on_confirm",
+      "action": "on_cancel",
       "version": "2.0.0",
       "transaction_id": "8fa7f088-b621-496c-a5d2-b0417d68070f",
-      "message_id": "84765020-7c7c-479f-8da4-16dc9f16baf4",
-      "timestamp": "2024-08-11T17:30:50.916Z",
+      "message_id": "a3b6e9cf-0696-4937-8cf2-43f75cd51415",
+      "timestamp": "2024-08-11T17:31:12.872Z",
       "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
       "bap_id": "ondc.sequelstring.com/buyer/protocol",
       "ttl": "PT30S",
@@ -188,6 +188,12 @@
                       "code": "SELECTED_SEAT"
                     },
                     "value": "A1"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SELECTED"
+                    },
+                    "value": "true"
                   }
                 ]
               }
@@ -283,6 +289,12 @@
                       "code": "SELECTED_SEAT"
                     },
                     "value": "F1"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SELECTED"
+                    },
+                    "value": "true"
                   }
                 ]
               }
@@ -292,7 +304,7 @@
         ],
         "quote": {
           "price": {
-            "value": "1751",
+            "value": "10",
             "currency": "INR"
           },
           "breakup": [
@@ -364,6 +376,20 @@
               "price": {
                 "currency": "INR",
                 "value": "19"
+              }
+            },
+            {
+              "title": "CANCELLATION_CHARGES",
+              "price": {
+                "value": "10",
+                "currency": "INR"
+              }
+            },
+            {
+              "title": "REFUND",
+              "price": {
+                "value": "-1741",
+                "currency": "INR"
               }
             }
           ]
@@ -458,6 +484,20 @@
                     "value": "1733.49"
                   }
                 ]
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_DETAILS"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_TYPE"
+                    },
+                    "value": "UPI"
+                  }
+                ]
               }
             ],
             "status": "PAID",
@@ -473,7 +513,11 @@
           }
         ],
         "id": "50563a3a-9545-4a1f-a412-68008ae42bfb",
-        "status": "ACTIVE"
+        "status": "CANCELLED",
+        "cancellation": {
+          "cancelled_by": "CONSUMER",
+          "time": "2024-08-11T17:31:12.871Z"
+        }
       }
     }
 }
