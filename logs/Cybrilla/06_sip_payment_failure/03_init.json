@@ -1,0 +1,217 @@
+{
+  "context": {
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "domain": "ONDC:FIS14",
+    "timestamp": "2024-08-13T14:15:28.704Z",
+    "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
+    "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
+    "transaction_id": "793a85f0-21b2-4940-82d5-527efa8098cb",
+    "message_id": "717af7fc-09cf-456b-b15c-bb029dd3cdba",
+    "version": "0.0.1",
+    "ttl": "PT24H",
+    "action": "init",
+    "bpp_id": "api.preprod.cybrilla.com",
+    "bpp_uri": "https://api.preprod.cybrilla.com/ondc"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "27",
+        "descriptor": {
+          "name": "ICICI Prudential Asset Management Company Limited"
+        }
+      },
+      "items": [
+        {
+          "id": "5411",
+          "descriptor": {
+            "name": "ICICI PRUDENTIAL TRANSPORTATION AND LOGISTICS FUND - Growth",
+            "code": "SCHEME_PLAN"
+          },
+          "quantity": {
+            "selected": { "measure": { "value": "4000", "unit": "INR" } }
+          },
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Plan Information",
+                "code": "PLAN_INFORMATION"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Consumer Terms & Conditions",
+                    "code": "CONSUMER_TNC"
+                  },
+                  "value": "https://api.preprod.cybrilla.com/ondc/tnc"
+                }
+              ]
+            },
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Plan Identifiers",
+                "code": "PLAN_IDENTIFIERS"
+              },
+              "list": [
+                {
+                  "descriptor": { "name": "Isin", "code": "ISIN" },
+                  "value": "INF109KC19J8"
+                },
+                {
+                  "descriptor": {
+                    "name": "RTA Identifier",
+                    "code": "RTA_IDENTIFIER"
+                  },
+                  "value": "3503"
+                },
+                {
+                  "descriptor": {
+                    "name": "Amfi Identifier",
+                    "code": "AMFI_IDENTIFIER"
+                  },
+                  "value": "150684"
+                }
+              ]
+            },
+            {
+              "display": true,
+              "descriptor": { "name": "Plan Options", "code": "PLAN_OPTIONS" },
+              "list": [
+                {
+                  "descriptor": { "name": "Plan", "code": "PLAN" },
+                  "value": "REGULAR"
+                },
+                {
+                  "descriptor": { "name": "Option", "code": "OPTION" },
+                  "value": "GROWTH"
+                }
+              ]
+            }
+          ],
+          "fulfillment_ids": ["43171"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "43171",
+          "type": "SIP",
+          "tracking": false,
+          "customer": {
+            "person": { "id": "pan:EFNPA1496A" },
+            "contact": { "phone": "6382943292", "email": "ash@gmail.com" }
+          },
+          "agent": {
+            "person": { "id": "euin:E387601" },
+            "organization": { "creds": [{ "id": "ARN-114376", "type": "ARN" }] }
+          },
+          "stops": [
+            { "time": { "schedule": { "frequency": "R18/2024-09-01/P1M" } } }
+          ]
+        }
+      ],
+      "quote": {
+        "id": "q1",
+        "price": { "currency": "INR", "value": "0" },
+        "breakup": [
+          {
+            "item": { "id": "5411", "fulfillment_ids": ["43171"] },
+            "title": "SIP",
+            "price": { "currency": "INR", "value": "0" }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "MANDATE_REGISTRATION",
+          "collected_by": "bpp",
+          "params": {
+            "amount": "50000",
+            "currency": "INR",
+            "source_bank_code": "ICIC0000612",
+            "source_bank_account_number": "1204567891193"
+          },
+          "type": "PRE_FULFILLMENT"
+        }
+      ],
+      "xinput": {
+        "form": {},
+        "form_response": {
+          "submission_id": "1d5769e2-25f4-4501-9397-8ecfc0920205"
+        }
+      },
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://api.preprod.cybrilla.com/ondc/bpp_terms"
+            },
+            {
+              "descriptor": {
+                "name": "OFFLINE_CONTRACT",
+                "code": "Offline Contract"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
