@@ -1,0 +1,94 @@
+{
+  "context": {
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "domain": "ONDC:FIS14",
+    "timestamp": "2024-08-12T12:28:09.522Z",
+    "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
+    "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
+    "transaction_id": "87cccd98-43b0-4b8f-81f2-79af438cef5d",
+    "message_id": "0771a66b-3a8b-4058-b13c-a35a033e1a7b",
+    "version": "0.0.1",
+    "ttl": "PT24H",
+    "action": "select",
+    "bpp_id": "api.preprod.cybrilla.com",
+    "bpp_uri": "https://api.preprod.cybrilla.com/ondc"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "27" },
+      "items": [
+        {
+          "id": "5395",
+          "quantity": {
+            "selected": { "measure": { "value": "1000", "unit": "INR" } }
+          },
+          "fulfillment_ids": ["48412"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "48412",
+          "type": "REDEMPTION",
+          "customer": {
+            "person": {
+              "id": "pan:EFNPA1496A",
+              "creds": [{ "id": "203GXUY78DFWK", "type": "FOLIO" }]
+            }
+          },
+          "agent": {
+            "person": { "id": "euin:E387601" },
+            "organization": { "creds": [{ "id": "ARN-114376", "type": "ARN" }] }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
