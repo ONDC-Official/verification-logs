@@ -10,19 +10,21 @@
               "code": "IND"
           }
       },
-      "action": "on_select",
+      "action": "on_confirm",
       "version": "2.0.0",
       "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
       "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
       "bpp_id": "api.preprod.cybrilla.com",
       "bpp_uri": "https://api.preprod.cybrilla.com/ondc",
-      "transaction_id": "035e6621-bc2a-4f50-8401-a93b9600f869",
-      "message_id": "2525e84a-13b3-4d27-bbcf-d6b4b438bf2d",
-      "timestamp": "2024-08-12T13:30:16.230127285Z",
+      "transaction_id": "4ba0dc8a-53ff-4e62-880a-bf1e549756ea",
+      "message_id": "f9804f5c-8192-47a3-ad36-1599ddd1c6f1",
+      "timestamp": "2024-08-12T14:40:49.690992085Z",
       "key": "MCowBQYDK2VuAyEAOtuBsn64vBt+NjVP4fKoPiRDqitW15ycCdfMdl3xalQ="
   },
   "message": {
       "order": {
+          "id": "mfpp_d22928f59aff47e1b8ef1fe984ec46a5",
+          "status": "ACCEPTED",
           "provider": {
               "id": "30",
               "descriptor": {
@@ -39,11 +41,14 @@
                   "quantity": {
                       "selected": {
                           "measure": {
-                              "value": "3000",
+                              "value": "2000",
                               "unit": "INR"
                           }
                       }
                   },
+                  "fulfillment_ids": [
+                      "44052"
+                  ],
                   "tags": [
                       {
                           "display": true,
@@ -193,7 +198,17 @@
                   "tracking": false,
                   "customer": {
                       "person": {
-                          "id": "pan:EFNPA1496A"
+                          "id": "pan:EFNPA1496A",
+                          "creds": [
+                              {
+                                  "id": "ML5PVYW7564KW",
+                                  "type": "FOLIO"
+                              }
+                          ]
+                      },
+                      "contact": {
+                          "phone": "6382943292",
+                          "email": "ash@gmail.com"
                       }
                   },
                   "agent": {
@@ -213,7 +228,7 @@
                       {
                           "time": {
                               "schedule": {
-                                  "frequency": "R18/2024-09-01/P1M"
+                                  "frequency": "R108/2024-09-01/P1M"
                               }
                           }
                       }
@@ -286,6 +301,57 @@
                       {
                           "display": true,
                           "descriptor": {
+                              "name": "Folio",
+                              "code": "FOLIO_INFORMATION"
+                          },
+                          "list": [
+                              {
+                                  "descriptor": {
+                                      "name": "Folio Number",
+                                      "code": "FOLIO_NUMBER"
+                                  },
+                                  "value": "ML5PVYW7564KW"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Holding Pattern",
+                                      "code": "HOLDING_PATTERN"
+                                  },
+                                  "value": "SINGLE"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Holder Name",
+                                      "code": "HOLDER_NAME"
+                                  },
+                                  "value": "Ashwin J"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Created On",
+                                      "code": "CREATED_ON"
+                                  },
+                                  "value": "ddd"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Email Address for 2FA",
+                                      "code": "2FA_EMAIL_ADDRESS_MASKED"
+                                  },
+                                  "value": "a**@gmail.com"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Mobile Number for 2FA",
+                                      "code": "2FA_MOBILE_NUMBER_MASKED"
+                                  },
+                                  "value": "******3292"
+                              }
+                          ]
+                      },
+                      {
+                          "display": true,
+                          "descriptor": {
                               "name": "Thresholds",
                               "code": "THRESHOLDS"
                           },
@@ -346,8 +412,78 @@
                                   }
                               }
                           ]
+                      },
+                      {
+                          "display": true,
+                          "descriptor": {
+                              "name": "Folio",
+                              "code": "FOLIO_INFORMATION"
+                          },
+                          "list": [
+                              {
+                                  "descriptor": {
+                                      "name": "Folio Number",
+                                      "code": "FOLIO_NUMBER"
+                                  },
+                                  "value": "ML5PVYW7564KW"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Holding Pattern",
+                                      "code": "HOLDING_PATTERN"
+                                  },
+                                  "value": "SINGLE"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Holder Name",
+                                      "code": "HOLDER_NAME"
+                                  },
+                                  "value": "Ashwin J"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Created On",
+                                      "code": "CREATED_ON"
+                                  },
+                                  "value": "ddd"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Email Address for 2FA",
+                                      "code": "2FA_EMAIL_ADDRESS_MASKED"
+                                  },
+                                  "value": "a**@gmail.com"
+                              },
+                              {
+                                  "descriptor": {
+                                      "name": "Mobile Number for 2FA",
+                                      "code": "2FA_MOBILE_NUMBER_MASKED"
+                                  },
+                                  "value": "******3292"
+                              }
+                          ]
                       }
                   ]
+              }
+          ],
+          "cancellation_terms": [
+              {
+                  "reason_required": true,
+                  "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.preprod.cybrilla.com/ondc/cancellation_terms"
+                  }
+              }
+          ],
+          "documents": [
+              {
+                  "descriptor": {
+                      "name": "Terms & Conditions",
+                      "code": "TERMS"
+                  },
+                  "mime_type": "text/html",
+                  "url": "https://api.sellerapp.com/tnc?id=214werw3w4"
               }
           ],
           "quote": {
@@ -374,139 +510,19 @@
           },
           "payments": [
               {
-                  "id": "MANDATE_REGISTRATION",
-                  "collected_by": "BPP",
-                  "type": "PRE-FULFILLMENT",
-                  "tags": [
-                      {
-                          "display": true,
-                          "descriptor": {
-                              "name": "Payment Method",
-                              "code": "PAYMENT_METHOD"
-                          },
-                          "list": [
-                              {
-                                  "descriptor": {
-                                      "code": "MODE"
-                                  },
-                                  "value": "MANDATE_REGISTRATION"
-                              }
-                          ]
-                      }
-                  ]
-              },
-              {
-                  "id": "man_e0e00b5b47e8488c851f858d9df0e3f1",
-                  "collected_by": "BPP",
-                  "type": "PRE-FULFILLMENT",
-                  "tags": [
-                      {
-                          "display": true,
-                          "descriptor": {
-                              "name": "Payment Method",
-                              "code": "PAYMENT_METHOD"
-                          },
-                          "list": [
-                              {
-                                  "descriptor": {
-                                      "name": "Mode",
-                                      "code": "MODE"
-                                  },
-                                  "value": "EXISTING_MANADATE"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Type",
-                                      "code": "TYPE"
-                                  },
-                                  "value": "E_MANDATE"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Bank Account Number",
-                                      "code": "MASKED_BANK_ACCOUNT_NUMBER"
-                                  },
-                                  "value": "******7891193"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Bank Account Name",
-                                      "code": "BANK_ACCOUNT_NAME"
-                                  },
-                                  "value": "Ashwin J"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Bank Name",
-                                      "code": "BANK_NAME"
-                                  },
-                                  "value": "UNKNOWN"
-                              }
-                          ]
-                      }
-                  ]
-              },
-              {
-                  "id": "man_0813ddca02214d9589dd2538e76af7cc",
-                  "collected_by": "BPP",
-                  "type": "PRE-FULFILLMENT",
-                  "tags": [
-                      {
-                          "display": true,
-                          "descriptor": {
-                              "name": "Payment Method",
-                              "code": "PAYMENT_METHOD"
-                          },
-                          "list": [
-                              {
-                                  "descriptor": {
-                                      "name": "Mode",
-                                      "code": "MODE"
-                                  },
-                                  "value": "EXISTING_MANADATE"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Type",
-                                      "code": "TYPE"
-                                  },
-                                  "value": "E_MANDATE"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Bank Account Number",
-                                      "code": "MASKED_BANK_ACCOUNT_NUMBER"
-                                  },
-                                  "value": "******7891193"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Bank Account Name",
-                                      "code": "BANK_ACCOUNT_NAME"
-                                  },
-                                  "value": "Ashwin J"
-                              },
-                              {
-                                  "descriptor": {
-                                      "name": "Bank Name",
-                                      "code": "BANK_NAME"
-                                  },
-                                  "value": "UNKNOWN"
-                              }
-                          ]
-                      }
-                  ]
+                  "id": "man_0431cc7f93e94dfda51d796efbc09f82",
+                  "collected_by": "bpp",
+                  "url": "https://api.preprod.cybrilla.com/ondc/payments?transaction_id=4ba0dc8a-53ff-4e62-880a-bf1e549756ea",
+                  "params": {
+                      "amount": "50000",
+                      "currency": "INR",
+                      "source_bank_code": "ICIC0000612",
+                      "source_bank_account_number": "1204567891193"
+                  },
+                  "type": "PRE_FULFILLMENT",
+                  "status": "NOT-PAID"
               }
           ],
-          "xinput": {
-              "form": {
-                  "id": "APPLICATION_FORM_WITH_KYC"
-              },
-              "form_response": {
-                  "status": "SUCCESS",
-                  "submission_id": "df1cabd6-c180-467a-bad2-e503de14b54c"
-              }
-          },
           "tags": [
               {
                   "display": false,
