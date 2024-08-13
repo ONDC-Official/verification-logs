@@ -5,15 +5,15 @@
       "city": { "code": "*" },
       "country": { "name": "India", "code": "IND" }
     },
-    "action": "on_confirm",
+    "action": "on_status",
     "version": "2.0.0",
     "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
     "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
     "bpp_id": "api.preprod.cybrilla.com",
     "bpp_uri": "https://api.preprod.cybrilla.com/ondc",
     "transaction_id": "e1fca18e-464c-422c-8e88-9e37335de1ad",
-    "message_id": "a97d8ac6-9f20-43a6-87bd-ed69294837b6",
-    "timestamp": "2024-08-12T14:41:49.197434175Z",
+    "message_id": "27457a84-81eb-4fb4-a964-9ba2836c5cc6",
+    "timestamp": "2024-08-12T14:41:52.239913607Z",
     "key": "MCowBQYDK2VuAyEAOtuBsn64vBt+NjVP4fKoPiRDqitW15ycCdfMdl3xalQ="
   },
   "message": {
@@ -33,9 +33,9 @@
             "code": "SCHEME_PLAN"
           },
           "quantity": {
-            "selected": { "measure": { "value": "2000", "unit": "INR" } }
+            "selected": { "measure": { "value": "2000.0000", "unit": "INR" } }
           },
-          "fulfillment_ids": ["44051"],
+          "fulfillment_ids": ["44052"],
           "payment_ids": ["pay_c12fda962a6740cb85ffca3bb6669b3a"],
           "tags": [
             {
@@ -100,14 +100,11 @@
       ],
       "fulfillments": [
         {
-          "id": "44051",
+          "id": "44052",
           "type": "SIP_INSTALLMENT",
           "tracking": false,
           "customer": {
-            "person": {
-              "id": "pan:EFNPA1496A",
-              "creds": [{ "id": "ML5PVYW7564KW", "type": "FOLIO" }]
-            },
+            "person": { "id": "pan:EFNPA1496A" },
             "contact": { "phone": "6382943292", "email": "ash@gmail.com" }
           },
           "agent": {
@@ -148,14 +145,15 @@
                   "descriptor": {
                     "name": "Frequency Dates",
                     "code": "FREQUENCY_DATES"
-                  }
+                  },
+                  "value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28"
                 },
                 {
                   "descriptor": {
                     "name": "Installments Count Minimum",
                     "code": "INSTALMENTS_COUNT_MIN"
                   },
-                  "value": "1"
+                  "value": "6"
                 },
                 {
                   "descriptor": {
@@ -171,73 +169,18 @@
                   }
                 }
               ]
-            },
-            {
-              "display": true,
-              "descriptor": { "name": "Folio", "code": "FOLIO_INFORMATION" },
-              "list": [
-                {
-                  "descriptor": {
-                    "name": "Folio Number",
-                    "code": "FOLIO_NUMBER"
-                  },
-                  "value": "ML5PVYW7564KW"
-                },
-                {
-                  "descriptor": {
-                    "name": "Holding Pattern",
-                    "code": "HOLDING_PATTERN"
-                  },
-                  "value": "SINGLE"
-                },
-                {
-                  "descriptor": {
-                    "name": "Holder Name",
-                    "code": "HOLDER_NAME"
-                  },
-                  "value": "Ashwin J"
-                },
-                {
-                  "descriptor": { "name": "Created On", "code": "CREATED_ON" },
-                  "value": "ddd"
-                },
-                {
-                  "descriptor": {
-                    "name": "Email Address for 2FA",
-                    "code": "2FA_EMAIL_ADDRESS_MASKED"
-                  },
-                  "value": "a**@gmail.com"
-                },
-                {
-                  "descriptor": {
-                    "name": "Mobile Number for 2FA",
-                    "code": "2FA_MOBILE_NUMBER_MASKED"
-                  },
-                  "value": "******3292"
-                }
-              ]
             }
           ]
         }
       ],
-      "cancellation_terms": [
-        {
-          "reason_required": true,
-          "cancel_by": { "timestamp": "2024-08-31T22:00:00Z" },
-          "external_ref": {
-            "mimetype": "text/html",
-            "url": "https://api.preprod.cybrilla.com/ondc/cancellation_terms"
-          }
-        }
-      ],
       "quote": {
         "id": "q1",
-        "price": { "currency": "INR", "value": "2000" },
+        "price": { "currency": "INR", "value": "2000.0000" },
         "breakup": [
           {
-            "item": { "id": "5615", "fulfillment_ids": ["44051"] },
+            "item": { "id": "5615", "fulfillment_ids": ["44052"] },
             "title": "Investment",
-            "price": { "currency": "INR", "value": "2000" }
+            "price": { "currency": "INR", "value": "2000.0000" }
           }
         ]
       },
