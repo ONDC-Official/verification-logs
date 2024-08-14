@@ -1,0 +1,171 @@
+{
+    "context": {
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "domain": "ONDC:FIS14",
+        "timestamp": "2024-08-12T15:02:57.661Z",
+        "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
+        "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
+        "transaction_id": "6191958c-6f09-4ab3-9223-a742ea9a6402",
+        "message_id": "9c5a2734-3d34-44fd-94e9-1a8dedc72920",
+        "version": "0.0.1",
+        "ttl": "PT24H",
+        "action": "init",
+        "bpp_id": "api.preprod.cybrilla.com",
+        "bpp_uri": "https://api.preprod.cybrilla.com/ondc"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "23"
+            },
+            "xinput": {
+                "form": {
+                    "id": "application_form_with_kyc"
+                },
+                "form_response": {
+                    "status": "SUCCESS",
+                    "submission_id": "83ba6c39-86cf-4b2c-8d44-ac6cbb4d726a"
+                }
+            },
+            "items": [
+                {
+                    "id": "5019",
+                    "quantity": {
+                        "selected": {
+                            "measure": {
+                                "value": "9000",
+                                "unit": "INR"
+                            }
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "46527"
+                    ]
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "46527",
+                    "type": "LUMPSUM",
+                    "customer": {
+                        "person": {
+                            "id": "pan:EFNPA1496A"
+                        },
+                        "contact": {
+                            "phone": "6382943292",
+                            "email": "ash@gmail.com"
+                        }
+                    },
+                    "agent": {
+                        "person": {
+                            "id": "euin:E387601"
+                        },
+                        "organization": {
+                            "creds": [
+                                {
+                                    "id": "ARN-114376",
+                                    "type": "ARN"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "UPI",
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "9000",
+                        "currency": "INR",
+                        "source_bank_code": "ICIC0000612",
+                        "source_bank_account_number": "1204567891193"
+                    },
+                    "type": "PRE_FULFILLMENT",
+                    "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "UPI"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "documents": [
+                {
+                    "descriptor": {
+                        "name": "Terms & Conditions",
+                        "code": "TERMS"
+                    },
+                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4",
+                    "mime_type": "text/html"
+                }
+            ],
+            "tags": [
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BAP Terms of Engagement",
+                        "code": "BAP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BPP Terms of Engagement",
+                        "code": "BPP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
