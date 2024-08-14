@@ -1,5 +1,5 @@
 {
-      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1723613568\",expires=\"1723617168\",headers=\"(created) (expires) digest\",signature=\"36TlLQ1X1NSVdg+wnC6JjQP0cPnQBZH0LbtkjR0SO8izMUMZq9CpCU0On82Hdb4Ijg6O0S//voqnbBjrkdVMCQ==\"",
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1723613463\",expires=\"1723617063\",headers=\"(created) (expires) digest\",signature=\"50Rk54LGulIkU/a+kgjz3zpvL+uBQDujuGxf6JUdgcoMC9eEMOk9tbYCmTXH7qwpfrqTUT0RdrMt8QaQ1ZWsBw==\"",
       "context": {
         "domain": "ONDC:FIS12",
         "location": {
@@ -10,16 +10,16 @@
             "code": "*"
           }
         },
-        "transaction_id": "8a67b450-028a-4a3a-8b74-6e15da5cbe2b",
-        "message_id": "a8c8ae8e-5b5e-4cbc-b833-a1081fe81742",
         "action": "on_update",
-        "timestamp": "2024-08-14T05:32:48.821Z",
+        "timestamp": "2024-08-14T05:31:03.490Z",
         "version": "2.0.0",
         "bap_uri": "https://ondc-uat.mobikwik.com/",
         "bap_id": "ondc-uat.mobikwik.com",
-        "ttl": "PT10M",
+        "ttl": "PT30M",
         "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "transaction_id": "8a67b450-028a-4a3a-8b74-6e15da5cbe2b",
+        "message_id": "2efafbe5-0145-4f88-8322-f8b02910784d"
       },
       "message": {
         "order": {
@@ -271,6 +271,22 @@
                     }
                   ],
                   "display": true
+                },
+                {
+                  "descriptor": {
+                    "code": "CONSENT_INFO",
+                    "name": "Consent Information"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "CONSENT_HANDLER",
+                        "name": "Consent Handler"
+                      },
+                      "value": "dd9a5423-4a71-4bce-a6c8-7cde5b8564c1"
+                    }
+                  ],
+                  "display": false
                 }
               ]
             }
@@ -330,27 +346,6 @@
                   "value": "0",
                   "currency": "INR"
                 }
-              },
-              {
-                "title": "PRE_PAYMENT_CHARGE",
-                "price": {
-                  "value": "4500",
-                  "currency": "INR"
-                }
-              },
-              {
-                "title": "OUTSTANDING_PRINCIPAL",
-                "price": {
-                  "value": "1000",
-                  "currency": "INR"
-                }
-              },
-              {
-                "title": "OUTSTANDING_INTEREST",
-                "price": {
-                  "value": "6000",
-                  "currency": "INR"
-                }
               }
             ],
             "ttl": "P29D"
@@ -368,26 +363,13 @@
               },
               "state": {
                 "descriptor": {
-                  "code": "DISBURSED",
-                  "name": "Loan Disbursed"
+                  "code": "CONSENT_REQUIRED",
+                  "name": "Consent Required"
                 }
               }
             }
           ],
           "payments": [
-            {
-              "id": "1dd3d651-411f-4759-827a-13f563ec6788",
-              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=1000&order_id=87d3159e-e372-411a-a078-a1331065756b&label=PRE_PART_PAYMENT",
-              "params": {
-                "amount": "1000",
-                "currency": "INR"
-              },
-              "status": "NOT-PAID",
-              "time": {
-                "label": "PRE_PART_PAYMENT"
-              },
-              "type": "POST_FULFILLMENT"
-            },
             {
               "id": "ac2ec9e6-01c3-454b-bcdc-aefac544e71a",
               "type": "ON_ORDER",
