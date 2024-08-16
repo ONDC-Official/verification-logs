@@ -1,103 +1,115 @@
 {
-    "context": {
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "std:011"
-        }
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "domain": "ONDC:TRV12",
-      "action": "select",
-      "version": "2.0.0",
-      "transaction_id": "8fa7f088-b621-496c-a5d2-b0417d68070f",
-      "message_id": "92f76e9e-e65b-4b38-a7f5-641dcada5c90",
-      "timestamp": "2024-08-11T17:30:30.243Z",
-      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-      "bap_id": "ondc.sequelstring.com/buyer/protocol",
-      "ttl": "PT30S",
-      "bpp_id": "ondc.sequelstring.com/seller/protocol",
-      "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+      "city": {
+        "code": "std:011"
+      }
     },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "P1"
-        },
-        "items": [
-          {
-            "id": "I1",
-            "quantity": {
-              "selected": {
-                "count": 2
-              }
+    "domain": "ONDC:TRV12",
+    "action": "select",
+    "version": "2.0.0",
+    "transaction_id": "989fbaf2-cf47-42a6-95a0-6f265632511a",
+    "message_id": "e1b7233c-e34a-4f47-941a-e3950a605193",
+    "timestamp": "2024-08-16T10:09:48.308Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "I1",
+          "quantity": {
+            "selected": {
+              "count": 2
             }
           }
-        ],
-        "fulfillments": [
-          {
-            "id": "F1",
-            "stops": [
-              {
-                "id": "S2",
-                "type": "PICKUP"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "F1",
+          "stops": [
+            {
+              "id": "S2",
+              "type": "PICKUP"
+            },
+            {
+              "id": "S5",
+              "type": "DROP"
+            }
+          ]
+        },
+        {
+          "id": "FT1",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SEAT_GRID"
               },
-              {
-                "id": "S5",
-                "type": "DROP"
-              }
-            ]
-          },
-          {
-            "id": "FT1",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "SEAT_GRID"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "NUMBER"
-                    },
-                    "value": "A1"
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
                   },
-                  {
-                    "descriptor": {
-                      "code": "ITEM_ID"
-                    },
-                    "value": "I1"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "FT2",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "SEAT_GRID"
+                  "value": "A1"
                 },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "NUMBER"
-                    },
-                    "value": "F1"
+                {
+                  "descriptor": {
+                    "code": "ITEM_ID"
                   },
-                  {
-                    "descriptor": {
-                      "code": "ITEM_ID"
-                    },
-                    "value": "I1"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "SELECTED"
+                  },
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FT2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SEAT_GRID"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "F1"
+                },
+                {
+                  "descriptor": {
+                    "code": "ITEM_ID"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "SELECTED"
+                  },
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
+  }
 }

@@ -1,96 +1,96 @@
 {
   "context": {
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "std:011"
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
+      }
+    },
+    "domain": "ONDC:TRV12",
+    "action": "search",
+    "version": "2.0.0",
+    "transaction_id": "989fbaf2-cf47-42a6-95a0-6f265632511a",
+    "message_id": "37603c8a-a7dd-43c0-971d-53ae1c4b5b4e",
+    "timestamp": "2024-08-16T10:09:36.753Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "intent": {
+      "fulfillment": {
+        "stops": [
+          {
+            "type": "START",
+            "location": {
+              "descriptor": {
+                "code": "std:011"
+              }
+            },
+            "time": {
+              "label": "DATE_OF_JOURNEY",
+              "timestamp": "2024-08-16T10:09:36.754Z"
+            }
+          },
+          {
+            "type": "END",
+            "location": {
+              "descriptor": {
+                "code": "std:040"
+              }
+            }
+          }
+        ],
+        "vehicle": {
+          "category": "BUS"
         }
       },
-      "domain": "ONDC:TRV12",
-      "action": "search",
-      "version": "2.0.0",
-      "transaction_id": "8fa7f088-b621-496c-a5d2-b0417d68070f",
-      "message_id": "69c32670-72dc-417c-b265-310d2120e33c",
-      "timestamp": "2024-08-11T17:27:44.869Z",
-      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-      "bap_id": "ondc.sequelstring.com/buyer/protocol",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "intent": {
-        "fulfillment": {
-          "stops": [
-            {
-              "type": "START",
-              "location": {
-                "descriptor": {
-                  "code": "std:011"
-                }
-              },
-              "time": {
-                "label": "DATE_OF_JOURNEY",
-                "timestamp": "2024-08-11T17:27:44.869Z"
-              }
+      "payment": {
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
             },
-            {
-              "type": "END",
-              "location": {
+            "display": false,
+            "list": [
+              {
                 "descriptor": {
-                  "code": "std:040"
-                }
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "percent"
               }
-            }
-          ],
-          "vehicle": {
-            "category": "BUS"
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              }
+            ]
           }
-        },
-        "payment": {
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_FINDER_FEES"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  },
-                  "value": "1"
-                },
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_TYPE"
-                  },
-                  "value": "percent"
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_TERMS"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "2.5"
-                },
-                {
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://api.example-bap.com/booking/terms"
-                }
-              ]
-            }
-          ]
-        }
+        ]
       }
     }
+  }
 }
