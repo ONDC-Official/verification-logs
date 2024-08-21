@@ -15,14 +15,14 @@
     "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
     "bpp_uri": "https://ondc.dev.innvonix.in/",
-    "transaction_id": "d5bd4405-829b-44d2-a136-03cae6bae7d1",
-    "message_id": "44003e0b-6a2f-442e-bcff-6fa55be329a2",
-    "timestamp": "2024-08-08T12:39:53.581Z",
+    "transaction_id": "230d4fce-57a0-4262-a47f-4dbb54d5ba62",
+    "message_id": "fca0336a-766d-4d58-b7a8-3f1ccd17c0d6",
+    "timestamp": "2024-08-20T11:23:34.735Z",
     "ttl": "PT10M"
   },
   "message": {
     "order": {
-      "id": "b6b1599d-aa44-4985-9d78-89562d075d82",
+      "id": "cfda0eb5-b47a-4156-b232-a7d93effafb7",
       "cancellation_terms": [
         {
           "external_ref": {
@@ -43,8 +43,8 @@
         },
         "time": {
           "range": {
-            "start": "2024-08-08T07:00:00.000Z",
-            "end": "2024-08-08T22:00:00.000Z"
+            "start": "2024-08-20T07:00:00.000Z",
+            "end": "2024-08-20T22:00:00.000Z"
           }
         }
       },
@@ -54,12 +54,12 @@
         "email": "john.doe@example.com",
         "phone": "+91-9897867564"
       },
-      "created_at": "2024-08-08T12:39:53.581Z",
-      "updated_at": "2024-08-08T12:39:53.609Z",
+      "created_at": "2024-08-20T11:23:34.735Z",
+      "updated_at": "2024-08-20T11:23:35.027Z",
       "items": [
         {
           "id": "TRPEW001-SJT-APMC-GRMS",
-          "category_ids": ["C1"],
+          "category_ids": ["TICKET"],
           "descriptor": {
             "name": "Single Journey Ticket",
             "code": "SJT"
@@ -105,9 +105,73 @@
               "authorization": {
                 "type": "QR",
                 "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
-                "valid_to": "2024-08-15T12:39:53.637Z",
+                "valid_to": "2024-08-27T11:23:35.072Z",
                 "status": "UNCLAIMED"
               }
+            },
+            {
+              "id": "JVRJ",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Jivraj Park",
+                "short_desc": "Jivraj Park"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Jivraj Park",
+                  "code": "JVRJ"
+                },
+                "gps": "23.009901,72.532137"
+              },
+              "parent_stop_id": "APMC"
+            },
+            {
+              "id": "RNMS",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Rajivnagar",
+                "short_desc": "Rajivnagar"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Rajivnagar",
+                  "code": "RNMS"
+                },
+                "gps": "23.013423,72.536443"
+              },
+              "parent_stop_id": "JVRJ"
+            },
+            {
+              "id": "SRYS",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Shreyas",
+                "short_desc": "Shreyas"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Shreyas",
+                  "code": "SRYS"
+                },
+                "gps": "23.019237,72.548184"
+              },
+              "parent_stop_id": "RNMS"
+            },
+            {
+              "id": "PLDI",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Paldi",
+                "short_desc": "Paldi"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Paldi",
+                  "code": "PLDI"
+                },
+                "gps": "23.022223,72.562301"
+              },
+              "parent_stop_id": "SRYS"
             },
             {
               "id": "GRMS",
@@ -123,7 +187,7 @@
                 },
                 "gps": "23.028591,72.568724"
               },
-              "parent_stop_id": "APMC"
+              "parent_stop_id": "PLDI"
             }
           ],
           "tags": [
@@ -138,26 +202,6 @@
                     "code": "NUMBER"
                   },
                   "value": "NUMGRMCL1"
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "TRIP_DETAILS"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "AVAILABLE_TRIPS"
-                  },
-                  "value": "YES"
-                },
-                {
-                  "descriptor": {
-                    "code": "UTILIZED_TRIPS"
-                  },
-                  "value": "NO"
                 }
               ]
             }
@@ -193,17 +237,16 @@
       },
       "payments": [
         {
-          "id": "69ea88ea-8221-4929-96dd-77a98843614c",
+          "id": "af8e8fbc-e2ce-4339-b993-1f42fa3bd701",
           "collected_by": "BAP",
           "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
-            "transaction_id": "02f60bdf-f4c4-402c-909d-5bcee36c929b",
+            "transaction_id": "99966a2c-9f71-4105-962a-6766c757df44",
             "currency": "INR",
             "amount": "15",
             "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx",
-            "virtual_payment_address": "innvonix@paytm"
+            "bank_account_number": "xxxxxxxxxxxxxx"
           },
           "tags": [
             {
@@ -279,20 +322,6 @@
                     "code": "SETTLEMENT_TYPE"
                   },
                   "value": "NEFT"
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_DETAILS"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "UPI"
                 }
               ]
             }

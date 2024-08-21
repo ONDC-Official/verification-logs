@@ -15,9 +15,9 @@
     "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
     "bpp_uri": "https://ondc.dev.innvonix.in/",
-    "transaction_id": "d5bd4405-829b-44d2-a136-03cae6bae7d1",
-    "message_id": "f67125db-4cb2-4be0-8149-be2c5ca995f8",
-    "timestamp": "2024-08-08T12:39:34.496Z",
+    "transaction_id": "230d4fce-57a0-4262-a47f-4dbb54d5ba62",
+    "message_id": "6a19ec1a-547f-4279-a5a1-4446371c4d92",
+    "timestamp": "2024-08-20T11:22:55.846Z",
     "ttl": "PT10M"
   },
   "message": {
@@ -42,15 +42,15 @@
         },
         "time": {
           "range": {
-            "start": "2024-08-08T07:00:00.000Z",
-            "end": "2024-08-08T22:00:00.000Z"
+            "start": "2024-08-20T07:00:00.000Z",
+            "end": "2024-08-20T22:00:00.000Z"
           }
         }
       },
       "items": [
         {
           "id": "TRPEW001-SJT-APMC-GRMS",
-          "category_ids": ["C1"],
+          "category_ids": ["TICKET"],
           "descriptor": {
             "name": "Single Journey Ticket",
             "code": "SJT"
@@ -78,27 +78,6 @@
           "vehicle": {
             "category": "METRO"
           },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "TRIP_DETAILS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "AVAILABLE_TRIPS"
-                  },
-                  "value": "YES"
-                },
-                {
-                  "descriptor": {
-                    "code": "UTILIZED_TRIPS"
-                  },
-                  "value": "NO"
-                }
-              ]
-            }
-          ],
           "stops": [
             {
               "id": "APMC",
@@ -116,6 +95,70 @@
               }
             },
             {
+              "id": "JVRJ",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Jivraj Park",
+                "short_desc": "Jivraj Park"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Jivraj Park",
+                  "code": "JVRJ"
+                },
+                "gps": "23.009901,72.532137"
+              },
+              "parent_stop_id": "APMC"
+            },
+            {
+              "id": "RNMS",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Rajivnagar",
+                "short_desc": "Rajivnagar"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Rajivnagar",
+                  "code": "RNMS"
+                },
+                "gps": "23.013423,72.536443"
+              },
+              "parent_stop_id": "JVRJ"
+            },
+            {
+              "id": "SRYS",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Shreyas",
+                "short_desc": "Shreyas"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Shreyas",
+                  "code": "SRYS"
+                },
+                "gps": "23.019237,72.548184"
+              },
+              "parent_stop_id": "RNMS"
+            },
+            {
+              "id": "PLDI",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Paldi",
+                "short_desc": "Paldi"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Paldi",
+                  "code": "PLDI"
+                },
+                "gps": "23.022223,72.562301"
+              },
+              "parent_stop_id": "SRYS"
+            },
+            {
               "id": "GRMS",
               "type": "END",
               "instructions": {
@@ -129,7 +172,7 @@
                 },
                 "gps": "23.028591,72.568724"
               },
-              "parent_stop_id": "APMC"
+              "parent_stop_id": "PLDI"
             }
           ]
         }
