@@ -1,0 +1,222 @@
+{
+    "context": {
+        "action": "on_init",
+        "bap_id": "ondc.tummoc.in",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/metro/bookTicket",
+        "bpp_id": "metrobox.preprod.triffy.in",
+        "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
+        "domain": "ONDC:TRV11",
+        "location": {
+            "city": {
+                "code": "std:0484"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "message_id": "d5e16b1c-1b76-4ddb-9dd1-5b138b354057",
+        "timestamp": "2024-05-30T06:53:33.735Z",
+        "transaction_id": "e7ac1f27-d35e-412a-8c0a-7762a9f13beb",
+        "ttl": "PT300S",
+        "version": "2.0.0"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "name": "Maaz",
+                "phone": "8789012316"
+            },
+            "cancellation_terms": [
+                {
+                    "external_ref": {
+                        "mimetype": "text/html",
+                        "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "companypady-changampuzhapark",
+                    "stops": [
+                        {
+                            "id": "1",
+                            "location": {
+                                "descriptor": {
+                                    "code": "uiz4ZGRq9tFZFysnc78pO56Kg6PNJM",
+                                    "name": "CompanyPady"
+                                },
+                                "gps": "10.087300, 76.342800"
+                            },
+                            "type": "START"
+                        },
+                        {
+                            "id": "2",
+                            "location": {
+                                "descriptor": {
+                                    "code": "r3QT9fpkbpatdEfLbnOoD9IQLyAULD",
+                                    "name": "Changampuzha Park"
+                                },
+                                "gps": "10.015200, 76.302300"
+                            },
+                            "parent_stop_id": "1",
+                            "type": "END"
+                        }
+                    ],
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "METRO"
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "category_ids": [
+                        "TICKET"
+                    ],
+                    "descriptor": {
+                        "code": "SJT",
+                        "name": "Single Journey Ticket"
+                    },
+                    "fulfillment_ids": [
+                        "companypady-changampuzhapark"
+                    ],
+                    "id": "sjt-companypady-changampuzhapark",
+                    "price": {
+                        "currency": "INR",
+                        "value": "27"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    },
+                    "time": {
+                        "duration": "PT120M",
+                        "label": "Validity"
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BAP",
+                    "id": "pay_OGc7md4afKxAig",
+                    "params": {
+                        "bank_account_number": "00228130001XXXX",
+                        "bank_code": "XXXX0000022"
+                    },
+                    "status": "NOT-PAID",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT1D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "INVOICE_RECIEPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Kochi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://metro-terms.triffy.in/kochi/index.html"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "54.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "PRE-ORDER"
+                }
+            ],
+            "provider": {
+                "descriptor": {
+                    "name": "Kochi Metro Rail Limited"
+                },
+                "id": "triffy-kmrl-rail-metro",
+                "time": {
+                    "range": {
+                        "end": "2024-05-30T17:00:00Z",
+                        "start": "2024-05-29T23:00:00Z"
+                    }
+                }
+            },
+            "quote": {
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "sjt-companypady-changampuzhapark",
+                            "price": {
+                                "currency": "INR",
+                                "value": "27"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 2
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "54"
+                        },
+                        "title": "BASE_FARE"
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "54"
+                }
+            }
+        }
+    }
+}
