@@ -15,9 +15,9 @@
     "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
     "bpp_uri": "https://ondc.dev.innvonix.in/",
-    "transaction_id": "230d4fce-57a0-4262-a47f-4dbb54d5ba62",
-    "message_id": "f877ab6f-15f3-4b4b-b54f-22b0c07f6bf9",
-    "timestamp": "2024-08-20T11:22:37.656Z",
+    "transaction_id": "e87e0b36-7f03-4b12-a67a-352280959c70",
+    "message_id": "657d3acd-73e1-404d-a861-c1bac7070332",
+    "timestamp": "2024-08-23T07:38:42.426Z",
     "ttl": "PT10M"
   },
   "message": {
@@ -59,13 +59,13 @@
           },
           "time": {
             "range": {
-              "start": "2024-08-20T07:00:00.000Z",
-              "end": "2024-08-20T22:00:00.000Z"
+              "start": "2024-08-23T07:00:00.000Z",
+              "end": "2024-08-23T22:00:00.000Z"
             }
           },
           "fulfillments": [
             {
-              "id": "TRPEW001",
+              "id": "TRPES002",
               "type": "TRIP",
               "vehicle": {
                 "category": "METRO"
@@ -152,7 +152,7 @@
                 },
                 {
                   "id": "GRMS",
-                  "type": "END",
+                  "type": "INTERMEDIATE_STOP",
                   "instructions": {
                     "name": "Gandhigram",
                     "short_desc": "Gandhigram"
@@ -165,6 +165,70 @@
                     "gps": "23.028591,72.568724"
                   },
                   "parent_stop_id": "PLDI"
+                },
+                {
+                  "id": "OHCI",
+                  "type": "TRANSIT_STOP",
+                  "instructions": {
+                    "name": "Old High Court Interchange",
+                    "short_desc": "Please Change here for Blue Line"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "Old High Court Interchange",
+                      "code": "OHCI"
+                    },
+                    "gps": "23.036273,72.566320"
+                  },
+                  "parent_stop_id": "GRMS"
+                },
+                {
+                  "id": "SPSD",
+                  "type": "INTERMEDIATE_STOP",
+                  "instructions": {
+                    "name": "S P Stadium",
+                    "short_desc": "S P Stadium"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "S P Stadium",
+                      "code": "SPSD"
+                    },
+                    "gps": "23.043270,72.561625"
+                  },
+                  "parent_stop_id": "OHCI"
+                },
+                {
+                  "id": "CMSR",
+                  "type": "INTERMEDIATE_STOP",
+                  "instructions": {
+                    "name": "Commerce Six Roads",
+                    "short_desc": "Commerce Six Roads"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "Commerce Six Roads",
+                      "code": "CMSR"
+                    },
+                    "gps": "23.043859,72.552674"
+                  },
+                  "parent_stop_id": "SPSD"
+                },
+                {
+                  "id": "GJUV",
+                  "type": "END",
+                  "instructions": {
+                    "name": "Gujarat University",
+                    "short_desc": "Gujarat University"
+                  },
+                  "location": {
+                    "descriptor": {
+                      "name": "Gujarat University",
+                      "code": "GJUV"
+                    },
+                    "gps": "23.047842,72.544679"
+                  },
+                  "parent_stop_id": "CMSR"
                 }
               ]
             }
@@ -176,8 +240,8 @@
                 "code": "SJT",
                 "name": "Single Journey Ticket"
               },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-SJT-APMC-GRMS",
+              "fulfillment_ids": ["TRPES002"],
+              "id": "TRPES002-SJT-APMC-GJUV",
               "price": {
                 "currency": "INR",
                 "value": "15"
@@ -201,8 +265,8 @@
                 "code": "RJT",
                 "name": "Return Journey Ticket"
               },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-RJT-APMC-GRMS",
+              "fulfillment_ids": ["TRPES002"],
+              "id": "TRPES002-RJT-APMC-GJUV",
               "price": {
                 "currency": "INR",
                 "value": "20"
@@ -226,8 +290,8 @@
                 "code": "PASS",
                 "name": "Pass"
               },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-PASS-APMC-GRMS",
+              "fulfillment_ids": ["TRPES002"],
+              "id": "TRPES002-PASS-APMC-GJUV",
               "price": {
                 "currency": "INR",
                 "value": "500"
@@ -251,8 +315,8 @@
                 "code": "SFSJT",
                 "name": "Single Fare Journey Ticket"
               },
-              "fulfillment_ids": ["TRPEW001"],
-              "id": "TRPEW001-SFSJT-APMC-GRMS",
+              "fulfillment_ids": ["TRPES002"],
+              "id": "TRPES002-SFSJT-APMC-GJUV",
               "price": {
                 "currency": "INR",
                 "value": "5"
@@ -289,12 +353,6 @@
                     },
                     {
                       "descriptor": {
-                        "code": "DELAY_INTEREST"
-                      },
-                      "value": "0"
-                    },
-                    {
-                      "descriptor": {
                         "code": "SETTLEMENT_BASIS"
                       },
                       "value": "INVOICE_RECEIPT"
@@ -316,6 +374,12 @@
                         "code": "STATIC_TERMS"
                       },
                       "value": "https://www.gujaratmetrorail.com/terms-condition/"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
                     }
                   ]
                 },

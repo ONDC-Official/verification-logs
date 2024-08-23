@@ -15,9 +15,9 @@
     "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "ondc.dev.innvonix.in",
     "bpp_uri": "https://ondc.dev.innvonix.in/",
-    "transaction_id": "230d4fce-57a0-4262-a47f-4dbb54d5ba62",
-    "message_id": "7b0f6263-7776-4436-aac5-8bf8a62ef8c7",
-    "timestamp": "2024-08-20T11:24:14.184Z",
+    "transaction_id": "e87e0b36-7f03-4b12-a67a-352280959c70",
+    "message_id": "2627dbb2-639f-4bd1-b184-57ede6394470",
+    "timestamp": "2024-08-23T07:40:28.048Z",
     "ttl": "PT10M"
   },
   "message": {
@@ -42,15 +42,15 @@
         },
         "time": {
           "range": {
-            "start": "2024-08-20T07:00:00.000Z",
-            "end": "2024-08-20T22:00:00.000Z"
+            "start": "2024-08-23T07:00:00.000Z",
+            "end": "2024-08-23T22:00:00.000Z"
           }
         }
       },
-      "id": "cfda0eb5-b47a-4156-b232-a7d93effafb7",
+      "id": "647ff6be-3c54-46ab-ad69-29b322a7ab17",
       "status": "CANCELLED",
-      "created_at": "2024-08-20T11:23:34.735Z",
-      "updated_at": "2024-08-20T11:24:14.087Z",
+      "created_at": "2024-08-23T07:39:53.591Z",
+      "updated_at": "2024-08-23T07:40:28.048Z",
       "billing": {
         "name": "John Doe",
         "email": "john.doe@example.com",
@@ -58,16 +58,17 @@
       },
       "payments": [
         {
-          "id": "af8e8fbc-e2ce-4339-b993-1f42fa3bd701",
+          "id": "3b56b95b-20ab-4047-9d37-5700a1ea2f33",
           "status": "PAID",
           "type": "PRE-ORDER",
           "collected_by": "BAP",
           "params": {
             "currency": "INR",
-            "transaction_id": "99966a2c-9f71-4105-962a-6766c757df44",
+            "transaction_id": "4fcc3b08-e2f1-4aa1-afa6-4c665219bc34",
             "amount": "15",
             "bank_code": "XXXXXXXX",
-            "bank_account_number": "xxxxxxxxxxxxxx"
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "virtual_payment_address": "innvonix@paytm"
           },
           "tags": [
             {
@@ -104,12 +105,6 @@
                 },
                 {
                   "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "0"
-                },
-                {
-                  "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
                   "value": "INVOICE_RECEIPT"
@@ -136,7 +131,13 @@
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "NEFT"
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
                 },
                 {
                   "descriptor": {
@@ -151,13 +152,13 @@
       ],
       "items": [
         {
-          "id": "TRPEW001-SJT-APMC-GRMS",
+          "id": "TRPES002-SJT-APMC-GJUV",
           "category_ids": ["TICKET"],
           "descriptor": {
             "name": "Single Journey Ticket",
             "code": "SJT"
           },
-          "fulfillment_ids": ["TRPEW001"],
+          "fulfillment_ids": ["TRPES002"],
           "price": {
             "currency": "INR",
             "value": "15"
@@ -175,7 +176,7 @@
       ],
       "fulfillments": [
         {
-          "id": "TRPEW001",
+          "id": "TRPES002",
           "type": "TRIP",
           "vehicle": {
             "category": "METRO"
@@ -198,7 +199,7 @@
               "authorization": {
                 "type": "QR",
                 "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
-                "valid_to": "2024-08-27T11:23:35.072Z",
+                "valid_to": "2024-08-30T07:39:53.637Z",
                 "status": "UNCLAIMED"
               }
             },
@@ -268,7 +269,7 @@
             },
             {
               "id": "GRMS",
-              "type": "END",
+              "type": "INTERMEDIATE_STOP",
               "instructions": {
                 "name": "Gandhigram",
                 "short_desc": "Gandhigram"
@@ -281,6 +282,70 @@
                 "gps": "23.028591,72.568724"
               },
               "parent_stop_id": "PLDI"
+            },
+            {
+              "id": "OHCI",
+              "type": "TRANSIT_STOP",
+              "instructions": {
+                "name": "Old High Court Interchange",
+                "short_desc": "Please Change here for Blue Line"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Old High Court Interchange",
+                  "code": "OHCI"
+                },
+                "gps": "23.036273,72.566320"
+              },
+              "parent_stop_id": "GRMS"
+            },
+            {
+              "id": "SPSD",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "S P Stadium",
+                "short_desc": "S P Stadium"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "S P Stadium",
+                  "code": "SPSD"
+                },
+                "gps": "23.043270,72.561625"
+              },
+              "parent_stop_id": "OHCI"
+            },
+            {
+              "id": "CMSR",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Commerce Six Roads",
+                "short_desc": "Commerce Six Roads"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Commerce Six Roads",
+                  "code": "CMSR"
+                },
+                "gps": "23.043859,72.552674"
+              },
+              "parent_stop_id": "SPSD"
+            },
+            {
+              "id": "GJUV",
+              "type": "END",
+              "instructions": {
+                "name": "Gujarat University",
+                "short_desc": "Gujarat University"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Gujarat University",
+                  "code": "GJUV"
+                },
+                "gps": "23.047842,72.544679"
+              },
+              "parent_stop_id": "CMSR"
             }
           ],
           "tags": [
@@ -302,7 +367,7 @@
       ],
       "cancellation": {
         "cancelled_by": "CONSUMER",
-        "time": "2024-08-20T11:24:14.184Z"
+        "time": "2024-08-23T07:40:28.048Z"
       },
       "quote": {
         "price": {
@@ -313,7 +378,7 @@
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "TRPEW001-SJT-APMC-GRMS",
+              "id": "TRPES002-SJT-APMC-GJUV",
               "price": {
                 "currency": "INR",
                 "value": "15"
@@ -332,7 +397,7 @@
           {
             "title": "REFUND",
             "item": {
-              "id": "TRPEW001-SJT-APMC-GRMS",
+              "id": "TRPES002-SJT-APMC-GJUV",
               "price": {
                 "currency": "INR",
                 "value": "-15"
