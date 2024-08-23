@@ -1,0 +1,403 @@
+{
+  "context": {
+    "bap_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp6/bap",
+    "bap_id": "pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp6",
+    "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp7/bpp",
+    "bpp_id": "pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp7",
+    "domain": "ONDC:TRV10",
+    "timestamp": "2024-08-20T12:12:50.542Z",
+    "transaction_id": "0cba7a8b-26e8-4b13-aeed-0ef41f9a5563",
+    "message_id": "a8566d5a-6317-40ac-be6d-50eb0383325c",
+    "version": "2.0.0",
+    "action": "on_cancel",
+    "ttl": "PT30S",
+    "location": {
+      "city": {
+        "code": "std:022"
+      },
+      "country": {
+        "code": "IND"
+      }
+    }
+  },
+  "message": {
+    "order": {
+      "id": "ced9de9c-8f0d-4e45-9337-bd37d825988f",
+      "provider": {
+        "id": "82b7a762-07c4-4b7d-85b6-b4892134e2ef"
+      },
+      "items": [
+        {
+          "id": "f8d4cb34-15a9-4554-96e6-9843f8418fb4",
+          "descriptor": {
+            "code": "RIDE"
+          },
+          "price": {
+            "maximum_value": "1002",
+            "currency": "INR",
+            "minimum_value": "962",
+            "value": "972"
+          },
+          "location_ids": [
+            "66196d56716681c1df16ab58",
+            "661cd8784b9ab32baa988bc9",
+            "661cf4414b9ab32baa98944b",
+            "661e3d3398029cbb7bccac3c",
+            "66275d9a08d65f4045cf0d54",
+            "662b517a46f82aa0e8ab3590",
+            "662b6aa746f82aa0e8ab42cb",
+            "662b72cd46f82aa0e8ab4510",
+            "6630dec05109789fb6351d24",
+            "66b4ae8e8062c96f010da76d",
+            "66bb56b24231a0a7cf10e7fd"
+          ],
+          "fulfillment_ids": [
+            "5325f41f-0690-461f-b191-6b0a5019191f"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE",
+                    "name": "min fare"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM",
+                    "name": "min fare distance km"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE",
+                    "name": "per km charge"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE",
+                    "name": "pickup charge"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN",
+                    "name": "waiting charge per min"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER",
+                    "name": "night charge multiplier"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME",
+                    "name": "night shift start time"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME",
+                    "name": "night shift end time"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER",
+                    "name": "distance to nearest driver meter"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN",
+                    "name": "eta to nearest driver min"
+                  },
+                  "value": "4"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "3c65d7f4-3c21-46a0-a238-9cc970a66954"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "972",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": "20",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": "952",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ],
+        "ttl": "P200S"
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "0"
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "20"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "40"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "80"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "3c65d7f4-3c21-46a0-a238-9cc970a66954",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "DELIVERY"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://example-test-bap.com/static-terms.txt"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "false"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "5"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "9.72"
+                }
+              ]
+            }
+          ],
+          "params": {
+            "bank_account_number": "1234567890",
+            "bank_code": "QWEERTY123",
+            "virtual_payment_address": "7894561230@okhdfc"
+          },
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "5325f41f-0690-461f-b191-6b0a5019191f",
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "make": "vikram",
+            "model": "v6",
+            "registration": "MH01E1236"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "ikdsBorv|LSu@fNeAz@Sl@a@^e@^y@Hu@Gw@_@_CIuAD{AHc@Vw@Zc@fCaCz@_ApDcEhHuIbEyFpEcGdAkB^_AR{@V_CfAuMLs@`@mDxBmWDkA?cBKaAO_AYiAwCcIoAwCkAwBsWyb@uBmDqCuEiU{_@aRuZwEaIgEaHg@mA[eAQaBCuAFgAXeBh@qB\\y@bCgEjBgC|DgGrFcI~DyGjCaFxAuCrDkGhGaKhBuCxD}GrKgQrSi\\~KaQrNmUdAqBhAoCn@mB`DyKbAqCdAaC|AcD`J}Qj@eA`HkNtCuFjAiBhB{BtDyDbVeVlBkBvF}FfBeBdCkCjPmPdAw@`B{@dBs@jDiA|Ao@lAs@`Aw@xBcC|D_FdGiHhJoLzCgDlDmDxLoKpZgXxYgWfOsMzPoOtGoFrQ{OhAaAfEsCjAo@t@YjBg@|AUrBIrCDx@HzDr@tEjAjg@lNrJ`CxIfClCn@`APxBVpBHnCChBIp@GlF{@pBa@rVsEjMcCvEy@hKoBfM_CvE_ApBe@bH}BvBaA~BkAjDuBnEeD|CuCbEiE`CyBlEkD|EoDbDmCdCeCbDcEdEiFtGkHfDwDrF{FtRgTlHoIbA}Ad@w@bByBpEsGnAaBtCoE|BqDb@}@^_AdA{Bj@yA|@sCp@aBxCwGx@qBjF_LvAgDr@wA~BmF~BiFf@mAhCkFjBmE~BiFtGsNl@mAdAaBzAkBVYzAkA`Aq@xAu@lBq@fDaAjLiCnBi@rBu@jHeDhG}ClEsBhBy@hJoEhK{EbAg@bCgAtMmGxIiEpEyBxQuIhDcBtHmDp@]j@UdHgDpHoDzBcAhTgKzOoHvHuD~EeC~ZsNxToKhZmNdB_ApAy@dCuBzAaBtBuChKgO|EsHbFoHbGkItIyKt@cAjGkJpBwCdD_F~B{D`BaCvBoD|CqErBsCr@iA`GqI`@q@p@{AXs@~AcFt@iCdBeFhEcNl@cBlBgG`AmCnAgCl@cA`@k@|@eApBoBbBoAxMaIrAaAr@a@x@W`C}AvAiA|A}AvAmBvA{BbJ{OlAwBrFsJfByCbB_D`@}@r@qA|BkDz@eArAqA~AoAxD_CfAk@jA_@lAs@pIuEhB}@b@c@dB_AdAg@|GyDzHcEjLqGJShCqBX_@?KrBkAjAs@\\MtCo@\\CNDp@a@hIkEzA{@|BmAhBqArAkArAyApAiBr@oAbAwBb@iA`ByFrBiJh@mB~@aEpD}M~E{R|A{H^eB~AiGbBgH~AmG~@sC`A}BdAmBpAiBz@cAbCuB`D{BlEwBvCmA|@]xCqApCqA`Ak@rB_B|A_B`BuBzCkFt@qAb@cAj@_BvA_D`BmCz@iAp@q@bBiAnCgArEuA|Ao@lAs@v@m@~@cAx@kAl@qATm@VmARwADw@@gCI{Ac@gBW{AYsAe@mBOy@K{ACoAHmAPgBd@}B`@eBvB_Kf@uBZ}@l@aCjAaHZwA\\kC^sA`@cAb@{@r@eAxAiBhC_C`As@HKRa@Fg@Im@Yi@_BqBw@y@wAaBaEaEYg@Y_AE{@Dm@Lq@JWf@s@r@i@`@OtAWzLiBbDe@|@QfBk@`CaAnD_B~@g@vD{BRQRYLe@A]Og@}B}DaAcCUe@SU{@a@aBi@qBgAe@_@W_@EW?[Ja@LQPSfA]\\Sb@g@NULc@Bs@Ea@Qc@_@i@aDkD{E}DeFoDg@_@WWOWUi@g@qBQg@Q[W[e@_@m@]iLmFk@a@SWOe@Gi@Be@FYVi@TUXQd@I^Cb@FxAj@bNlG~@j@bAr@vArApA|Af@x@nAbC~@rBt@tAjBjCzBrDVXx@j@f@Rd@Hh@Bt@Q\\Q`@e@LWFk@CeAIc@Qa@[]o@_@yAe@eFmAo@Ye@]q@cAUg@S_AUuAK{@Qu@g@wAc@w@yAsBK[@]P_ACUQ_@g@o@_E_Ec@UyAc@uCyAaC}@]U{BaCc@s@_@aAO_A?oA?wFJ{@V}@P_@bDaDd@[x@_@jDgAfGaCxF}C|Ag@d@KjA_@|@a@f@e@RMp@Qj@KbCq@bA]hAYrCk@j@UzAYjPsB\\YP]Jc@?s@Ie@_@q@_@q@Wy@Iw@?iBJsAPy@nDoJD]?c@Kc@Q_@qJgK{@eA[g@[w@Oo@SuAWyCSiAw@_DeBcFy@iCWe@cAkAi@_@u@]uB{@aAo@{AyAm@i@eAu@wAu@mFwBsBcAkBwAuAeBy@}Ag@gAU}@aAkGq@cFKqASgEWgIg@aKGaC@mCFaDVsELgDCmDCaB@gBHeA~@gFNuAz@eF|@mD~@mChAcCnKiTxB_FhAsCvB_GfAqDz@aDlAwDtAgDjBcFXeAtAyGf@{Cb@gDx@{Gb@gFr@sG^eAj@{@r@s@|@a@lAYp@GxNAbF@jBOdASbGgBdNgEvAY`BOdBAzAJ|V~Cx_@vErBJ~ACtAMlBe@pBy@dAq@|@}@l@y@x@{A`@aA\\uAHe@NsB?{BAaEGmAYyBUqCCmCDiBRiDR_Br@cEbAgEdAwDlAcEb@aBt@cEHgAByBKoCQyBUwA_BiH}Muj@qBmIsAmFwSo|@cAgFc@mDmDs]aIkw@a@_DmBgRy@oIq@kGoCeXuDk_@oD_^aAkHaBoJ}Kin@iAuGkAsGa@oDU_DEeB?gDJsDFaAZ}Cv@wE~@qDhAeDzAuDtAaChBkC|BiC`B}AtBaBvA_ApC{AbBw@fBo@xC}@`Dq@xCa@tCS|V}@`CSdCa@dBc@nAa@`DuA~Au@|FmDzBcBhBgBp@w@|CqFxDiHxAgCvAuBdEiF`FsGjBsCnA_Cv@aBtG}O~@iBdBoDtCmEhGqIfFcH`Q{VlEgGh[id@`AaBzAiD|@eCp@iCp@wDfC{R`CeShCkSlF}b@nA_KpBaQhBaNf@oEf@iGDoBAiCQcD_@mDc@gCoBwJaJkd@gCwMsAiI[}B{CsWi@{Ci@gCmAeEqCgJ_CcIuA_Gq@sDkAoHiAcIgAkHKeAkAiGg@eBuA_GOk@OaAo@kG]uDUeDIoBqCwSW}CIkB@eBBiBX{Cf@{Ch@}B`EaM~BwGrBuGlE{L~Smn@dEuLxOke@`BsEpBmGj@eC^cCTuCBgCEoCc@{HI_C@{CLcCPiB\\mBr@wCESQwB?o@PkEDUAgAc@cNAkFFq@bBcJn@uDt@}Hj@}DBWZsB@WEM`EgErBgCfA}AFKZkAt@qETy@`@wCNe@nA}G|DiU`CuPZwCh@wJl@aTR_BV}@tCgHLW`SiWrGiIzJyMfEkFbEmFtC{DtAgBxA}FjAmF|AsGjBsGfCqKd@eBf@aAnCeD`BmA|PwKdAw@j@g@z@iAv@sAZw@t@kCPgAHiA@iAEkA]gCe@gFw@sNEyBB_AtBo\\XuChE{^f@aFl@iEvCuVrAcLXcCjAwGfAkFZy@\\g@xIkIjBuAt\\e[bB}AtCeCbDwCvFeF`C{BlDiDnKmJxIkInAgAbJwI`YeU|EqD`DiCfBsAdKmIvBqBbLeJlFiEvCgCvQuNpI_HhNyKjA}@`@i@tUeRhOuLhLgJ|DgDrMmKhB{AfKmIxYeV`UsRzHiGfCmBfXkTzAcBbG{E~AwAjIsG~BmAtJoEfDqAxNcFjUcIbLcEdAc@~E}AbEuA`HaCpA]dNkCx\\aF`Fw@HEfBU`KaBhCo@nF{AxMgD|EyAhCg@~FeBfEcAnIcClEyAz@e@|TiNrAs@fDaBfBgAhBaBrCwD|E_H~@w@dCuAdQqHlEuBzA{@hAk@ZSpDkBtAo@fEuAvBu@jAUtEmAlBSbAGxFJbHL|CP`DVpBJzFr@vCf@hDr@tBZpCPX?~FcArBo@hCeA|A{@dBgAlAaARA`CwAbB{Ax@y@HU`@g@FSVSvAeBt@{@RM`@IRBb@LRVLd@NjCLT|@z@^l@B^|@fBd@f@nFjDv@j@XELKbBiD~C_DpAm@pQeG`EqAXMXUdAUr@[\\Y@yCB_A"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"19.033010, 73.029680\"},{\"gps\":\"19.032940, 73.029980\"},{\"gps\":\"19.030750, 73.030290\"},{\"gps\":\"19.030050, 73.030670\"},{\"gps\":\"19.029770, 73.031380\"},{\"gps\":\"19.030020, 73.032570\"},{\"gps\":\"19.029680, 73.033770\"},{\"gps\":\"19.025970, 73.037870\"},{\"gps\":\"19.023890, 73.040610\"},{\"gps\":\"19.023560, 73.041780\"}]"
+                }
+              ]
+            }
+          ],
+          "customer": {
+            "person": {
+              "name": "Gaurav"
+            },
+            "contact": {
+              "phone": "8320925571"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "RIDE_CANCELLED"
+            }
+          },
+          "agent": {
+            "person": {
+              "name": "Ram"
+            },
+            "contact": {
+              "phone": "8360124985"
+            }
+          },
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "19.033048,73.029662"
+              },
+              "authorization": {
+                "type": "OTP",
+                "token": "001661"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "18.520430,73.856744"
+              }
+            }
+          ]
+        }
+      ],
+      "status": "CANCELLED",
+      "created_at": "2024-08-20T12:12:24.932Z",
+      "updated_at": "2024-08-20T12:12:50.542Z"
+    }
+  }
+}
