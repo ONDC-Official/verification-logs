@@ -11,19 +11,19 @@
     },
     "version": "2.0.0",
     "action": "on_init",
-    "transaction_id": "82ca900e-eb85-4af1-a6ae-af7fc4ddd11c",
-    "message_id": "a6b34b70-acd7-4e5b-bf90-e2618933cf6c",
-    "timestamp": "2024-08-21T11:40:43.155Z",
+    "transaction_id": "03014ef4-ac07-4d18-9dfe-46b96977cffa",
+    "message_id": "9bf51d73-a8b0-4745-bf35-865b916849a2",
+    "timestamp": "2024-08-28T11:19:27.233Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
-    "bpp_id": "ondc.sequelstring.com/seller/protocol",
-    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+    "bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
+    "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc"
   },
   "message": {
     "order": {
       "provider": {
-        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "id": "DMRC_5001_1001",
         "descriptor": {
           "name": "Delhi Metro Rail Corporation",
           "images": [
@@ -34,8 +34,8 @@
         },
         "time": {
           "range": {
-            "start": "2024-08-21T05:30:00.000Z",
-            "end": "2024-08-21T23:30:00.000Z"
+            "start": "2024-08-28T05:30:00.000Z",
+            "end": "2024-08-28T23:30:00.000Z"
           }
         }
       },
@@ -46,561 +46,105 @@
             "C2"
           ],
           "descriptor": {
-            "name": "Single Journey Ticket",
-            "code": "SJT"
+            "code": "SJT",
+            "name": "Single Journey Ticket"
           },
           "price": {
             "currency": "INR",
-            "value": "68"
+            "value": "30"
           },
           "quantity": {
             "selected": {
-              "count": 2
+              "count": 1
             }
           },
           "time": {
             "label": "Validity",
-            "duration": "PT5M"
+            "duration": "PT60M"
           },
           "fulfillment_ids": [
-            "f7e3cf4e-4f75-4404-9fc3-01d1030a8618",
-            "205d7dff-43d3-4666-9120-c0b87d0d808e"
+            "79f229d0-a6ab-4e9a-a753-010e8abfeb77"
           ]
         }
       ],
       "fulfillments": [
         {
-          "id": "f7e3cf4e-4f75-4404-9fc3-01d1030a8618",
+          "id": "79f229d0-a6ab-4e9a-a753-010e8abfeb77",
           "type": "TRIP",
           "stops": [
             {
-              "type": "START",
+              "id": "1",
               "instructions": {
                 "name": "Stop 1"
               },
               "location": {
                 "descriptor": {
-                  "name": "AIIMS",
-                  "code": "AIIMS"
+                  "code": "87",
+                  "name": "AIIMS"
                 },
-                "gps": "28.744676, 77.138332"
+                "gps": "28.568199, 77.207947"
               },
-              "id": "1"
+              "type": "START"
             },
             {
-              "type": "TRANSIT_STOP",
+              "id": "2",
               "instructions": {
-                "name": "Stop 2",
-                "short_desc": "Change Lines here"
+                "name": "Stop 2"
               },
               "location": {
                 "descriptor": {
-                  "name": "Dilli Haat-INA",
-                  "code": "INA"
+                  "code": "88",
+                  "name": "Green Park"
                 },
-                "gps": "28.744676, 77.138332"
+                "gps": "28.559853, 77.206902"
               },
-              "id": "2",
+              "type": "INTERMEDIATE_STOP",
               "parent_stop_id": "1"
             },
             {
-              "type": "INTERMEDIATE_STOP",
+              "id": "3",
               "instructions": {
                 "name": "Stop 3"
               },
               "location": {
                 "descriptor": {
-                  "name": "Sarojini Nagar",
-                  "code": "SOJI"
+                  "code": "89",
+                  "name": "Hauz Khas"
                 },
-                "gps": "28.744676, 77.138332"
+                "gps": "28.543346, 77.206673"
               },
-              "id": "3",
+              "type": "TRANSIT_STOP",
               "parent_stop_id": "2"
             },
             {
-              "type": "INTERMEDIATE_STOP",
+              "id": "4",
               "instructions": {
                 "name": "Stop 4"
               },
               "location": {
                 "descriptor": {
-                  "name": "Bhikaji Cama Place",
-                  "code": "BKCP"
+                  "code": "90",
+                  "name": "Malaviya Nagar"
                 },
-                "gps": "28.744676, 77.138332"
+                "gps": "28.528170, 77.205612"
               },
-              "id": "4",
+              "type": "INTERMEDIATE_STOP",
               "parent_stop_id": "3"
             },
             {
-              "type": "INTERMEDIATE_STOP",
+              "id": "5",
               "instructions": {
                 "name": "Stop 5"
               },
               "location": {
                 "descriptor": {
-                  "name": "SMV Moti Bagh",
-                  "code": "SVMB"
+                  "code": "91",
+                  "name": "Saket"
                 },
-                "gps": "28.744676, 77.138332"
+                "gps": "28.520638, 77.199379"
               },
-              "id": "5",
-              "parent_stop_id": "4"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 6",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "DD South Campus",
-                  "code": "DDSC"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "6",
-              "parent_stop_id": "5"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 7"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Delhi Cantt",
-                  "code": "DLIC"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "7",
-              "parent_stop_id": "6"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 8"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Narayana Vihar",
-                  "code": "NAVR"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "8",
-              "parent_stop_id": "7"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 9"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Mayapuri",
-                  "code": "MYPI"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "9",
-              "parent_stop_id": "8"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 10",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Rajouri Garden",
-                  "code": "RG"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "10",
-              "parent_stop_id": "9"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 11"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "ESI-Basaidarapur",
-                  "code": "ESIH"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "11",
-              "parent_stop_id": "10"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 12",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Punjabi Bagh West",
-                  "code": "PBGW"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "12",
-              "parent_stop_id": "11"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 13"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Shakurpur",
-                  "code": "SAKP"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "13",
-              "parent_stop_id": "12"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 14",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Netaji Subhash Place L-7",
-                  "code": "NSHP"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "14",
-              "parent_stop_id": "13"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 15"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Shalimar Bagh",
-                  "code": "SMBG"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "15",
-              "parent_stop_id": "14"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 16",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Azadpur",
-                  "code": "AZU"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "16",
-              "parent_stop_id": "15"
-            },
-            {
               "type": "END",
-              "instructions": {
-                "name": "Stop 17"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Adarsh Nagar",
-                  "code": "AHNR"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "17",
-              "parent_stop_id": "16"
-            }
-          ],
-          "vehicle": {
-            "category": "METRO"
-          }
-        },
-        {
-          "id": "205d7dff-43d3-4666-9120-c0b87d0d808e",
-          "type": "TRIP",
-          "stops": [
-            {
-              "type": "START",
-              "instructions": {
-                "name": "Stop 1"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "AIIMS",
-                  "code": "AIIMS"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "1"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 2",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Dilli Haat-INA",
-                  "code": "INA"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "2",
-              "parent_stop_id": "1"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 3"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Sarojini Nagar",
-                  "code": "SOJI"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "3",
-              "parent_stop_id": "2"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 4"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Bhikaji Cama Place",
-                  "code": "BKCP"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "4",
-              "parent_stop_id": "3"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 5"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "SMV Moti Bagh",
-                  "code": "SVMB"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "5",
               "parent_stop_id": "4"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 6",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "DD South Campus",
-                  "code": "DDSC"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "6",
-              "parent_stop_id": "5"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 7"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Delhi Cantt",
-                  "code": "DLIC"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "7",
-              "parent_stop_id": "6"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 8"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Narayana Vihar",
-                  "code": "NAVR"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "8",
-              "parent_stop_id": "7"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 9"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Mayapuri",
-                  "code": "MYPI"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "9",
-              "parent_stop_id": "8"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 10",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Rajouri Garden",
-                  "code": "RG"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "10",
-              "parent_stop_id": "9"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 11"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "ESI-Basaidarapur",
-                  "code": "ESIH"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "11",
-              "parent_stop_id": "10"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 12",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Punjabi Bagh West",
-                  "code": "PBGW"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "12",
-              "parent_stop_id": "11"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 13"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Shakurpur",
-                  "code": "SAKP"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "13",
-              "parent_stop_id": "12"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 14",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Netaji Subhash Place L-7",
-                  "code": "NSHP"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "14",
-              "parent_stop_id": "13"
-            },
-            {
-              "type": "INTERMEDIATE_STOP",
-              "instructions": {
-                "name": "Stop 15"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Shalimar Bagh",
-                  "code": "SMBG"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "15",
-              "parent_stop_id": "14"
-            },
-            {
-              "type": "TRANSIT_STOP",
-              "instructions": {
-                "name": "Stop 16",
-                "short_desc": "Change Lines here"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Azadpur",
-                  "code": "AZU"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "16",
-              "parent_stop_id": "15"
-            },
-            {
-              "type": "END",
-              "instructions": {
-                "name": "Stop 17"
-              },
-              "location": {
-                "descriptor": {
-                  "name": "Adarsh Nagar",
-                  "code": "AHNR"
-                },
-                "gps": "28.744676, 77.138332"
-              },
-              "id": "17",
-              "parent_stop_id": "16"
             }
           ],
           "vehicle": {
@@ -611,7 +155,7 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "136.00"
+          "value": "30.00"
         },
         "breakup": [
           {
@@ -620,17 +164,17 @@
               "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
               "price": {
                 "currency": "INR",
-                "value": "68"
+                "value": "30"
               },
               "quantity": {
                 "selected": {
-                  "count": 2
+                  "count": 1
                 }
               }
             },
             "price": {
               "currency": "INR",
-              "value": "136"
+              "value": "30"
             }
           }
         ]
@@ -639,7 +183,7 @@
         {
           "external_ref": {
             "mimetype": "text/html",
-            "url": "https://cancellation-terms-url/doc.html"
+            "url": "https://ondc-preprod.sequelstring.com/seller/dmrc/cancellation_terms.html"
           }
         }
       ],
@@ -666,14 +210,14 @@
       },
       "payments": [
         {
-          "id": "df27979d-c900-4050-875a-4662dee6b8d8",
+          "id": "ff4643e8-b965-48bb-8565-4b805c5fe666",
           "collected_by": "BAP",
           "status": "NOT-PAID",
           "type": "PRE-ORDER",
           "params": {
-            "bank_code": "AXS889912340",
-            "bank_account_number": "877622149912",
-            "virtual_payment_address": "9999977777@okaxis"
+            "bank_code": "SBI5448270",
+            "bank_account_number": "562391273445",
+            "virtual_payment_address": "8667777799@oksbi"
           },
           "tags": [
             {
@@ -706,7 +250,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "P30D"
+                  "value": "P1D"
                 },
                 {
                   "descriptor": {
@@ -730,7 +274,7 @@
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://api.example-bpp.com/booking/terms"
+                  "value": "https://delhimetrorail.com/faq-tickets-fare"
                 },
                 {
                   "descriptor": {
@@ -742,7 +286,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "134.64"
+                  "value": "29.70"
                 }
               ]
             }
