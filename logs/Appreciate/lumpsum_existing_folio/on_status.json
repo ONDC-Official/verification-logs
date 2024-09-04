@@ -1,277 +1,298 @@
 {
-    "context": {
-        "domain": "ONDC:FIS14",
-        "location": {
-            "city": {
-                "code": "*"
-            },
-            "country": {
-                "name": "India",
-                "code": "IND"
+   "context":{
+      "domain":"ONDC:FIS14",
+      "location":{
+         "city":{
+            "code":"*"
+         },
+         "country":{
+            "name":"India",
+            "code":"IND"
+         }
+      },
+      "action":"on_status",
+      "version":"2.0.0",
+      "bap_id":"ondc-wrapper-uat.ppreciate.in",
+      "bap_uri":"https://ondc-wrapper-uat.ppreciate.in/v1/webhook",
+      "bpp_id":"api.sandbox.cybrilla.com",
+      "bpp_uri":"https://api.sandbox.cybrilla.com/ondc",
+      "transaction_id":"61c5d670-6025-44f5-b72e-9ae34513a4f9",
+      "message_id":"34fbc4f0-4f34-4876-a6f4-ac81071b554d",
+      "timestamp":"2024-09-04T12:44:28.747+05:30",
+      "ttl":"PT10M"
+   },
+   "message":{
+      "order":{
+         "id":"mfp_d0c6b6e047a44e868d42c152acc65f4f",
+         "status":"ACCEPTED",
+         "provider":{
+            "id":"23",
+            "descriptor":{
+               "name":"Aditya Birla Sun Life AMC Limited"
             }
-        },
-        "action": "on_status",
-        "version": "2.0.0",
-        "bap_id": "ondc-wrapper.ppreciate.in",
-        "bap_uri": "https://ondc-wrapper.ppreciate.in/v1/webhook",
-        "bpp_id": "api.preprod.cybrilla.com",
-        "bpp_uri": "https://api.preprod.cybrilla.com/ondc",
-        "transaction_id": "b30d8a22-4545-3454-ab76-5716e2f2e112",
-        "message_id": "040b6d6c-e7e4-4119-911c-b66ee7ce6f77",
-        "timestamp": "2024-08-22T11:59:13.230687385Z",
-        "key": "MCowBQYDK2VuAyEAOtuBsn64vBt+NjVP4fKoPiRDqitW15ycCdfMdl3xalQ=",
-        "ttl": "PT10M"
-    },
-    "message": {
-        "order": {
-            "id": "mfp_c5f88e6fef074ec6ad166fb461c9832c",
-            "status": "ACCEPTED",
-            "provider": {
-                "id": "23",
-                "descriptor": {
-                    "name": "Aditya Birla Sun Life AMC Limited"
-                }
+         },
+         "items":[
+            {
+               "id":"23",
+               "parent_item_id":"S_217",
+               "descriptor":{
+                  "name":"Aditya Birla Sun Life Banking & PSU Debt Fund  - REGULAR - IDCW",
+                  "code":"SCHEME_PLAN"
+               },
+               "quantity":{
+                  "selected":{
+                     "measure":{
+                        "value":"10000.0000",
+                        "unit":"INR"
+                     }
+                  }
+               },
+               "fulfillment_ids":[
+                  "4540"
+               ],
+               "payment_ids":[
+                  "pay_9e3c9813b8464fd1b9b40aeec082e32d"
+               ],
+               "tags":[
+                  {
+                     "display":true,
+                     "descriptor":{
+                        "name":"Plan Information",
+                        "code":"PLAN_INFORMATION"
+                     },
+                     "list":[
+                        {
+                           "descriptor":{
+                              "name":"Consumer Terms & Conditions",
+                              "code":"CONSUMER_TNC"
+                           },
+                           "value":"https://api.sandbox.cybrilla.com/ondc/tnc"
+                        }
+                     ]
+                  },
+                  {
+                     "display":true,
+                     "descriptor":{
+                        "name":"Plan Identifiers",
+                        "code":"PLAN_IDENTIFIERS"
+                     },
+                     "list":[
+                        {
+                           "descriptor":{
+                              "name":"Isin",
+                              "code":"ISIN"
+                           },
+                           "value":"INF209K01LX6"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"RTA Identifier",
+                              "code":"RTA_IDENTIFIER"
+                           },
+                           "value":"85NIF"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Amfi Identifier",
+                              "code":"AMFI_IDENTIFIER"
+                           },
+                           "value":"108272"
+                        }
+                     ]
+                  },
+                  {
+                     "display":true,
+                     "descriptor":{
+                        "name":"Plan Options",
+                        "code":"PLAN_OPTIONS"
+                     },
+                     "list":[
+                        {
+                           "descriptor":{
+                              "name":"Plan",
+                              "code":"PLAN"
+                           },
+                           "value":"REGULAR"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Option",
+                              "code":"OPTION"
+                           },
+                           "value":"IDCW"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"IDCW Option",
+                              "code":"IDCW_OPTION"
+                           },
+                           "value":"PAYOUT"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ],
+         "fulfillments":[
+            {
+               "id":"4540",
+               "type":"REDEMPTION",
+               "customer":{
+                  "person":{
+                     "id":"pan:ABSPM3751Z"
+                  },
+                  "contact":{
+                     "phone":"9818089817"
+                  }
+               },
+               "agent":{
+                  "person":{
+                     "id":"euin:E123456"
+                  },
+                  "organization":{
+                     "creds":[
+                        {
+                           "id":"ARN-273858",
+                           "type":"ARN"
+                        }
+                     ]
+                  }
+               },
+               "tags":[
+                  {
+                     "display":true,
+                     "descriptor":{
+                        "name":"Thresholds",
+                        "code":"THRESHOLDS"
+                     },
+                     "list":[
+                        {
+                           "descriptor":{
+                              "name":"Amount Minimum",
+                              "code":"AMOUNT_MIN"
+                           },
+                           "value":"1"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Amount Maximum",
+                              "code":"AMOUNT_MAX"
+                           },
+                           "value":"0"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Amount Multiples",
+                              "code":"AMOUNT_MULTIPLES"
+                           },
+                           "value":"1"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Units Minimum",
+                              "code":"UNITS_MIN"
+                           },
+                           "value":"0.001"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Units Maximum",
+                              "code":"UNITS_MAX"
+                           },
+                           "value":"0"
+                        },
+                        {
+                           "descriptor":{
+                              "name":"Units Multiples",
+                              "code":"UNITS_MULTIPLES"
+                           },
+                           "value":"0.001"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ],
+         "quote":{
+            "id":"q1",
+            "price":{
+               "currency":"INR",
+               "value":"10000.0000"
             },
-            "items": [
-                {
-                    "id": "23",
-                    "descriptor": {
-                        "name": "Aditya Birla Sun Life Banking & PSU Debt Fund  - REGULAR - IDCW",
-                        "code": "SCHEME_PLAN"
-                    },
-                    "quantity": {
-                        "selected": {
-                            "measure": {
-                                "value": "1000.0000",
-                                "unit": "INR"
-                            }
-                        }
-                    },
-                    "fulfillment_ids": [
-                        "4539"
-                    ],
-                    "payment_ids": [
-                        "pay_7f6235350f054a97bdaaa7fae88dfa84"
-                    ],
-                    "tags": [
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Plan Information",
-                                "code": "PLAN_INFORMATION"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Consumer Terms & Conditions",
-                                        "code": "CONSUMER_TNC"
-                                    },
-                                    "value": "https://api.preprod.cybrilla.com/ondc/tnc"
-                                }
-                            ]
-                        },
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Plan Identifiers",
-                                "code": "PLAN_IDENTIFIERS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Isin",
-                                        "code": "ISIN"
-                                    },
-                                    "value": "INF209K01LX6"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "RTA Identifier",
-                                        "code": "RTA_IDENTIFIER"
-                                    },
-                                    "value": "85NIF"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Amfi Identifier",
-                                        "code": "AMFI_IDENTIFIER"
-                                    },
-                                    "value": "108272"
-                                }
-                            ]
-                        },
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Plan Options",
-                                "code": "PLAN_OPTIONS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Plan",
-                                        "code": "PLAN"
-                                    },
-                                    "value": "REGULAR"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Option",
-                                        "code": "OPTION"
-                                    },
-                                    "value": "IDCW"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "IDCW Option",
-                                        "code": "IDCW_OPTION"
-                                    },
-                                    "value": "PAYOUT"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "fulfillments": [
-                {
-                    "id": "4539",
-                    "type": "LUMPSUM",
-                    "tracking": false,
-                    "customer": {
-                        "person": {
-                            "id": "pan:YUQPI3751L"
-                        },
-                        "contact": {
-                            "phone": "9731885956"
-                        }
-                    },
-                    "agent": {
-                        "person": {
-                            "id": "euin:E123456"
-                        },
-                        "organization": {
-                            "creds": [
-                                {
-                                    "id": "ARN-273858",
-                                    "type": "ARN"
-                                }
-                            ]
-                        }
-                    },
-                    "tags": [
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Thresholds",
-                                "code": "THRESHOLDS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Amount Minimum",
-                                        "code": "AMOUNT_MIN"
-                                    },
-                                    "value": "1000"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Amount Maximum",
-                                        "code": "AMOUNT_MAX"
-                                    },
-                                    "value": "0"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Amount Multiples",
-                                        "code": "AMOUNT_MULTIPLES"
-                                    },
-                                    "value": "1"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "quote": {
-                "id": "q1",
-                "price": {
-                    "currency": "INR",
-                    "value": "1000.0000"
-                },
-                "breakup": [
-                    {
-                        "item": {
-                            "id": "23",
-                            "fulfillment_ids": [
-                                "4539"
-                            ]
-                        },
-                        "title": "Investment",
-                        "price": {
-                            "currency": "INR",
-                            "value": "1000.0000"
-                        }
-                    }
-                ]
-            },
-            "payments": [
-                {
-                    "id": "pay_7f6235350f054a97bdaaa7fae88dfa84",
-                    "collected_by": "BPP",
-                    "params": {
-                        "transaction_id": "pay_7f6235350f054a97bdaaa7fae88dfa84",
-                        "amount": "1000.0000",
-                        "currency": "INR",
-                        "source_bank_code": "ICIC0003428",
-                        "source_bank_account_number": "25802580251193"
-                    },
-                    "type": "PRE-FULFILLMENT",
-                    "status": "PAID",
-                    "tags": [
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Payment Method",
-                                "code": "PAYMENT_METHOD"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "MODE"
-                                    },
-                                    "value": "NETBANKING"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "tags": [
-                {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BPP Terms of Engagement",
-                        "code": "BPP_TERMS"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://api.preprod.cybrilla.com/ondc/bpp_terms"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "OFFLINE_CONTRACT",
-                                "code": "Offline Contract"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                }
+            "breakup":[
+               {
+                  "item":{
+                     "id":"23",
+                     "fulfillment_ids":[
+                        "4540"
+                     ]
+                  },
+                  "title":"Redemption",
+                  "price":{
+                     "currency":"INR",
+                     "value":"10000.0000"
+                  }
+               }
             ]
-        }
-    }
-}
+         },
+         "payments":[
+            {
+               "id":"pay_9e3c9813b8464fd1b9b40aeec082e32d",
+               "collected_by":"BPP",
+               "params":{
+                  "transaction_id":"pay_9e3c9813b8464fd1b9b40aeec082e32d",
+                  "amount":"10000.0000",
+                  "currency":"INR",
+                  "source_bank_code":"ICIC0003428",
+                  "source_bank_account_number":"25802580251193"
+               },
+               "type":"PRE-FULFILLMENT",
+               "status":"PAID",
+               "tags":[
+                  {
+                     "display":true,
+                     "descriptor":{
+                        "name":"Payment Method",
+                        "code":"PAYMENT_METHOD"
+                     },
+                     "list":[
+                        {
+                           "descriptor":{
+                              "code":"MODE"
+                           },
+                           "value":"UPI"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ],
+         "tags":[
+            {
+               "display":false,
+               "descriptor":{
+                  "name":"BPP Terms of Engagement",
+                  "code":"BPP_TERMS"
+               },
+               "list":[
+                  {
+                     "descriptor":{
+                        "name":"Static Terms (Transaction Level)",
+                        "code":"STATIC_TERMS"
+                     },
+                     "value":"https://api.sandbox.cybrilla.com/ondc/bpp_terms"
+                  },
+                  {
+                     "descriptor":{
+                        "name":"OFFLINE_CONTRACT",
+                        "code":"Offline Contract"
+                     },
+                     "value":"true"
+                  }
+               ]
+            }
+         ]
+      }
+   }
+
+ }

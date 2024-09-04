@@ -1,122 +1,160 @@
 {
-    "context": {
-        "domain": "ONDC:FIS14",
-        "action": "confirm",
-        "location": {
-            "country": {
-                "code": "IND"
-            },
-            "city": {
-                "code": "*"
+   "context":{
+      "domain":"ONDC:FIS14",
+      "action":"confirm",
+      "location":{
+         "country":{
+            "code":"IND"
+         },
+         "city":{
+            "code":"*"
+         }
+      },
+      "version":"2.0.0",
+      "bap_id":"ondc-wrapper-uat.ppreciate.in",
+      "bap_uri":"https://ondc-wrapper-uat.ppreciate.in/v1/webhook",
+      "transaction_id":"61c5d670-6025-44f5-b72e-9ae34513a4f9",
+      "message_id":"c2af8ec1-6e5c-4d92-9be7-b08e1e621ce5",
+      "timestamp":"2024-09-04T07:12:47.995Z",
+      "ttl":"PT10M",
+      "bpp_id":"api.sandbox.cybrilla.com",
+      "bpp_uri":"https://api.sandbox.cybrilla.com/ondc/"
+   },
+   "message":{
+      "order":{
+         "id":"mfp_d0c6b6e047a44e868d42c152acc65f4f",
+         "status":"CREATED",
+         "provider":{
+            "id":"23"
+         },
+         "items":[
+            {
+               "id":"23",
+               "fulfillment_ids":[
+                  4540
+               ],
+               "quantity":{
+                  "selected":{
+                     "measure":{
+                        "value":"10000",
+                        "unit":"INR"
+                     }
+                  }
+               }
             }
-        },
-        "version": "2.0.0",
-        "bap_id": "ondc-wrapper.ppreciate.in",
-        "bap_uri": "https://ondc-wrapper.ppreciate.in/v1/webhook",
-        "bpp_id": "api.preprod.cybrilla.com",
-        "bpp_uri": "https://api.preprod.cybrilla.com/ondc/",
-        "transaction_id": "b30d8a22-4545-3454-ab76-5716e2f2e112",
-        "message_id": "c2398596-15ee-2343-6765-0d2c20175453",
-        "timestamp": "2024-08-22T11:58:13.318Z",
-        "ttl": "PT10M"
-    },
-    "message": {
-        "order": {
-            "id": "mfp_c5f88e6fef074ec6ad166fb461c9832c",
-            "status": "CREATED",
-            "type": "PURCHASE",
-            "provider": {
-                "id": "23"
+         ],
+         "fulfillments":[
+            {
+               "id":"4540",
+               "type":"LUMPSUM",
+               "customer":{
+                  "person":{
+                     "id":"pan:ABSPM3751Z",
+                     "creds":[
+                        {
+                           "id":"5WJGCKLJIXGH6",
+                           "type":"FOLIO"
+                        }
+                     ]
+                  },
+                  "contact":{
+                     "phone":"9818089817"
+                  }
+               },
+               "agent":{
+                  "person":{
+                     "id":"euin:E123456"
+                  },
+                  "organization":{
+                     "creds":[
+                        {
+                           "id":"ARN-273858",
+                           "type":"ARN"
+                        }
+                     ]
+                  }
+               }
+            }
+         ],
+         "payments":[
+            {
+               "id":"UPI",
+               "collected_by":"BPP",
+               "type":"PRE-FULFILLMENT",
+               "params":{
+                  "amount":"10000",
+                  "currency":"INR",
+                  "source_bank_code":"ICIC0003428",
+                  "source_bank_account_number":"25802580251193"
+               },
+               "tags":[
+                  {
+                     "display":true,
+                     "descriptor":{
+                        "name":"Payment Method",
+                        "code":"PAYMENT_METHOD"
+                     },
+                     "list":[
+                        {
+                           "descriptor":{
+                              "code":"MODE"
+                           },
+                           "value":"UPI"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ],
+         "tags":[
+            {
+               "display":false,
+               "descriptor":{
+                  "name":"BAP Terms of Engagement",
+                  "code":"BAP_TERMS"
+               },
+               "list":[
+                  {
+                     "descriptor":{
+                        "name":"Static Terms (Transaction Level)",
+                        "code":"STATIC_TERMS"
+                     },
+                     "value":"https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                  },
+                  {
+                     "descriptor":{
+                        "name":"Offline Contract",
+                        "code":"OFFLINE_CONTRACT"
+                     },
+                     "value":"true"
+                  }
+               ]
             },
-            "items": [
-                {
-                    "id": "23",
-                    "fulfillment_ids": [
-                        4539
-                    ],
-                    "quantity": {
-                        "selected": {
-                            "measure": {
-                                "value": "1000",
-                                "unit": "INR"
-                            }
-                        }
-                    }
-                }
-            ],
-            "fulfillments": [
-                {
-                    "id": 4539,
-                    "type": "LUMPSUM",
-                    "customer": {
-                        "person": {
-                            "id": "pan:YUQPI3751L",
-                            "creds": [
-                                {
-                                    "id": "0X9SMT4FVFNA7",
-                                    "type": "FOLIO"
-                                }
-                            ]
-                        },
-                        "contact": {
-                            "phone": "9731885956"
-                        }
-                    },
-                    "agent": {
-                        "person": {
-                            "id": "euin:E123456"
-                        },
-                        "organization": {
-                            "creds": [
-                                {
-                                    "id": "ARN-273858",
-                                    "type": "ARN"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ],
-            "documents": [
-                {
-                    "descriptor": {
-                        "name": "Terms and Conditions",
-                        "code": "TERMS"
-                    },
-                    "mime_type": "text/html",
-                    "url": "https://api.preprod.cybrilla.com/ondc/tnc"
-                }
-            ],
-            "payments": [
-                {
-                    "id": "NETBANKING"
-                }
-            ],
-            "tags": [
-                {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BAP Terms of Engagement",
-                        "code": "BAP_TERMS"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                }
-            ]
-        }
-    }
-}
+            {
+               "display":false,
+               "descriptor":{
+                  "name":"BPP Terms of Engagement",
+                  "code":"BPP_TERMS"
+               },
+               "list":[
+                  {
+                     "descriptor":{
+                        "name":"Static Terms (Transaction Level)",
+                        "code":"STATIC_TERMS"
+                     },
+                     "value":"https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                  },
+                  {
+                     "descriptor":{
+                        "name":"Offline Contract",
+                        "code":"OFFLINE_CONTRACT"
+                     },
+                     "value":"true"
+                  }
+               ]
+            }
+         ]
+      }
+   }
+
+ }
