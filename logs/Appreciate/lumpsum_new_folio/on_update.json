@@ -12,18 +12,18 @@
       },
       "action":"on_update",
       "version":"2.0.0",
-      "bap_id":"ondc-wrapper-uat.ppreciate.in",
-      "bap_uri":"https://ondc-wrapper-uat.ppreciate.in/v1/webhook",
-      "bpp_id":"api.sandbox.cybrilla.com",
-      "bpp_uri":"https://api.sandbox.cybrilla.com/ondc",
-      "transaction_id":"b67db4e7-32da-4d37-9c8b-2632120a1e52",
-      "message_id":"61536fb6-07de-40e0-a9c8-d8bd182b21ad",
-      "timestamp":"2024-09-04T12:37:23.009+05:30",
+      "bap_id":"ondc-wrapper.ppreciate.in",
+      "bap_uri":"https://ondc-wrapper.ppreciate.in/v1/webhook",
+      "bpp_id":"api.preprod.cybrilla.com",
+      "bpp_uri":"https://api.preprod.cybrilla.com/ondc",
+      "transaction_id":"ded1d3b6-ac7d-43a0-8504-7429b099398e",
+      "message_id":"32463533-8f89-41f2-821b-8016c4846717",
+      "timestamp":"2024-09-05T15:52:21.895+05:30",
       "ttl":"PT10M"
    },
    "message":{
       "order":{
-         "id":"mfp_2e76634912cd43b98094524a5e30fc3a",
+         "id":"mfp_5f3015fbce1a41e186915d1d0c810f85",
          "status":"ACCEPTED",
          "provider":{
             "id":"23",
@@ -41,19 +41,19 @@
                },
                "price":{
                   "currency":"INR",
-                  "value":"149.792",
-                  "listed_value":"149.792"
+                  "value":"149.8505",
+                  "listed_value":"149.8505"
                },
                "quantity":{
                   "allocated":{
                      "measure":{
-                        "value":"33.3796",
+                        "value":"6.6733",
                         "unit":"MF_UNITS"
                      }
                   },
                   "selected":{
                      "measure":{
-                        "value":"5000",
+                        "value":"1000",
                         "unit":"INR"
                      }
                   }
@@ -62,11 +62,11 @@
                   "4538"
                ],
                "payment_ids":[
-                  "pay_c57779b5fc8846c0b1454dbfeaa4cfd0"
+                  "pay_8b395e062b024e26ae98beb2029a1e43"
                ],
                "time":{
                   "label":"NAV Date",
-                  "timestamp":"2024-09-04T00:00:00.000+05:30"
+                  "timestamp":"2024-09-05T00:00:00.000+05:30"
                },
                "tags":[
                   {
@@ -81,7 +81,7 @@
                               "name":"Consumer Terms & Conditions",
                               "code":"CONSUMER_TNC"
                            },
-                           "value":"https://api.sandbox.cybrilla.com/ondc/tnc"
+                           "value":"https://api.preprod.cybrilla.com/ondc/tnc"
                         }
                      ]
                   },
@@ -163,7 +163,7 @@
                      "id":"pan:ABSPM3751Z",
                      "creds":[
                         {
-                           "id":"5WJGCKLJIXGH6",
+                           "id":"BP2W8ZBCD0PWV",
                            "type":"FOLIO"
                         }
                      ]
@@ -228,7 +228,7 @@
                               "name":"Folio Number",
                               "code":"FOLIO_NUMBER"
                            },
-                           "value":"5WJGCKLJIXGH6"
+                           "value":"BP2W8ZBCD0PWV"
                         },
                         {
                            "descriptor":{
@@ -279,7 +279,7 @@
                               "name":"Folio number",
                               "code":"FOLIO_NUMBER"
                            },
-                           "value":"5WJGCKLJIXGH6"
+                           "value":"BP2W8ZBCD0PWV"
                         }
                      ]
                   }
@@ -290,7 +290,7 @@
             "id":"q1",
             "price":{
                "currency":"INR",
-               "value":"5000"
+               "value":"1000"
             },
             "breakup":[
                {
@@ -303,18 +303,18 @@
                   "title":"Investment",
                   "price":{
                      "currency":"INR",
-                     "value":"5000"
+                     "value":"1000"
                   }
                }
             ]
          },
          "payments":[
             {
-               "id":"pay_c57779b5fc8846c0b1454dbfeaa4cfd0",
+               "id":"pay_8b395e062b024e26ae98beb2029a1e43",
                "collected_by":"BPP",
                "params":{
-                  "transaction_id":"pay_c57779b5fc8846c0b1454dbfeaa4cfd0",
-                  "amount":"5000.0000",
+                  "transaction_id":"pay_8b395e062b024e26ae98beb2029a1e43",
+                  "amount":"1000.0000",
                   "currency":"INR",
                   "source_bank_code":"ICIC0003428",
                   "source_bank_account_number":"25802580251193"
@@ -344,6 +344,29 @@
             {
                "display":false,
                "descriptor":{
+                  "name":"BAP Terms of Engagement",
+                  "code":"BAP_TERMS"
+               },
+               "list":[
+                  {
+                     "descriptor":{
+                        "name":"Static Terms (Transaction Level)",
+                        "code":"STATIC_TERMS"
+                     },
+                     "value":"https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                  },
+                  {
+                     "descriptor":{
+                        "name":"OFFLINE_CONTRACT",
+                        "code":"Offline Contract"
+                     },
+                     "value":"true"
+                  }
+               ]
+            },
+            {
+               "display":false,
+               "descriptor":{
                   "name":"BPP Terms of Engagement",
                   "code":"BPP_TERMS"
                },
@@ -353,7 +376,7 @@
                         "name":"Static Terms (Transaction Level)",
                         "code":"STATIC_TERMS"
                      },
-                     "value":"https://api.sandbox.cybrilla.com/ondc/bpp_terms"
+                     "value":"https://api.preprod.cybrilla.com/ondc/bpp_terms"
                   },
                   {
                      "descriptor":{
@@ -367,5 +390,4 @@
          ]
       }
    }
-
- }
+}
