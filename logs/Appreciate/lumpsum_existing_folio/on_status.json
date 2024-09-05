@@ -12,18 +12,18 @@
       },
       "action":"on_status",
       "version":"2.0.0",
-      "bap_id":"ondc-wrapper-uat.ppreciate.in",
-      "bap_uri":"https://ondc-wrapper-uat.ppreciate.in/v1/webhook",
-      "bpp_id":"api.sandbox.cybrilla.com",
-      "bpp_uri":"https://api.sandbox.cybrilla.com/ondc",
-      "transaction_id":"61c5d670-6025-44f5-b72e-9ae34513a4f9",
-      "message_id":"34fbc4f0-4f34-4876-a6f4-ac81071b554d",
-      "timestamp":"2024-09-04T12:44:28.747+05:30",
+      "bap_id":"ondc-wrapper.ppreciate.in",
+      "bap_uri":"https://ondc-wrapper.ppreciate.in/v1/webhook",
+      "bpp_id":"api.preprod.cybrilla.com",
+      "bpp_uri":"https://api.preprod.cybrilla.com/ondc",
+      "transaction_id":"1db56348-daa2-4ec9-8205-fada8451c00e",
+      "message_id":"5eee0b71-5078-4183-b282-5309fc0bcdba",
+      "timestamp":"2024-09-05T16:44:20.908+05:30",
       "ttl":"PT10M"
    },
    "message":{
       "order":{
-         "id":"mfp_d0c6b6e047a44e868d42c152acc65f4f",
+         "id":"mfp_4fba4013f7d94fc2b0fde80d46aeebf2",
          "status":"ACCEPTED",
          "provider":{
             "id":"23",
@@ -42,7 +42,7 @@
                "quantity":{
                   "selected":{
                      "measure":{
-                        "value":"10000.0000",
+                        "value":"2500.0000",
                         "unit":"INR"
                      }
                   }
@@ -51,7 +51,7 @@
                   "4540"
                ],
                "payment_ids":[
-                  "pay_9e3c9813b8464fd1b9b40aeec082e32d"
+                  "pay_69e37675124547a19ece395f8e0837ea"
                ],
                "tags":[
                   {
@@ -66,7 +66,7 @@
                               "name":"Consumer Terms & Conditions",
                               "code":"CONSUMER_TNC"
                            },
-                           "value":"https://api.sandbox.cybrilla.com/ondc/tnc"
+                           "value":"https://api.preprod.cybrilla.com/ondc/tnc"
                         }
                      ]
                   },
@@ -217,7 +217,7 @@
             "id":"q1",
             "price":{
                "currency":"INR",
-               "value":"10000.0000"
+               "value":"2500.0000"
             },
             "breakup":[
                {
@@ -230,18 +230,18 @@
                   "title":"Redemption",
                   "price":{
                      "currency":"INR",
-                     "value":"10000.0000"
+                     "value":"2500.0000"
                   }
                }
             ]
          },
          "payments":[
             {
-               "id":"pay_9e3c9813b8464fd1b9b40aeec082e32d",
+               "id":"pay_69e37675124547a19ece395f8e0837ea",
                "collected_by":"BPP",
                "params":{
-                  "transaction_id":"pay_9e3c9813b8464fd1b9b40aeec082e32d",
-                  "amount":"10000.0000",
+                  "transaction_id":"pay_69e37675124547a19ece395f8e0837ea",
+                  "amount":"2500.0000",
                   "currency":"INR",
                   "source_bank_code":"ICIC0003428",
                   "source_bank_account_number":"25802580251193"
@@ -260,7 +260,7 @@
                            "descriptor":{
                               "code":"MODE"
                            },
-                           "value":"UPI"
+                           "value":"NETBANKING"
                         }
                      ]
                   }
@@ -268,6 +268,29 @@
             }
          ],
          "tags":[
+            {
+               "display":false,
+               "descriptor":{
+                  "name":"BAP Terms of Engagement",
+                  "code":"BAP_TERMS"
+               },
+               "list":[
+                  {
+                     "descriptor":{
+                        "name":"Static Terms (Transaction Level)",
+                        "code":"STATIC_TERMS"
+                     },
+                     "value":"https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                  },
+                  {
+                     "descriptor":{
+                        "name":"OFFLINE_CONTRACT",
+                        "code":"Offline Contract"
+                     },
+                     "value":"true"
+                  }
+               ]
+            },
             {
                "display":false,
                "descriptor":{
@@ -280,7 +303,7 @@
                         "name":"Static Terms (Transaction Level)",
                         "code":"STATIC_TERMS"
                      },
-                     "value":"https://api.sandbox.cybrilla.com/ondc/bpp_terms"
+                     "value":"https://api.preprod.cybrilla.com/ondc/bpp_terms"
                   },
                   {
                      "descriptor":{
@@ -294,5 +317,4 @@
          ]
       }
    }
-
- }
+}
