@@ -10,36 +10,47 @@
                 "code": "IND"
             }
         },
-        "action": "on_confirm",
+        "action": "on_update",
         "version": "2.0.0",
         "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
         "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
         "bpp_id": "api.preprod.cybrilla.com",
         "bpp_uri": "https://api.preprod.cybrilla.com/ondc",
-        "transaction_id": "5c0087f9-79b7-43b8-aa1b-aff86f95871c",
-        "message_id": "fc8fec20-10f3-4cf8-a238-40e0023269e2",
-        "timestamp": "2024-09-06T17:45:34.255+05:30",
+        "transaction_id": "1c155177-fe31-4402-a237-6673e39dbcfb",
+        "message_id": "2b29ede5-dcc0-434e-a4af-f329128f569e",
+        "timestamp": "2024-09-06T16:33:43.964+05:30",
         "ttl": "PT10M"
     },
     "message": {
         "order": {
-            "id": "mfpp_4b0ad749649e406fac939f57ca604a11",
+            "id": "mfp_fc8f0843f31e4727a27824e775941e1d",
             "status": "ACCEPTED",
             "provider": {
-                "id": "27",
+                "id": "23",
                 "descriptor": {
-                    "name": "ICICI Prudential Asset Management Company Limited"
+                    "name": "Aditya Birla Sun Life AMC Limited"
                 }
             },
             "items": [
                 {
-                    "id": "7711",
-                    "parent_item_id": "S_593",
+                    "id": "4972",
+                    "parent_item_id": "S_215",
                     "descriptor": {
-                        "name": "ICICI Prudential BHARAT 22 FOF - Cumulative Option",
+                        "name": "Aditya Birla Sun Life Digital India Fund - Growth - Regular Plan",
                         "code": "SCHEME_PLAN"
                     },
+                    "price": {
+                        "currency": "INR",
+                        "value": "186.53",
+                        "listed_value": "186.53"
+                    },
                     "quantity": {
+                        "allocated": {
+                            "measure": {
+                                "value": "16.0832",
+                                "unit": "MF_UNITS"
+                            }
+                        },
                         "selected": {
                             "measure": {
                                 "value": "3000",
@@ -48,11 +59,16 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "63463"
+                        "46291"
                     ],
                     "payment_ids": [
-                        "pay_13b990032d784b8fa7a2bbcbe45fe504"
+                        "pay_7861e7c2f2b14af39e440997749fb631",
+                        "pay_5d6943c4bb0b4e88a30cfec3d012d16c"
                     ],
+                    "time": {
+                        "label": "NAV Date",
+                        "timestamp": "2024-09-06T00:00:00.000+05:30"
+                    },
                     "tags": [
                         {
                             "display": true,
@@ -82,21 +98,21 @@
                                         "name": "Isin",
                                         "code": "ISIN"
                                     },
-                                    "value": "INF109KC1FW3"
+                                    "value": "INF209K01140"
                                 },
                                 {
                                     "descriptor": {
                                         "name": "RTA Identifier",
                                         "code": "RTA_IDENTIFIER"
                                     },
-                                    "value": "5004"
+                                    "value": "16"
                                 },
                                 {
                                     "descriptor": {
                                         "name": "Amfi Identifier",
                                         "code": "AMFI_IDENTIFIER"
                                     },
-                                    "value": "143904"
+                                    "value": "103168"
                                 }
                             ]
                         },
@@ -128,15 +144,27 @@
             ],
             "fulfillments": [
                 {
-                    "id": "63463",
-                    "type": "SIP",
+                    "id": "46291",
+                    "type": "LUMPSUM",
+                    "state": {
+                        "descriptor": {
+                            "name": "Successful",
+                            "code": "SUCCESSFUL"
+                        }
+                    },
                     "customer": {
                         "person": {
-                            "id": "pan:EFNPA1496A"
+                            "id": "pan:EFNPA1496A",
+                            "creds": [
+                                {
+                                    "id": "VJ6DJWF7YA2LU",
+                                    "type": "FOLIO"
+                                }
+                            ]
                         },
                         "contact": {
                             "phone": "6382943292",
-                            "email": "ash@gmail.com"
+                            "email": "ashwin.j@assetplus.io"
                         }
                     },
                     "agent": {
@@ -152,15 +180,6 @@
                             ]
                         }
                     },
-                    "stops": [
-                        {
-                            "time": {
-                                "schedule": {
-                                    "frequency": "R36/2024-10-01/P1M"
-                                }
-                            }
-                        }
-                    ],
                     "tags": [
                         {
                             "display": true,
@@ -174,14 +193,14 @@
                                         "name": "Amount Minimum",
                                         "code": "AMOUNT_MIN"
                                     },
-                                    "value": "5000"
+                                    "value": "1000"
                                 },
                                 {
                                     "descriptor": {
                                         "name": "Amount Maximum",
                                         "code": "AMOUNT_MAX"
                                     },
-                                    "value": "999999999"
+                                    "value": "0"
                                 },
                                 {
                                     "descriptor": {
@@ -189,100 +208,133 @@
                                         "code": "AMOUNT_MULTIPLES"
                                     },
                                     "value": "1"
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Information",
+                                "code": "SUCCESS_INFORMATION"
+                            },
+                            "list": [
                                 {
                                     "descriptor": {
-                                        "name": "Frequency",
-                                        "code": "FREQUENCY"
+                                        "name": "Folio number",
+                                        "code": "FOLIO_NUMBER"
                                     },
-                                    "value": "P1M"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Frequency Dates",
-                                        "code": "FREQUENCY_DATES"
-                                    },
-                                    "value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Installments Count Minimum",
-                                        "code": "INSTALMENTS_COUNT_MIN"
-                                    },
-                                    "value": "4"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Installments Count Maximum",
-                                        "code": "INSTALMENTS_COUNT_MAX"
-                                    },
-                                    "value": "9999"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Cumulative Amount Minimum",
-                                        "code": "CUMULATIVE_AMOUNT_MIN"
-                                    }
+                                    "value": "VJ6DJWF7YA2LU"
                                 }
                             ]
                         }
                     ]
                 }
             ],
-            "cancellation_terms": [
-                {
-                    "reason_required": true,
-                    "external_ref": {
-                        "mimetype": "text/html",
-                        "url": "https://api.preprod.cybrilla.com/ondc/cancellation_terms"
-                    }
-                }
-            ],
-            "documents": [
-                {
-                    "descriptor": {
-                        "name": "Terms & Conditions",
-                        "code": "TERMS"
-                    },
-                    "mime_type": "text/html",
-                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4"
-                }
-            ],
             "quote": {
                 "id": "q1",
                 "price": {
                     "currency": "INR",
-                    "value": "0"
+                    "value": "3000"
                 },
                 "breakup": [
                     {
                         "item": {
-                            "id": "7711",
+                            "id": "4972",
                             "fulfillment_ids": [
-                                "63463"
+                                "46291"
                             ]
                         },
-                        "title": "SIP",
+                        "title": "Investment",
                         "price": {
                             "currency": "INR",
-                            "value": "0"
+                            "value": "3000"
                         }
                     }
                 ]
             },
             "payments": [
                 {
-                    "id": "man_bd842a70b72e48aca2e487d3def1b8e5",
+                    "id": "pay_7861e7c2f2b14af39e440997749fb631",
                     "collected_by": "BPP",
-                    "url": "https://api.preprod.cybrilla.com/ondc/payments?transaction_id=5c0087f9-79b7-43b8-aa1b-aff86f95871c",
                     "params": {
-                        "amount": "50000",
+                        "transaction_id": "pay_7861e7c2f2b14af39e440997749fb631",
+                        "amount": "3000.0000",
                         "currency": "INR",
-                        "source_bank_code": "ICIC0000612",
-                        "source_bank_account_number": "1204567891192"
+                        "source_bank_code": "ICIC0000787",
+                        "source_bank_account_number": "12345678901193"
                     },
-                    "type": "PRE_FULFILLMENT",
-                    "status": "NOT-PAID"
+                    "type": "PRE-FULFILLMENT",
+                    "status": "PAID",
+                    "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "UPI"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "pay_5d6943c4bb0b4e88a30cfec3d012d16c",
+                    "collected_by": "BPP",
+                    "params": {
+                        "transaction_id": "pay_5d6943c4bb0b4e88a30cfec3d012d16c",
+                        "amount": "3000.0000",
+                        "currency": "INR",
+                        "source_bank_code": "ICIC0000787",
+                        "source_bank_account_number": "12345678901193"
+                    },
+                    "type": "PRE-FULFILLMENT",
+                    "status": "FAILED",
+                    "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "UPI"
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Information",
+                                "code": "ERROR_INFORMATION"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Reason Code",
+                                        "code": "REASON_CODE"
+                                    },
+                                    "value": "PAYMENT_FAILED_BY_USER"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Reason Message",
+                                        "code": "REASON_MESSAGE"
+                                    },
+                                    "value": "payment failed by user"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "tags": [

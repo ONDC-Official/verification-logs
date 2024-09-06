@@ -9,12 +9,12 @@
             }
         },
         "domain": "ONDC:FIS14",
-        "timestamp": "2024-08-12T15:02:36.219Z",
+        "timestamp": "2024-09-06T07:09:16.752Z",
         "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
         "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
-        "transaction_id": "6191958c-6f09-4ab3-9223-a742ea9a6402",
-        "message_id": "ba758acd-c6af-4264-8e7c-412287eb9b49",
-        "version": "0.0.1",
+        "transaction_id": "693fa7c2-a711-4826-9b35-07ef0c0de3e3",
+        "message_id": "cc602d54-5992-44a8-a83c-7a04350214ab",
+        "version": "2.0.0",
         "ttl": "PT24H",
         "action": "select",
         "bpp_id": "api.preprod.cybrilla.com",
@@ -30,100 +30,29 @@
             },
             "items": [
                 {
-                    "id": "5019",
+                    "id": "7496",
+                    "parent_item_id": "S_486",
                     "descriptor": {
-                        "name": "Aditya Birla Sun Life PSU Equity Fund-Regular Plan-Growth",
+                        "name": "Aditya Birla Sun Life Asset Allocator FoF-REGULAR - IDCW",
                         "code": "SCHEME_PLAN"
                     },
                     "quantity": {
                         "selected": {
                             "measure": {
-                                "value": "9000",
+                                "value": "35000",
                                 "unit": "INR"
                             }
                         }
                     },
                     "fulfillment_ids": [
-                        "46527"
-                    ],
-                    "tags": [
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Plan Information",
-                                "code": "PLAN_INFORMATION"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Consumer Terms & Conditions",
-                                        "code": "CONSUMER_TNC"
-                                    },
-                                    "value": "https://api.preprod.cybrilla.com/ondc/tnc"
-                                }
-                            ]
-                        },
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Plan Identifiers",
-                                "code": "PLAN_IDENTIFIERS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Isin",
-                                        "code": "ISIN"
-                                    },
-                                    "value": "INF209KB1O66"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "RTA Identifier",
-                                        "code": "RTA_IDENTIFIER"
-                                    },
-                                    "value": "66B"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Amfi Identifier",
-                                        "code": "AMFI_IDENTIFIER"
-                                    },
-                                    "value": "147846"
-                                }
-                            ]
-                        },
-                        {
-                            "display": true,
-                            "descriptor": {
-                                "name": "Plan Options",
-                                "code": "PLAN_OPTIONS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "name": "Plan",
-                                        "code": "PLAN"
-                                    },
-                                    "value": "REGULAR"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Option",
-                                        "code": "OPTION"
-                                    },
-                                    "value": "GROWTH"
-                                }
-                            ]
-                        }
+                        "67706"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "46527",
+                    "id": "67706",
                     "type": "LUMPSUM",
-                    "tracking": false,
                     "customer": {
                         "person": {
                             "id": "pan:EFNPA1496A"
@@ -144,12 +73,80 @@
                     }
                 }
             ],
+            "quote": {
+                "id": "q1",
+                "price": {
+                    "currency": "INR",
+                    "value": "35000"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "7496",
+                            "fulfillment_ids": [
+                                "67706"
+                            ]
+                        },
+                        "title": "Investment",
+                        "price": {
+                            "currency": "INR",
+                            "value": "35000"
+                        }
+                    }
+                ]
+            },
+            "payments": [
+                {
+                    "id": "NETBANKING",
+                    "collected_by": "BPP",
+                    "type": "PRE-FULFILLMENT",
+                    "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "NETBANKING"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "UPI",
+                    "collected_by": "BPP",
+                    "type": "PRE-FULFILLMENT",
+                    "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "UPI"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
             "xinput": {
                 "form": {
-                    "id": "application_form_with_kyc"
+                    "id": "application_form"
                 },
                 "form_response": {
-                    "submission_id": "83ba6c39-86cf-4b2c-8d44-ac6cbb4d726a"
+                    "submission_id": "a8d831f0-011c-48af-9a59-752fa9c17396"
                 }
             },
             "tags": [
@@ -165,35 +162,12 @@
                                 "name": "Static Terms (Transaction Level)",
                                 "code": "STATIC_TERMS"
                             },
-                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms"
                         },
                         {
                             "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                },
-                {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BPP Terms of Engagement",
-                        "code": "BPP_TERMS"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
+                                "name": "OFFLINE_CONTRACT",
+                                "code": "Offline Contract"
                             },
                             "value": "true"
                         }
