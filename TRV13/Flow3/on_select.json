@@ -1,0 +1,173 @@
+{
+    "context": {
+        "domain": "ONDC:TRV13",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "version": "2.0.0",
+        "action": "on_select",
+        "transaction_id": "7b37a782-d6b6-490b-8658-c3994be9b207",
+        "message_id": "3e407595-30f0-47c1-bed8-3ae0d9786b2c",
+        "timestamp": "2024-09-11T06:29:49.780Z",
+        "bap_uri": "http://localhost:8000/buyer/protocol",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "http://localhost:5006/seller/protocol"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "P1"
+          },
+          "items": [
+            {
+              "id": "Accommodation-1",
+              "add_ons": [
+                {
+                  "id": "full-board"
+                }
+              ],
+              "payment_ids": [
+                "pymnt-3"
+              ]
+            }
+          ],
+          "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "3025.00"
+            },
+            "breakup": [
+              {
+                "item": {
+                  "id": "Accommodation-1",
+                  "quantity": {
+                    "selected": {
+                      "count": 1
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "2000.00"
+                  },
+                  "add_ons": [
+                    {
+                      "id": "full-board",
+                      "price": {
+                        "currency": "INR",
+                        "value": "500.00"
+                      }
+                    }
+                  ]
+                },
+                "title": "Deluxe Room accommodation with Full Board",
+                "price": {
+                  "currency": "INR",
+                  "value": "2500.00"
+                }
+              },
+              {
+                "title": "Service Tax @ 9%",
+                "price": {
+                  "currency": "INR",
+                  "value": "225.00"
+                }
+              },
+              {
+                "title": "GST @ 12%",
+                "price": {
+                  "currency": "INR",
+                  "value": "300.00"
+                }
+              }
+            ],
+            "ttl": "P1D"
+          },
+          "payments": [
+            {
+              "id": "pymnt-1",
+              "type": "PRE-ORDER",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "FULL-PAYMENT"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pymnt-2",
+              "type": "ON-FULFILLMENT",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "FULL-PAYMENT"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pymnt-3",
+              "type": "PART-PAYMENT",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "LINKED-PAYMENTS"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "pymnt-4"
+                      },
+                      "value": "1"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "pymnt-5"
+                      },
+                      "value": "2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "pymnt-4",
+              "type": "PRE-ORDER",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "ADV-DEPOSIT"
+                  }
+                }
+              ],
+              "params": {
+                "currency": "INR",
+                "amount": "2000.00"
+              }
+            },
+            {
+              "id": "pymnt-5",
+              "type": "ON-FULFILLMENT",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "FINAL-PAYMENT"
+                  }
+                }
+              ],
+              "params": {
+                "amount": "1025.00",
+                "currency": "INR"
+              }
+            }
+          ]
+        }
+      }
+}
