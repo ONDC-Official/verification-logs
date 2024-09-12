@@ -1,0 +1,212 @@
+    {
+      "signature": "Signature {\"keyId\":\"testtds.getquickride.com|quickride-preprod|ed25519\",\"algorithm\":\"ed25519\",\"created\":\"1726122682\",\"expires\":\"600\",\"headers\":\" (created)(expires)digest\",\"signature\":\"o38xUfu0O9PM7ZsBcBd4U+M/se64DOJ9xr87q+MloN5cXcAP3ViurGgdBlLFPKRze4XD0cGx9SCO6pq0AI/9Bg\\u003d\\u003d\"}",
+      "context": {
+        "action": "on_update",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bpp_id": "testtds.getquickride.com",
+        "bpp_uri": "https://testtds.getquickride.com/taxidemandserver/rest/ondc",
+        "domain": "ONDC:TRV10",
+        "location": {
+          "city": {
+            "code": "std:080"
+          },
+          "country": {
+            "code": "IND"
+          }
+        },
+        "message_id": "e808c286-7332-48f8-9701-1296923d3e62",
+        "timestamp": "2024-09-12T06:31:22.728Z",
+        "transaction_id": "a3b38146-4f38-4612-8b0c-e5f7f0733b4d",
+        "ttl": "PT10M",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "fulfillments": [
+            {
+              "id": "FID:FFVC:Sedan:1098302:120920240611:1726121512516:2105158053",
+              "stops": [
+                {
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  },
+                  "type": "START",
+                  "authorization": {
+                    "token": "6324",
+                    "type": "OTP"
+                  }
+                },
+                {
+                  "location": {
+                    "gps": "12.971186, 77.586812"
+                  },
+                  "type": "END"
+                }
+              ],
+              "type": "DELIVERY",
+              "tags": [],
+              "customer": {
+                "contact": {
+                  "phone": "9876543210"
+                },
+                "person": {
+                  "name": "Nirdosh Chauhan"
+                }
+              },
+              "agent": {
+                "contact": {
+                  "phone": "08047185378"
+                },
+                "person": {
+                  "name": "DRIVER-Anand"
+                }
+              },
+              "state": {
+                "descriptor": {
+                  "code": "RIDE_STARTED"
+                }
+              }
+            }
+          ],
+          "items": [
+            {
+              "descriptor": {
+                "name": "Sedan CAB Ride",
+                "code": "RIDE"
+              },
+              "fulfillment_ids": [
+                "FID:FFVC:Sedan:1098302:120920240611:1726121512516:2105158053"
+              ],
+              "id": "IID:FFVC:Sedan:1098302:120920240611:1726121512516:2105158053",
+              "price": {
+                "currency": "INR",
+                "maximum_value": "146.0",
+                "minimum_value": "146.0",
+                "value": "146.0"
+              },
+              "tags": []
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "status": "NOT-PAID",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "1.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "provider": {
+            "id": "Quick Ride"
+          },
+          "quote": {
+            "breakup": [
+              {
+                "price": {
+                  "currency": "INR",
+                  "value": "146.0"
+                },
+                "title": "TOTAL_FARE"
+              },
+              {
+                "price": {
+                  "currency": "INR",
+                  "value": "118.26"
+                },
+                "title": "RIDE_FARE"
+              },
+              {
+                "price": {
+                  "currency": "INR",
+                  "value": "5.89"
+                },
+                "title": "GST_ON_RIDE_FARE"
+              },
+              {
+                "price": {
+                  "currency": "INR",
+                  "value": "18.62"
+                },
+                "title": "SERVICE_FEES"
+              },
+              {
+                "price": {
+                  "currency": "INR",
+                  "value": "3.23"
+                },
+                "title": "GST_ON_SERVICE_FEES"
+              }
+            ],
+            "price": {
+              "currency": "INR",
+              "value": "146.0"
+            },
+            "ttl": "PT10M"
+          },
+          "cancellation_terms": [
+            {
+              "cancellation_fee": {
+                "percentage": "25.0"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_ASSIGNED"
+                }
+              },
+              "reason_required": true
+            },
+            {
+              "cancellation_fee": {
+                "percentage": "25.0"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_ENROUTE_PICKUP"
+                }
+              },
+              "reason_required": true
+            },
+            {
+              "cancellation_fee": {
+                "percentage": "25.0"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_ARRIVED_PICKUP"
+                }
+              },
+              "reason_required": true
+            },
+            {
+              "cancellation_fee": {
+                "percentage": "25.0"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_STARTED"
+                }
+              },
+              "reason_required": true
+            }
+          ],
+          "id": "815188",
+          "status": "ACTIVE",
+          "created_at": "2024-09-12T06:12:44.000Z",
+          "updated_at": "2024-09-12T06:31:23.000Z"
+        }
+      }
+    }

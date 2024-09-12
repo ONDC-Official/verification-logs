@@ -1,0 +1,115 @@
+    {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1726121563\",expires=\"1726125163\",headers=\"(created) (expires) digest\",signature=\"vSD5KmiIXC2cSlElopDfgoItckQrAZO79eEvAXjx8gT7TKqUzII4XHRSWIErPtDgumdeQNjckIBdyp3MEEikCg==\"",
+      "context": {
+        "action": "confirm",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bpp_id": "testtds.getquickride.com",
+        "bpp_uri": "https://testtds.getquickride.com/taxidemandserver/rest/ondc",
+        "domain": "ONDC:TRV10",
+        "location": {
+          "city": {
+            "code": "std:080"
+          },
+          "country": {
+            "code": "IND"
+          }
+        },
+        "message_id": "69b76442-4cc2-4a42-914d-4bfadc19c3ef",
+        "timestamp": "2024-09-12T06:12:43.329Z",
+        "transaction_id": "a3b38146-4f38-4612-8b0c-e5f7f0733b4d",
+        "ttl": "PT100S",
+        "version": "2.0.0"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "Quick Ride"
+          },
+          "fulfillments": [
+            {
+              "id": "FID:FFVC:Sedan:1098302:120920240611:1726121512516:2105158053",
+              "customer": {
+                "contact": {
+                  "phone": "9876543210"
+                },
+                "person": {
+                  "name": "Nirdosh Chauhan"
+                }
+              },
+              "stops": [
+                {
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  },
+                  "type": "START"
+                },
+                {
+                  "location": {
+                    "gps": "12.971186, 77.586812"
+                  },
+                  "type": "END"
+                }
+              ],
+              "vehicle": {
+                "category": "CAB",
+                "variant": "Sedan"
+              }
+            }
+          ],
+          "items": [
+            {
+              "id": "IID:FFVC:Sedan:1098302:120920240611:1726121512516:2105158053"
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "params": {
+                "bank_account_number": "8756124435696",
+                "bank_code": "ICICI654120",
+                "virtual_payment_address": "9876543210@okicic"
+              },
+              "status": "NOT-PAID",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://api.example-bap.com/booking/terms"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    }
+                  ]
+                }
+              ],
+              "type": "ON-FULFILLMENT"
+            }
+          ]
+        }
+      }
+    }
