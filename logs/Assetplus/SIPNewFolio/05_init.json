@@ -9,11 +9,11 @@
             }
         },
         "domain": "ONDC:FIS14",
-        "timestamp": "2024-09-06T12:15:32.065Z",
+        "timestamp": "2024-09-16T14:16:14.556Z",
         "bap_id": "ondc-mf.prod.platform.aws.assetplus.in",
         "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
-        "transaction_id": "5c0087f9-79b7-43b8-aa1b-aff86f95871c",
-        "message_id": "778d84f7-de59-4663-97c7-16f96f569a69",
+        "transaction_id": "15dbd1fd-66f6-4213-b949-1e7ee063f580",
+        "message_id": "9c995134-481d-40d8-9228-0ac6980c8c4b",
         "version": "2.0.0",
         "ttl": "PT24H",
         "action": "init",
@@ -27,28 +27,27 @@
             },
             "items": [
                 {
-                    "id": "7711",
+                    "id": "5393",
                     "quantity": {
                         "selected": {
                             "measure": {
-                                "value": "3000",
+                                "value": "200",
                                 "unit": "INR"
                             }
                         }
                     },
                     "fulfillment_ids": [
-                        "63463"
+                        "43100"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "63463",
+                    "id": "43100",
                     "type": "SIP",
-                    "tracking": false,
                     "customer": {
                         "person": {
-                            "id": "pan:EFNPA1496A"
+                            "id": "pan:RFCPD3753L"
                         },
                         "contact": {
                             "phone": "6382943292",
@@ -72,7 +71,7 @@
                         {
                             "time": {
                                 "schedule": {
-                                    "frequency": "R36/2024-10-01/P1M"
+                                    "frequency": "R24/2024-10-01/P1M"
                                 }
                             }
                         }
@@ -81,25 +80,31 @@
             ],
             "payments": [
                 {
-                    "id": "MANDATE_REGISTRATION",
-                    "collected_by": "bpp",
+                    "collected_by": "BPP",
+                    "type": "PRE_FULFILLMENT",
+                    "tags": [
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "MANDATE_REGISTRATION"
+                                }
+                            ]
+                        }
+                    ],
                     "params": {
                         "amount": "50000",
                         "currency": "INR",
-                        "source_bank_code": "ICIC0000612",
-                        "source_bank_account_number": "1204567891192"
-                    },
-                    "type": "PRE_FULFILLMENT"
-                }
-            ],
-            "documents": [
-                {
-                    "descriptor": {
-                        "name": "Terms & Conditions",
-                        "code": "TERMS"
-                    },
-                    "url": "https://api.sellerapp.com/tnc?id=214werw3w4",
-                    "mime_type": "text/html"
+                        "source_bank_account_number": "1204567891192",
+                        "source_bank_code": "ICIC0000612"
+                    }
                 }
             ],
             "tags": [
@@ -116,29 +121,6 @@
                                 "code": "STATIC_TERMS"
                             },
                             "value": "https://buyerapp.com/legal/ondc:fis14/static_terms"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                },
-                {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BPP Terms of Engagement",
-                        "code": "BPP_TERMS"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms"
                         },
                         {
                             "descriptor": {
