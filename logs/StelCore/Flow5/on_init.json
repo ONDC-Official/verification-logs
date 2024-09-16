@@ -15,9 +15,9 @@
         "bap_uri": "https://b-ondc-export-2.nlincs.in/bap",
         "bpp_id": "api.nuniverse.in/ondc",
         "bpp_uri": "https://api.nuniverse.in/ondc/bpp",
-        "transaction_id": "40c5754a-3d73-48c6-aefc-1409e9b2622b",
-        "message_id": "6b065a22-1a0b-4fcb-8c21-021d18d76013",
-        "timestamp": "2024-09-09T10:52:26.103Z",
+        "transaction_id": "28704594-90b5-46a4-9d02-4a5ecf6fb38s",
+        "message_id": "15c785cd-9791-40e3-a040-d915017ab8a4",
+        "timestamp": "2024-09-16T06:03:48.677Z",
         "ttl": "PT30S"
     },
     "message": {
@@ -90,7 +90,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "80"
+                    "value": "80.00"
                 },
                 "breakup": [
                     {
@@ -101,18 +101,18 @@
                         "title": "Iodex Multipurpose Pain Balm (16G)",
                         "@ondc/org/title_type": "item",
                         "price": {
-                            "value": "80",
+                            "value": "80.00",
                             "currency": "INR"
                         },
                         "item": {
                             "price": {
-                                "value": "80",
+                                "value": "80.00",
                                 "currency": "INR"
                             }
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "title": "Packing charges",
                         "@ondc/org/title_type": "packing",
                         "price": {
@@ -139,7 +139,7 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "title": "Convenience Fee",
                         "@ondc/org/title_type": "misc",
                         "price": {
@@ -150,7 +150,7 @@
                     {
                         "title": "Delivery charges",
                         "@ondc/org/title_type": "delivery",
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "price": {
                             "currency": "INR",
                             "value": "00.00"
@@ -243,12 +243,44 @@
             ],
             "payments": [
                 {
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "SOR",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3"
+                  "type": "PRE-FULFILLMENT",
+                  "collected_by": "SOR",
+                  "status": "NOT-PAID",
+                  "params": {
+                    "currency": "INR",
+                    "amount": "80.00",
+                    "bank_code": "xxxxxxxxx",
+                    "bank_account_number": "xxxxxxxxxxxx"
+                  },
+                  "uri": "https://seller.com/pg",
+                  "@ondc/org/buyer_app_finder_fee_type": "percent",
+                  "@ondc/org/buyer_app_finder_fee_amount": "0",
+                  "@ondc/org/settlement_basis": "delivery",
+                  "@ondc/org/settlement_window": "P1D",
+                  "@ondc/org/withholding_amount": "10.00",
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "code": "payment_terms"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "payment_type"
+                          },
+                          "value": "OPGSP"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "payment_provider"
+                          },
+                          "value": "abcd"
+                        }
+                      ]
+                    }
+                  ]
                 }
-            ]
+              ]
         }
     }
 }
