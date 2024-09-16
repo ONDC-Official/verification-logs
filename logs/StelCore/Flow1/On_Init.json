@@ -15,15 +15,15 @@
         "bap_uri": "https://b-ondc-export-2.nlincs.in/bap",
         "bpp_id": "api.nuniverse.in/ondc",
         "bpp_uri": "https://api.nuniverse.in/ondc/bpp",
-        "transaction_id": "403a9e2c-686b-4918-9f00-aaa4b920ab09",
-        "message_id": "0794585a-c18e-4918-93dd-995d6d789bcd",
-        "timestamp": "2024-09-09T09:39:44.858Z",
+        "transaction_id": "454a775e-931d-4770-a227-5af139c8572d",
+        "message_id": "0006f09a-adf3-4c1d-841d-5de1dc780568",
+        "timestamp": "2024-09-16T04:02:06.719Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "P1",
+                "id": "55953865-df67-43f0-86e3-8540692e6824",
                 "locations": {
                     "id": "L1"
                 }
@@ -90,7 +90,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "80"
+                    "value": "80.00"
                 },
                 "breakup": [
                     {
@@ -101,12 +101,12 @@
                         "title": "Iodex Multipurpose Pain Balm (16G)",
                         "@ondc/org/title_type": "item",
                         "price": {
-                            "value": "80",
+                            "value": "80.00",
                             "currency": "INR"
                         },
                         "item": {
                             "price": {
-                                "value": "80",
+                                "value": "80.00",
                                 "currency": "INR"
                             }
                         }
@@ -243,12 +243,44 @@
             ],
             "payments": [
                 {
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "SOR",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3"
+                  "type": "PRE-FULFILLMENT",
+                  "collected_by": "SOR",
+                  "status": "NOT-PAID",
+                  "params": {
+                    "currency": "INR",
+                    "amount": "80.00",
+                    "bank_code": "xxxxxxxxx",
+                    "bank_account_number": "xxxxxxxxxxxx"
+                  },
+                  "uri": "https://seller.com/pg",
+                  "@ondc/org/buyer_app_finder_fee_type": "percent",
+                  "@ondc/org/buyer_app_finder_fee_amount": "0",
+                  "@ondc/org/settlement_basis": "delivery",
+                  "@ondc/org/settlement_window": "P1D",
+                  "@ondc/org/withholding_amount": "10.00",
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "code": "payment_terms"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "payment_type"
+                          },
+                          "value": "OPGSP"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "payment_provider"
+                          },
+                          "value": "abcd"
+                        }
+                      ]
+                    }
+                  ]
                 }
-            ]
+              ]
         }
     }
 }
