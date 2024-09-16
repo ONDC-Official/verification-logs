@@ -16,18 +16,15 @@
         "bap_uri": "https://ondc-mf.prod.platform.aws.assetplus.in/protocol",
         "bpp_id": "api.preprod.cybrilla.com",
         "bpp_uri": "https://api.preprod.cybrilla.com/ondc",
-        "transaction_id": "c093bf3b-3e9b-4180-8a8d-7995b22ba6aa",
-        "message_id": "5ad8eddb-e5d1-4c30-b8fd-2c8fdd16281b",
-        "timestamp": "2024-09-16T15:40:37.905Z",
+        "transaction_id": "b040bf5f-2534-455f-8cdc-cf838cce2469",
+        "message_id": "f9ea1199-4bef-46a1-916b-327a9d06af74",
+        "timestamp": "2024-09-16T15:57:59.058Z",
         "ttl": "PT10M"
     },
     "message": {
         "order": {
-            "id": "mfp_038fda4ad57041699a74ceedd4a84228",
-            "ref_order_ids": [
-                "mfpp_1781f6859ab149569784800a7fb8c666"
-            ],
-            "status": "REJECTED",
+            "id": "mfpp_1781f6859ab149569784800a7fb8c666",
+            "status": "CANCELLED",
             "provider": {
                 "id": "27",
                 "descriptor": {
@@ -54,7 +51,7 @@
                         "43108"
                     ],
                     "payment_ids": [
-                        "pay_6508273c302741008fa1fcff99b685b8"
+                        "man_c0fdd89727904aacbdf3d05dc7e745b9"
                     ],
                     "tags": [
                         {
@@ -139,11 +136,11 @@
             "fulfillments": [
                 {
                     "id": "43108",
-                    "type": "SIP_INSTALLMENT",
+                    "type": "SIP",
                     "state": {
                         "descriptor": {
-                            "name": "Failed",
-                            "code": "FAILED"
+                            "name": "Cancelled",
+                            "code": "CANCELLED"
                         }
                     },
                     "customer": {
@@ -168,6 +165,15 @@
                             ]
                         }
                     },
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R18/2024-10-01/P1M"
+                                }
+                            }
+                        }
+                    ],
                     "tags": [
                         {
                             "display": true,
@@ -238,7 +244,30 @@
                             "display": true,
                             "descriptor": {
                                 "name": "Information",
-                                "code": "ERROR_INFORMATION"
+                                "code": "INFORMATION"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "name": "Next Instalment Date",
+                                        "code": "NEXT_INSTALMENT_DATE"
+                                    },
+                                    "value": "01/03/2025"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Remaining Instalments",
+                                        "code": "REMAINING_INSTALMENTS"
+                                    },
+                                    "value": "13"
+                                }
+                            ]
+                        },
+                        {
+                            "display": true,
+                            "descriptor": {
+                                "name": "Information",
+                                "code": "CANCELED_INFORMATION"
                             },
                             "list": [
                                 {
@@ -246,26 +275,33 @@
                                         "name": "Reason Code",
                                         "code": "REASON_CODE"
                                     },
-                                    "value": "ORDER_FAILURE_AT_GATEWAY"
+                                    "value": "CONSECUTIVE_FAILED_INSTALLMENT_LIMIT_EXCEEDED"
                                 },
                                 {
                                     "descriptor": {
                                         "name": "Reason Message",
                                         "code": "REASON_MESSAGE"
                                     },
-                                    "value": "order_failure_at_gateway"
+                                    "value": "consecutive_failed_installment_limit_exceeded"
                                 }
                             ]
                         }
                     ]
                 }
             ],
+            "cancellation": {
+                "time": "2024-09-16T15:57:55.000Z",
+                "cancelled_by": "PROVIDER",
+                "reason": {
+                    "id": "08",
+                    "descriptor": {
+                        "name": "consecutive_failed_installment_limit_exceeded"
+                    }
+                }
+            },
             "cancellation_terms": [
                 {
                     "reason_required": true,
-                    "cancel_by": {
-                        "timestamp": "2024-09-30T22:00:00.000Z"
-                    },
                     "external_ref": {
                         "mimetype": "text/html",
                         "url": "https://api.preprod.cybrilla.com/ondc/cancellation_terms"
@@ -276,7 +312,7 @@
                 "id": "q1",
                 "price": {
                     "currency": "INR",
-                    "value": "3001"
+                    "value": "0"
                 },
                 "breakup": [
                     {
@@ -286,21 +322,21 @@
                                 "43108"
                             ]
                         },
-                        "title": "Investment",
+                        "title": "SIP",
                         "price": {
                             "currency": "INR",
-                            "value": "3001"
+                            "value": "0"
                         }
                     }
                 ]
             },
             "payments": [
                 {
-                    "id": "pay_6508273c302741008fa1fcff99b685b8",
+                    "id": "man_c0fdd89727904aacbdf3d05dc7e745b9",
                     "collected_by": "BPP",
                     "params": {
-                        "transaction_id": "pay_6508273c302741008fa1fcff99b685b8",
-                        "amount": "3001.0000",
+                        "transaction_id": "man_c0fdd89727904aacbdf3d05dc7e745b9",
+                        "amount": "50000",
                         "currency": "INR",
                         "source_bank_code": "ICIC0000612",
                         "source_bank_account_number": "1204567891192"
@@ -317,17 +353,45 @@
                             "list": [
                                 {
                                     "descriptor": {
+                                        "name": "Mode",
                                         "code": "MODE"
                                     },
-                                    "value": "MANDATE_DEBIT"
+                                    "value": "MANDATE_EXISTING"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Type",
+                                        "code": "TYPE"
+                                    },
+                                    "value": "E_MANDATE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Bank Account Number",
+                                        "code": "MASKED_BANK_ACCOUNT_NUMBER"
+                                    },
+                                    "value": "******7891192"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Bank Account Name",
+                                        "code": "BANK_ACCOUNT_NAME"
+                                    },
+                                    "value": "Ashwin J"
+                                },
+                                {
+                                    "descriptor": {
+                                        "name": "Bank Name",
+                                        "code": "BANK_NAME"
+                                    }
                                 }
                             ]
                         }
                     ]
                 }
             ],
-            "created_at": "2024-09-16T15:40:24.000Z",
-            "updated_at": "2024-09-16T15:40:37.880Z",
+            "created_at": "2024-09-16T15:40:13.000Z",
+            "updated_at": "2024-09-16T15:57:59.028Z",
             "tags": [
                 {
                     "display": false,
