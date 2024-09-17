@@ -1,0 +1,133 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:011"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_select",
+        "version": "2.0.2",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "transaction_id": "5a190f32-e373-4c7e-8249-53e402bf84a5",
+        "message_id": "c0749261-6ae5-49c3-9397-44d07365877e",
+        "timestamp": "2024-09-10T06:06:10.470Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "Cornitos",
+                    "@ondc/org/category": "Standard Delivery",
+                    "tracking": true,
+                    "@ondc/org/TAT": "P7DT2H",
+                    "state": {
+                        "descriptor": {
+                            "code": "Non-serviceable"
+                        }
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "id": "CU2I2",
+                    "location_ids": [
+                        "L1"
+                    ],
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    }
+                }
+            ],
+            "provider": {
+                "id": "CU2",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "23FZZAF2408R2Z4"
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "240.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "CU2I2",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "240.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            }
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "30010",
+        "message": "Not servicable"
+    }
+}

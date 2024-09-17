@@ -1,0 +1,147 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
+      }
+    },
+    "domain": "ONDC:TRV10",
+    "action": "init",
+    "version": "2.0.0",
+    "bap_id": "pre-prod-mm-ondc-api.delhitransport.in",
+    "bap_uri": "https://pre-prod-mm-ondc-api.delhitransport.in",
+    "bpp_id": "api.sandbox.moving.tech/dev/dobpp/beckn/7f7896dd-787e-4a0b-8675-e9e6fe93bb8f",
+    "bpp_uri": "https://api.sandbox.beckn.juspay.in/dev/dobpp/beckn/7f7896dd-787e-4a0b-8675-e9e6fe93bb8f",
+    "transaction_id": "d4cd51ff-ee03-44bf-8deb-b46a4ac322c0",
+    "message_id": "8fbcefac-0096-48bc-9377-01cf38fcab6f",
+    "timestamp": "2024-09-05T09:46:45.512Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "ba8c31ce-0bec-4a35-a3aa-5e0a6b275849"
+        }
+      ],
+      "provider": {
+        "id": "api.sandbox.beckn.juspay.in/dev/dobpp/beckn/7f7896dd-787e-4a0b-8675-e9e6fe93bb8f"
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "phone": "9777777777"
+            },
+            "person": {
+              "name": "Chartr_app_user"
+            }
+          },
+          "id": "a61c7594-bf13-4fdf-8119-9ce7cb952561",
+          "stops": [
+            {
+              "location": {
+                "gps": "28.545000, 77.261500"
+              },
+              "type": "START"
+            },
+            {
+              "location": {
+                "gps": "28.612900, 77.229500"
+              },
+              "type": "END"
+            }
+          ],
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "variant": "AUTO_RICKSHAW"
+          }
+        }
+      ],
+      "billing": {
+        "name": "Chartr"
+      },
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "bank_code": "XXXXXXXX",
+            "virtual_payment_address": "9988199772@okicic"
+          },
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "DELIVERY"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://example-test-bpp.com/static-terms.txt"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT"
+        }
+      ]
+    }
+  }
+}
