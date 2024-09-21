@@ -12,27 +12,25 @@
         "action": "on_init",
         "version": "2.0.2",
         "bap_id": "b-ondcbap.nlincs.in",
-        "bap_uri": "https://b-ondcbap.nlincs.in/bap",
+        "bap_uri": "https://b-ondc-export-2.nlincs.in/bap",
         "bpp_id": "api.nuniverse.in/ondc",
         "bpp_uri": "https://api.nuniverse.in/ondc/bpp",
-        "transaction_id": "0c668194-6c56-4ccc-af8f-5ee733f0baad",
-        "message_id": "38d5b136-253c-47de-a636-186032868e72",
-        "timestamp": "2024-08-29T04:23:31.017Z",
+        "transaction_id": "28704594-90b5-46a4-9d02-4a5ecf6fb38s",
+        "message_id": "15c785cd-9791-40e3-a040-d915017ab8a4",
+        "timestamp": "2024-09-16T06:03:48.677Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "provider": {
                 "id": "55953865-df67-43f0-86e3-8540692e6824",
-                "locations": [
-                    {
-                        "id": "L1"
-                    }
-                ]
+                "locations": {
+                    "id": "L1"
+                }
             },
             "items": [
                 {
-                    "id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
+                    "id": "53a21701-67a5-4eb0-a3f3-1d3be70ac9c3",
                     "fulfillment_ids": [
                         "1"
                     ],
@@ -92,67 +90,70 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": 250
+                    "value": "80.00"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
+                        "@ondc/org/item_id": "53a21701-67a5-4eb0-a3f3-1d3be70ac9c3",
                         "@ondc/org/item_quantity": {
                             "count": 1
                         },
-                        "title": "Iodex Rub Ointment - 45 g",
+                        "title": "Iodex Multipurpose Pain Balm (16G)",
                         "@ondc/org/title_type": "item",
-                        "price": "180",
+                        "price": {
+                            "value": "80.00",
+                            "currency": "INR"
+                        },
                         "item": {
                             "price": {
-                                "value": "250",
+                                "value": "80.00",
                                 "currency": "INR"
                             }
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "title": "Packing charges",
-                        "@ondc/org/title_type ": "packing",
+                        "@ondc/org/title_type": "packing",
                         "price": {
-                            "currency": "USD",
-                            "value": "5.00"
+                            "currency": "INR",
+                            "value": "00.00"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
+                        "@ondc/org/item_id": "53a21701-67a5-4eb0-a3f3-1d3be70ac9c3",
                         "title": "Tax",
-                        "@ondc/org/title_type ": "tax",
+                        "@ondc/org/title_type": "tax",
                         "price": {
-                            "currency": "USD",
-                            "value": "12"
+                            "currency": "INR",
+                            "value": "00.00"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
+                        "@ondc/org/item_id": "53a21701-67a5-4eb0-a3f3-1d3be70ac9c3",
                         "title": "Discount",
-                        "@ondc/org/title_type ": "discount",
+                        "@ondc/org/title_type": "discount",
                         "price": {
-                            "currency": "USD",
-                            "value": "-3.00"
+                            "currency": "INR",
+                            "value": "00.00"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "title": "Convenience Fee",
-                        "@ondc/org/title_type ": "misc",
+                        "@ondc/org/title_type": "misc",
                         "price": {
-                            "currency": "USD",
-                            "value": "1.00"
+                            "currency": "INR",
+                            "value": "00.00"
                         }
                     },
                     {
                         "title": "Delivery charges",
                         "@ondc/org/title_type": "delivery",
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
                         "price": {
                             "currency": "INR",
-                            "value": "299"
+                            "value": "00.00"
                         }
                     }
                 ],
@@ -242,10 +243,44 @@
             ],
             "payments": [
                 {
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "SOR"
+                  "type": "PRE-FULFILLMENT",
+                  "collected_by": "SOR",
+                  "status": "NOT-PAID",
+                  "params": {
+                    "currency": "INR",
+                    "amount": "80.00",
+                    "bank_code": "xxxxxxxxx",
+                    "bank_account_number": "xxxxxxxxxxxx"
+                  },
+                  "uri": "https://seller.com/pg",
+                  "@ondc/org/buyer_app_finder_fee_type": "percent",
+                  "@ondc/org/buyer_app_finder_fee_amount": "0",
+                  "@ondc/org/settlement_basis": "delivery",
+                  "@ondc/org/settlement_window": "P1D",
+                  "@ondc/org/withholding_amount": "10.00",
+                  "tags": [
+                    {
+                      "descriptor": {
+                        "code": "payment_terms"
+                      },
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "payment_type"
+                          },
+                          "value": "OPGSP"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "payment_provider"
+                          },
+                          "value": "abcd"
+                        }
+                      ]
+                    }
+                  ]
                 }
-            ]
+              ]
         }
     }
 }
