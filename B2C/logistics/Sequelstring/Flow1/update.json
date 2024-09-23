@@ -1,0 +1,119 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "version": "2.0.0",
+        "action": "update",
+        "transaction_id": "29a9b64c-aaa2-4a32-853c-1f45ae86db10",
+        "message_id": "80b3bc21-bfe2-4542-8b1a-702a00febeeb",
+        "timestamp": "2024-09-23T06:57:42.091Z",
+        "bap_uri": "http://localhost:8000/buyer/protocol",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "http://localhost:5006/seller/protocol"
+    },
+    "message": {
+        "update_target": "fulfillment",
+        "order": {
+            "id": "O2",
+            "items": [
+                {
+                    "id": "I2",
+                    "category_id": "Same Day Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "awb_no": "1227262193237777",
+                    "start": {
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "QR code will be attached to package",
+                            "additional_desc": {
+                                "content_type": "text/html",
+                                "url": "https://reverse_qc_sop_form.htm"
+                            }
+                        },
+                        "authorization": {
+                            "type": "OTP",
+                            "token": "OTP code",
+                            "valid_from": "2023-06-06T12:00:00.000Z",
+                            "valid_to": "2023-06-06T14:00:00.000Z"
+                        }
+                    },
+                    "end": {
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for delivery"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "weather_check",
+                            "list": [
+                                {
+                                    "code": "raining",
+                                    "value": "yes"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "ready_to_ship",
+                                    "value": "yes"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "rto_action",
+                            "list": [
+                                {
+                                    "code": "return_to_origin",
+                                    "value": "no"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "reverseqc_input",
+                            "list": [
+                                {
+                                    "code": "P001",
+                                    "value": "Atta"
+                                },
+                                {
+                                    "code": "P003",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "Q001",
+                                    "value": "4"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "updated_at": "2024-09-23T06:57:39.435Z"
+        }
+    },
+    "_id": {
+        "$oid": "66f11166515fa83a0b4791c2"
+    }
+}
