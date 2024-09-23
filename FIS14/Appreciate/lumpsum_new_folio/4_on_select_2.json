@@ -1,0 +1,330 @@
+{
+  "context": {
+    "domain": "ONDC: FIS14",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "name": "India",
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.0",
+    "bap_id": "ondc-wrapper.ppreciate.in",
+    "bap_uri": "https: //ondc-wrapper.ppreciate.in/v1/webhook",
+    "bpp_id": "api.preprod.cybrilla.com",
+    "bpp_uri": "https: //api.preprod.cybrilla.com/ondc",
+    "transaction_id": "8b901fdd-f640-4800-a8c6-6f218152c431",
+    "message_id": "3c1d6c7f-15d7-47f1-ae16-febb00e1d822",
+    "timestamp": "2024-09-16T22:43:19.103Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "23",
+        "descriptor": {
+          "name": "AdityaBirlaSunLifeAMCLimited"
+        }
+      },
+      "items": [
+        {
+          "id": "23",
+          "parent_item_id": "S_217",
+          "descriptor": {
+            "name": "AdityaBirlaSunLifeBanking&PSUDebtFund-REGULAR-IDCW",
+            "code": "SCHEME_PLAN"
+          },
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "5000",
+                "unit": "INR"
+              }
+            }
+          },
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "PlanInformation",
+                "code": "PLAN_INFORMATION"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "ConsumerTerms&Conditions",
+                    "code": "CONSUMER_TNC"
+                  },
+                  "value": "https: //api.preprod.cybrilla.com/ondc/tnc"
+                }
+              ]
+            },
+            {
+              "display": true,
+              "descriptor": {
+                "name": "PlanIdentifiers",
+                "code": "PLAN_IDENTIFIERS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Isin",
+                    "code": "ISIN"
+                  },
+                  "value": "INF209K01LX6"
+                },
+                {
+                  "descriptor": {
+                    "name": "RTAIdentifier",
+                    "code": "RTA_IDENTIFIER"
+                  },
+                  "value": "85NIF"
+                },
+                {
+                  "descriptor": {
+                    "name": "AmfiIdentifier",
+                    "code": "AMFI_IDENTIFIER"
+                  },
+                  "value": "108272"
+                }
+              ]
+            },
+            {
+              "display": true,
+              "descriptor": {
+                "name": "PlanOptions",
+                "code": "PLAN_OPTIONS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Plan",
+                    "code": "PLAN"
+                  },
+                  "value": "REGULAR"
+                },
+                {
+                  "descriptor": {
+                    "name": "Option",
+                    "code": "OPTION"
+                  },
+                  "value": "IDCW"
+                },
+                {
+                  "descriptor": {
+                    "name": "IDCWOption",
+                    "code": "IDCW_OPTION"
+                  },
+                  "value": "PAYOUT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "4540",
+          "type": "LUMPSUM",
+          "customer": {
+            "person": {
+              "id": "pan: ABCPQ3751Z"
+            }
+          },
+          "agent": {
+            "person": {
+              "id": "euin: E123456"
+            },
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-273858",
+                  "type": "ARN"
+                }
+              ]
+            }
+          },
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Thresholds",
+                "code": "THRESHOLDS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "AmountMinimum",
+                    "code": "AMOUNT_MIN"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "name": "AmountMaximum",
+                    "code": "AMOUNT_MAX"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "name": "AmountMultiples",
+                    "code": "AMOUNT_MULTIPLES"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "name": "UnitsMinimum",
+                    "code": "UNITS_MIN"
+                  },
+                  "value": "0.001"
+                },
+                {
+                  "descriptor": {
+                    "name": "UnitsMaximum",
+                    "code": "UNITS_MAX"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "name": "UnitsMultiples",
+                    "code": "UNITS_MULTIPLES"
+                  },
+                  "value": "0.001"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "id": "q1",
+        "price": {
+          "currency": "INR",
+          "value": "5000"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "23",
+              "fulfillment_ids": [
+                "4540"
+              ]
+            },
+            "title": "Investment",
+            "price": {
+              "currency": "INR",
+              "value": "5000"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "PaymentMethod",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "NETBANKING"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collected_by": "BPP",
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "PaymentMethod",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "xinput": {
+        "form": {
+          "id": "APPLICATION_FORM"
+        },
+        "form_response": {
+          "status": "SUCCESS",
+          "submission_id": "db8be245-d7ea-46a9-9439-2689f2f5b83a"
+        }
+      },
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAPTermsofEngagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "StaticTerms(TransactionLevel)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https: //buyerapp.com/legal/ondc: fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "OfflineContract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPPTermsofEngagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "StaticTerms(TransactionLevel)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https: //api.preprod.cybrilla.com/ondc//bpp_terms"
+            },
+            {
+              "descriptor": {
+                "name": "OfflineContract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

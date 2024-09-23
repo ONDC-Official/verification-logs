@@ -3,7 +3,7 @@
     "domain": "ONDC:RET10",
     "location": {
       "city": {
-        "code": "std:5735"
+        "code": "std:011"
       },
       "country": {
         "code": "IND"
@@ -15,13 +15,43 @@
     "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
     "bpp_id": "integrations-preprod.channelier.com",
     "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-    "transaction_id": "325a0a61-aa4a-40ca-995a-312caf326a35",
-    "message_id": "7af2a378-184c-495b-9825-de958f85972a",
-    "timestamp": "2024-05-14T12:50:19.861Z",
+    "transaction_id": "b645cce8-1c72-4924-9c38-30f25087bac0",
+    "message_id": "3930f121-9f91-47e4-bbbe-410fb55abae9",
+    "timestamp": "2024-07-23T03:15:37.297Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Cornitos",
+          "@ondc/org/category": "Standard Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "P7DT2H",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "CU2I2",
+          "location_ids": [
+            "L1"
+          ],
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 2
+            }
+          }
+        }
+      ],
       "provider": {
         "id": "CU2",
         "locations": [
@@ -30,107 +60,12 @@
           }
         ]
       },
-      "fulfillments": [
-        {
-          "id": "1",
-          "@ondc/org/category": "Standard Delivery",
-          "@ondc/org/TAT": "P7DT2H",
-          "@ondc/org/provider_name": "Cornitos",
-          "state": {
-            "descriptor": {
-              "code": "Serviceable"
-            }
-          },
-          "tracking": false
-        }
-      ],
-      "items": [
-        {
-          "id": "CU2I2",
-          "quantity": {
-            "selected": {
-              "count": 1
-            }
-          },
-          "fulfillment_ids": [
-            "1"
-          ],
-          "location_ids": [
-            "L1"
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_TERMS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "PACKAGING_REQ"
-                  },
-                  "value": "No special packaging & shipment needed"
-                },
-                {
-                  "descriptor": {
-                    "code": "ITEM_REQ"
-                  },
-                  "value": "price 310"
-                }
-              ]
-            }
-          ]
-        }
-      ],
       "payments": [
         {
           "type": "ON-FULFILLMENT",
           "collected_by": "BPP"
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "467.62"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "CU2I2",
-            "@ondc/org/item_quantity": {
-              "count": 1
-            },
-            "@ondc/org/title_type": "item",
-            "item": {
-              "price": {
-                "currency": "INR",
-                "value": "360.00"
-              },
-              "quantity": {
-                "available": {
-                  "count": "79"
-                },
-                "maximum": {
-                  "count": "79"
-                }
-              }
-            },
-            "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
-            "price": {
-              "currency": "INR",
-              "value": "360.00"
-            }
-          },
-          {
-            "@ondc/org/item_id": "1",
-            "@ondc/org/title_type": "delivery",
-            "title": "Delivery Charges",
-            "price": {
-              "currency": "INR",
-              "value": "107.62"
-            }
-          }
-        ],
-        "ttl": "P1D"
-      },
       "tags": [
         {
           "descriptor": {
@@ -147,24 +82,55 @@
               "descriptor": {
                 "code": "buyer_id_no"
               },
-              "value": "22AAAAA0000A1Z5"
-            }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "COMM_CHANNEL"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "chat_url"
-              },
-              "value": "https://ondcpreprodb2b.rapidor.co/v1/ondc/chat?chat_id=325a0a61-aa4a-40ca-995a-312caf326a35&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5M2E1MjNkLTBiMTgtNGNkOS04N2NlLTYyYWM4YmFhMzM0MiIsIm5hbWUiOiJTdW1pdCBLdW1hciBTaW5naCIsImV4cCI6MTczMzY5MDk2NX0.CUZB2AJKTQa7s6jlcJV-0NWrmLu1Cx0X5GDJ8j2CciQ"
+              "value": "23FZZAF2408R2Z4"
             }
           ]
         }
-      ]
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "347.62"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "CU2I2",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item",
+            "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "92"
+                },
+                "maximum": {
+                  "count": "92"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "240.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "107.62"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      }
     }
   }
 }
