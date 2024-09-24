@@ -1,0 +1,240 @@
+{
+    "context": {
+      "action": "on_search",
+      "bap_id": "stg.ftdev.in",
+      "bap_uri": "https://stg.ftdev.in/metro/",
+      "bpp_id": "metrobox.staging.triffy.in",
+      "bpp_uri": "https://metrobox.staging.triffy.in/metro/seller",
+      "domain": "ONDC:TRV11",
+      "location": {
+        "city": {
+          "code": "std:044"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
+      "message_id": "94bd6278-fe8d-4494-a103-00f0200003de",
+      "timestamp": "2024-09-18T08:38:21.759Z",
+      "transaction_id": "41e5635d-c590-47db-b821-05f401f36bca",
+      "ttl": "PT300S",
+      "version": "2.0.0"
+    },
+    "message": {
+      "catalog": {
+        "descriptor": {
+          "images": [
+            {
+              "url": "https://framerusercontent.com/images/FnrHHdp6nMaW64THdqvZnnTAc.png"
+            }
+          ],
+          "name": "Triffy Metro"
+        },
+        "providers": [
+          {
+            "cancellation_terms": [
+              {
+                "external_ref": {
+                  "mimetype": "text/html",
+                  "url": "https://chennaimetrorail.org/fare-table/"
+                }
+              }
+            ],
+            "categories": [
+              {
+                "descriptor": {
+                  "code": "TICKET"
+                },
+                "id": "TICKET"
+              }
+            ],
+            "descriptor": {
+              "name": "Chennai Metro Rail Limited"
+            },
+            "fulfillments": [
+              {
+                "id": "thiruvotriyurtheradimetro-thousandlights",
+                "stops": [
+                  {
+                    "id": "1",
+                    "location": {
+                      "descriptor": {
+                        "code": "STT|01F3",
+                        "name": "Thiruvotriyur Theradi Metro"
+                      },
+                      "gps": "13.159773, 80.302449"
+                    },
+                    "type": "START"
+                  },
+                  {
+                    "id": "2",
+                    "location": {
+                      "descriptor": {
+                        "code": "SCC|0201",
+                        "name": "Puratchi Thalaivar Dr. M.G. Ramachandran Central"
+                      },
+                      "gps": "13.081426, 13.081426"
+                    },
+                    "parent_stop_id": "1",
+                    "type": "TRANSIT_STOP"
+                  },
+                  {
+                    "id": "3",
+                    "location": {
+                      "descriptor": {
+                        "code": "STL|0113",
+                        "name": "Thousand Lights"
+                      },
+                      "gps": "13.058198, 80.258056"
+                    },
+                    "parent_stop_id": "2",
+                    "type": "END"
+                  }
+                ],
+                "type": "TRIP",
+                "vehicle": {
+                  "category": "METRO"
+                }
+              }
+            ],
+            "id": "triffy-cmrl-rail-metro",
+            "items": [
+              {
+                "category_ids": [
+                  "TICKET"
+                ],
+                "descriptor": {
+                  "code": "SJT",
+                  "name": "Single Journey Ticket"
+                },
+                "fulfillment_ids": [
+                  "thiruvotriyurtheradimetro-thousandlights"
+                ],
+                "id": "sjt-thiruvotriyurtheradimetro-thousandlights",
+                "price": {
+                  "currency": "INR",
+                  "value": "32"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 6
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                },
+                "time": {
+                  "duration": "PT1D",
+                  "label": "Validity"
+                }
+              },
+              {
+                "category_ids": [
+                  "TICKET"
+                ],
+                "descriptor": {
+                  "code": "RJT",
+                  "name": "Return Journey Ticket"
+                },
+                "fulfillment_ids": [
+                  "thiruvotriyurtheradimetro-thousandlights"
+                ],
+                "id": "rjt-thiruvotriyurtheradimetro-thousandlights",
+                "price": {
+                  "currency": "INR",
+                  "value": "64"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 6
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                },
+                "time": {
+                  "duration": "PT1D",
+                  "label": "Validity"
+                }
+              }
+            ],
+            "payments": [
+              {
+                "collected_by": "BAP",
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES"
+                    },
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES_TYPE"
+                        },
+                        "value": "percent-annualized"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_TERMS"
+                    },
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_WINDOW"
+                        },
+                        "value": "PT1D"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "DELAY_INTEREST"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_BASIS"
+                        },
+                        "value": "INVOICE_RECEIPT"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MANDATORY_ARBITRATION"
+                        },
+                        "value": "TRUE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "COURT_JURISDICTION"
+                        },
+                        "value": "Chennai"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "STATIC_TERMS"
+                        },
+                        "value": "https://metro-terms.triffy.in/chennai/index.html"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "time": {
+              "range": {
+                "end": "2024-09-18T17:00:00.000Z",
+                "start": "2024-09-17T23:00:00.000Z"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
