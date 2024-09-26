@@ -11,31 +11,33 @@
         },
         "version": "2.0.0",
         "action": "on_confirm",
-        "transaction_id": "278100fa-3b5a-409f-9beb-ccea59d4bf58",
-        "message_id": "0004c44f-080d-4065-9806-795f71477d1d",
-        "timestamp": "2024-08-13T06:08:26.972Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "transaction_id": "4e7c2df8-8d28-4580-853d-8dc61fae2992",
+        "message_id": "333fda69-e930-4a63-b401-58507d6eba6a",
+        "timestamp": "2024-09-26T12:09:05.074Z",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "ttl": "PT10M",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
     },
     "message": {
         "order": {
-            "id": "mfpp_213adf123af",
-            "status": "ACCEPTED",
+            "id": "56328d22-8140-4955-b099-fa8cbb9e018b",
             "provider": {
-                "id": "amc_1",
+                "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f",
                 "descriptor": {
-                    "name": "ABC Mutual Fund"
+                    "name": "ONDC Investments"
                 }
             },
+            "created_at": "2024-09-26T12:09:05.074Z",
+            "updated_at": "2024-09-26T12:09:05.074Z",
             "items": [
                 {
-                    "id": "12391",
+                    "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+                    "parent_item_id": "2081e7f8-5731-41f3-a815-7dfd425c1028",
                     "descriptor": {
-                        "name": "ABC Mid Cap Fund - Regular - Growth",
-                        "code": "SCHEME_PLAN"
+                        "code": "SCHEME_PLAN",
+                        "name": "ONDC Mid Cap Fund - Regular - Growth"
                     },
                     "quantity": {
                         "selected": {
@@ -46,7 +48,7 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "ff_789"
+                        "cd0fef35-f689-4ad6-8694-70304fff2a9c"
                     ],
                     "tags": [
                         {
@@ -130,37 +132,36 @@
             ],
             "fulfillments": [
                 {
-                    "id": "ff_789",
+                    "id": "cd0fef35-f689-4ad6-8694-70304fff2a9c",
                     "type": "REDEMPTION",
                     "customer": {
                         "person": {
-                            "id": "pan:arrpp7771n",
+                            "id": "ICRPW1232K",
                             "creds": [
                                 {
-                                    "id": "78953432/32",
                                     "type": "FOLIO"
                                 }
                             ]
                         },
                         "contact": {
-                            "phone": "9916599123"
+                            "phone": "9990202525"
                         }
                     },
                     "agent": {
-                        "person": {
-                            "id": "EUIN:1234"
-                        },
                         "organization": {
                             "creds": [
                                 {
-                                    "id": "ARN-124567",
+                                    "id": "ARN-123456",
                                     "type": "ARN"
                                 },
                                 {
-                                    "id": "ARN-123456",
-                                    "type": "SUB_BROKER_ARN"
+                                    "type": "SUB_BROKER_ARN",
+                                    "id": "ARN-9790"
                                 }
                             ]
+                        },
+                        "person": {
+                            "id": "EUIN-9790"
                         }
                     },
                     "tags": [
@@ -173,49 +174,50 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "name": "Amount Minimum",
-                                        "code": "AMOUNT_MIN"
+                                        "code": "AMOUNT_MULTIPLES",
+                                        "name": "Amount Multiples"
                                     },
-                                    "value": "1000"
+                                    "value": "1"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Amount Maximum",
-                                        "code": "AMOUNT_MAX"
+                                        "code": "AMOUNT_MAX",
+                                        "name": "Amount Maximum"
                                     },
                                     "value": "10000"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Amount Multiples",
-                                        "code": "AMOUNT_MULTIPLES"
+                                        "code": "AMOUNT_MIN",
+                                        "name": "Amount Minimum"
+                                    },
+                                    "value": "1000"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "UNITS_MIN",
+                                        "name": "Units Minimum"
                                     },
                                     "value": "1"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Units Minimum",
-                                        "code": "UNITS_MIN"
-                                    },
-                                    "value": "1"
-                                },
-                                {
-                                    "descriptor": {
-                                        "name": "Units Maximum",
-                                        "code": "UNITS_MAX"
+                                        "code": "UNITS_MAX",
+                                        "name": "Units Maximum"
                                     },
                                     "value": "500"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Units Multiples",
-                                        "code": "UNITS_MULTIPLES"
+                                        "code": "UNITS_MULTIPLES",
+                                        "name": "Unit Multiples"
                                     },
                                     "value": "1"
                                 }
                             ]
                         },
                         {
+                            "display": true,
                             "descriptor": {
                                 "name": "Payout Bank Account",
                                 "code": "PAYOUT_BANK_ACCOUNT"
@@ -233,6 +235,29 @@
                     ]
                 }
             ],
+            "status": "ACCEPTED",
+            "quote": {
+                "id": "d4b52fee-6418-401b-b42c-c0aef7a66cd1",
+                "price": {
+                    "currency": "INR",
+                    "value": "3000"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+                            "fulfillment_ids": [
+                                "cd0fef35-f689-4ad6-8694-70304fff2a9c"
+                            ]
+                        },
+                        "title": "Redemption",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3000"
+                        }
+                    }
+                ]
+            },
             "tags": [
                 {
                     "display": false,
@@ -280,29 +305,7 @@
                         }
                     ]
                 }
-            ],
-            "quote": {
-                "id": "q1",
-                "price": {
-                    "currency": "INR",
-                    "value": "3000"
-                },
-                "breakup": [
-                    {
-                        "item": {
-                            "id": "12391",
-                            "fulfillment_ids": [
-                                "ff_789"
-                            ]
-                        },
-                        "title": "Redemption",
-                        "price": {
-                            "currency": "INR",
-                            "value": "3000"
-                        }
-                    }
-                ]
-            }
+            ]
         }
     }
 }

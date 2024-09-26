@@ -11,9 +11,9 @@
         },
         "version": "2.0.0",
         "action": "confirm",
-        "transaction_id": "4e7c2df8-8d28-4580-853d-8dc61fae2992",
-        "message_id": "333fda69-e930-4a63-b401-58507d6eba6a",
-        "timestamp": "2024-09-26T12:09:03.999Z",
+        "transaction_id": "24342ea1-afc4-4160-9cd1-7235034dc944",
+        "message_id": "03553bb2-aed7-48c0-a934-f11b6c710de1",
+        "timestamp": "2024-09-26T11:42:16.535Z",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "ttl": "PT10M",
@@ -22,7 +22,7 @@
     },
     "message": {
         "order": {
-            "id": "56328d22-8140-4955-b099-fa8cbb9e018b",
+            "id": "2a34ab72-c7dc-4c5c-bd3b-102f5d9be19c",
             "provider": {
                 "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
             },
@@ -38,19 +38,28 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "cd0fef35-f689-4ad6-8694-70304fff2a9c"
+                        "3657d1ab-5fba-477b-a550-4ce86b474cf7"
+                    ],
+                    "payment_ids": [
+                        "d319a388-2379-4838-ac06-bf413f8dfddc"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "cd0fef35-f689-4ad6-8694-70304fff2a9c",
-                    "type": "REDEMPTION",
+                    "id": "3657d1ab-5fba-477b-a550-4ce86b474cf7",
+                    "type": "SIP",
+                    "state": {
+                        "descriptor": {
+                            "code": "INPROGRESS",
+                            "name": "InProgress"
+                        }
+                    },
                     "agent": {
                         "organization": {
                             "creds": [
                                 {
-                                    "id": "ARN-123456",
+                                    "id": "ARN-12345",
                                     "type": "ARN"
                                 },
                                 {
@@ -65,17 +74,21 @@
                     },
                     "customer": {
                         "person": {
-                            "id": "ICRPW1232K",
-                            "creds": [
-                                {
-                                    "type": "FOLIO"
-                                }
-                            ]
+                            "id": "ICRPW1232K"
                         },
                         "contact": {
                             "phone": "9990202525"
                         }
-                    }
+                    },
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R6/2024-10-15/P1M"
+                                }
+                            }
+                        }
+                    ]
                 }
             ],
             "tags": [
@@ -125,7 +138,47 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "0",
+                        "currency": "INR",
+                        "source_bank_code": "123",
+                        "source_bank_account_number": "1234567812345678",
+                        "source_bank_account_name": "Michael Scott",
+                        "transaction_id": "837d1ebb-9513-4361-a23f-707f6337f314"
+                    },
+                    "type": "BPP",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "PAYMENT_METHOD",
+                                "name": "Payment Method"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "MANDATE_REGISTRATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "d319a388-2379-4838-ac06-bf413f8dfddc",
+                    "status": "PAID"
+                }
+            ],
+            "xinput": {
+                "form": {
+                    "id": "6db2379c-45a9-4480-90c6-53a956494f6e"
+                },
+                "form_response": {
+                    "submission_id": "e9b1d3d8-48ca-4832-a612-eb54257b7117"
+                }
+            }
         }
     }
 }

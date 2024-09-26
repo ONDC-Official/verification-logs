@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "on_select",
-        "transaction_id": "4e7c2df8-8d28-4580-853d-8dc61fae2992",
-        "message_id": "bc25fc00-6360-4dba-a4a0-3e182f38d4b1",
-        "timestamp": "2024-09-26T12:08:14.563Z",
+        "action": "on_init",
+        "transaction_id": "20d8e5d4-bba4-4529-a421-d33a1f602c46",
+        "message_id": "f5899b37-5582-49fe-9ff3-36a5f8f7894e",
+        "timestamp": "2024-09-26T12:00:49.461Z",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "ttl": "PT10M",
@@ -45,7 +45,7 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "cd0fef35-f689-4ad6-8694-70304fff2a9c"
+                        "1277dd4e-dd4f-4d3a-a48b-682cb62e5ba2"
                     ],
                     "tags": [
                         {
@@ -127,10 +127,59 @@
                     ]
                 }
             ],
+            "tags": [
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BPP Terms of Engagement",
+                        "code": "BPP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "id": "11734580-f6cf-4353-9b57-48dfa14d55c6",
+                "price": {
+                    "currency": "INR",
+                    "value": "3000"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+                            "fulfillment_ids": [
+                                "1277dd4e-dd4f-4d3a-a48b-682cb62e5ba2"
+                            ]
+                        },
+                        "title": "Investment",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3000"
+                        }
+                    }
+                ]
+            },
+            "id": "790d4f0e-b245-42bb-8c9f-d47dbcb636b9",
+            "status": "CREATED",
             "fulfillments": [
                 {
-                    "id": "cd0fef35-f689-4ad6-8694-70304fff2a9c",
-                    "type": "REDEMPTION",
+                    "id": "1277dd4e-dd4f-4d3a-a48b-682cb62e5ba2",
+                    "type": "LUMPSUM",
                     "customer": {
                         "person": {
                             "id": "ICRPW1232K",
@@ -140,6 +189,9 @@
                                     "type": "FOLIO"
                                 }
                             ]
+                        },
+                        "contact": {
+                            "phone": "9990202525"
                         }
                     },
                     "agent": {
@@ -169,10 +221,10 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "AMOUNT_MULTIPLES",
-                                        "name": "Amount Multiples"
+                                        "code": "AMOUNT_MIN",
+                                        "name": "Amount Minimum"
                                     },
-                                    "value": "1"
+                                    "value": "1000"
                                 },
                                 {
                                     "descriptor": {
@@ -183,29 +235,8 @@
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "AMOUNT_MIN",
-                                        "name": "Amount Minimum"
-                                    },
-                                    "value": "1000"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "UNITS_MIN",
-                                        "name": "Units Minimum"
-                                    },
-                                    "value": "1"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "UNITS_MAX",
-                                        "name": "Units Maximum"
-                                    },
-                                    "value": "500"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "UNITS_MULTIPLES",
-                                        "name": "Unit Multiples"
+                                        "code": "AMOUNT_MULTIPLES",
+                                        "name": "Amount Multiples"
                                     },
                                     "value": "1"
                                 }
@@ -214,104 +245,89 @@
                         {
                             "display": true,
                             "descriptor": {
-                                "name": "Payout Bank Account",
-                                "code": "PAYOUT_BANK_ACCOUNT"
+                                "name": "Folio",
+                                "code": "FOLIO_INFORMATION"
                             },
                             "list": [
                                 {
                                     "descriptor": {
-                                        "name": "Identifier",
-                                        "code": "IDENTIFIER"
+                                        "name": "Folio Number",
+                                        "code": "FOLIO_NUMBER"
                                     },
-                                    "value": "ba_369823523564"
+                                    "value": "1232132132/32"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Account Number",
-                                        "code": "MASKED_ACCOUNT_NUMBER"
+                                        "name": "Holding Pattern",
+                                        "code": "HOLDING_PATTERN"
                                     },
-                                    "value": "******1234"
+                                    "value": "SINGLE"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Account Holder Name",
-                                        "code": "ACCOUNT_HOLDER_NAME"
+                                        "name": "Holder Name",
+                                        "code": "HOLDER_NAME"
                                     },
                                     "value": "Satish K Perala"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Account Type",
-                                        "code": "ACCOUNT_TYPE"
+                                        "name": "Created On",
+                                        "code": "CREATED_ON"
                                     },
-                                    "value": "SAVINGS"
+                                    "value": "25/11/2019"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Bank Name",
-                                        "code": "BANK_NAME"
+                                        "name": "Email Address for 2FA",
+                                        "code": "2FA_EMAIL_ADDRESS_MASKED"
                                     },
-                                    "value": "ICICI BANK"
+                                    "value": "****sha@gmail.com"
                                 },
                                 {
                                     "descriptor": {
-                                        "name": "Bank Code",
-                                        "code": "BANK_CODE"
+                                        "name": "Mobile Number for 2FA",
+                                        "code": "2FA_MOBILE_NUMBER_MASKED"
                                     },
-                                    "value": "ICIC0000047"
+                                    "value": "***9345"
                                 }
                             ]
                         }
                     ]
                 }
             ],
-            "tags": [
+            "payments": [
                 {
-                    "display": false,
-                    "descriptor": {
-                        "name": "BPP Terms of Engagement",
-                        "code": "BPP_TERMS"
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "3000",
+                        "currency": "INR",
+                        "source_bank_code": "123",
+                        "source_bank_account_number": "1234567812345678",
+                        "source_bank_account_name": "Michael Scott"
                     },
-                    "list": [
+                    "type": "BPP",
+                    "tags": [
                         {
                             "descriptor": {
-                                "name": "Static Terms (Transaction Level)",
-                                "code": "STATIC_TERMS"
+                                "code": "PAYMENT_METHOD",
+                                "name": "Payment Method"
                             },
-                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-                        },
-                        {
-                            "descriptor": {
-                                "name": "Offline Contract",
-                                "code": "OFFLINE_CONTRACT"
-                            },
-                            "value": "true"
-                        }
-                    ]
-                }
-            ],
-            "quote": {
-                "id": "d4b52fee-6418-401b-b42c-c0aef7a66cd1",
-                "price": {
-                    "currency": "INR",
-                    "value": "3000"
-                },
-                "breakup": [
-                    {
-                        "item": {
-                            "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
-                            "fulfillment_ids": [
-                                "cd0fef35-f689-4ad6-8694-70304fff2a9c"
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "NETBANKING"
+                                }
                             ]
-                        },
-                        "title": "Redemption",
-                        "price": {
-                            "currency": "INR",
-                            "value": "3000"
                         }
-                    }
-                ]
-            }
+                    ],
+                    "id": "108325a6-ce37-42d9-8450-98d56ac38280",
+                    "status": "NOT-PAID",
+                    "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=3000&transaction_id=20d8e5d4-bba4-4529-a421-d33a1f602c46&label=LUMPSUM_PAYMENT"
+                }
+            ]
         }
     }
 }

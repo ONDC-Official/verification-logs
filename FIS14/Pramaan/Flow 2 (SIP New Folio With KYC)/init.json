@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "select",
-        "transaction_id": "4e7c2df8-8d28-4580-853d-8dc61fae2992",
-        "message_id": "bc25fc00-6360-4dba-a4a0-3e182f38d4b1",
-        "timestamp": "2024-09-26T12:08:14.286Z",
+        "action": "init",
+        "transaction_id": "e2321c8e-e6ce-4ca4-a1a3-01e741d6e7d7",
+        "message_id": "e6c01bc7-261d-4605-ad8f-a193f824c118",
+        "timestamp": "2024-09-26T11:51:32.877Z",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "ttl": "PT10M",
@@ -37,14 +37,14 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "cd0fef35-f689-4ad6-8694-70304fff2a9c"
+                        "e9742bf0-5001-4886-a7de-2195df627224"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "cd0fef35-f689-4ad6-8694-70304fff2a9c",
-                    "type": "REDEMPTION",
+                    "id": "e9742bf0-5001-4886-a7de-2195df627224",
+                    "type": "SIP",
                     "agent": {
                         "organization": {
                             "creds": [
@@ -64,15 +64,21 @@
                     },
                     "customer": {
                         "person": {
-                            "id": "ICRPW1232K",
-                            "creds": [
-                                {
-                                    "id": "9790",
-                                    "type": "FOLIO"
-                                }
-                            ]
+                            "id": "ICRPW1232K"
+                        },
+                        "contact": {
+                            "phone": "9990202525"
                         }
-                    }
+                    },
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R6/2024-10-15/P1M"
+                                }
+                            }
+                        }
+                    ]
                 }
             ],
             "tags": [
@@ -99,7 +105,44 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "0",
+                        "currency": "INR",
+                        "source_bank_code": "123",
+                        "source_bank_account_number": "1234567812345678",
+                        "source_bank_account_name": "Michael Scott"
+                    },
+                    "type": "BPP",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "MANDATE_REGISTRATION"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "xinput": {
+                "form": {
+                    "id": "07a6d13f-6226-478a-9c28-47f71e27491f"
+                },
+                "form_response": {
+                    "submission_id": "b7d8c2f1-2b13-4442-8136-33510d271fe2"
+                }
+            }
         }
     }
 }

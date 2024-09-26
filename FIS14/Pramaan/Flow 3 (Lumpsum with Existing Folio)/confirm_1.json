@@ -10,10 +10,10 @@
             }
         },
         "version": "2.0.0",
-        "action": "select",
-        "transaction_id": "4e7c2df8-8d28-4580-853d-8dc61fae2992",
-        "message_id": "bc25fc00-6360-4dba-a4a0-3e182f38d4b1",
-        "timestamp": "2024-09-26T12:08:14.286Z",
+        "action": "confirm",
+        "transaction_id": "20d8e5d4-bba4-4529-a421-d33a1f602c46",
+        "message_id": "ae49b9bd-0898-409f-8dc6-3ff9ebaafde9",
+        "timestamp": "2024-09-26T12:01:18.302Z",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "ttl": "PT10M",
@@ -22,6 +22,7 @@
     },
     "message": {
         "order": {
+            "id": "e08c4544-01c4-4cc5-87be-59dfc18b26b2",
             "provider": {
                 "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
             },
@@ -37,14 +38,17 @@
                         }
                     },
                     "fulfillment_ids": [
-                        "cd0fef35-f689-4ad6-8694-70304fff2a9c"
+                        "1277dd4e-dd4f-4d3a-a48b-682cb62e5ba2"
+                    ],
+                    "payment_ids": [
+                        "108325a6-ce37-42d9-8450-98d56ac38280"
                     ]
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "cd0fef35-f689-4ad6-8694-70304fff2a9c",
-                    "type": "REDEMPTION",
+                    "id": "1277dd4e-dd4f-4d3a-a48b-682cb62e5ba2",
+                    "type": "LUMPSUM",
                     "agent": {
                         "organization": {
                             "creds": [
@@ -71,6 +75,9 @@
                                     "type": "FOLIO"
                                 }
                             ]
+                        },
+                        "contact": {
+                            "phone": "9990202525"
                         }
                     }
                 }
@@ -98,6 +105,61 @@
                             "value": "true"
                         }
                     ]
+                },
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BPP Terms of Engagement",
+                        "code": "BPP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "3000",
+                        "currency": "INR",
+                        "source_bank_code": "123",
+                        "source_bank_account_number": "1234567812345678",
+                        "source_bank_account_name": "Michael Scott",
+                        "transaction_id": "e5e3a974-10e2-4e93-b3f4-04663fea583b"
+                    },
+                    "type": "BPP",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "PAYMENT_METHOD",
+                                "name": "Payment Method"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "NETBANKING"
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "108325a6-ce37-42d9-8450-98d56ac38280",
+                    "status": "PAID"
                 }
             ]
         }
