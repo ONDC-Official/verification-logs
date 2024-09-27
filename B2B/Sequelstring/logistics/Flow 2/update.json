@@ -1,0 +1,143 @@
+{
+  "context": {
+    "domain": "ONDC:LOG10",
+    "location": {
+      "country": {
+        "code": "IND"
+      }
+    },
+    "version": "2.0.0",
+    "action": "update",
+    "transaction_id": "17366b71-884a-4022-a1cc-abf832c99ae8",
+    "message_id": "611dd44e-96cb-40b9-a687-cf44cb30f42d",
+    "timestamp": "2024-09-26T17:16:37.689Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "update_target": "fulfillment",
+    "order": {
+      "id": "5e0b91ba-e7a4-4b6f-b4bc-b178be358700",
+      "status": "Accepted",
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "I1",
+          "category_ids": [
+            "C1",
+            "R1"
+          ],
+          "fulfillment_ids": [
+            "1"
+          ],
+          "descriptor": {
+            "code": "P2H2P"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "stops": [
+            {
+              "type": "start",
+              "id": "L1",
+              "parent_stop_id": "",
+              "instructions": {
+                "code": "AWB_No",
+                "short_desc": "value of PCC",
+                "long_desc": "QR code will be attached to package",
+                "additional_desc": {
+                  "content_type": "text/html",
+                  "url": "https://shipping/label/image.htm"
+                }
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "XYZ2",
+                "valid_from": "",
+                "valid_to": ""
+              }
+            },
+            {
+              "type": "end",
+              "id": "L2",
+              "parent_stop_id": "L1",
+              "instructions": {
+                "short_desc": "",
+                "long_desc": "drop package at security gate",
+                "additional_desc": {
+                  "content_type": "text/html",
+                  "url": "http://dummy.com"
+                }
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "XYZ2",
+                "valid_from": "",
+                "valid_to": ""
+              }
+            }
+          ],
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "tracking": false,
+          "tags": [
+            {
+              "descriptor": {
+                "code": "Delivery_Terms"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "AWB_No"
+                  },
+                  "value": "1209878992826353"
+                },
+                {
+                  "descriptor": {
+                    "code": "LR_No"
+                  },
+                  "value": "1209878992826353"
+                },
+                {
+                  "descriptor": {
+                    "code": "Ready_To_Ship"
+                  },
+                  "value": "yes"
+                },
+                {
+                  "descriptor": {
+                    "code": "Invoice_Number"
+                  },
+                  "value": "94395859020203"
+                },
+                {
+                  "descriptor": {
+                    "code": "Eway_Bill_No"
+                  },
+                  "value": "1227262193237777"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "updated_at": "2024-09-26T17:16:37.689Z"
+    }
+  }
+}
