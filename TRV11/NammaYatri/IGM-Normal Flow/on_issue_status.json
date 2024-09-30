@@ -1,64 +1,87 @@
 {
+  "request": {
     "context": {
-      "action": "on_issue_status",
-      "bap_id": "api.sandbox.beckn.juspay.in/dev/bap/beckn/cab/v1/4b17bd06-ae7e-48e9-85bf-282fb310209c",
-      "bap_uri": "https://api.sandbox.beckn.juspay.in/dev/bap/beckn/cab/v1/4b17bd06-ae7e-48e9-85bf-282fb310209c",
-      "bpp_id": "DMRC_5001_1001",
-      "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
-      "domain": "ONDC:TRV10",
+      "domain": "ONDC:TRV11",
       "location": {
-        "city": {
-          "code": "std:011"
-        },
         "country": {
           "code": "IND"
+        },
+        "city": {
+          "code": "*"
         }
       },
-      "message_id": "470468ba-0e6e-42a4-98da-f1600335e697",
-      "timestamp": "2024-09-26T14:00:02.953Z",
-      "transaction_id": "f9c821c6-3268-4f2c-a864-29acf08eeaaa",
-      "ttl": "PT30S",
-      "version": "1.0.0"
+      "action": "on_issue_status",
+      "version": "1.0.0",
+      "bap_uri": "https://api.sandbox.beckn.juspay.in/dev/bap/beckn/cab/v1/4b17bd06-ae7e-48e9-85bf-282fb310209c",
+      "bap_id": "api.sandbox.beckn.juspay.in/dev/bap/beckn/cab/v1/4b17bd06-ae7e-48e9-85bf-282fb310209c",
+      "bpp_id": "DMRC_5001_1001",
+      "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
+      "transaction_id": "14b00d14-1039-4f04-a138-757d8cc2d451",
+      "ttl": "PT30M",
+      "message_id": "b2fd1e0f-01a4-4fbf-95b7-b503d03e2891",
+      "timestamp": "2024-10-07T13:01:46.249Z"
     },
     "message": {
       "issue": {
-        "created_at": "2024-09-26T13:35:25.086Z",
-        "id": "db35868a-d2d8-42bd-b514-177ce7fb0215",
+        "id": "c78e5d98-5b52-4f27-b001-e2351d0d91d1",
         "issue_actions": {
           "respondent_actions": [
             {
               "respondent_action": "PROCESSING",
               "short_desc": "Complaint is being processed",
-              "updated_at": "2024-09-26T13:35:25.26Z",
+              "updated_at": "2024-09-30T14:17:17.877Z",
               "updated_by": {
-                "contact": {
-                  "email": "abc@ondc.in",
-                  "phone": "9033891671"
-                },
                 "org": {
                   "name": "DMRC_5001_1001::ONDC:TRV11"
+                },
+                "contact": {
+                  "phone": "9033891671",
+                  "email": "abc@ondc.in"
                 },
                 "person": {
                   "name": "Support Desk"
                 }
-              }
+              },
+              "cascaded_level": 1
+            },
+            {
+              "respondent_action": "RESOLVED",
+              "short_desc": "Issue Resolved",
+              "updated_at": "2024-10-07T13:01:46.233Z",
+              "updated_by": {
+                "org": {
+                  "name": "DMRC_5001_1001::ONDC:TRV11"
+                },
+                "contact": {
+                  "phone": "9033891671",
+                  "email": "abc@ondc.in"
+                },
+                "person": {
+                  "name": "Support Desk"
+                }
+              },
+              "cascaded_level": 1
             }
           ]
         },
+        "created_at": "2024-09-30T14:17:17.831Z",
+        "updated_at": "2024-10-07T13:01:46.233Z",
         "resolution": {
-          "action_triggered": "NO-ACTION",
-          "long_desc": "No action is required for this complaint",
-          "short_desc": "No action is required"
+          "short_desc": "Refund to be initiated",
+          "long_desc": "For this complaint, refund is to be initiated",
+          "action_triggered": "REFUND",
+          "refund_amount": "10"
         },
         "resolution_provider": {
           "respondent_info": {
+            "type": "TRANSACTION-COUNTERPARTY-NP",
             "organization": {
-              "contact": {
-                "email": "customercare@ondc.com",
-                "phone": "9350657100"
-              },
               "org": {
                 "name": "pramaan.ondc.org/beta/preprod/mock/seller"
+              },
+              "contact": {
+                "phone": "9350657100",
+                "email": "customercare@ondc.com"
               },
               "person": {
                 "name": "Customer Success Team"
@@ -66,26 +89,36 @@
             },
             "resolution_support": {
               "contact": {
-                "email": "customercare@ondc.com",
-                "phone": "9350657100"
+                "phone": "9350657100",
+                "email": "customercare@ondc.com"
               },
               "gros": [
                 {
-                  "contact": {
-                    "email": "head.services@ondc.com/grievance@ondc.com",
-                    "phone": "011-41204444"
-                  },
-                  "gro_type": "TRANSACTION-COUNTERPARTY-NP-GRO",
                   "person": {
                     "name": "ABC SINGH"
-                  }
+                  },
+                  "contact": {
+                    "phone": "011-41204444",
+                    "email": "head.services@ondc.com/grievance@ondc.com"
+                  },
+                  "gro_type": "TRANSACTION-COUNTERPARTY-NP-GRO"
                 }
-              ]
-            },
-            "type": "TRANSACTION-COUNTERPARTY-NP"
+              ],
+              "chat_link": "https://chat_link.com"
+            }
           }
-        },
-        "updated_at": "2024-09-26T13:35:25.086Z"
+        }
       }
     }
+  },
+  "action": "on_issue_status",
+  "transaction_id": "14b00d14-1039-4f04-a138-757d8cc2d451",
+  "message_id": "b2fd1e0f-01a4-4fbf-95b7-b503d03e2891",
+  "signature": "Signature keyId=\"ondc-preprod.sequelstring.com/seller/dmrc|6ed08617-2963-4a8f-a91f-cc3cfd6754cd|ed25519\",algorithm=\"ed25519\",created=\"1728306106\",expires=\"1728309706\",headers=\"(created) (expires) digest\",signature=\"p/+1sJWT0Q6foGDAMOwGmDq+PqkwhbM+vN1Lm3yt6Vfc+1WqIHspdhqa46GVSFQ+V3rd2whIhnvhYp1H3WoXCw==\"",
+  "created_at": {
+    "date": "2024-10-07T13:01:46.257Z"
+  },
+  "updated_at": {
+    "date": "2024-10-07T13:01:46.378Z"
   }
+}
