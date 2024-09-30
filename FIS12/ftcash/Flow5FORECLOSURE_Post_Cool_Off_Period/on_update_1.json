@@ -9,20 +9,20 @@
             "code":"*"
          }
       },
-      "version":"2.1.0",
+      "version":"2.0.0",
       "action":"on_update",
-      "bap_uri":"https://buyer.staging.samridh.ai/api",
-      "bap_id":"buyer.staging.samridh.ai",
+      "bap_id":"buyer.pre.prod.samridh.ai",
+      "bap_uri":"https://buyer.pre.prod.samridh.ai/api",
+      "transaction_id":"62113185-6497-419d-8f32-253370840097",
+      "message_id":"21a-94c6-48b9-99cb-390ec8ec87ef12d4",
+      "ttl":"PT15M",
+      "timestamp":"2024-09-30T20:20:56.095Z",
       "bpp_id":"preprod-ondc.ftcash.com",
-      "bpp_uri":"https://preprod-ondc.ftcash.com/ondc_subscribe",
-      "transaction_id":"9f026bf9-709d-46d7-a8b5-5a80c0edaca9",
-      "message_id":"345c2cf2-c2ea-4ed8-87a4-ed3fca178d87",
-      "ttl":"PT10M",
-      "timestamp":"2023-05-25T05:23:03.443Z"
+      "bpp_uri":"https://preprod-ondc.ftcash.com/ondc_subscribe"
    },
    "message":{
       "order":{
-         "id":"AP028852",
+         "id":"AP028922",
          "provider":{
             "id":"FTC00",
             "descriptor":{
@@ -141,15 +141,15 @@
          },
          "items":[
             {
-               "id":"11,000",
-               "parent_item_id":"PAP0136392",
+               "id":"17,000",
+               "parent_item_id":"PAP0136480",
                "descriptor":{
                   "code":"INVOICE_BASED_LOAN",
-                  "name":"Invoice Based Loan Offer: INR 10000"
+                  "name":"Invoice Based Loan Offer: INR 17523"
                },
                "price":{
                   "currency":"INR",
-                  "value":"10000"
+                  "value":"17523"
                },
                "tags":[
                   {
@@ -234,7 +234,7 @@
                               "name":"Invoice Number",
                               "short_desc":"Describes the invoice number"
                            },
-                           "value":"11,000"
+                           "value":"17,000"
                         },
                         {
                            "descriptor":{
@@ -274,7 +274,15 @@
                               "name":"Installment amount",
                               "short_desc":"Each installment amount of repayment"
                            },
-                           "value":"10000"
+                           "value":"17523"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"KFS_LINK",
+                              "name":"Key Facts Statement Link",
+                              "short_desc":"A link provided by the BPP points to a Key Fact Statement (KFS) document related to a loan. When accessed, the document is returned in text/html format, with the loan details organized in a standard HTML table. This format makes it easy for the buyer\\'s app to read and reformat the information as needed. For more details, refer to the \"KFS_LINK format\" document in the \"feature-ui\" section."
+                           },
+                           "value":"https://icicibank.com/loan/kfs-terms"
                         }
                      ],
                      "display":true
@@ -283,23 +291,23 @@
             }
          ],
          "quote":{
-            "id":"AP028852",
+            "id":"AP028922",
             "price":{
                "currency":"INR",
-               "value":"10000"
+               "value":"17523"
             },
             "breakup":[
                {
                   "title":"PRINCIPAL",
                   "price":{
-                     "value":"10000",
+                     "value":"17523",
                      "currency":"INR"
                   }
                },
                {
                   "title":"INTEREST",
                   "price":{
-                     "value":"300.0",
+                     "value":"525.7",
                      "currency":"INR"
                   }
                },
@@ -354,30 +362,29 @@
                },
                "state":{
                   "descriptor":{
-                     "code":"DISBURSED",
-                     "name":"Loan disbursed"
+                     "code":"COMPLETE"
                   }
                }
             }
          ],
          "payments":[
             {
-               "id":"11,000",
-               "url":"https://uat-payment.ftcash.com/ondcengine/ondc_repayment/eyJwYXltZW50X3R5cGUiOiAiRk9SRUNMT1NVUkUiLCAiYXBwSWQiOiAiQVAwMjg4ODkifQ==",
+               "id":"76278",
+               "type":"POST_FULFILLMENT",
+               "url":"https://uat-payment.ftcash.com/ondcengine/ondc_repayment/eyJwYXltZW50X3R5cGUiOiAiRk9SRUNMT1NVUkUiLCAiYXBwSWQiOiAiQVAwMjg5MjEifQ==",
                "params":{
-                  "amount":"10000",
+                  "amount":"17523",
                   "currency":"INR"
                },
                "status":"NOT-PAID",
                "time":{
                   "label":"FORECLOSURE"
-               },
-               "type":"POST_FULFILLMENT"
+               }
             },
             {
-               "id":"11,000",
+               "id":"76278",
                "type":"ON_ORDER",
-               "status":"PAID",
+               "status":"NOT-PAID",
                "collected_by":"BPP",
                "tags":[
                   {
@@ -448,17 +455,17 @@
             },
             {
                "type":"POST_FULFILLMENT",
-               "id":"INSTALLMENT_ID_INVOICE_LOAN",
+               "id":"AP02892289",
                "params":{
-                  "amount":"10000",
+                  "amount":"17523",
                   "currency":"INR"
                },
                "status":"NOT-PAID",
                "time":{
                   "label":"INSTALLMENT",
                   "range":{
-                     "start":"2024-09-16T07:15:36.265Z",
-                     "end":"2024-10-31T07:15:36.265Z"
+                     "start":"2024-09-30T16:53:56.457Z",
+                     "end":"2024-11-14T16:53:56.457Z"
                   }
                },
                "collected_by":"BPP"
@@ -468,7 +475,7 @@
             {
                "fulfillment_state":{
                   "descriptor":{
-                     "code":"SANCTIONED"
+                     "code":"DISBURSED"
                   }
                },
                "cancellation_fee":{
