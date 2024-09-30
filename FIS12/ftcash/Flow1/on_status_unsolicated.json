@@ -9,25 +9,26 @@
             "code":"*"
          }
       },
-      "action":"on_select",
       "version":"2.1.0",
+      "action":"on_status",
+      "bap_uri":"https://buyer.pre.prod.samridh.ai/api",
       "bap_id":"buyer.pre.prod.samridh.ai",
-      "bap_uri":"https://bap.credit.becknprotocol.io/",
       "bpp_id":"preprod-ondc.ftcash.com",
       "bpp_uri":"https://preprod-ondc.ftcash.com/ondc_subscribe",
       "transaction_id":"62113185-6497-419d-8f32-253370840097",
-      "message_id":"0d40967e-c5bf-4e5b-9e44-9eae1e6e3c34",
-      "timestamp":"2024-09-30T13:06:45.707Z",
-      "ttl":"P30M"
+      "message_id":"44fe902f-6579-4a6a-99b1-65854eb14548",
+      "ttl":"PT10M",
+      "timestamp":"2024-09-30T13:17:50.355Z"
    },
    "message":{
       "order":{
+         "id":"AP028922",
          "provider":{
             "id":"FTC00",
             "descriptor":{
                "images":[
                   {
-                     "url":"https://www.ftcash.com/img/ftcashcolor.810572f9.png",
+                     "url":"https://www.ftcash.com/img/ftcash-color.810572f9.png",
                      "size_type":"sm"
                   }
                ],
@@ -100,42 +101,42 @@
                      }
                   ]
                },
-{
-                     "descriptor":{
-                        "code":"LSP_INFO",
-                        "name":"Lsp Info"
+               {
+                  "descriptor":{
+                     "code":"LSP_INFO",
+                     "name":"Lsp Info"
+                  },
+                  "list":[
+                     {
+                        "descriptor":{
+                           "code":"LSP_NAME",
+                           "name":"Lsp name"
+                        },
+                        "value":"ICICI_LSP"
                      },
-                     "list":[
-                        {
-                           "descriptor":{
-                              "code":"LSP_NAME",
-                              "name":"Lsp name"
-                           },
-                           "value":"ICICI_LSP"
+                     {
+                        "descriptor":{
+                           "code":"LSP_EMAIL",
+                           "name":"Lsp email"
                         },
-                        {
-                           "descriptor":{
-                              "code":"LSP_EMAIL",
-                              "name":"Lsp email"
-                           },
-                           "value":"lsp@iciciprulife.com"
+                        "value":"lsp@iciciprulife.com"
+                     },
+                     {
+                        "descriptor":{
+                           "code":"LSP_CONTACT_NUMBER",
+                           "name":"Lsp contact number"
                         },
-                        {
-                           "descriptor":{
-                              "code":"LSP_CONTACT_NUMBER",
-                              "name":"Lsp contact number"
-                           },
-                           "value":"1860 266 7766"
+                        "value":"1860 266 7766"
+                     },
+                     {
+                        "descriptor":{
+                           "code":"LSP_ADDRESS",
+                           "name":"Lsp Address"
                         },
-                        {
-                           "descriptor":{
-                              "code":"LSP_ADDRESS",
-                              "name":"Lsp Address"
-                           },
-                           "value":"One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013"
-                        }
-                     ]
-                  }
+                        "value":"One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013"
+                     }
+                  ]
+               }
             ]
          },
          "items":[
@@ -144,7 +145,7 @@
                "parent_item_id":"PAP0136480",
                "descriptor":{
                   "code":"INVOICE_BASED_LOAN",
-                  "name":"Invoice Based Loan Offer: INR  17523"
+                  "name":"Invoice Based Loan Offer: INR 17523"
                },
                "price":{
                   "currency":"INR",
@@ -237,27 +238,11 @@
                         },
                         {
                            "descriptor":{
-                              "code":"INSTALLMENT_AMOUNT",
-                              "name":"Installment amount",
-                              "short_desc":"Each installment amount of repayment"
-                           },
-                           "value":"46360 INR"
-                        },
-                        {
-                           "descriptor":{
-                              "code":"COOL_OFF_PERIOD",
-                              "name":"cool off period",
-                              "short_desc":"Cooling off/look-up period during which borrower shall not be charged any penalty"
-                           },
-                           "value":"P30D"
-                        },
-                        {
-                           "descriptor":{
                               "code":"ANNUAL_PERCENTAGE_RATE",
                               "name":"Annual Percentage Rate",
                               "short_desc":"Effective annualized interest rate in percentage computed on net disbursed amount using IRR approach and reducing balance method"
                            },
-                           "value":"5 %"
+                           "value":"5%"
                         },
                         {
                            "descriptor":{
@@ -265,15 +250,31 @@
                               "name":"Repayment Frequency",
                               "short_desc":"Repayment Frequency by borrower"
                            },
-                           "value":"P1M"
+                           "value":"MONTHLY"
                         },
                         {
                            "descriptor":{
                               "code":"NUMBER_OF_INSTALLMENTS_OF_REPAYMENT",
-                              "name":"Number of installments",
+                              "name":"Number of installments of repayment",
                               "short_desc":"Number of installments borrower has to make to payback the loan"
                            },
-                           "value":"45"
+                           "value":"1"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"COOL_OFF_PERIOD",
+                              "name":"cool off period",
+                              "short_desc":"Cooling off/look-up period during which borrower shall not be\tTAGS m jayega charged any penalty"
+                           },
+                           "value":"PT30D"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"INSTALLMENT_AMOUNT",
+                              "name":"Installment amount",
+                              "short_desc":"Each installment amount of repayment"
+                           },
+                           "value":"17523"
                         },
                         {
                            "descriptor":{
@@ -286,31 +287,7 @@
                      ],
                      "display":true
                   }
-               ],
-               "xinput":{
-                  "head":{
-                     "descriptor":{
-                        "name":"Customer Information"
-                     },
-                     "index":{
-                        "min":0,
-                        "cur":0,
-                        "max":1
-                     },
-                     "headings":[
-                        "Set Loan Amount",
-                        "Individual KYC"
-                     ]
-                  },
-                  "form":{
-                     "id":"F02",
-                     "mime_type":"text/html",
-                     "url":"https://preprod-ondc.ftcash.com/requestloan/PAP0136480/",
-                     "resubmit":false,
-                     "multiple_sumbissions":false
-                  },
-                  "required":true
-               }
+               ]
             }
          ],
          "quote":{
@@ -364,7 +341,170 @@
                }
             ],
             "ttl":"PT15D"
-         }
+         },
+         "fulfillments":[
+            {
+               "customer":{
+                  "organization":{
+                     "address":"Industrial Park, Bangalore",
+                     "state":{
+                        "name":"Karnataka"
+                     },
+                     "city":{
+                        "name":"Bangalore",
+                        "code":"560045"
+                     },
+                     "contact":{
+                        "phone":"+919876543210",
+                        "email":"alpha.manufacturing@gmail.com"
+                     }
+                  }
+               },
+               "state":{
+                  "descriptor":{
+                     "code":"SANCTIONED",
+                     "name":"Loan sanction is the approval of the loan by lender"
+                  }
+               }
+            }
+         ],
+         "payments":[
+            {
+               "id":"76278",
+               "type":"ON_ORDER",
+               "status":"NOT-PAID",
+               "collected_by":"BPP",
+               "tags":[
+                  {
+                     "descriptor":{
+                        "code":"BUYER_FINDER_FEES"
+                     },
+                     "display":false,
+                     "list":[
+                        {
+                           "descriptor":{
+                              "code":"BUYER_FINDER_FEES_TYPE"
+                           },
+                           "value":"percent-annualized"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"BUYER_FINDER_FEES_PERCENTAGE"
+                           },
+                           "value":"1"
+                        }
+                     ]
+                  },
+                  {
+                     "descriptor":{
+                        "code":"SETTLEMENT_TERMS"
+                     },
+                     "display":false,
+                     "list":[
+                        {
+                           "descriptor":{
+                              "code":"SETTLEMENT_WINDOW"
+                           },
+                           "value":"PT60M"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"SETTLEMENT_BASIS"
+                           },
+                           "value":"INVOICE_RECEIPT"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"MANDATORY_ARBITRATION"
+                           },
+                           "value":"TRUE"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"COURT_JURISDICTION"
+                           },
+                           "value":"New Delhi"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"STATIC_TERMS"
+                           },
+                           "value":"https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"SETTLEMENT_AMOUNT"
+                           },
+                           "value":"1159"
+                        },
+                        {
+                           "descriptor":{
+                              "code":"OFFLINE_CONTRACT"
+                           },
+                           "value":"true"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"POST_FULFILLMENT",
+               "id":"AP02892289",
+               "params":{
+                  "amount":"17523",
+                  "currency":"INR"
+               },
+               "status":"NOT-PAID",
+               "time":{
+                  "label":"INSTALLMENT",
+                  "range":{
+                     "start":"2024-09-30T13:17:33.461Z",
+                     "end":"2024-11-14T13:17:33.461Z"
+                  }
+               }
+            }
+         ],
+         "cancellation_terms":[
+            {
+               "fulfillment_state":{
+                  "descriptor":{
+                     "code":"SANCTIONED"
+                  }
+               },
+               "cancellation_fee":{
+                  "percentage":"3%"
+               }
+            },
+            {
+               "external_ref":{
+                  "mimetype":"text/html",
+                  "url":"https://bpp.credit.becknprotocol.org/loan/tnc.html"
+               }
+            },
+            {
+               "fulfillment_state":{
+                  "descriptor":{
+                     "code":"SANCTIONED",
+                     "name":"Loan SANCTIONED"
+                  }
+               },
+               "cancellation_fee":{
+                  "percentage":"5%"
+               }
+            }
+         ],
+         "documents":[
+            {
+               "descriptor":{
+                  "code":"LOAN_AGREEMENT",
+                  "name":"Loan Agreement Document",
+                  "short_desc":"Download your Loan Agreement document here",
+                  "long_desc":"A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
+               },
+               "mime_type":"application/pdf",
+               "url":"https://uat.ftcash.com/devtest/loan/public/loan_offer_letter_docs/ondc/AP045789/FTCASH_ONDC_Loan_Agreement_Letter_AP045789.pdf"
+            }
+         ]
       }
    }
 }
