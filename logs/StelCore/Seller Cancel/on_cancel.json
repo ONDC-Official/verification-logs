@@ -15,20 +15,20 @@
         "bap_uri": "https://b-ondc-export-2.nlincs.in/bap",
         "bpp_id": "api.nuniverse.in/ondc",
         "bpp_uri": "https://api.nuniverse.in/ondc/bpp",
-        "transaction_id": "14261035-3878-4bc8-90fa-43502df79616",
-        "message_id": "f430f40d-adc4-4acc-983c-0363fd805a4e",
-        "timestamp": "2024-09-04T11:10:00.214Z",
+        "transaction_id": "e58eee7c-1aa1-46b8-ab71-abe1752de7c3",
+        "message_id": "a28e07d8-5e48-4587-8795-d9ba751eca49",
+        "timestamp": "2024-10-03T11:10:00.214Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "3149-001558-2599",
+            "id": "3142-096887-3330",
             "state": "Cancelled",
             "provider": {
                 "id": "55953865-df67-43f0-86e3-8540692e6824",
                 "locations": [
                     {
-                        "id": "L1"
+                        "id": "022"
                     }
                 ]
             },
@@ -37,6 +37,10 @@
                     "id": "53a21701-67a5-4eb0-a3f3-1d3be70ac9c3",
                     "fulfillment_ids": [
                         "1"
+                    ],
+                    "payment_ids": [
+                        "P1",
+                        "P2"
                     ],
                     "quantity": {
                         "selected": {
@@ -67,7 +71,7 @@
                             "list": [
                                 {
                                     "code": "reason_id",
-                                    "value": "004"
+                                    "value": "002"
                                 },
                                 {
                                     "code": "initiated_by",
@@ -84,15 +88,15 @@
                                 },
                                 {
                                     "code": "updated_at",
-                                    "value": "2024-09-04T11:10:00.214Z"
+                                    "value": "2024-10-03T11:10:00.214Z"
                                 }
                             ]
                         }
                     ],
                     "time": {
                         "range": {
-                            "end": "2024-09-11T11:10:00.214Z",
-                            "start": "2024-09-06T11:10:00.214Z"
+                            "end": "2024-10-10T11:10:00.214Z",
+                            "start": "2024-10-03T11:10:00.214Z"
                         }
                     },
                     "type": "Delivery",
@@ -120,8 +124,8 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-09-04T10:50:05.007Z",
-                                    "end": "2024-09-06T10:50:05.007Z"
+                                    "start": "2024-10-03T10:50:05.007Z",
+                                    "end": "2024-10-03T10:50:05.007Z"
                                 }
                             },
                             "contact": {
@@ -132,21 +136,23 @@
                         {
                             "type": "start",
                             "location": {
-                                "gps": "undefined,undefined",
+                                "id": "022",
+                                "gps": "19.2126937,72.8634685",
                                 "descriptor": {
                                     "name": "SJ"
                                 }
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-09-04T10:50:05.007Z",
-                                    "end": "2024-09-06T10:50:05.007Z"
+                                    "start": "2024-10-03T10:50:05.007Z",
+                                    "end": "2024-10-03T10:50:05.007Z"
                                 }
                             },
                             "instructions": {
                                 "name": "Pickup instructions",
                                 "short_desc": "Pickup Confirmation Code",
-                                "long_desc": "Pickup instructions"
+                                "long_desc": "Pickup instructions",
+                                "images": []
                             },
                             "contact": {
                                 "phone": "9922225354",
@@ -154,7 +160,20 @@
                             }
                         }
                     ],
-                    "tracking": "false",
+                    "customer": {
+                        "person": {
+                            "creds": [
+                                {
+                                    "id": "ESG-12345678",
+                                    "url": "https://abcd.dnb.com/verify?id=’ESG-12345678'",
+                                    "desc": "Import License No. ESG-12345678",
+                                    "icon": "https://abcd.cdn.com/images/license-img",
+                                    "type": "License"
+                                }
+                            ]
+                        }
+                    },
+                    "tracking": false,
                     "@ondc/org/provider_name": "Loadshare",
                     "@ondc/org/category": "Express Delivery",
                     "@ondc/org/TAT": "P7D",
@@ -164,7 +183,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "80"
+                    "value": "80.00"
                 },
                 "breakup": [
                     {
@@ -175,12 +194,12 @@
                         "title": "Iodex Multipurpose Pain Balm (16G)",
                         "@ondc/org/title_type": "item",
                         "price": {
-                            "value": "80",
+                            "value": "80.00",
                             "currency": "INR"
                         },
                         "item": {
                             "price": {
-                                "value": "80",
+                                "value": "80.00",
                                 "currency": "INR"
                             }
                         }
@@ -229,6 +248,15 @@
                             "currency": "INR",
                             "value": "00.00"
                         }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "refund",
+                        "price": {
+                            "currency": "INR",
+                            "value": "00.00"
+                        }
                     }
                 ],
                 "ttl": "P1D"
@@ -250,6 +278,12 @@
                                 "code": "max_liability_cap"
                             },
                             "value": "10000"
+                        },
+                        {
+                            "value": "2",
+                            "descriptor": {
+                                "code": "max_liability"
+                            }
                         },
                         {
                             "descriptor": {
@@ -287,20 +321,18 @@
             ],
             "payments": [
                 {
-                    "params": {
-                        "currency": "INR",
-                        "amount": "80.00",
-                        "transaction_id": "3937",
-                        "bank_code": "xxxxxxxxx",
-                        "bank_account_number": "xxxxxxxxxxxx"
-                    },
-                    "uri": "https://seller.com/pg",
-                    "tl_method": "http/get",
-                    "status": "PAID",
+                    "id": "P1",
                     "type": "PRE-FULFILLMENT",
                     "collected_by": "SOR",
+                    "uri": "https://snp.com/pg",
+                    "params": {
+                        "currency": "INR",
+                        "transaction_id": "3937",
+                        "amount": "80.00"
+                    },
+                    "status": "PAID",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/buyer_app_finder_fee_amount": "3",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
                     "@ondc/org/withholding_amount": "10.00",
@@ -308,11 +340,14 @@
                         {
                             "settlement_counterparty": "buyer-app",
                             "settlement_phase": "sale-amount",
-                            "settlement_type": "OPGSP",
+                            "beneficiary_name": "xxxxx",
+                            "settlement_reference": "XXXX",
+                            "settlement_status": "PAID",
+                            "settlement_timestamp": "2023-02-04T10:00:00.000Z",
+                            "settlement_type": "rtgs",
                             "upi_address": "gft@oksbi",
                             "settlement_bank_account_no": "XXXXXXXXXX",
                             "settlement_ifsc_code": "XXXXXXXXX",
-                            "beneficiary_name": "xxxxx",
                             "bank_name": "xxxx",
                             "branch_name": "xxxx"
                         }
@@ -327,7 +362,7 @@
                                     "descriptor": {
                                         "code": "payment_type"
                                     },
-                                    "value": "OPGSP"
+                                    "value": "rtgs"
                                 },
                                 {
                                     "descriptor": {
@@ -338,14 +373,31 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "P2",
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "SOR",
+                    "uri": "https://snp.com/pg",
+                    "params": {
+                        "currency": "INR",
+                        "transaction_id": "3956",
+                        "amount": "80.00"
+                    },
+                    "status": "PAID",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "3",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10.00"
                 }
             ],
             "documents": [],
-            "created_at": "2024-09-04T11:09:47.764Z",
-            "updated_at": "2024-09-04T11:10:00.214Z",
+            "created_at": "2024-10-03T04:16:26.594Z",
+            "updated_at": "2024-10-03T11:10:00.214Z",
             "cancellation": {
                 "reason": {
-                    "id": "004"
+                    "id": "002"
                 },
                 "cancelled_by": "api.nuniverse.in/ondc"
             },
