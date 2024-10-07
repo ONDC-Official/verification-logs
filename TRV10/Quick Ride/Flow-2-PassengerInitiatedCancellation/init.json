@@ -1,124 +1,148 @@
-    {
-          "context": {
-            "action": "init",
-            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
-            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
-            "bpp_id": "testtds.getquickride.com",
-            "bpp_uri": "https://testtds.getquickride.com/taxidemandserver/rest/ondc",
-            "domain": "ONDC:TRV10",
-            "location": {
-              "city": {
-                "code": "std:080"
-              },
-              "country": {
-                "code": "IND"
-              }
+{
+  "context": {
+    "action": "init",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "testtds.getquickride.com",
+    "bpp_uri": "https://testtds.getquickride.com/taxidemandserver/rest/ondc",
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "0935bfac-488f-4da0-b870-da037b644a14",
+    "timestamp": "2024-10-04T14:12:06.979Z",
+    "transaction_id": "888f0df1-2d3f-423a-a0db-b906a81a0ea7",
+    "ttl": "PT15S",
+    "version": "2.0.1"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1-QR"
+      },
+      "billing": {
+        "name": "Nirdosh Chauhan"
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "phone": "9876543210"
             },
-            "message_id": "fc8624b6-567a-4a82-809e-b0c8681bba13",
-            "timestamp": "2024-09-19T04:29:57.002Z",
-            "transaction_id": "a09433da-e503-4f1a-9bd9-f850b264bf1e",
-            "ttl": "PT15S",
-            "version": "2.0.0"
+            "person": {
+              "name": "Nirdosh Chauhan"
+            }
           },
-          "message": {
-            "order": {
-              "provider": {
-                "id": "P1-QR"
+          "id": "FID:FFVC:Sedan:1138978:041020241420:1728051030330:-461677965",
+          "stops": [
+            {
+              "location": {
+                "gps": "13.008935, 77.644408"
               },
-              "billing": {
-                "name": "Nirdosh Chauhan"
+              "type": "START"
+            },
+            {
+              "location": {
+                "gps": "12.971186, 77.586812"
               },
-              "fulfillments": [
+              "type": "END"
+            }
+          ],
+          "vehicle": {
+            "category": "CAB",
+            "variant": "Sedan",
+            "model": "UNKNOWN"
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "IID:FFVC:Sedan:1138978:041020241420:1728051030330:-461677965"
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
                 {
-                  "customer": {
-                    "contact": {
-                      "phone": "9876543210"
-                    },
-                    "person": {
-                      "name": "Nirdosh Chauhan"
-                    }
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "id": "FID:FFVC:Sedan:1107420:190920240429:1726720173733:2070633935",
-                  "stops": [
-                    {
-                      "location": {
-                        "gps": "13.008935, 77.644408"
-                      },
-                      "type": "START",
-                      "instructions": {
-                        "long_desc": "Banaswadi, Bangalore East, Bengaluru Urban, Karnataka, 560043, India"
-                      }
-                    },
-                    {
-                      "location": {
-                        "gps": "12.971186, 77.586812"
-                      },
-                      "type": "END",
-                      "instructions": {
-                        "long_desc": "St Marthas Hospital, Kempegowda Road, Cubbonpet, Chikkapete, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560001, India"
-                      }
-                    }
-                  ],
-                  "vehicle": {
-                    "category": "CAB",
-                    "variant": "Sedan",
-                    "model": "UNKNOWN"
-                  }
+                  "value": "1"
                 }
-              ],
-              "items": [
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
                 {
-                  "id": "IID:FFVC:Sedan:1107420:190920240429:1726720173733:2070633935"
-                }
-              ],
-              "payments": [
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
                 {
-                  "collected_by": "BPP",
-                  "status": "NOT-PAID",
-                  "type": "ON-FULFILLMENT",
-                  "tags": [
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES"
-                      },
-                      "display": false,
-                      "list": [
-                        {
-                          "descriptor": {
-                            "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                          },
-                          "value": "1"
-                        }
-                      ]
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_TERMS"
-                      },
-                      "display": false,
-                      "list": [
-                        {
-                          "descriptor": {
-                            "code": "STATIC_TERMS"
-                          },
-                          "value": "https://api.example-bap.com/booking/terms"
-                        },
-                        {
-                          "descriptor": {
-                            "code": "DELAY_INTEREST"
-                          },
-                          "value": "2.5"
-                        }
-                      ]
-                    }
-                  ],
-                  "params": {
-                    "bank_code": "ICICI654120",
-                    "bank_account_number": "8756124435696",
-                    "virtual_payment_address": "9876543210@okicic"
-                  }
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "NEFT"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "P7D"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Bangalore"
                 }
               ]
             }
+          ],
+          "params": {
+            "bank_code": "ICICI654120",
+            "bank_account_number": "8756124435696",
+            "virtual_payment_address": "9876543210@okicic"
           }
+        }
+      ]
     }
+  }
+}
