@@ -1,0 +1,141 @@
+{
+  "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1728391705\",expires=\"1728395305\",headers=\"(created) (expires) digest\",signature=\"PJoi6I52MTS8eIBtGkRypHkDyGoaGqxGBtkDeyx8DuYqrr2L3G8F4CBkUiJmdTrcYDogMNiyGdLMKyV6FKRBCw==\"",
+  "context": {
+    "domain": "ONDC:FIS13",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "action": "init",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "bagic.api.finarkein.in",
+    "bpp_uri": "https://bagic.api.finarkein.in/ondc/sn/bagic/",
+    "message_id": "940b3c20-3341-4f1f-aafd-451bdbcd2b2b",
+    "timestamp": "2024-10-08T12:48:25.962Z",
+    "transaction_id": "0049d819-c6cb-48d7-b80c-c7484c6339c2",
+    "ttl": "PT10M",
+    "version": "2.0.0"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "BAGIC"
+      },
+      "items": [
+        {
+          "id": "8450-G",
+          "parent_item_id": "8450-G",
+          "xinput": {
+            "form": {
+              "id": "FO5"
+            },
+            "form_response": {
+              "status": "SUCCESS",
+              "submission_id": "8f50140c-d084-38cf-95a9-0fe087f375bd"
+            }
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "email": "ayush@gmail.com",
+              "phone": "9103334800"
+            },
+            "person": {
+              "name": "Ayush Yadav"
+            }
+          },
+          "id": "bb5aabba-4cde-46f7-87c2-c2dfddbfd3dc"
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1",
+                  "display": true
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true",
+                  "display": true
+                }
+              ]
+            }
+          ],
+          "params": {
+            "amount": "0.00",
+            "bank_account_number": "0000 0000 0000 0000",
+            "bank_code": "Test bank",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "type": "PRE-FULFILLMENT",
+          "url": "https://bagic.api.finarkein.in/ondc/sn/bagic/test/health/postPayment/0049d819-c6cb-48d7-b80c-c7484c6339c2"
+        }
+      ]
+    }
+  }
+}
