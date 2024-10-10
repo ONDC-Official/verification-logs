@@ -1,293 +1,263 @@
 {
-    "context": {
-        "domain": "ONDC:RET10",
-        "location": {
-            "city": {
-                "code": "std:5735"
-            },
-            "country": {
-                "code": "IND"
-            }
-        },
-        "action": "on_confirm",
-        "version": "2.0.2",
-        "bap_id": "ondcpreprodb2b.rapidor.co",
-        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
-        "bpp_id": "integrations-preprod.channelier.com",
-        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-        "transaction_id": "960754d4-91c9-448f-93c2-384f0004ae26",
-        "message_id": "c403ba15-57c0-4879-8af7-dd89c9fdc4c3",
-        "timestamp": "2024-03-04T03:05:23.874Z",
-        "ttl": "PT30S"
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
     },
-    "message": {
-        "order": {
-            "provider": {
-                "id": "CU2",
-                "locations": [
-                    {
-                        "id": "L1"
-                    }
-                ],
-                "rateable": true
-            },
-            "fulfillments": [
-                {
-                    "id": "1",
-                    "type": "Delivery",
-                    "@ondc/org/provider_name": "Cornitos",
-                    "state": {
-                        "descriptor": {
-                            "code": "Pending",
-                            "images": []
-                        }
-                    },
-                    "tracking": false,
-                    "stops": [
-                        {
-                            "type": "end",
-                            "location": {
-                                "gps": "28.481469,77.513547",
-                                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
-                                "area_code": "201308",
-                                "state": {
-                                    "name": "Uttar Pradesh"
-                                },
-                                "city": {
-                                    "name": "Meerut"
-                                },
-                                "country": {
-                                    "code": "IND"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9997723459"
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-03-04T03:06:28.205Z",
-                                    "end": "2024-03-11T07:06:23.205Z"
-                                }
-                            }
-                        },
-                        {
-                            "type": "start",
-                            "location": {
-                                "id": "L1",
-                                "descriptor": {
-                                    "name": "Cornitos"
-                                },
-                                "gps": "11.036049, 77.015817"
-                            },
-                            "contact": {
-                                "phone": "9896910499",
-                                "email": "techpvec18@gmail.com"
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-03-04T03:06:23.205Z",
-                                    "end": "2024-03-04T07:06:23.205Z"
-                                }
-                            }
-                        }
-                    ],
-                    "rateable": true
-                }
-            ],
-            "items": [
-                {
-                    "id": "CU2I4",
-                    "quantity": {
-                        "selected": {
-                            "count": 3
-                        }
-                    },
-                    "fulfillment_ids": [
-                        "1"
-                    ],
-                    "location_ids": [],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "No special packaging & shipment needed"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "price 350"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "payments": [
-                {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "settlement_bank_account_no": "1234567890",
-                            "settlement_ifsc_code": "HDFC0000102",
-                            "beneficiary_name": "Thomson",
-                            "bank_name": "Test Bank"
-                        }
-                    ],
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P5D",
-                    "@ondc/org/withholding_amount": "0",
-                    "status": "NOT-PAID",
-                    "params": {
-                        "currency": "INR",
-                        "amount": "1396.62"
-                    }
-                }
-            ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "1396.62"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "CU2I4",
-                        "@ondc/org/item_quantity": {
-                            "count": 3
-                        },
-                        "@ondc/org/title_type": "item",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "399.00"
-                            }
-                        },
-                        "title": "Cornitos Rajma Crusties King Curry 57g",
-                        "price": {
-                            "currency": "INR",
-                            "value": "1197.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "1",
-                        "@ondc/org/title_type": "delivery",
-                        "title": "Delivery Charges",
-                        "price": {
-                            "currency": "INR",
-                            "value": "107.62"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "1",
-                        "@ondc/org/title_type": "misc",
-                        "title": "Convenience Fee",
-                        "price": {
-                            "currency": "INR",
-                            "value": "92"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "state": "Created",
-            "tags": [
-                {
-                    "descriptor": {
-                        "code": "buyer_id"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_code"
-                            },
-                            "value": "gst"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "buyer_id_no"
-                            },
-                            "value": "22AAAAA0000A1Z5"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "max_liability"
-                            },
-                            "value": "2"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "max_liability_cap"
-                            },
-                            "value": "10000"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "mandatory_arbitration"
-                            },
-                            "value": "false"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "court_jurisdiction"
-                            },
-                            "value": "Mumbai"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "delay_interest"
-                            },
-                            "value": "1000"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bap_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "accept_bpp_terms"
-                            },
-                            "value": "Y"
-                        }
-                    ]
-                }
-            ],
-            "billing": {
-                "name": "Sumit Kumar Singh",
-                "address": "cs1, supertech, near by shiv mandir, Rampur Jagir, Meerut, 201308",
+    "action": "on_confirm",
+    "version": "2.0.2",
+    "bap_id": "ondcpreprodb2b.rapidor.co",
+    "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+    "bpp_id": "integrations-preprod.channelier.com",
+    "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+    "transaction_id": "d2f5543d-5ff5-42de-8dcb-1792699fd6b0",
+    "message_id": "a0b2b642-a224-46ba-b47e-da6df62254eb",
+    "timestamp": "2024-07-31T12:29:07.820Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "CU2",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ],
+        "rateable": true
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "@ondc/org/provider_name": "Cornitos",
+          "state": {
+            "descriptor": {
+              "code": "Pending",
+              "images": []
+            }
+          },
+          "tracking": false,
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "gps": "28.613930,77.208828",
+                "address": "plot 27, crown plaza, Neelam batanroad, NIT Faridabad, New Delhi, 110067",
+                "area_code": "110067",
                 "state": {
-                    "name": "Uttar Pradesh"
+                  "name": "Delhi"
                 },
                 "city": {
-                    "name": "Meerut"
+                  "name": "New Delhi"
                 },
-                "phone": "9997723459",
-                "tax_id": "22AAAAA0000A1Z5"
+                "country": {
+                  "code": "IND"
+                }
+              },
+              "contact": {
+                "phone": "9479319331"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-07-31T12:30:12.809Z",
+                  "end": "2024-08-09T12:30:07.809Z"
+                }
+              }
             },
-            "id": "RAP-0047654",
-            "created_at": "2024-03-04T03:05:23.158Z",
-            "updated_at": "2024-03-04T03:05:23.158Z"
+            {
+              "type": "start",
+              "location": {
+                "id": "L1",
+                "descriptor": {
+                  "name": "Cornitos"
+                },
+                "gps": "28.5285458,77.1667015"
+              },
+              "contact": {
+                "phone": "8766339084",
+                "email": "anujarora@cornitos.in"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-07-31T12:30:07.809Z",
+                  "end": "2024-08-02T12:30:07.809Z"
+                }
+              }
+            }
+          ],
+          "rateable": true
         }
+      ],
+      "items": [
+        {
+          "id": "CU2I2",
+          "quantity": {
+            "selected": {
+              "count": 2
+            }
+          },
+          "fulfillment_ids": [
+            "1"
+          ],
+          "tags": []
+        }
+      ],
+      "payments": [
+        {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "neft",
+              "settlement_bank_account_no": "1234567890",
+              "settlement_ifsc_code": "HDFC0000102",
+              "beneficiary_name": "Thomson",
+              "bank_name": "Test Bank"
+            }
+          ],
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P5D",
+          "@ondc/org/withholding_amount": "0",
+          "status": "NOT-PAID",
+          "params": {
+            "currency": "INR",
+            "amount": "347.62"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "347.62"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "CU2I2",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              }
+            },
+            "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+            "price": {
+              "currency": "INR",
+              "value": "240.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "107.62"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "state": "Created",
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "gst"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "23FZZAF2408R2Z4"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "max_liability_cap"
+              },
+              "value": "10000"
+            },
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "court_jurisdiction"
+              },
+              "value": "Mumbai"
+            },
+            {
+              "descriptor": {
+                "code": "delay_interest"
+              },
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bap_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "accept_bpp_terms"
+              },
+              "value": "Y"
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "Rajat Kumar Prajapati",
+        "address": "plot 27, crown plaza, Neelam batanroad, NIT Faridabad, New Delhi, 110067",
+        "state": {
+          "name": "Delhi"
+        },
+        "city": {
+          "name": "New Delhi"
+        },
+        "phone": "9479319331",
+        "tax_id": "23FZZAF2408R2Z4"
+      },
+      "id": "RAP-0057361",
+      "created_at": "2024-07-31T12:29:07.699Z",
+      "updated_at": "2024-07-31T12:29:07.820Z"
     }
+  }
 }
