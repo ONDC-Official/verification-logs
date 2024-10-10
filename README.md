@@ -8,3 +8,5 @@ To submit logs for protocol compliance verification, following steps need to be 
 >3. Merge your logs into this branch (logs should include request & response payloads for all enabled APIs)
 
 >4. Create PR for your branch
+
+>5. The PR will be approved and merged and verification comments will be provided in issue tagged to your entity
