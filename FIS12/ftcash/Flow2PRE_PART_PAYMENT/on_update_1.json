@@ -15,14 +15,14 @@
       "bap_id":"buyer.pre.prod.samridh.ai",
       "bpp_id":"preprod-ondc.ftcash.com",
       "bpp_uri":"https://preprod-ondc.ftcash.com/ondc_subscribe",
-      "transaction_id":"62113185-6497-419d-8f32-253370840097",
-      "message_id":"ee769248-27b2-43b0-b325-69e51ff74386",
+      "transaction_id":"827984fe-48dd-4875-b090-7fdc192a3551",
+      "message_id":"163b9c57-3a78-4e66-aed6-a51d81bd98ee",
       "ttl":"PT10M",
-      "timestamp":"2024-09-30T15:54:30.994Z"
+      "timestamp":"2024-10-09T12:10:60.300Z"
    },
    "message":{
       "order":{
-         "id":"AP028922",
+         "id":"AP028942",
          "provider":{
             "id":"FTC00",
             "descriptor":{
@@ -141,8 +141,7 @@
          },
          "items":[
             {
-               "id":"17,000",
-               "parent_item_id":"PAP0136480",
+               "id":"17000FT",
                "descriptor":{
                   "code":"INVOICE_BASED_LOAN",
                   "name":"Invoice Based Loan Offer: INR 17523"
@@ -154,8 +153,8 @@
                "tags":[
                   {
                      "descriptor":{
-                        "code":"INFO",
-                        "name":"Information"
+                        "code":"LOAN_INFO",
+                        "name":"Loan Information"
                      },
                      "list":[
                         {
@@ -230,14 +229,6 @@
                         },
                         {
                            "descriptor":{
-                              "code":"INVOICE_NUMBER",
-                              "name":"Invoice Number",
-                              "short_desc":"Describes the invoice number"
-                           },
-                           "value":"17,000"
-                        },
-                        {
-                           "descriptor":{
                               "code":"ANNUAL_PERCENTAGE_RATE",
                               "name":"Annual Percentage Rate",
                               "short_desc":"Effective annualized interest rate in percentage computed on net disbursed amount using IRR approach and reducing balance method"
@@ -266,7 +257,7 @@
                               "name":"cool off period",
                               "short_desc":"Cooling off/look-up period during which borrower shall not be\tTAGS m jayega charged any penalty"
                            },
-                           "value":"PT30D"
+                           "value":"P30D"
                         },
                         {
                            "descriptor":{
@@ -274,15 +265,7 @@
                               "name":"Installment amount",
                               "short_desc":"Each installment amount of repayment"
                            },
-                           "value":"17523"
-                        },
-                        {
-                           "descriptor":{
-                              "code":"KFS_LINK",
-                              "name":"Key Facts Statement Link",
-                              "short_desc":"A link provided by the BPP points to a Key Fact Statement (KFS) document related to a loan. When accessed, the document is returned in text/html format, with the loan details organized in a standard HTML table. This format makes it easy for the buyer\\'s app to read and reformat the information as needed. For more details, refer to the \"KFS_LINK format\" document in the \"feature-ui\" section."
-                           },
-                           "value":"https://icicibank.com/loan/kfs-terms"
+                           "value":"17523INR"
                         }
                      ],
                      "display":true
@@ -291,7 +274,7 @@
             }
          ],
          "quote":{
-            "id":"AP028922",
+            "id":"AP028942",
             "price":{
                "currency":"INR",
                "value":"17523"
@@ -338,6 +321,34 @@
                      "value":"0",
                      "currency":"INR"
                   }
+               },
+               {
+                  "title":"OUTSTANDING_PRINCIPAL",
+                  "price":{
+                     "value":"17523",
+                     "currency":"INR"
+                  }
+               },
+               {
+                  "title":"OUTSTANDING_INTEREST",
+                  "price":{
+                     "value":"525.7",
+                     "currency":"INR"
+                  }
+               },
+               {
+                  "title":"PRE_PAYMENT_CHARGE",
+                  "price":{
+                     "value":"0",
+                     "currency":"INR"
+                  }
+               },
+               {
+                  "title":"OTHER_UPFRONT_CHARGES",
+                  "price":{
+                     "value":"0",
+                     "currency":"INR"
+                  }
                }
             ],
             "ttl":"PT15D"
@@ -345,36 +356,28 @@
          "fulfillments":[
             {
                "customer":{
-                  "organization":{
-                     "address":"Industrial Park, Bangalore",
-                     "state":{
-                        "name":"Karnataka"
-                     },
-                     "city":{
-                        "name":"Bangalore",
-                        "code":"560045"
-                     },
-                     "contact":{
-                        "phone":"+919876543210",
-                        "email":"alpha.manufacturing@gmail.com"
-                     }
+                  "person":{
+                     "name":"John Doe"
+                  },
+                  "contact":{
+                     "phone":"+91-9999999999",
+                     "email":"john.doe@example.com"
                   }
                },
                "state":{
                   "descriptor":{
-                     "code":"DISBURSED",
-                     "name":"Loan disbursed"
+                     "code":"DISBURSED"
                   }
                }
             }
          ],
          "payments":[
             {
-               "id":"76278",
+               "id":"76311",
                "type":"POST_FULFILLMENT",
-               "url":"https://uat-payment.ftcash.com/ondcengine/ondc_repayment/eyJwYXltZW50X3R5cGUiOiAiUFJFX1BBUlRfUEFZTUVOVCIsICJhcHBJZCI6ICJBUDAyODkyMSIsICJhbW91bnQiOiAiMTAwMCJ9",
+               "url":"https://uat-payment.ftcash.com/ondcengine/ondc_repayment/eyJwYXltZW50X3R5cGUiOiAiUFJFX1BBUlRfUEFZTUVOVCIsICJhcHBJZCI6ICJBUDAyODk0MiIsICJhbW91bnQiOiAiMTAwMCJ9",
                "params":{
-                  "amount":"17523",
+                  "amount":"17535",
                   "currency":"INR"
                },
                "status":"NOT-PAID",
@@ -383,9 +386,9 @@
                }
             },
             {
-               "id":"76278",
+               "id":"76311",
                "type":"ON_ORDER",
-               "status":"NOT-PAID",
+               "status":"PAID",
                "collected_by":"BPP",
                "tags":[
                   {
@@ -448,7 +451,7 @@
                            "descriptor":{
                               "code":"SETTLEMENT_AMOUNT"
                            },
-                           "value":"1159"
+                           "value":"17535"
                         }
                      ]
                   }
@@ -456,17 +459,17 @@
             },
             {
                "type":"POST_FULFILLMENT",
-               "id":"AP02892289",
+               "id":"AP028942105",
                "params":{
-                  "amount":"17523",
+                  "amount":"17535",
                   "currency":"INR"
                },
                "status":"NOT-PAID",
                "time":{
                   "label":"INSTALLMENT",
                   "range":{
-                     "start":"2024-09-30T15:54:22.247Z",
-                     "end":"2024-11-14T15:54:22.247Z"
+                         "start": "2024-10-09T00:00:00.000Z",
+                         "end": "2024-11-23T23:59:59.999Z"
                   }
                },
                "collected_by":"BPP"
