@@ -1,80 +1,80 @@
 {
-      "context": {
-        "domain": "ONDC:TRV10",
-        "location": {
-          "country": {
-            "code": "IND"
-          },
-          "city": {
-            "code": "std:080"
-          }
-        },
-        "version": "2.0.1",
-        "action": "search",
-        "transaction_id": "8308afe7-5252-40b1-b6c2-4fd759a4178b",
-        "message_id": "82abab82-a262-40c9-b8ed-d23f67467ae4",
-        "timestamp": "2024-10-12T07:09:39.316Z",
-        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
-        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
-        "ttl": "PT30M"
+  "context": {
+    "domain": "ONDC:TRV10",
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "message": {
-        "intent": {
-          "fulfillment": {
-            "stops": [
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "version": "2.0.1",
+    "action": "search",
+    "transaction_id": "888f0df1-2d3f-423a-a0db-b906a81a0ea7",
+    "message_id": "55765196-7270-413c-973f-deb48827bf49",
+    "timestamp": "2024-10-04T14:10:29.365Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "intent": {
+      "fulfillment": {
+        "stops": [
+          {
+            "type": "START",
+            "location": {
+              "gps": "13.008935, 77.644408"
+            }
+          },
+          {
+            "type": "END",
+            "location": {
+              "gps": "12.971186, 77.586812"
+            }
+          }
+        ]
+      },
+      "payment": {
+        "collected_by": "BPP",
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "display": false,
+            "list": [
               {
-                "type": "START",
-                "location": {
-                  "gps": "13.008935, 77.644408"
-                }
-              },
-              {
-                "type": "END",
-                "location": {
-                  "gps": "12.971186, 77.586812"
-                }
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
               }
             ]
           },
-          "payment": {
-            "collected_by": "BPP",
-            "tags": [
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
               {
                 "descriptor": {
-                  "code": "BUYER_FINDER_FEES"
+                  "code": "DELAY_INTEREST"
                 },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                    },
-                    "value": "1"
-                  }
-                ]
+                "value": "2.5"
               },
               {
                 "descriptor": {
-                  "code": "SETTLEMENT_TERMS"
+                  "code": "STATIC_TERMS"
                 },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "DELAY_INTEREST"
-                    },
-                    "value": "2.5"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "STATIC_TERMS"
-                    },
-                    "value": "https://api.example-bap.com/booking/terms"
-                  }
-                ]
+                "value": "https://api.example-bap.com/booking/terms"
               }
             ]
           }
-        }
+        ]
       }
     }
+  }
+}
