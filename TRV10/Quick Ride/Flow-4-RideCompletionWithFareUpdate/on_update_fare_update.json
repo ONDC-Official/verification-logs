@@ -1,6 +1,6 @@
 {
       "context": {
-        "action": "on_init",
+        "action": "on_update",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bpp_id": "testtds.getquickride.com",
@@ -14,8 +14,8 @@
             "code": "IND"
           }
         },
-        "message_id": "f4db90c6-d403-48da-abbe-a2d3d9e379b9",
-        "timestamp": "2024-10-12T07:17:22.980Z",
+        "message_id": "1230e17e-4442-4f49-934e-249cf8100078",
+        "timestamp": "2024-10-12T07:40:48.724Z",
         "transaction_id": "235c865a-51b4-4a30-b536-8c44e1e45225",
         "ttl": "PT10M",
         "version": "2.0.1"
@@ -33,6 +33,12 @@
                   "type": "START",
                   "instructions": {
                     "long_desc": "Banaswadi, Bangalore East, Bengaluru Urban, Karnataka, 560043, India"
+                  },
+                  "authorization": {
+                    "token": "2416",
+                    "type": "OTP",
+                    "valid_to": "2024-10-12T08:26:51.000Z",
+                    "status": "CLAIMED"
                   }
                 },
                 {
@@ -73,7 +79,10 @@
               ],
               "vehicle": {
                 "category": "CAB",
-                "variant": "SEDAN"
+                "variant": "SEDAN",
+                "make": "MARUTI SWIFT 2018 ZXI AMT PLUS",
+                "model": "MARUTI SWIFT 2018",
+                "registration": "KAPAVAN123"
               },
               "customer": {
                 "contact": {
@@ -81,6 +90,19 @@
                 },
                 "person": {
                   "name": "Nirdosh Chauhan"
+                }
+              },
+              "agent": {
+                "contact": {
+                  "phone": "08047185378"
+                },
+                "person": {
+                  "name": "AndriodDriver"
+                }
+              },
+              "state": {
+                "descriptor": {
+                  "code": "RIDE_ENDED"
                 }
               }
             }
@@ -222,15 +244,21 @@
                   "list": [
                     {
                       "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
                         "code": "STATIC_TERMS"
                       },
                       "value": "https://api.example-bap.com/booking/terms"
                     },
                     {
                       "descriptor": {
-                        "code": "DELAY_INTEREST"
+                        "code": "SETTLEMENT_AMOUNT"
                       },
-                      "value": "2.5"
+                      "value": "1.56"
                     },
                     {
                       "descriptor": {
@@ -261,12 +289,6 @@
                         "code": "COURT_JURISDICTION"
                       },
                       "value": "Bangalore"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_AMOUNT"
-                      },
-                      "value": "1.56"
                     }
                   ]
                 }
@@ -283,21 +305,28 @@
               {
                 "price": {
                   "currency": "INR",
-                  "value": "80.00"
+                  "value": "101.37"
                 },
                 "title": "BASE_FARE"
               },
               {
                 "price": {
                   "currency": "INR",
-                  "value": "78.00"
+                  "value": "24.00"
+                },
+                "title": "WAITING_CHARGES"
+              },
+              {
+                "price": {
+                  "currency": "INR",
+                  "value": "57.63"
                 },
                 "title": "DISTANCE_FARE"
               }
             ],
             "price": {
               "currency": "INR",
-              "value": "158.00"
+              "value": "183.00"
             },
             "ttl": "PT10M"
           },
@@ -346,7 +375,11 @@
               },
               "reason_required": true
             }
-          ]
+          ],
+          "id": "834081",
+          "status": "ACTIVE",
+          "created_at": "2024-10-12T07:17:37.000Z",
+          "updated_at": "2024-10-12T07:40:46.000Z"
         }
       }
     }
