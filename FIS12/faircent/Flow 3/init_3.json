@@ -1,129 +1,117 @@
 {
-      "context": {
-        "domain": "ONDC:FIS12",
-        "action": "init",
-        "version": "2.0.0",
-        "bap_id": "ondcfspreprod.easypay.co.in",
-        "bap_uri": "https://ondcfspreprod.easypay.co.in/ecommerce/ondc/buyer-finance/",
-        "transaction_id": "e8c6f109-4b95-45eb-b8b9-5a0b6530690a",
-        "message_id": "1c2b58c6-8a96-4e48-b816-ce8bfe151c3d",
-        "timestamp": "2024-08-20T10:48:10.989Z",
-        "ttl": "PT30M",
-        "bpp_id": "stageapi.faircent.com",
-        "bpp_uri": "https://stageapi.faircent.com/spp/",
-        "location": {
-          "country": {
-            "code": "IND"
-          },
-          "city": {
-            "code": "*"
+  "context": {
+    "domain": "ONDC:FIS12",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "action": "init",
+    "version": "2.0.0",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "stageapi.faircent.com",
+    "bpp_uri": "https://stageapi.faircent.com/spp/",
+    "transaction_id": "cadf1712-f817-4110-9be9-afa79f07e225",
+    "message_id": "9f193e0a-5a9c-4117-b60f-4bd8171d13e8",
+    "timestamp": "2024-09-27T08:49:52.837Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "0001"
+      },
+      "items": [
+        {
+          "id": "01",
+          "xinput": {
+            "form": {
+              "id": "TESTING_NACH64898"
+            },
+            "form_response": {
+              "status": "SUCCESS",
+              "submission_id": "505835"
+            }
           }
         }
-      },
-      "message": {
-        "order": {
-          "provider": {
-            "id": "0001"
+      ],
+      "payments": [
+        {
+          "id": "24609",
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON_ORDER",
+          "params": {
+            "bank_code": "ICICI775420",
+            "bank_account_number": "776682194335",
+            "virtual_payment_address": "9988118899@okicic"
           },
-          "items": [
+          "tags": [
             {
-              "id": "01",
-              "xinput": {
-                "form": {
-                  "id": "TESTING_NACH64885"
-                },
-                "form_response": {
-                  "status": "SUCCESS",
-                  "submission_id": "435650"
-                }
-              }
-            }
-          ],
-          "payments": [
-            {
-              "id": "19601",
-              "collected_by": "BPP",
-              "type": "ON_ORDER",
-              "status": "NOT-PAID",
-              "params": {
-                "bank_code": "SBIN0000541",
-                "bank_account_number": "35330265768",
-                "virtual_payment_address": "7745810700@upi"
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
               },
-              "tags": [
+              "display": false,
+              "list": [
                 {
                   "descriptor": {
-                    "code": "BUYER_FINDER_FEES"
+                    "code": "BUYER_FINDER_FEES_TYPE"
                   },
-                  "display": false,
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES_TYPE"
-                      },
-                      "value": "percent"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                      },
-                      "value": "0.5"
-                    }
-                  ]
+                  "value": "percent-annualized"
                 },
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_TERMS"
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "display": false,
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_AMOUNT"
-                      },
-                      "value": "750.00"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "OFFLINE_CONTRACT"
-                      },
-                      "value": "true"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_WINDOW"
-                      },
-                      "value": "PT60M"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "STATIC_TERMS"
-                      },
-                      "value": "https://easypay.in/loan.html"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_BASIS"
-                      },
-                      "value": "INVOICE_RECEIPT"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_TYPE"
-                      },
-                      "value": "upi"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "DELAY_INTEREST"
-                      },
-                      "value": "2.5"
-                    }
-                  ]
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "2250.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "neft"
                 }
               ]
             }
           ]
         }
-      }
+      ]
     }
+  }
+}
