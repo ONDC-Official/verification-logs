@@ -1,6 +1,6 @@
 {
       "context": {
-        "action": "on_select",
+        "action": "on_status",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bpp_id": "testtds.getquickride.com",
@@ -14,8 +14,8 @@
             "code": "IND"
           }
         },
-        "message_id": "8ff5ea8e-df41-4469-8122-f62da31ad603",
-        "timestamp": "2024-10-17T06:46:36.222Z",
+        "message_id": "ecfa6f22-4e76-4f26-95ae-f04c6aa0373b",
+        "timestamp": "2024-10-17T06:48:24.662Z",
         "transaction_id": "63c1c28d-701f-4f18-a9cd-48b53ae17ce1",
         "ttl": "PT10M",
         "version": "2.0.1"
@@ -33,6 +33,12 @@
                   "type": "START",
                   "instructions": {
                     "long_desc": "Banaswadi, Bangalore East, Bengaluru Urban, Karnataka, 560043, India"
+                  },
+                  "authorization": {
+                    "token": "2095",
+                    "type": "OTP",
+                    "valid_to": "2024-10-17T07:56:04.000Z",
+                    "status": "UNCLAIMED"
                   }
                 },
                 {
@@ -73,7 +79,32 @@
               ],
               "vehicle": {
                 "category": "CAB",
-                "variant": "SEDAN"
+                "variant": "SEDAN",
+                "make": "Chevrolet Sail Sedan Ls Abs",
+                "model": "CHEVROLET SAIL SEDAN",
+                "registration": "KA36HS4694"
+              },
+              "customer": {
+                "contact": {
+                  "phone": "9876543210"
+                },
+                "person": {
+                  "name": "Nirdosh Chauhan"
+                }
+              },
+              "agent": {
+                "contact": {
+                  "phone": "08047185378"
+                },
+                "person": {
+                  "name": "Anil"
+                }
+              },
+              "state": {
+                "descriptor": {
+                  "name": "Your driver is on the way to pickup",
+                  "code": "RIDE_ENROUTE_PICKUP"
+                }
               }
             }
           ],
@@ -168,11 +199,99 @@
                       "descriptor": {
                         "code": "ETA_TO_NEAREST_DRIVER_MIN"
                       },
-                      "value": "27"
+                      "value": "26"
                     }
                   ]
                 }
+              ],
+              "payment_ids": [
+                "P:63c1c28d-701f-4f18-a9cd-48b53ae17ce1"
               ]
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "params": {
+                "bank_account_number": "8756124435696",
+                "bank_code": "ICICI654120",
+                "virtual_payment_address": "9876543210@okicic"
+              },
+              "status": "NOT-PAID",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://api.example-bap.com/booking/terms"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_AMOUNT"
+                      },
+                      "value": "1.42"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "NEFT"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "P7D"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "Delivery"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MANDATORY_ARBITRATION"
+                      },
+                      "value": "true"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "COURT_JURISDICTION"
+                      },
+                      "value": "Bangalore"
+                    }
+                  ]
+                }
+              ],
+              "type": "ON-FULFILLMENT",
+              "id": "P:63c1c28d-701f-4f18-a9cd-48b53ae17ce1"
             }
           ],
           "provider": {
@@ -200,7 +319,57 @@
               "value": "144.00"
             },
             "ttl": "PT10M"
-          }
+          },
+          "cancellation_terms": [
+            {
+              "cancellation_fee": {
+                "percentage": "15.00"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_ASSIGNED"
+                }
+              },
+              "reason_required": true
+            },
+            {
+              "cancellation_fee": {
+                "percentage": "15.00"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_ENROUTE_PICKUP"
+                }
+              },
+              "reason_required": true
+            },
+            {
+              "cancellation_fee": {
+                "percentage": "25.00"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_ARRIVED_PICKUP"
+                }
+              },
+              "reason_required": true
+            },
+            {
+              "cancellation_fee": {
+                "percentage": "25.00"
+              },
+              "fulfillment_state": {
+                "descriptor": {
+                  "code": "RIDE_STARTED"
+                }
+              },
+              "reason_required": true
+            }
+          ],
+          "id": "835983",
+          "status": "ACTIVE",
+          "created_at": "2024-10-17T06:47:46.768Z",
+          "updated_at": "2024-10-17T06:48:20.120Z"
         }
       }
     }
