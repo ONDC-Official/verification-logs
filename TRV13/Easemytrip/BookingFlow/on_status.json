@@ -6,13 +6,14 @@
         "code": "IND"
       },
       "city": {
-        "code": "std:0124"
+        "code": "std:0124",
+        "name": "GURGAON"
       }
     },
     "transaction_id": "2e39a49c-8586-4392-ac5c-680ae43a25ea",
     "message_id": "1cc56a9e-1c5b-4763-9b87-cb7d9c7177c9",
-    "action": "init",
-    "timestamp": "2024-10-19T09:13:24.160Z",
+    "action": "on_status",
+    "timestamp": "0001-01-01T00:00:00",
     "version": "2.0.0",
     "bap_uri": "https://ondc.easemytrip.com/hotels/",
     "bap_id": "ondc.easemytrip.com/hotels",
@@ -22,19 +23,59 @@
   },
   "message": {
     "order": {
+      "id": "141084868",
+      "status": "ACTIVE",
       "provider": {
         "id": "EMTHotel-3469793"
       },
       "items": [
         {
           "id": "Room-1",
+          "location_ids": [
+                "L-3469793"
+              ],
           "quantity": {
             "selected": {
               "count": 1
             }
-          }
+          },
+          "add_ons": null
         }
       ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "2988"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "Room-1",               
+              "quantity": 1,
+              "add_ons": [
+                
+              ]
+            },
+            "title": "Standard Room with Swimming Pool Access",
+            "price": {
+              "currency": "INR",
+              "value": "2701"
+            }
+          },
+          {
+            "item": {
+              "id": "Room-1",
+              "quantity": 1,
+              "add_ons": []
+            },
+            "title": "GST",
+            "price": {
+              "currency": "INR",
+              "value": "287"
+            }
+          }
+        ],
+      },
       "payments": [
         {
           "id": "ON_FULFILLMENT",
@@ -43,82 +84,49 @@
           "tags": [
             {
               "descriptor": {
-                "code": "FULL_PAYMENT"
-              }
+                "code": "FULL_PAYMENT",
+                "name": null
+              },
+              "list": null
             }
           ],
           "collected_by": "BPP",
           "params": {
-            "amount": "3136",
+            "amount": "3150.00",
             "currency": "INR",
+            "bank_code": null,
             "bank_account_number": "Bank Account Number of Buyer App",
             "virtual_payment_address": "VPA of Buyer App"
           }
         }
       ],
-      "billing": {
-        "name": "Sandeep S",
-        "address": "Dwarka, Delhi-110075",
-        "state": {
-          "name": "Delhi"
-        },
-        "city": {
-          "name": "Delhi"
-        },
-        "organization": {
-          "descriptor": {
-            "name": "ONDC"
-          },
-          "address": "ONDC, Delhi-110049"
-        },
-        "email": "email@ondc.org",
-        "phone": "1704380085",
-        "tax_id": "GSTIN1234567890"
-      },
-      "fulfillments": [
-        {
-          "id": "customer-1",
-          "customer": {
-            "person": {
-              "name": "Sandeep S",
-              "age": "25",
-              "dob": "2023-12-20",
-              "gender": "M",
-              "creds": [
-                {
-                  "id": "AADHAAR_NO_123",
-                  "type": "AADHAAR"
-                }
-              ]
-            },
-            "contact": {
-              "phone": "1704380085",
-              "email": "email@ondc.org"
-            }
-          }
-        }
-      ],
+      "billing": null,
+      "fulfillments": null,
       "tags": [
         {
           "descriptor": {
-            "code": "BAP_TERMS"
+            "code": "BAP_TERMS",
+            "name": null
           },
           "list": [
             {
               "descriptor": {
-                "code": "STATIC_TERMS"
+                "code": "STATIC_TERMS",
+                "name": null
               },
               "value": ""
             },
             {
               "descriptor": {
-                "code": "STATIC_TERMS_NEW"
+                "code": "STATIC_TERMS_NEW",
+                "name": null
               },
               "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
             },
             {
               "descriptor": {
-                "code": "EFFECTIVE_DATE"
+                "code": "EFFECTIVE_DATE",
+                "name": null
               },
               "value": "2024-01-01T00:00:00Z"
             }
@@ -126,20 +134,20 @@
         },
         {
           "descriptor": {
-            "code": "BUYER_FINDER_FEES"
+            "code": "BUYER_FINDER_FEES",
+            "name": null
           },
           "list": [
             {
               "descriptor": {
-                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                "code": "BUYER_FINDER_FEES_PERCENTAGE",
+                "name": null
               },
               "value": "3"
             }
           ]
         }
-      ],
-      "created_at": "0001-01-01T00:00:00",
-      "updated_at": "0001-01-01T00:00:00"
+      ]
     }
   }
 }
