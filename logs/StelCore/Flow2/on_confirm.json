@@ -15,19 +15,20 @@
         "bap_uri": "https://b-ondc-export-2.nlincs.in/bap",
         "bpp_id": "api.nuniverse.in/ondc",
         "bpp_uri": "https://api.nuniverse.in/ondc/bpp",
-        "transaction_id": "1b9819b3-8e2f-421c-bff7-2a17ec65937b",
-        "message_id": "1345e01f-81eb-4f32-8371-02679c959431",
-        "timestamp": "2024-09-09T10:35:43.323Z",
+        "transaction_id": "4a7ec09e-b694-42e4-bd26-7f75624ea611",
+        "message_id": "6d342975-6e82-46ef-80e3-0c4804bb75c4",
+        "timestamp": "2024-10-09T05:54:29.492Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "3149-717303-6488",
+            "id": "3142-024555-1482",
+            "state": "Accepted",
             "provider": {
                 "id": "55953865-df67-43f0-86e3-8540692e6824",
                 "locations": [
                     {
-                        "id": "L1"
+                        "id": "022"
                     }
                 ]
             },
@@ -35,7 +36,7 @@
                 {
                     "id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
                     "fulfillment_ids": [
-                        "1"
+                        "F1"
                     ],
                     "quantity": {
                         "selected": {
@@ -59,7 +60,7 @@
             },
             "fulfillments": [
                 {
-                    "id": "1",
+                    "id": "F1",
                     "type": "Delivery",
                     "tracking": false,
                     "stops": [
@@ -87,15 +88,16 @@
                         {
                             "type": "start",
                             "location": {
-                                "gps": "undefined,undefined",
+                                "id": "022",
+                                "gps": "19.2126937,72.8634685",
                                 "descriptor": {
                                     "name": "SJ"
                                 }
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-07-24T10:00:00.000Z",
-                                    "end": "2024-07-24T10:30:00.000Z"
+                                    "start": "2024-10-14T05:33:53.452Z",
+                                    "end": "2024-10-09T05:33:53.452Z"
                                 }
                             },
                             "instructions": {
@@ -110,8 +112,6 @@
                         }
                     ],
                     "@ondc/org/provider_name": "Loadshare",
-                    "@ondc/org/category": "Express Delivery",
-                    "@ondc/org/TAT": "P7D",
                     "state": {
                         "descriptor": {
                             "code": "Pending"
@@ -123,7 +123,7 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "250"
+                    "value": "250.00"
                 },
                 "breakup": [
                     {
@@ -134,12 +134,12 @@
                         "title": "Iodex Rub Ointment - 45 g",
                         "@ondc/org/title_type": "item",
                         "price": {
-                            "value": "250",
+                            "value": "250.00",
                             "currency": "INR"
                         },
                         "item": {
                             "price": {
-                                "value": "250",
+                                "value": "250.00",
                                 "currency": "INR"
                             }
                         }
@@ -220,7 +220,7 @@
                             "descriptor": {
                                 "code": "court_jurisdiction"
                             },
-                            "value": "Mumbai"
+                            "value": "Bengaluru"
                         },
                         {
                             "descriptor": {
@@ -244,6 +244,49 @@
                     ]
                 }
             ],
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "IND",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "IND",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Domestic-custom-cleared"
+                        }
+                    },
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "100"
+                    }
+                }
+            ],
             "payments": [
                 {
                     "params": {
@@ -259,7 +302,7 @@
                     "type": "PRE-FULFILLMENT",
                     "collected_by": "SOR",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/buyer_app_finder_fee_amount": "3",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
                     "@ondc/org/withholding_amount": "10.00",
@@ -267,7 +310,7 @@
                         {
                             "settlement_counterparty": "buyer-app",
                             "settlement_phase": "sale-amount",
-                            "settlement_type": "OPGSP",
+                            "settlement_type": "rtgs",
                             "upi_address": "gft@oksbi",
                             "settlement_bank_account_no": "XXXXXXXXXX",
                             "settlement_ifsc_code": "XXXXXXXXX",
@@ -286,7 +329,7 @@
                                     "descriptor": {
                                         "code": "payment_type"
                                     },
-                                    "value": "OPGSP"
+                                    "value": "rtgs"
                                 },
                                 {
                                     "descriptor": {
@@ -299,8 +342,8 @@
                     ]
                 }
             ],
-            "updated_at": "2024-09-09T10:35:43.323Z",
-            "created_at": "2024-09-09T10:35:22.906Z"
+            "created_at": "2024-10-09T05:54:26.908Z",
+            "updated_at": "2024-10-09T05:54:29.492Z"
         }
     }
 }
