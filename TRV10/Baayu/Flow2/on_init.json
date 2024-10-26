@@ -1,22 +1,22 @@
 {
   "context": {
     "action": "on_init",
-    "bap_id": "api-mobilitybuyer-uat.sumasoft.com",
-    "bap_uri": "https://api-mobilitybuyer-uat.sumasoft.com/mobility/passenger",
+    "bap_id": "rb-auto-preprod.redbus.in",
+    "bap_uri": "https://rb-auto-preprod.redbus.in",
     "bpp_id": "staging-mobility-ondc.baayu.app",
     "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
     "domain": "ONDC:TRV10",
     "location": {
       "city": {
-        "code": "std:020"
+        "code": "std:0385"
       },
       "country": {
         "code": "IND"
       }
     },
-    "message_id": "791337d7-022f-47fa-9a88-e009ed7d247a",
-    "timestamp": "2024-08-21T10:12:41.360Z",
-    "transaction_id": "dad41d46-bfe5-40b8-a31a-813e925ca888",
+    "message_id": "2aa21291-a748-4b42-a3a2-92a8817a186f",
+    "timestamp": "2024-10-25T11:08:03.222Z",
+    "transaction_id": "90e4003b-c679-4d01-9317-1ca0429ff49e",
     "ttl": "PT30S",
     "version": "2.0.0"
   },
@@ -84,44 +84,49 @@
         {
           "customer": {
             "contact": {
-              "phone": "9765242868"
+              "phone": "9591690965"
             },
             "person": {
-              "name": "Rajat Gajbhiye"
+              "name": "Mokshith"
             }
           },
-          "id": "1911b53b-19b4-410b-bf82-0b5243ab715a",
+          "id": "c8a71e64-4054-4a67-bf13-93f478ebfcc0",
           "stops": [
             {
               "location": {
                 "address": "Kakwa, Imphal, Manipur, India",
-                "gps": "93.935569,24.771121"
+                "gps": "24.771121,93.935570"
               },
               "type": "END"
             },
             {
               "location": {
-                "gps": "93.936493,24.778437"
+                "address": "QWHP+8HH, Singjamei Top Leikai, Imphal, Manipur 795008, India",
+                "gps": "24.778437,93.936494"
               },
               "type": "START"
             }
           ],
           "type": "DELIVERY",
           "vehicle": {
-            "category": "AUTO_RICKSHAW"
+            "category": "TWO_WHEELER",
+            "variant": "TWO_WHEELER"
           }
         }
       ],
-      "id": "6c8d5bde-14de-44ef-816d-c78d2822270f",
       "items": [
         {
           "descriptor": {
             "code": "RIDE",
             "name": "Bike Taxi"
           },
-          "fulfillment_ids": ["1911b53b-19b4-410b-bf82-0b5243ab715a"],
+          "fulfillment_ids": [
+            "c8a71e64-4054-4a67-bf13-93f478ebfcc0"
+          ],
           "id": "663484504ba1d9a3c08f5afb",
-          "payment_ids": ["e1799084-cda3-474d-853f-d784b7433b50"],
+          "payment_ids": [
+            "a9d98af2-140c-4320-ad23-9e688ba931c9"
+          ],
           "price": {
             "currency": "INR",
             "value": "19.54"
@@ -129,7 +134,8 @@
           "tags": [
             {
               "descriptor": {
-                "code": "FARE_POLICY"
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
               },
               "display": true,
               "list": [
@@ -137,49 +143,57 @@
                   "descriptor": {
                     "code": "MIN_FARE"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "0"
                 },
                 {
                   "descriptor": {
                     "code": "MIN_FARE_DISTANCE_KM"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "0"
                 },
                 {
                   "descriptor": {
                     "code": "NIGHT_CHARGE_MULTIPLIER"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "0"
                 },
                 {
                   "descriptor": {
                     "code": "NIGHT_SHIFT_END_TIME"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "05:00:00"
                 },
                 {
                   "descriptor": {
                     "code": "NIGHT_SHIFT_START_TIME"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "24:00:00"
                 },
                 {
                   "descriptor": {
                     "code": "PER_KM_CHARGE"
                   },
-                  "value": "9.00"
+                  "display": true,
+                  "value": "9"
                 },
                 {
                   "descriptor": {
                     "code": "PICKUP_CHARGE"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "0"
                 },
                 {
                   "descriptor": {
                     "code": "WAITING_CHARGE_PER_MIN"
                   },
-                  "value": "0.00"
+                  "display": true,
+                  "value": "0"
                 }
               ]
             }
@@ -189,11 +203,10 @@
       "payments": [
         {
           "collected_by": "BPP",
-          "id": "e1799084-cda3-474d-853f-d784b7433b50",
+          "id": "a9d98af2-140c-4320-ad23-9e688ba931c9",
           "params": {
-            "bank_account_number": "123456789012",
-            "bank_code": "ICIC000001",
-            "virtual_payment_address": "amit.sharma@upi"
+            "bank_account_number": "173456789012345",
+            "bank_code": "ICIC0001234"
           },
           "status": "NOT-PAID",
           "tags": [
@@ -221,19 +234,19 @@
                   "descriptor": {
                     "code": "COURT_JURISDICTION"
                   },
-                  "value": "GUWAHATI"
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "2.5"
+                  "value": "5"
                 },
                 {
                   "descriptor": {
                     "code": "MANDATORY_ARBITRATION"
                   },
-                  "value": "false"
+                  "value": "true"
                 },
                 {
                   "descriptor": {
@@ -245,25 +258,25 @@
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "Delivery"
+                  "value": "DELIVERY"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "upi"
+                  "value": "UPI"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT60M"
+                  "value": "P60M"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://mobitybuyer.sumasoft.com/booking/terms"
+                  "value": "https://www.redbus.in/info/termscondition"
                 }
               ]
             }
