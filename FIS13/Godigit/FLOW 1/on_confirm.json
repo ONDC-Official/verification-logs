@@ -32,9 +32,6 @@
                     "id": "F1",
                     "type": "POLICY",
                     "customer": {
-                        "person": {
-                            "name": "Vaibhav "
-                        },
                         "contact": {
                             "phone": "9103334800",
                             "email": "ayush@gmail.com"
@@ -87,9 +84,20 @@
                 "id": "Q1",
                 "ttl": "PT15D"
             },
-            "updated_at": "2024-10-07T14:49:00.000Z",
+            "updated_at": "2024-10-07T14:48:54.538Z",
             "provider": {
-                "id": "P1"
+                "id": "P1",
+                "descriptor": {
+                    "images": [
+                        {
+                            "size_type": "xs",
+                            "url": "https://d2h44aw7l5xdvz.cloudfront.net/assets/logos/digit.svg"
+                        }
+                    ],
+                    "name": "Go Digit General Insurance Limited",
+                    "short_desc": "Go Digit General Insurance",
+                    "long_desc": "Go Digit General Insurance"
+                }
             },
             "documents": [
                 {
@@ -101,6 +109,16 @@
                         "long_desc": "Download you digitally signed policy document here."
                     },
                     "url": "https://dev-u.godigit.com/?u=8k85eit"
+                },
+                {
+                    "descriptor": {
+                        "code": "CLAIM_DOC",
+                        "name": "Claim Insurance Policy",
+                        "short_desc": "Buyer can claim their insurance by visiting the below url",
+                        "long_desc": "Buyer can claim their insurance by visiting the below url"
+                    },
+                    "mime_type": "application/html",
+                    "url": "https://www.godigit.com/motor-insurance/how-to-claim-third-party-insurance"
                 }
             ],
             "payments": [
@@ -113,7 +131,6 @@
                         "bank_account_number": "1800002341",
                         "currency": "INR"
                     },
-                    "url": "https://preprod-digitpaymentgateway.godigit.com/DigitPaymentGateway/payments?target=C73FDDC39D7C42D6B3BD1A6EF3485024",
                     "status": "PAID",
                     "tags": [
                         {
@@ -137,10 +154,10 @@
                             ]
                         },
                         {
-                            "display": "false",
                             "descriptor": {
                                 "code": "SETTLEMENT_TERMS"
                             },
+                            "display": false,
                             "list": [
                                 {
                                     "descriptor": {
@@ -156,20 +173,44 @@
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "OFFLINE_CONTRACT"
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "upi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
                                     },
                                     "value": "2.5"
                                 },
                                 {
-                                    "value": "TRUE"
-                                },
-                                {
-                                    "value": "New Delhi"
-                                },
-                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
                                     "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
                                 },
                                 {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "1000"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "OFFLINE_CONTRACT"
+                                    },
                                     "value": "true"
                                 }
                             ]
@@ -177,7 +218,7 @@
                     ]
                 }
             ],
-            "created_at": "2024-10-07T14:49:00.000Z",
+            "created_at": "2024-10-07T14:48:54.538Z",
             "id": "01",
             "items": [
                 {
@@ -204,6 +245,26 @@
                     "fulfillment_ids": [
                         "F1"
                     ],
+                    "add_ons": [
+                        {
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "140.00"
+                            },
+                            "id": "unnamedPax",
+                            "descriptor": {
+                                "code": "PASSENGER_COVER",
+                                "name": "IMT-16 PA Cover for unnamed Passenger",
+                                "short_desc": "Personal Accident cover for Unnamed Passenger",
+                                "long_desc": "This ensures your family and loved ones who ride with you in the bike are covered in case of an unfortunate incident"
+                            }
+                        }
+                    ],
                     "tags": [
                         {
                             "descriptor": {
@@ -213,30 +274,12 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "MOTOR_THIRD_PARTY_LIABILITY",
-                                        "name": "Motor Third Party Liability",
-                                        "short_desc": "Motor Third Party liability Insurance",
-                                        "long_desc": "Damages to Third-party Vehicle, Property, Life Own damage i.e. damage to your vehicle is not covered in this"
+                                        "name": "PA Owner Driver",
+                                        "code": "PERSONAL_ACCIDENT_COVER",
+                                        "long_desc": "Mandatory by law! This covers the owner driver in case of an accident. By not adding this you agree either a) already have a PA cover or b) do not have a valid driving license",
+                                        "short_desc": "Personal Accident Cover of 15 Lakhs"
                                     },
-                                    "value": "YES"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PROPERTY_DAMAGE",
-                                        "name": "Property Damage",
-                                        "short_desc": "In case damage occurs to someoneâs vehicle, house or any property",
-                                        "long_desc": "Damages to Third-party Vehicle, Property, Life Own damage i.e. damage to your vehicle is not covered in this"
-                                    },
-                                    "value": "100000"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "BODILY_INJURY",
-                                        "name": "Bodily Injury",
-                                        "short_desc": "Covers Bodily Injury or Death to third",
-                                        "long_desc": "In case of a Third-partyâs death or physical injury due to an accident with the insured car. There is no limit to the sum insured"
-                                    },
-                                    "value": "YES"
+                                    "value": "1500000"
                                 }
                             ]
                         }
