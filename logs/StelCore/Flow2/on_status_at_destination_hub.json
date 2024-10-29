@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "UN:SIN"
+                "code": "std:999"
             },
             "country": {
                 "code": "SGP"
@@ -11,84 +11,143 @@
         },
         "action": "on_status",
         "version": "2.0.2",
-        "bap_id": "buyerapp.com",
-        "bap_uri": "https://buyerapp.com/fashion",
+        "bap_id": "b-ondcbap.nlincs.in",
+        "bap_uri": "https://b-ondc-export-2.nlincs.in/bap",
         "bpp_id": "api.nuniverse.in/ondc",
         "bpp_uri": "https://api.nuniverse.in/ondc/bpp",
-        "transaction_id": "9568beb3-265a-4730-be4e-c00ba2e5e30a",
-        "message_id": "7b6665ef-88b5-4ca4-b481-c7aa6e169b91",
-        "timestamp": "2024-08-04T22:00:18.000Z",
+        "transaction_id": "4a7ec09e-b694-42e4-bd26-7f75624ea611",
+        "message_id": "d4049931-5f16-427e-9615-bd4de7d322b3",
+        "timestamp": "2024-10-09T05:54:46.405Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2024-005-31-202423",
-            "state": "In-progress",
-            "provider": {
-                "id": "55953865-df67-43f0-86e3-8540692e6824",
-                "locations": [
-                    {
-                        "id": "L1"
-                    }
-                ]
-            },
-            "items": [
+            "payments": [
                 {
-                    "id": "9fb6246c-82ce-4b7f-807b-45cf68fcc7b7",
-                    "fulfillment_ids": [
-                        "1"
-                    ],
-                    "quantity": {
-                        "selected": {
-                            "count": 1
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "collected_by": "SOR",
+                    "params": {
+                        "transaction_id": "3937",
+                        "bank_code": "xxxxxxxxx",
+                        "currency": "INR",
+                        "amount": "250.00",
+                        "bank_account_number": "xxxxxxxxxxxx"
+                    },
+                    "type": "PRE-FULFILLMENT",
+                    "uri": "https://seller.com/pg",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "beneficiary_name": "xxxxx",
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "branch_name": "xxxx",
+                            "bank_name": "xxxx",
+                            "settlement_ifsc_code": "XXXXXXXXX",
+                            "settlement_bank_account_no": "XXXXXXXXXX",
+                            "upi_address": "gft@oksbi",
+                            "settlement_type": "rtgs"
                         }
-                    }
+                    ],
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "rtgs",
+                                    "descriptor": {
+                                        "code": "payment_type"
+                                    }
+                                },
+                                {
+                                    "value": "abcd",
+                                    "descriptor": {
+                                        "code": "payment_provider"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "payment_terms"
+                            }
+                        }
+                    ],
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/withholding_amount": "10.00",
+                    "tl_method": "http/get",
+                    "status": "PAID",
+                    "@ondc/org/buyer_app_finder_fee_amount": "3"
                 }
             ],
+            "created_at": "2024-10-09T05:54:26.908Z",
             "billing": {
-                "name": "ONDC buyer",
                 "address": "B005 aaspire heights, Jurong East, SGP, 680230",
-                "state": {
-                    "name": "Jurong East"
-                },
                 "city": {
                     "name": "Jurong East"
                 },
-                "email": "nobody@nomail.com",
-                "phone": "9886098860"
+                "phone": "9886098860",
+                "name": "ONDC buyer",
+                "state": {
+                    "name": "Jurong East"
+                },
+                "tax_id": "27AADCB2230M1ZT",
+                "email": "nobody@nomail.com"
             },
             "fulfillments": [
                 {
-                    "id": "1",
-                    "@ondc/org/provider_name": "Loadshare",
-                    "@ondc/org/category": "Express Delivery",
-                    "@ondc/org/TAT": "P7D",
-                    "type": "Delivery",
-                    "tracking": false,
-                    "state": {
-                        "descriptor": {
-                            "code": "At-destination-hub"
-                        }
-                    },
+                    "id": "F1",
                     "stops": [
                         {
-                            "type": "start",
+                            "type": "end",
                             "location": {
-                                "id": "L1",
-                                "descriptor": {
-                                    "name": "ABC Store",
-                                    "images": [
-                                        "https://gf-integration/images/5.png"
-                                    ]
+                                "country": {
+                                    "code": "SGP"
                                 },
-                                "gps": "12.956399,77.636803"
+                                "gps": "1.380621746811, 103.7463643843",
+                                "address": "My House #, My buildin",
+                                "state": {
+                                    "name": ""
+                                },
+                                "city": {
+                                    "name": "Jurong East"
+                                },
+                                "area_code": "680230"
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "buyer@xyz.com"
                             },
                             "time": {
                                 "range": {
-                                    "start": "2024-07-24T10:00:00.000Z",
-                                    "end": "2024-07-24T10:30:00.000Z"
+                                    "end": "2024-10-14T09:29:23.286Z",
+                                    "start": "2024-10-09T05:54:46.405Z"
+                                }
+                            },
+                            "instructions": {
+                                "name": "Delivery instructions",
+                                "short_desc": "DCC Code",
+                                "long_desc": "Delivery instructions"
+                            }
+                        },
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "022",
+                                "descriptor": {
+                                    "name": "The SJ Shop",
+                                    "images": [
+                                        "https://assets.nuniverse.in/merchant/brandLogo/SJ.jpg"
+                                    ]
                                 },
-                                "timestamp": "2024-07-24T10:25:00.000Z"
+                                "gps": "19.2126937,72.8634685"
+                            },
+                            "contact": {
+                                "phone": "9922225354",
+                                "email": "sharmad@stelcoregroup.com"
+                            },
+                            "time": {
+                                "range": {
+                                    "end": "2024-10-14T09:29:23.286Z",
+                                    "start": "2024-10-09T05:54:46.405Z"
+                                }
                             },
                             "instructions": {
                                 "name": "Proof of pickup",
@@ -97,170 +156,117 @@
                                 "images": [
                                     "https://image1_url.png"
                                 ]
-                            },
-                            "contact": {
-                                "phone": "9886098860",
-                                "email": "nobody@nomail.com"
-                            }
-                        },
-                        {
-                            "type": "end",
-                            "location": {
-                                "gps": "1.380621746811, 103.7463643843",
-                                "address": "My House #, My buildin",
-                                "city": {
-                                    "name": "Jurong East"
-                                },
-                                "country": {
-                                    "code": "SGP"
-                                },
-                                "area_code": "680230",
-                                "state": {
-                                    "name": ""
-                                }
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2024-07-24T11:00:00.000Z",
-                                    "end": "2024-07-24T11:30:00.000Z"
-                                }
-                            },
-                            "instructions": {
-                                "name": "Delivery instructions",
-                                "short_desc": "DCC Code",
-                                "long_desc": "Delivery instructions"
-                            },
-                            "contact": {
-                                "phone": "9886098860",
-                                "email": "buyer@xyz.com"
-                            },
-                            "agent": {
-                                "person": {
-                                    "name": "Ramu"
-                                },
-                                "contact": {
-                                    "phone": "9886098860"
-                                }
                             }
                         }
-                    ]
+                    ],
+                    "type": "Delivery",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "At-destination-hub"
+                        }
+                    },
+                    "@ondc/org/provider_name": "Loadshare",
+                    "@ondc/org/category": "Express Delivery",
+                    "@ondc/org/TAT": "P7D"
                 }
             ],
             "quote": {
+                "ttl": "P1D",
                 "price": {
-                    "currency": "USD",
-                    "value": "15.00"
+                    "value": "250.00",
+                    "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id ": "9fb6246c-82ce-4b7f-807b-45cf68fcc7b7",
+                        "@ondc/org/item_id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "value": "250.00",
+                                "currency": "INR"
+                            }
+                        },
+                        "title": "Iodex Multipurpose Pain Balm (16G)",
                         "@ondc/org/item_quantity": {
                             "count": 1
                         },
-                        "title": "Allen Solly Men T-shirt",
-                        "@ondc/org/title_type ": "item",
                         "price": {
-                            "currency": "USD",
-                            "value": "10.00"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "USD",
-                                "value": "10.00"
-                            }
+                            "value": "250.00",
+                            "currency": "INR"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
                         "title": "Delivery charges",
-                        "@ondc/org/title_type ": "delivery",
                         "price": {
-                            "currency": "USD",
-                            "value": "2.00"
+                            "value": "00.00",
+                            "currency": "INR"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "packing",
                         "title": "Packing charges",
-                        "@ondc/org/title_type ": "packing",
                         "price": {
-                            "currency": "USD",
-                            "value": "5.00"
+                            "value": "00.00",
+                            "currency": "INR"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "9fb6246c-82ce-4b7f-807b-45cf68fcc7b7",
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "tax",
                         "title": "Tax",
-                        "@ondc/org/title_type ": "tax",
                         "price": {
-                            "currency": "USD",
-                            "value": "0.00"
+                            "value": "00.00",
+                            "currency": "INR"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "9fb6246c-82ce-4b7f-807b-45cf68fcc7b7",
+                        "@ondc/org/item_id": "I1",
                         "title": "Discount",
-                        "@ondc/org/title_type ": "discount",
+                        "@ondc/org/title_type": "discount",
                         "price": {
-                            "currency": "USD",
-                            "value": "-3.00"
+                            "value": "00.00",
+                            "currency": "INR"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1",
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "misc",
                         "title": "Convenience Fee",
-                        "@ondc/org/title_type ": "misc",
                         "price": {
-                            "currency": "USD",
-                            "value": "1.00"
+                            "value": "00.00",
+                            "currency": "INR"
                         }
                     }
-                ],
-                "ttl": "P1D"
+                ]
             },
-            "payments": [
+            "updated_at": "2024-10-09T05:54:46.405Z",
+            "provider": {
+                "locations": [
+                    {
+                        "id": "022"
+                    }
+                ],
+                "id": "55953865-df67-43f0-86e3-8540692e6824"
+            },
+            "items": [
                 {
-                    "uri": "https://ondc.transaction.com/payment",
-                    "tl_method": "http/get",
-                    "params": {
-                        "currency": "USD",
-                        "transaction_id": "3937",
-                        "amount": "15.00"
-                    },
-                    "status": "PAID",
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "SOR",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "3",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "10.00",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_phase": "sale-amount",
-                            "beneficiary_name": "xxxxx",
-                            "settlement_reference": "XXXX",
-                            "settlement_status": "PAID",
-                            "settlement_timestamp": "2023-02-04T10:00:00.000Z",
-                            "settlement_type": "OPGSP",
-                            "upi_address": "gft@oksbi",
-                            "settlement_bank_account_no": "XXXXXXXXXX",
-                            "settlement_ifsc_code": "XXXXXXXXX",
-                            "bank_name": "xxxx",
-                            "branch_name": "xxxx"
+                    "fulfillment_ids": [
+                        "F1"
+                    ],
+                    "id": "51be0f61-4e23-4a6a-8261-c2341e66695a",
+                    "quantity": {
+                        "selected": {
+                            "count": 1
                         }
-                    ]
+                    }
                 }
             ],
-            "documents": [
-                {
-                    "url": "https://invoice_url",
-                    "label": "Invoice"
-                }
-            ],
-            "created_at": "2024-07-24T09:30:00.000Z",
-            "updated_at": "2024-07-24T10:00:00.201Z"
+            "id": "3142-024555-1482",
+            "state": "In-progress"
         }
     }
 }
