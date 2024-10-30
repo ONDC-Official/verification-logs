@@ -1,0 +1,206 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_status",
+        "version": "2.0.2",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_id": "preprod-ondc-seller.bankopen.co",
+        "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+        "transaction_id": "b4b8873d-668e-41dc-b8b5-a5a601f911ca",
+        "message_id": "5f4658c6-8a69-4d35-9a99-88c5a7da13c1",
+        "timestamp": "2024-08-22T11:48:03.794Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "RAP-0055956",
+            "state": "In-progress",
+            "provider": {
+                "id": "19746-ONDC-1",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "19746-ONDC-1-101",
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "tags": []
+                }
+            ],
+            "documents": [
+                {
+                    "url": "https://integrations-test.channelier.com/images/invoice/RAP-0055956.pdf",
+                    "label": "Invoice"
+                }
+            ],
+            "billing": {
+                "name": "Rajat Kumar Prajapati",
+                "address": "plot 27, crown plaza, Neelam batanroad, NIT Faridabad, New Delhi, 110067",
+                "state": {
+                    "name": "Delhi"
+                },
+                "city": {
+                    "name": "New Delhi"
+                },
+                "phone": "9479319331",
+                "tax_id": "23FZZAF2408R2Z4"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "ZFONDC",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "images": []
+                        }
+                    },
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "28.613930,77.208828",
+                                "address": "plot 27, crown plaza, Neelam batanroad, NIT Faridabad, New Delhi, 110067",
+                                "area_code": "110067",
+                                "state": {
+                                    "name": "Delhi"
+                                },
+                                "city": {
+                                    "name": "New Delhi"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-08-22T09:35:24.688Z",
+                                    "end": "2024-08-31T09:35:19.688Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9479319331"
+                            }
+                        },
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "Cornitos",
+                                    "images": []
+                                },
+                                "gps": "28.5285458,77.1667015"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-08-22T09:35:19.688Z",
+                                    "end": "2024-08-24T09:35:19.688Z"
+                                },
+                                "timestamp": "2024-08-22T11:48:03.794Z"
+                            },
+                            "contact": {
+                                "phone": "8766339084",
+                                "email": "anujarora@cornitos.in"
+                            },
+                            "instructions": {
+                                "name": "Proof of pickup",
+                                "images": [
+                                    "https://sellers-preprod.channelier.com/proofs/RAP-0055956_pickup.img"
+                                ],
+                                "long_desc": "Order Picked up",
+                                "short_desc": "Order Picked up"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "347.62"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "19746-ONDC-1-101",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            }
+                        },
+                        "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+                        "price": {
+                            "currency": "INR",
+                            "value": "240.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "107.62"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payments": [
+                {
+                    "params": {
+                        "amount": "347.62",
+                        "currency": "INR"
+                    },
+                    "type": "ON-FULFILLMENT",
+                    "status": "NOT-PAID",
+                    "collected_by": "BPP",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P5D",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "bank_name": "Test Bank",
+                            "beneficiary_name": "Thomson"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2024-08-22T09:34:19.589Z",
+            "updated_at": "2024-08-22T11:48:03.778Z"
+        }
+    }
+}
