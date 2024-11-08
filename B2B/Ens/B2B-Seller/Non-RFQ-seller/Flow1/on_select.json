@@ -1,0 +1,67 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "action": "on_select",
+    "version": "2.0.2",
+    "transaction_id": "b4809c76-b0zz-4b79-8d6b-723bca4bc108",
+    "message_id": "aac91ca6-8863-4849-8937-a45ff1a51926",
+    "timestamp": "2024-08-07T05:10:24.016Z",
+    "bap_id": "mock.ondc.org/api",
+    "bap_uri": "https://mock.ondc.org/api/retail/bap",
+    "bpp_id": "preprodb2b.thesellerapp.com",
+    "bpp_uri": "https://preprodb2b.thesellerapp.com/v1/b2b",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+        "locations": [{ "id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6" }]
+      },
+      "items": [
+        {
+          "id": "0d450307-19be-42e9-9e99-a7e242d89e41",
+          "quantity": { "selected": { "count": 25 } },
+          "fulfillment_ids": [["bbb13ecf-ac66-429a-aa43-19ca415a8db6"]]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+          "@ondc/org/provider_name": "Yumfood",
+          "@ondc/org/category": "Standard Delivery",
+          "tracking": false,
+          "state": { "descriptor": { "code": "Non-Serviceable" } }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "19700" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "0d450307-19be-42e9-9e99-a7e242d89e41",
+            "@ondc/org/item_quantity": { "count": 25 },
+            "title": "Jowar Flour",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "19550" },
+            "item": { "price": { "currency": "INR", "value": "782" } }
+          },
+          {
+            "@ondc/org/item_id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "100" }
+          },
+          {
+            "@ondc/org/item_id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "50" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payments": [{ "type": "ON-FULFILLMENT", "collected_by": "BPP" }]
+    }
+  }
+}
