@@ -1,0 +1,171 @@
+{
+  "context": {
+    "domain": "ONDC:FIS14",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "confirm",
+    "transaction_id": "81d1c059-1f63-41e1-ad0e-1bab1a1e6a09",
+    "message_id": "707c107d-7f56-4165-a027-16b6fa53c01d",
+    "timestamp": "2024-11-12T13:39:15.037Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+  },
+  "message": {
+    "order": {
+      "id": "2482501c-c6c3-4123-aae4-0e853f1d3ee0",
+      "provider": {
+        "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
+      },
+      "items": [
+        {
+          "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "3000",
+                "unit": "INR"
+              }
+            }
+          },
+          "fulfillment_ids": [
+            "78b06e7b-3700-4f6e-a4c9-872d565e66b1"
+          ],
+          "payment_ids": [
+            "3de34b3b-4217-44bb-9a83-a29547070a2a"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "78b06e7b-3700-4f6e-a4c9-872d565e66b1",
+          "type": "SIP",
+          "agent": {
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-123456",
+                  "type": "ARN"
+                },
+                {
+                  "type": "SUB_BROKER_ARN",
+                  "id": "ARN-9790"
+                }
+              ]
+            },
+            "person": {
+              "id": "EUIN-9790"
+            }
+          },
+          "customer": {
+            "person": {
+              "id": "ICRPW1232K"
+            },
+            "contact": {
+              "phone": "9990202525",
+              "email": "ak56@gmail.com"
+            }
+          },
+          "stops": [
+            {
+              "time": {
+                "schedule": {
+                  "frequency": "R6/2024-12-14/P1M"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "amount": "0",
+            "currency": "INR",
+            "source_bank_code": "123",
+            "source_bank_account_number": "1234567812345678",
+            "source_bank_account_name": "Michael Scott",
+            "transaction_id": "127ae03c-84bb-4170-ba7a-f0c3a7bad4c4"
+          },
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "PAYMENT_METHOD",
+                "name": "Payment Method"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "MANDATE_REGISTRATION"
+                }
+              ]
+            }
+          ],
+          "id": "3de34b3b-4217-44bb-9a83-a29547070a2a",
+          "status": "PAID"
+        }
+      ]
+    }
+  }
+}
