@@ -1,0 +1,153 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "action": "confirm",
+    "version": "2.0.2",
+    "transaction_id": "bc491f02-9eca-4bc1-8a9b-e34b3b899cb9",
+    "message_id": "fcd70eef-1e9a-4990-b8a6-61ec1630eda2",
+    "timestamp": "2024-08-07T05:33:20.265Z",
+    "bap_id": "mock.ondc.org/api",
+    "bap_uri": "https://mock.ondc.org/api/retail/bap",
+    "bpp_id": "preprodb2b.thesellerapp.com",
+    "bpp_uri": "https://preprodb2b.thesellerapp.com/v1/b2b",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "name": "Manu Puranic",
+        "address": "no 18, store building, Church street, jayanagar, Bengaluru, 560034",
+        "phone": "7026552000",
+        "tax_id": "07AAGFG3246N1Z9",
+        "city": { "name": "Bengaluru" },
+        "state": { "name": "Karnataka" }
+      },
+      "fulfillments": [
+        {
+          "id": "6ms66826fb66c433100247b44091e2",
+          "type": "Delivery",
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "address": "no 18, store building, Church street, jayanagar, Bengaluru, 560034",
+                "gps": "12.926138,77.622109",
+                "area_code": "560034",
+                "state": { "name": "Karnataka" },
+                "city": { "name": "Bengaluru" },
+                "country": { "code": "IND" }
+              },
+              "contact": { "phone": "7026552000" },
+              "customer": { "person": { "name": "Manu Puranic" } }
+            }
+          ],
+          "tracking": false
+        }
+      ],
+      "id": "RAP-0057795",
+      "state": "Created",
+      "provider": {
+        "id": "66826fb66c433100247b4409",
+        "locations": [{ "id": "66826fb66c433100247b4409" }]
+      },
+      "items": [
+        {
+          "id": "6673fb42fa52190024a8c25e",
+          "fulfillment_ids": ["6ms66826fb66c433100247b44091e2"],
+          "quantity": { "selected": { "count": 15 } }
+        }
+      ],
+      "payments": [
+        {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "type": "PRE-FULFILLMENT",
+          "collected_by": "BAP",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "0",
+          "status": "PAID",
+          "params": {
+            "currency": "INR",
+            "transaction_id": "2P0rerxHz8qo0kHMFA-12",
+            "amount": "4560.00"
+          }
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "title": "Jowar Flour b2b store",
+            "@ondc/org/item_id": "6673fb42fa52190024a8c25e",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "4500.00" },
+            "@ondc/org/item_quantity": { "count": 15 },
+            "item": { "price": { "currency": "INR", "value": "300.00" } }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "6ms66826fb66c433100247b44091e2",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "60.00" }
+          }
+        ],
+        "price": { "currency": "INR", "value": "4560.00" },
+        "ttl": "P6D"
+      },
+      "created_at": "2024-08-07T05:33:20.265Z",
+      "updated_at": "2024-08-07T05:33:20.265Z",
+      "tags": [
+        {
+          "descriptor": { "code": "buyer_id" },
+          "list": [
+            { "descriptor": { "code": "buyer_id_code" }, "value": "gst" },
+            {
+              "descriptor": { "code": "buyer_id_no" },
+              "value": "07AAGFG3246N1Z9"
+            }
+          ]
+        },
+        {
+          "descriptor": { "code": "bpp_terms" },
+          "list": [
+            { "descriptor": { "code": "max_liability" }, "value": "2" },
+            { "descriptor": { "code": "max_liability_cap" }, "value": "10000" },
+            {
+              "descriptor": { "code": "mandatory_arbitration" },
+              "value": "false"
+            },
+            {
+              "descriptor": { "code": "court_jurisdiction" },
+              "value": "Gurugram"
+            },
+            { "descriptor": { "code": "delay_interest" }, "value": "1000" }
+          ]
+        },
+        {
+          "descriptor": { "code": "bap_terms" },
+          "list": [
+            { "descriptor": { "code": "accept_bpp_terms" }, "value": "Y" }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": { "descriptor": { "code": "Pending" } },
+          "cancellation_fee": { "percentage": "0" },
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": { "descriptor": { "code": "Packed" } },
+          "cancellation_fee": { "percentage": "10" },
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": { "descriptor": { "code": "Out-for-delivery" } },
+          "cancellation_fee": { "percentage": "50" },
+          "reason_required": true
+        }
+      ]
+    }
+  }
+}
