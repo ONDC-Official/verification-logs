@@ -1,0 +1,141 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.2",
+     "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "preprod-ondc-seller.bankopen.co",
+    "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+    "transaction_id": "33d20464-59a2-4462-9213-9a8644b7bb1e",
+    "message_id": "69b4c74e-2492-4092-a1dc-9bc56deb903e",
+    "timestamp": "2024-08-23T07:20:52.362Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "ZFONDC",
+          "@ondc/org/category": "Standard Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "P7DT2H",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "19746-ONDC-1-101",
+          "location_ids": [
+            "L1"
+          ],
+          "fulfillment_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 200
+            }
+          }
+        }
+      ],
+      "provider": {
+        "id": "19746-ONDC-1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "gst"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "29FQZAF2408R2A4"
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "1307.62"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "19746-ONDC-1-101",
+            "@ondc/org/item_quantity": {
+              "count": 10
+            },
+            "@ondc/org/title_type": "item",
+            "title": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "10"
+                },
+                "maximum": {
+                  "count": "10"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "120.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "1200.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "107.62"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      }
+    }
+  },
+  "error": {
+    "type": "DOMAIN-ERROR",
+    "code": "40002",
+    "message": "Item quantity unavailable"
+  }
+}
