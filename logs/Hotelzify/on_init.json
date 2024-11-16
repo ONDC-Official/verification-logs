@@ -1,206 +1,171 @@
 {
-    "context": {
-      "domain": "ONDC:TRV13",
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "std:080"
-        }
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "transaction_id": "b9aaecca-10b7-4d19-b640-b047a7c62196",
-      "message_id": "ac179fb8-cb82-4824-be12-fcbc405b6608",
-      "action": "confirm",
-      "timestamp": "2023-12-20T05:28:04.410Z",
-      "version": "2.0.0",
-      "bap_uri": "https://ondc.hotelbap.com/",
-      "bap_id": "ondc.hotelbap.com",
-      "bpp_uri": "https://ondc.hotelbpp.com/",
-      "bpp_id": "ondc.hotelbpp.com",
-      "ttl": "PT30S"
+      "city": {
+        "code": "std:0124"
+      }
     },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "669"
-        },
-        "items": [
-          {
-            "id": "635",
-            "location_ids": [
-              "1"
-            ],
-            "quantity": {
-              "selected": {
-                "count": 1
-              }
-            },
-            "add_ons": []
+    "transaction_id": "6ff1e7c5-5e67-4e8e-a11c-a67bf4d5360f",
+    "message_id": "d6ca0875-d57e-49a7-88ab-c9368f0a47d9",
+    "action": "on_init",
+    "timestamp": "2024-11-14T07:33:06.015Z",
+    "version": "2.0.0",
+    "bap_uri": "https://ondc.easemytrip.com/hotels/",
+    "bap_id": "ondc.easemytrip.com/hotels",
+    "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bpp_id": "dev-api.hotelzify.com/hotel",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": 669
+      },
+      "items": [
+        {
+          "id": "635",
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
           }
-        ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "2240.00"
-          },
-          "breakup": [
-            {
-              "item": {
-                "id": "635",
-                "quantity": {
-                  "selected": {
-                    "count": 1
-                  }
-                },
-                "add_ons": [],
-                "price": {
-                  "currency": "INR",
-                  "value": "2000.00"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "2000.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "635",
+              "quantity": {
+                "selected": {
+                  "count": 1
                 }
               },
-              "title": "Twin Room",
+              "add_ons": null,
               "price": {
                 "currency": "INR",
                 "value": "2000.00"
               }
             },
+            "title": "Twin Room",
+            "price": {
+              "currency": "INR",
+              "value": "2000.00"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "754",
+          "type": "ON-FULFILLMENT",
+          "status": "NOT-PAID",
+          "tags": [
             {
-              "title": "Tax",
-              "price": {
-                "currency": "INR",
-                "value": "240.00"
+              "descriptor": {
+                "code": "FULL_PAYMENT"
               }
+            }
+          ],
+          "collected_by": "BPP",
+          "params": {
+            "amount": "2000.00",
+            "currency": "INR",
+            "bank_account_number": "Bank Account Number of Buyer App",
+            "virtual_payment_address": "VPA of Buyer App"
+          }
+        }
+      ],
+      "billing": {
+        "name": "Sandeep S",
+        "address": "Dwarka, Delhi-110075",
+        "state": {
+          "name": "Delhi"
+        },
+        "city": {
+          "name": "Delhi"
+        },
+        "organization": {
+          "descriptor": {
+            "name": "ONDC"
+          },
+          "address": "ONDC, Delhi-110049"
+        },
+        "email": "email@ondc.org",
+        "phone": "1704380085",
+        "tax_id": "GSTIN1234567890"
+      },
+      "fulfillments": [
+        {
+          "id": "customer-1",
+          "customer": {
+            "person": {
+              "name": "Sandeep S",
+              "age": "25",
+              "dob": "2023-12-20",
+              "gender": "M",
+              "creds": [
+                {
+                  "id": "AADHAAR_NO_123",
+                  "type": "AADHAAR"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "1704380085",
+              "email": "email@ondc.org"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": ""
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS_NEW"
+              },
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "EFFECTIVE_DATE"
+              },
+              "value": "2024-01-01T00:00:00Z"
             }
           ]
         },
-        "payments": [],
-        "billing": {
-          "name": "Sandeep S",
-          "address": "Dwarka, Delhi-110075",
-          "state": {
-            "name": "Delhi"
+        {
+          "descriptor": {
+            "code": "BUYER_FINDER_FEES"
           },
-          "city": {
-            "name": "Delhi"
-          },
-          "organization": {
-            "descriptor": {
-              "name": "ONDC"
-            },
-            "address": "ONDC, Delhi-110049"
-          },
-          "email": "email@ondc.org",
-          "phone": "1704380085",
-          "tax_id": "GSTIN1234567890"
-        },
-        "fulfillments": [
-          {
-            "id": "1",
-            "customer": {
-              "person": {
-                "name": "Sandeep S",
-                "age": "25",
-                "dob": "2023-12-20",
-                "gender": "M",
-                "creds": [
-                  {
-                    "id": "AADHAAR_NO_123",
-                    "type": "AADHAAR"
-                  }
-                ]
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
               },
-              "contact": {
-                "phone": "1704380085",
-                "email": "email@ondc.org"
-              }
+              "value": "3"
             }
-          }
-        ],
-        "tags": [
-          {
-            "descriptor": {
-              "code": "BAP_TERMS"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "STATIC_TERMS"
-                },
-                "value": ""
-              },
-              {
-                "descriptor": {
-                  "code": "STATIC_TERMS_NEW"
-                },
-                "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
-              },
-              {
-                "descriptor": {
-                  "code": "EFFECTIVE_DATE"
-                },
-                "value": "2024-01-01T00:00:00.000Z"
-              }
-            ]
-          },
-          {
-            "descriptor": {
-              "code": "BUYER_FINDER_FEES"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                },
-                "value": "3"
-              }
-            ]
-          },
-          {
-            "descriptor": {
-              "code": "BPP_TERMS"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "MAX_LIABILITY"
-                },
-                "value": "2"
-              },
-              {
-                "descriptor": {
-                  "code": "MAX_LIABILITY_CAP"
-                },
-                "value": "1000.00"
-              },
-              {
-                "descriptor": {
-                  "code": "MANDATORY_ARBITRATION"
-                },
-                "value": "false"
-              },
-              {
-                "descriptor": {
-                  "code": "COURT_JURISDICTION"
-                },
-                "value": "New Delhi"
-              },
-              {
-                "descriptor": {
-                  "code": "DELAY_INTEREST"
-                },
-                "value": "New Delhi"
-              },
-              {
-                "descriptor": {
-                  "code": "TAX_NUMBER"
-                },
-                "value": "GST_NUMBER_SELLERNP"
-              }
-            ]
-          }
-        ]
-      }
+          ]
+        }
+      ]
     }
   }
-  
+}
