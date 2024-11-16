@@ -1,16 +1,16 @@
 {
-    "context": {
+  "context": {
       "domain": "ONDC:FIS12",
-      "transaction_id": "aa5686f9-546f-4432-94f1-8ad9adac4723",
+      "transaction_id": "c85a12d9-5313-44c6-abf4-9440718d4918",
       "bpp_id": "ondc.sequelstring.com/seller/protocol",
-      "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
-      "bap_id": "ondc.sequelstring.com/buyer/protocol",
-      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
       "version": "2.2.0",
-      "message_id": "e23c749d-6924-45b7-b8e7-8fbe2afc3f28",
+      "message_id": "2775eb14-031a-48b0-aa0d-0c6ea122719b",
       "action": "on_update",
-      "timestamp": "2024-11-12T04:31:41.836Z",
-      "ttl": "PT10M"
+      "timestamp": "2024-11-16T03:56:54.957Z",
+      "ttl": "PT10M",
+      "bpp_uri": "http://localhost:5006/seller/protocol",
+      "bap_uri": "http://localhost:8000/buyer/protocol",
+      "bap_id": "ondc.sequelstring.com/buyer/protocol"
     },
     "message": {
       "order": {
@@ -134,8 +134,8 @@
           {
             "id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
             "descriptor": {
-              "code": "PURCHASE_FINANCE",
-              "name": "Purchase Finance"
+              "code": "LOAN",
+              "name": "Loan"
             },
             "category_ids": [
               "101124"
@@ -263,70 +263,6 @@
                   },
                   {
                     "descriptor": {
-                      "code": "PRINCIPAL_AMOUNT",
-                      "name": "Principal",
-                      "short_desc": "Loan Principal"
-                    },
-                    "value": "65000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "INTEREST_AMOUNT",
-                      "name": "Interest",
-                      "short_desc": "Loan Interest"
-                    },
-                    "value": "4000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "PROCESSING_FEE",
-                      "name": "Processing Fee",
-                      "short_desc": "Processing Fee"
-                    },
-                    "value": "500 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER_UPFRONT_CHARGES",
-                      "name": "other upfront charges",
-                      "short_desc": "other upfront charges"
-                    },
-                    "value": "0 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "INSURANCE_CHARGES",
-                      "name": "Insurance Charges",
-                      "short_desc": "Insurance Charges"
-                    },
-                    "value": "500 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "NET_DISBURSED_AMOUNT",
-                      "name": "net disbursed amount",
-                      "short_desc": "net disbursed amount"
-                    },
-                    "value": "64000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER_CHARGES",
-                      "name": "other charges",
-                      "short_desc": "other charges"
-                    },
-                    "value": "0 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFER_VALIDITY",
-                      "name": "Offer validity",
-                      "short_desc": "Describes the offer validity"
-                    },
-                    "value": "PT15D"
-                  },
-                  {
-                    "descriptor": {
                       "code": "MINIMUM_DOWNPAYMENT",
                       "name": "Minimum Downpayment"
                     },
@@ -341,29 +277,66 @@
                   }
                 ],
                 "display": true
+              },
+              {
+                "display": true,
+                "descriptor": {
+                  "name": "Checklists",
+                  "code": "CHECKLISTS"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "name": "Set Loan Amount",
+                      "code": "SET_DOWN_PAYMENT"
+                    },
+                    "value": "2c901dd4-7914-4871-a85c-955ea7f51e24"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "KYC",
+                      "code": "KYC"
+                    },
+                    "value": "3f2063f4-d9f3-4c66-a35a-c2939a645d08"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Emandate",
+                      "code": "EMANDATE"
+                    },
+                    "value": "cd504483-768b-4069-8380-77fcd497b664"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Esign",
+                      "code": "ESIGN"
+                    },
+                    "value": "2a2109ac-0e19-43e2-8bd8-3aadfaeda0b2"
+                  }
+                ]
               }
             ],
             "fulfillment_ids": [
-              "43477afb-c1f2-4fcc-b853-5a3e53e271ae"
+              "5d6f87a7-cbd9-4317-be94-42dddbddb6a5"
             ]
           }
         ],
         "quote": {
-          "id": "9a23d158-8235-4c00-858c-ef339d883d36",
+          "id": "cd57ffa0-0b83-433d-bd92-13939a4645a6",
           "price": {
             "currency": "INR",
             "value": "442300"
           },
           "breakup": [
             {
-              "title": "PRINCIPAL",
+              "title": "PRINCIPAL_AMOUNT",
               "price": {
                 "value": "400000",
                 "currency": "INR"
               }
             },
             {
-              "title": "INTEREST",
+              "title": "INTEREST_AMOUNT",
               "price": {
                 "value": "40000",
                 "currency": "INR"
@@ -423,8 +396,8 @@
                 "code": "DISBURSED"
               }
             },
-            "type": "purchaseLoan",
-            "id": "43477afb-c1f2-4fcc-b853-5a3e53e271ae",
+            "type": "LOAN",
+            "id": "5d6f87a7-cbd9-4317-be94-42dddbddb6a5",
             "tags": [
               {
                 "descriptor": {
@@ -444,6 +417,24 @@
                 "display": false
               }
             ]
+          },
+          {
+            "customer": {
+              "person": {
+                "name": "Ashu singh"
+              },
+              "contact": {
+                "phone": "8032132131",
+                "email": "ashu@gmail.com"
+              }
+            },
+            "state": {
+              "descriptor": {
+                "code": "DELIVERED"
+              }
+            },
+            "type": "BASE_ORDER",
+            "id": "af3a1a03-e524-4b2f-8a81-3004bf57bf83"
           }
         ],
         "payments": [
@@ -500,7 +491,7 @@
                     "descriptor": {
                       "code": "SETTLEMENT_AMOUNT"
                     },
-                    "value": "5000"
+                    "value": "NaN"
                   },
                   {
                     "descriptor": {
@@ -511,7 +502,7 @@
                 ]
               }
             ],
-            "id": "1f7bd5b1-0706-4b1d-89c0-565af6223d8c"
+            "id": "b101b5f3-7532-4905-a59a-ded0b2f65665"
           },
           {
             "id": "1",
@@ -524,10 +515,36 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-12-01T09:41:54.077Z",
-                "end": "2024-12-31T09:41:54.077Z"
+                "start": "2024-12-01T03:56:24.944Z",
+                "end": "2024-12-31T03:56:24.944Z"
               }
-            }
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BREAKUP",
+                  "name": "Emi Breakup"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "PRINCIPAL_AMOUNT",
+                      "name": "Principal",
+                      "short_desc": "Loan Principal"
+                    },
+                    "value": "400000"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INTEREST_AMOUNT",
+                      "name": "Interest",
+                      "short_desc": "Loan Interest"
+                    },
+                    "value": "40000"
+                  }
+                ]
+              }
+            ]
           },
           {
             "id": "2",
@@ -540,10 +557,36 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-01-01T09:41:54.077Z",
-                "end": "2025-01-31T09:41:54.077Z"
+                "start": "2025-01-01T03:56:24.944Z",
+                "end": "2025-01-31T03:56:24.944Z"
               }
-            }
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BREAKUP",
+                  "name": "Emi Breakup"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "PRINCIPAL_AMOUNT",
+                      "name": "Principal",
+                      "short_desc": "Loan Principal"
+                    },
+                    "value": "400000"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INTEREST_AMOUNT",
+                      "name": "Interest",
+                      "short_desc": "Loan Interest"
+                    },
+                    "value": "40000"
+                  }
+                ]
+              }
+            ]
           },
           {
             "id": "3",
@@ -556,10 +599,36 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-02-01T09:41:54.077Z",
-                "end": "2025-02-28T09:41:54.077Z"
+                "start": "2025-02-01T03:56:24.944Z",
+                "end": "2025-02-28T03:56:24.944Z"
               }
-            }
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BREAKUP",
+                  "name": "Emi Breakup"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "PRINCIPAL_AMOUNT",
+                      "name": "Principal",
+                      "short_desc": "Loan Principal"
+                    },
+                    "value": "400000"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INTEREST_AMOUNT",
+                      "name": "Interest",
+                      "short_desc": "Loan Interest"
+                    },
+                    "value": "40000"
+                  }
+                ]
+              }
+            ]
           },
           {
             "id": "4",
@@ -572,10 +641,36 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-03-01T09:41:54.077Z",
-                "end": "2025-03-31T09:41:54.077Z"
+                "start": "2025-03-01T03:56:24.944Z",
+                "end": "2025-03-31T03:56:24.944Z"
               }
-            }
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BREAKUP",
+                  "name": "Emi Breakup"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "PRINCIPAL_AMOUNT",
+                      "name": "Principal",
+                      "short_desc": "Loan Principal"
+                    },
+                    "value": "400000"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INTEREST_AMOUNT",
+                      "name": "Interest",
+                      "short_desc": "Loan Interest"
+                    },
+                    "value": "40000"
+                  }
+                ]
+              }
+            ]
           },
           {
             "id": "5",
@@ -588,10 +683,36 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-04-01T09:41:54.077Z",
-                "end": "2025-04-30T09:41:54.077Z"
+                "start": "2025-04-01T03:56:24.944Z",
+                "end": "2025-04-30T03:56:24.944Z"
               }
-            }
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BREAKUP",
+                  "name": "Emi Breakup"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "PRINCIPAL_AMOUNT",
+                      "name": "Principal",
+                      "short_desc": "Loan Principal"
+                    },
+                    "value": "400000"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INTEREST_AMOUNT",
+                      "name": "Interest",
+                      "short_desc": "Loan Interest"
+                    },
+                    "value": "40000"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "cancellation_terms": [
@@ -610,6 +731,7 @@
             }
           }
         ],
+        "status": "ACTIVE",
         "documents": [
           {
             "descriptor": {
@@ -630,19 +752,11 @@
             },
             "mime_type": "application/pdf",
             "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
-          },
-          {
-            "descriptor": {
-              "code": "LOAN_CANCELLATION",
-              "name": "Loan Cancellation Document",
-              "short_desc": "Download your Loan Cancellation document here",
-              "long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
-            },
-            "mime_type": "application/pdf",
-            "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
           }
         ],
-        "id": "9a23d158-8235-4c00-858c-ef339d883d36"
+        "created_at": "2024-11-16T03:56:40.912Z",
+        "updated_at": "2024-11-16T03:56:50.072Z",
+        "id": "cd57ffa0-0b83-433d-bd92-13939a4645a6"
       }
     }
 }

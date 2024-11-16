@@ -1,5 +1,5 @@
 {
-    "context": {
+  "context": {
       "domain": "ONDC:FIS12",
       "location": {
         "country": {
@@ -11,14 +11,14 @@
       },
       "version": "2.2.0",
       "action": "on_select",
-      "transaction_id": "aa5686f9-546f-4432-94f1-8ad9adac4723",
-      "message_id": "4fc46113-b3fd-4995-bcfc-673757a81566",
-      "timestamp": "2024-11-12T04:25:11.578Z",
-      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+      "transaction_id": "c85a12d9-5313-44c6-abf4-9440718d4918",
+      "message_id": "644d005d-7e3a-420f-85f1-e9fa316ef94b",
+      "timestamp": "2024-11-16T03:54:19.032Z",
+      "bap_uri": "http://localhost:8000/buyer/protocol",
       "bap_id": "ondc.sequelstring.com/buyer/protocol",
       "ttl": "PT30M",
       "bpp_id": "ondc.sequelstring.com/seller/protocol",
-      "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+      "bpp_uri": "http://localhost:5006/seller/protocol"
     },
     "message": {
       "order": {
@@ -142,8 +142,8 @@
           {
             "id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
             "descriptor": {
-              "code": "PURCHASE_FINANCE",
-              "name": "Purchase Finance"
+              "code": "LOAN",
+              "name": "Loan"
             },
             "category_ids": [
               "101124"
@@ -271,70 +271,6 @@
                   },
                   {
                     "descriptor": {
-                      "code": "PRINCIPAL_AMOUNT",
-                      "name": "Principal",
-                      "short_desc": "Loan Principal"
-                    },
-                    "value": "65000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "INTEREST_AMOUNT",
-                      "name": "Interest",
-                      "short_desc": "Loan Interest"
-                    },
-                    "value": "4000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "PROCESSING_FEE",
-                      "name": "Processing Fee",
-                      "short_desc": "Processing Fee"
-                    },
-                    "value": "500 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER_UPFRONT_CHARGES",
-                      "name": "other upfront charges",
-                      "short_desc": "other upfront charges"
-                    },
-                    "value": "0 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "INSURANCE_CHARGES",
-                      "name": "Insurance Charges",
-                      "short_desc": "Insurance Charges"
-                    },
-                    "value": "500 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "NET_DISBURSED_AMOUNT",
-                      "name": "net disbursed amount",
-                      "short_desc": "net disbursed amount"
-                    },
-                    "value": "64000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER_CHARGES",
-                      "name": "other charges",
-                      "short_desc": "other charges"
-                    },
-                    "value": "0 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFER_VALIDITY",
-                      "name": "Offer validity",
-                      "short_desc": "Describes the offer validity"
-                    },
-                    "value": "PT15D"
-                  },
-                  {
-                    "descriptor": {
                       "code": "MINIMUM_DOWNPAYMENT",
                       "name": "Minimum Downpayment"
                     },
@@ -349,6 +285,43 @@
                   }
                 ],
                 "display": true
+              },
+              {
+                "display": true,
+                "descriptor": {
+                  "name": "Checklists",
+                  "code": "CHECKLISTS"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "name": "Set Loan Amount",
+                      "code": "SET_DOWN_PAYMENT"
+                    },
+                    "value": "2c901dd4-7914-4871-a85c-955ea7f51e24"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "KYC",
+                      "code": "KYC"
+                    },
+                    "value": "PENDING"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Emandate",
+                      "code": "EMANDATE"
+                    },
+                    "value": "PENDING"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Esign",
+                      "code": "ESIGN"
+                    },
+                    "value": "PENDING"
+                  }
+                ]
               }
             ],
             "xinput": {
@@ -359,7 +332,7 @@
                   "max": 1
                 },
                 "headings": [
-                  "Set Loan Amount",
+                  "SET_DOWN_PAYMENT",
                   "KYC"
                 ],
                 "descriptor": {
@@ -367,9 +340,9 @@
                 }
               },
               "form": {
-                "id": "9df74120-d1c6-4c85-aa40-920131373a93",
+                "id": "ca80a182-68e2-4197-a10c-3efac181bab3",
                 "mime_type": "application/html",
-                "url": "http://localhost:5006/seller/form/9df74120-d1c6-4c85-aa40-920131373a93",
+                "url": "http://localhost:5006/seller/form/ca80a182-68e2-4197-a10c-3efac181bab3",
                 "resubmit": false,
                 "multiple_sumbissions": false
               },
@@ -378,21 +351,21 @@
           }
         ],
         "quote": {
-          "id": "9a23d158-8235-4c00-858c-ef339d883d36",
+          "id": "cd57ffa0-0b83-433d-bd92-13939a4645a6",
           "price": {
             "currency": "INR",
             "value": "442300"
           },
           "breakup": [
             {
-              "title": "PRINCIPAL",
+              "title": "PRINCIPAL_AMOUNT",
               "price": {
                 "value": "400000",
                 "currency": "INR"
               }
             },
             {
-              "title": "INTEREST",
+              "title": "INTEREST_AMOUNT",
               "price": {
                 "value": "40000",
                 "currency": "INR"

@@ -1,24 +1,16 @@
 {
-    "context": {
+  "context": {
       "domain": "ONDC:FIS12",
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "*"
-        }
-      },
-      "version": "2.2.0",
-      "action": "on_status",
-      "transaction_id": "aa5686f9-546f-4432-94f1-8ad9adac4723",
-      "message_id": "be218e0e-111e-487f-8f39-c9c9a49af37b",
-      "timestamp": "2024-11-12T04:28:54.870Z",
-      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-      "bap_id": "ondc.sequelstring.com/buyer/protocol",
-      "ttl": "PT30M",
+      "transaction_id": "c85a12d9-5313-44c6-abf4-9440718d4918",
       "bpp_id": "ondc.sequelstring.com/seller/protocol",
-      "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+      "version": "2.2.0",
+      "bpp_uri": "http://localhost:5006/seller/protocol",
+      "bap_id": "ondc.sequelstring.com/buyer/protocol",
+      "bap_uri": "http://localhost:8000/buyer/protocol",
+      "message_id": "fdb39e5a-082c-407e-9686-159e3be1d99a",
+      "action": "on_status",
+      "timestamp": "2024-11-16T03:56:24.877Z",
+      "ttl": "PT30M"
     },
     "message": {
       "order": {
@@ -142,8 +134,8 @@
           {
             "id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
             "descriptor": {
-              "code": "PURCHASE_FINANCE",
-              "name": "Purchase Finance"
+              "code": "LOAN",
+              "name": "Loan"
             },
             "category_ids": [
               "101124"
@@ -271,70 +263,6 @@
                   },
                   {
                     "descriptor": {
-                      "code": "PRINCIPAL_AMOUNT",
-                      "name": "Principal",
-                      "short_desc": "Loan Principal"
-                    },
-                    "value": "65000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "INTEREST_AMOUNT",
-                      "name": "Interest",
-                      "short_desc": "Loan Interest"
-                    },
-                    "value": "4000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "PROCESSING_FEE",
-                      "name": "Processing Fee",
-                      "short_desc": "Processing Fee"
-                    },
-                    "value": "500 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER_UPFRONT_CHARGES",
-                      "name": "other upfront charges",
-                      "short_desc": "other upfront charges"
-                    },
-                    "value": "0 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "INSURANCE_CHARGES",
-                      "name": "Insurance Charges",
-                      "short_desc": "Insurance Charges"
-                    },
-                    "value": "500 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "NET_DISBURSED_AMOUNT",
-                      "name": "net disbursed amount",
-                      "short_desc": "net disbursed amount"
-                    },
-                    "value": "64000 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER_CHARGES",
-                      "name": "other charges",
-                      "short_desc": "other charges"
-                    },
-                    "value": "0 INR"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFER_VALIDITY",
-                      "name": "Offer validity",
-                      "short_desc": "Describes the offer validity"
-                    },
-                    "value": "PT15D"
-                  },
-                  {
-                    "descriptor": {
                       "code": "MINIMUM_DOWNPAYMENT",
                       "name": "Minimum Downpayment"
                     },
@@ -349,38 +277,75 @@
                   }
                 ],
                 "display": true
+              },
+              {
+                "display": true,
+                "descriptor": {
+                  "name": "Checklists",
+                  "code": "CHECKLISTS"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "name": "Set Loan Amount",
+                      "code": "SET_DOWN_PAYMENT"
+                    },
+                    "value": "2c901dd4-7914-4871-a85c-955ea7f51e24"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "KYC",
+                      "code": "KYC"
+                    },
+                    "value": "3f2063f4-d9f3-4c66-a35a-c2939a645d08"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Emandate",
+                      "code": "EMANDATE"
+                    },
+                    "value": "cd504483-768b-4069-8380-77fcd497b664"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Esign",
+                      "code": "ESIGN"
+                    },
+                    "value": "PENDING"
+                  }
+                ]
               }
             ],
             "xinput": {
               "form": {
-                "id": "0d5e9ef2-ba5a-4cc2-9f57-171ca0f3a304"
+                "id": "47f46c4c-d01a-41c2-820c-e3e21088b05c"
               },
               "form_response": {
                 "status": "APPROVED",
-                "submission_id": "0e672d56-251d-4bdb-b457-00cea04e4618"
+                "submission_id": "2a2109ac-0e19-43e2-8bd8-3aadfaeda0b2"
               }
             },
             "fulfillment_ids": [
-              "43477afb-c1f2-4fcc-b853-5a3e53e271ae"
+              "5d6f87a7-cbd9-4317-be94-42dddbddb6a5"
             ]
           }
         ],
         "quote": {
-          "id": "9a23d158-8235-4c00-858c-ef339d883d36",
+          "id": "cd57ffa0-0b83-433d-bd92-13939a4645a6",
           "price": {
             "currency": "INR",
             "value": "442300"
           },
           "breakup": [
             {
-              "title": "PRINCIPAL",
+              "title": "PRINCIPAL_AMOUNT",
               "price": {
                 "value": "400000",
                 "currency": "INR"
               }
             },
             {
-              "title": "INTEREST",
+              "title": "INTEREST_AMOUNT",
               "price": {
                 "value": "40000",
                 "currency": "INR"
@@ -440,8 +405,8 @@
                 "code": "INITIATED"
               }
             },
-            "type": "purchaseLoan",
-            "id": "43477afb-c1f2-4fcc-b853-5a3e53e271ae"
+            "type": "LOAN",
+            "id": "5d6f87a7-cbd9-4317-be94-42dddbddb6a5"
           }
         ],
         "payments": [
@@ -498,7 +463,7 @@
                     "descriptor": {
                       "code": "SETTLEMENT_AMOUNT"
                     },
-                    "value": "5000"
+                    "value": "NaN"
                   },
                   {
                     "descriptor": {
@@ -509,7 +474,7 @@
                 ]
               }
             ],
-            "id": "7cc72d52-86ff-4bbf-8a0b-14c50f935643"
+            "id": "b101b5f3-7532-4905-a59a-ded0b2f65665"
           }
         ],
         "cancellation_terms": [
