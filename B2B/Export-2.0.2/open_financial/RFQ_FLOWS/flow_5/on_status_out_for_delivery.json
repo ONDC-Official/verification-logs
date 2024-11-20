@@ -1,0 +1,228 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "location": {
+        "city": {
+          "code": "std:080"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
+      "action": "on_status",
+      "version": "2.0.2",
+      "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_id": "preprod-ondc-seller.bankopen.co",
+        "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+        "transaction_id": "1ec393af-440f-4501-ae7e-3275cff5b477",
+        "message_id": "342fbf1d-9b5f-443d-a31a-2a0c89c02ae8",
+      "timestamp": "2024-09-24T14:47:24.454Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "id": "b91a0d0104b1b585da4d72b5a75a889e",
+        "state": "In-progress",
+        "provider": {
+          "id": "19746-ONDC-1",
+          "locations": [
+            {
+              "id": "L1"
+            }
+          ]
+        },
+        "items": [
+                {
+                    "id": "BABY-MAT-MB09-DEV",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "location_ids": [
+                        "L1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    },"tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "expecting 5% discount"
+                },
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": "0.00"
+                }
+              ]
+            }
+          ]
+                }
+            ],
+        "documents": [
+          {
+            "url": "https://preprod-ondc-seller.bankopen.co/images/invoice/b91a0d0104b1b585da4d72b5a75a889e.pdf",
+            "label": "Invoice"
+          }
+        ],
+        "billing": {
+          "name": "Gaurav Singh",
+          "address": "7 , carmelaram, Bengalurur 560035",
+          "state": {
+            "name": "Karnataka"
+          },
+          "city": {
+            "name": "Bengaluru"
+          },
+          "phone": "8764320915",
+          "tax_id": "29FQZAF2408R2A4"
+        },
+        "fulfillments": [
+          {
+            "id": "1",
+            "type": "Delivery",
+            "@ondc/org/provider_name": "ZFONDC",
+            "state": {
+              "descriptor": {
+                "code": "Out-for-delivery",
+                "images": []
+              }
+            },
+            "tracking": false,
+            "stops": [
+              {
+                "type": "end",
+                "location": {
+                  "gps": "12.900496398, 77.709330496",
+                  "address": "7 , carmelaram, Bengalurur 560035",
+                  "area_code": "560035",
+                  "state": {
+                    "name": "Karnataka"
+                  },
+                  "city": {
+                    "name": "Bengaluru"
+                  },
+                  "country": {
+                    "code": "IND"
+                  }
+                },
+                "time": {
+                  "range": {
+                    "start": "2024-08-22T09:35:24.688Z",
+                    "end": "2024-08-31T09:35:19.688Z"
+                  }
+                },
+                "contact": {
+                  "phone": "8764320915"
+                }
+              },
+              {
+                "type": "start",
+                "location": {
+                  "id": "L1",
+                  "descriptor": {
+                    "name": "ZFONDC",
+                    "images": []
+                  },
+                  "gps": "28.5285458,77.1667015"
+                },
+                "time": {
+                  "range": {
+                    "start": "2024-08-22T09:35:19.688Z",
+                    "end": "2024-08-24T09:35:19.688Z"
+                  },
+                  "timestamp": "2024-08-22T11:48:03.794Z"
+                },
+                "instructions": {
+                  "name": "Proof of pickup",
+                  "short_desc": "Order Picked up",
+                  "long_desc": "Order Picked up",
+                  "images": [
+                    "https://preprod-ondc-seller.bankopen.co/proofs/b91a0d0104b1b585da4d72b5a75a889e_pickup.img"
+                  ]
+                },
+                "contact": {
+                  "phone": "8766339084",
+                  "email": "anujarora@cornitos.in"
+                }
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "347.62"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "19746-ONDC-1-101",
+              "@ondc/org/item_quantity": {
+                "count": 2
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "120.00"
+                }
+              },
+              "title": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+              "price": {
+                "currency": "INR",
+                "value": "240.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "1",
+              "@ondc/org/title_type": "delivery",
+              "title": "Delivery Charges",
+              "price": {
+                "currency": "INR",
+                "value": "107.62"
+              }
+            }
+          ],
+          "ttl": "P1D"
+        },
+        "payments": [
+          {
+            "params": {
+              "amount": "347.62",
+              "currency": "INR"
+            },
+            "type": "ON-FULFILLMENT",
+            "status": "NOT-PAID",
+            "collected_by": "BPP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+            "@ondc/org/withholding_amount": "0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_window": "P1D",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "buyer-app",
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "1234567890",
+                "settlement_ifsc_code": "HDFC0000102",
+                "bank_name": "Test Bank",
+                "beneficiary_name": "Thomson"
+              }
+            ]
+          }
+        ],
+        "created_at": "2024-09-24T14:23:02.654Z",
+        "updated_at": "2024-08-22T11:48:51.662Z"
+      }
+    }
+  }
