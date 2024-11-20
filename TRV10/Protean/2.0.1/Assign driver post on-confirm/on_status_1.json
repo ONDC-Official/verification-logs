@@ -5,11 +5,11 @@
     "bpp_uri": "https://cloud-adaptor.preprod.proteantech.in/adaptor-v2/adp7/bpp",
     "bpp_id": "cloud-adaptor.preprod.proteantech.in/adaptor-v2/adp7",
     "domain": "ONDC:TRV10",
-    "timestamp": "2024-11-19T13:38:09.427Z",
+    "timestamp": "2024-11-19T13:38:23.053Z",
     "transaction_id": "4d59e5c6-4a5f-4807-ae5c-017f108508a6",
-    "message_id": "753c3087-5b35-4c76-83cd-49d817b63567",
+    "message_id": "740d0218-9956-4337-9d7d-60491c2ae974",
     "version": "2.0.1",
-    "action": "on_confirm",
+    "action": "on_status",
     "ttl": "PT30S",
     "location": {
       "city": {
@@ -22,7 +22,7 @@
   },
   "message": {
     "order": {
-      "id": "bd180aed-76aa-45dd-bfb5-0220962fa368",
+      "id": "adbcd4a3-3d2e-40cb-bff6-b215d8c61a32",
       "provider": {
         "id": "384f9c1d-7842-4088-ba29-cc5014e7c173"
       },
@@ -296,7 +296,10 @@
           "type": "DELIVERY",
           "vehicle": {
             "category": "CAB",
-            "variant": "SEDAN"
+            "variant": "SEDAN",
+            "make": "TATA",
+            "model": "TATA",
+            "registration": "PB27H2221"
           },
           "tags": [
             {
@@ -333,14 +336,33 @@
           },
           "state": {
             "descriptor": {
-              "code": "RIDE_CONFIRMED"
+              "code": "RIDE_ENROUTE_PICKUP",
+              "name": "Driver is en route to pickup location."
+            }
+          },
+          "agent": {
+            "person": {
+              "name": "PaviterStagingDriver"
+            },
+            "contact": {
+              "phone": "8427842761"
             }
           },
           "stops": [
             {
+              "instructions": {
+                "long_desc": "long description of the location",
+                "short_desc": "short description of the location"
+              },
               "type": "START",
               "location": {
                 "gps": "19.033048,73.029662"
+              },
+              "authorization": {
+                "type": "OTP",
+                "token": "002345",
+                "valid_to": "2024-11-19T13:43:15.425Z",
+                "status": "UNCLAIMED"
               }
             },
             {
@@ -354,7 +376,7 @@
       ],
       "status": "ACTIVE",
       "created_at": "2024-11-19T13:38:09.427Z",
-      "updated_at": "2024-11-19T13:38:09.427Z"
+      "updated_at": "2024-11-19T13:38:23.053Z"
     }
   }
 }
