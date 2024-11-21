@@ -9,19 +9,21 @@
       }
     },
     "domain": "ONDC:TRV11",
-    "action": "on_init",
+    "action": "on_update",
     "version": "2.0.0",
     "bap_id": "pre-prod-ondc-buyer-api.chartr.in",
     "bap_uri": "https://pre-prod-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
     "bpp_id": "dev-ondc-ticketing-api.delhitransport.in",
     "bpp_uri": "https://dev-ondc-ticketing-api.delhitransport.in/",
-    "transaction_id": "7fe995aa-441e-4359-9fb5-d847268627b0",
-    "message_id": "179c00ff-0829-42c0-b96b-2232b41dbd49",
-    "timestamp": "2024-11-21T06:45:32.006Z",
-    "ttl": "PT03M"
+    "transaction_id": "fb15013a-ca01-4466-8653-09fd335cb55e",
+    "message_id": "bf40f983-0ed2-4565-a2f4-1bd5ef6769f1",
+    "timestamp": "2024-11-21T07:08:12.353Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "id": "01",
+      "status": "ACTIVE",
       "items": [
         {
           "id": "I1",
@@ -78,6 +80,10 @@
                   "code": "ZAKHIRA_FLYOVER"
                 },
                 "gps": "0.000000, 0.000000"
+              },
+              "authorization": {
+                "type": "VEHICLE_NUMBER",
+                "status": "CLAIMED"
               },
               "id": "1"
             },
@@ -238,6 +244,19 @@
                   "value": "ZAKHIRA_FLYOVER to DB_GUPTA_MARKET"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "T2111202493eb325e97"
+                }
+              ]
             }
           ]
         }
@@ -297,9 +316,12 @@
         {
           "id": "PA1",
           "collected_by": "BAP",
-          "status": "NOT-PAID",
+          "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
+            "transaction_id": "2411211237FD7IRY",
+            "currency": "INR",
+            "amount": "13.5",
             "bank_code": "XXXXXXXX",
             "bank_account_number": "xxxxxxxxxxxxxx",
             "virtual_payment_address": "9777777777@okicic"
@@ -333,12 +355,6 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "UPI"
-                },
-                {
-                  "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
                   "value": "P2D"
@@ -348,6 +364,12 @@
                     "code": "SETTLEMENT_BASIS"
                   },
                   "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
                 },
                 {
                   "descriptor": {
@@ -383,7 +405,9 @@
             }
           ]
         }
-      ]
+      ],
+      "created_at": "2024-11-21T12:37:37Z",
+      "updated_at": "2024-11-21T12:37:37Z"
     }
   }
 }

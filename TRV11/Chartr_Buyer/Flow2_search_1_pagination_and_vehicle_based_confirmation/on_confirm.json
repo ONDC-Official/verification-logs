@@ -9,19 +9,21 @@
       }
     },
     "domain": "ONDC:TRV11",
-    "action": "on_init",
+    "action": "on_confirm",
     "version": "2.0.0",
     "bap_id": "pre-prod-ondc-buyer-api.chartr.in",
     "bap_uri": "https://pre-prod-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
     "bpp_id": "dev-ondc-ticketing-api.delhitransport.in",
     "bpp_uri": "https://dev-ondc-ticketing-api.delhitransport.in/",
-    "transaction_id": "7fe995aa-441e-4359-9fb5-d847268627b0",
-    "message_id": "179c00ff-0829-42c0-b96b-2232b41dbd49",
-    "timestamp": "2024-11-21T06:45:32.006Z",
-    "ttl": "PT03M"
+    "transaction_id": "fb15013a-ca01-4466-8653-09fd335cb55e",
+    "message_id": "b6614577-f62b-47eb-a456-f448cd653b4d",
+    "timestamp": "2024-11-21T07:07:37.191Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "id": "01",
+      "status": "ACTIVE",
       "items": [
         {
           "id": "I1",
@@ -78,6 +80,12 @@
                   "code": "ZAKHIRA_FLYOVER"
                 },
                 "gps": "0.000000, 0.000000"
+              },
+              "authorization": {
+                "type": "QR",
+                "token": "eyJidXNfbnVtYmVyIjogbnVsbCwgImJ1c19yb3V0ZSI6ICI5OTNET1dOIiwgInN0YXJ0X3N0b3AiOiAiWmFraGlyYSBGbHlvdmVyIiwgImVuZF9zdG9wIjogIkRCIEd1cHRhIE1hcmtldCIsICJib29raW5nX3RpbWUiOiAiMjAyNC0xMS0yMVQxMjozNzozNyIsICJ2YWxpZGl0eSI6ICIyMDI0LTExLTIyVDAzOjAwOjAwIiwgInRpY2tldF9pZCI6ICJUMjExMTIwMjQ5M2ViMzI1ZTk3IiwgImZhcmVfcGVyX3RpY2tldCI6IDE1LjAsICJ0aWNrZXRfY291bnQiOiAxLCAiYnVzX2FnZW5jeSI6IG51bGx9",
+                "valid_to": "2024-11-22T03:00:00Z",
+                "status": "UNCLAIMED"
               },
               "id": "1"
             },
@@ -217,7 +225,7 @@
           "vehicle": {
             "category": "BUS",
             "variant": "AC",
-            "registration": "DL1PD5604"
+            "registration": null
           },
           "tags": [
             {
@@ -238,6 +246,19 @@
                   "value": "ZAKHIRA_FLYOVER to DB_GUPTA_MARKET"
                 }
               ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "T2111202493eb325e97"
+                }
+              ]
             }
           ]
         }
@@ -252,6 +273,11 @@
           }
         }
       ],
+      "billing": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
       "quote": {
         "price": {
           "value": "13.5",
@@ -297,9 +323,12 @@
         {
           "id": "PA1",
           "collected_by": "BAP",
-          "status": "NOT-PAID",
+          "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
+            "transaction_id": "2411211237FD7IRY",
+            "currency": "INR",
+            "amount": "13.5",
             "bank_code": "XXXXXXXX",
             "bank_account_number": "xxxxxxxxxxxxxx",
             "virtual_payment_address": "9777777777@okicic"
@@ -333,12 +362,6 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "UPI"
-                },
-                {
-                  "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
                   "value": "P2D"
@@ -348,6 +371,12 @@
                     "code": "SETTLEMENT_BASIS"
                   },
                   "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
                 },
                 {
                   "descriptor": {
@@ -383,7 +412,9 @@
             }
           ]
         }
-      ]
+      ],
+      "created_at": "2024-11-21T12:37:37Z",
+      "updated_at": "2024-11-21T12:37:37Z"
     }
   }
 }
