@@ -1,5 +1,4 @@
 {
-  "signature": "Signature keyId=\"ondc.preprod.highwaydelite.com|1f3dff65-7998-4eb7-94a9-469f3806a36f|ed25519\",algorithm=\"ed25519\",created=\"1732032469\",expires=\"1732036069\",headers=\"(created) (expires) digest\",signature=\"jsW6VkV3ZH0reeIjrABr1yaSr9NJWapjVkjaG9J4q6/Q+imBOYUvWnc+b1dAoc51UENpOzlDqCYGOlLYNamcDg==\"",
   "context": {
     "location": {
       "country": {
@@ -10,16 +9,16 @@
       }
     },
     "domain": "ONDC:TRV11",
-    "action": "confirm",
+    "timestamp": "2024-11-22T11:01:12.529Z",
     "version": "2.0.1",
     "bap_id": "ondc.preprod.highwaydelite.com",
-    "bap_uri": "https://ondc.preprod.highwaydelite.com/ondc-service/api/v1/bapl",
-    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "timestamp": "2021-03-23T10:00:40.065Z",
-    "ttl": "PT30S",
-    "transaction_id": "38cbf621-e52d-49a7-93c5-ef1d8d8f2bda",
-    "message_id": "409a5dab-f875-4e29-b301-38d53b36696d"
+    "bap_uri": "https://ondc.preprod.highwaydelite.com/metro",
+    "action": "confirm",
+    "bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
+    "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
+    "transaction_id": "494e51a4-8f60-4235-8a84-00f80fd63104",
+    "message_id": "586ad08c-fd1b-4b0f-b8f8-8ebc2321c24d",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
@@ -28,29 +27,29 @@
           "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
           "quantity": {
             "selected": {
-              "count": 2
+              "count": 1
             }
           }
         }
       ],
       "provider": {
-        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
+        "id": "DMRC_5001_1001"
       },
       "billing": {
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "phone": "+91-9897867564"
+        "name": "Highway Delight",
+        "email": "support@highwaydelite.com",
+        "phone": "99868-44448"
       },
       "payments": [
         {
-          "id": "PA1",
+          "id": "ab4b4968-4917-4c13-b1d9-54d3c83423c2",
           "collected_by": "BAP",
           "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
-            "transaction_id": "34cc9b0b-6887-4c63-8397-2f4fcf03e50d",
+            "transaction_id": "HDTESTRAZORPAYXN3HY8RUYO",
             "currency": "INR",
-            "amount": "70"
+            "amount": "40"
           },
           "tags": [
             {
@@ -63,7 +62,13 @@
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "1"
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
                 }
               ]
             },
@@ -77,49 +82,37 @@
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT60M"
+                  "value": "P30D"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "Delivery"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "NEFT"
-                },
-                {
-                  "descriptor": {
-                    "code": "MANDATORY_ARBITRATION"
-                  },
-                  "value": "true"
-                },
-                {
-                  "descriptor": {
-                    "code": "COURT_JURISDICTION"
-                  },
-                  "value": "New Delhi"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "2.5"
+                  "value": "INVOICE_RECEIPT"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://www.abc.com/settlement-terms/"
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "0"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "59"
+                  "value": "40"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
                 }
               ]
             }

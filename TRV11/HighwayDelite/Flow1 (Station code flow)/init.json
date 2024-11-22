@@ -9,16 +9,16 @@
       }
     },
     "domain": "ONDC:TRV11",
-    "action": "init",
+    "timestamp": "2024-11-22T10:59:07.048Z",
     "version": "2.0.1",
     "bap_id": "ondc.preprod.highwaydelite.com",
-    "bap_uri": "https://ondc.preprod.highwaydelite.com/ondc-service/api/v1/bapl",
-    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "timestamp": "2021-03-23T10:00:40.065Z",
-    "ttl": "PT30S",
-    "transaction_id": "38cbf621-e52d-49a7-93c5-ef1d8d8f2bda",
-    "message_id": "a04807ff-d768-4979-8f00-e61e6c3fe876"
+    "bap_uri": "https://ondc.preprod.highwaydelite.com/metro",
+    "action": "init",
+    "bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
+    "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
+    "transaction_id": "494e51a4-8f60-4235-8a84-00f80fd63104",
+    "message_id": "e1db5ad8-53f4-4f5e-9c4f-4cad44eecf55",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
@@ -27,18 +27,18 @@
           "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
           "quantity": {
             "selected": {
-              "count": 2
+              "count": 1
             }
           }
         }
       ],
       "provider": {
-        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
+        "id": "DMRC_5001_1001"
       },
       "billing": {
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "phone": "+91-9897867564"
+        "name": "Highway Delight",
+        "email": "support@highwaydelite.com",
+        "phone": "99868-44448"
       },
       "payments": [
         {
@@ -56,7 +56,13 @@
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "1"
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
                 }
               ]
             },
@@ -68,21 +74,15 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
+                    "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "59"
+                  "value": "P30D"
                 },
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
+                    "code": "SETTLEMENT_BASIS"
                   },
-                  "value": "NEFT"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "2.5"
+                  "value": "INVOICE_RECEIPT"
                 },
                 {
                   "descriptor": {
@@ -92,15 +92,21 @@
                 },
                 {
                   "descriptor": {
-                    "code": "MANDATORY_ARBITRATION"
+                    "code": "DELAY_INTEREST"
                   },
-                  "value": "true"
+                  "value": "0"
                 },
                 {
                   "descriptor": {
-                    "code": "COURT_JURISDICTION"
+                    "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "New Delhi"
+                  "value": "40"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
                 }
               ]
             }
