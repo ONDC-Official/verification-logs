@@ -1,15 +1,15 @@
 {
   "context": {
       "domain": "ONDC:FIS12",
-      "transaction_id": "43807d29-1933-4eb4-8b85-9442cfedb2aa",
+      "transaction_id": "2840bd7e-a9ba-49d4-81c7-0f895f52c661",
       "bpp_id": "ondc.sequelstring.com/seller/protocol",
       "version": "2.2.0",
       "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
       "bap_id": "ondc.sequelstring.com/buyer/protocol",
       "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-      "message_id": "421c0b0e-a0b7-431c-a7ef-d40eaec66932",
+      "message_id": "40db8173-6a41-40d2-a0cc-d27fddc8ffbc",
       "action": "on_init",
-      "timestamp": "2024-11-16T11:03:32.582Z",
+      "timestamp": "2024-11-25T05:46:21.067Z",
       "ttl": "PT30M"
     },
     "message": {
@@ -235,7 +235,7 @@
                       "name": "Number of installments of repayment",
                       "short_desc": "Number of installments borrower has to make to payback the loan"
                     },
-                    "value": "7"
+                    "value": "5"
                   },
                   {
                     "descriptor": {
@@ -259,7 +259,7 @@
                       "name": "Installment amount",
                       "short_desc": "Each installment amount of repayment"
                     },
-                    "value": "10000 INR"
+                    "value": "88460.00 INR"
                   },
                   {
                     "descriptor": {
@@ -290,14 +290,14 @@
                       "name": "Set Loan Amount",
                       "code": "SET_DOWN_PAYMENT"
                     },
-                    "value": "b0697d5f-eefb-4d4d-8568-998387b40a71"
+                    "value": "deb6853b-46f4-41de-a89d-e749255250cb"
                   },
                   {
                     "descriptor": {
                       "name": "KYC",
                       "code": "KYC"
                     },
-                    "value": "633b5b25-be45-4c4a-b057-df651f9b6294"
+                    "value": "a20012b2-c6b5-4db4-a02d-40f399408ee4"
                   },
                   {
                     "descriptor": {
@@ -332,21 +332,21 @@
                 }
               },
               "form": {
-                "id": "ba73bb73-a766-4f0c-bd2c-24cc6e2c8734",
+                "id": "9179c3ba-0955-4695-ae50-18c0d1ea4508",
                 "mime_type": "application/html",
-                "url": "http://localhost:5006/seller/form/ba73bb73-a766-4f0c-bd2c-24cc6e2c8734",
+                "url": "http://localhost:5006/seller/form/9179c3ba-0955-4695-ae50-18c0d1ea4508",
                 "resubmit": false,
                 "multiple_sumbissions": false
               },
               "required": true
             },
             "fulfillment_ids": [
-              "487d1007-cb39-4fc8-b44b-ac24f2752d0a"
+              "5836561d-83ab-4d91-8879-ec767f837686"
             ]
           }
         ],
         "quote": {
-          "id": "686fc1c0-de76-453a-8898-c9453b5a3516",
+          "id": "5fe4b0e6-bbfa-4261-a6b4-90c5258ab899",
           "price": {
             "currency": "INR",
             "value": "442300"
@@ -421,7 +421,7 @@
               }
             },
             "type": "LOAN",
-            "id": "487d1007-cb39-4fc8-b44b-ac24f2752d0a"
+            "id": "5836561d-83ab-4d91-8879-ec767f837686"
           }
         ],
         "payments": [
@@ -432,8 +432,8 @@
             "tags": [
               {
                 "descriptor": {
-                  "code": "BAP_TERMS",
-                  "name": "BAP Terms of Engagement"
+                  "code": "BPP_TERMS",
+                  "name": "BPP Terms of Engagement"
                 },
                 "display": false,
                 "list": [
@@ -441,7 +441,7 @@
                     "descriptor": {
                       "code": "BUYER_FINDER_FEES_TYPE"
                     },
-                    "value": "percent-annualized"
+                    "value": "PERCENT_ANNUALIZED"
                   },
                   {
                     "descriptor": {
@@ -451,41 +451,33 @@
                   },
                   {
                     "descriptor": {
-                      "code": "DELAY_INTEREST"
+                      "code": "SETTLEMENT_WINDOW"
                     },
-                    "value": "2.5"
+                    "value": "PT30D"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "INVOICE_RECEIPT"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "MANDATORY_ARBITRATION"
+                    },
+                    "value": "TRUE"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "COURT_JURISDICTION"
+                    },
+                    "value": "New Delhi"
                   },
                   {
                     "descriptor": {
                       "code": "STATIC_TERMS"
                     },
-                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFLINE_CONTRACT"
-                    },
-                    "value": "true"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "SETTLEMENT_TERMS"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "DELAY_INTEREST"
-                    },
-                    "value": "2.5"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "STATIC_TERMS"
-                    },
-                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                    "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
                   },
                   {
                     "descriptor": {
@@ -498,17 +490,11 @@
                       "code": "SETTLEMENT_AMOUNT"
                     },
                     "value": "1666.67"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_TYPE"
-                    },
-                    "value": "neft"
                   }
                 ]
               }
             ],
-            "id": "ae0d04db-8c9a-49d5-bec9-1fbd3b331f75"
+            "id": "c936c47d-7ac4-40d0-95a2-0e905678dd1d"
           }
         ],
         "cancellation_terms": [

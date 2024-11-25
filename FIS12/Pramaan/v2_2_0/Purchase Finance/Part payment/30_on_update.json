@@ -1,12 +1,12 @@
 {
   "context": {
       "domain": "ONDC:FIS12",
-      "transaction_id": "50865df3-9767-47b9-a533-6203116f2e0e",
+      "transaction_id": "c79a25c6-6fed-4afa-9727-f92c01fb3aeb",
       "bpp_id": "ondc.sequelstring.com/seller/protocol",
       "version": "2.2.0",
-      "message_id": "6a1e94e6-6011-42a2-b288-0e3fe197d15d",
+      "message_id": "94411ae3-7438-4316-bfbc-1363dac40271",
       "action": "on_update",
-      "timestamp": "2024-11-16T11:35:57.212Z",
+      "timestamp": "2024-11-25T06:13:46.610Z",
       "ttl": "PT10M",
       "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
       "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
@@ -235,7 +235,7 @@
                       "name": "Number of installments of repayment",
                       "short_desc": "Number of installments borrower has to make to payback the loan"
                     },
-                    "value": "7"
+                    "value": "5"
                   },
                   {
                     "descriptor": {
@@ -259,7 +259,7 @@
                       "name": "Installment amount",
                       "short_desc": "Each installment amount of repayment"
                     },
-                    "value": "10000 INR"
+                    "value": "88460.00 INR"
                   },
                   {
                     "descriptor": {
@@ -290,39 +290,40 @@
                       "name": "Set Loan Amount",
                       "code": "SET_DOWN_PAYMENT"
                     },
-                    "value": "308222fe-b327-4a34-88ef-e2d8da3c4f65"
+                    "value": "540783f8-9ea7-495d-a682-70c7336a99d8"
                   },
                   {
                     "descriptor": {
                       "name": "KYC",
                       "code": "KYC"
                     },
-                    "value": "ed3e1d1a-0f91-49ef-bb27-a4e05893b06a"
+                    "value": "4c3a81d9-faf9-40b7-8317-f8e95cd4a2cf"
                   },
                   {
                     "descriptor": {
                       "name": "Emandate",
                       "code": "EMANDATE"
                     },
-                    "value": "48fdcc2a-2a6c-4657-9174-1fcbc570715e"
+                    "value": "47b35d4c-98ae-4270-9e9e-f6689bd8e032"
                   },
                   {
                     "descriptor": {
                       "name": "Esign",
                       "code": "ESIGN"
                     },
-                    "value": "8999ad3a-e75e-43a6-a71c-de122abc829a"
+                    "value": "9b8b35a5-fd20-48f9-9339-0ad21ec19cd1"
                   }
                 ]
               }
             ],
             "fulfillment_ids": [
-              "ee356117-628c-4517-9e49-54a55a94c634"
+              "37355890-7cf9-45da-b053-06fc2143a753",
+              "cca50f56-1d5c-4759-ac88-5da543e596e0"
             ]
           }
         ],
         "quote": {
-          "id": "1dab5faa-8b3f-433d-a9d7-cb0125252697",
+          "id": "3a6c3813-678b-4a3e-ad6c-6366deadceef",
           "price": {
             "currency": "INR",
             "value": "442300"
@@ -418,7 +419,7 @@
               }
             },
             "type": "LOAN",
-            "id": "ee356117-628c-4517-9e49-54a55a94c634",
+            "id": "37355890-7cf9-45da-b053-06fc2143a753",
             "tags": [
               {
                 "descriptor": {
@@ -455,13 +456,13 @@
               }
             },
             "type": "BASE_ORDER",
-            "id": "8c80e7cb-41a5-47e1-982e-028fc0563c86"
+            "id": "cca50f56-1d5c-4759-ac88-5da543e596e0"
           }
         ],
         "payments": [
           {
-            "id": "bc6c1e14-7691-44b7-9443-caf95f495160",
-            "url": "http://localhost:5006/seller/toPaymentUtility?amount=10000&order_id=1dab5faa-8b3f-433d-a9d7-cb0125252697&label=PRE_PART_PAYMENT",
+            "id": "36549085-4e85-4b11-b93f-8d149e6ca8d3",
+            "url": "http://localhost:5006/seller/toPaymentUtility?amount=10000&order_id=3a6c3813-678b-4a3e-ad6c-6366deadceef&label=PRE_PART_PAYMENT",
             "params": {
               "amount": "10000",
               "currency": "INR"
@@ -479,8 +480,8 @@
             "tags": [
               {
                 "descriptor": {
-                  "code": "BAP_TERMS",
-                  "name": "BAP Terms of Engagement"
+                  "code": "BPP_TERMS",
+                  "name": "BPP Terms of Engagement"
                 },
                 "display": false,
                 "list": [
@@ -488,7 +489,7 @@
                     "descriptor": {
                       "code": "BUYER_FINDER_FEES_TYPE"
                     },
-                    "value": "percent-annualized"
+                    "value": "PERCENT_ANNUALIZED"
                   },
                   {
                     "descriptor": {
@@ -498,41 +499,33 @@
                   },
                   {
                     "descriptor": {
-                      "code": "DELAY_INTEREST"
+                      "code": "SETTLEMENT_WINDOW"
                     },
-                    "value": "2.5"
+                    "value": "PT30D"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "INVOICE_RECEIPT"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "MANDATORY_ARBITRATION"
+                    },
+                    "value": "TRUE"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "COURT_JURISDICTION"
+                    },
+                    "value": "New Delhi"
                   },
                   {
                     "descriptor": {
                       "code": "STATIC_TERMS"
                     },
-                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFLINE_CONTRACT"
-                    },
-                    "value": "true"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "SETTLEMENT_TERMS"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "DELAY_INTEREST"
-                    },
-                    "value": "2.5"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "STATIC_TERMS"
-                    },
-                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                    "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
                   },
                   {
                     "descriptor": {
@@ -545,17 +538,11 @@
                       "code": "SETTLEMENT_AMOUNT"
                     },
                     "value": "1666.67"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_TYPE"
-                    },
-                    "value": "neft"
                   }
                 ]
               }
             ],
-            "id": "8c93d301-2ce1-493b-a4f8-ddfecd505da2"
+            "id": "fbef97e4-2153-4985-9883-ff39c2cf28ef"
           },
           {
             "id": "1",
@@ -568,8 +555,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2024-12-01T11:34:58.123Z",
-                "end": "2024-12-31T11:34:58.123Z"
+                "start": "2024-12-01T06:12:35.627Z",
+                "end": "2024-12-31T06:12:35.627Z"
               }
             },
             "tags": [
@@ -610,8 +597,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-01-01T11:34:58.123Z",
-                "end": "2025-01-31T11:34:58.123Z"
+                "start": "2025-01-01T06:12:35.627Z",
+                "end": "2025-01-31T06:12:35.627Z"
               }
             },
             "tags": [
@@ -652,8 +639,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-02-01T11:34:58.123Z",
-                "end": "2025-02-28T11:34:58.123Z"
+                "start": "2025-02-01T06:12:35.627Z",
+                "end": "2025-02-28T06:12:35.627Z"
               }
             },
             "tags": [
@@ -694,8 +681,8 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-03-01T11:34:58.123Z",
-                "end": "2025-03-31T11:34:58.123Z"
+                "start": "2025-03-01T06:12:35.627Z",
+                "end": "2025-03-31T06:12:35.627Z"
               }
             },
             "tags": [
@@ -736,8 +723,50 @@
             "time": {
               "label": "INSTALLMENT",
               "range": {
-                "start": "2025-04-01T11:34:58.123Z",
-                "end": "2025-04-30T11:34:58.123Z"
+                "start": "2025-04-01T06:12:35.627Z",
+                "end": "2025-04-30T06:12:35.627Z"
+              }
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BREAKUP",
+                  "name": "Emi Breakup"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "PRINCIPAL_AMOUNT",
+                      "name": "Principal",
+                      "short_desc": "Loan Principal"
+                    },
+                    "value": "400000"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INTEREST_AMOUNT",
+                      "name": "Interest",
+                      "short_desc": "Loan Interest"
+                    },
+                    "value": "40000"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6",
+            "type": "POST_FULFILLMENT",
+            "params": {
+              "amount": "88460.00",
+              "currency": "INR"
+            },
+            "status": "NOT-PAID",
+            "time": {
+              "label": "INSTALLMENT",
+              "range": {
+                "start": "2025-05-01T06:12:35.627Z",
+                "end": "2025-05-31T06:12:35.627Z"
               }
             },
             "tags": [
@@ -807,9 +836,9 @@
             "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
           }
         ],
-        "created_at": "2024-11-16T11:35:11.991Z",
-        "updated_at": "2024-11-16T11:35:13.813Z",
-        "id": "1dab5faa-8b3f-433d-a9d7-cb0125252697"
+        "created_at": "2024-11-25T06:13:12.597Z",
+        "updated_at": "2024-11-25T06:13:19.660Z",
+        "id": "3a6c3813-678b-4a3e-ad6c-6366deadceef"
       }
     }
 }
