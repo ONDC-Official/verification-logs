@@ -1,0 +1,382 @@
+{
+  "context": {
+    "bap_uri": "https://cloud-adaptor.preprod.proteantech.in/adaptor-v2/adp6/bap",
+    "bap_id": "cloud-adaptor.preprod.proteantech.in/adaptor-v2/adp6",
+    "bpp_uri": "https://cloud-adaptor.preprod.proteantech.in/adaptor-v2/adp7/bpp",
+    "bpp_id": "cloud-adaptor.preprod.proteantech.in/adaptor-v2/adp7",
+    "domain": "ONDC:TRV10",
+    "timestamp": "2024-11-21T08:28:14.209Z",
+    "transaction_id": "c5d9970f-b9c8-443e-ace4-04382f0628d7",
+    "message_id": "76922bbb-5595-442e-b6f3-0fbae03814b0",
+    "version": "2.0.1",
+    "action": "on_status",
+    "ttl": "PT30S",
+    "location": {
+      "city": {
+        "code": "std:022"
+      },
+      "country": {
+        "code": "IND"
+      }
+    }
+  },
+  "message": {
+    "order": {
+      "id": "d38a0989-613b-4d9e-a638-698e7dee7d88",
+      "provider": {
+        "id": "ea94cf77-0ffc-4be5-a3d6-e47e4e3179ce"
+      },
+      "items": [
+        {
+          "id": "6c45f638-b8e1-41b0-8b17-26d953f075cd",
+          "descriptor": {
+            "name": "TWO_WHEELER",
+            "code": "RIDE"
+          },
+          "price": {
+            "maximum_value": "1364",
+            "currency": "INR",
+            "minimum_value": "1324",
+            "value": "1334"
+          },
+          "location_ids": [
+            "672c93bdc50cd8e302d7ae19"
+          ],
+          "fulfillment_ids": [
+            "0a1a2a2a-5018-4aa0-bd6b-f34856331787"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "4807"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "1009"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "93d651b3-1a11-42ea-9fb0-577481eeefb2"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "1334",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "value": "20",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "value": "1314",
+              "currency": "INR"
+            }
+          }
+        ],
+        "ttl": "P200S"
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "0"
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "20"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "40"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true,
+          "cancellation_fee": {
+            "percentage": "80"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "93d651b3-1a11-42ea-9fb0-577481eeefb2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "DELIVERY"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://example-test-bap.com/static-terms.txt"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "false"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "5"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "13.34"
+                }
+              ]
+            }
+          ],
+          "params": {
+            "bank_account_number": "1234567890",
+            "bank_code": "QWEERTY123",
+            "virtual_payment_address": "7894561230@okhdfc"
+          },
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "0a1a2a2a-5018-4aa0-bd6b-f34856331787",
+          "type": "SELF_PICKUP",
+          "vehicle": {
+            "category": "TWO_WHEELER",
+            "variant": "TWO_WHEELER",
+            "make": "Hero",
+            "model": "Splender",
+            "registration": "mh0123"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "ocpsBmwt{Lf@XDPCJu@|Ag@zASb@MNeCh@e@h@aBrDqAnCbA\\fBx@t@b@`BrAxA~Aj@v@bApBUNr@vBPz@d@~CdBzONx@VfAXr@\\n@z@jAvAdAl@^rAd@dARl@FzABtAI`AObA[lAm@|H{GpBeAr@WpBa@p@KNMPIr@OhDe@hI}@x@GjBSvD?lFFdG?nJFjBB`@qFfAiLXiCDkBKqAMsAYeAm@wAqBaEaAeCGUBUIeA@u@d@aF~AqOTiANg@`@u@n@q@`Ak@z@UhFgA`@M|@g@f@g@j@{@Xu@PcADw@Cw@Gg@k@wB_EcMqIiWeAwC{AkEu@uBy@qBW[W}@a@gA[iADS}AkES{@Ee@?cALkAV{@v@_BfCqEj@gAbAiC|@wBx@eBn@{@R_@\\gANs@Da@L{CHq@Lq@\\iA\\o@~AmBbDoDlKqIlDqCxGoFjCsCjAsAb@s@Ri@J]h@{C|B}Ml@}Dj@qCx@iF@aAIyAKm@Uq@gCqEyBoEsFmJ{@kBeEaHCa@_BiC}HgN{GeLsIwMkEkGYYIAwA_ByDkDkJsHiJsHmS}PuEyDgJgHeC}Ao@[yCiAwJ}CwOuE}Ai@iiAo]mDcAgQyF}SiGoBi@uEuAer@kTcC{@qImCeJqCcCq@cA_@qG{CkPmI_RqJyH{DwF{CgV_MaW{Mwe@yVmHmEeHkEqDuBsQuKkAo@_H_E_D_ByM_IkAw@kBgAmByAgWuOqAy@sAm@e@?yBeAaBoAcBi@QSw@a@eD}@WEkGi@mCOqAKyBAAU}C`@_H|@wARaB^sBr@eHvCqClAkD`A{F~AeLrCiB`@aP|DgAPwL`AuGp@sGj@aHl@aETu@BuCScAM_D{@_Bk@}Au@oAy@iA}@wC{CmJgKkK_LmG}GmIqIOEmF_GwIaJgEkEu@eB]yAKkA?{AHkBx@cKf@uEfBeRfBySbDs^`@yEv@_IlBkULyBLwAFyAUk@Ei@EoBIkA]aCMm@g@eBmAmCe@{@uAgBiAmA{EiE_A}@aBgBA_@AYyC{CuEmEcBiBiUgUoMsMkBmBw@Wo@a@i@i@gAgAyOiQ}AoB}AgCmG_MoAmBy@aBUY}BiEg@q@WUk@s@iB}C_@aAaAgBoAeCsCqFmC}EeBsCwAkBkBqCmAcBmLiNiN{QeGkHeHwIuBoCmEoFqEcFuCiDcFoGk@u@kDkEqBkCe@gA_@{@gDoEaAcBe@_AMe@u@uAi@g@i@a@[i@uF{LcGoMkCcG{ByFo@wAuBuCa@sAGK_A}@gBsBaAyAiIyMuBsDqCeFq@_A{A}A_AmA_FsI_@gAq@_Aw@uAo@w@mC}EUs@m@oA]k@kAqBa@{@qDgGsEiI_@{@U{@Ic@[m@oB_DmBcCwIkPqKkRgBcD{C{EyAiCsEcJqBeEOi@Iw@GSoDmHoDsGyAoC}AaCaAmAgAkBuBcEoAsBmDwGm@aAyD{Hs@eAW[SCGG_ByB}E_GoAoA}FuEeFsCcD}AwCkA_Ac@K[e@McCy@cCq@_Eu@uC[sCU}ACaEMeD@gNd@oVn@wHZkCR]Pye@lCoBNoAPmB\\{MvB_BNkABsA?uAGyBWcD[yG{@wGy@sEm@cN_BuAS{Bk@{PyBkCg@i_@kI{GyA_ImBqCy@yEoBs@g@[]a@[iDsB}B}AiE{DuByBcCsCaB_CiD}FqBoEaD{Ie@kBOoAU_DOoBk@{MIiCWqDy@iHMmDAkBH_CLmC?mDEuEUeDa@mCcEuO{AsDmBoEuBgFcFoLaDwHcA{ByCcGaCkF}H{OmF}Ki@aAi@sAS}@sF}Pg@sAeAyDaBoJ]oAe@kAw@oAqHaKeEiGS]gBmCyDoHkAoCeAqBe@uA[qAuAuHm@{C_EgT}@}C_C_GyBqGuGqTeAoE{D_QmBiJmBwJyAeIyEyUQs@KU[g@Oi@kBgJk@yDk@wC[cCCwAC_@k@cD_@eB_@aAoAaCsGyKq@uAsIcSoAkCiCgGo@uAkBeDeFkIc@w@[u@m@wBqCoMo@sCo@gBmAgCuAwBuBcDcC}EuBsEqGqPeFaNo@mA_AiA}OkPmA}A}GeKmAsA}CyC}@oAeFkJuCuFg@oAeBuFs@aCmF{NkAkCcAgBuQeXsAeBaBqCiHwKcDiEkKsOYm@Ya@OAmBuBcBcCsAeByAkCkBmCWq@Wq@IS?IcAuAmCoE{BmE}AeDaBkEmBuGeAgF}@mFk@kFYuDSaFa@yOUsCY_Cu@mCo@cBcAkBiA{AqAuAoA_AoMiJmBwAq@i@sGoGeBkB_HcJu@qA_HeO[iAKs@IuBQaA_@eA]c@{@w@_EsB_Ai@s@m@y@_Aw@wA{@yAs@{@eA{@}BkAyEcCaBm@cD_Aq@WgAo@cF{DgC}B{GmGaPcOqBsByGcGmIcIyA_BgAwAsCoEcAoBw@oBw@eCs@eDs@cFKmBMcGGsMGwGGs]?uYK}DSgC_@aDaAaFk@iBuCwGu@uAgA}AgFyFoBaB_C{AiEoBuC_A}Bm@}AW{AS_@I}Fe@_O}A}@QqUgCeE[kFO_OG}DGiDG{B?iBHuDTcFb@wAR_APwEfAkIdCqBh@iIlCm@PoB\\_BNsADiBA}Ic@eBIuB@uCNm@F_Y|DkAH_AAwAO_A]{@g@mFgEoBmAaCkAuCcAmCo@kBWwDWyBC{CJo@DiBR{B^_Dv@eEjByBvAuFrCmP|HsNxFuAd@_ATwB\\i@DgCHwAAsAMiIwAgBUcAUwAa@gBu@oEcCgBiAgB}Aq@u@iA_BwBwDgCyEe@q@mBqBqDmDsE{DqGcF{BwAgB}@gCcA_Cq@_B_@eAQ{`@cFqBa@yBq@iBy@{A}@gByAwLyKmKmIgFiDaDsBgF}DmCqBeB_AmBq@oEmAkAe@gAs@{@s@y@cAw@uAe@qA[qASgBWyHUeCc@mCq@aC{@yBcAqB_LySi@qA_DkKe@mAc@w@y@kAq@s@qP_PkGqG_GwGaFoGeByB_LuLy@o@qAs@wAg@_OaD_L{A_BIcBD{ARaJtByBXkPt@{A?mAO{@Sy@]_Ai@mJmIeAgAy@oAk@mA_@kA}CoNi@oA_@o@i@o@}@w@_Ai@{@U}GsAmCw@sCgAmCoAuBoAaCgBcCsBoE}EeB_CwD{FaAkA}HuGyA_AsAq@aQgGwBs@gAUoAKcAAgADuLxAgAFcBCoAMqAYuAg@uD}B}B_B}@y@cLiMoAmA{AkAiAo@{By@_B_@yAQsBO}FW{AQuFwAkA]{Aw@oAaAk@k@y@cAo@kAk@aBYmAQ}AGgBBeBTuBd@eDJeB?oBKsAWaBa@wAq@uA_AwAmBwBgAu@aFkCsAaA{@y@k@s@mCkEoBeDyQkZ}BuD{FoJ{@eAcA}@cAm@sAk@aAWwAWsNsAiHk@wJ{@wB_@mA_@aAYwAu@iAy@oAqAo@y@gAgBu@_B[gA[eBIkAEcDD{AHsAXeChIqj@`@_Bh@qAx@mAbDqD^m@h@kAdDmJXoAN}A@kAImASkAWaAg@gAoDiG_@gAWeAKeACeBHqApAyJJ{A?aBOeMIiFEyIFaDNoBVsBpJej@P_BFuBG}BOmB[mBg@qBe@mAy@gBaC{E{F{LeG}LeIyOqCuFcJ_PiJuQyCkGq@eAm@m@_Ak@q@YgAW_AEkDDqCGoCJqCNgAB_AR{@^gC~Ai@To@Ls@Dm@Im@Yc@a@]o@a@mA_@yA]m@a@]o@UoAOqCW{@Su@]s@m@a@m@[u@}@wCg@eAm@q@o@i@o@]cAYuBg@sAg@_Ak@{@w@o@}@]q@a@qAO{@w@}IC}@DkA|BgW@qAG}@Q_A[s@]k@k@g@i@[y@Yq@OkDc@mBKoABmFt@wADiAEyAWeHaBaFg@gAYw@[oEaCyAk@yAc@kCg@qMmB{AMyCEqEDyLHoGGgDBeJG_AO}DiAmBm@_AGeBEk@QoA}@{BqA{Au@o@g@_@Oe@A_@FYLUXEPD`@Ld@PVl@\\hAh@f@ZRZHTFd@Cl@ITa@d@]ROH}Cn@_CbAwEfAwAd@o@Nw@@gB?cBL}A`@eAL_DFyCFeDP}A?i@Lg@T_@^y@lAUTSNSJ]BuAKa@LKDc@n@e@nAWd@gAz@eAvASL[By@McAY{Bu@wBWq@[iAs@q@Ue@Ei@CyBo@{@Qc@Ck@PYPkAdAi@|@OHY@UIe@e@iBmC_@[c@Kk@B_@Hk@Zq@b@a@JY@[KMQ?UHU|@mANi@A[Me@k@iAW}@a@}@]oAQUUIOCuBFc@FcB\\s@@wBe@mBu@eBYk@Uc@[KMGa@Bc@L_@TUdAm@x@W~@IZMLMLe@?e@WcAC]BULUp@e@l@S|B[ZKh@Y|CgDdAkBZ_@TSRWpBwED[G_@SS_A[sCQq@AoBJoESuB?SEWSGMA_@?MJc@Tq@TqAXs@L_@?WY_ACSD_@NS|@g@^m@Vc@VUvA_An@u@n@c@f@[LUf@sB@_@CS_@qAOaA@g@Fo@~@iCdAoCVcAPyAx@sRX_C\\yAr@wBd@eArB_J\\wBFy@@_BK_Bo@qEu@uDwCqQMoACeBHsATcBl@aCtQsn@dD_LfAwE`A}EhMqq@~O}z@p@_EjBkKv@uFToBt@sJn@oKDqACo@JcF?wCEiDe@{Ia@iFwAsPo@_HGgA[kDw@yJa@wBg@kBo@}AiAsBsAgBcD}Ce@_@yAaAuB}@wDsAoCyAeAs@gCuBoB}B_AyAiAwBSk@Ua@s@eCiBgJQsAm@}Cy@uCoA{CgO_]cI}Vm@yA{AeC_AoA_B}AeAy@kFaDcEiCeA{@oAyAq@eAkAiCsC{Gk@eAkA{AsEwFcG{IiBuCeBqBcXuXoCsCyIkIwYaXWCcBkA_@a@yE}DyCgC_Au@mFyCwCiAcCu@cM_FkBo@_Ae@UOS]qDoAuD}@oC]kAKU?uFg@mAU}@_@eQsK_Au@{@}@gAaBQ_@qBeF_@u@g@e@m@_@i@U_AMs@AkRf@gAEqASgA]{@a@eAy@k@s@Wc@iB}Du@_AaAi@}@U{NmA}@Qc@KsAk@eAw@eGgFgGcFeEyCaFkDiQgN_@_@{@_AoCuDwAsA{AeAe@WgCqAoBmAkUoPgJuGuNeKyDwBwKwFeLoGcD}AuFuByS{HsC{@qLgEeIeDiIyCc_@kNsAc@{Aa@_B]sDe@mDSoCEoDJwMbAoCLkCRgFXcK|@qCNeGd@kDTk\\pAoBTcNbCuALeBF}BCuAG_Di@}C{@gJ_EsAq@cBkAiG_FcAo@yAo@iNqF_D}@iM{CqFw@uN{AkEe@qBWoHgAkHy@yFe@w@K{@UsAi@w@g@gA{@yKcLeBuA_BeAeAi@cBq@aCo@wAU_CU{BG{A@oAFsARoCv@qB|@wGvD{@\\qA^mAPgADeB?sAOuA[kBq@_Bq@oCqAoGqCiHiCiIgC}@]_EwBeHyEwE_DsCcBaJuFu@c@}@a@wCcAqCm@aFw@{\\{FiBe@{@]}Aq@gDcBgE}AwBm@{ZiF{VeEaAQmCs@iDu@uMaDyCm@cYqG{WeHsEgAiGcBmJoCmBw@iCsAsGsDwEoCqG_EaCeB_ByAgAoAoA}A}CkEkC{DyAsBuAaBqCkCiJoIkFyFwAwA}@q@}AcAeEyBwDiBsFmCeFoBaTeKmDkBeAs@{@u@gAmAeJwLyC{DqByCoCkDgBcCk@{Aq@yAg@gBuAsGi@sB}AeF{EkMsBcFa@wAS_@g@gBYs@{AaHS_Ao@iBgAwBuCkDwEkF{CwCkD_DyB}B_D{DgBuCaDiGk@}@iAqA_E{DeFiFiJiK}HsJwMkQwCsDqHgHuGeGsAwAsEmFsUsYmB}BsDoDuDeDsSqPkTwO{CgCoBoBiEoFmBiCiAqAkBeBcCqBcEoDoDwCmIeHmAeAU?{BeBgEgDc@YqC_C_F{DkAw@}BmAwEmBkFsBaEkBmDkBSp@[^YLK?WIQOEMu@g@cBu@c@WG?s@y@]o@g@qAWc@cAsAwAyAqAmAUa@CKEYw@wCYo@i@w@oGcEeDcCo@[_A]SAWF]NSP?VIPSDSEKQ?OqIcAa@?}@JMAWByDx@Jj@z@CBFBh@"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"19.093200, 72.856390\"},{\"gps\":\"19.092980, 72.856140\"},{\"gps\":\"19.094420, 72.854590\"},{\"gps\":\"19.095200, 72.852800\"},{\"gps\":\"19.094290, 72.852280\"},{\"gps\":\"19.092520, 72.849530\"},{\"gps\":\"19.091620, 72.845380\"},{\"gps\":\"19.090200, 72.843910\"},{\"gps\":\"19.087550, 72.844060\"},{\"gps\":\"19.084130, 72.846310\"}]"
+                }
+              ]
+            }
+          ],
+          "customer": {
+            "person": {
+              "name": "Vishal"
+            },
+            "contact": {
+              "phone": "8320925570"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "RIDE_STARTED",
+              "name": "the rider initiates the journey"
+            }
+          },
+          "agent": {
+            "person": {
+              "name": "Vishal"
+            },
+            "contact": {
+              "phone": "9688709550"
+            }
+          },
+          "stops": [
+            {
+              "instructions": {
+                "long_desc": "long description of the location",
+                "short_desc": "short description of the location"
+              },
+              "type": "START",
+              "location": {
+                "gps": "19.092817,72.857087"
+              },
+              "authorization": {
+                "type": "OTP",
+                "token": "008259",
+                "valid_to": "2024-11-21T08:32:50.319Z",
+                "status": "CLAIMED"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "19.997453,73.789802"
+              }
+            }
+          ]
+        }
+      ],
+      "status": "ACTIVE",
+      "created_at": "2024-11-21T08:27:43.220Z",
+      "updated_at": "2024-11-21T08:28:14.209Z"
+    }
+  }
+}
