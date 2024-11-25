@@ -2,90 +2,34 @@
   "context": {
     "location": { "country": { "code": "IND" }, "city": { "code": "std:011" } },
     "domain": "ONDC:TRV11",
-    "timestamp": "2024-11-22T10:54:45.969Z",
-    "version": "2.0.1",
+    "timestamp": "2024-11-25T18:23:20.456Z",
+    "version": "2.0.0",
     "action": "on_search",
     "bap_id": "ondc.preprod.highwaydelite.com",
     "bap_uri": "https://ondc.preprod.highwaydelite.com/metro",
-    "bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
-    "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
-    "transaction_id": "494e51a4-8f60-4235-8a84-00f80fd63104",
-    "message_id": "1e14c7bf-15b8-493b-b191-257a69d1deff",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "0ab0ff28-3895-4748-8da2-e3dad2c33bef",
+    "message_id": "b764b2ab-ecbe-4ba0-938d-dd65be20fb3f",
     "ttl": "PT30S"
   },
   "message": {
     "catalog": {
       "descriptor": {
-        "name": "Delhi Metro Rail Corporation",
-        "images": [
-          {
-            "url": "https://delhimetrorail.com/static/media/logo-passenger.d3afd408.svg"
-          }
-        ]
+        "name": "Sequelstring Solutions",
+        "images": [{ "url": "https://sequelstring.com/logos/logo.ico" }]
       },
       "providers": [
         {
-          "id": "DMRC_5001_1001",
-          "categories": [
-            { "descriptor": { "code": "TICKET", "name": "Ticket" }, "id": "C2" }
-          ],
-          "items": [
-            {
-              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
-              "category_ids": ["C2"],
-              "descriptor": { "code": "SJT", "name": "Single Journey Ticket" },
-              "price": { "currency": "INR", "value": "40" },
-              "quantity": {
-                "maximum": { "count": 8 },
-                "minimum": { "count": 1 }
-              },
-              "time": { "label": "Validity", "duration": "PT60M" },
-              "fulfillment_ids": ["da69c3c1-ad25-45f5-907f-70d58f246194"]
-            }
-          ],
-          "time": {
-            "range": {
-              "start": "2024-11-22T00:00:00.000Z",
-              "end": "2024-11-22T17:30:00.000Z"
-            }
-          },
+          "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
           "descriptor": {
-            "name": "Delhi Metro Rail Corporation",
+            "name": "ONDC Metro Limited",
             "images": [
               {
-                "url": "https://delhimetrorail.com/static/media/logo-passenger.d3afd408.svg"
+                "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
               }
             ]
           },
-          "fulfillments": [
-            {
-              "id": "da69c3c1-ad25-45f5-907f-70d58f246194",
-              "type": "TRIP",
-              "stops": [
-                {
-                  "location": {
-                    "descriptor": {
-                      "code": "132",
-                      "name": "Sat Guru Ram Singh"
-                    },
-                    "gps": "28.662188, 77.157829"
-                  },
-                  "id": "1",
-                  "type": "START"
-                },
-                {
-                  "location": {
-                    "descriptor": { "code": "133", "name": "Kirti Nagar New" },
-                    "gps": "28.655773, 77.148499"
-                  },
-                  "id": "2",
-                  "parent_stop_id": "1",
-                  "type": "END"
-                }
-              ],
-              "vehicle": { "category": "METRO" }
-            }
-          ],
           "payments": [
             {
               "collected_by": "BAP",
@@ -96,7 +40,7 @@
                   "list": [
                     {
                       "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" },
-                      "value": "0"
+                      "value": "1"
                     },
                     {
                       "descriptor": { "code": "BUYER_FINDER_FEES_TYPE" },
@@ -110,7 +54,7 @@
                   "list": [
                     {
                       "descriptor": { "code": "SETTLEMENT_WINDOW" },
-                      "value": "P1D"
+                      "value": "P30D"
                     },
                     {
                       "descriptor": { "code": "SETTLEMENT_BASIS" },
@@ -126,12 +70,148 @@
                     },
                     {
                       "descriptor": { "code": "STATIC_TERMS" },
-                      "value": "https://delhimetrorail.com/faq-tickets-fare"
+                      "value": "https://api.example-bpp.com/booking/terms"
                     },
-                    { "descriptor": { "code": "DELAY_INTEREST" }, "value": "5" }
+                    {
+                      "descriptor": { "code": "DELAY_INTEREST" },
+                      "value": "2.5"
+                    }
                   ]
                 }
               ]
+            }
+          ],
+          "time": {
+            "range": {
+              "start": "2024-11-25T05:30:00.000Z",
+              "end": "2024-11-25T23:30:00.000Z"
+            }
+          },
+          "categories": [
+            {
+              "descriptor": { "name": "Travel Pass", "code": "PASS" },
+              "id": "C1"
+            },
+            { "descriptor": { "name": "Ticket", "code": "TICKET" }, "id": "C2" }
+          ],
+          "items": [
+            {
+              "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
+              "category_ids": ["C1"],
+              "descriptor": { "name": "Journey Pass", "code": "PASS" },
+              "price": { "currency": "INR", "value": "500" },
+              "quantity": {
+                "maximum": { "count": 10 },
+                "minimum": { "count": 1 }
+              },
+              "time": { "label": "Validity", "duration": "PT5M" },
+              "fulfillment_ids": ["debb04b1-943e-4fa2-905a-03534989e347"]
+            },
+            {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "category_ids": ["C2"],
+              "descriptor": { "name": "Single Journey Ticket", "code": "SJT" },
+              "price": { "currency": "INR", "value": "26" },
+              "quantity": {
+                "maximum": { "count": 10 },
+                "minimum": { "count": 1 }
+              },
+              "time": { "label": "Validity", "duration": "PT5M" },
+              "fulfillment_ids": ["e70d9de2-f05b-4225-bdc5-3b1450375eac"]
+            },
+            {
+              "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
+              "category_ids": ["C2"],
+              "descriptor": { "name": "Return Journey Ticket", "code": "RJT" },
+              "price": { "currency": "INR", "value": "52" },
+              "quantity": {
+                "maximum": { "count": 10 },
+                "minimum": { "count": 1 }
+              },
+              "time": { "label": "Validity", "duration": "PT5M" },
+              "fulfillment_ids": ["e70d9de2-f05b-4225-bdc5-3b1450375eac"]
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "e70d9de2-f05b-4225-bdc5-3b1450375eac",
+              "type": "TRIP",
+              "stops": [
+                {
+                  "type": "START",
+                  "instructions": { "name": "Stop 1" },
+                  "location": {
+                    "descriptor": {
+                      "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                      "code": "NBAA"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "1"
+                },
+                {
+                  "type": "INTERMEDIATE_STOP",
+                  "instructions": { "name": "Stop 2" },
+                  "location": {
+                    "descriptor": { "name": "HINDON RIVER", "code": "HDNR" },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "2",
+                  "parent_stop_id": "1"
+                },
+                {
+                  "type": "END",
+                  "instructions": { "name": "Stop 3" },
+                  "location": {
+                    "descriptor": { "name": "ARTHALA", "code": "ATHA" },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "3",
+                  "parent_stop_id": "2"
+                }
+              ],
+              "vehicle": { "category": "METRO" }
+            },
+            {
+              "id": "debb04b1-943e-4fa2-905a-03534989e347",
+              "type": "TRIP",
+              "stops": [
+                {
+                  "type": "START",
+                  "instructions": { "name": "Stop 1" },
+                  "location": {
+                    "descriptor": {
+                      "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                      "code": "NBAA"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "1"
+                },
+                {
+                  "type": "END",
+                  "instructions": { "name": "Stop 3" },
+                  "location": {
+                    "descriptor": { "name": "ARTHALA", "code": "ATHA" },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "3",
+                  "parent_stop_id": "2"
+                }
+              ],
+              "tags": [
+                {
+                  "descriptor": { "code": "TRIP_DETAILS" },
+                  "list": [
+                    {
+                      "descriptor": { "code": "AVAILABLE_TRIPS" },
+                      "value": "30"
+                    },
+                    { "descriptor": { "code": "UTILIZED_TRIPS" }, "value": "0" }
+                  ]
+                }
+              ],
+              "vehicle": { "category": "METRO" }
             }
           ],
           "tags": [
@@ -141,7 +221,7 @@
               "list": [
                 {
                   "descriptor": { "code": "GTFS" },
-                  "value": "https://otd.delhi.gov.in/data/staticDMRC/"
+                  "value": "https://metro-transit/gtfs-realtime"
                 }
               ]
             }

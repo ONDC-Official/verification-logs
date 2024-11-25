@@ -2,15 +2,15 @@
   "context": {
     "location": { "country": { "code": "IND" }, "city": { "code": "std:011" } },
     "domain": "ONDC:TRV11",
-    "timestamp": "2024-11-25T18:23:49.075Z",
+    "timestamp": "2024-11-25T18:51:15.723Z",
     "version": "2.0.0",
     "bap_id": "ondc.preprod.highwaydelite.com",
     "bap_uri": "https://ondc.preprod.highwaydelite.com/metro",
-    "action": "on_select",
+    "action": "on_cancel",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "0ab0ff28-3895-4748-8da2-e3dad2c33bef",
-    "message_id": "2b19965f-20fb-4452-bee4-cdfec0c91a5f",
+    "transaction_id": "ad4481cf-ce95-4f9a-b080-983022570005",
+    "message_id": "f54b3516-2e1d-427f-8c9b-a25855140dc7",
     "ttl": "PT10M"
   },
   "message": {
@@ -40,12 +40,12 @@
           "price": { "currency": "INR", "value": "26" },
           "quantity": { "selected": { "count": 1 } },
           "time": { "label": "Validity", "duration": "PT5M" },
-          "fulfillment_ids": ["a174ee55-377b-48ca-bd46-07e38a7a143e"]
+          "fulfillment_ids": ["99bd3637-2c93-4bba-93f2-d935d5361aa9"]
         }
       ],
       "fulfillments": [
         {
-          "id": "a174ee55-377b-48ca-bd46-07e38a7a143e",
+          "id": "99bd3637-2c93-4bba-93f2-d935d5361aa9",
           "type": "TRIP",
           "stops": [
             {
@@ -85,7 +85,7 @@
         }
       ],
       "quote": {
-        "price": { "currency": "INR", "value": "26.00" },
+        "price": { "currency": "INR", "value": "10" },
         "breakup": [
           {
             "title": "BASE_FARE",
@@ -95,6 +95,19 @@
               "quantity": { "selected": { "count": 1 } }
             },
             "price": { "currency": "INR", "value": "26" }
+          },
+          {
+            "title": "REFUND",
+            "item": {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "price": { "currency": "INR", "value": "-26" },
+              "quantity": { "selected": { "count": 1 } }
+            },
+            "price": { "currency": "INR", "value": "-26" }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": { "currency": "INR", "value": "10" }
           }
         ]
       },
@@ -117,7 +130,82 @@
             "url": "https://sequelstringsolutions.com/mf/tnc.html"
           }
         }
-      ]
+      ],
+      "billing": {
+        "name": "Highway Delight",
+        "email": "support@highwaydelite.com",
+        "phone": "99868-44448"
+      },
+      "payments": [
+        {
+          "id": "9255cc94-8570-4db3-9b71-89bca82067c1",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "HDTESTRAZORPAYNIXOTPXXXI",
+            "currency": "INR",
+            "amount": "26",
+            "bank_code": "SBI5448270",
+            "bank_account_number": "562391273445",
+            "virtual_payment_address": "8667777799@oksbi"
+          },
+          "tags": [
+            {
+              "descriptor": { "code": "BUYER_FINDER_FEES" },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": { "code": "BUYER_FINDER_FEES_PERCENTAGE" },
+                  "value": "0"
+                },
+                {
+                  "descriptor": { "code": "BUYER_FINDER_FEES_TYPE" },
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "descriptor": { "code": "SETTLEMENT_TERMS" },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": { "code": "SETTLEMENT_WINDOW" },
+                  "value": "P30D"
+                },
+                {
+                  "descriptor": { "code": "SETTLEMENT_BASIS" },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": { "code": "STATIC_TERMS" },
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
+                { "descriptor": { "code": "DELAY_INTEREST" }, "value": "0" },
+                {
+                  "descriptor": { "code": "SETTLEMENT_AMOUNT" },
+                  "value": "10"
+                },
+                { "descriptor": { "code": "SETTLEMENT_TYPE" }, "value": "UPI" },
+                {
+                  "descriptor": { "code": "MANDATORY_ARBITRATION" },
+                  "value": "true"
+                },
+                {
+                  "descriptor": { "code": "COURT_JURISDICTION" },
+                  "value": "New Delhi"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "b40bd182-9e9f-4694-88f1-50897eaecfeb",
+      "status": "CANCELLED",
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-11-25T18:51:15.723Z"
+      }
     }
   }
 }
