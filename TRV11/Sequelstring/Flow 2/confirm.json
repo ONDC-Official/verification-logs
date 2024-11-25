@@ -1,5 +1,6 @@
 {
     "context": {
+        "domain": "ONDC:TRV11",
         "location": {
             "country": {
                 "code": "IND"
@@ -8,29 +9,28 @@
                 "code": "std:011"
             }
         },
-        "domain": "ONDC:TRV11",
-        "action": "confirm",
         "version": "2.0.0",
-        "transaction_id": "742e580a-4d14-4cd0-bb5f-510ab6df457a",
-        "message_id": "118bd70d-30c5-41e3-bf61-1838433bada9",
-        "timestamp": "2024-05-17T10:36:33.594Z",
+        "action": "confirm",
+        "transaction_id": "d905172f-64b9-4460-a380-1be26a28e6f0",
+        "message_id": "42f56be6-0587-46b9-aca6-5aa404dfa277",
+        "timestamp": "2024-11-25T06:48:50.661Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT10M",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+        "ttl": "PT100S",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "P1"
+                "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
             },
             "items": [
                 {
-                    "id": "891c97e9-95be-4286-938f-cbf5c5123bb1",
+                    "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
                     "quantity": {
                         "selected": {
-                            "count": 2
+                            "count": 1
                         }
                     }
                 }
@@ -42,30 +42,11 @@
             },
             "payments": [
                 {
-                    "id": "0808aa8e-466a-46a3-9a3c-7c2a9602a30c",
+                    "id": "aadf71a6-add4-4aa7-84af-08d4ec81dcfc",
                     "collected_by": "BAP",
                     "status": "PAID",
                     "type": "PRE-ORDER",
-                    "params": {
-                        "transaction_id": "34cc9b0b-6887-4c63-8397-2f4fcf03e50d",
-                        "currency": "INR",
-                        "amount": "156.00"
-                    },
                     "tags": [
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_DETAILS"
-                            },
-                            "display": false,
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "UPI"
-                                }
-                            ]
-                        },
                         {
                             "descriptor": {
                                 "code": "BUYER_FINDER_FEES"
@@ -77,6 +58,12 @@
                                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                     },
                                     "value": "1"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent"
                                 }
                             ]
                         },
@@ -90,7 +77,7 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "PT30D"
+                                    "value": "P30D"
                                 },
                                 {
                                     "descriptor": {
@@ -112,19 +99,36 @@
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "STATIC_TERMS"
+                                        "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "https://api.example-bpp.com/booking/terms"
+                                    "value": "22.77"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
+                                        "code": "SETTLEMENT_TYPE"
                                     },
-                                    "value": "156"
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://api.example-bap.com/booking/terms"
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "params": {
+                        "transaction_id": "32403dff-2574-4238-a1a9-0b6cfe5047bb",
+                        "currency": "INR",
+                        "amount": "23.00"
+                    }
                 }
             ]
         }

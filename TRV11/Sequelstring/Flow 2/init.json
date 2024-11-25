@@ -1,5 +1,6 @@
 {
     "context": {
+        "domain": "ONDC:TRV11",
         "location": {
             "country": {
                 "code": "IND"
@@ -8,29 +9,28 @@
                 "code": "std:011"
             }
         },
-        "domain": "ONDC:TRV11",
-        "action": "init",
         "version": "2.0.0",
-        "transaction_id": "742e580a-4d14-4cd0-bb5f-510ab6df457a",
-        "message_id": "6f38db92-793f-40c8-b356-57a3b6b96f5c",
-        "timestamp": "2024-05-17T10:36:25.383Z",
+        "action": "init",
+        "transaction_id": "d905172f-64b9-4460-a380-1be26a28e6f0",
+        "message_id": "9f6d0cdf-d52b-4fd9-8a48-662cdadad46a",
+        "timestamp": "2024-11-25T06:48:40.583Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "P1"
+                "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
             },
             "items": [
                 {
-                    "id": "891c97e9-95be-4286-938f-cbf5c5123bb1",
+                    "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
                     "quantity": {
                         "selected": {
-                            "count": 2
+                            "count": 1
                         }
                     }
                 }
@@ -45,11 +45,6 @@
                     "collected_by": "BAP",
                     "status": "NOT-PAID",
                     "type": "PRE-ORDER",
-                    "params": {
-                        "bank_code": "XXXXXXXX",
-                        "bank_account_number": "xxxxxxxxxxxxxx",
-                        "virtual_payment_address": "9988199772@okicic"
-                    },
                     "tags": [
                         {
                             "descriptor": {
@@ -62,20 +57,12 @@
                                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                     },
                                     "value": "1"
-                                }
-                            ]
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_DETAILS"
-                            },
-                            "display": false,
-                            "list": [
+                                },
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
+                                        "code": "BUYER_FINDER_FEES_TYPE"
                                     },
-                                    "value": "UPI"
+                                    "value": "percent"
                                 }
                             ]
                         },
@@ -85,6 +72,12 @@
                             },
                             "display": false,
                             "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
+                                },
                                 {
                                     "descriptor": {
                                         "code": "DELAY_INTEREST"
@@ -99,15 +92,33 @@
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
+                                        "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "neft"
+                                    "value": "P30D"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "INVOICE_RECEIPT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "156"
+                                    "value": "22.77"
                                 }
                             ]
                         }
