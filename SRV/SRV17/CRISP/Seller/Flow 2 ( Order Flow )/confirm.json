@@ -15,14 +15,14 @@
     "bap_uri": "https://agrimachinery.org/",
     "bpp_id": "agrimachinery.org",
     "bpp_uri": "https://agrimachinery.org/seller",
-    "transaction_id": "a0e701c9-4ed4-46c3-b811-f71228b8b139",
-    "message_id": "1de23b41-a862-408a-b326-028b21280a93",
-    "timestamp": "2024-10-23T07:10:05.271Z",
+    "transaction_id": "d986f8ad-e60f-4a6f-86ce-b46b8f5d42d6",
+    "message_id": "f801e1c8-8d33-4175-8135-6f8c9015af4e",
+    "timestamp": "2024-11-20T09:52:16.154Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "AGRI20241054",
+      "id": "AGRI20241134",
       "status": "Created",
       "provider": {
         "id": "23689",
@@ -48,7 +48,7 @@
             "selected": {
               "measure": {
                 "unit": "hours",
-                "value": "24.0"
+                "value": "24"
               }
             }
           },
@@ -64,6 +64,18 @@
                     "code": "TYPE"
                   },
                   "value": "item"
+                },
+                {
+                  "descriptor": {
+                    "code": "TERMS_AND_CONDITION"
+                  },
+                  "value": "http://chcapp.agrimachinery.org/Document/Terms_Condition.pdf"
+                },
+                {
+                  "descriptor": {
+                    "code": "INSURANCE_ID"
+                  },
+                  "value": "0789654321"
                 }
               ]
             },
@@ -71,13 +83,25 @@
               "descriptor": {
                 "code": "CHECKLIST_DOCUMENTS"
               },
-              "display": true,
+              "display": false,
               "list": [
+                {
+                  "descriptor": {
+                    "code": "TYPE"
+                  },
+                  "value": "item"
+                },
                 {
                   "descriptor": {
                     "code": "TERMS_AND_CONDITION"
                   },
                   "value": "http://chcapp.agrimachinery.org/Document/Terms_Condition.pdf"
+                },
+                {
+                  "descriptor": {
+                    "code": "INSURANCE_ID"
+                  },
+                  "value": "0789654321"
                 }
               ]
             },
@@ -85,25 +109,25 @@
               "descriptor": {
                 "code": "INSURANCE"
               },
-              "display": true,
+              "display": false,
               "list": [
+                {
+                  "descriptor": {
+                    "code": "TYPE"
+                  },
+                  "value": "item"
+                },
+                {
+                  "descriptor": {
+                    "code": "TERMS_AND_CONDITION"
+                  },
+                  "value": "http://chcapp.agrimachinery.org/Document/Terms_Condition.pdf"
+                },
                 {
                   "descriptor": {
                     "code": "INSURANCE_ID"
                   },
                   "value": "0789654321"
-                },
-                {
-                  "descriptor": {
-                    "code": "INSURANCE_MIME_TYPE"
-                  },
-                  "value": "application/pdf"
-                },
-                {
-                  "descriptor": {
-                    "code": "INSURANCE_COPY"
-                  },
-                  "value": "http://chcapp.agrimachinery.org//Image/ImplementsImage/productInsurance1728968874288.pdf"
                 }
               ]
             }
@@ -125,10 +149,18 @@
       },
       "fulfillments": [
         {
-          "type": "end",
+          "id": "AGRI-F2",
           "stops": [
             {
-              "type": "end",
+              "contact": {
+                "email": "aditya@crispindia.com",
+                "phone": "9407516153"
+              },
+              "customer": {
+                "person": {
+                  "name": "Aditya crisp"
+                }
+              },
               "location": {
                 "address": "Krishna Nagar, Shymala Hills, Bhopal, Madhya Pradesh 462002, India",
                 "area_code": "462002",
@@ -138,23 +170,23 @@
                 "country": {
                   "code": "IND"
                 },
-                "gps": "23.2460405,77.3956289",
+                "gps": "23.2460604,77.3956232",
                 "state": {
                   "name": "Madhya Pradesh"
                 }
               },
-              "contact": {
-                "phone": "9407516153"
-              },
               "time": {
                 "label": "confirmed",
                 "range": {
-                  "end": "2024-10-24T12:33:00.000Z",
-                  "start": "2024-10-23T12:33:00.000Z"
+                  "end": "2024-11-21T15:00:00.000Z",
+                  "start": "2024-11-20T15:00:00.000Z"
                 }
-              }
+              },
+              "type": "end"
             }
-          ]
+          ],
+          "tracking": false,
+          "type": "Seller-Fulfilled"
         }
       ],
       "quote": {
@@ -168,10 +200,7 @@
               },
               "quantity": {
                 "selected": {
-                  "measure": {
-                    "unit": "hours",
-                    "value": "24.0"
-                  }
+                  "count": 24
                 }
               }
             },
@@ -315,14 +344,47 @@
           "params": {
             "amount": "53000",
             "currency": "INR",
-            "bank_account_number": "0110040500000013"
+            "bank_account_number": "0110040500000014"
           },
           "status": "NOT-PAID",
-          "type": "POST-FULFILLMENT"
+          "type": "POST-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "Settlement_Details"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "Counterparty"
+                  },
+                  "value": "BAP"
+                },
+                {
+                  "descriptor": {
+                    "code": "Beneficiary_Name"
+                  },
+                  "value": "Bineesh Balan"
+                },
+                {
+                  "descriptor": {
+                    "code": "Bank_Account_No"
+                  },
+                  "value": "0110040500000014"
+                },
+                {
+                  "descriptor": {
+                    "code": "Ifsc_Code"
+                  },
+                  "value": "SBIN00015"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "created_at": "2024-10-23T07:10:05.271Z",
-      "updated_at": "2024-10-23T07:10:05.271Z"
+      "created_at": "2024-11-20T09:52:16.154Z",
+      "updated_at": "2024-11-20T09:52:16.154Z"
     }
   }
 }
