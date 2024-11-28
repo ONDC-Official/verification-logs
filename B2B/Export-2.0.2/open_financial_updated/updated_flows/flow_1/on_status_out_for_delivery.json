@@ -1,0 +1,227 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "location": {
+        "city": {
+          "code": "std:080"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
+      "action": "on_status",
+      "version": "2.0.2",
+      "bap_id": "ondcpreprodb2b.rapidor.co",
+      "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+      "bpp_id": "preprod-ondc-seller.bankopen.co",
+      "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+      "transaction_id": "b8ad6a85-9895-4e23-b5b8-8c12e8aec547",
+      "message_id": "68bdh29d8-83212c0b-4f31sssafc-awc7-832312132w2ecc0",
+      "timestamp": "2024-11-27T13:34:55.397Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "id": "RAP-0060659",
+        "state": "In-progress",
+        "provider": {
+            "id": "OPENSELLER1",
+            "rateable": true,
+            "locations": [
+              {
+                "id": "OPENLOCATION1"
+              }
+            ]
+          },
+          "items": [
+            {
+              "id": "57",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              },
+              "fulfillment_ids": [
+                "D1"
+              ]
+            }
+          ],
+          "billing": {
+            "name": "Asif",
+            "address": "rga, rga, Sarjapur Road, Banglore, Bangalore Rural, 560035",
+            "state": {
+              "name": "Karnataka"
+            },
+            "city": {
+              "name": "Bangalore Rural"
+            },
+            "tax_id": "EQKPM7093G",
+            "phone": "8301834097"
+          },
+          "fulfillments": [
+            {
+              "id": "D1",
+              "type": "Delivery",
+              "@ondc/org/provider_name": "OPENF",
+              "stops": [
+                {
+                  "type": "end",
+                  "location": {
+                    "address": "rga, rga, Sarjapur Road, Banglore, Bangalore Rural, 560035",
+                    "gps": "12.902149,77.687282",
+                    "area_code": "560035",
+                    "state": {
+                      "name": "Karnataka"
+                    },
+                    "city": {
+                      "name": "Bangalore Rural"
+                    },
+                    "country": {
+                      "code": "IND"
+                    }
+                  },
+                  "contact": {
+                    "phone": "8301834097"
+                  },
+                  "customer": {
+                    "person": {
+                      "name": "Asif"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2024-11-27T13:33:38.397Z",
+                      "end": "2024-11-27T13:33:38.397Z"
+                    }
+                  }
+
+                },
+                {
+                  "type": "start",
+                  "location": {
+                    "gps": "12.900496398, 77.709330496",
+                    "state": {
+                      "name": "Open"
+                    },
+                    "city": {
+                      "name": "Karnataka"
+                    },
+                    "country": {
+                      "code": "IND"
+                    },
+                    "id": "OPENLOCATION1",
+                    "descriptor": {
+                      "name": "Open Finacial"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "test@gmail.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2024-11-27T13:33:38.397Z",
+                      "end": "2024-11-28T07:33:38.397Z"
+                    },
+                    "timestamp": "2024-11-27T13:34:39.397Z"
+                  },
+                  "instructions": {
+                    "name": "Proof of pickup",
+                    "short_desc": "Proof of pickup details",
+                    "images": [
+                      "https://open-frontend-bucket.s3.amazonaws.com/zwitch-io/images/zwitch_logo_white.svg"
+                    ]
+                  }
+                }
+              ],
+              "tracking": false,
+              "state": {
+                "descriptor": {
+                  "code": "Out-for-delivery"
+                }
+              }
+            }
+          ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "91.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "3",
+              "@ondc/org/item_quantity": {
+                "count": 1
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "21.00"
+                }
+              },
+              "title": "Arctic Touchscreen Winter Gloves",
+              "price": {
+                "currency": "INR",
+                "value": "21.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "D1",
+              "@ondc/org/title_type": "delivery",
+              "title": "Delivery Charges",
+              "price": {
+                "currency": "INR",
+                "value": "60.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "D1",
+              "@ondc/org/title_type": "misc",
+              "title": "Convenience Fee",
+              "price": {
+                "currency": "INR",
+                "value": "10.00"
+              }
+            }
+          ],
+          "ttl": "PT1H"
+        },
+        "payments": [
+          {
+            "params": {
+              "amount": "91.00",
+              "currency": "INR"
+            },
+            "type": "ON-FULFILLMENT",
+            "status": "NOT-PAID",
+            "collected_by": "BPP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+            "@ondc/org/withholding_amount": "0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_window": "P2D",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "buyer-app",
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "1234567890",
+                "settlement_ifsc_code": "HDFC0000102",
+                "bank_name": "Test Bank",
+                "beneficiary_name": "Thomson"
+              }
+            ]
+          }
+        ],
+        "created_at": "2024-11-27T13:33:34.285Z",
+        "updated_at": "2024-11-27T13:34:55.397Z",
+        "documents": [
+            {
+              "url": "//beta.zwitch.in/s/632dcf060c84820019e5c3eb/ms.invoices/66b2fded4ac80a0024cdbdf6/invoice-PRES-39.pdf",
+              "label": "INVOICE"
+            }
+          ]
+      }
+    }
+  }
