@@ -1,0 +1,125 @@
+{
+  "context": {
+    "domain": "ONDC:SRV17",
+    "location": {
+      "city": {
+        "code": "std:0755"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.0",
+    "bap_id": "agrimachinery.org",
+    "bap_uri": "https://agrimachinery.org/",
+    "bpp_id": "agrimachinery.org",
+    "bpp_uri": "https://agrimachinery.org/seller",
+    "transaction_id": "f4db0944-445f-4223-9fae-e60c708da3b3",
+    "message_id": "f5684a31-4231-4fb0-938c-ccfd97cecc2d",
+    "timestamp": "2024-11-20T09:36:59.080Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "23689"
+      },
+      "locations": [
+        {
+          "id": "AGRI-L1"
+        }
+      ],
+      "items": [
+        {
+          "id": "74678",
+          "fulfillment_ids": [
+            "AGRI-F2"
+          ],
+          "location_ids": [
+            "AGRI-L1"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ATTRIBUTE"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "TYPE"
+                  },
+                  "value": "item"
+                }
+              ]
+            }
+          ],
+          "quantity": {
+            "selected": {
+              "measure": {
+                "unit": "hours",
+                "value": "24"
+              }
+            }
+          },
+          "time": {
+            "label": "validity",
+            "range": {
+              "start": "2024-11-26T20:30:00.000Z",
+              "end": "2024-11-27T20:30:00.000Z"
+            },
+            "days": "01,02,03,04,05,06,07"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "AGRI-F2",
+          "type": "Seller-Fulfilled",
+          "tracking": false,
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          },
+          "stops": [
+            {
+              "type": "start",
+              "location": {
+                "gps": "23.2192046,77.4831997",
+                "area_code": "462022"
+              },
+              "time": {
+                "label": "confirmed",
+                "range": {
+                  "start": "2024-11-20T15:00:00.000Z",
+                  "end": "2024-11-21T15:00:00.000Z"
+                }
+              }
+            },
+            {
+              "type": "end",
+              "location": {
+                "gps": "23.2460573,77.3956351"
+              },
+              "range": {
+                "start": "2024-11-20T15:00:00.000Z",
+                "end": "2024-11-21T15:00:00.000Z"
+              }
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BPP"
+        }
+      ]
+    }
+  },
+  "error": {
+    "code": 90001,
+    "message": "Equipment schedule selected by buyer is not available"
+  }
+}
