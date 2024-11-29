@@ -1,0 +1,147 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "on_init",
+    "bap_id": "mock.ondc.org/api",
+    "bap_uri": "https://mock.ondc.org/api/retail/bap",
+    "bpp_id": "preprodb2b.thesellerapp.com",
+    "bpp_uri": "https://preprodb2b.thesellerapp.com/v1/b2b",
+    "transaction_id": "bc491f02-9eca-4bc1-8a9b-e34b3b899cb9",
+    "message_id": "406966b1-0edb-4775-bc3b-fc2ad3ebe54d",
+    "timestamp": "2024-08-07T05:32:48.033Z",
+    "ttl": "PT30S",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "version": "2.0.2"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "66826fb66c433100247b4409" },
+      "provider_location": { "id": "66826fb66c433100247b4409" },
+      "items": [
+        {
+          "id": "6673fb42fa52190024a8c25e",
+          "fulfillment_ids": ["6ms66826fb66c433100247b44091e2"],
+          "quantity": { "selected": { "count": 15 } }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "4560.00" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "6673fb42fa52190024a8c25e",
+            "@ondc/org/item_quantity": { "count": 15 },
+            "title": "Jowar Flour b2b store",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "4500" },
+            "item": { "price": { "currency": "INR", "value": "300" } }
+          },
+          {
+            "@ondc/org/item_id": "6ms66826fb66c433100247b44091e2",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "60" }
+          }
+        ],
+        "ttl": "P6D"
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": { "descriptor": { "code": "Pending" } },
+          "reason_required": true,
+          "cancellation_fee": { "percentage": "0" }
+        },
+        {
+          "fulfillment_state": { "descriptor": { "code": "Packed" } },
+          "reason_required": true,
+          "cancellation_fee": { "percentage": "10" }
+        },
+        {
+          "fulfillment_state": { "descriptor": { "code": "Out-for-delivery" } },
+          "reason_required": true,
+          "cancellation_fee": { "percentage": "50" }
+        }
+      ],
+      "billing": {
+        "name": "Manu Puranic",
+        "address": "no 18, store building, Church street, jayanagar, Bengaluru, 560034",
+        "phone": "7026552000",
+        "tax_id": "07AAGFG3246N1Z9",
+        "state": { "name": "Karnataka" },
+        "city": { "name": "Bengaluru" }
+      },
+      "fulfillments": [
+        {
+          "id": "6ms66826fb66c433100247b44091e2",
+          "type": "Delivery",
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "address": "no 18, store building, Church street, jayanagar, Bengaluru, 560034",
+                "gps": "12.926138,77.622109",
+                "area_code": "560034",
+                "state": { "name": "Karnataka" },
+                "city": { "name": "Bengaluru" },
+                "country": { "code": "IND" }
+              },
+              "contact": { "phone": "7026552000" }
+            }
+          ],
+          "@ondc/org/provider_name": "Prestine Wholesale store",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P8D",
+          "tracking": false
+        }
+      ],
+      "payments": [
+        {
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_type": "neft",
+              "settlement_bank_account_no": "345232255253",
+              "settlement_ifsc_code": "SBIN23231",
+              "beneficiary_name": "Prestine Wholesale",
+              "settlement_phase": "sale-amount"
+            }
+          ],
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P2D",
+          "@ondc/org/withholding_amount": "0.00",
+          "type": "PRE-FULFILLMENT",
+          "collected_by": "BAP"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": { "code": "buyer_id" },
+          "list": [
+            { "descriptor": { "code": "buyer_id_code" }, "value": "gst" },
+            {
+              "descriptor": { "code": "buyer_id_no" },
+              "value": "07AAGFG3246N1Z9"
+            }
+          ]
+        },
+        {
+          "descriptor": { "code": "bpp_terms" },
+          "list": [
+            { "descriptor": { "code": "max_liability" }, "value": "2" },
+            { "descriptor": { "code": "max_liability_cap" }, "value": "10000" },
+            {
+              "descriptor": { "code": "mandatory_arbitration" },
+              "value": "false"
+            },
+            {
+              "descriptor": { "code": "court_jurisdiction" },
+              "value": "Gurugram"
+            },
+            { "descriptor": { "code": "delay_interest" }, "value": "1000" }
+          ]
+        }
+      ]
+    }
+  }
+}
