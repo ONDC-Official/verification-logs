@@ -1,0 +1,173 @@
+{
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "on_select",
+    "transaction_id": "b228a5a1-0bfb-4293-b95a-4a485f43d2c8",
+    "message_id": "7ce86f1b-3e3d-46b2-a324-4872f5d35669",
+    "timestamp": "2024-11-30T07:15:17.247Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "hotel_chain_123"
+      },
+      "items": [
+        {
+          "id": "9c7d7705-aab6-4ad3-b11c-7825c59eb324",
+          "add_ons": [
+            {
+              "id": "Full-Package"
+            }
+          ],
+          "payment_ids": [
+            "pymnt-3"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "3025.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "9c7d7705-aab6-4ad3-b11c-7825c59eb324",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "2000.00"
+              },
+              "add_ons": [
+                {
+                  "id": "Full-Package",
+                  "price": {
+                    "currency": "INR",
+                    "value": "500.00"
+                  }
+                }
+              ]
+            },
+            "title": "Deluxe Room accommodation with Full Board",
+            "price": {
+              "currency": "INR",
+              "value": "2500.00"
+            }
+          },
+          {
+            "title": "Service Tax @ 9%",
+            "price": {
+              "currency": "INR",
+              "value": "225.00"
+            }
+          },
+          {
+            "title": "GST @ 12%",
+            "price": {
+              "currency": "INR",
+              "value": "300.00"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payments": [
+        {
+          "id": "pymnt-1",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FULL-PAYMENT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pymnt-2",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FULL-PAYMENT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "pymnt-3",
+          "type": "PART-PAYMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "LINKED-PAYMENTS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "pymnt-4"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "pymnt-5"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pymnt-4",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ADV-DEPOSIT"
+              }
+            }
+          ],
+          "params": {
+            "currency": "INR",
+            "amount": "2000.00"
+          }
+        },
+        {
+          "id": "pymnt-5",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FINAL-PAYMENT"
+              }
+            }
+          ],
+          "params": {
+            "amount": "1025.00",
+            "currency": "INR"
+          }
+        }
+      ]
+    }
+  }
+}
