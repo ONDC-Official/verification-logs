@@ -1,0 +1,95 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
+      }
+    },
+    "domain": "ONDC:TRV11",
+    "timestamp": "2024-11-29T06:59:18.442Z",
+    "bap_id": "preprod.ftdev.in",
+    "transaction_id": "bb250fdf-7123-4a52-b749-09a5f2f4093b",
+    "message_id": "c764ce5d-9796-4953-8d10-4e397cbfdbf6",
+    "version": "2.0.0",
+    "action": "search",
+    "bap_uri": "https://preprod.ftdev.in/metro/v1/",
+    "ttl": "PT30S",
+    "bpp_id": "b-ondc-seller-bpp.nlincs.in",
+    "bpp_uri": "https://b-ondc-seller-bpp.nlincs.in/bpp"
+  },
+  "message": {
+    "intent": {
+      "fulfillment": {
+        "stops": [
+          {
+            "type": "START",
+            "location": {
+              "descriptor": {
+                "code": "NBAA"
+              }
+            }
+          },
+          {
+            "type": "END",
+            "location": {
+              "descriptor": {
+                "code": "RJBH"
+              }
+            }
+          }
+        ],
+        "vehicle": {
+          "category": "METRO"
+        }
+      },
+      "payment": {
+        "collected_by": "BAP",
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "percent"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
