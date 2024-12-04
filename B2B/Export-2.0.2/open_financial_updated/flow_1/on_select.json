@@ -1,0 +1,148 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "state": {},
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_select",
+    "version": "2.0.2",
+    "bap_id": "ondcpreprodb2b.rapidor.co",
+    "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+    "bpp_id": "preprod-ondc-seller.bankopen.co",
+    "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+    "transaction_id": "53783247-3d88-42cf-b9fe-bec50b105863",
+    "message_id": "0778501c-81df-4463-bffd-eba22f9cb517",
+    "timestamp": "2024-11-25T17:02:55.153Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "id": "D1",
+          "@ondc/org/provider_name": "OPENF",
+          "@ondc/org/category": "Standard Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "PT1H25M",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "3",
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "fulfillment_ids": [
+            "D1"
+          ],
+          "location_ids": [
+            "OPENLOCATION1"
+          ]
+        }
+      ],
+      "provider": {
+        "id": "OPENSELLER1",
+        "locations": [
+          {
+            "id": "OPENLOCATION1"
+          }
+        ]
+      },
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "pan"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "EQKPM7093G"
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "91.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "3",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "21"
+              },
+              "quantity": {
+                "available": {
+                  "measure": {},
+                  "count": "100"
+                },
+                "maximum": {
+                  "measure": {},
+                  "count": "10"
+                }
+              }
+            },
+            "title": "Arctic Touchscreen Winter Gloves",
+            "price": {
+              "currency": "INR",
+              "value": "21"
+            }
+          },
+          {
+            "@ondc/org/item_id": "D1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "60.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "D1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "10.00"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      }
+    }
+  }
+}
