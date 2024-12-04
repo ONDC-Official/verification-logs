@@ -1,0 +1,64 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "on_select",
+    "bap_id": "mock.ondc.org/api",
+    "bap_uri": "https://mock.ondc.org/api/retail/bap",
+    "bpp_id": "preprodb2b.thesellerapp.com",
+    "bpp_uri": "https://preprodb2b.thesellerapp.com/v1/b2b",
+    "transaction_id": "bc491f02-9eca-4bc1-8a9b-e34b3b899cb9",
+    "message_id": "c631c983-33cb-486a-bb8a-64ed688af970",
+    "timestamp": "2024-08-07T05:32:43.109Z",
+    "ttl": "PT30S",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "version": "2.0.2"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "66826fb66c433100247b4409",
+        "locations": [{ "id": "66826fb66c433100247b4409" }]
+      },
+      "items": [
+        {
+          "id": "6673fb42fa52190024a8c25e",
+          "quantity": { "selected": { "count": 15 } },
+          "fulfillment_ids": ["6ms66826fb66c433100247b44091e2"]
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "4560.00" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "6673fb42fa52190024a8c25e",
+            "@ondc/org/item_quantity": { "count": 15 },
+            "title": "Jowar Flour b2b store",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "4500" },
+            "item": { "price": { "currency": "INR", "value": "300" } }
+          },
+          {
+            "@ondc/org/item_id": "6ms66826fb66c433100247b44091e2",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "60" }
+          }
+        ],
+        "ttl": "P8D"
+      },
+      "fulfillments": [
+        {
+          "id": "6ms66826fb66c433100247b44091e2",
+          "@ondc/org/provider_name": "Prestine Wholesale store",
+          "tracking": true,
+          "state": {
+            "descriptor": { "name": "Serviceable", "code": "Serviceable" }
+          },
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P8D"
+        }
+      ],
+      "payments": [{ "type": "PRE-FULFILLMENT", "collected_by": "BAP" }]
+    }
+  }
+}
