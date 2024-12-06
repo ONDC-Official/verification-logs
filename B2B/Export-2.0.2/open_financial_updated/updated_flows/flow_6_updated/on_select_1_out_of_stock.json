@@ -1,0 +1,182 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "location": {
+        "city": {
+          "code": "std:080"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
+      "action": "on_select",
+      "version": "2.0.2",
+      "bap_id": "ondcpreprodb2b.rapidor.co",
+      "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+      "bpp_id": "preprod-ondc-seller.bankopen.co",
+      "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+      "transaction_id": "09814658-100b-4e16-a045-b466d678d93e",
+      "message_id": "4a14f3b8-0502-4f32-81ff-f5f2f3730abe",
+      "timestamp": "2024-12-05T09:28:47.125Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "fulfillments": [
+          {
+            "id": "D1",
+            "@ondc/org/provider_name": "OPENF",
+            "@ondc/org/category": "Standard Delivery",
+            "tracking": false,
+            "@ondc/org/TAT": "PT18H",
+            "state": {
+              "descriptor": {
+                "code": "Serviceable"
+              }
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "57",
+            "quantity": {
+              "selected": {
+                "count": 2
+              }
+            },
+            "fulfillment_ids": [
+              "D1"
+            ],
+            "location_ids": [
+              "OPENLOCATION1"
+            ]
+          },
+          {
+            "id": "58",
+            "quantity": {
+              "selected": {
+                "count": 3
+              }
+            },
+            "fulfillment_ids": [
+              "D1"
+            ],
+            "location_ids": [
+              "OPENLOCATION1"
+            ]
+          }
+        ],
+        "provider": {
+          "id": "OPENSELLER1",
+          "locations": [
+            {
+              "id": "OPENLOCATION1"
+            }
+          ]
+        },
+        "payments": [
+          {
+            "type": "ON-FULFILLMENT",
+            "collected_by": "BPP"
+          }
+        ],
+        "tags": [
+          {
+            "descriptor": {
+              "code": "buyer_id"
+            },
+            "list": [
+              {
+                "descriptor": {
+                  "code": "buyer_id_code"
+                },
+                "value": "pan"
+              },
+              {
+                "descriptor": {
+                  "code": "buyer_id_no"
+                },
+                "value": "EQKPM7093G"
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "150.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "57",
+              "@ondc/org/item_quantity": {
+                "count": 2
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "40"
+                }
+              },
+              "title": "Milk bread",
+              "price": {
+                "currency": "INR",
+                "value": "80"
+              }
+            },
+            {
+              "@ondc/org/item_id": "58",
+              "@ondc/org/item_quantity": {
+                "count": 0
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "20"
+                },
+                "quantity": {
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                }
+              },
+              "title": "Butter Bread",
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              }
+            },
+            {
+              "@ondc/org/item_id": "D1",
+              "@ondc/org/title_type": "delivery",
+              "title": "Delivery Charges",
+              "price": {
+                "currency": "INR",
+                "value": "60.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "D1",
+              "@ondc/org/title_type": "misc",
+              "title": "Convenience Fee",
+              "price": {
+                "currency": "INR",
+                "value": "10.00"
+              }
+            }
+          ],
+          "ttl": "P1D"
+        }
+      }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "Item quantity unavailable ,Butter bread is out of Stock "
+    }
+  }
