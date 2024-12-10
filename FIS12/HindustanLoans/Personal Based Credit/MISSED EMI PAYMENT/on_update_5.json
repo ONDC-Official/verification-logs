@@ -1,4 +1,5 @@
 {
+  "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1733814967\",expires=\"1733818567\",headers=\"(created) (expires) digest\",signature=\"AlqnuwylVSP4M65Zz6K9NUfiNS1fTyiZgvRs7y3BwfNLRyBA85lygW2kYwdcONmnt7K8VcjGuqttgaWC4GHKAg==\"",
   "context": {
     "domain": "ONDC:FIS12",
     "location": {
@@ -9,11 +10,11 @@
         "code": "*"
       }
     },
-    "version": "2.0.0",
-    "action": "on_select",
     "transaction_id": "c1b551a8-0dda-40a8-8d0c-64c30de70e5d",
-    "message_id": "92f32f2f-3779-4a81-9de6-4927bcb52aca",
-    "timestamp": "2024-12-10T07:09:59.269Z",
+    "message_id": "a8feb051-04e4-4940-9c8b-a26bb390130c",
+    "action": "on_update",
+    "timestamp": "2024-12-10T07:16:06.994Z",
+    "version": "2.0.0",
     "bap_uri": "https://bap.hindustanloans.com/preprod/",
     "bap_id": "bap.hindustanloans.com",
     "ttl": "PT10M",
@@ -271,38 +272,14 @@
               ],
               "display": true
             }
-          ],
-          "xinput": {
-            "head": {
-              "index": {
-                "min": 0,
-                "cur": 0,
-                "max": 1
-              },
-              "headings": [
-                "Set Loan Amount",
-                "Know your Customer"
-              ],
-              "descriptor": {
-                "name": "Customer Information"
-              }
-            },
-            "form": {
-              "id": "bf2882d7-e70a-4351-b49f-4e9501fa1405",
-              "mime_type": "text/html",
-              "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/get/bf2882d7-e70a-4351-b49f-4e9501fa1405",
-              "resubmit": false,
-              "multiple_sumbissions": false
-            },
-            "required": true
-          }
+          ]
         }
       ],
       "quote": {
         "id": "8578aee4-cccf-42a6-81ed-861421b887f4",
         "price": {
           "currency": "INR",
-          "value": "442300"
+          "value": "443800.00"
         },
         "breakup": [
           {
@@ -353,10 +330,252 @@
               "value": "0",
               "currency": "INR"
             }
+          },
+          {
+            "title": "LATE_FEE_AMOUNT",
+            "price": {
+              "value": "1500",
+              "currency": "INR"
+            }
           }
         ],
         "ttl": "P29D"
-      }
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "person": {
+              "name": "Debi Naik"
+            },
+            "contact": {
+              "phone": "9438031444",
+              "email": "Sanu153@gmail.com"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "DISBURSED",
+              "name": "Loan Disbursed"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "2",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "89960",
+            "currency": "INR"
+          },
+          "status": "PAID",
+          "time": {
+            "label": "MISSED_EMI_PAYMENT",
+            "range": {
+              "start": "2025-02-01T07:12:50.723Z",
+              "end": "2025-02-28T07:12:50.723Z"
+            }
+          }
+        },
+        {
+          "id": "9d0d4058-e947-4699-bc1e-77fb377ebfa5",
+          "type": "ON_ORDER",
+          "status": "NOT-PAID",
+          "collected_by": "BPP",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1666.67"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-01-01T07:12:50.723Z",
+              "end": "2025-01-31T07:12:50.723Z"
+            }
+          }
+        },
+        {
+          "id": "2",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "DEFERRED",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-02-01T07:12:50.723Z",
+              "end": "2025-02-28T07:12:50.723Z"
+            }
+          }
+        },
+        {
+          "id": "3",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-03-01T07:12:50.723Z",
+              "end": "2025-03-31T07:12:50.723Z"
+            }
+          }
+        },
+        {
+          "id": "4",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-04-01T07:12:50.723Z",
+              "end": "2025-04-30T07:12:50.723Z"
+            }
+          }
+        },
+        {
+          "id": "5",
+          "type": "POST_FULFILLMENT",
+          "params": {
+            "amount": "88460.00",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "INSTALLMENT",
+            "range": {
+              "start": "2025-05-01T07:12:50.723Z",
+              "end": "2025-05-31T07:12:50.723Z"
+            }
+          }
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "DISBURSED"
+            }
+          },
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://bpp.credit.becknprotocol.org/tnc.html"
+          },
+          "cancellation_fee": {
+            "percentage": "5%"
+          }
+        }
+      ],
+      "documents": [
+        {
+          "descriptor": {
+            "code": "LOAN_AGREEMENT",
+            "name": "Loan Agreement Document",
+            "short_desc": "Download your Loan Agreement document here",
+            "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
+          },
+          "mime_type": "application/pdf",
+          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/agreement.pdf"
+        },
+        {
+          "descriptor": {
+            "code": "LOAN_CANCELLATION",
+            "name": "Loan Cancellation Document",
+            "short_desc": "Download your Loan Cancellation document here",
+            "long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
+          },
+          "mime_type": "application/pdf",
+          "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
+        }
+      ],
+      "id": "8578aee4-cccf-42a6-81ed-861421b887f4",
+      "updated_at": "2024-12-10T07:13:37.436Z"
     }
   }
 }
