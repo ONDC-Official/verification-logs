@@ -1,0 +1,108 @@
+{
+  "context": {
+    "domain": "ONDC:FIS14",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "select",
+    "transaction_id": "58e6060a-ac91-486e-b7ae-4b00000af57a",
+    "message_id": "3c38aba8-d8c4-413d-9a6f-dbf688cef2c6",
+    "timestamp": "2024-12-11T17:25:45.671Z",
+    "bap_uri": " https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": " pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT10M",
+    "bpp_id": " pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": " https://pramaan.ondc.org/beta/preprod/mock/seller"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
+      },
+      "items": [
+        {
+          "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "3000",
+                "unit": "INR"
+              }
+            }
+          },
+          "fulfillment_ids": [
+            "e500f6aa-b777-4e61-a59f-4895d12866cf"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "e500f6aa-b777-4e61-a59f-4895d12866cf",
+          "type": "SIP",
+          "agent": {
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-123456",
+                  "type": "ARN"
+                },
+                {
+                  "type": "SUB_BROKER_ARN",
+                  "id": "ARN-9790"
+                }
+              ]
+            },
+            "person": {
+              "id": "EUIN-9790"
+            }
+          },
+          "customer": {
+            "person": {
+              "id": "ICRPW1232K"
+            }
+          },
+          "stops": [
+            {
+              "time": {
+                "schedule": {
+                  "frequency": "R6/2025-01-14/P1M"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
