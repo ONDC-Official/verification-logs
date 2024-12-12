@@ -1,55 +1,71 @@
 {
-    "context": {
-      "domain": "ONDC:FIS12",
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "*"
+  "context": {
+    "domain": "ONDC:FIS12",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.3.0",
+    "action": "search",
+    "transaction_id": "42fe7f7f-512a-4a7d-b348-f326bd2e6ad0",
+    "message_id": "757bec87-2f1e-484b-afa1-8f1a3e96fc38",
+    "timestamp": "2024-12-12T12:49:06.877Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "intent": {
+      "category": {
+        "descriptor": {
+          "code": "WORKING_CAPITAL_LOAN"
         }
       },
-      "version": "2.3.0",
-      "action": "search",
-      "transaction_id": "f51531af-8405-4a5d-ae0f-fa1ec5ea6ebf",
-      "message_id": "cdab22e3-f465-4aa0-a848-389e980def37",
-      "timestamp": "2024-12-05T11:56:24.887Z",
-      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
-      "bap_id": "ondc.sequelstring.com/buyer/protocol",
-      "ttl": "PT10M"
-    },
-    "message": {
-      "intent": {
-        "category": {
+      "tags": [
+        {
+          "display": false,
           "descriptor": {
-            "code": "WORKING_CAPITAL_LOAN"
-          }
-        },
-        "tags": [
-          {
-            "display": false,
-            "descriptor": {
-              "name": "BAP Terms of Engagement",
-              "code": "BAP_TERMS"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "name": "Static Terms (Transaction Level)",
-                  "code": "STATIC_TERMS"
-                },
-                "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_TYPE"
               },
-              {
-                "descriptor": {
-                  "name": "Offline Contract",
-                  "code": "OFFLINE_CONTRACT"
-                },
-                "value": "true"
-              }
-            ]
-          }
-        ]
-      }
-    } 
-  }
+              "value": "percent-annualized"
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "2.5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://bap.credit.becknprotocol.io/working-capital/loans/working-capital"
+            },
+            {
+              "descriptor": {
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  } 
+}
