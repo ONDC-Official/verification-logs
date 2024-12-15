@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_init",
+        "action": "on_cancel",
         "bap_id": "ondc-preprod.move.letsboho.in",
         "bap_uri": "https://ondc-preprod.move.letsboho.in/ondc",
         "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
@@ -14,8 +14,8 @@
                 "code": "IND"
             }
         },
-        "message_id": "3f20692f-2d01-4455-82e5-693927937bfb",
-        "timestamp": "2024-12-15T14:55:32.253Z",
+        "message_id": "5d855762-fdd4-427f-b780-3f6dc6d068e4",
+        "timestamp": "2024-12-15T14:58:45.483Z",
         "transaction_id": "ae5b5159-7d16-492c-9f78-0e41a903c075",
         "ttl": "PT10M",
         "version": "2.0.0"
@@ -209,13 +209,29 @@
                     ],
                     "vehicle": {
                         "category": "METRO"
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "3a83bdbb-ad27-4811-9fbc-5967d76d1faf"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "88.00"
+                    "value": "10"
                 },
                 "breakup": [
                     {
@@ -235,6 +251,32 @@
                         "price": {
                             "currency": "INR",
                             "value": "88"
+                        }
+                    },
+                    {
+                        "title": "REFUND",
+                        "item": {
+                            "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
+                            "price": {
+                                "currency": "INR",
+                                "value": "-88"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "-88"
+                        }
+                    },
+                    {
+                        "title": "CANCELLATION_CHARGES",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10"
                         }
                     }
                 ]
@@ -270,9 +312,17 @@
             },
             "payments": [
                 {
-                    "id": "1f8dbb01-1ca5-4a85-a363-5b4f9cfa6655",
                     "collected_by": "BAP",
-                    "status": "NOT-PAID",
+                    "id": "1f8dbb01-1ca5-4a85-a363-5b4f9cfa6655",
+                    "params": {
+                        "amount": "88",
+                        "bank_account_number": "562391273445",
+                        "bank_code": "SBI5448270",
+                        "currency": "INR",
+                        "transaction_id": "b8485b4b-1207-45ba-82e8-92f252aa35d7",
+                        "virtual_payment_address": "8667777799@oksbi"
+                    },
+                    "status": "PAID",
                     "tags": [
                         {
                             "descriptor": {
@@ -304,13 +354,19 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "P30D"
+                                    "value": "PT60M"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_BASIS"
                                     },
-                                    "value": "INVOICE_RECEIPT"
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "NEFT"
                                 },
                                 {
                                     "descriptor": {
@@ -326,21 +382,15 @@
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "STATIC_TERMS"
-                                    },
-                                    "value": "https://api.example-bpp.com/booking/terms"
-                                },
-                                {
-                                    "descriptor": {
                                         "code": "DELAY_INTEREST"
                                     },
                                     "value": "3"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
+                                        "code": "STATIC_TERMS"
                                     },
-                                    "value": "NEFT"
+                                    "value": "https://api.example-bap.com/booking/terms"
                                 },
                                 {
                                     "descriptor": {
@@ -351,14 +401,15 @@
                             ]
                         }
                     ],
-                    "type": "PRE-ORDER",
-                    "params": {
-                        "bank_code": "SBI5448270",
-                        "bank_account_number": "562391273445",
-                        "virtual_payment_address": "8667777799@oksbi"
-                    }
+                    "type": "PRE-ORDER"
                 }
-            ]
+            ],
+            "id": "a28d3bda-4559-4f87-a9fb-848eafaae514",
+            "status": "SOFT_CANCEL",
+            "cancellation": {
+                "cancelled_by": "CONSUMER",
+                "time": "2024-12-15T14:58:45.483Z"
+            }
         }
     }
 }

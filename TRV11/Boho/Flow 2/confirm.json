@@ -1,51 +1,54 @@
 {
     "context": {
-        "location": {
-            "country": {
-                "code": "IND"
-            },
-            "city": {
-                "code": "std:011"
-            }
-        },
-        "domain": "ONDC:TRV11",
-        "timestamp": "2024-12-03T18:45:51.459Z",
-        "transaction_id": "21d938b2-b1d8-48bc-9b26-e7eff65a4ecf",
-        "message_id": "27559798-e1f7-474a-a2ff-dac8b170d428",
-        "version": "2.0.0",
         "action": "confirm",
         "bap_id": "ondc-preprod.move.letsboho.in",
         "bap_uri": "https://ondc-preprod.move.letsboho.in/ondc",
         "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
         "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-        "ttl": "PT30S"
+        "domain": "ONDC:TRV11",
+        "location": {
+            "city": {
+                "code": "std:011"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "message_id": "d4aec23e-984f-4d00-bad6-bb2553ff097d",
+        "timestamp": "2024-12-15T14:56:34.691Z",
+        "transaction_id": "ae5b5159-7d16-492c-9f78-0e41a903c075",
+        "ttl": "PT30S",
+        "version": "2.0.0"
     },
     "message": {
         "order": {
+            "billing": {
+                "email": "abc@xyz.com",
+                "name": "abc",
+                "phone": "123456789"
+            },
             "items": [
                 {
                     "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
                     "quantity": {
                         "selected": {
-                            "count": 2
+                            "count": 1
                         }
                     }
                 }
             ],
-            "provider": {
-                "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
-            },
-            "billing": {
-                "name": "abc",
-                "email": "abc@xyz.com",
-                "phone": "123456789"
-            },
             "payments": [
                 {
-                    "id": "049fd8e6-8ce9-4a88-a432-4952370c6dd5",
                     "collected_by": "BAP",
+                    "id": "1f8dbb01-1ca5-4a85-a363-5b4f9cfa6655",
+                    "params": {
+                        "amount": "88",
+                        "bank_account_number": "562391273445",
+                        "bank_code": "SBI5448270",
+                        "currency": "INR",
+                        "transaction_id": "b8485b4b-1207-45ba-82e8-92f252aa35d7"
+                    },
                     "status": "PAID",
-                    "type": "PRE-ORDER",
                     "tags": [
                         {
                             "descriptor": {
@@ -66,17 +69,70 @@
                                     "value": "percent"
                                 }
                             ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "NEFT"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "3"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://api.example-bap.com/booking/terms"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "88"
+                                }
+                            ]
                         }
                     ],
-                    "params": {
-                        "bank_code": "SBI5448270",
-                        "bank_account_number": "562391273445",
-                        "transaction_id": "b8475b3b-2222-45aa-82e8-92f252aa35d7",
-                        "currency": "INR",
-                        "amount": "176"
-                    }
+                    "type": "PRE-ORDER"
                 }
-            ]
+            ],
+            "provider": {
+                "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
+            }
         }
     }
 }
