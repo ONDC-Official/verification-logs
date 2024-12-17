@@ -1,0 +1,171 @@
+{
+  "context": {
+    "domain": "ONDC:FIS14",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "confirm",
+    "transaction_id": "64c1c848-753d-4077-9b35-6725188474de",
+    "message_id": "22614850-4485-4d21-a7c8-5cc6d2c6ef9e",
+    "timestamp": "2024-12-11T17:29:53.896Z",
+    "bap_uri": " https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": " pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT10M",
+    "bpp_id": " pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": " https://pramaan.ondc.org/beta/preprod/mock/seller"
+  },
+  "message": {
+    "order": {
+      "id": "774fad8a-87fd-4c28-b38d-cf87f57d3deb",
+      "provider": {
+        "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
+      },
+      "items": [
+        {
+          "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "3000",
+                "unit": "INR"
+              }
+            }
+          },
+          "fulfillment_ids": [
+            "e3849ff9-87ac-49b4-a540-d85b6289fd64"
+          ],
+          "payment_ids": [
+            "294a2789-d0d9-4c9e-a7c8-f54e8c598a3e"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "e3849ff9-87ac-49b4-a540-d85b6289fd64",
+          "type": "LUMPSUM",
+          "agent": {
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-123456",
+                  "type": "ARN"
+                },
+                {
+                  "type": "SUB_BROKER_ARN",
+                  "id": "ARN-9790"
+                }
+              ]
+            },
+            "person": {
+              "id": "EUIN-9790"
+            }
+          },
+          "customer": {
+            "person": {
+              "id": "ICRPW1232K",
+              "creds": [
+                {
+                  "id": "115.245.207.90",
+                  "type": "IP_ADDRESS"
+                },
+                {
+                  "id": "9790",
+                  "type": "FOLIO"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "9990202525",
+              "email": "ak56@gmail.com"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "amount": "3000",
+            "currency": "INR",
+            "source_bank_code": "123",
+            "source_bank_account_number": "1234567812345678",
+            "source_bank_account_name": "Michael Scott"
+          },
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "name": "Payment Method",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "NETBANKING"
+                }
+              ]
+            }
+          ],
+          "id": "294a2789-d0d9-4c9e-a7c8-f54e8c598a3e",
+          "status": "NOT-PAID"
+        }
+      ]
+    }
+  }
+}
