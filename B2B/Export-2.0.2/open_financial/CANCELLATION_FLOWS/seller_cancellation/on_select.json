@@ -1,0 +1,137 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_select",
+        "version": "2.0.2",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+        "bpp_id": "preprod-ondc-seller.bankopen.co",
+        "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+        "transaction_id": "288a19f9-0113-43ad-a8d3-906969c4a14f",
+        "message_id": "d29f4d44-2595-4c80-b068-d85600479b46",
+        "timestamp": "2024-12-05T07:12:39.833Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "fulfillments": [
+                {
+                    "id": "D1",
+                    "@ondc/org/provider_name": "OPENF",
+                    "@ondc/org/category": "Standard Delivery",
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT18H",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "id": "57",
+                    "quantity": {
+                        "selected": {
+                            "count": 10
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "D1"
+                    ],
+                    "location_ids": [
+                        "OPENLOCATION1"
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "OPENSELLER1",
+                "locations": [
+                    {
+                        "id": "OPENLOCATION1"
+                    }
+                ]
+            },
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "pan"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "DIYPM3189G"
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "470.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "57",
+                        "@ondc/org/item_quantity": {
+                            "count": 10
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "40"
+                            }
+                        },
+                        "title": "Milk bread",
+                        "price": {
+                            "currency": "INR",
+                            "value": "400"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "D1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "60.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "D1",
+                        "@ondc/org/title_type": "misc",
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            }
+        }
+    }
+}
