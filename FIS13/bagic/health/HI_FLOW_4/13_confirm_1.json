@@ -1,5 +1,4 @@
 {
-  "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1728376609\",expires=\"1728380209\",headers=\"(created) (expires) digest\",signature=\"A4RKcRd0uXo44CM0fGwQqOEqSRnw3kayc+46uC54/y5ueVW/R3SIxwyHa6KjxTq6/S9VPU3vtO7PDXxtIQqbCA==\"",
   "context": {
     "domain": "ONDC:FIS13",
     "location": {
@@ -11,18 +10,63 @@
       }
     },
     "action": "confirm",
-    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
-    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
     "bpp_id": "bagic.api.finarkein.in",
     "bpp_uri": "https://bagic.api.finarkein.in/ondc/sn/bagic/",
-    "message_id": "8a1c51df-736a-4b72-a40a-f462c509b8f1",
-    "timestamp": "2024-10-08T08:36:49.025Z",
-    "transaction_id": "87e1142f-c446-4252-9f83-55ce06ccbac7",
+    "message_id": "d27a5138-caa1-49a1-bcea-c423adbccb3c",
+    "timestamp": "2024-12-20T09:15:16.342Z",
+    "transaction_id": "1d0c39b6-f5b1-4f58-a6b4-4245d7bc7750",
     "ttl": "PT10M",
     "version": "2.0.0"
   },
   "message": {
     "order": {
+      "quote": {
+        "id": "11-8450-0010277380-00",
+        "ttl": "PT15M",
+        "breakup": [
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "BASE_PRICE"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "CONVIENCE_FEE"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "TAX"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "PROCESSING_FEE"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "ADD_ONS"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "0.00"
+        }
+      },
       "fulfillments": [
         {
           "customer": {
@@ -33,7 +77,9 @@
             "person": {
               "name": "Ayush Yadav"
             }
-          }
+          },
+          "id": "68ea5064-4a27-4f1e-9ee4-20fb7d0250ef",
+          "type": "POLICY"
         },
         {
           "customer": {
@@ -44,27 +90,29 @@
             "person": {
               "name": "John Doe"
             }
-          }
+          },
+          "id": "9424c7ed-960e-4c68-a8ae-ffd46b81e2f5",
+          "type": "POLICY"
         }
       ],
       "items": [
         {
-          "id": "8450-G",
-          "parent_item_id": "8450-G",
+          "id": "8451-G",
+          "parent_item_id": "8451-Family",
           "xinput": {
             "form": {
               "id": "FO7"
             },
             "form_response": {
               "status": "SUCCESS",
-              "submission_id": "6c449a53-9420-3849-b5ff-a66fa3cda67f"
+              "submission_id": "fc72a94a-74a1-3048-9aa7-38e72addc1a4"
             }
           }
         }
       ],
       "payments": [
         {
-          "id": "a704b957-1e1b-4dc5-8787-7cf84d35bb50",
+          "id": "72d43004-d4bb-453d-896c-76f0ead4ceae",
           "collected_by": "BPP",
           "tags": [
             {
@@ -129,15 +177,48 @@
                   },
                   "value": "true",
                   "display": true
+                },
+                {
+                  "descriptor": {
+                    "name": "MANDATORY_ARBITRATION",
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "name": "COURT_JURISDICTION",
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Pune",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "name": "SETTLEMENT_AMOUNT",
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0.00",
+                  "display": true
+                },
+                {
+                  "descriptor": {
+                    "name": "SETTLEMENT_TYPE",
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "enach",
+                  "display": true
                 }
               ]
             }
           ],
           "params": {
-            "transaction_id": "a704b957-1e1b-4dc5-8787-7cf84d35bb50",
+            "transaction_id": "72d43004-d4bb-453d-896c-76f0ead4ceae",
             "bank_account_number": "0000 0000 0000 0000",
             "bank_code": "Test bank",
-            "currency": "INR"
+            "currency": "INR",
+            "amount": "0.00"
           },
           "status": "PAID",
           "type": "PRE-FULFILLMENT"
