@@ -1,0 +1,198 @@
+{
+    "context": {
+        "bap_id": "ondc.tummoc.in",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/bus/ondc",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:011"
+            }
+        },
+        "transaction_id": "cd06e583-5246-4de8-9a66-aeb1a1b23d1e",
+        "message_id": "86932492-6978-4430-a1ad-1f33326915f8",
+        "timestamp": "2024-12-22T18:15:23.714Z",
+        "domain": "ONDC:TRV11",
+        "bpp_id": "pre-prod-ondc-ticketing-api-delhi.transportstack.in",
+        "bpp_uri": "https://pre-prod-ondc-ticketing-api-delhi.transportstack.in/",
+        "version": "2.0.1",
+        "ttl": "PT30S",
+        "action": "on_select"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "I1",
+                    "descriptor": {
+                        "name": "248DOWN",
+                        "code": "SJT",
+                        "images": [
+                            {
+                                "url": "https://transitsolutions.in/logos/logo.icon",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "fulfillment_ids": [
+                        "F1"
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "5.0"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "PT2D"
+                    }
+                }
+            ],
+            "provider": {
+                "id": "P1",
+                "descriptor": {
+                    "name": "Delhi Transport Corporation",
+                    "images": [
+                        {
+                            "url": "https://dtc.delhi.gov.in/sites/default/files/DTC/logo/dtc_logo_2.png",
+                            "size_type": "xs"
+                        }
+                    ]
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "TRIP",
+                    "stops": [
+                        {
+                            "type": "START",
+                            "location": {
+                                "descriptor": {
+                                    "name": "Johri Pur",
+                                    "code": "JOHRI_PUR"
+                                },
+                                "gps": "0.000000, 0.000000"
+                            },
+                            "id": "1"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "instructions": {
+                                "name": "Stop 1"
+                            },
+                            "location": {
+                                "descriptor": {
+                                    "name": "Karawal Nagar Terminal",
+                                    "code": "KARAWAL_NAGAR_TERMINAL"
+                                },
+                                "gps": "0.000000, 0.000000"
+                            },
+                            "id": "2",
+                            "parent_stop_id": "1"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "instructions": {
+                                "name": "Stop 2"
+                            },
+                            "location": {
+                                "descriptor": {
+                                    "name": "Karawal Nagar Extension",
+                                    "code": "KARAWAL_NAGAR_EXTENSION"
+                                },
+                                "gps": "0.000000, 0.000000"
+                            },
+                            "id": "3",
+                            "parent_stop_id": "2"
+                        },
+                        {
+                            "type": "END",
+                            "location": {
+                                "descriptor": {
+                                    "name": "sadat pur",
+                                    "code": "SADAT_PUR"
+                                },
+                                "gps": "0.000000, 0.000000"
+                            },
+                            "id": "4",
+                            "parent_stop_id": "3"
+                        }
+                    ],
+                    "vehicle": {
+                        "category": "BUS",
+                        "variant": "NAC",
+                        "registration": null
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_ID"
+                                    },
+                                    "value": "10170"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_DIRECTION"
+                                    },
+                                    "value": "JOHRI_PUR to SADAT_PUR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "4.5",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "I1",
+                            "price": {
+                                "currency": "INR",
+                                "value": "5.0"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "title": "TOLL",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "title": "OFFER",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.5"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
