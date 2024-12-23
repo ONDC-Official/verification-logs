@@ -1,0 +1,635 @@
+{
+  "domain": "ONDC:FIS12",
+  "version": "2.0.0",
+  "flow": "PERSONAL_LOAN",
+  "payload": {
+    "search_1": {
+      "context": {
+        "domain": "ONDC:FIS12",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "version": "2.0.0",
+        "action": "search",
+        "transaction_id": "bea158fd-f73f-44c4-b220-906dabb3b23c",
+        "message_id": "e2764967-e17f-488e-ab74-0396bea5a65e",
+        "timestamp": "2024-12-21T16:25:00.102Z",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "ttl": "PT10M"
+      },
+      "message": {
+        "intent": {
+          "category": {
+            "descriptor": {
+              "code": "PERSONAL_LOAN"
+            }
+          },
+          "payment": {
+            "collected_by": "BPP",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_TYPE"
+                    },
+                    "value": "percent-annualized"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                    },
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_TERMS"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "DELAY_INTEREST"
+                    },
+                    "value": "2.5"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "STATIC_TERMS"
+                    },
+                    "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "OFFLINE_CONTRACT"
+                    },
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "on_search_1": {
+      "context": {
+        "domain": "ONDC:FIS12",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "action": "on_search",
+        "version": "2.0.0",
+        "timestamp": "2024-12-21T16:25:00.815Z",
+        "ttl": "PT10M",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bpp_id": "tc.lenderbridge.uat.ignosis.ai",
+        "bpp_uri": "https://tc.lenderbridge.uat.ignosis.ai/lender-bridge/ondc/tc-preprod",
+        "transaction_id": "bea158fd-f73f-44c4-b220-906dabb3b23c",
+        "message_id": "e2764967-e17f-488e-ab74-0396bea5a65e"
+      },
+      "message": {
+        "catalog": {
+          "descriptor": {
+            "name": "Tata Capital"
+          },
+          "providers": [
+            {
+              "id": "b2d56764-4d76-407c-a5fb-60da3fcd9777",
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://kbl.lenderbridge.uat.ignosis.ai/tc_logo.jpg",
+                    "size_type": "sm"
+                  }
+                ],
+                "name": "Tata Capital",
+                "short_desc": "Tata Capital Ltd",
+                "long_desc": "Tata Capital Ltd"
+              },
+              "categories": [
+                {
+                  "id": "df006848-b0be-442f-ad9f-68f89a2496fd",
+                  "descriptor": {
+                    "name": "Personal Loan",
+                    "code": "PERSONAL_LOAN"
+                  }
+                }
+              ],
+              "items": [
+                {
+                  "id": "5203eb6d-4950-4273-a6b2-46c138fbabcc",
+                  "descriptor": {
+                    "name": "Personal Loan",
+                    "code": "PERSONAL_LOAN"
+                  },
+                  "category_ids": [
+                    "df006848-b0be-442f-ad9f-68f89a2496fd"
+                  ],
+                  "tags": [
+                    {
+                      "list": [
+                        {
+                          "descriptor": {
+                            "name": "Minimum Interest Rate",
+                            "code": "MIN_INTEREST_RATE",
+                            "short_desc": "Loan starting from 14.99% (p.a)"
+                          },
+                          "value": "14.99%"
+                        },
+                        {
+                          "descriptor": {
+                            "name": "Maximum Interest Rate",
+                            "code": "MAX_INTEREST_RATE",
+                            "short_desc": "Loan Rate below 29.25% (p.a)"
+                          },
+                          "value": "29.25%"
+                        },
+                        {
+                          "descriptor": {
+                            "name": "Minimum Tenure",
+                            "code": "MIN_TENURE",
+                            "short_desc": "Loan Tenure starting from 12 months"
+                          },
+                          "value": "12 months"
+                        },
+                        {
+                          "descriptor": {
+                            "name": "Maximum Tenure",
+                            "code": "MAX_TENURE",
+                            "short_desc": "Loan Tenure upto 60 months"
+                          },
+                          "value": "60 Months"
+                        },
+                        {
+                          "descriptor": {
+                            "name": "Minimum Loan Amount",
+                            "code": "MIN_LOAN_AMOUNT",
+                            "short_desc": "Loan Amount starting from ₹40000"
+                          },
+                          "value": "40000"
+                        },
+                        {
+                          "descriptor": {
+                            "name": "Maximum Loan Amount",
+                            "code": "MAX_LOAN_AMOUNT",
+                            "short_desc": "Loan Amount upto ₹2500000"
+                          },
+                          "value": "2500000"
+                        }
+                      ],
+                      "descriptor": {
+                        "name": "General Information",
+                        "code": "GENERAL_INFO"
+                      },
+                      "display": true
+                    }
+                  ],
+                  "matched": true,
+                  "recommended": true,
+                  "xinput": {
+                    "head": {
+                      "descriptor": {
+                        "name": "Customer Information"
+                      },
+                      "index": {
+                        "min": 0,
+                        "cur": 0,
+                        "max": 0
+                      },
+                      "headings": [
+                        "Personal Information"
+                      ]
+                    },
+                    "form": {
+                      "id": "jnm18hxjepwptc6fk9ba",
+                      "mime_type": "text/html",
+                      "url": "https://tc.lenderbridge.uat.ignosis.ai/lender-bridge/ondc/tc-preprod/public/information/form/personal-info/jnm18hxjepwptc6fk9ba",
+                      "resubmit": true,
+                      "multiple_sumbissions": true
+                    },
+                    "required": true
+                  }
+                }
+              ],
+              "payments": [
+                {
+                  "collected_by": "BPP",
+                  "tags": [
+                    {
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_TYPE"
+                          },
+                          "value": "percent-annualized"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                          },
+                          "value": "1"
+                        }
+                      ],
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES"
+                      },
+                      "display": false
+                    },
+                    {
+                      "list": [
+                        {
+                          "descriptor": {
+                            "code": "SETTLEMENT_WINDOW"
+                          },
+                          "value": "P30D"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "SETTLEMENT_BASIS"
+                          },
+                          "value": "INVOICE_RECEIPT"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "MANDATORY_ARBITRATION"
+                          },
+                          "value": "TRUE"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "COURT_JURISDICTION"
+                          },
+                          "value": "New Delhi"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "STATIC_TERMS"
+                          },
+                          "value": "https://www.tatacapital.com/content/dam/tata-capital/pdf/footer/Legal_disclaimer.pdf"
+                        },
+                        {
+                          "descriptor": {
+                            "code": "OFFLINE_CONTRACT"
+                          },
+                          "value": "true"
+                        }
+                      ],
+                      "descriptor": {
+                        "code": "SETTLEMENT_TERMS"
+                      },
+                      "display": false
+                    }
+                  ]
+                }
+              ],
+              "tags": [
+                {
+                  "list": [
+                    {
+                      "descriptor": {
+                        "name": "Gro name",
+                        "code": "GRO_NAME"
+                      },
+                      "value": "TATA Capital"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Gro email",
+                        "code": "GRO_EMAIL"
+                      },
+                      "value": "customercare@tatacapital.com"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Gro contact number",
+                        "code": "GRO_CONTACT_NUMBER"
+                      },
+                      "value": "18602676060"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Gro Designation",
+                        "code": "GRO_DESIGNATION"
+                      },
+                      "value": "Grievance Redressal Officer"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Gro Address",
+                        "code": "GRO_ADDRESS"
+                      },
+                      "value": "11th Floor, Tower A, Peninsula Business Park, Ganpatrao Kadam Marg, Lower Parel, Mumbai - 400013"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Customer support link",
+                        "code": "CUSTOMER_SUPPORT_LINK"
+                      },
+                      "value": "https://www.tatacapital.com/contact-us.html"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Customer support contact",
+                        "code": "CUSTOMER_SUPPORT_CONTACT_NUMBER"
+                      },
+                      "value": "18602676060"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Customer support email",
+                        "code": "CUSTOMER_SUPPORT_EMAIL"
+                      },
+                      "value": "customercare@tatacapital.com"
+                    }
+                  ],
+                  "descriptor": {
+                    "name": "Contact Info",
+                    "code": "CONTACT_INFO"
+                  }
+                },
+                {
+                  "list": [
+                    {
+                      "descriptor": {
+                        "name": "Lsp name",
+                        "code": "LSP_NAME"
+                      },
+                      "value": "TATA Capital"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Lsp email",
+                        "code": "LSP_EMAIL"
+                      },
+                      "value": "customercare@tatacapital.com"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Lsp contact number",
+                        "code": "LSP_CONTACT_NUMBER"
+                      },
+                      "value": "18602676060"
+                    },
+                    {
+                      "descriptor": {
+                        "name": "Lsp Address",
+                        "code": "LSP_ADDRESS"
+                      },
+                      "value": "11th Floor, Tower A, Peninsula Business Park, Ganpatrao Kadam Marg, Lower Parel, Mumbai - 400013"
+                    }
+                  ],
+                  "descriptor": {
+                    "name": "Lsp Info",
+                    "code": "LSP_INFO"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "select_1": {
+      "context": {
+        "domain": "ONDC:FIS12",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "action": "select",
+        "version": "2.0.0",
+        "timestamp": "2024-12-21T16:25:01.310Z",
+        "ttl": "PT10M",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bpp_id": "tc.lenderbridge.uat.ignosis.ai",
+        "bpp_uri": "https://tc.lenderbridge.uat.ignosis.ai/lender-bridge/ondc/tc-preprod",
+        "transaction_id": "bea158fd-f73f-44c4-b220-906dabb3b23c",
+        "message_id": "8e01c10d-a7d9-49bb-8c7f-c7e93df9f835"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "b2d56764-4d76-407c-a5fb-60da3fcd9777"
+          },
+          "items": [
+            {
+              "id": "5203eb6d-4950-4273-a6b2-46c138fbabcc",
+              "xinput": {
+                "form": {
+                  "id": "jnm18hxjepwptc6fk9ba"
+                },
+                "form_response": {
+                  "status": "SUCCESS",
+                  "submission_id": "0193ea09-57f2-b7fc-7d3b-20485430323a"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "on_select_1": {
+      "context": {
+        "domain": "ONDC:FIS12",
+        "location": {
+          "country": {
+            "code": "IND"
+          },
+          "city": {
+            "code": "*"
+          }
+        },
+        "action": "on_select",
+        "version": "2.0.0",
+        "timestamp": "2024-12-21T16:25:03.699Z",
+        "ttl": "PT10M",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bpp_id": "tc.lenderbridge.uat.ignosis.ai",
+        "bpp_uri": "https://tc.lenderbridge.uat.ignosis.ai/lender-bridge/ondc/tc-preprod",
+        "transaction_id": "bea158fd-f73f-44c4-b220-906dabb3b23c",
+        "message_id": "8e01c10d-a7d9-49bb-8c7f-c7e93df9f835"
+      },
+      "message": {
+        "order": {
+          "items": [
+            {
+              "id": "5203eb6d-4950-4273-a6b2-46c138fbabcc",
+              "descriptor": {
+                "name": "Personal Loan",
+                "code": "PERSONAL_LOAN"
+              },
+              "tags": [
+                {
+                  "list": [
+                    {
+                      "descriptor": {
+                        "name": "Consent Handler",
+                        "code": "CONSENT_HANDLER"
+                      },
+                      "value": "9b6a7bda-b5a3-4fa9-b336-19573ec3643e"
+                    }
+                  ],
+                  "descriptor": {
+                    "name": "Consent Information",
+                    "code": "CONSENT_INFO"
+                  },
+                  "display": true
+                }
+              ],
+              "xinput": {
+                "form": {
+                  "id": "jnm18hxjepwptc6fk9ba"
+                },
+                "form_response": {
+                  "status": "PENDING",
+                  "submission_id": "0193ea09-57f2-b7fc-7d3b-20485430323a"
+                }
+              }
+            }
+          ],
+          "provider": {
+            "id": "b2d56764-4d76-407c-a5fb-60da3fcd9777",
+            "descriptor": {
+              "images": [
+                {
+                  "url": "https://kbl.lenderbridge.uat.ignosis.ai/tc_logo.jpg",
+                  "size_type": "sm"
+                }
+              ],
+              "name": "Tata Capital",
+              "short_desc": "Tata Capital Ltd",
+              "long_desc": "Tata Capital Ltd"
+            },
+            "tags": [
+              {
+                "list": [
+                  {
+                    "descriptor": {
+                      "name": "Gro name",
+                      "code": "GRO_NAME"
+                    },
+                    "value": "TATA Capital"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Gro email",
+                      "code": "GRO_EMAIL"
+                    },
+                    "value": "customercare@tatacapital.com"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Gro contact number",
+                      "code": "GRO_CONTACT_NUMBER"
+                    },
+                    "value": "18602676060"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Gro Designation",
+                      "code": "GRO_DESIGNATION"
+                    },
+                    "value": "Grievance Redressal Officer"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Gro Address",
+                      "code": "GRO_ADDRESS"
+                    },
+                    "value": "11th Floor, Tower A, Peninsula Business Park, Ganpatrao Kadam Marg, Lower Parel, Mumbai - 400013"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Customer support link",
+                      "code": "CUSTOMER_SUPPORT_LINK"
+                    },
+                    "value": "https://www.tatacapital.com/contact-us.html"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Customer support contact",
+                      "code": "CUSTOMER_SUPPORT_CONTACT_NUMBER"
+                    },
+                    "value": "18602676060"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Customer support email",
+                      "code": "CUSTOMER_SUPPORT_EMAIL"
+                    },
+                    "value": "customercare@tatacapital.com"
+                  }
+                ],
+                "descriptor": {
+                  "name": "Contact Info",
+                  "code": "CONTACT_INFO"
+                }
+              },
+              {
+                "list": [
+                  {
+                    "descriptor": {
+                      "name": "Lsp name",
+                      "code": "LSP_NAME"
+                    },
+                    "value": "TATA Capital"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Lsp email",
+                      "code": "LSP_EMAIL"
+                    },
+                    "value": "customercare@tatacapital.com"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Lsp contact number",
+                      "code": "LSP_CONTACT_NUMBER"
+                    },
+                    "value": "18602676060"
+                  },
+                  {
+                    "descriptor": {
+                      "name": "Lsp Address",
+                      "code": "LSP_ADDRESS"
+                    },
+                    "value": "11th Floor, Tower A, Peninsula Business Park, Ganpatrao Kadam Marg, Lower Parel, Mumbai - 400013"
+                  }
+                ],
+                "descriptor": {
+                  "name": "Lsp Info",
+                  "code": "LSP_INFO"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
