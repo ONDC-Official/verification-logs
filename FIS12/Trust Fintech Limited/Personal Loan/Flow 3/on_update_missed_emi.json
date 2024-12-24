@@ -10,9 +10,9 @@
 			}
 		},
 		"transaction_id": "d28d6461-ad07-40ee-a531-57f67c7bb627",
-		"message_id": "754cc929-c247-4434-b7a9-5f673cf90b64",
+		"message_id": "baaf9a86-daf0-4cc3-a87c-9b1532acde6f",
 		"action": "on_update",
-		"timestamp": "2024-10-10T09:40:06.531Z",
+		"timestamp": "2024-10-10T09:39:06.531Z",
 		"version": "2.0.0",
 		"bap_uri": "https://creditondc.softtrust.org/",
 		"bap_id": "creditondc.softtrust.org",
@@ -270,22 +270,6 @@
 								}
 							],
 							"display": true
-						},
-						{
-							"descriptor": {
-								"code": "CONSENT_INFO",
-								"name": "Consent Information"
-							},
-							"list": [
-								{
-									"descriptor": {
-										"code": "CONSENT_HANDLER",
-										"name": "Consent Handler"
-									},
-									"value": "80076d70-4002-49c5-98e4-1784fda45dd4"
-								}
-							],
-							"display": false
 						}
 					]
 				}
@@ -294,7 +278,7 @@
 				"id": "06f3eb38-395b-4fea-a6d9-63aeea0cce33",
 				"price": {
 					"currency": "INR",
-					"value": "442300"
+					"value": "443800.00"
 				},
 				"breakup": [
 					{
@@ -366,6 +350,13 @@
 							"value": "6000",
 							"currency": "INR"
 						}
+					},
+					{
+						"title": "LATE_FEE_AMOUNT",
+						"price": {
+							"value": "1500",
+							"currency": "INR"
+						}
 					}
 				],
 				"ttl": "P29D"
@@ -382,13 +373,30 @@
 					},
 					"state": {
 						"descriptor": {
-							"code": "CONSENT_REQUIRED",
-							"name": "Consent Required"
+							"code": "DISBURSED",
+							"name": "Loan Disbursed"
 						}
 					}
 				}
 			],
 			"payments": [
+				{
+					"id": "2",
+					"type": "POST_FULFILLMENT",
+					"params": {
+						"amount": "89960",
+						"currency": "INR"
+					},
+					"status": "NOT-PAID",
+					"time": {
+						"label": "MISSED_EMI_PAYMENT",
+						"range": {
+							"start": "2024-10-10T09:39:06.531Z",
+							"end": "2024-10-10T09:39:06.531Z"
+						}
+					},
+					"url": "https://pramaan.ondc.org/beta/staging/mock/seller/toPaymentUtility?amount=89960&order_id=06f3eb38-395b-4fea-a6d9-63aeea0cce33&payment_id=2&label=MISSED_EMI_PAYMENT"
+				},
 				{
 					"id": "dbaa84c8-b2bf-4dfd-9d81-ed73d22b95ea",
 					"params": {
@@ -502,7 +510,7 @@
 						"amount": "88460.00",
 						"currency": "INR"
 					},
-					"status": "NOT-PAID",
+					"status": "DELAYED",
 					"time": {
 						"label": "INSTALLMENT",
 						"range": {
@@ -606,10 +614,20 @@
 					},
 					"mime_type": "application/pdf",
 					"url": "https://lender.com/loan/loan-cancellation/O1.pdf"
+				},
+				{
+					"descriptor": {
+						"code": "LOAN_CANCELLATION",
+						"name": "Loan Cancellation Document",
+						"short_desc": "Download your Loan Cancellation document here",
+						"long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
+					},
+					"mime_type": "application/pdf",
+					"url": "https://lender.com/loan/loan-cancellation/O1.pdf"
 				}
 			],
 			"id": "23d775c3-8dc5-436c-9841-928f4f10be84",
-			"updated_at": "2024-10-10T09:40:06.531Z"
+			"updated_at": "2024-10-10T09:39:06.531Z"
 		}
 	}
 }
