@@ -1,0 +1,228 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_status",
+    "version": "2.0.2",
+    "bap_id": "ondc-buyer-api.trafyn.site",
+    "bap_uri": "https://ondc-buyer-api.trafyn.site/",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "transaction_id": "47a55d1f-6c8c-4bf7-be7c-07d16fe60782",
+    "message_id": "lWJUpmzd8M_8G64Z1SAQz",
+    "timestamp": "2024-02-14T07:06:20Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "ninjacart_47a55d1f-6c8c-4bf7-be7c-07d16fe60782",
+      "state": "Accepted",
+      "provider": {
+        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "8787687687939",
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "fulfillment_ids": [
+            "1"
+          ]
+        }
+      ],
+      "billing": {
+        "name": "TEST",
+        "address": "ABC",
+        "state": {
+          "name": "Karnataka"
+        },
+        "city": {
+          "name": "Bangalore"
+        },
+        "email": "test@gmail.com",
+        "phone": "9123456789",
+        "tax_id": "22AAAAA0000A1Z5"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Rapidor",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "tracking": false,
+          "stops": [
+            {
+              "location": {
+                "id": "L1",
+                "descriptor": {
+                  "name": "PlaceOrder"
+                },
+                "gps": "12.473357,78.536600"
+              },
+              "type": "start",
+              "time": {
+                "range": {
+                  "start": "2024-02-14T07:04:21Z",
+                  "end": "2024-02-14T09:04:21Z"
+                }
+              },
+              "contact": {
+                "phone": "6380612306",
+                "email": "care@acelrtech.com"
+              }
+            },
+            {
+              "location": {
+                "gps": "13.096305,80.286592",
+                "address": "ABC, Bangalore, 560103",
+                "city": {
+                  "name": "Bangalore"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "560103"
+              },
+              "type": "end",
+              "time": {
+                "range": {
+                  "start": "2024-02-16T07:04:21Z",
+                  "end": "2024-02-16T09:04:21Z"
+                }
+              },
+              "contact": {
+                "phone": "9123456789"
+              }
+            }
+          ],
+          "tags": []
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "160.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "150.00"
+              }
+            },
+            "title": "Mapillai samba rice",
+            "price": {
+              "currency": "INR",
+              "value": "150.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "10.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P2D"
+      },
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "amount": "160.00",
+            "currency": "INR"
+          },
+          "type": "ON-FULFILLMENT",
+          "status": "NOT-PAID",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "settlement_bank_account_no": "923020048031608",
+              "settlement_ifsc_code": "UTIB0000009",
+              "upi_address": "ninjacart@ybl",
+              "bank_name": "AXIS BANK LTD",
+              "branch_name": "Bangalore Main Branch",
+              "beneficiary_name": "63IDEASINFOLABS PRIVATE LIMITED"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-02-14T07:04:20.488Z",
+      "updated_at": "2024-02-14T07:06:20Z"
+    }
+  }
+}

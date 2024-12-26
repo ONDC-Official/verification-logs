@@ -1,0 +1,228 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:011"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_status",
+        "version": "2.0.2",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "transaction_id": "e84fec62-d3b5-40d5-91d4-93e12803e05c",
+        "message_id": "7b2d7c76-d784-4733-8476-5225e32a0689",
+        "timestamp": "2024-09-10T06:24:43.875Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "RAP-0059172",
+            "state": "In-progress",
+            "provider": {
+                "id": "CU2",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "CU2I2",
+                    "quantity": {
+                        "selected": {
+                            "count": 2
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "tags": []
+                }
+            ],
+            "documents": [
+                {
+                    "url": "https://integrations-test.channelier.com/images/invoice/RAP-0059172.pdf",
+                    "label": "Invoice"
+                }
+            ],
+            "billing": {
+                "name": "Rajat Kumar Prajapati",
+                "address": "plot 27, crown plaza, Neelam batanroad, NIT Faridabad, New Delhi, 110067",
+                "state": {
+                    "name": "Delhi"
+                },
+                "city": {
+                    "name": "New Delhi"
+                },
+                "phone": "9479319331",
+                "tax_id": "23FZZAF2408R2Z4"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "Cornitos",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "images": []
+                        }
+                    },
+                    "tracking": true,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "28.613930,77.208828",
+                                "address": "plot 27, crown plaza, Neelam batanroad, NIT Faridabad, New Delhi, 110067",
+                                "area_code": "110067",
+                                "state": {
+                                    "name": "Delhi"
+                                },
+                                "city": {
+                                    "name": "New Delhi"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-09-10T06:25:21.490Z",
+                                    "end": "2024-09-19T06:25:16.490Z"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9479319331"
+                            }
+                        },
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "Cornitos",
+                                    "images": []
+                                },
+                                "gps": "28.5285458,77.1667015"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2024-09-10T06:25:16.490Z",
+                                    "end": "2024-09-12T06:25:16.490Z"
+                                },
+                                "timestamp": "2024-09-10T06:24:43.875Z"
+                            },
+                            "contact": {
+                                "phone": "8766339084",
+                                "email": "anujarora@cornitos.in"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "340.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "CU2I2",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            }
+                        },
+                        "title": "Cornitos Sizzlin Jalapeno Nachos and Salsa Dip Tray 70g (Pack of 6) 420g",
+                        "price": {
+                            "currency": "INR",
+                            "value": "240.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payments": [
+                {
+                    "params": {
+                        "amount": "340.00",
+                        "currency": "INR"
+                    },
+                    "type": "ON-FULFILLMENT",
+                    "status": "NOT-PAID",
+                    "collected_by": "BPP",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P5D",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "bank_name": "Test Bank",
+                            "beneficiary_name": "Thomson"
+                        }
+                    ]
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "IND",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "IND",
+                            "value": "0"
+                        }
+                    }
+                }
+            ],
+            "created_at": "2024-09-10T06:24:16.417Z",
+            "updated_at": "2024-09-10T06:24:43.862Z"
+        }
+    }
+}
