@@ -1,0 +1,130 @@
+{
+  "context": {
+    "domain": "ONDC:SRV11",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "select",
+    "version": "2.0.0",
+    "timestamp": "2024-12-26T09:37:41.748Z",
+    "ttl": "PT30S",
+    "bap_id": "ondc-stage.hometriangle.com",
+    "bap_uri": "http://localhost:8090/bapp",
+    "transaction_id": "5ffc1db8-90c8-40ba-b582-800de5808174",
+    "message_id": "5e4dffb6-92b3-4428-a6e9-ffc6ba240749",
+    "bpp_id": "ondc-stage-seller.hometriangle.com",
+    "bpp_uri": "http://localhost:8090/sapp"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "62",
+        "quantity": {
+          "selected": {
+            "count": 2
+          }
+        },
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "3634",
+          "quantity": {
+            "selected": {
+              "count": 2
+            }
+          },
+          "location_ids": [
+            "L1"
+          ],
+          "category_ids": [
+            "SRV11-*"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "type": "Home-Service",
+          "tracking": false,
+          "stops": [
+            {
+              "location": {
+                "gps": "13.041107,77.662203",
+                "area_code": "560042"
+              },
+              "type": "end",
+              "time": {
+                "label": "selected",
+                "range": {
+                  "start": "2024-12-27T15:07:41.728Z",
+                  "end": "2024-12-28T15:07:41.728Z"
+                },
+                "days": "4"
+              }
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "type": "PRE-FULFILLMENT"
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "reason_required": false,
+          "cancel_by": {
+            "duration": "P1D"
+          },
+          "cancellation_fee": {
+            "amount": {
+              "value": "0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "In-Transit"
+            }
+          },
+          "reason_required": true,
+          "cancel_by": {
+            "duration": "P1D"
+          },
+          "cancellation_fee": {
+            "percentage": "10"
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "At-Location"
+            }
+          },
+          "reason_required": true,
+          "cancel_by": {
+            "duration": "P1D"
+          },
+          "cancellation_fee": {
+            "percentage": "35"
+          }
+        }
+      ]
+    }
+  }
+}
