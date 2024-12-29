@@ -1,0 +1,300 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:022"
+      }
+    },
+    "domain": "ONDC:TRV11",
+    "action": "on_confirm",
+    "version": "2.0.1",
+    "bap_id": "ondc-mobility-pre-prod.pelocal.net",
+    "bap_uri": "https://ondc-mobility-pre-prod.pelocal.net/metro/",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "b035b5ae-dd51-455f-9b25-8b8727c92ec1",
+    "message_id": "b21dca7a-1922-4932-904b-91719eb8b8b3",
+    "timestamp": "2024-12-28T18:27:08.637Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "descriptor": {
+          "name": "ONDC Metro Limited",
+          "images": [
+            {
+              "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2024-12-28T05:30:00.000Z",
+            "end": "2024-12-28T23:30:00.000Z"
+          }
+        }
+      },
+      "items": [
+        {
+          "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
+          "category_ids": ["C1"],
+          "descriptor": {
+            "name": "Journey Pass",
+            "code": "PASS"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "500"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT5M"
+          },
+          "fulfillment_ids": [
+            "c8827392-62ae-4c19-a930-ca8ce24116eb"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "c8827392-62ae-4c19-a930-ca8ce24116eb",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                  "code": "NBAA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1",
+              "authorization": {
+                "type": "QR",
+                "token": "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
+                "valid_to": "2024-12-28T19:27:08.635Z",
+                "status": "UNCLAIMED"
+              }
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TRIP_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "AVAILABLE_TRIPS"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "UTILIZED_TRIPS"
+                  },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "d651576b-586c-46bf-b6b9-4ebb494869f8"
+                }
+              ]
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "500.00"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
+              "price": {
+                "currency": "INR",
+                "value": "500"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "500"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "descriptor": {
+              "code": "SCHEDULED_INFO"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "GTFS"
+                },
+                "value": "https://metro-transit/gtfs-realtime"
+              }
+            ]
+          }
+        ],
+        "cancellation_terms": [
+          {
+            "external_ref": {
+              "mimetype": "text/html",
+              "url": "https://sequelstringsolutions.com/mf/tnc.html"
+            }
+          }
+        ],
+        "billing": {
+          "name": "Vimal Lal V",
+          "email": "test@pelocal.com",
+          "phone": "+91-9897867564"
+        },
+        "payments": [
+          {
+            "id": "PA1",
+            "collected_by": "BAP",
+            "status": "PAID",
+            "type": "PRE-ORDER",
+            "params": {
+              "transaction_id": "c3020b23-3b8f-4a15-b649-c4188c886cc1",
+              "currency": "INR",
+              "amount": "23",
+              "bank_code": "SBI5448270",
+              "bank_account_number": "562391273445",
+              "virtual_payment_address": "8667777799@oksbi"
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                    },
+                    "value": "0.00"
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_TERMS"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_WINDOW"
+                    },
+                    "value": "PT60M"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "Delivery"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_TYPE"
+                    },
+                    "value": "NEFT"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "MANDATORY_ARBITRATION"
+                    },
+                    "value": "true"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "COURT_JURISDICTION"
+                    },
+                    "value": "Mumbai"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "DELAY_INTEREST"
+                    },
+                    "value": "0.00"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "STATIC_TERMS"
+                    },
+                    "value": "https://www.abc.com/settlement-terms/"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_AMOUNT"
+                    },
+                    "value": "23"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "34960b9a-ba12-4204-a5ad-de3b640d0a8d",
+        "status": "ACTIVE",
+        "created_at": "2024-12-28T18:27:08.637Z",
+        "updated_at": "2024-12-28T18:27:08.637Z"
+      }
+    }
+  }
+}
+
