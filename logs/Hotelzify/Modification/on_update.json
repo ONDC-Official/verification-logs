@@ -1,235 +1,251 @@
 {
-    "_id": {
-      "$oid": "6772caae456438b26cbc6db6"
-    },
-    "context": {
-      "domain": "ONDC:TRV13",
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "std:080"
-        }
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "transaction_id": "7b9dfd28-a839-4fcd-ab77-3cdad00b1a7a",
-      "message_id": "e90de9a2-6979-4f3e-bd6d-e288361adfa9",
-      "action": "on_update",
-      "timestamp": "2024-12-30T16:30:38.433Z",
-      "version": "2.0.0",
-      "bap_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
-      "bap_id": "dev-api.hotelzify.com/hotel",
-      "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
-      "bpp_id": "dev-api.hotelzify.com/hotel",
-      "ttl": "PT30S"
+      "city": {
+        "code": "std:080"
+      }
     },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "669"
-        },
-        "items": [
-          {
-            "id": "635",
-            "location_ids": [
-              "1"
-            ],
-            "quantity": {
-              "selected": {
-                "count": 1
-              }
+    "transaction_id": "6cb49483-d374-4084-ad05-30b69a53619e",
+    "message_id": "ba5ccf84-7db2-48e2-ab6d-97b32ff1fe69",
+    "action": "on_update",
+    "timestamp": "2025-01-01T12:12:55.473Z",
+    "version": "2.0.0",
+    "bap_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bap_id": "dev-api.hotelzify.com/hotel",
+    "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bpp_id": "dev-api.hotelzify.com/hotel",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "21600",
+      "provider": {
+        "id": "669"
+      },
+      "items": [
+        {
+          "id": "635",
+          "location_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 1
             }
           }
-        ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "1210.00"
-          },
-          "breakup": [
-            {
-              "item": {
-                "id": "635",
-                "quantity": {
-                  "selected": {
-                    "count": 1
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "1000.00"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "1210.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "635",
+              "quantity": {
+                "selected": {
+                  "count": 1
                 }
               },
-              "title": "Twin Room",
               "price": {
                 "currency": "INR",
                 "value": "1000.00"
               }
             },
+            "title": "Twin Room",
+            "price": {
+              "currency": "INR",
+              "value": "1000.00"
+            }
+          },
+          {
+            "title": "Service Tax @ 9%",
+            "price": {
+              "currency": "INR",
+              "value": "90.00"
+            }
+          },
+          {
+            "title": "GST @ 12%",
+            "price": {
+              "currency": "INR",
+              "value": "120.00"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "749",
+          "type": "PRE-ORDER",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "tags": [
             {
-              "title": "Service Tax @ 9%",
-              "price": {
-                "currency": "INR",
-                "value": "90.00"
+              "descriptor": {
+                "code": "ADV-DEPOSIT"
               }
+            }
+          ],
+          "params": {
+            "amount": "1210.00",
+            "currency": "INR"
+          }
+        },
+        {
+          "id": "754",
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FULL-PAYMENT"
+              }
+            }
+          ],
+          "params": {
+            "amount": "1210.00",
+            "currency": "INR",
+            "bank_code": "HDFC0000354",
+            "bank_account_number": "50200074797822",
+            "virtual_payment_address": "9663332233@ybl"
+          }
+        }
+      ],
+      "billing": {
+        "name": "Ramees",
+        "address": "Delhi, Delhi-110049",
+        "state": {
+          "name": "Delhi"
+        },
+        "city": {
+          "name": "Delhi"
+        },
+        "organization": {
+          "descriptor": {
+            "name": "ONDC"
+          },
+          "address": "ONDC, Delhi-110049"
+        },
+        "email": "ramees@hotelzify.com",
+        "phone": "919061110291",
+        "tax_id": "GSTIN1234567890"
+      },
+      "fulfillments": [
+        {
+          "id": "234",
+          "customer": {
+            "person": {
+              "name": "Ramees",
+              "age": "24",
+              "dob": "2000-12-20",
+              "gender": "M",
+              "creds": [
+                {
+                  "id": "AADHAAR_NO_123",
+                  "type": "AADHAAR"
+                }
+              ]
+            },
+            "contact": {
+              "email": "newemail@hotelzify.com",
+              "phone": "919061110291"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": ""
             },
             {
-              "title": "GST @ 12%",
-              "price": {
-                "currency": "INR",
-                "value": "120.00"
-              }
+              "descriptor": {
+                "code": "STATIC_TERMS_NEW"
+              },
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "EFFECTIVE_DATE"
+              },
+              "value": "2024-01-01T00:00:00.000Z"
             }
           ]
         },
-        "payments": [
-          {
-            "id": "754",
-            "type": "ON-FULFILLMENT",
-            "collected_by": "BPP",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "FINAL-PAYMENT"
-                }
-              }
-            ],
-            "params": {
-              "amount": "1210.00",
-              "currency": "INR",
-              "bank_code": "HDFC0000354",
-              "bank_account_number": "50200074797822",
-              "virtual_payment_address": "9663332233@ybl"
+        {
+          "descriptor": {
+            "code": "BUYER_FINDER_FEES"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "3"
             }
-          }
-        ],
-        "billing": {
-          "name": "Ramees",
-          "address": "Kannur, kerala-670307",
-          "state": {
-            "name": "Kerala"
-          },
-          "city": {
-            "name": "Kannur"
-          },
-          "organization": {
-            "descriptor": {
-              "name": "ONDC"
-            },
-            "address": "ONDC, Delhi-110049"
-          },
-          "email": "ramees@hotelzify.com",
-          "phone": "919061110291",
-          "tax_id": "GSTIN1234567890"
+          ]
         },
-        "fulfillments": [
-          {
-            "id": "234",
-            "customer": {
-              "person": {
-                "name": "Ramees",
-                "age": "24",
-                "dob": "2000-12-20",
-                "gender": "M",
-                "creds": [
-                  {
-                    "id": "AADHAAR_NO_123",
-                    "type": "AADHAAR"
-                  }
-                ]
+        {
+          "descriptor": {
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "MAX_LIABILITY"
               },
-              "contact": {
-                "email": "newemail@hotelzify.com",
-                "phone": "919061110291"
-              }
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "MAX_LIABILITY_CAP"
+              },
+              "value": "1000.00"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "TAX_NUMBER"
+              },
+              "value": "29AAGCH5300R1Z5"
             }
-          }
-        ],
-        "tags": [
-          {
-            "descriptor": {
-              "code": "BAP_TERMS"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "STATIC_TERMS"
-                },
-                "value": ""
-              },
-              {
-                "descriptor": {
-                  "code": "STATIC_TERMS_NEW"
-                },
-                "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
-              },
-              {
-                "descriptor": {
-                  "code": "EFFECTIVE_DATE"
-                },
-                "value": "2024-01-01T00:00:00.000Z"
-              }
-            ]
-          },
-          {
-            "descriptor": {
-              "code": "BUYER_FINDER_FEES"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                },
-                "value": "3"
-              }
-            ]
-          },
-          {
-            "descriptor": {
-              "code": "BPP_TERMS"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "MAX_LIABILITY"
-                },
-                "value": "2"
-              },
-              {
-                "descriptor": {
-                  "code": "MAX_LIABILITY_CAP"
-                },
-                "value": "1000.00"
-              },
-              {
-                "descriptor": {
-                  "code": "MANDATORY_ARBITRATION"
-                },
-                "value": "false"
-              },
-              {
-                "descriptor": {
-                  "code": "COURT_JURISDICTION"
-                },
-                "value": "New Delhi"
-              },
-              {
-                "descriptor": {
-                  "code": "DELAY_INTEREST"
-                },
-                "value": "New Delhi"
-              },
-              {
-                "descriptor": {
-                  "code": "TAX_NUMBER"
-                },
-                "value": "29AAGCH5300R1Z5"
-              }
-            ]
-          }
-        ],
-        "id": "21595"
-      }
+          ]
+        }
+      ],
+      "created_at": "2025-01-01T12:08:47.373Z",
+      "updated_at": "2025-01-01T12:12:55.473Z"
     }
   }
-  
+}

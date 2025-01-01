@@ -1,104 +1,104 @@
 {
-    "context": {
-      "domain": "ONDC:TRV13",
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "std:080"
-        }
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
       },
-      "transaction_id": "7b9dfd28-a839-4fcd-ab77-3cdad00b1a7a",
-      "message_id": "9eabbe9d-a05c-45f3-a626-90794a9a6216",
-      "action": "on_select",
-      "timestamp": "2024-12-30T16:07:33.202Z",
-      "version": "2.0.0",
-      "bap_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
-      "bap_id": "dev-api.hotelzify.com/hotel",
-      "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
-      "bpp_id": "dev-api.hotelzify.com/hotel",
-      "ttl": "PT30S"
+      "city": {
+        "code": "std:080"
+      }
     },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "669"
+    "transaction_id": "6cb49483-d374-4084-ad05-30b69a53619e",
+    "message_id": "1afd68ad-7ddb-45c1-a9be-003e0fcef6f5",
+    "action": "on_select",
+    "timestamp": "2025-01-01T11:50:23.749Z",
+    "version": "2.0.0",
+    "bap_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bap_id": "dev-api.hotelzify.com/hotel",
+    "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bpp_id": "dev-api.hotelzify.com/hotel",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "669"
+      },
+      "items": [
+        {
+          "id": "635",
+          "payment_ids": [
+            "749",
+            "754"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "1210.00"
         },
-        "items": [
+        "breakup": [
           {
-            "id": "635",
-            "payment_ids": [
-              "749",
-              "754"
-            ]
-          }
-        ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "1210.00"
-          },
-          "breakup": [
-            {
-              "item": {
-                "id": "635",
-                "quantity": {
-                  "selected": {
-                    "count": 1
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "1000.00"
+            "item": {
+              "id": "635",
+              "quantity": {
+                "selected": {
+                  "count": 1
                 }
               },
-              "title": "Twin Room",
               "price": {
                 "currency": "INR",
                 "value": "1000.00"
               }
             },
+            "title": "Twin Room",
+            "price": {
+              "currency": "INR",
+              "value": "1000.00"
+            }
+          },
+          {
+            "title": "Service Tax @ 9%",
+            "price": {
+              "currency": "INR",
+              "value": "90.00"
+            }
+          },
+          {
+            "title": "GST @ 12%",
+            "price": {
+              "currency": "INR",
+              "value": "120.00"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "749",
+          "type": "PRE-ORDER",
+          "tags": [
             {
-              "title": "Service Tax @ 9%",
-              "price": {
-                "currency": "INR",
-                "value": "90.00"
-              }
-            },
-            {
-              "title": "GST @ 12%",
-              "price": {
-                "currency": "INR",
-                "value": "120.00"
+              "descriptor": {
+                "code": "FULL-PAYMENT"
               }
             }
           ]
         },
-        "payments": [
-          {
-            "id": "749",
-            "type": "PRE-ORDER",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "FULL-PAYMENT"
-                }
+        {
+          "id": "754",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FULL-PAYMENT"
               }
-            ]
-          },
-          {
-            "id": "754",
-            "type": "ON-FULFILLMENT",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "FULL-PAYMENT"
-                }
-              }
-            ]
-          }
-        ]
-      }
+            }
+          ]
+        }
+      ]
     }
   }
+}

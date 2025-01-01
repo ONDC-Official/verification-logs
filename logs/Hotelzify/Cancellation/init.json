@@ -1,149 +1,162 @@
 {
-    "context": {
-      "domain": "ONDC:TRV13",
-      "location": {
-        "country": {
-          "code": "IND"
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "transaction_id": "6cb49483-d374-4084-ad05-30b69a53619e",
+    "message_id": "ba5ccf84-7db2-48e2-ab6d-97b32ff1fe69",
+    "action": "init",
+    "timestamp": "2025-01-01T12:06:30.099Z",
+    "version": "2.0.0",
+    "bap_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bap_id": "dev-api.hotelzify.com/hotel",
+    "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
+    "bpp_id": "dev-api.hotelzify.com/hotel",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "669"
+      },
+      "items": [
+        {
+          "id": "635",
+          "location_ids": [
+            "1"
+          ],
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "749",
+          "type": "PRE-ORDER",
+          "collected_by": "BAP",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ADV-DEPOSIT"
+              }
+            }
+          ],
+          "params": {
+            "amount": "1210.00",
+            "currency": "INR"
+          }
+        },
+        {
+          "id": "754",
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FULL-PAYMENT"
+              }
+            }
+          ],
+          "params": {
+            "amount": "1210.00",
+            "currency": "INR",
+            "bank_code": "HDFC0000354",
+            "bank_account_number": "50200074797822",
+            "virtual_payment_address": "9663332233@ybl"
+          }
+        }
+      ],
+      "billing": {
+        "name": "Ramees",
+        "address": "Delhi, Delhi-110049",
+        "state": {
+          "name": "Delhi"
         },
         "city": {
-          "code": "std:080"
-        }
+          "name": "Delhi"
+        },
+        "organization": {
+          "descriptor": {
+            "name": "ONDC"
+          },
+          "address": "ONDC, Delhi-110049"
+        },
+        "email": "ramees@hotelzify.com",
+        "phone": "919061110291",
+        "tax_id": "GSTIN1234567890"
       },
-      "transaction_id": "7b9dfd28-a839-4fcd-ab77-3cdad00b1a7a",
-      "message_id": "e90de9a2-6979-4f3e-bd6d-e288361adfa9",
-      "action": "init",
-      "timestamp": "2024-12-30T16:12:33.347Z",
-      "version": "2.0.0",
-      "bap_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
-      "bap_id": "dev-api.hotelzify.com/hotel",
-      "bpp_uri": "https://dev-api.hotelzify.com/hotel/v1/ondc/",
-      "bpp_id": "dev-api.hotelzify.com/hotel",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "669"
-        },
-        "items": [
-          {
-            "id": "635",
-            "location_ids": [
-              "1"
-            ],
-            "quantity": {
-              "selected": {
-                "count": 1
-              }
-            }
-          }
-        ],
-        "payments": [
-          {
-            "id": "754",
-            "type": "ON-FULFILLMENT",
-            "collected_by": "BPP",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "FINAL-PAYMENT"
+      "fulfillments": [
+        {
+          "id": "234",
+          "customer": {
+            "person": {
+              "name": "Ramees",
+              "age": "24",
+              "dob": "2000-12-20",
+              "gender": "M",
+              "creds": [
+                {
+                  "id": "AADHAAR_NO_123",
+                  "type": "AADHAAR"
                 }
-              }
-            ],
-            "params": {
-              "amount": "1210.00",
-              "currency": "INR",
-              "bank_code": "HDFC0000354",
-              "bank_account_number": "50200074797822",
-              "virtual_payment_address": "9663332233@ybl"
+              ]
+            },
+            "contact": {
+              "email": "ramees@hotelzify.com",
+              "phone": "919061110291"
             }
           }
-        ],
-        "billing": {
-          "name": "Ramees",
-          "address": "Kannur, kerala-670307",
-          "state": {
-            "name": "Kerala"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BAP_TERMS"
           },
-          "city": {
-            "name": "Kannur"
-          },
-          "organization": {
-            "descriptor": {
-              "name": "ONDC"
+          "list": [
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": ""
             },
-            "address": "ONDC, Delhi-110049"
-          },
-          "email": "ramees@hotelzify.com",
-          "phone": "919061110291",
-          "tax_id": "GSTIN1234567890"
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS_NEW"
+              },
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "EFFECTIVE_DATE"
+              },
+              "value": "2024-01-01T00:00:00.000Z"
+            }
+          ]
         },
-        "fulfillments": [
-          {
-            "id": "234",
-            "customer": {
-              "person": {
-                "name": "Ramees",
-                "age": "24",
-                "dob": "2000-12-20",
-                "gender": "M",
-                "creds": [
-                  {
-                    "id": "AADHAAR_NO_123",
-                    "type": "AADHAAR"
-                  }
-                ]
-              },
-              "contact": {
-                "email": "ramees@hotelzify.com",
-                "phone": "919061110291"
-              }
-            }
-          }
-        ],
-        "tags": [
-          {
-            "descriptor": {
-              "code": "BAP_TERMS"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "STATIC_TERMS"
-                },
-                "value": ""
-              },
-              {
-                "descriptor": {
-                  "code": "STATIC_TERMS_NEW"
-                },
-                "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
-              },
-              {
-                "descriptor": {
-                  "code": "EFFECTIVE_DATE"
-                },
-                "value": "2024-01-01T00:00:00.000Z"
-              }
-            ]
+        {
+          "descriptor": {
+            "code": "BUYER_FINDER_FEES"
           },
-          {
-            "descriptor": {
-              "code": "BUYER_FINDER_FEES"
-            },
-            "list": [
-              {
-                "descriptor": {
-                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                },
-                "value": "3"
-              }
-            ]
-          }
-        ],
-        "created_at": "2024-12-30T16:12:33.347Z",
-        "updated_at": "2024-12-30T16:12:33.347Z"
-      }
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "3"
+            }
+          ]
+        }
+      ]
     }
   }
-  
+}
