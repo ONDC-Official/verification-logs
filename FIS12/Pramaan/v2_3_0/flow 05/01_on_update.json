@@ -11,9 +11,9 @@
     },
     "version": "2.3.0",
     "action": "on_update",
-    "transaction_id": "f51531af-8405-4a5d-ae0f-fa1ec5ea6ebf",
-    "message_id": "bdee1e92-a048-418f-ba50-97deba4194a7",
-    "timestamp": "2024-12-05T12:10:42.336Z",
+    "transaction_id": "a0f5115b-45c8-4700-a110-78027932292f",
+    "message_id": "02045cdd-5a99-4094-89ef-52761c1cab1e",
+    "timestamp": "2025-01-02T07:07:16.953Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
@@ -22,7 +22,7 @@
   },
   "message": {
     "order": {
-      "id": "547fe969-72af-4856-a6c9-60c2b7979237",
+      "status": "ACTIVE",
       "provider": {
         "id": "c29d8cf3-5eeb-4aac-9eff-f5fadfd4dbc3",
         "descriptor": {
@@ -125,20 +125,195 @@
           }
         ]
       },
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_TYPE"
+              },
+              "value": "percent-annualized"
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "2.5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://bap.credit.becknprotocol.io/working-capital/loans/working-capital"
+            },
+            {
+              "descriptor": {
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TYPE"
+              },
+              "value": "neft"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_TYPE"
+              },
+              "value": "PERCENT_ANNUALIZED"
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_WINDOW"
+              },
+              "value": "PT30D"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BASIS"
+              },
+              "value": "INVOICE_RECEIPT"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "TRUE"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://bpp.credit.becknprotocol.org/working-capital/loans/working-capital"
+            },
+            {
+              "descriptor": {
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_AMOUNT"
+              },
+              "value": "1159"
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "id": "c9bee7bf-a699-414b-8cd2-9cd5518efab9",
+        "price": {
+          "currency": "INR",
+          "value": "2792"
+        },
+        "breakup": [
+          {
+            "title": "WOKRKING_CAPITAL_LIMIT",
+            "price": {
+              "value": "1100000",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "CURRENT_UTLIZATION",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "PROCESSING_FEE",
+            "price": {
+              "value": "1100",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "INSURANCE_CHARGES",
+            "price": {
+              "value": "1100",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OTHER_UPFRONT_CHARGES",
+            "price": {
+              "value": "11000",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OTHER_CHARGES",
+            "price": {
+              "value": "1100",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OUTSTANDING_PRINCIPAL",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OUTSTANDING_INTEREST",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          }
+        ],
+        "ttl": "P5D"
+      },
       "items": [
         {
-          "id": "841a4ac9-ca79-456d-9e9d-adf75ed5f31c",
-          "parent_item_id": "b68aa205-5215-46e6-8b64-da88f56d8988",
+          "id": "6b8d7bcc-04a8-4566-ba9b-75239d19b5a1",
+          "parent_item_id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
           "descriptor": {
             "code": "WORKING_CAPITAL_LOAN",
             "name": "Working Capital Loan"
           },
-          "category_ids": [
-            "101125"
-          ],
+          "category_ids": ["101125"],
+          "fulfillment_ids": ["1333", "1334"],
           "price": {
             "currency": "INR",
-            "value": "442300"
+            "value": "2792"
           },
           "tags": [
             {
@@ -245,26 +420,96 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "DRADOWN_APPROVAL",
-                    "name": "Drawdown Approval"
+                    "code": "INDIVIDUAL_KYC",
+                    "name": "Indvidual KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUSINESS_KYC",
+                    "name": "Business KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "PERSONAL_DISCUSSION",
+                    "name": "Personal Discussion"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "PHYSICAL_VERIFICATION",
+                    "name": "Physical Verification"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "ENACH",
+                    "name": "Enach"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "PROCESSING_FEE",
+                    "name": "Processing Fees"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "ESIGN",
+                    "name": "Esign"
                   },
                   "value": "COMPLETED"
                 }
               ],
               "display": true
+            },
+            {
+              "descriptor": {
+                "code": "LINKED_ORDER_IDS",
+                "name": "Linked Order IDs"
+              },
+              "list": [
+                {
+                  "value": "6b8d7bcc-04a8-4566-ba9b-75239d19b5a1"
+                }
+              ]
             }
-          ],
-          "fulfillment_ids": [
-            "1333"
           ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1333",
+          "customer": {
+            "person": {
+              "name": "John Doe",
+              "creds": [
+                {
+                  "type": "OTP",
+                  "id": "123456"
+                }
+              ]
+            },
+            "contact": {
+              "email": "john.doe@gmail.com",
+              "phone": "7888888888"
+            }
+          }
         }
       ],
       "payments": [
         {
-          "id": "1a0e9ce2-365e-4b6e-a666-c0e9d75b7872",
-          "url": "http://localhost:5006/seller/toPaymentUtility?amount=9000&order_id=547fe969-72af-4856-a6c9-60c2b7979237&label=FORECLOSURE",
+          "id": "b34c025e-035c-4cb6-9011-8ac50a357c10",
+          "url": "http://localhost:5006/seller/toPaymentUtility?amount=0&order_id=c9bee7bf-a699-414b-8cd2-9cd5518efab9&label=FORECLOSURE",
           "params": {
-            "amount": "9000",
+            "amount": "0",
             "currency": "INR"
           },
           "status": "NOT-PAID",
@@ -274,65 +519,19 @@
           "type": "POST_FULFILLMENT"
         },
         {
-          "id": "85109141-58b1-41a2-b5a2-c33689298372",
+          "id": "e3a19129-bdf3-4523-b6c5-31e33dd28367",
           "collected_by": "BPP",
           "params": {
             "amount": "1000",
             "currency": "INR"
           },
-          "status": "NOT-PAID",
-          "type": "PRE-ORDER",
-          "url": "https://payment.fis.test.bpp.io"
+          "status": "PAID",
+          "type": "PRE-ORDER"
         }
       ],
-      "tags": [
-        {
-          "display": false,
-          "descriptor": {
-            "name": "BPP Terms of Engagement",
-            "code": "BPP_TERMS"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "name": "Static Terms (Transaction Level)",
-                "code": "STATIC_TERMS"
-              },
-              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-            },
-            {
-              "descriptor": {
-                "name": "Offline Contract",
-                "code": "OFFLINE_CONTRACT"
-              },
-              "value": "true"
-            }
-          ]
-        },
-        {
-          "display": false,
-          "descriptor": {
-            "name": "BAP Terms of Engagement",
-            "code": "BAP_TERMS"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "name": "Static Terms (Transaction Level)",
-                "code": "STATIC_TERMS"
-              },
-              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-            },
-            {
-              "descriptor": {
-                "name": "Offline Contract",
-                "code": "OFFLINE_CONTRACT"
-              },
-              "value": "true"
-            }
-          ]
-        }
-      ],
+      "created_at": "2025-01-02T07:06:47.368Z",
+      "updated_at": "2025-01-02T07:06:47.368Z",
+      "id": "c9bee7bf-a699-414b-8cd2-9cd5518efab9",
       "documents": [
         {
           "descriptor": {
@@ -345,169 +544,24 @@
           "url": "https://lender.com/loan/loan-agreement/O1.pdf"
         }
       ],
-      "quote": {
-        "id": "547fe969-72af-4856-a6c9-60c2b7979237",
-        "price": {
-          "currency": "INR",
-          "value": "442300"
-        },
-        "breakup": [
+      "cancellation_terms": [
+        [
           {
-            "title": "PRINCIPAL",
-            "price": {
-              "value": "400000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "INTEREST",
-            "price": {
-              "value": "40000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "PROCESSING_FEE",
-            "price": {
-              "value": "1800",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OTHER_UPFRONT_CHARGES",
-            "price": {
-              "value": "0",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "INSURANCE_CHARGES",
-            "price": {
-              "value": "500",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OTHER_CHARGES",
-            "price": {
-              "value": "0",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "FORECLOSURE_CHARGES",
-            "price": {
-              "value": "9000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OUTSTANDING_PRINCIPAL",
-            "price": {
-              "value": "9000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OUTSTANDING_INTEREST",
-            "price": {
-              "value": "0",
-              "currency": "INR"
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "SANCTIONED"
+              }
+            },
+            "external_ref": {
+              "mimetype": "text/html",
+              "url": "https://bpp.credit.becknprotocol.org/tnc.html"
+            },
+            "cancellation_fee": {
+              "percentage": "3%"
             }
           }
-        ],
-        "ttl": "P29D"
-      },
-      "fulfillments": [
-        {
-          "id": "1334",
-          "customer": {
-            "person": {
-              "name": "Co Applicant 1",
-              "dob": "1998-09-12",
-              "gender": "Male",
-              "creds": [
-                {
-                  "id": "BXU87Y252A",
-                  "type": "PAN"
-                }
-              ]
-            },
-            "contact": {
-              "email": "applicant.1@gmail.com",
-              "phone": "7888888888"
-            }
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "CHECKLISTS",
-                "name": "Applicant Checklists"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "KYC",
-                    "name": "KYC"
-                  },
-                  "value": "COMPLETED"
-                },
-                {
-                  "descriptor": {
-                    "code": "E_SIGN",
-                    "name": "E Sign Required"
-                  },
-                  "value": "PENDING"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "customer": {
-            "person": {
-              "name": "John Doe",
-              "dob": "1998-09-12",
-              "gender": "Male",
-              "creds": [
-                {
-                  "id": "BXU87Y252U",
-                  "type": "PAN"
-                }
-              ]
-            },
-            "contact": {
-              "email": "john.doe@gmail.com",
-              "phone": "7888888888"
-            }
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "CHECKLISTS",
-                "name": "Applicant Checklists"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "KYC",
-                    "name": "KYC"
-                  },
-                  "value": "COMPLETED"
-                },
-                {
-                  "descriptor": {
-                    "code": "E_SIGN",
-                    "name": "E Sign Required"
-                  },
-                  "value": "PENDING"
-                }
-              ]
-            }
-          ],
-          "id": "1333"
-        }
+        ]
       ]
     }
-  } 
+  }
 }
