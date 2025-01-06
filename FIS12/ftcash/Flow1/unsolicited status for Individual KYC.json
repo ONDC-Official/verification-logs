@@ -1,4 +1,5 @@
-{
+ "on_status_1": {
+      "signature": "Signature keyId=\"preprod-ondc.ftcash.com|4ba18134-f5a8-4d36-9584-b60595f9c654|ed25519\",algorithm=\"ed25519\",created=\"1735870916\",expires=\"1735874516\",headers=\"(created) (expires) digest\",signature=\"/MWGNT4JTmTC5HBAjqLcT7sukagyhPG5AmaeYDzBPpqwplh1Y/Hd+iqTHDdZx+gg7E9REwwOLO9roH88+AoVCw==\"",
       "context": {
         "domain": "ONDC:FIS12",
         "location": {
@@ -10,19 +11,18 @@
           }
         },
         "version": "2.1.0",
-        "action": "on_confirm",
+        "action": "on_status",
         "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
         "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
         "bpp_id": "preprod-ondc.ftcash.com",
         "bpp_uri": "https://preprod-ondc.ftcash.com/ondc_subscribe",
-        "transaction_id": "d07aa033-fc32-47b6-acf6-e251d109ceed",
-        "message_id": "c22a7434-bff4-4583-aa56-8363f60dda9c",
+        "transaction_id": "aa43459a-6eef-4d2f-bfc0-86296d8b6cee",
+        "message_id": "9d960368-97e0-4bcb-b477-bdb8064ae91c",
         "ttl": "PT10M",
-        "timestamp": "2025-01-03T09:42:18.769Z"
+        "timestamp": "2025-01-03T07:51:56.785Z"
       },
       "message": {
         "order": {
-          "id": "AP028946",
           "provider": {
             "id": "FTC00",
             "descriptor": {
@@ -63,20 +63,6 @@
                       "name": "Gro contact number"
                     },
                     "value": "919833496939"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "GRO_DESIGNATION",
-                      "name": "Gro Designation"
-                    },
-                    "value": "co-founder and COO"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "GRO_ADDRESS",
-                      "name": "Gro Address"
-                    },
-                    "value": "A-405, 4th Floor, Boomerang Building, Yadav Nagar, Chandivali Farm Road, Chandivali. Andheri (East). Mumbai-400072"
                   },
                   {
                     "descriptor": {
@@ -185,7 +171,8 @@
                     {
                       "descriptor": {
                         "code": "APPLICATION_FEE",
-                        "name": "Application Fees"
+                        "name": "Application Fees",
+                        "short_desc": "Application Fee"
                       },
                       "value": "0.00%"
                     },
@@ -200,7 +187,8 @@
                     {
                       "descriptor": {
                         "code": "INTEREST_RATE_CONVERSION_CHARGE",
-                        "name": "interest rate conversion charges"
+                        "name": "interest rate conversion charges",
+                        "short_desc": "interest rate conversion charges"
                       },
                       "value": "NA"
                     },
@@ -250,7 +238,7 @@
                         "name": "Repayment Frequency",
                         "short_desc": "Repayment Frequency by borrower"
                       },
-                      "value": "P1M"
+                      "value": "MONTHLY"
                     },
                     {
                       "descriptor": {
@@ -258,15 +246,23 @@
                         "name": "Number of installments of repayment",
                         "short_desc": "Number of installments borrower has to make to payback the loan"
                       },
-                      "value": "1"
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "TNC_LINK",
+                        "name": "Terms & Conditions",
+                        "short_desc": "Terms and Conditions"
+                      },
+                      "value": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/tnc.pdf"
                     },
                     {
                       "descriptor": {
                         "code": "COOL_OFF_PERIOD",
                         "name": "cool off period",
-                        "short_desc": "Cooling off/look-up period during which borrower shall not be\tTAGS m jayega charged any penalty"
+                        "short_desc": "Cooling off/look-up period during which borrower shall not be charged any penalty"
                       },
-                      "value": "P30D"
+                      "value": "PT5M"
                     },
                     {
                       "descriptor": {
@@ -274,20 +270,21 @@
                         "name": "Installment amount",
                         "short_desc": "Each installment amount of repayment"
                       },
-                      "value": "17523INR"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "KFS_LINK",
-                        "name": "Key Facts Statement Link",
-                        "short_desc": "A link provided by the BPP points to a Key Fact Statement (KFS) document related to a loan. When accessed, the document is returned in text/html format, with the loan details organized in a standard HTML table. This format makes it easy for the buyer's app to read and reformat the information as needed. For more details, refer to the \"KFS_LINK format\" document in the \"feature-ui\" section."
-                      },
-                      "value": "https://icicibank.com/loan/kfs-terms"
+                      "value": "88460.00"
                     }
                   ],
                   "display": true
                 }
-              ]
+              ],
+              "xinput": {
+                "form": {
+                  "id": "F03"
+                },
+                "form_response": {
+                  "status": "APPROVED",
+                  "submission_id": "KYCI000PAP0136507"
+                }
+              }
             }
           ],
           "quote": {
@@ -338,179 +335,10 @@
                   "value": "0",
                   "currency": "INR"
                 }
-              },
-              {
-                "title": "OTHER_UPFRONT_CHARGES",
-                "price": {
-                  "value": "0",
-                  "currency": "INR"
-                }
               }
             ],
             "ttl": "PT15D"
-          },
-          "fulfillments": [
-            {
-              "customer": {
-                "organization": {
-                  "address": "Industrial Park, Bangalore",
-                  "state": {
-                    "name": "Karnataka"
-                  },
-                  "city": {
-                    "name": "Bangalore",
-                    "code": "560045"
-                  },
-                  "contact": {
-                    "phone": "+919876543210",
-                    "email": "alpha.manufacturing@gmail.com"
-                  }
-                }
-              },
-             "state": {
-                 "descriptor": {
-                  "code": "DISBURSED",
-                  "name": "Loan disbursed"
-                }
-              }
-            }
-          ],
-          "payments": [
-            {
-              "id": "76493",
-              "type": "ON_ORDER",
-              "status": "NOT-PAID",
-              "collected_by": "BPP",
-              "tags": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES"
-                  },
-                  "display": false,
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES_TYPE"
-                      },
-                      "value": "percent-annualized"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                      },
-                      "value": "1"
-                    }
-                  ]
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TERMS"
-                  },
-                  "display": false,
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_WINDOW"
-                      },
-                      "value": "PT60M"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_BASIS"
-                      },
-                      "value": "INVOICE_RECEIPT"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "MANDATORY_ARBITRATION"
-                      },
-                      "value": "TRUE"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "COURT_JURISDICTION"
-                      },
-                      "value": "New Delhi"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "STATIC_TERMS"
-                      },
-                      "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "SETTLEMENT_AMOUNT"
-                      },
-                      "value": "17523"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "OFFLINE_CONTRACT"
-                      },
-                      "value": "true"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "POST_FULFILLMENT",
-              "id": "AP028946180",
-              "params": {
-                "amount": "17523",
-                "currency": "INR"
-              },
-              "status": "NOT-PAID",
-              "time": {
-                "label": "INSTALLMENT",
-                "range": {
-                  "start": "2025-01-03T00:00:00.000Z",
-                  "end": "2025-02-17T23:59:59.000Z"
-                }
-              }
-            }
-          ],
-          "cancellation_terms": [
-            {
-              "fulfillment_state": {
-                "descriptor": {
-                  "code": "SANCTIONED"
-                }
-              },
-              "cancellation_fee": {
-                "percentage": "3%"
-              }
-            },
-            {
-              "external_ref": {
-                "mimetype": "text/html",
-                "url": "https://bpp.credit.becknprotocol.org/tnc.html"
-              }
-            },
-            {
-              "fulfillment_state": {
-                "descriptor": {
-                  "code": "DISBURSED"
-                }
-              },
-              "cancellation_fee": {
-                "percentage": "5%"
-              }
-            }
-          ],
-          "documents": [
-            {
-              "descriptor": {
-                "code": "LOAN_AGREEMENT",
-                "name": "Loan Agreement Document",
-                "short_desc": "Download your Loan Agreement document here",
-                "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
-              },
-              "mime_type": "application/pdf",
-              "url": "https://uat.ftcash.com/devtest/loan/public/loan_offer_letter_docs/ondc/AP045789/FTCASH_ONDC_Loan_Agreement_Letter_AP045789.pdf"
-            }
-          ]
+          }
         }
       }
     }
