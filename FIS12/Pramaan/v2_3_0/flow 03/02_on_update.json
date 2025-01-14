@@ -11,9 +11,9 @@
     },
     "version": "2.3.0",
     "action": "on_update",
-    "transaction_id": "b19b3442-a203-4d13-9ff4-d650d591af17",
-    "message_id": "577d59a4-63ee-4872-8a4c-1da02682922b",
-    "timestamp": "2025-01-02T06:47:32.718Z",
+    "transaction_id": "0f14283e-602b-4016-9f5b-6748b3d1db3a",
+    "message_id": "40a795a8-231d-400b-8b35-2afc6082af9b",
+    "timestamp": "2025-01-14T10:29:47.296Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
@@ -194,7 +194,7 @@
               "descriptor": {
                 "code": "SETTLEMENT_WINDOW"
               },
-              "value": "PT30D"
+              "value": "P30D"
             },
             {
               "descriptor": {
@@ -236,73 +236,47 @@
         }
       ],
       "quote": {
-        "id": "3b2511a5-81ef-42b1-b518-8a0dbaafb8af",
+        "id": "a6c712ed-4770-42ec-8709-c52e5e15e4bf",
         "price": {
           "currency": "INR",
           "value": "4292.00"
         },
         "breakup": [
           {
-            "title": "WOKRKING_CAPITAL_LIMIT",
+            "title": "PRINCIPAL_AMOUNT",
             "price": {
-              "value": "1100000",
+              "value": "20000",
               "currency": "INR"
             }
           },
           {
-            "title": "CURRENT_UTLIZATION",
+            "title": "INTEREST_AMOUNT",
             "price": {
-              "value": "0",
+              "value": "400",
               "currency": "INR"
             }
           },
           {
-            "title": "PROCESSING_FEE",
-            "price": {
-              "value": "1100",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "INSURANCE_CHARGES",
-            "price": {
-              "value": "1100",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OTHER_UPFRONT_CHARGES",
-            "price": {
-              "value": "11000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OTHER_CHARGES",
-            "price": {
-              "value": "1100",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "LATE_FEE_AMOUNT",
-            "price": {
-              "value": "1500",
-              "currency": "INR"
-            }
+            "descriptor": {
+              "code": "LATE_PAYMENT_FEE",
+              "name": "Late Payment fees"
+            },
+            "value": "100"
           }
         ],
         "ttl": "P5D"
       },
       "items": [
         {
-          "id": "a9b8a584-5b26-4963-a73c-0ae1f0474550",
+          "id": "88c4e0a3-9e74-42c9-8987-1cb7cb0ecf49",
           "parent_item_id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
           "descriptor": {
             "code": "WORKING_CAPITAL_LOAN",
             "name": "Working Capital Loan"
           },
-          "category_ids": ["101125"],
+          "category_ids": [
+            "101125"
+          ],
           "price": {
             "currency": "INR",
             "value": "2792"
@@ -349,12 +323,13 @@
               "display": true
             }
           ],
-          "fulfillment_ids": ["1333"]
+          "fulfillment_ids": [
+            "1333"
+          ]
         }
       ],
       "fulfillments": [
         {
-          "id": "1333",
           "customer": {
             "person": {
               "name": "John Doe"
@@ -364,21 +339,88 @@
               "phone": "7888888888"
             }
           },
-          "stops": [
+          "tags": [
             {
-              "authorization": [
+              "descriptor": {
+                "code": "CHECKLISTS",
+                "name": "Applicant Checklists"
+              },
+              "list": [
                 {
-                  "type": "OTP",
-                  "id": "123456"
+                  "descriptor": {
+                    "code": "KYC",
+                    "name": "KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "E_SIGN",
+                    "name": "E Sign Required"
+                  },
+                  "value": "COMPLETED"
                 }
               ]
+            }
+          ],
+          "id": "1333",
+          "stops": [
+            {
+              "authorization": {
+                "type": "OTP",
+                "token": "1222"
+              }
+            }
+          ]
+        },
+        {
+          "id": "1334",
+          "customer": {
+            "person": {
+              "name": "Co Applicant 1"
+            },
+            "contact": {
+              "email": "applicant.1@gmail.com",
+              "phone": "7888888888"
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "CHECKLISTS",
+                "name": "Applicant Checklists"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "KYC",
+                    "name": "KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "E_SIGN",
+                    "name": "E Sign Required"
+                  },
+                  "value": "COMPLETED"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "authorization": {
+                "type": "OTP",
+                "token": "1222"
+              }
             }
           ]
         }
       ],
       "payments": [
         {
-          "id": "478a54a3-d25b-447e-9a87-2a692df54bc2",
+          "id": "dc95245f-681f-4c84-ad58-ee1d45de8047",
           "collected_by": "BPP",
           "params": {
             "amount": "2500",
@@ -389,8 +431,8 @@
           "time": {
             "label": "MISSED_EMI_PAYMENT",
             "range": {
-              "start": "2025-01-02T06:46:34.545Z",
-              "end": "2025-01-02T06:46:34.546Z"
+              "start": "2025-01-14T10:29:00.787Z",
+              "end": "2025-01-14T10:29:00.787Z"
             }
           },
           "tags": [
@@ -423,19 +465,16 @@
             "amount": "20000",
             "currency": "INR",
             "bank_account_number": "1800002341",
-            "bank_code": "SBIN0001234"
+            "bank_code": "SBIN0001234",
+            "transaction_id": "AXISBANK1222"
           },
           "collected_by": "MERCHANT",
           "type": "ON-ORDER",
           "status": "PAID",
-          "id": "38208d87-d002-4f89-b6d7-ecd9aaab0ddd",
+          "id": "6fad211c-3819-4ddf-a688-f3b80e529727",
           "time": {
-            "range": {
-              "start": "2025-01-02T05:59:33.158Z",
-              "end": "2025-01-02T05:59:33.158Z"
-            },
             "label": "PAYMENT DATE",
-            "timestamp": "2025-01-02T06:46:34.546Z"
+            "timestamp": "2025-01-14T10:29:00.787Z"
           }
         },
         {
@@ -474,18 +513,21 @@
               ]
             }
           ],
-          "id": "381f83fb-70e3-4721-b897-a3d700063cea",
+          "id": "5ec25282-bad8-42e7-9e07-4a7b48eb299f",
           "time": {
             "range": {
-              "start": "2025-01-02T05:59:33.158Z",
-              "end": "2025-01-02T05:59:33.158Z"
+              "start": "2025-01-14T10:28:36.914Z",
+              "end": "2025-01-14T10:28:36.914Z"
             }
           }
         }
       ],
-      "created_at": "2025-01-02T05:59:37.016Z",
-      "updated_at": "2025-01-02T05:59:37.016Z",
-      "id": "3b2511a5-81ef-42b1-b518-8a0dbaafb8af"
+      "created_at": "2025-01-14T10:28:47.493Z",
+      "updated_at": "2025-01-14T10:28:47.493Z",
+      "id": "a6c712ed-4770-42ec-8709-c52e5e15e4bf",
+      "ref_order_ids": [
+        "a6c712ed-4770-42ec-8709-c52e5e15e4bf"
+      ]
     }
-  }
+  } 
 }
