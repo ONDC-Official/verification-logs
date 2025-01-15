@@ -1,0 +1,297 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "confirm",
+        "version": "2.0.2",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/retail/bap",
+        "transaction_id": "842b4188-75f3-49e9-9c8e-364a1a5b805a",
+        "message_id": "77f1ba86-734e-45e3-b4b8-3e783ff34b82",
+        "timestamp": "2025-01-14T11:01:16.983Z",
+        "ttl": "PT30S",
+        "bpp_id": "preprod-ondc.khetisauda.com",
+        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+    },
+    "message": {
+        "order": {
+            "id": "1a8e4a6f-d94d-4517-ada7-c11743fec165",
+            "state": "Created",
+            "provider": {
+                "id": "P9876",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "12.974002,77.613458",
+                                "address": "My House #, My buildin",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "560001",
+                                "state": {
+                                    "name": "Karnataka"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BAP",
+                    "uri": "https://snp.com/pg",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10.00",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "upi",
+                            "upi_address": "gft@oksbi",
+                            "settlement_bank_account_no": "XXXXXXXXXX",
+                            "settlement_ifsc_code": "XXXXXXXXX",
+                            "beneficiary_name": "xxxxx",
+                            "bank_name": "xxxx",
+                            "branch_name": "xxxx"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BPP_payment"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "signature"
+                                    },
+                                    "value": "xxxxxxxxxxxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "dsa"
+                                    },
+                                    "value": "ED25519"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ttl"
+                                    },
+                                    "value": "PT30M"
+                                }
+                            ]
+                        }
+                    ],
+                    "params": {
+                        "currency": "INR",
+                        "amount": "20000",
+                        "transaction_id": "3937",
+                        "bank_code": "xxxxxxxxx",
+                        "bank_account_number": "xxxxxxxxxxxx"
+                    },
+                    "status": "NOT-PAID"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "20000"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
+                        "@ondc/org/item_quantity": {
+                            "count": 200
+                        },
+                        "title": "Basmati Rice",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20000"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
+                        "title": "Discount",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "items": [
+                {
+                    "id": "6776841d49c82277c6c4ab8e",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 200
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "xxxxxxxxxxxxxxx"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "max_liability"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "20000"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "mandatory_arbitration"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Jaunpur"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "ONDC buyer",
+                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+                "state": {
+                    "name": "Karnataka"
+                },
+                "city": {
+                    "name": "Bengaluru"
+                },
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "email": "nobody@nomail.com",
+                "phone": "9886098860"
+            },
+            "created_at": "2025-01-14T11:01:16.983Z",
+            "updated_at": "2025-01-14T11:01:16.983Z"
+        }
+    }
+}
