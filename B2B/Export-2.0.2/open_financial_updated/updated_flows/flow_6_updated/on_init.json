@@ -1,0 +1,248 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "location": {
+        "city": {
+          "code": "std:080"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
+      "action": "on_init",
+      "version": "2.0.2",
+      "bap_id": "ondcpreprodb2b.rapidor.co",
+      "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
+      "bpp_id": "preprod-ondc-seller.bankopen.co",
+      "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+      "transaction_id": "09814658-100b-4e16-a045-b466d678d93e",
+      "message_id": "ebfe897e-33a4-4cf6-a591-c4477131b9fa",
+      "timestamp": "2024-12-05T09:39:49.261Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "fulfillments": [
+          {
+            "id": "D1",
+            "type": "Delivery",
+            "@ondc/org/provider_name": "OPENF",
+            "stops": [
+              {
+                "type": "end",
+                "location": {
+                  "address": "rga, rga, Sarjapur Road, Banglore, Bangalore Rural, 560035",
+                  "gps": "12.902149,77.687282",
+                  "area_code": "560035",
+                  "state": {
+                    "name": "Karnataka"
+                  },
+                  "city": {
+                    "name": "Bangalore Rural"
+                  },
+                  "country": {
+                    "code": "IND"
+                  }
+                },
+                "contact": {
+                  "phone": "8301834097"
+                }
+              }
+            ],
+            "@ondc/org/category": "Standard Delivery",
+            "tracking": false,
+            "@ondc/org/TAT": "PT18H"
+          }
+        ],
+        "items": [
+          {
+            "id": "57",
+            "quantity": {
+              "selected": {
+                "count": 2
+              }
+            },
+            "fulfillment_ids": [
+              "D1"
+            ]
+          }
+        ],
+        "provider": {
+          "id": "OPENSELLER1"
+        },
+        "payments": [
+          {
+            "type": "ON-FULFILLMENT",
+            "collected_by": "BPP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "0",
+            "@ondc/org/withholding_amount": "0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_window": "P2D"
+          }
+        ],
+        "tags": [
+          {
+            "descriptor": {
+              "code": "buyer_id"
+            },
+            "list": [
+              {
+                "descriptor": {
+                  "code": "buyer_id_code"
+                },
+                "value": "pan"
+              },
+              {
+                "descriptor": {
+                  "code": "buyer_id_no"
+                },
+                "value": "EQKPM7093G"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "bpp_terms"
+            },
+            "list": [
+              {
+                "descriptor": {
+                  "code": "max_liability"
+                },
+                "value": "1"
+              },
+              {
+                "descriptor": {
+                  "code": "max_liability_cap"
+                },
+                "value": "100"
+              },
+              {
+                "descriptor": {
+                  "code": "mandatory_arbitration"
+                },
+                "value": "false"
+              },
+              {
+                "descriptor": {
+                  "code": "court_jurisdiction"
+                },
+                "value": "Banglore"
+              },
+              {
+                "descriptor": {
+                  "code": "delay_interest"
+                },
+                "value": "10"
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "150.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "57",
+              "@ondc/org/item_quantity": {
+                "count": 2
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "40"
+                }
+              },
+              "title": "Milk bread",
+              "price": {
+                "currency": "INR",
+                "value": "80"
+              }
+            },
+            {
+              "@ondc/org/item_id": "D1",
+              "@ondc/org/title_type": "delivery",
+              "title": "Delivery Charges",
+              "price": {
+                "currency": "INR",
+                "value": "60.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "D1",
+              "@ondc/org/title_type": "misc",
+              "title": "Convenience Fee",
+              "price": {
+                "currency": "INR",
+                "value": "10.00"
+              }
+            }
+          ],
+          "ttl": "PT1H"
+        },
+        "billing": {
+          "name": "Asif",
+          "address": "rga, rga, Sarjapur Road, Banglore, Bangalore Rural, 560035",
+          "state": {
+            "name": "Karnataka"
+          },
+          "city": {
+            "name": "Bangalore Rural"
+          },
+          "tax_id": "EQKPM7093G",
+          "phone": "8301834097"
+        },
+        "cancellation_terms": [
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Pending"
+              }
+            },
+            "reason_required": false,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Packed"
+              }
+            },
+            "reason_required": false,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Out-for-delivery"
+              }
+            },
+            "reason_required": false,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "10"
+              }
+            }
+          }
+        ],
+        "provider_location": {
+          "id": "OPENLOCATION1"
+        }
+      }
+    }
+  }
