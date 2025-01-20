@@ -9,29 +9,26 @@
                 "code": "IND"
             }
         },
+        "action": "on_status",
         "version": "2.0.0",
-        "ttl": "PT30S",
-        "action": "confirm",
         "bap_id": "mock.ondc.org/api",
         "bap_uri": "https://mock.ondc.org/api/logistics/bap",
         "transaction_id": "26967cfa-5e99-4e3a-9ada-1c40ae8e1bbe",
-        "message_id": "54752c06-4d89-4c04-a5db-22d76c038fcb",
-        "timestamp": "2025-01-20T13:34:42.931Z",
+        "message_id": "22e757f0-d0e1-4b2f-a62e-c75164c46c45",
+        "timestamp": "2025-01-20T13:34:51.020Z",
+        "ttl": "PT30S",
         "bpp_id": "mock.ondc.org/api",
-        "bpp_uri": "https://acrisvc.com"
+        "bpp_uri": "https://mock.ondc.org/api/logistics/bpp"
     },
     "message": {
         "order": {
             "id": "O2",
-            "status": "Created",
+            "status": "Completed",
             "provider": {
                 "id": "P1",
                 "locations": [
                     {
                         "id": "L1"
-                    },
-                    {
-                        "id": "L2"
                     }
                 ]
             },
@@ -46,90 +43,11 @@
                     ],
                     "descriptor": {
                         "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "P7D"
                     }
-                }
-            ],
-            "fulfillments": [
-                {
-                    "id": "1",
-                    "type": "Delivery",
-                    "stops": [
-                        {
-                            "type": "start",
-                            "location": {
-                                "gps": "12.4535445,77.9283792",
-                                "area_code": "560041",
-                                "address": "My building #, My street name",
-                                "city": {
-                                    "name": "Bengaluru"
-                                },
-                                "state": {
-                                    "name": "Karnataka"
-                                },
-                                "country": {
-                                    "code": "IND"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9886098860",
-                                "email": "abcd.efgh@gmail.com"
-                            },
-                            "id": "L1",
-                            "parent_stop_id": ""
-                        },
-                        {
-                            "type": "end",
-                            "location": {
-                                "gps": "12.342769,77.9129423",
-                                "area_code": "636806",
-                                "address": "My house or building name, street name",
-                                "city": {
-                                    "name": "Bengaluru"
-                                },
-                                "state": {
-                                    "name": "Karnataka"
-                                },
-                                "country": {
-                                    "code": "IND"
-                                }
-                            },
-                            "contact": {
-                                "phone": "9886098860",
-                                "email": "abcd.efgh@gmail.com"
-                            },
-                            "id": "L1",
-                            "parent_stop_id": ""
-                        }
-                    ],
-                    "agent": {
-                        "person": {
-                            "name": "Ramu"
-                        }
-                    },
-                    "customer": {
-                        "person": {
-                            "name": "xyz"
-                        },
-                        "contact": {
-                            "phone": "9886098860",
-                            "email": "xyz.efgh@gmail.com"
-                        }
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "Delivery_Terms"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "RTO_Action"
-                                    },
-                                    "value": "no"
-                                }
-                            ]
-                        }
-                    ]
                 }
             ],
             "quote": {
@@ -171,6 +89,154 @@
                 ],
                 "ttl": "PT15M"
             },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "gps": "12.4535445,77.9283792",
+                                "area_code": "560041",
+                                "address": "My building #, My street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "descriptor": {
+                                    "images": [
+                                        "https://gf-integration/images/5.png"
+                                    ]
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            },
+                            "id": "L1",
+                            "parent_stop_id": "",
+                            "instructions": {
+                                "name": "Proof of pickup",
+                                "short_desc": "Proof of pickup details",
+                                "long_desc": "Proof of pickup details",
+                                "images": [
+                                    "https://image1_url.png"
+                                ]
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-01-20T13:30:51.034Z",
+                                    "end": "2025-01-20T13:50:51.034Z"
+                                }
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "12.342769,77.9129423",
+                                "area_code": "636806",
+                                "address": "My house or building name, street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            },
+                            "id": "L2",
+                            "parent_stop_id": "L1",
+                            "time": {
+                                "range": {
+                                    "start": "2025-01-27T13:30:51.034Z",
+                                    "end": "2025-01-20T13:50:51.034Z"
+                                }
+                            },
+                            "instructions": {
+                                "name": "Proof of delivery",
+                                "short_desc": "Proof of delivery details",
+                                "long_desc": "Proof of delivery details",
+                                "images": [
+                                    "https://image1_url.png"
+                                ]
+                            },
+                            "agent": {
+                                "person": {
+                                    "name": "Ramu"
+                                },
+                                "contact": {
+                                    "phone": "9886098860"
+                                }
+                            }
+                        }
+                    ],
+                    "agent": {
+                        "person": {
+                            "name": "Ramu"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "xyz"
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "xyz.efgh@gmail.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "Delivery_Terms"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "AWB_No"
+                                    },
+                                    "value": "1209878992826353"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "LR_No"
+                                    },
+                                    "value": "1209878992826353"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Transporter_Id"
+                                    },
+                                    "value": "1209878992826353"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Doc_Way_Bill_No"
+                                    },
+                                    "value": "1209567899003"
+                                }
+                            ]
+                        }
+                    ],
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
             "billing": {
                 "name": "ONDC sellerapp",
                 "address": "My house or building name",
@@ -180,19 +246,19 @@
                 "phone": "9886098860",
                 "email": "abcd.efgh@gmail.com",
                 "time": {
-                    "timestamp": "2025-01-20T13:34:35.232Z"
+                    "timestamp": "2025-01-20T13:30:44.809Z"
                 }
             },
             "payments": [
                 {
                     "id": "P1",
+                    "collected_by": "BPP",
                     "params": {
                         "amount": "6000",
                         "currency": "INR",
                         "bank_account_number": "xxxxxxxx",
                         "virtual_payment_address": "xxx@xxxx"
                     },
-                    "collected_by": "BPP",
                     "type": "ON-FULFILLMENT",
                     "tags": [
                         {
@@ -417,8 +483,7 @@
                     ]
                 }
             ],
-            "created_at": "2025-01-20T13:34:42.931Z",
-            "updated_at": "2025-01-20T13:34:42.931Z"
+            "updated_at": "2025-01-20T13:30:55.948Z"
         }
     }
 }

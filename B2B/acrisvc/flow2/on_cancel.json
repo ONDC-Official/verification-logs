@@ -1,469 +1,464 @@
 {
-  "context": {
-    "domain": "ONDC:LOG10",
-    "location": {
-      "city": {
-        "code": "std:080"
-      },
-      "country": {
-        "code": "IND"
-      }
+    "context": {
+        "domain": "ONDC:LOG10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "version": "2.0.0",
+        "ttl": "PT30S",
+        "action": "on_cancel",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
+        "transaction_id": "26967cfa-5e99-4e3a-9ada-1c40ae8e1bbe",
+        "message_id": "79287ae1-2679-4aa6-b30a-08aa61e301f7",
+        "timestamp": "2025-01-20T13:35:07.916Z",
+        "bpp_id": "acrisvc.com",
+        "bpp_uri": "https://acrisvc.com"
     },
-    "version": "2.0.0",
-    "ttl": "PT30S",
-    "action": "on_cancel",
-    "bap_id": "mock.ondc.org/api",
-    "bap_uri": "https://mock.ondc.org/api/logistics/bap",
-    "bpp_id": "acrisvc.com",
-    "bpp_uri": "https://acrisvc.com",
-    "transaction_id": "40dc78f5-d88f-415c-abe2-dba8e258dcdd",
-    "message_id": "3af042fc-5325-487d-97fb-4ac522155e34",
-    "timestamp": "2025-01-15T12:49:29.838Z"
-  },
-  "message": {
-    "order": {
-      "id": "",
-      "status": "Cancelled",
-      "provider": {
-        "id": "",
-        "locations": [
-          {
-            "id": ""
-          }
-        ]
-      },
-      "items": [
-        {
-          "id": "",
-          "fulfillment_ids": [
-            ""
-          ],
-          "category_ids": [
-            ""
-          ],
-          "descriptor": {
-            "code": "P2H2P"
-          },
-          "time": {
-            "label": "TAT",
-            "duration": "P7D",
-            "timestamp": ""
-          }
+    "message": {
+        "order": {
+            "id": "O2",
+            "status": "Cancelled",
+            "provider": {
+                "id": "P1",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "I1",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "category_ids": [
+                        "C1"
+                    ],
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "P7D",
+                        "timestamp": "2025-01-20T13:34:59.148Z"
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "6000.0"
+                },
+                "breakup": [
+                    {
+                        "title": "delivery",
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "5000.0"
+                        }
+                    },
+                    {
+                        "title": "tax",
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "500.0"
+                        }
+                    },
+                    {
+                        "title": "delivery_diff",
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "500.0"
+                        }
+                    },
+                    {
+                        "title": "tax_diff",
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "6.0"
+                        }
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "agent": {
+                        "person": {
+                            "name": "Ramu"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "xyz"
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "xyz.efgh@gmail.com"
+                        }
+                    },
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "start",
+                            "id": "L1",
+                            "parent_stop_id": "",
+                            "location": {
+                                "gps": "12.4535445,77.9283792",
+                                "address": "My building #, My street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "560041"
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            },
+                            "instructions": {
+                                "short_desc": "undefined short",
+                                "long_desc": "undefined long",
+                                "images": [
+                                    "https://image1_url.png"
+                                ]
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-01-20T13:35:07.917Z",
+                                    "end": "2025-01-20T13:35:07.917Z"
+                                }
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "id": "L1",
+                            "parent_stop_id": "",
+                            "location": {
+                                "gps": "12.342769,77.9129423",
+                                "address": "My house or building name, street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "name": "India",
+                                    "code": "IND"
+                                },
+                                "area_code": "636806"
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            },
+                            "instructions": {
+                                "short_desc": "undefined short",
+                                "long_desc": "undefined long",
+                                "images": [
+                                    "https://image1_url.png"
+                                ]
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-01-20T13:35:07.917Z",
+                                    "end": "2025-01-20T13:35:07.917Z"
+                                }
+                            },
+                            "agent": {
+                                "person": {},
+                                "contact": {}
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "Delivery_Terms"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Ready_To_Ship"
+                                    },
+                                    "value": "no"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "AWB_No"
+                                    },
+                                    "value": "no"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Eway_Bill_No"
+                                    },
+                                    "value": "no"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Doc_Way_Bill_No"
+                                    },
+                                    "value": "no"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Invoice_Number"
+                                    },
+                                    "value": "no"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "RTO_Action"
+                                    },
+                                    "value": "no"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "ONDC sellerapp",
+                "address": "My house or building name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com",
+                "time": {
+                    "timestamp": "2025-01-20T13:34:59.148Z"
+                }
+            },
+            "payments": [
+                {
+                    "id": "P1",
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "6000",
+                        "currency": "INR",
+                        "bank_account_number": "xxxxxxxx",
+                        "virtual_payment_address": "xxx@xxxx"
+                    },
+                    "type": "ON-FULFILLMENT",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "Settlement_Details"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Counterparty"
+                                    },
+                                    "value": "BAP"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Mode"
+                                    },
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Beneficiary_Name"
+                                    },
+                                    "value": "xxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Bank_Account_No"
+                                    },
+                                    "value": "xxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Ifsc_Code"
+                                    },
+                                    "value": "xxxxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "UPI_Address"
+                                    },
+                                    "value": "xxxxxxx"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Collection_Details"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Amount"
+                                    },
+                                    "value": "20000"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Type"
+                                    },
+                                    "value": "ON-FULFILLMENT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "Package_Dimensions"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Unit"
+                            },
+                            "value": "centimeter"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Length"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Breadth"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Height"
+                            },
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Package_Details"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Category"
+                            },
+                            "value": "centimeter"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Dangerous_Goods"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Stackable"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Shipment_Value"
+                            },
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Package_Dimensions_Diff"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Unit"
+                            },
+                            "value": "centimeter"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Length"
+                            },
+                            "value": "1.5"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Breadth"
+                            },
+                            "value": "1.5"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Height"
+                            },
+                            "value": "1.5"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Diff_Proof"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "type"
+                            },
+                            "value": "image"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "url"
+                            },
+                            "value": "https://xxxxx/xx.png"
+                        }
+                    ]
+                }
+            ],
+            "updated_at": "2025-01-20T13:35:07.916Z",
+            "cancellation": {
+                "cancelled_by": "mock.ondc.org/api",
+                "reason": {
+                    "id": "007"
+                }
+            }
         }
-      ],
-      "fulfillments": [
-        {
-          "id": "",
-          "type": "Delivery",
-          "state": {
-            "descriptor": {
-              "code": "Cancelled"
-            }
-          },
-          "agent": {
-            "person": {
-              "name": ""
-            }
-          },
-          "customer": {
-            "person": {
-              "name": ""
-            },
-            "contact": {
-              "phone": "",
-              "email": ""
-            }
-          },
-          "tracking": false,
-          "stops": [
-            {
-              "id": "",
-              "parent_stop_id": "",
-              "type": "start",
-              "location": {
-                "gps": "",
-                "address": "",
-                "city": {
-                  "name": ""
-                },
-                "state": {
-                  "name": ""
-                },
-                "country": {
-                  "code": ""
-                },
-                "area_code": "",
-                "descriptor": {
-                  "images": []
-                }
-              },
-              "contact": {
-                "phone": "",
-                "email": ""
-              },
-              "instructions": {
-                "name": "",
-                "short_desc": "",
-                "long_desc": "",
-                "images": []
-              },
-              "time": {
-                "range": {
-                  "start": "",
-                  "end": ""
-                }
-              }
-            },
-            {
-              "id": "",
-              "parent_stop_id": "",
-              "type": "end",
-              "location": {
-                "gps": "",
-                "address": "",
-                "city": {
-                  "name": ""
-                },
-                "state": {
-                  "name": ""
-                },
-                "country": {
-                  "name": "",
-                  "code": ""
-                },
-                "area_code": ""
-              },
-              "contact": {
-                "phone": "",
-                "email": ""
-              },
-              "instructions": {
-                "name": "",
-                "short_desc": "",
-                "long_desc": "",
-                "images": []
-              },
-              "time": {
-                "range": {
-                  "start": "",
-                  "end": ""
-                }
-              },
-              "agent": {
-                "person": {
-                  "name": ""
-                },
-                "contact": {
-                  "phone": ""
-                }
-              }
-            }
-          ],
-          "tags": [
-            {
-              "descriptor": {
-                "code": "Delivery_Terms"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "Ready_To_Ship"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "AWB_No"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "RTO_Action"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Eway_Bill_No"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Doc_Way_Bill_No"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Invoice_Number"
-                  },
-                  "value": ""
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": ""
-        },
-        "breakup": [
-          {
-            "title": "delivery",
-            "item": {
-              "id": ""
-            },
-            "price": {
-              "currency": "INR",
-              "value": ""
-            }
-          },
-          {
-            "title": "tax",
-            "item": {
-              "id": ""
-            },
-            "price": {
-              "currency": "INR",
-              "value": ""
-            }
-          },
-          {
-            "title": "delivery_diff",
-            "item": {
-              "id": ""
-            },
-            "price": {
-              "currency": "INR",
-              "value": ""
-            }
-          },
-          {
-            "title": "tax_diff",
-            "item": {
-              "id": ""
-            },
-            "price": {
-              "currency": "INR",
-              "value": ""
-            }
-          }
-        ]
-      },
-      "updated_at": "",
-      "billing": {
-        "name": "",
-        "address": "",
-        "city": "",
-        "state": "",
-        "tax_id": "",
-        "phone": "",
-        "email": "",
-        "time": {
-          "timestamp": ""
-        }
-      },
-      "payments": [
-        {
-          "id": "",
-          "collected_by": "BPP",
-          "params": {
-            "amount": "",
-            "currency": "",
-            "bank_account_number": "",
-            "virtual_payment_address": ""
-          },
-          "type": "ON-FULFILLMENT",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "Settlement_Details"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "Counterparty"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Mode"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Beneficiary_Name"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Bank_Account_No"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Ifsc_Code"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "UPI_Address"
-                  },
-                  "value": ""
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "Collection_Details"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "Amount"
-                  },
-                  "value": ""
-                },
-                {
-                  "descriptor": {
-                    "code": "Type"
-                  },
-                  "value": "ON-FULFILLMENT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "tags": [
-        {
-          "descriptor": {
-            "code": "Package_Dimensions"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "Unit"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Length"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Breadth"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Height"
-              },
-              "value": ""
-            }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "Package_Details"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "Category"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Dangerous_Goods"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Stackable"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Shipment_Value"
-              },
-              "value": ""
-            }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "Package_Dimensions_Diff"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "Unit"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Length"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Breadth"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "Height"
-              },
-              "value": ""
-            }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "Diff_Proof"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "type"
-              },
-              "value": ""
-            },
-            {
-              "descriptor": {
-                "code": "url"
-              },
-              "value": ""
-            }
-          ]
-        }
-      ],
-      "cancellation": {
-        "cancelled_by": "mock.ondc.org/api",
-        "reason": {
-          "id": "007"
-        }
-      }
     }
-  }
 }
