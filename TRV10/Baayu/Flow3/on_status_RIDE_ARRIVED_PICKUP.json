@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "on_init",
+    "action": "on_status",
     "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
     "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id": "staging-mobility-ondc.baayu.app",
@@ -14,11 +14,11 @@
         "code": "IND"
       }
     },
-    "message_id": "a83c7ec2-d359-48f9-ae27-422486fc6e79",
-    "timestamp": "2025-01-20T14:41:37.551Z",
+    "message_id": "61b7cf87-4ba0-4399-9844-4c15db5b3548",
+    "timestamp": "2025-01-20T14:42:00.673Z",
     "transaction_id": "20e04258-5e5e-4f82-ba6f-80bdbce73f7c",
-    "ttl": "PT15S",
-    "version": "2.0.1"
+    "ttl": "PT1M",
+    "version": "2.0.0"
   },
   "message": {
     "order": {
@@ -80,8 +80,17 @@
           "reason_required": true
         }
       ],
+      "created_at": "2025-01-20T14:41:58.723Z",
       "fulfillments": [
         {
+          "agent": {
+            "contact": {
+              "phone": "1234567890"
+            },
+            "person": {
+              "name": "ONDC TEST "
+            }
+          },
           "customer": {
             "contact": {
               "phone": "9876543210"
@@ -91,28 +100,43 @@
             }
           },
           "id": "c59a4f2b-1055-4625-837b-07d737eb3e63",
+          "state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
           "stops": [
+            {
+              "authorization": {
+                "status": "UNCLAIMED",
+                "token": "6180",
+                "type": "OTP",
+                "valid_to": "2025-01-20T14:51:58.723Z"
+              },
+              "location": {
+                "gps": "24.778400,93.936500"
+              },
+              "type": "START"
+            },
             {
               "location": {
                 "gps": "24.771200,93.935400"
               },
               "type": "END"
-            },
-            {
-              "location": {
-                "gps": "24.778400,93.936500"
-              },
-              "type": "START"
             }
           ],
           "type": "DELIVERY",
           "vehicle": {
             "category": "TWO_WHEELER",
             "energy_type": "ELECTRIC",
+            "make": "Ather",
+            "model": "450 S",
+            "registration": "DM01AA1199",
             "variant": "TWO_WHEELER"
           }
         }
       ],
+      "id": "d116dba8-a489-41ea-9105-824bd3795a6b",
       "items": [
         {
           "descriptor": {
@@ -301,7 +325,9 @@
           "value": "24.85"
         },
         "ttl": "PT300s"
-      }
+      },
+      "status": "ACTIVE",
+      "updated_at": "2025-01-20T14:42:00.673Z"
     }
   }
 }
