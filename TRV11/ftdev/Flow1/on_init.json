@@ -1,128 +1,237 @@
 {
   "context": {
-    "action": "on_init",
-    "bap_id": "preprod.ftdev.in",
-    "bap_uri": "https://preprod.ftdev.in/metro/v1/",
-    "bpp_id": "metrobox.preprod.triffy.in",
-    "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
-    "domain": "ONDC:TRV11",
     "location": {
-      "city": {
-        "code": "std:0484"
-      },
       "country": {
         "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
       }
     },
-    "message_id": "c7143238-49df-4ee5-ac20-015af202588a",
-    "timestamp": "2024-12-03T09:16:58.532Z",
-    "transaction_id": "051c9534-580d-4906-b07e-1ad7d0bb4bf8",
-    "ttl": "PT300S",
-    "version": "2.0.0"
+    "domain": "ONDC:TRV11",
+    "action": "on_init",
+    "version": "2.0.0",
+    "bap_id": "preprod.ftdev.in",
+    "bap_uri": "https://preprod.ftdev.in/metro/v1/",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "bbcd38b3-98f9-45db-9f39-683af62ecdeb",
+    "message_id": "48a5571d-0997-426d-afd1-dc56e04baf31",
+    "timestamp": "2025-01-20T06:57:03.958Z",
+    "ttl": "PT10M"
   },
   "message": {
     "order": {
-      "billing": {
-        "email": "info@xxxx.in",
-        "name": "test booking",
-        "phone": "805611xxxx"
-      },
-      "cancellation_terms": [
-        {
-          "external_ref": {
-            "mimetype": "text/html",
-            "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
+      "provider": {
+        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "descriptor": {
+          "name": "ONDC Metro Limited",
+          "images": [
+            {
+              "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2025-01-20T05:30:00.000Z",
+            "end": "2025-01-20T23:30:00.000Z"
           }
+        }
+      },
+      "items": [
+        {
+          "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+          "category_ids": [
+            "C2"
+          ],
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "32"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT5M"
+          },
+          "fulfillment_ids": [
+            "5cbeac94-4c0a-4e41-97c0-d198aa017a34"
+          ]
         }
       ],
       "fulfillments": [
         {
-          "id": "aluva-pulinchudu",
+          "id": "5cbeac94-4c0a-4e41-97c0-d198aa017a34",
+          "type": "TRIP",
           "stops": [
             {
-              "id": "1",
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
               "location": {
                 "descriptor": {
-                  "code": "wzSo8ZMX6FEbJzmvVcftl6KKXoiW4Y",
-                  "name": "Aluva"
+                  "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                  "code": "NBAA"
                 },
-                "gps": "10.109900, 76.349500"
+                "gps": "28.744676, 77.138332"
               },
-              "type": "START"
+              "id": "1"
             },
             {
-              "id": "2",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 2"
+              },
               "location": {
                 "descriptor": {
-                  "code": "8m3SWvdtmpEh16IziODHdkb0nUo8qU",
-                  "name": "Pulinchudu"
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
                 },
-                "gps": "10.095100, 76.346600"
+                "gps": "28.744676, 77.138332"
               },
-              "parent_stop_id": "1",
-              "type": "END"
+              "id": "2",
+              "parent_stop_id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 3"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "ARTHALA",
+                  "code": "ATHA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 4"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "MOHAN NAGAR",
+                  "code": "MNGM"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "4",
+              "parent_stop_id": "3"
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 5"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHYAM PARK",
+                  "code": "SMPK"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "5",
+              "parent_stop_id": "4"
             }
           ],
-          "type": "TRIP",
           "vehicle": {
             "category": "METRO"
           }
         }
       ],
-      "items": [
-        {
-          "category_ids": [
-            "TICKET"
-          ],
-          "descriptor": {
-            "code": "SJT",
-            "name": "Single Journey Ticket"
-          },
-          "fulfillment_ids": [
-            "aluva-pulinchudu"
-          ],
-          "id": "sjt-aluva-pulinchudu",
-          "price": {
-            "currency": "INR",
-            "value": "9"
-          },
-          "quantity": {
-            "selected": {
-              "count": 2
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "32.00"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "price": {
+                "currency": "INR",
+                "value": "32"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "32"
             }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
           },
-          "time": {
-            "duration": "PT120M",
-            "label": "Validity"
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://sequelstringsolutions.com/mf/tnc.html"
           }
         }
       ],
+      "billing": {
+        "name": "test booking",
+        "email": "ji@gmail.com",
+        "phone": "8056114016"
+      },
       "payments": [
         {
+          "id": "564a8ce3-1f40-4c79-ad69-b2a5121c9f2f",
           "collected_by": "BAP",
-          "id": "e3f02671-ca68-46a0-893f-100188473ea4",
-          "params": {
-            "bank_account_number": "00228130001XXXX",
-            "bank_code": "XXXX0000022"
-          },
           "status": "NOT-PAID",
+          "type": "PRE-ORDER",
           "tags": [
             {
               "descriptor": {
                 "code": "BUYER_FINDER_FEES"
               },
+              "display": false,
               "list": [
                 {
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "0"
+                  "value": "1"
                 },
                 {
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_TYPE"
                   },
-                  "value": "percent-annualized"
+                  "value": "percent"
                 }
               ]
             },
@@ -130,18 +239,13 @@
               "descriptor": {
                 "code": "SETTLEMENT_TERMS"
               },
+              "display": false,
               "list": [
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT1D"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "0"
+                  "value": "P30D"
                 },
                 {
                   "descriptor": {
@@ -153,77 +257,48 @@
                   "descriptor": {
                     "code": "MANDATORY_ARBITRATION"
                   },
-                  "value": "TRUE"
+                  "value": "true"
                 },
                 {
                   "descriptor": {
                     "code": "COURT_JURISDICTION"
                   },
-                  "value": "Kochi"
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
                     "code": "STATIC_TERMS"
                   },
-                  "value": "https://metro-terms.triffy.in/kochi/index.html"
+                  "value": "https://api.example-bpp.com/booking/terms"
                 },
                 {
                   "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
+                    "code": "DELAY_INTEREST"
                   },
-                  "value": "18"
+                  "value": "2.5"
                 },
                 {
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
                   "value": "NEFT"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "32"
                 }
               ]
             }
           ],
-          "type": "PRE-ORDER"
-        }
-      ],
-      "provider": {
-        "descriptor": {
-          "name": "Kochi Metro Rail Limited"
-        },
-        "id": "triffy-kmrl-rail-metro",
-        "time": {
-          "range": {
-            "end": "2024-12-03T17:00:00Z",
-            "start": "2024-12-02T23:00:00Z"
+          "params": {
+            "bank_code": "SBI5448270",
+            "bank_account_number": "562391273445",
+            "virtual_payment_address": "8667777799@oksbi"
           }
         }
-      },
-      "quote": {
-        "breakup": [
-          {
-            "item": {
-              "id": "sjt-aluva-pulinchudu",
-              "price": {
-                "currency": "INR",
-                "value": "9"
-              },
-              "quantity": {
-                "selected": {
-                  "count": 2
-                }
-              }
-            },
-            "price": {
-              "currency": "INR",
-              "value": "18"
-            },
-            "title": "BASE_FARE"
-          }
-        ],
-        "price": {
-          "currency": "INR",
-          "value": "18"
-        }
-      }
+      ]
     }
   }
 }
