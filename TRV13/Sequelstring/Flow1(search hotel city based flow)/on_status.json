@@ -1,0 +1,314 @@
+[
+  {
+    "context": {
+      "domain": "ONDC:TRV13",
+      "location": {
+        "country": {
+          "code": "IND"
+        },
+        "city": {
+          "code": "std*"
+        }
+      },
+      "version": "2.0.0",
+      "action": "on_status",
+      "transaction_id": "e125785c-0e3b-43bc-a0a1-8682a68e6faf",
+      "message_id": "d8322283-ea9b-4acc-ada0-1a9c4046804b",
+      "timestamp": "2025-01-21T10:04:16.572Z",
+      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+      "bap_id": "ondc.sequelstring.com/buyer/protocol",
+      "ttl": "PT30S",
+      "bpp_id": "ondc.sequelstring.com/seller/protocol",
+      "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+    },
+    "message": {
+      "order": {
+        "id": "e2d72c76-c731-4550-a425-a3b0b08e2a60",
+        "status": "COMPLETE",
+        "provider": {
+          "id": "hotel_chain_123"
+        },
+        "items": [
+          {
+            "id": "29b6c06e-2099-4b25-80bf-da7fbb8d9ba3",
+            "location_ids": ["L1"],
+            "quantity": {
+              "selected": {
+                "count": 1
+              }
+            },
+            "add_ons": [
+              {
+                "id": "Half-Board"
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "2662.00"
+          },
+          "breakup": [
+            {
+              "item": {
+                "id": "29b6c06e-2099-4b25-80bf-da7fbb8d9ba3",
+                "quantity": {
+                  "selected": {
+                    "count": 1
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "2000.00"
+                },
+                "add_ons": [
+                  {
+                    "id": "Half-Board",
+                    "price": {
+                      "currency": "INR",
+                      "value": "200.00"
+                    }
+                  }
+                ]
+              },
+              "title": "Deluxe Room accommodation with Breakfast Included",
+              "price": {
+                "currency": "INR",
+                "value": "2200.00"
+              }
+            },
+            {
+              "title": "Service Tax @ 9%",
+              "price": {
+                "currency": "INR",
+                "value": "198.00"
+              }
+            },
+            {
+              "title": "GST @ 12%",
+              "price": {
+                "currency": "INR",
+                "value": "264.00"
+              }
+            }
+          ],
+          "ttl": "P1D"
+        },
+        "billing": {
+          "name": "Nirdosh Chauhan",
+          "address": "Dwarka, Delhi-110075",
+          "state": {
+            "name": "Delhi"
+          },
+          "city": {
+            "name": "Delhi"
+          },
+          "organization": {
+            "descriptor": {
+              "name": "ONDC"
+            },
+            "address": "ONDC, Delhi-110049"
+          },
+          "email": "email@ondc.org",
+          "phone": "1704380085",
+          "tax_id": "GSTIN1234567890"
+        },
+        "fulfillments": [
+          {
+            "id": "6517b1ea-436f-44e2-8f59-1290b0e2c900",
+            "customer": {
+              "person": {
+                "name": "Shani Pandey",
+                "age": "23",
+                "dob": "2000-14-10",
+                "gender": "M",
+                "creds": [
+                  {
+                    "id": "12312413",
+                    "type": "AADHAAR"
+                  }
+                ]
+              },
+              "contact": {
+                "phone": "+91-9988776655",
+                "email": "ashu@gmail.com"
+              }
+            }
+          }
+        ],
+        "payments": [
+          {
+            "id": "276a5f55-767a-4bdf-a265-b25e11aff5fd",
+            "type": "PART-PAYMENT",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "LINKED-PAYMENTS"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "pymnt-9h4nt3sgw"
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "pymnt-cffbhtcl5"
+                    },
+                    "value": "2"
+                  }
+                ]
+              }
+            ],
+            "status": "NOT-PAID"
+          },
+          {
+            "id": "pymnt-9h4nt3sgw",
+            "type": "PRE-ORDER",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "ADV-DEPOSIT"
+                }
+              }
+            ],
+            "params": {
+              "currency": "INR",
+              "amount": "2000.00",
+              "bank_code": "HDFC0001234",
+              "bank_account_number": "123456789012",
+              "virtual_payment_address": "sellerapp@hdfcbank",
+              "transaction_id": "b6c238c2-7390-47d1-96eb-f400bb392ee3"
+            },
+            "collected_by": "BAP",
+            "status": "PAID"
+          },
+          {
+            "id": "pymnt-cffbhtcl5",
+            "type": "ON-FULFILLMENT",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "FINAL-PAYMENT"
+                }
+              }
+            ],
+            "params": {
+              "amount": "1025.00",
+              "currency": "INR",
+              "bank_code": "Bank Code of Seller App",
+              "bank_account_number": "Bank Account Number of Seller App",
+              "virtual_payment_address": " VPA of Seller App",
+              "transaction_id": "8ffbf3fa-fb25-45c0-bbdb-3836e2034ffb"
+            },
+            "collected_by": "BPP",
+            "status": "PAID",
+            "time": {
+              "timestamp": "2025-01-21T10:04:16.572Z"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BAP_TERMS"
+            },
+            "list": [
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": ""
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS_NEW"
+                },
+                "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+              },
+              {
+                "descriptor": {
+                  "code": "EFFECTIVE_DATE"
+                },
+                "value": "2024-04-01T18:30:00.000Z"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "3"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "BPP_TERMS"
+            },
+            "list": [
+              {
+                "descriptor": {
+                  "code": "MAX_LIABILITY"
+                },
+                "value": "2"
+              },
+              {
+                "descriptor": {
+                  "code": "MAX_LIABILITY_CAP"
+                },
+                "value": "1000.00"
+              },
+              {
+                "descriptor": {
+                  "code": "MANDATORY_ARBITRATION"
+                },
+                "value": "false"
+              },
+              {
+                "descriptor": {
+                  "code": "COURT_JURISDICTION"
+                },
+                "value": "New Delhi"
+              },
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "1.5"
+              },
+              {
+                "descriptor": {
+                  "code": "TAX_NUMBER"
+                },
+                "value": "GSTIN1234567890"
+              }
+            ]
+          }
+        ],
+        "updated_at": "2025-01-21T10:04:16.572Z",
+        "documents": [
+          {
+            "descriptor": {
+              "code": "BOOKING_CONFIRMATION"
+            },
+            "url": "https://confirmation-O1.ondc.hotelbpp.com"
+          },
+          {
+            "descriptor": {
+              "code": "INVOICE"
+            },
+            "url": "https://invoice-O1.ondc.hotelbpp.com"
+          }
+        ]
+      }
+    }
+  }
+]
