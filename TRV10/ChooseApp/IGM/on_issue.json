@@ -1,0 +1,238 @@
+{
+  "context": {
+    "ttl": "PT10M",
+    "action": "on_issue",
+    "bap_id": "backend.choosecabs.com",
+    "bpp_id": "igm-mock-service.ondc.org/seller_protocol_server_preprod",
+    "domain": "ONDC:RET10",
+    "bap_uri": "https://backend.choosecabs.com/api/trv10",
+    "bpp_uri": "https://igm-mock-service.ondc.org/seller_protocol_server_preprod",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "timestamp": "2025-01-22T13:52:13.926Z",
+    "message_id": "fc89191a-2f6f-480d-87c4-d4dcd5f79fb1",
+    "transaction_id": "83855a86-438e-4306-9df5-a1bdd3474132"
+  },
+  "message": {
+    "issue": {
+      "id": "9b7ae988-4b42-47cd-90db-8594c4c4ad97",
+      "refs": [
+        {
+          "ref_id": "11197a8d-70a8-4f97-97cf-8de5bb45500c",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "OD_101",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "1bd9df96-bf28-4e32-97d4-841ef2311819",
+          "ref_type": "FULFILMENT"
+        },
+        {
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "1",
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "message.order.items"
+              }
+            }
+          ],
+          "ref_id": "I3",
+          "ref_type": "ITEM"
+        }
+      ],
+      "level": "ISSUE",
+      "actors": [
+        {
+          "id": "45",
+          "info": {
+            "org": {
+              "name": "backend.choosecabs.com::ONDC:TRV10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "email": "sam@yahoo.com",
+              "phone": "9879879870"
+            }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "backend.choosecabs.com",
+          "info": {
+            "org": {
+              "name": "backend.choosecabs.com::ONDC:TRV10"
+            },
+            "person": {
+              "name": "Dilshad Shaikh"
+            },
+            "contact": {
+              "email": "support@choosecabs.com",
+              "phone": "9450394039"
+            }
+          },
+          "type": "INTERFACING-NP"
+        },
+        {
+          "id": "NP2",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            }
+          },
+          "type": "TRANSACTION-COUNTERPARTY-NP",
+          "person": {
+            "name": "Jane Doe"
+          },
+          "contact": {
+            "email": "respondentapp@respond.com",
+            "phone": 9450394140
+          }
+        }
+      ],
+      "status": "RESOLVED",
+      "actions": [
+        {
+          "id": "179ced69-93e5-4b6f-9b16-bbc42fb9d479",
+          "action_by": "backend.choosecabs.com",
+          "updated_at": "2025-01-22T13:51:00.870Z",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "ANVRB1",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "NP2",
+          "updated_at": "2025-01-22T13:52:13.926Z",
+          "description": {
+            "code": "RESOLVED",
+            "name": "REFUND"
+          },
+          "actor_detail": {
+            "name": "Seller SAM"
+          }
+        }
+      ],
+      "source_id": "45",
+      "description": {
+        "code": "ITM004",
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ],
+        "long_desc": "Issue With Boooking",
+        "short_desc": "Issue With Boooking",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        }
+      },
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R1",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "I1",
+                  "descriptor": {
+                    "code": "ITEM"
+                  }
+                },
+                {
+                  "value": "200",
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              }
+            }
+          ],
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R2",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "I1",
+                  "descriptor": {
+                    "code": "ITEM"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              }
+            }
+          ],
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2"
+        }
+      ],
+      "complainant_id": "640b120f-603d-4993-bde8-0a643b13f792",
+      "last_action_id": "ANVRB1",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      }
+    },
+    "update_target": {
+      "path": "issue.actions",
+      "actions": "APPENDED"
+    }
+  }
+}
