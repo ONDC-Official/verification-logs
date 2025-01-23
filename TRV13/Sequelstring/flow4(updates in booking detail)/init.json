@@ -1,0 +1,191 @@
+{
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "version": "2.0.0",
+    "action": "init",
+    "transaction_id": "85bb0309-eb30-4f4b-8386-95365f21fd70",
+    "message_id": "f474ad80-51e9-409d-9bb1-979092ad47b7",
+    "timestamp": "2025-01-23T17:57:01.834Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "hotel_chain_123"
+      },
+      "items": [
+        {
+          "id": "370f3898-f33d-4429-95bf-77155c703c12",
+          "location_ids": ["L1"],
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "add_ons": [
+            {
+              "id": "Half-Board"
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "id": "bc185745-b9f5-4143-895f-b068b9d4f2a2",
+          "type": "PART-PAYMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "LINKED-PAYMENTS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "pymnt-kfv27hzlg"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "pymnt-c0cnx4cyx"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ],
+          "status": "NOT-PAID"
+        },
+        {
+          "id": "pymnt-kfv27hzlg",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ADV-DEPOSIT"
+              }
+            }
+          ],
+          "params": {
+            "currency": "INR",
+            "amount": "901.8856"
+          },
+          "collected_by": "BAP"
+        },
+        {
+          "id": "pymnt-c0cnx4cyx",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FINAL-PAYMENT"
+              }
+            }
+          ],
+          "params": {
+            "amount": "1760.1144",
+            "currency": "INR",
+            "bank_code": "SBIN0001234",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "buyerapp@upi"
+          },
+          "collected_by": "BPP"
+        }
+      ],
+      "billing": {
+        "name": "Nirdosh Chauhan",
+        "address": "Dwarka, Delhi-110075",
+        "state": {
+          "name": "Delhi"
+        },
+        "city": {
+          "name": "Delhi"
+        },
+        "organization": {
+          "descriptor": {
+            "name": "ONDC"
+          },
+          "address": "ONDC, Delhi-110049"
+        },
+        "email": "email@ondc.org",
+        "phone": "1704380085",
+        "tax_id": "GSTIN1234567890"
+      },
+      "fulfillments": [
+        {
+          "id": "f86620bd-e855-442d-a175-862519ba4973",
+          "customer": {
+            "person": {
+              "name": "Shani Pandey",
+              "age": "23",
+              "dob": "2000-14-10",
+              "gender": "M",
+              "creds": [
+                {
+                  "id": "12312413",
+                  "type": "AADHAAR"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "ashu@gmail.com"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": ""
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS_NEW"
+              },
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "EFFECTIVE_DATE"
+              },
+              "value": "2024-04-01T18:30:00.000Z"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "BUYER_FINDER_FEES"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "3"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
