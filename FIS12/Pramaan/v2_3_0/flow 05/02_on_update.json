@@ -11,9 +11,9 @@
     },
     "version": "2.3.0",
     "action": "on_update",
-    "transaction_id": "a0f5115b-45c8-4700-a110-78027932292f",
-    "message_id": "250d6ca8-7b37-43d4-a760-e1a1069c5d86",
-    "timestamp": "2025-01-02T07:08:08.652Z",
+    "transaction_id": "2fd8dc29-ac8c-4abf-adaf-27130c832488",
+    "message_id": "7d94fefc-1d8b-4f09-83cf-d3fce6a6768c",
+    "timestamp": "2025-01-23T04:29:59.530Z",
     "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
     "bap_id": "ondc.sequelstring.com/buyer/protocol",
     "ttl": "PT10M",
@@ -194,7 +194,7 @@
               "descriptor": {
                 "code": "SETTLEMENT_WINDOW"
               },
-              "value": "PT30D"
+              "value": "P30D"
             },
             {
               "descriptor": {
@@ -236,65 +236,23 @@
         }
       ],
       "quote": {
-        "id": "c9bee7bf-a699-414b-8cd2-9cd5518efab9",
+        "id": "e5a6f104-0cf8-4fa4-a384-d2782e88ac09",
         "price": {
           "currency": "INR",
-          "value": "2792"
+          "value": "22700"
         },
         "breakup": [
           {
-            "title": "WOKRKING_CAPITAL_LIMIT",
+            "title": "PRINCIPAL_AMOUNT",
             "price": {
-              "value": "1100000",
+              "value": "20000",
               "currency": "INR"
             }
           },
           {
-            "title": "CURRENT_UTLIZATION",
+            "title": "INTEREST_AMOUNT",
             "price": {
-              "value": "0",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "PROCESSING_FEE",
-            "price": {
-              "value": "1100",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "INSURANCE_CHARGES",
-            "price": {
-              "value": "1100",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OTHER_UPFRONT_CHARGES",
-            "price": {
-              "value": "11000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OTHER_CHARGES",
-            "price": {
-              "value": "1100",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OUTSTANDING_PRINCIPAL",
-            "price": {
-              "value": "0",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OUTSTANDING_INTEREST",
-            "price": {
-              "value": "0",
+              "value": "2700",
               "currency": "INR"
             }
           }
@@ -303,17 +261,22 @@
       },
       "items": [
         {
-          "id": "6b8d7bcc-04a8-4566-ba9b-75239d19b5a1",
+          "id": "17d38cf0-1289-42f1-919e-3b5952baebab",
           "parent_item_id": "3b55859a-0d94-427e-b1ef-9deab8cb6928",
           "descriptor": {
             "code": "WORKING_CAPITAL_LOAN",
             "name": "Working Capital Loan"
           },
-          "category_ids": ["101125"],
-          "fulfillment_ids": ["1333", "1334"],
+          "category_ids": [
+            "101125"
+          ],
+          "fulfillment_ids": [
+            "1333",
+            "1334"
+          ],
           "price": {
             "currency": "INR",
-            "value": "2792"
+            "value": "1102192"
           },
           "tags": [
             {
@@ -477,7 +440,7 @@
               },
               "list": [
                 {
-                  "value": "6b8d7bcc-04a8-4566-ba9b-75239d19b5a1"
+                  "value": "17d38cf0-1289-42f1-919e-3b5952baebab"
                 }
               ]
             }
@@ -486,27 +449,107 @@
       ],
       "fulfillments": [
         {
-          "id": "1333",
           "customer": {
             "person": {
-              "name": "John Doe",
+              "name": "John",
+              "dob": "1998-10-12",
+              "gender": "Male",
               "creds": [
                 {
-                  "type": "OTP",
-                  "id": "123456"
+                  "id": "BAU80Y252U",
+                  "type": "PAN"
                 }
               ]
             },
             "contact": {
-              "email": "john.doe@gmail.com",
-              "phone": "7888888888"
+              "email": "john@gmail.com",
+              "phone": "6396796610"
             }
-          }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "CHECKLISTS",
+                "name": "Applicant Checklists"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "KYC",
+                    "name": "KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "E_SIGN",
+                    "name": "E Sign Required"
+                  },
+                  "value": "COMPLETED"
+                }
+              ]
+            }
+          ],
+          "id": "1333"
+        },
+        {
+          "id": "1334",
+          "customer": {
+            "person": {
+              "name": "Co Applicant",
+              "dob": "1998-11-12",
+              "gender": "Male",
+              "creds": [
+                {
+                  "id": "BXU87Y252U",
+                  "type": "PAN"
+                }
+              ]
+            },
+            "contact": {
+              "email": "applicant@gmail.com",
+              "phone": "7070809760"
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "CHECKLISTS",
+                "name": "Applicant Checklists"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "KYC",
+                    "name": "KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "E_SIGN",
+                    "name": "E Sign Required"
+                  },
+                  "value": "COMPLETED"
+                }
+              ]
+            }
+          ]
         }
       ],
       "payments": [
         {
-          "id": "b34c025e-035c-4cb6-9011-8ac50a357c10",
+          "collected_by": "BPP",
+          "params": {
+            "amount": "1000",
+            "currency": "INR"
+          },
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "id": "b57827ab-4f28-4971-aac1-ad4122ad2200"
+        },
+        {
+          "id": "295af95f-0c3c-4c1e-8c18-d90c31e16982",
           "params": {
             "amount": "0",
             "currency": "INR"
@@ -516,21 +559,11 @@
             "label": "FORECLOSURE"
           },
           "type": "POST_FULFILLMENT"
-        },
-        {
-          "id": "e3a19129-bdf3-4523-b6c5-31e33dd28367",
-          "collected_by": "BPP",
-          "params": {
-            "amount": "1000",
-            "currency": "INR"
-          },
-          "status": "PAID",
-          "type": "PRE-ORDER"
         }
       ],
-      "created_at": "2025-01-02T07:06:47.368Z",
-      "updated_at": "2025-01-02T07:06:47.368Z",
-      "id": "c9bee7bf-a699-414b-8cd2-9cd5518efab9",
+      "created_at": "2025-01-23T04:28:32.596Z",
+      "updated_at": "2025-01-23T04:28:32.596Z",
+      "id": "cb3e34eb-2dda-4514-bc1f-6f3f248a94cf",
       "documents": [
         {
           "descriptor": {
@@ -543,24 +576,27 @@
           "url": "https://lender.com/loan/loan-agreement/O1.pdf"
         }
       ],
+      "ref_order_ids": [
+        "cb3e34eb-2dda-4514-bc1f-6f3f248a94cf"
+      ],
       "cancellation_terms": [
-        [
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "SANCTIONED"
-              }
-            },
-            "external_ref": {
-              "mimetype": "text/html",
-              "url": "https://bpp.credit.becknprotocol.org/tnc.html"
-            },
-            "cancellation_fee": {
-              "percentage": "3%"
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "SANCTIONED"
             }
+          },
+          "cancellation_fee": {
+            "percentage": "3%"
           }
-        ]
+        },
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://bpp.credit.becknprotocol.org/tnc.html"
+          }
+        }
       ]
     }
-  }
+  } 
 }
