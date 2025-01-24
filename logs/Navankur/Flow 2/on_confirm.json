@@ -9,24 +9,29 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "on_confirm",
         "version": "2.0.2",
         "bap_id": "mock.ondc.org/api",
         "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "9bc65313-8e36-4752-860f-c9c4152dde3e",
-        "message_id": "843f64d2-59dd-47c5-be35-02b79b74608f",
-        "timestamp": "2025-01-14T11:43:13.130Z",
+        "transaction_id": "8583c5d3-6d12-4a89-b6bc-2a1917304022",
+        "message_id": "9232a711-4b88-4077-907a-eb63ce34dab1",
+        "timestamp": "2025-01-24T13:17:39.441Z",
         "ttl": "PT30S",
         "bpp_id": "preprod-ondc.khetisauda.com",
         "bpp_uri": "https://preprod-ondc.khetisauda.com"
     },
     "message": {
         "order": {
+            "id": "8e89ed20-a9a7-49dd-9a9e-6721424bea72",
+            "state": "Created",
             "provider": {
-                "id": "P9876"
-            },
-            "provider_location": {
-                "id": "67580ba80f5cad8920d74a81"
+                "id": "P9080",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ],
+                "rateable": true
             },
             "items": [
                 {
@@ -38,33 +43,7 @@
                         "selected": {
                             "count": 200
                         }
-                    },
-                    "add_ons": [
-                        {
-                            "id": "78787723"
-                        }
-                    ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "free text on Item Customization"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "free text on packaging Customization"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
             "billing": {
@@ -83,12 +62,38 @@
             "fulfillments": [
                 {
                     "id": "F1",
-                    "type": "Delivery",
                     "@ondc/org/provider_name": "Satya Traders",
-                    "@ondc/org/category": "Delivery",
-                    "@ondc/org/TAT": "P7D",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "type": "Delivery",
                     "tracking": false,
                     "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "67580ba80f5cad8920d74a81",
+                                "descriptor": {
+                                    "name": "Satya Traders"
+                                },
+                                "gps": "1.380621746811, 103.7463643843"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-01-24T13:17:27.733Z",
+                                    "end": "2023-02-13T10:30:00.000Z"
+                                }
+                            },
+                            "instructions": {
+                                "name": "Status for pickup",
+                                "short_desc": "Pickup Confirmation Code"
+                            },
+                            "contact": {
+                                "phone": "9886098860"
+                            }
+                        },
                         {
                             "type": "end",
                             "location": {
@@ -109,7 +114,8 @@
                                 "phone": "9886098860"
                             }
                         }
-                    ]
+                    ],
+                    "rateable": true
                 }
             ],
             "quote": {
@@ -233,14 +239,18 @@
             ],
             "payments": [
                 {
+                    "params": {
+                        "currency": "INR",
+                        "amount": "20000"
+                    },
+                    "status": "NOT-PAID",
                     "type": "PRE-FULFILLMENT",
-                    "collected_by": "BAP",
-                    "uri": "https://snp.com/pg",
+                    "collected_by": "BPP",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
                     "@ondc/org/buyer_app_finder_fee_amount": "0",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "10.00",
+                    "@ondc/org/withholding_amount": "0",
                     "@ondc/org/settlement_details": [
                         {
                             "settlement_counterparty": "seller-app",
@@ -252,33 +262,6 @@
                             "beneficiary_name": "Satyapal",
                             "bank_name": "State Bank of India",
                             "branch_name": "Kharagpur"
-                        }
-                    ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BPP_payment"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "signature"
-                                    },
-                                    "value": "xxxxxxxxxxxxxx"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "dsa"
-                                    },
-                                    "value": "ED25519"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ttl"
-                                    },
-                                    "value": "PT30M"
-                                }
-                            ]
                         }
                     ]
                 }
@@ -339,8 +322,23 @@
                             "value": "0"
                         }
                     ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
                 }
-            ]
+            ],
+            "created_at": "2025-01-24T13:17:27.733Z",
+            "updated_at": "2025-01-24T13:17:39.442Z"
         }
     }
 }

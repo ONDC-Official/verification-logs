@@ -1,35 +1,74 @@
 {
     "context": {
         "domain": "ONDC:RET10",
-        "country": "IND",
-        "city": "std:044",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
         "action": "search",
-        "core_version": "1.2.0",
-        "bap_id": "preprod.bap.kanivin.com",
-        "bap_uri": "https://preprod.bap.kanivin.com",
-        "transaction_id": "55415da8-d271-42d3-a568-7d12d92c4ad9",
-        "message_id": "55efcafd-2cbc-4bb9-ac3d-9cb0b6882269",
-        "timestamp": "2025-01-14T12:18:56.314731307Z"
+        "version": "2.0.2",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/retail/bap",
+        "transaction_id": "822b30d4-f5da-4901-939d-c1148ec0a5e3",
+        "message_id": "5061a290-8346-4d4a-9d2e-dd5c092f349d",
+        "timestamp": "2025-01-24T12:03:40.051Z",
+        "ttl": "PT30S"
     },
     "message": {
         "intent": {
-            "item": {
-                "descriptor": {
-                    "name": "coffee"
-                }
+            "category": {
+                "id": "RET10-*"
             },
             "fulfillment": {
-                "type": "Delivery",
-                "end": {
-                    "location": {
-                        "gps": "13.024222, 77.596356"
-                    }
-                }
+                "type": "Delivery"
             },
             "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3"
-            }
+                "type": "ON-FULFILLMENT"
+            },
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "finder_fee_type"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "finder_fee_amount"
+                            },
+                            "value": "10"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "xxxxxxxxxxxxxxx"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

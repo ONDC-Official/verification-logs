@@ -1,30 +1,138 @@
 {
     "context": {
         "domain": "ONDC:RET10",
-        "country": "IND",
-        "city": "std:124",
-        "core_version": "1.2.0",
-        "action": "search",
-        "transaction_id": "da7caa48-b745-4ecd-b69e-4c2afa69ce11",
-        "message_id": "3f0d7c14-2ee0-40c4-ba29-629288d6b835",
-        "timestamp": "2025-01-15T11:12:19.730Z",
-        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
-        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
-        "ttl": "PT30S"
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "init",
+        "version": "2.0.2",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/retail/bap",
+        "transaction_id": "f0fe7094-a3ac-479b-90b6-746bcbcee4cd",
+        "message_id": "d41c8b65-b0ee-450b-a1d6-3d06587d6cbd",
+        "timestamp": "2025-01-24T13:32:45.218Z",
+        "ttl": "PT30S",
+        "bpp_id": "preprod-ondc.khetisauda.com",
+        "bpp_uri": "https://preprod-ondc.khetisauda.com"
     },
     "message": {
-        "intent": {
-            "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3"
+        "order": {
+            "provider": {
+                "id": "P9080",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ]
             },
+            "items": [
+                {
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "id": "6776841d49c82277c6c4ab8e",
+                    "quantity": {
+                        "selected": {
+                            "count": 200
+                        }
+                    },
+                    "add_ons": [
+                        {
+                            "id": "78787723"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "free text on Item Customization"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "free text on packaging Customization"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "ONDC buyer",
+                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+                "state": {
+                    "name": "Karnataka"
+                },
+                "city": {
+                    "name": "Bengaluru"
+                },
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "email": "nobody@nomail.com",
+                "phone": "9886098860"
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "12.974002,77.613458",
+                                "address": "My House #, My buildin",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "560001",
+                                "state": {
+                                    "name": "Karnataka"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
+                }
+            ],
             "tags": [
                 {
-                    "code": "catalog_full",
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
                     "list": [
                         {
-                            "code": "payload_type",
-                            "value": "inline"
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "xxxxxxxxxxxxxxx"
                         }
                     ]
                 }
