@@ -1,0 +1,344 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_confirm",
+        "version": "2.0.2",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/retail/bap",
+        "transaction_id": "b67446c8-6e88-4d0b-a2e5-05da08e55b34",
+        "message_id": "e41afa4f-c75f-44f0-9795-a271cd8c357c",
+        "timestamp": "2025-01-14T12:38:06.742Z",
+        "ttl": "PT30S",
+        "bpp_id": "preprod-ondc.khetisauda.com",
+        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+    },
+    "message": {
+        "order": {
+            "id": "f71d669d-f1c8-424b-bbf6-54aa5d35eed1",
+            "state": "Created",
+            "provider": {
+                "id": "P9876",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ],
+                "rateable": true
+            },
+            "items": [
+                {
+                    "id": "6776841d49c82277c6c4ab8e",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 200
+                        }
+                    }
+                }
+            ],
+            "billing": {
+                "name": "ONDC buyer",
+                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+                "state": {
+                    "name": "Karnataka"
+                },
+                "city": {
+                    "name": "Bengaluru"
+                },
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "email": "nobody@nomail.com",
+                "phone": "9886098860"
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "@ondc/org/provider_name": "Satya Traders",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "type": "Delivery",
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "67580ba80f5cad8920d74a81",
+                                "descriptor": {
+                                    "name": "Satya Traders"
+                                },
+                                "gps": "1.380621746811, 103.7463643843"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-01-14T12:37:05.989Z",
+                                    "end": "2023-02-13T10:30:00.000Z"
+                                }
+                            },
+                            "instructions": {
+                                "name": "Status for pickup",
+                                "short_desc": "Pickup Confirmation Code"
+                            },
+                            "contact": {
+                                "phone": "9886098860"
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "12.974002,77.613458",
+                                "address": "My House #, My buildin",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "560001",
+                                "state": {
+                                    "name": "Karnataka"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860"
+                            }
+                        }
+                    ],
+                    "rateable": true
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "20000"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
+                        "@ondc/org/item_quantity": {
+                            "count": 200
+                        },
+                        "title": "Basmati Rice",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20000"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
+                        "title": "Discount",
+                        "@ondc/org/title_type": "discount",
+                        "price": {
+                            "currency": "INR",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "params": {
+                        "currency": "INR",
+                        "amount": "20000"
+                    },
+                    "status": "NOT-PAID",
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "seller-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "upi_address": "",
+                            "settlement_bank_account_no": "32476977544",
+                            "settlement_ifsc_code": "SBIN0000202",
+                            "beneficiary_name": "Satyapal",
+                            "bank_name": "State Bank of India",
+                            "branch_name": "Kharagpur"
+                        }
+                    ]
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "xxxxxxxxxxxxxxx"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "max_liability"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "20000"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "mandatory_arbitration"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Jaunpur"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2025-01-14T12:37:05.989Z",
+            "updated_at": "2025-01-14T12:38:06.742Z"
+        }
+    }
+}
