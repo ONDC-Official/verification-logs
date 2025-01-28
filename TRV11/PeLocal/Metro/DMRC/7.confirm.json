@@ -5,35 +5,35 @@
                 "code": "IND"
             },
             "city": {
-                "code": "std:022"
+                "code": "std:011"
             }
         },
         "domain": "ONDC:TRV11",
-        "action": "init",
+        "action": "confirm",
         "version": "2.0.1",
         "bap_id": "ondc-mobility-pre-prod.pelocal.net",
         "bap_uri": "https://ondc-mobility-pre-prod.pelocal.net/metro/",
-        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-        "transaction_id": "b035b5ae-dd51-455f-9b25-8b8727c92ec1",
-        "message_id": "cd283beb-d2d0-4790-a7d6-45de3aec5715",
-        "timestamp": "2024-12-28T18:21:45.535Z",
+        "bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
+        "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
+        "transaction_id": "4607bfb1-6f6a-4b02-ba18-234ddcfe1113",
+        "message_id": "466613bb-6a12-43f8-91c4-77b839b6d72b",
+        "timestamp": "2025-01-27T18:28:01.987Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "items": [
                 {
-                    "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
+                    "id": "DMRC_133_123_SJT",
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 2
                         }
                     }
                 }
             ],
             "provider": {
-                "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948"
+                "id": "DMRC_5001_1001"
             },
             "billing": {
                 "name": "Vimal Lal V",
@@ -42,9 +42,15 @@
             },
             "payments": [
                 {
+                    "id": "PA1",
                     "collected_by": "BAP",
-                    "status": "NOT-PAID",
+                    "status": "PAID",
                     "type": "PRE-ORDER",
+                    "params": {
+                        "transaction_id": "158be8f9-f901-4afc-ad7b-a4ad9ca14573",
+                        "currency": "INR",
+                        "amount": "80"
+                    },
                     "tags": [
                         {
                             "descriptor": {
@@ -68,27 +74,21 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_AMOUNT"
+                                        "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "23"
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_TYPE"
                                     },
-                                    "value": "NEFT"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "DELAY_INTEREST"
-                                    },
-                                    "value": "0.00"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "STATIC_TERMS"
-                                    },
-                                    "value": "https://api.example-bap.com/booking/terms"
+                                    "value": "UPI"
                                 },
                                 {
                                     "descriptor": {
@@ -100,7 +100,25 @@
                                     "descriptor": {
                                         "code": "COURT_JURISDICTION"
                                     },
-                                    "value": "Mumbai"
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://www.abc.com/settlement-terms/"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "0.00"
                                 }
                             ]
                         }
