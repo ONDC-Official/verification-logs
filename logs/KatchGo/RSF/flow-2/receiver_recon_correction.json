@@ -1,13 +1,5 @@
 {
     "context": {
-        "location": {
-            "country": {
-                "code": "IND"
-            },
-            "city": {
-                "code": "std:02712"
-            }
-        },
         "domain": "ONDC:TRV11",
         "action": "receiver_recon",
         "ttl": "PT2S",
@@ -29,15 +21,17 @@
                     "id": "ORDER2",
                     "collector_app_id": "katch.co.in",
                     "receiver_app_id": "katch.co.in",
-                    "order_state": "Completed",
-                    "provider_id": "PROVIDER21",
+                    "state": "Completed",
                     "provider": {
                         "name": {
                             "name": "Yogi Bus Service",
                             "code": "PROVIDER21"
-                        }
+                        },
+                        "address": "Gandhinagar"
                     },
                     "payment": {
+                        "uri": "",
+                        "tl_method": "http/get",
                         "type": "PRE-ORDER",
                         "status": "PAID",
                         "params": {
@@ -52,8 +46,8 @@
                         "@ondc/org/buyer_app_finder_fee_amount": "0",
                         "@ondc/org/withholding_amount": "0",
                         "@ondc/org/withholding_amount_status": "Assert",
-                        "@ondc/org/return_window": null,
-                        "@ondc/org/return_window_status": null,
+                        "@ondc/org/return_window": "P0D",
+                        "@ondc/org/return_window_status": "Assert",
                         "@ondc/org/settlement_basis": "Delivery",
                         "@ondc/org/settlement_basis_status": "Assert",
                         "@ondc/org/settlement_window": "P7D",
@@ -61,7 +55,7 @@
                         "@ondc/org/settlement_details": [
                             {
                                 "settlement_counterparty": "seller-app",
-                                "settlement_phase": null,
+                                "settlement_phase": "sale-amount",
                                 "settlement_amount": 10,
                                 "settlement_type": "upi",
                                 "settlement_bank_account_no": "38086195642",
@@ -92,7 +86,7 @@
                     "payer_details": {
                         "payer_name": "KatchGo",
                         "payer_address": "Ahmedabad",
-                        "payer_account_no": 987456321,
+                        "payer_account_no": "987456321",
                         "payer_bank_code": "KatchGo",
                         "payer_virtual_payment_address": "abcd@upi"
                     },
