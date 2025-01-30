@@ -1,0 +1,273 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "confirm",
+    "version": "2.0.2",
+    "bap_id": "ondc-buyer-api.trafyn.site",
+    "bap_uri": "https://ondc-buyer-api.trafyn.site/",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "transaction_id": "870b7c33-0f77-4ce0-9bbb-409fcae1cd31",
+    "message_id": "7f78981c-9469-4f02-b84e-05921c732f7b",
+    "timestamp": "2024-02-19T10:43:20.086Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "ninjacart_870b7c33-0f77-4ce0-9bbb-409fcae1cd31",
+      "state": "Created",
+      "provider": {
+        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "8787687687943",
+          "quantity": {
+            "selected": {
+              "count": 2
+            }
+          },
+          "fulfillment_ids": [
+            "1"
+          ],
+          "location_ids": [
+            "L1"
+          ]
+        }
+      ],
+      "billing": {
+        "name": "TEST",
+        "address": "ABC",
+        "state": {
+          "name": "Karnataka"
+        },
+        "city": {
+          "name": "Bangalore"
+        },
+        "email": "test@gmail.com",
+        "phone": "9123456789",
+        "tax_id": "22AAAAA0000A1Z5"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "stops": [
+            {
+              "location": {
+                "gps": "13.0963045,80.2865916",
+                "address": "ABC",
+                "city": {
+                  "name": "Bangalore"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "560103"
+              },
+              "type": "end",
+              "contact": {
+                "phone": "9123456789",
+                "email": "test@gmail.com"
+              },
+              "customer": {
+                "person": {
+                  "name": "TEST"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "2610.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "1300.00"
+              }
+            },
+            "title": "Ghee",
+            "price": {
+              "currency": "INR",
+              "value": "2600.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687943",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "10.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P2D"
+      },
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "params": {
+            "transaction_id": "4b74d61e-d409-436e-8157-17ebfb0a3e9d",
+            "amount": "2610.00",
+            "currency": "INR"
+          },
+          "type": "PRE-FULFILLMENT",
+          "status": "PAID",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "neft",
+              "settlement_bank_account_no": "1234567890",
+              "settlement_ifsc_code": "HDFC0000102",
+              "bank_name": "Test Bank",
+              "beneficiary_name": "Thomson"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-02-19T10:43:20.086Z",
+      "updated_at": "2024-02-19T10:43:20.086Z",
+      "tags": [
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "max_liability_cap"
+              },
+              "value": "10000"
+            },
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "court_jurisdiction"
+              },
+              "value": "Kerala"
+            },
+            {
+              "descriptor": {
+                "code": "delay_interest"
+              },
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "gst"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "4be81933-f5b3-4116-a774-9628979cc489"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "bap_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "accept_bpp_terms"
+              },
+              "value": "Y"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

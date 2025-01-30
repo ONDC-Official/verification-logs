@@ -1,0 +1,257 @@
+{
+    "context": {
+        "ttl": "PT300S",
+        "action": "on_update",
+        "bap_id": "openbox.preprod.triffy.in",
+        "bpp_id": "openbox.preprod.triffy.in",
+        "domain": "ONDC:TRV10",
+        "bap_uri": "https://openbox.preprod.triffy.in/buyer",
+        "bpp_uri": "https://openbox.preprod.triffy.in/seller",
+        "version": "2.0.0",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "timestamp": "2023-12-07T19:37:26.122Z",
+        "message_id": "215c65ef-2403-4368-81e2-5e8c62487e36",
+        "transaction_id": "c10d67ed-6aa7-4d9a-992d-052b5e8bc257"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "2d3caeb0-d30a-4228-86d3-8bdb894b7b33",
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "2",
+                                    "descriptor": {
+                                        "code": "MIN_FARE_DISTANCE_KM"
+                                    }
+                                },
+                                {
+                                    "value": "15",
+                                    "descriptor": {
+                                        "code": "PER_KM_CHARGE"
+                                    }
+                                },
+                                {
+                                    "value": "10",
+                                    "descriptor": {
+                                        "code": "PICKUP_CHARGE"
+                                    }
+                                },
+                                {
+                                    "value": "0",
+                                    "descriptor": {
+                                        "code": "WAITING_CHARGE_PER_MIN"
+                                    }
+                                },
+                                {
+                                    "value": "1.5",
+                                    "descriptor": {
+                                        "code": "NIGHT_CHARGE_MULTIPLIER"
+                                    }
+                                },
+                                {
+                                    "value": "23:00:00",
+                                    "descriptor": {
+                                        "code": "NIGHT_SHIFT_START_TIME"
+                                    }
+                                },
+                                {
+                                    "value": "05:00:00",
+                                    "descriptor": {
+                                        "code": "NIGHT_SHIFT_END_TIME"
+                                    }
+                                },
+                                {
+                                    "value": "40",
+                                    "descriptor": {
+                                        "code": "MIN_FARE"
+                                    }
+                                }
+                            ],
+                            "display": true,
+                            "descriptor": {
+                                "code": "FARE_POLICY"
+                            }
+                        }
+                    ],
+                    "price": {
+                        "value": "271",
+                        "currency": "INR"
+                    },
+                    "descriptor": {
+                        "code": "RIDE",
+                        "name": "TRIFFY RIDE"
+                    },
+                    "payment_ids": [
+                        "494c580e-4821-4e1f-9ef9-2e5e2f3fa67c"
+                    ],
+                    "fulfillment_ids": [
+                        "dc1e7472-321b-43a1-bb06-04397d449a51"
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "70",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "value": "40",
+                            "currency": "INR"
+                        },
+                        "title": "BASE_CHARGE"
+                    },
+                    {
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "DISTANCE_CHARGE"
+                    },
+                    {
+                        "price": {
+                            "value": "10",
+                            "currency": "INR"
+                        },
+                        "title": "PICKUP_CHARGE"
+                    },
+                    {
+                        "price": {
+                            "value": "20",
+                            "currency": "INR"
+                        },
+                        "title": "SURGE_CHARGE"
+                    }
+                ]
+            },
+            "payments": [
+                {
+                    "id": "494c580e-4821-4e1f-9ef9-2e5e2f3fa67c",
+                    "type": "ON-FULFILLMENT",
+                    "params": {
+                        "bank_code": "DUMMY_BANK_CODE",
+                        "bank_account_number": "DUMMY_BANK_ACC_NUM",
+                        "virtual_payment_address": "vpa@vpa"
+                    },
+                    "status": "NOT-PAID",
+                    "collected_by": "BPP"
+                }
+            ],
+            "provider": {
+                "id": "Triffy_Provider"
+            },
+            "fulfillments": [
+                {
+                    "id": "dc1e7472-321b-43a1-bb06-04397d449a51",
+                    "type": "DELIVERY",
+                    "agent": {
+                        "person": {
+                            "id": "22a90ff2-072a-40ce-9da8-4c0240be1acb",
+                            "name": "Test User 00005"
+                        },
+                        "contact": {
+                            "phone": "1000000005"
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "RIDE_STARTED"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "type": "START",
+                            "location": {
+                                "gps": "12.961728, 77.659253"
+                            },
+                            "authorization": {
+                                "type": "OTP",
+                                "token": "8478"
+                            }
+                        },
+                        {
+                            "type": "END",
+                            "location": {
+                                "gps": "12.916267, 77.651855"
+                            }
+                        }
+                    ],
+                    "vehicle": {
+                        "make": "Bajaj",
+                        "model": "RE Compact",
+                        "variant": "Auto",
+                        "category": "AUTO_RICKSHAW",
+                        "registration": "TS155126"
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "Vignesh B"
+                        },
+                        "contact": {
+                            "phone": "9677220939"
+                        }
+                    }
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ENROUTE_PICKUP"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ARRIVED_PICKUP"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ASSIGNED"
+                        }
+                    }
+                }
+            ]
+        },
+        "update_target": "order.quote"
+    }
+}
