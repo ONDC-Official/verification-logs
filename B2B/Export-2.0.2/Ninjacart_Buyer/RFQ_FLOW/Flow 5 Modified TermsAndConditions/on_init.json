@@ -1,0 +1,253 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_init",
+    "version": "2.0.2",
+    "bap_id": "ondc-buyer-api.trafyn.site",
+    "bap_uri": "https://ondc-buyer-api.trafyn.site/",
+    "bpp_id": "ondcpreprodb2b.rapidor.co",
+    "bpp_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/seller",
+    "transaction_id": "RFQ_bb2e0ba0-cc75-46dc-926b-99b8f1fc5880",
+    "message_id": "47552328-a00a-4946-ab24-ad5272e3a15d",
+    "timestamp": "2024-02-14T09:30:26.053Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "fe85954f-842c-4e5e-8e59-1e8427e029c5"
+      },
+      "items": [
+        {
+          "id": "8787687687939",
+          "quantity": {
+            "selected": {
+              "count": 5
+            }
+          },
+          "fulfillment_ids": [
+            "1"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM_REQ"
+                  },
+                  "value": "price expecting 140"
+                },
+                {
+                  "descriptor": {
+                    "code": "PACKAGING_REQ"
+                  },
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "TEST",
+        "address": "ABC",
+        "state": {
+          "name": "Karnataka"
+        },
+        "city": {
+          "name": "Bangalore"
+        },
+        "email": "test@gmail.com",
+        "phone": "9123456789",
+        "tax_id": "22AAAAA0000A1Z5"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Rapidor",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P3D",
+          "type": "Delivery",
+          "tracking": false,
+          "stops": [
+            {
+              "location": {
+                "gps": "12.9299185,77.672907",
+                "address": "ABC",
+                "city": {
+                  "name": "Bangalore"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "560103"
+              },
+              "type": "end",
+              "contact": {
+                "phone": "9123456789"
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "735.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/item_quantity": {
+              "count": 5
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "150.00"
+              }
+            },
+            "title": "Mapillai samba rice",
+            "price": {
+              "currency": "INR",
+              "value": "750.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "tax",
+            "title": "Tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "8787687687939",
+            "@ondc/org/title_type": "discount",
+            "title": "Discount",
+            "price": {
+              "currency": "INR",
+              "value": "-25.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charge",
+            "price": {
+              "currency": "INR",
+              "value": "10.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P2D"
+      },
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "ON-FULFILLMENT",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+          "@ondc/org/withholding_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D"
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "bpp_terms"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "max_liability"
+              },
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "max_liability_cap"
+              },
+              "value": "10000"
+            },
+            {
+              "descriptor": {
+                "code": "mandatory_arbitration"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "court_jurisdiction"
+              },
+              "value": "Kerala"
+            },
+            {
+              "descriptor": {
+                "code": "delay_interest"
+              },
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "buyer_id"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "buyer_id_code"
+              },
+              "value": "gst"
+            },
+            {
+              "descriptor": {
+                "code": "buyer_id_no"
+              },
+              "value": "4be81933-f5b3-4116-a774-9628979cc489"
+            }
+          ]
+        }
+      ],
+      "provider_location": {
+        "id": "L1"
+      }
+    }
+  }
+}

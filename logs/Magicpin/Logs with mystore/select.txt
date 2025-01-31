@@ -1,0 +1,155 @@
+----------SELECT request from Mystore----------
+
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.0.0",
+        "action": "select",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc",
+        "transaction_id": "2c8a0551-035e-41d4-874e-0b04bd1a00d7",
+        "message_id": "1c38c46e-84d2-4a7b-9ede-9fe59e9fa13c",
+        "timestamp": "2022-11-07T06:01:58.649Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "12487438",
+                "locations": [
+                    {
+                        "id": "12487438"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "394904_12487438",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "end": {
+                        "location": {
+                            "gps": "28.5176111,77.1793611",
+                            "address": {
+                                "area_code": "110030"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+----------ON_SELECT request to Mystore----------
+
+{
+    "context": {
+        "domain": "nic2004:52110",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.0.0",
+        "bap_id": "beta.mystore.in",
+        "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+        "bpp_id": "ultrontest.magicpin.com/oms_partner/ondc",
+        "bpp_uri": "https://ultrontest.magicpin.com/oms_partner/ondc/",
+        "transaction_id": "2c8a0551-035e-41d4-874e-0b04bd1a00d7",
+        "message_id": "1c38c46e-84d2-4a7b-9ede-9fe59e9fa13c",
+        "timestamp": "2022-11-07T06:01:58.912Z",
+        "key": "Iafh/LuKvNFJ9U7IoeW4CDlqB64RG8w6qqRmbcswz3w=",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "12487438"
+            },
+            "items": [
+                {
+                    "id": "394904_12487438",
+                    "fulfillment_id": "Fulfillment1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "Fulfillment1",
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/TAT": "PT49M",
+                    "@ondc/org/provider_name": "MAGICPIN",
+                    "state": {
+                        "descriptor": {
+                            "name": "Serviceable"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "144"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "394904_12487438",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "title": "Sweet Lassi",
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "10"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "80"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "80"
+                        }
+                    },
+                    {
+                        "@ondc/org/title_type": "tax",
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "4"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charge",
+                        "price": {
+                            "currency": "INR",
+                            "value": "60"
+                        }
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "PT30S"
+            }
+        }
+    }
+}

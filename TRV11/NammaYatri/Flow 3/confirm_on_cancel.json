@@ -1,0 +1,280 @@
+{
+  "context": {
+    "action": "on_cancel",
+    "bap_id": "api.sandbox.beckn.juspay.in/dev/bap/frfs/4b17bd06-ae7e-48e9-85bf-282fb310209c",
+    "bap_uri": "https://api.sandbox.beckn.juspay.in/dev/bap/frfs/4b17bd06-ae7e-48e9-85bf-282fb310209c",
+    "bpp_id": "metrobox.preprod.triffy.in",
+    "bpp_uri": "https://metrobox.preprod.triffy.in/metro/seller",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:0484"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "6646425c-7eed-401a-8dbe-64644be0a18a",
+    "timestamp": "2024-03-13T15:57:36.072Z",
+    "transaction_id": "52c4e497-1f00-4392-bdf9-da4f015096e4",
+    "ttl": "PT300S",
+    "version": "2.0.0"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "name": "Ethan",
+        "phone": "9988776655"
+      },
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-03-13T15:57:36.861Z"
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://kochimetro.org/contactless-ticketing-digital-payment-guidelines/"
+          }
+        }
+      ],
+      "created_at": "2024-03-13T15:54:52.209Z",
+      "fulfillments": [
+        {
+          "id": "ffc3211f-1fc8-4bff-98fe-8414fa2bbc48",
+          "stops": [
+            {
+              "id": "1",
+              "location": {
+                "descriptor": {
+                  "code": "T0DSwjrTHRWWkoSe9cUZXZ80l4MDw7",
+                  "name": "Petta"
+                },
+                "gps": "9.952500, 76.330000"
+              },
+              "type": "START"
+            },
+            {
+              "id": "2",
+              "location": {
+                "descriptor": {
+                  "code": "M4JSk7OupPIKYrnFPFGRWnlUqTrCZm",
+                  "name": "SN Junction"
+                },
+                "gps": "9.954700, 76.346100"
+              },
+              "type": "END"
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "8838.0.0.12"
+                }
+              ]
+            }
+          ],
+          "type": "TRIP",
+          "vehicle": {
+            "category": "METRO"
+          }
+        }
+      ],
+      "id": "TRF023dc9f151bc43aea14d6ce2d265ef2c",
+      "items": [
+        {
+          "category_ids": [
+            "48285276-e2d6-46d5-97f6-922293ab9fe0"
+          ],
+          "descriptor": {
+            "code": "SJT",
+            "name": "Single Journey Ticket"
+          },
+          "fulfillment_ids": [
+            "ffc3211f-1fc8-4bff-98fe-8414fa2bbc48"
+          ],
+          "id": "sjt-petta-snjunction",
+          "price": {
+            "currency": "INR",
+            "value": "18"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "duration": "PT120M",
+            "label": "Validity"
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "id": "2631c6fa-b2aa-41a5-a528-a4e540041e4b",
+          "params": {
+            "amount": "18",
+            "bank_account_number": "00228130001XXXX",
+            "bank_code": "XXXX0000022",
+            "currency": "INR",
+            "transaction_id": "6b4757e8-3976-4492-8cfd-2c0af994676c"
+          },
+          "status": "PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT1D"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECIEPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Kochi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://metro-terms.triffy.in/kochi/index.html"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "18"
+                }
+              ]
+            }
+          ],
+          "type": "PRE-ORDER"
+        }
+      ],
+      "provider": {
+        "descriptor": {
+          "name": "Kochi Metro Rail Limited"
+        },
+        "id": "triffy-kmrl-rail-metro",
+        "time": {
+          "range": {
+            "end": "2024-03-13T17:00:00.000Z",
+            "start": "2024-03-12T23:00:00.000Z"
+          }
+        }
+      },
+      "quote": {
+        "breakup": [
+          {
+            "item": {
+              "id": "sjt-petta-snjunction",
+              "price": {
+                "currency": "INR",
+                "value": "18"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "18"
+            },
+            "title": "BASE_FARE"
+          },
+          {
+            "item": {
+              "id": "sjt-petta-snjunction",
+              "price": {
+                "currency": "INR",
+                "value": "-18.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "-18.00"
+            },
+            "title": "REFUND"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "title": "CANCELLATION_CHARGES"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "0.00"
+        }
+      },
+      "status": "CANCELLED",
+      "updated_at": "2024-03-13T15:57:36.861Z"
+    }
+  }
+}

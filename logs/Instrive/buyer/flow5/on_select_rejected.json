@@ -1,0 +1,215 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "city": {
+                "code": "std:044"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "on_select",
+        "version": "2.0.2",
+        "bap_id": "buyer-api-preprod.instrive.net",
+        "bap_uri": "https://buyer-api-preprod.instrive.net/api/ondc",
+        "transaction_id": "debdf422-6e62-4ee3-bde1-febe4098f119",
+        "message_id": "e5f75ef9-dfdd-4327-bbc4-9e1d215614d8",
+        "timestamp": "2024-06-05T12:32:59.105Z",
+        "bpp_id": "seller-api-preprod.instrive.net",
+        "bpp_uri": "https://seller-api-preprod.instrive.net/api/ondc",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "663b02ab09daf68a142f9905",
+                "locations": [
+                    {
+                        "id": "P_L1"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "tracking": false,
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/provider_name": "Tech Innovations Inc.",
+                    "@ondc/org/TAT": "P30D",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "665db1e0f516dc330809f5b8",
+                    "location_ids": [
+                        "P_L1"
+                    ],
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 10
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "testing"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "testing"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "USD",
+                    "value": "1120"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "665db1e0f516dc330809f5b8",
+                        "@ondc/org/item_quantity": {
+                            "count": 10
+                        },
+                        "title": "instrive seller product 2",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "value": "1000",
+                            "currency": "USD"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": 1111108
+                                },
+                                "maximum": {
+                                    "count": 1111108
+                                }
+                            },
+                            "price": {
+                                "value": "100",
+                                "currency": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "665db1e0f516dc330809f5b8",
+                        "@ondc/org/title_type": "tax",
+                        "title": "Tax",
+                        "price": {
+                            "value": "120",
+                            "currency": "USD"
+                        }
+                    },
+                    {
+                        "title": "Delivery Charges",
+                        "@ondc/org/title_type": "delivery",
+                        "@ondc/org/item_id": "1",
+                        "price": {
+                            "currency": "USD",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "title": "Packaging Charges",
+                        "@ondc/org/title_type": "packing",
+                        "@ondc/org/item_id": "1",
+                        "price": {
+                            "currency": "USD",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "P4D"
+            },
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP"
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "tin"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "BFGFG3R34534"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "COMM_CHANNEL"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "chat_url"
+                            },
+                            "value": "undefined/spaces/chat-room/?token=XXXX"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "50005",
+        "message": "Terms and Conditions unacceptable"
+    }
+}

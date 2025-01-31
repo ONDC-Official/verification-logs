@@ -1,0 +1,147 @@
+request = {
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "1.0.0",
+    "action": "select",
+    "bap_id": "beta.mystore.in",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_id": "buy.sellmore.app",
+    "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp",
+    "transaction_id": "ee9e1c1f-1846-4f7a-88fb-8374d0af9825",
+    "message_id": "1fc2d88f-dab7-43ca-b330-a0044a1e2f37",
+    "timestamp": "2022-12-05T13:38:35.793Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "111863",
+        "locations": [
+          {
+            "id": 148273
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "42673279",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "end": {
+            "location": {
+              "gps": "13.01659,77.68040",
+              "address": {
+                "area_code": "560016"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+response = {
+  "context": {
+    "action": "on_select",
+    "bap_id": "beta.mystore.in",
+    "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+    "bpp_id": "buy.sellmore.app",
+    "bpp_uri": "https://buy.sellmore.app/ondc/v1/148762/bpp/",
+    "city": "std:080",
+    "core_version": "1.0.0",
+    "country": "IND",
+    "domain": "nic2004:52110",
+    "message_id": "1fc2d88f-dab7-43ca-b330-a0044a1e2f37",
+    "timestamp": "2022-12-05T13:38:36.194Z",
+    "transaction_id": "ee9e1c1f-1846-4f7a-88fb-8374d0af9825",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "P4D",
+          "@ondc/org/category": "Immediate Delivery",
+          "@ondc/org/provider_name": "Innoviti",
+          "id": 1,
+          "state": {
+            "descriptor": {
+              "name": "Serviceable"
+            }
+          },
+          "tracking": false
+        }
+      ],
+      "items": [
+        {
+          "fulfillment_id": "1",
+          "id": "42673279"
+        }
+      ],
+      "provider": {
+        "id": "111863"
+      },
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "42673279",
+            "@ondc/org/item_quantity": {
+              "count": "1.0"
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "101.0"
+              },
+              "quantity": {
+                "available": {
+                  "count": "86"
+                },
+                "maximum": {
+                  "count": "86"
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "101.0"
+            },
+            "title": "Ciba Spices updated"
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "23"
+            },
+            "title": "Delivery charges"
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "25"
+            },
+            "title": "Packing charges"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "149.0"
+        },
+        "ttl": "P1D"
+      }
+    }
+  }
+}
