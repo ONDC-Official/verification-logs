@@ -1,0 +1,259 @@
+{
+  "context": {
+    "action": "on_init",
+    "timestamp": "2025-01-21T11:51:41.223Z",
+    "bap_id": "metro-ondc-gateway-staging.uber.com",
+    "bap_uri": "https://metro-ondc-gateway-staging.uber.com/api",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "cfb1522b-c345-483c-a302-42b1e478b6c8",
+    "message_id": "5b75130d-7089-4978-8fbe-8b89103557b5",
+    "location": {
+      "city": {
+        "code": "std:044"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "version": "2.0.0",
+    "domain": "ONDC:TRV11",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "descriptor": {
+          "name": "ONDC Metro Limited",
+          "images": [
+            {
+              "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2025-01-21T05:30:00.000Z",
+            "end": "2025-01-21T23:30:00.000Z"
+          }
+        }
+      },
+      "items": [
+        {
+          "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+          "category_ids": [
+            "C2"
+          ],
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "23"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT5M"
+          },
+          "fulfillment_ids": [
+            "f9e96732-c8af-438c-a469-6fc103a94b86"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "f9e96732-c8af-438c-a469-6fc103a94b86",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                  "code": "NBAA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1"
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "23.00"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "price": {
+                "currency": "INR",
+                "value": "23"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "23"
+            }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://sequelstringsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "billing": {
+        "email": "XXXXXhn.doe@example.com",
+        "name": "John Doe",
+        "phone": "XXXXXXX564"
+      },
+      "payments": [
+        {
+          "id": "5916e6d9-0cef-4a4b-bdd2-a94ba8fcb502",
+          "collected_by": "BAP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "display": false,
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "P30D"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bpp.com/booking/terms"
+                },
+                {
+                  "value": "2.5",
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  }
+                },
+                {
+                  "value": "NEFT",
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  }
+                },
+                {
+                  "value": "23.00",
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  }
+                }
+              ]
+            },
+            {
+              "display": false,
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "list": [
+                {
+                  "value": "0",
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  }
+                },
+                {
+                  "value": "amount",
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  }
+                }
+              ]
+            }
+          ],
+          "params": {
+            "bank_code": "SBI5448270",
+            "bank_account_number": "562391273445",
+            "virtual_payment_address": "8667777799@oksbi"
+          }
+        }
+      ]
+    }
+  }
+}
