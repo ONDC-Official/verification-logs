@@ -1,84 +1,99 @@
 {
-  "context": {
-    "domain": "ONDC:FIS13",
-    "location": {
-      "country": {
-        "code": "IND"
+    "context": {
+      "domain": "ONDC:FIS13",
+      "location": {
+        "country": {
+          "code": "IND"
+        },
+        "city": {
+          "code": "*"
+        }
       },
-      "city": {
-        "code": "*"
-      }
+      "action": "on_issue_status",
+      "version": "2.0.0",
+      "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+      "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+      "bpp_id": "ondc.godigit.com",
+      "bpp_uri": "https://ondc.godigit.com/digit/ondc",
+      "transaction_id": "06307223-15cb-46a4-95ab-65a9ba7da62b",
+      "message_id": "056cdbbf-620b-4475-b9d3-8fbc20ce09e7",
+      "timestamp": "2025-01-28T15:12:08.543Z"
     },
-    "action": "on_issue_status",
-    "version": "2.0.0",
-    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
-    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
-    "bpp_id": "ondc.godigit.com",
-    "bpp_uri": "https://ondc.godigit.com/digit/ondc",
-    "transaction_id": "06307223-15cb-46a4-95ab-65a9ba7da62b",
-    "message_id": "056cdbbf-620b-4475-b9d3-8fbc20ce09e7",
-    "timestamp": "2025-01-28T15:30:07.740Z"
-  },
-  "message": {
-    "issue": {
-      "id": "1",
-      "issue_actions": {
-        "respondent_actions": [
-          {
-            "respondent_action": "PROCESSING",
-            "short_desc": "Complaint is being processed",
-            "updated_at": "2025-01-28T15:34:07.740Z",
-            "updated_by": {
+    "message": {
+      "issue": {
+        "id": "1",
+        "issue_actions": {
+          "respondent_actions": [
+            {
+              "respondent_action": "PROCESSING",
+              "short_desc": "Complaint is being processed",
+              "updated_at": "2025-01-28T15:12:08.004Z",
+              "updated_by": {
+                "org": {
+                  "name": "ondc.godigit.com::ONDC:FIS13"
+                },
+                "contact": {
+                  "phone": "18002585956",
+                  "email": "hello@godigit.com"
+                }
+              },
+              "cascaded_level": 1
+            },
+            {
+                "respondent_action": "RESOLVED",
+                "short_desc": "Complaint resolved",
+                "updated_at": "2025-01-28T15:12:08.543Z",
+                "updated_by": {
+                  "org": {
+                    "name": "ondc.godigit.com::ONDC:FIS13"
+                  },
+                  "contact": {
+                    "phone": "18002585956",
+                    "email": "hello@godigit.com"
+                  }
+                },
+                "cascaded_level": 1
+              }
+          ]
+        },
+        "created_at": "2025-01-28T15:12:07.740Z",
+        "updated_at": "2025-01-28T15:12:08.543Z",
+        "resolution_provider": {
+          "respondent_info": {
+            "type": "TRANSACTION-COUNTERPARTY-NP",
+            "organization": {
               "org": {
-                "name": "ondc.godigit.com"
+                "name": "ondc.godigit.com::ONDC:FIS13"
               },
               "contact": {
-                "phone": "1800-258-5956",
+                "phone": "18002585956",
                 "email": "hello@godigit.com"
               }
             },
-            "cascaded_level": 1
-          }
-        ]
-      },
-      "created_at": "2025-01-28T15:30:07.740Z",
-      "updated_at": "2025-01-28T15:34:07.740Z",
-      "resolution_provider": {
-        "respondent_info": {
-          "type": "TRANSACTION-COUNTERPARTY-NP",
-          "organization": {
-            "org": {
-              "name": "ondc.godigit.com"
-            },
-            "contact": {
-              "phone": "1800-258-5956",
-              "email": "hello@godigit.com"
+            "resolution_support": {
+              "chat_link": "http://chat-link/respondent",
+              "contact": {
+                "phone": "18002585956",
+                "email": "hello@godigit.com"
+              },
+              "gros": [
+                {
+                  "contact": {
+                    "phone": "18002585956",
+                    "email": "hello@godigit.com"
+                  },
+                  "gro_type": "TRANSACTION-COUNTERPARTY-NP-GRO"
+                }
+              ]
             }
-          },
-          "resolution_support": {
-            "chat_link": "http://chat-link/respondent",
-            "contact": {
-              "phone": "1800-258-5956",
-              "email": "hello@godigit.com"
-            },
-            "gros": [
-              {
-                "contact": {
-                  "phone": "1800-258-5956",
-                  "email": "hello@godigit.com"
-                },
-                "gro_type": "TRANSACTION-COUNTERPARTY-NP-GRO"
-              }
-            ]
           }
+        },
+        "resolution": {
+          "short_desc": "Updated Vehicle Details",
+          "long_desc": "For this complaint, details of the vehicle has updated",
+          "action_triggered": "CANCEL",
+          "refund_amount": "0"
         }
-      },
-      "resolution": {
-        "short_desc": "Loan disbursed",
-        "long_desc": "For this complaint, loan is now disbursed",
-        "action_triggered": "CANCEL",
-        "refund_amount": "100"
       }
     }
   }
-}
