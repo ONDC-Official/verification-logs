@@ -9,41 +9,31 @@
                 "code": "IND"
             }
         },
-        "action": "on_cancel",
+        "action": "on_init",
         "version": "2.0.2",
         "bap_id": "mock.ondc.org/api",
         "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "e930668a-0d65-446d-bd67-3bb226682999",
-        "message_id": "942ef26b-b45b-4273-bc48-d3fa6b2de517",
-        "timestamp": "2025-02-03T10:29:22.516Z",
+        "transaction_id": "f2211cef-6d77-4123-b7a6-a15569707baf",
+        "message_id": "5428d403-0a07-4640-b08a-7d44c72ea6fc",
+        "timestamp": "2025-02-03T06:18:13.367Z",
         "ttl": "PT30S",
         "bpp_id": "preprod-ondc.khetisauda.com",
         "bpp_uri": "https://preprod-ondc.khetisauda.com"
     },
     "message": {
         "order": {
-            "id": "5977a63f-d467-4566-b37b-1b0387359831",
-            "state": "Cancelled",
-            "cancellation": {
-                "cancelled_by": "mock.ondc.org/api",
-                "reason": {
-                    "id": "001"
-                }
-            },
             "provider": {
-                "id": "P9080",
-                "locations": [
-                    {
-                        "id": "67580ba80f5cad8920d74a81"
-                    }
-                ]
+                "id": "P9080"
+            },
+            "provider_location": {
+                "id": "67580ba80f5cad8920d74a81"
             },
             "items": [
                 {
+                    "id": "6776841d49c82277c6c4ab8e",
                     "fulfillment_ids": [
                         "1"
                     ],
-                    "id": "6776841d49c82277c6c4ab8e",
                     "quantity": {
                         "selected": {
                             "count": 200
@@ -74,9 +64,6 @@
                                 }
                             ]
                         }
-                    ],
-                    "payment_ids": [
-                        "PA00031"
                     ]
                 }
             ],
@@ -97,41 +84,11 @@
                 {
                     "id": "F1",
                     "type": "Delivery",
-                    "state": {
-                        "descriptor": {
-                            "code": "Cancelled"
-                        }
-                    },
-                    "@ondc/org/provider_name": "",
-                    "@ondc/org/category": "Express Delivery",
+                    "@ondc/org/provider_name": "Satya Traders",
+                    "@ondc/org/category": "Delivery",
                     "@ondc/org/TAT": "P7D",
                     "tracking": false,
                     "stops": [
-                        {
-                            "type": "start",
-                            "location": {
-                                "id": "67580ba80f5cad8920d74a81",
-                                "descriptor": {
-                                    "name": "Satya Traders"
-                                },
-                                "gps": "12.974002,77.613458"
-                            },
-                            "time": {
-                                "range": {
-                                    "start": "2025-02-03T10:18:36.728Z",
-                                    "end": "2025-02-10T10:18:36.728Z"
-                                }
-                            },
-                            "instructions": {
-                                "name": "Proof of pickup",
-                                "short_desc": "Proof of pickup details",
-                                "long_desc": "Proof of pickup details",
-                                "images": []
-                            },
-                            "contact": {
-                                "phone": "9886098860"
-                            }
-                        },
                         {
                             "type": "end",
                             "location": {
@@ -180,24 +137,6 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
-                        "@ondc/org/item_quantity": {
-                            "count": 0
-                        },
-                        "title": "Basmati Rice",
-                        "@ondc/org/title_type": "refund",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-20000"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "100"
-                            }
-                        }
-                    },
-                    {
                         "@ondc/org/item_id": "F1",
                         "title": "Delivery charges",
                         "@ondc/org/title_type": "delivery",
@@ -208,29 +147,11 @@
                     },
                     {
                         "@ondc/org/item_id": "F1",
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "refund",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-[object Object]"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
                         "title": "Packing charges",
                         "@ondc/org/title_type": "packing",
                         "price": {
                             "currency": "INR",
                             "value": "0"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Packing charges",
-                        "@ondc/org/title_type": "refund",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-0"
                         }
                     },
                     {
@@ -252,15 +173,6 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
-                        "title": "Discount",
-                        "@ondc/org/title_type": "refund",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-"
-                        }
-                    },
-                    {
                         "@ondc/org/item_id": "F1",
                         "title": "Convenience Fee",
                         "@ondc/org/title_type": "misc",
@@ -268,29 +180,67 @@
                             "currency": "INR",
                             "value": "100"
                         }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Convenience Fee",
-                        "@ondc/org/title_type": "refund",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-100"
-                        }
                     }
                 ],
                 "ttl": "P1D"
             },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                }
+            ],
             "payments": [
                 {
-                    "status": "PAID",
                     "type": "PRE-FULFILLMENT",
-                    "collected_by": "BPP",
+                    "collected_by": "BAP",
+                    "uri": "plink_Pmt7akXEt39JKt",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0",
+                    "@ondc/org/buyer_app_finder_fee_amount": "10",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/withholding_amount": "10.00",
                     "@ondc/org/settlement_details": [
                         {
                             "settlement_counterparty": "seller-app",
@@ -304,14 +254,6 @@
                             "branch_name": "Kharagpur"
                         }
                     ],
-                    "params": {
-                        "currency": "INR",
-                        "amount": "20000",
-                        "transaction_id": "b4b7d996-6a95-431a-86e2-92247710af5d"
-                    },
-                    "tl_method": "http/get",
-                    "uri": "https://ondc.transaction.com/payment",
-                    "id": "PA00031",
                     "tags": [
                         {
                             "descriptor": {
@@ -322,13 +264,19 @@
                                     "descriptor": {
                                         "code": "signature"
                                     },
-                                    "value": "xxxxxxxxxxxxxx"
+                                    "value": "2e95972c2bab4e499e0a62ab60d8856b4b234d57c1e1b8d294357aa929178d9a"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "dsa"
                                     },
-                                    "value": "ED25519"
+                                    "value": "sha256"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ttl"
+                                    },
+                                    "value": "PT30M"
                                 }
                             ]
                         }
@@ -389,19 +337,6 @@
                                 "code": "delay_interest"
                             },
                             "value": "0"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bap_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "accept_bpp_terms"
-                            },
-                            "value": "Y"
                         }
                     ]
                 }

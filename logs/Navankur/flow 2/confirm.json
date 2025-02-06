@@ -9,84 +9,33 @@
                 "code": "IND"
             }
         },
-        "action": "on_init",
+        "action": "confirm",
         "version": "2.0.2",
         "bap_id": "mock.ondc.org/api",
         "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "ae2def16-e21e-4035-85a9-4ba7f1ab4322",
-        "message_id": "8017ccfe-aba0-4157-a000-54a01f726e77",
-        "timestamp": "2025-02-03T06:24:10.673Z",
+        "transaction_id": "f2211cef-6d77-4123-b7a6-a15569707baf",
+        "message_id": "d9889974-ea11-4da6-86a7-26e97e437a5c",
+        "timestamp": "2025-02-03T06:18:57.383Z",
         "ttl": "PT30S",
         "bpp_id": "preprod-ondc.khetisauda.com",
         "bpp_uri": "https://preprod-ondc.khetisauda.com"
     },
     "message": {
         "order": {
+            "id": "849606e2-b924-4a88-99dc-479b4117a95b",
+            "state": "Created",
             "provider": {
-                "id": "P9080"
-            },
-            "provider_location": {
-                "id": "67580ba80f5cad8920d74a81"
-            },
-            "items": [
-                {
-                    "id": "6776841d49c82277c6c4ab8e",
-                    "fulfillment_ids": [
-                        "1"
-                    ],
-                    "quantity": {
-                        "selected": {
-                            "count": 200
-                        }
-                    },
-                    "add_ons": [
-                        {
-                            "id": "78787723"
-                        }
-                    ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "free text on Item Customization"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "free text on packaging Customization"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "billing": {
-                "name": "ONDC buyer",
-                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
-                "state": {
-                    "name": "Karnataka"
-                },
-                "city": {
-                    "name": "Bengaluru"
-                },
-                "tax_id": "XXXXXXXXXXXXXXX",
-                "email": "nobody@nomail.com",
-                "phone": "9886098860"
+                "id": "P9080",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ]
             },
             "fulfillments": [
                 {
                     "id": "F1",
                     "type": "Delivery",
-                    "@ondc/org/provider_name": "Satya Traders",
-                    "@ondc/org/category": "Delivery",
-                    "@ondc/org/TAT": "P7D",
                     "tracking": false,
                     "stops": [
                         {
@@ -110,6 +59,66 @@
                             }
                         }
                     ]
+                }
+            ],
+            "payments": [
+                {
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP",
+                    "uri": "plink_Pmt7akXEt39JKt",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "10",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P1D",
+                    "@ondc/org/withholding_amount": "10.00",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "upi",
+                            "upi_address": "gft@oksbi",
+                            "settlement_bank_account_no": "XXXXXXXXXX",
+                            "settlement_ifsc_code": "XXXXXXXXX",
+                            "beneficiary_name": "xxxxx",
+                            "bank_name": "xxxx",
+                            "branch_name": "xxxx"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BPP_payment"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "signature"
+                                    },
+                                    "value": "2e95972c2bab4e499e0a62ab60d8856b4b234d57c1e1b8d294357aa929178d9a"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "dsa"
+                                    },
+                                    "value": "sha256"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ttl"
+                                    },
+                                    "value": "PT30M"
+                                }
+                            ]
+                        }
+                    ],
+                    "params": {
+                        "currency": "INR",
+                        "amount": "20000",
+                        "transaction_id": "3937",
+                        "bank_code": "xxxxxxxxx",
+                        "bank_account_number": "xxxxxxxxxxxx"
+                    },
+                    "status": "NOT-PAID"
                 }
             ],
             "quote": {
@@ -184,103 +193,17 @@
                 ],
                 "ttl": "P1D"
             },
-            "cancellation_terms": [
+            "items": [
                 {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Pending"
-                        }
-                    },
-                    "reason_required": false,
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Packed"
-                        }
-                    },
-                    "reason_required": false,
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Out-for-delivery"
-                        }
-                    },
-                    "reason_required": false,
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    }
-                }
-            ],
-            "payments": [
-                {
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "BAP",
-                    "uri": "plink_Pmt7akXEt39JKt",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "10",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "10.00",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "seller-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
-                            "upi_address": "",
-                            "settlement_bank_account_no": "32476977544",
-                            "settlement_ifsc_code": "SBIN0000202",
-                            "beneficiary_name": "Satyapal",
-                            "bank_name": "State Bank of India",
-                            "branch_name": "Kharagpur"
-                        }
+                    "id": "6776841d49c82277c6c4ab8e",
+                    "fulfillment_ids": [
+                        "1"
                     ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BPP_payment"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "signature"
-                                    },
-                                    "value": "2e95972c2bab4e499e0a62ab60d8856b4b234d57c1e1b8d294357aa929178d9a"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "dsa"
-                                    },
-                                    "value": "sha256"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ttl"
-                                    },
-                                    "value": "PT30M"
-                                }
-                            ]
+                    "quantity": {
+                        "selected": {
+                            "count": 200
                         }
-                    ]
+                    }
                 }
             ],
             "tags": [
@@ -339,8 +262,36 @@
                             "value": "0"
                         }
                     ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
                 }
-            ]
+            ],
+            "billing": {
+                "name": "ONDC buyer",
+                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+                "state": {
+                    "name": "Karnataka"
+                },
+                "city": {
+                    "name": "Bengaluru"
+                },
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "email": "nobody@nomail.com",
+                "phone": "9886098860"
+            },
+            "created_at": "2025-02-03T06:18:57.383Z",
+            "updated_at": "2025-02-03T06:18:57.383Z"
         }
     }
 }
