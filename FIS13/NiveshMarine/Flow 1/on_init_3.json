@@ -9,15 +9,15 @@
         "code": "*"
       }
     },
-    "action": "on_status",
+    "action": "on_init",
     "bap_id": "ondcpreprod.niveshinsurance.com",
     "bap_uri": "https://ondcpreprod.niveshinsurance.com/MarineFS/",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "message_id": "d3ec91a9-275b-4300-a59c-7bbd7894d40a",
-    "timestamp": "2025-02-10T10:24:38.294Z",
+    "message_id": "945a8a44-39da-4e10-9aba-b923e8e848ca",
+    "timestamp": "2025-02-10T10:24:57.190Z",
     "transaction_id": "61711f11-3dc9-41bb-9267-f49c05ec571c",
-    "ttl": "PT24H",
+    "ttl": "PT30M",
     "version": "2.0.0"
   },
   "message": {
@@ -105,15 +105,6 @@
               ]
             }
           ],
-          "xinput": {
-            "form": {
-              "id": "33ff42e5-06e7-460a-a517-37265e1bfcc6"
-            },
-            "form_response": {
-              "status": "APPROVED",
-              "submission_id": "2f36bd3c-afd1-4bb4-9418-1488c84e7221"
-            }
-          },
           "price": {
             "currency": "INR",
             "value": "900"
@@ -148,7 +139,131 @@
           "currency": "INR",
           "value": "2410.00"
         }
-      }
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "email": "siddhi.salkar@nivesh.com",
+              "phone": "9420743653"
+            },
+            "person": {
+              "name": "test",
+              "gender": "male",
+              "dob": "1965-11-02"
+            },
+            "organization": {
+              "address": "1/4 ABC Society, XYZ Locality, Bangalore, Karnataka"
+            }
+          },
+          "type": "POLICY",
+          "id": "be7ba7de-0e74-4466-a398-0c73d01ef7d0"
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "amount": "1000",
+            "bank_account_number": "1800002341",
+            "bank_code": "SBIN0001234",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "upi"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.icicibank.com/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "1000"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "time": {
+            "range": {
+              "start": "2025-02-10T10:24:57.190Z",
+              "end": "2025-02-13T10:24:57.190Z"
+            }
+          },
+          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=1000&transaction_id=61711f11-3dc9-41bb-9267-f49c05ec571c&label=INSURANCE_PAYMENT"
+        }
+      ]
     }
   }
 }
