@@ -1,0 +1,143 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": { "code": "std:080" },
+      "country": { "code": "IND" }
+    },
+    "action": "on_init",
+    "version": "2.0.2",
+    "transaction_id": "b4809c76-b0zz-4b79-8d6b-723bca4bc108",
+    "message_id": "0c44ba00-e4a0-43c6-9462-c854894de827",
+    "timestamp": "2024-10-17T05:30:11.690Z",
+    "bap_id": "mock.ondc.org/api",
+    "bap_uri": "https://mock.ondc.org/api/retail/bap",
+    "bpp_id": "preprodb2b.thesellerapp.com",
+    "bpp_uri": "https://preprodb2b.thesellerapp.com/v1/b2b",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6" },
+      "provider_location": { "id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6" },
+      "items": [
+        {
+          "id": "0d450307-19be-42e9-9e99-a7e242d89e41",
+          "fulfillment_ids": ["6ms66826fb66c433100247b44091e2"],
+          "quantity": { "selected": { "count": 25 } }
+        }
+      ],
+      "billing": {
+        "name": "Manu Puranic",
+        "address": "no 18, store building, Church street, jayanagar, Bengaluru, 560034",
+        "phone": "7026552000",
+        "tax_id": "07AAGFG3246N1Z9",
+        "state": { "name": "Karnataka" },
+        "city": { "name": "Bengaluru" }
+      },
+      "fulfillments": [
+        {
+          "id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+          "type": "Delivery",
+          "@ondc/org/provider_name": "Yumfood",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P7D",
+          "tracking": false,
+          "stops": [
+            {
+              "type": "end",
+              "location": {
+                "address": "no 18, store building, Church street, jayanagar, Bengaluru, 560034",
+                "gps": "12.926138,77.622109",
+                "area_code": "560034",
+                "state": { "name": "Karnataka" },
+                "city": { "name": "Bengaluru" },
+                "country": { "code": "IND" }
+              },
+              "contact": { "phone": "7026552000" }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "NaN" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "0d450307-19be-42e9-9e99-a7e242d89e41",
+            "@ondc/org/item_quantity": { "count": 25 },
+            "title": "Jowar Flour",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "19550" },
+            "item": { "price": { "currency": "INR", "value": "782" } }
+          },
+          {
+            "@ondc/org/item_id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "0" }
+          },
+          {
+            "@ondc/org/item_id": "bbb13ecf-ac66-429a-aa43-19ca415a8db6",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "undefined" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payments": [
+        {
+          "type": "ON-FULFILLMENT",
+          "collected_by": "BPP",
+          "uri": "https://snp.com/pg",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "10.00",
+          "tags": [
+            {
+              "descriptor": { "code": "BPP_payment" },
+              "list": [
+                {
+                  "descriptor": { "code": "signature" },
+                  "value": "xxxxxxxxxxxxxx"
+                },
+                { "descriptor": { "code": "dsa" }, "value": "ED25519" },
+                { "descriptor": { "code": "ttl" }, "value": "PT30M" }
+              ]
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": { "code": "buyer_id" },
+          "list": [
+            { "descriptor": { "code": "buyer_id_code" }, "value": "gst" },
+            {
+              "descriptor": { "code": "buyer_id_no" },
+              "value": "xxxxxxxxxxxxxxx"
+            }
+          ]
+        },
+        {
+          "descriptor": { "code": "bpp_terms" },
+          "list": [
+            { "descriptor": { "code": "max_liability" }, "value": "2" },
+            { "descriptor": { "code": "max_liability_cap" }, "value": "10000" },
+            {
+              "descriptor": { "code": "mandatory_arbitration" },
+              "value": "false"
+            },
+            {
+              "descriptor": { "code": "court_jurisdiction" },
+              "value": "Bengaluru"
+            },
+            { "descriptor": { "code": "delay_interest" }, "value": "1000" }
+          ]
+        }
+      ]
+    }
+  }
+}

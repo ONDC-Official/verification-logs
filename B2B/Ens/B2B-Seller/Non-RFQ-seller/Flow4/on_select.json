@@ -1,0 +1,105 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "action": "on_select",
+      "bap_id": "mock.ondc.org/api",
+      "bap_uri": "https://mock.ondc.org/api/retail/bap",
+      "bpp_id": "preprodb2b.thesellerapp.com",
+      "bpp_uri": "https://preprodb2b.thesellerapp.com/v1/b2b",
+      "transaction_id": "c4029c37-cec1-4879-a6d5-88abdcff8a28",
+      "message_id": "a1132c11-358f-4144-b076-c1325d2d04c8",
+      "timestamp": "2024-08-07T05:45:13.938Z",
+      "ttl": "PT30S",
+      "location": {
+        "city": {
+          "code": "std:080"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
+      "version": "2.0.2"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "66826fb66c433100247b4409",
+          "locations": [
+            {
+              "id": "66826fb66c433100247b4409"
+            }
+          ]
+        },
+        "items": [
+          {
+            "id": "6685321f4f61760024dc7e68",
+            "quantity": {
+              "selected": {
+                "count": 50
+              }
+            },
+            "fulfillment_ids": [
+              "6ms66826fb66c433100247b44091e2"
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "17560.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "6685321f4f61760024dc7e68",
+              "@ondc/org/item_quantity": {
+                "count": 50
+              },
+              "title": "Wheat Flour b2b store",
+              "@ondc/org/title_type": "item",
+              "price": {
+                "currency": "INR",
+                "value": "17500"
+              },
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "350"
+                }
+              }
+            },
+            {
+              "@ondc/org/item_id": "6ms66826fb66c433100247b44091e2",
+              "title": "Delivery charges",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "60"
+              }
+            }
+          ],
+          "ttl": "P8D"
+        },
+        "fulfillments": [
+          {
+            "id": "6ms66826fb66c433100247b44091e2",
+            "@ondc/org/provider_name": "Prestine Wholesale store",
+            "tracking": true,
+            "state": {
+              "descriptor": {
+                "name": "Serviceable",
+                "code": "Serviceable"
+              }
+            },
+            "@ondc/org/category": "Standard Delivery",
+            "@ondc/org/TAT": "P8D"
+          }
+        ],
+        "payments": [
+          {
+            "type": "PRE-FULFILLMENT",
+            "collected_by": "BAP"
+          }
+        ]
+      }
+    }
+  }
