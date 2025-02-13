@@ -9,10 +9,10 @@
         "code": "*"
       }
     },
-    "transaction_id": "ef4c7fb8-34f3-5017-8d5e-0ee9469971a1",
-    "message_id": "0c65f5c7-9db4-5caa-b26e-bdb07e496a81",
-    "action": "init",
-    "timestamp": "2025-02-07T06:33:49.906Z",
+    "transaction_id": "050cc8cd-f1df-5875-b558-3f301cba714a",
+    "message_id": "0fda6511-d049-5722-8dc1-8abdc8cfe13f",
+    "action": "confirm",
+    "timestamp": "2025-02-07T05:49:19.547Z",
     "version": "2.2.0",
     "ttl": "PT10M",
     "bap_id": "stagingondcfs.jtechnoparks.in",
@@ -33,6 +33,7 @@
       "payments": [
         {
           "collected_by": "BPP",
+          "id": "d079934e-5870-416d-8ad0-7311de1ee6af",
           "type": "ON_ORDER",
           "status": "NOT-PAID",
           "params": {
@@ -48,6 +49,24 @@
               },
               "display": false,
               "list": [
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+                },
+                {
+                  "descriptor": {
+                    "code": "OFFLINE_CONTRACT"
+                  },
+                  "value": "true"
+                },
                 {
                   "descriptor": {
                     "code": "BUYER_FINDER_FEES_TYPE"
@@ -70,13 +89,52 @@
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "upi"
+                  "value": "neft"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "BPP_TERMS",
+                "name": "BPP Terms of Engagement"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
                 },
                 {
                   "descriptor": {
-                    "code": "DELAY_INTEREST"
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
                   },
-                  "value": "5"
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
                 },
                 {
                   "descriptor": {
@@ -89,6 +147,12 @@
                     "code": "OFFLINE_CONTRACT"
                   },
                   "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0.00"
                 }
               ]
             }

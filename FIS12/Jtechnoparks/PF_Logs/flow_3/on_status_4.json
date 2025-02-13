@@ -10,11 +10,11 @@
       }
     },
     "transaction_id": "ef4c7fb8-34f3-5017-8d5e-0ee9469971a1",
-    "message_id": "afdbcfd2-5b77-46f1-84c3-e3220fa580c2",
-    "action": "on_update",
-    "timestamp": "2025-02-07T06:37:05.928Z",
+    "message_id": "9eb9b772-4be2-469f-a74b-a82f9ddc1939",
+    "action": "on_status",
+    "timestamp": "2025-02-07T06:35:10.548Z",
     "version": "2.2.0",
-    "ttl": "PT10M",
+    "ttl": "PT30M",
     "bap_id": "stagingondcfs.jtechnoparks.in",
     "bap_uri": "https://stagingondcfs.jtechnoparks.in/pf-bap/api/v1/",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
@@ -305,14 +305,21 @@
                     "name": "Esign",
                     "code": "ESIGN"
                   },
-                  "value": "762af2fa-2f05-49f4-8b3a-91a377a78857"
+                  "value": "PENDING"
                 }
               ]
             }
           ],
+          "xinput": {
+            "form": {
+              "id": "54e89073-ed91-48c8-a23d-7062ba36ec61"
+            },
+            "form_response": {
+              "status": "APPROVED"
+            }
+          },
           "fulfillment_ids": [
-            "feb63d03-e88a-424b-8682-b057928f9f15",
-            "fdbf65ff-f89c-4c32-8a90-72984cda954a"
+            "feb63d03-e88a-424b-8682-b057928f9f15"
           ]
         }
       ],
@@ -371,27 +378,6 @@
               "value": "0",
               "currency": "INR"
             }
-          },
-          {
-            "title": "PRE_PAYMENT_CHARGE",
-            "price": {
-              "value": "4500",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OUTSTANDING_PRINCIPAL",
-            "price": {
-              "value": "90000",
-              "currency": "INR"
-            }
-          },
-          {
-            "title": "OUTSTANDING_INTEREST",
-            "price": {
-              "value": "6000",
-              "currency": "INR"
-            }
           }
         ],
         "ttl": "P29D"
@@ -409,64 +395,14 @@
           },
           "state": {
             "descriptor": {
-              "code": "DISBURSED"
+              "code": "INITIATED"
             }
           },
           "type": "LOAN",
-          "id": "feb63d03-e88a-424b-8682-b057928f9f15",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "INFO",
-                "name": "Information"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "REFERENCE_NUMBER",
-                    "name": "Reference Number",
-                    "short_desc": "Used for identifying a particular transaction.s"
-                  },
-                  "value": "912345678912"
-                }
-              ],
-              "display": false
-            }
-          ]
-        },
-        {
-          "customer": {
-            "person": {
-              "name": "KasiK Keerthipati"
-            },
-            "contact": {
-              "phone": "9938867639",
-              "email": "kumarikeerthipati@gmail.com"
-            }
-          },
-          "state": {
-            "descriptor": {
-              "code": "DELIVERED"
-            }
-          },
-          "type": "BASE_ORDER",
-          "id": "fdbf65ff-f89c-4c32-8a90-72984cda954a"
+          "id": "feb63d03-e88a-424b-8682-b057928f9f15"
         }
       ],
       "payments": [
-        {
-          "id": "b91013c5-468a-406f-80e8-6a739091c62f",
-          "params": {
-            "amount": "90000",
-            "currency": "INR"
-          },
-          "status": "PAID",
-          "time": {
-            "label": "PRE_PART_PAYMENT",
-            "timestamp": "2025-02-07T06:37:05.928Z"
-          },
-          "type": "POST_FULFILLMENT"
-        },
         {
           "collected_by": "BPP",
           "type": "ON_ORDER",
@@ -534,57 +470,6 @@
                   "value": "0.00"
                 }
               ]
-            },
-            {
-              "descriptor": {
-                "code": "BAP_TERMS",
-                "name": "BAP Terms of Engagement"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_TYPE"
-                  },
-                  "value": "percent-annualized"
-                },
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  },
-                  "value": "1"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_AMOUNT"
-                  },
-                  "value": "0.00"
-                },
-                {
-                  "descriptor": {
-                    "code": "OFFLINE_CONTRACT"
-                  },
-                  "value": "true"
-                },
-                {
-                  "descriptor": {
-                    "code": "SETTLEMENT_TYPE"
-                  },
-                  "value": "neft"
-                },
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "5"
-                },
-                {
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
-                }
-              ]
             }
           ],
           "id": "baef354c-f14f-412d-a48b-4afb902ddf9b"
@@ -596,7 +481,7 @@
             "amount": "88460.00",
             "currency": "INR"
           },
-          "status": "DEFERRED",
+          "status": "NOT-PAID",
           "time": {
             "label": "INSTALLMENT",
             "range": {
@@ -869,33 +754,7 @@
             "percentage": "5%"
           }
         }
-      ],
-      "status": "ACTIVE",
-      "documents": [
-        {
-          "descriptor": {
-            "code": "LOAN_AGREEMENT",
-            "name": "Loan Agreement Document",
-            "short_desc": "Download your Loan Agreement document here",
-            "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
-          },
-          "mime_type": "application/pdf",
-          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/agreement.pdf"
-        },
-        {
-          "descriptor": {
-            "code": "LOAN_CANCELLATION",
-            "name": "Loan Cancellation Document",
-            "short_desc": "Download your Loan Cancellation document here",
-            "long_desc": "A Loan Cancellation Document is a formal agreement used to terminate an existing loan, releasing the borrower from repayment obligations and confirming the loan's cancellation."
-          },
-          "mime_type": "application/pdf",
-          "url": "https://lender.com/loan/loan-cancellation/O1.pdf"
-        }
-      ],
-      "created_at": "2025-02-07T06:35:13.352Z",
-      "updated_at": "2025-02-07T06:36:01.588Z",
-      "id": "830357a5-b79c-41ae-88c7-9d5bd31af157"
+      ]
     }
   }
 }
