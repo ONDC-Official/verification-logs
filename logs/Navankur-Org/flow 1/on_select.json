@@ -11,14 +11,14 @@
         },
         "action": "on_select",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "8583c5d3-6d12-4a89-b6bc-2a1917304022",
-        "message_id": "a124f79b-c584-4c48-b5d1-9e726191d8fd",
-        "timestamp": "2025-01-24T13:11:48.822Z",
-        "ttl": "PT30S",
+        "transaction_id": "3d1f95bc-f419-444f-bdc9-8aa55919ef8d",
+        "message_id": "0b931f6e-c592-4f0c-a0f0-7870e281f61d",
+        "timestamp": "2025-02-12T06:18:45.203Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
@@ -33,12 +33,13 @@
             "items": [
                 {
                     "fulfillment_ids": [
-                        "1"
+                        "1",
+                        "2"
                     ],
                     "id": "6776841d49c82277c6c4ab8e",
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 10
                         }
                     },
                     "add_ons": [
@@ -56,13 +57,13 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "free text on Item Customization"
+                                    "value": ""
                                 },
                                 {
                                     "descriptor": {
                                         "code": "PACKAGING_REQ"
                                     },
-                                    "value": "free text on packaging Customization"
+                                    "value": ""
                                 }
                             ]
                         }
@@ -86,24 +87,24 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "NaN"
+                    "value": "10"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
                         "@ondc/org/item_quantity": {
-                            "count": 200
+                            "count": 10
                         },
                         "title": "Basmati Rice",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "20000"
+                            "value": "10"
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "100"
+                                "value": "1"
                             }
                         }
                     },
@@ -157,8 +158,8 @@
             },
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP"
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP"
                 }
             ]
         }
