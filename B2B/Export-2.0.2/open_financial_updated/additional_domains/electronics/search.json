@@ -1,6 +1,6 @@
 {
     "context": {
-        "domain": "ONDC:RET10",
+        "domain": "ONDC:RET14",
         "location": {
             "city": {
                 "code": "std:080"
@@ -11,23 +11,31 @@
         },
         "action": "search",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "f2211cef-6d77-4123-b7a6-a15569707baf",
-        "message_id": "99021934-b1c1-41ae-ad4a-64db669708fe",
-        "timestamp": "2025-02-03T06:14:05.135Z",
+        "transaction_id": "bdf0ff63-aac9-496f-9a57-11b213080987",
+        "message_id": "94e60ef7-9a0b-48fa-82f8-9254c4fd5b93",
+        "timestamp": "2025-02-07T08:38:39.101Z",
+        "bap_id": "ondcpreprodb2b.rapidor.co",
+        "bap_uri": "https://ondcpreprodb2b.rapidor.co/v1/ondc/buyer",
         "ttl": "PT30S"
     },
     "message": {
         "intent": {
-            "category": {
-                "id": "RET10-*"
+            "item": {
+                "descriptor": {
+                    "name": "macbook"
+                }
             },
             "fulfillment": {
-                "type": "Delivery"
-            },
-            "payment": {
-                "type": "ON-FULFILLMENT"
+                "type": "Delivery",
+                "stops": [
+                    {
+                        "type": "end",
+                        "location": {
+                            "gps": "12.900654,77.705386",
+                            "area_code": "560035"
+                        }
+                    }
+                ]
             },
             "tags": [
                 {
@@ -45,7 +53,7 @@
                             "descriptor": {
                                 "code": "finder_fee_amount"
                             },
-                            "value": "10"
+                            "value": "0.0"
                         }
                     ]
                 },
@@ -58,17 +66,20 @@
                             "descriptor": {
                                 "code": "buyer_id_code"
                             },
-                            "value": "gst"
+                            "value": "pan"
                         },
                         {
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "DIYPM3189G"
                         }
                     ]
                 }
-            ]
+            ],
+            "payment": {
+                "type": "ON-FULFILLMENT"
+            }
         }
     }
 }
