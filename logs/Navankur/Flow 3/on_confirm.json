@@ -11,18 +11,18 @@
         },
         "action": "on_confirm",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "ae2def16-e21e-4035-85a9-4ba7f1ab4322",
-        "message_id": "29587a28-bd54-4058-bced-5e2100455087",
-        "timestamp": "2025-02-03T06:24:59.666Z",
-        "ttl": "PT30S",
+        "transaction_id": "10312b64-4cbc-41d9-80d1-c44d4433fe35",
+        "message_id": "0ba32c95-f086-43e9-a607-a8e26af65402",
+        "timestamp": "2025-02-13T08:16:24.649Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "bbbff51a-7705-4c75-89d9-b42cf6ba4f0d",
+            "id": "RAP-0000289",
             "state": "Created",
             "provider": {
                 "id": "P9080",
@@ -37,27 +37,27 @@
                 {
                     "id": "6776841d49c82277c6c4ab8e",
                     "fulfillment_ids": [
-                        "1"
+                        "1",
+                        "2"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 1
                         }
                     }
                 }
             ],
             "billing": {
-                "name": "ONDC buyer",
-                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
-                "state": {
-                    "name": "Karnataka"
-                },
+                "name": "Satyapal",
+                "address": "10, 804, C-28, Noida, Noida, 201309",
+                "phone": "8016906022",
+                "tax_id": "09AAFCR8735H1ZY",
                 "city": {
-                    "name": "Bengaluru"
+                    "name": "Noida"
                 },
-                "tax_id": "XXXXXXXXXXXXXXX",
-                "email": "nobody@nomail.com",
-                "phone": "9886098860"
+                "state": {
+                    "name": "Uttar Pradesh"
+                }
             },
             "fulfillments": [
                 {
@@ -82,7 +82,7 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2025-02-03T06:24:59.292Z",
+                                    "start": "2025-02-13T08:16:24.367Z",
                                     "end": "2023-02-13T10:30:00.000Z"
                                 }
                             },
@@ -91,27 +91,28 @@
                                 "short_desc": "Pickup Confirmation Code"
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022",
+                                "email": "satyapal@navankur.org"
                             }
                         },
                         {
                             "type": "end",
                             "location": {
-                                "gps": "12.974002,77.613458",
-                                "address": "My House #, My buildin",
+                                "gps": "28.612226,77.367141",
+                                "address": "10, 804, C-28, Noida, Noida, 201309",
                                 "city": {
-                                    "name": "Bengaluru"
+                                    "name": "Noida"
                                 },
                                 "country": {
                                     "code": "IND"
                                 },
-                                "area_code": "560001",
+                                "area_code": "201309",
                                 "state": {
-                                    "name": "Karnataka"
+                                    "name": "Uttar Pradesh"
                                 }
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022"
                             }
                         }
                     ],
@@ -121,24 +122,24 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "20000"
+                    "value": "1"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
                         "@ondc/org/item_quantity": {
-                            "count": 200
+                            "count": 1
                         },
                         "title": "Basmati Rice",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "20000"
+                            "value": "1"
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "100"
+                                "value": "1"
                             }
                         }
                     },
@@ -175,7 +176,7 @@
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
-                            "value": ""
+                            "value": 0
                         }
                     },
                     {
@@ -184,7 +185,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "100"
+                            "value": "0"
                         }
                     }
                 ],
@@ -241,11 +242,11 @@
                 {
                     "params": {
                         "currency": "INR",
-                        "amount": "20000"
+                        "amount": "1.00"
                     },
-                    "status": "NOT-PAID",
+                    "status": "PAID",
                     "type": "PRE-FULFILLMENT",
-                    "collected_by": "BPP",
+                    "collected_by": "BAP",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
                     "@ondc/org/buyer_app_finder_fee_amount": "0",
                     "@ondc/org/settlement_basis": "delivery",
@@ -282,7 +283,7 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "09AAFCR8735H1ZY"
                         }
                     ]
                 },
@@ -301,7 +302,7 @@
                             "descriptor": {
                                 "code": "max_liability_cap"
                             },
-                            "value": "20000"
+                            "value": "1"
                         },
                         {
                             "descriptor": {
@@ -337,8 +338,8 @@
                     ]
                 }
             ],
-            "created_at": "2025-02-03T06:24:59.292Z",
-            "updated_at": "2025-02-03T06:24:59.667Z"
+            "created_at": "2025-02-13T08:16:24.367Z",
+            "updated_at": "2025-02-13T08:16:24.649Z"
         }
     }
 }
