@@ -11,23 +11,31 @@
         },
         "action": "search",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "842b4188-75f3-49e9-9c8e-364a1a5b805a",
-        "message_id": "4582a34b-bb27-4f23-944c-e6c6ea48b3e4",
-        "timestamp": "2025-01-14T10:52:00.857Z",
+        "transaction_id": "433a0f6e-9560-415c-9f7d-83b7f4cb35fb",
+        "message_id": "f22e799a-f36c-47d7-a0a8-aa8d9fa6d7e3",
+        "timestamp": "2025-02-13T10:27:23.515Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "ttl": "PT30S"
     },
     "message": {
         "intent": {
-            "category": {
-                "id": "RET10-*"
+            "item": {
+                "descriptor": {
+                    "name": "basmati rice"
+                }
             },
             "fulfillment": {
-                "type": "Delivery"
-            },
-            "payment": {
-                "type": "ON-FULFILLMENT"
+                "type": "Delivery",
+                "stops": [
+                    {
+                        "type": "end",
+                        "location": {
+                            "gps": "28.612226,77.367141",
+                            "area_code": "201309"
+                        }
+                    }
+                ]
             },
             "tags": [
                 {
@@ -45,7 +53,7 @@
                             "descriptor": {
                                 "code": "finder_fee_amount"
                             },
-                            "value": "10"
+                            "value": "0.0"
                         }
                     ]
                 },
@@ -64,11 +72,14 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "09AAFCR8735H1ZY"
                         }
                     ]
                 }
-            ]
+            ],
+            "payment": {
+                "type": "ON-FULFILLMENT"
+            }
         }
     }
 }
