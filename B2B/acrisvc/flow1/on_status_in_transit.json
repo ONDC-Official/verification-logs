@@ -1,7 +1,7 @@
 {
   "context": {
     "ttl": "PT30S",
-    "action": "update",
+    "action": "on_status",
     "bap_id": "mock.ondc.org/api",
     "bpp_id": "acrisvc.com",
     "domain": "ONDC:LOG10",
@@ -16,8 +16,8 @@
         "code": "IND"
       }
     },
-    "timestamp": "2025-02-09T09:47:27.786Z",
-    "message_id": "1dbb20fb-321d-4488-8b08-a4c16e0421eb",
+    "timestamp": "2025-02-09T09:47:41.853Z",
+    "message_id": "e680d2c9-7910-4bd5-afd6-8d0dc6263d77",
     "transaction_id": "a8586a22-66cb-4801-b4a2-4e759d1e8416"
   },
   "message": {
@@ -240,11 +240,140 @@
           ]
         }
       ],
-      "status": "Accepted",
-      "provider": {
-        "id": "P1"
+      "quote": {
+        "ttl": "PT15M",
+        "price": {
+          "value": "2085",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "I1"
+            },
+            "price": {
+              "value": "2085",
+              "currency": "INR"
+            },
+            "title": "delivery"
+          },
+          {
+            "item": {
+              "id": "I1"
+            },
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "title": "tax"
+          },
+          {
+            "item": {
+              "id": "I1"
+            },
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "title": "insurance"
+          }
+        ]
       },
-      "updated_at": "2025-02-09T09:47:27.786Z",
+      "status": "Accepted",
+      "billing": {
+        "city": "Bengaluru",
+        "name": "ONDC sellerapp",
+        "time": {
+          "timestamp": "2025-02-09T09:47:06.120Z"
+        },
+        "email": "abcd.efgh@gmail.com",
+        "phone": "9886098860",
+        "state": "Karnataka",
+        "tax_id": "XXXXXXXXXXXXXXX",
+        "address": "My house or building name"
+      },
+      "payments": [
+        {
+          "id": "P1",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "BAP",
+                  "descriptor": {
+                    "code": "Counterparty"
+                  }
+                },
+                {
+                  "value": "UPI",
+                  "descriptor": {
+                    "code": "Mode"
+                  }
+                },
+                {
+                  "value": "xxxxx",
+                  "descriptor": {
+                    "code": "Beneficiary_Name"
+                  }
+                },
+                {
+                  "value": "xxxxx",
+                  "descriptor": {
+                    "code": "Bank_Account_No"
+                  }
+                },
+                {
+                  "value": "xxxxxxx",
+                  "descriptor": {
+                    "code": "Ifsc_Code"
+                  }
+                },
+                {
+                  "value": "xxxxxxx",
+                  "descriptor": {
+                    "code": "UPI_Address"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "Settlement_Details"
+              }
+            },
+            {
+              "list": [
+                {
+                  "value": "2085",
+                  "descriptor": {
+                    "code": "Amount"
+                  }
+                },
+                {
+                  "value": "ON-FULFILLMENT",
+                  "descriptor": {
+                    "code": "Type"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "Collection_Details"
+              }
+            }
+          ],
+          "type": "ON-FULFILLMENT",
+          "params": {
+            "amount": "2085",
+            "currency": "INR",
+            "bank_account_number": "xxxxxxxx",
+            "virtual_payment_address": "xxx@xxxx"
+          },
+          "collected_by": "BPP"
+        }
+      ],
+      "provider": {
+        "id": "P1",
+        "locations":[]
+      },
+      "updated_at": "2024-12-24T08:50:29.512Z",
       "fulfillments": [
         {
           "id": "1",
@@ -252,27 +381,9 @@
             {
               "list": [
                 {
-                  "value": "yes",
+                  "value": "no",
                   "descriptor": {
-                    "code": "Ready_To_Ship"
-                  }
-                },
-                {
-                  "value": "1227262193237777",
-                  "descriptor": {
-                    "code": "AWB_No"
-                  }
-                },
-                {
-                  "value": "387757382938",
-                  "descriptor": {
-                    "code": "Eway_Bill_No"
-                  }
-                },
-                {
-                  "value": "94395859020203",
-                  "descriptor": {
-                    "code": "Invoice_Number"
+                    "code": "RTO_Action"
                   }
                 }
               ],
@@ -282,56 +393,104 @@
             }
           ],
           "type": "Delivery",
+          "agent": {
+            "person": {
+              "name": "Ramu"
+            }
+          },
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "In-transit"
             }
           },
           "stops": [
             {
               "id": "L1",
-              "type": "start",
-              "instructions": {
-                "code": "AWB_No",
-                "long_desc": "QR code will be attached to package",
-                "short_desc": "value of PCC",
-                "additional_desc": {
-                  "url": "https://shipping/label/image.htm",
-                  "content_type": "text/html"
+              "time": {
+                "range": {
+                  "end": "2024-12-24T08:54:31.481Z",
+                  "start": "2024-12-24T08:45:31.481Z"
                 }
               },
-              "authorization": {
-                "type": "QR",
-                "token": "XYZ2",
-                "valid_to": "",
-                "valid_from": ""
+              "type": "start",
+              "contact": {
+                "email": "abcd.efgh@gmail.com",
+                "phone": "9886098860"
+              },
+              "location": {
+                "gps": "12.4535445,77.9283792",
+                "city": {
+                  "name": "Bengaluru"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "address": "My building #, My street name",
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "560041"
+              },
+              "instructions": {
+                "name": "Proof of pickup",
+                "images": [
+                  "https://image1_url.png"
+                ],
+                "long_desc": "Proof of pickup details",
+                "short_desc": "Proof of pickup details"
               },
               "parent_stop_id": ""
             },
             {
-              "id": "L2",
-              "type": "end",
-              "instructions": {
-                "long_desc": "drop package at security gate",
-                "short_desc": "",
-                "additional_desc": {
-                  "url": "URL for instructions",
-                  "content_type": "text/html"
+              "id": "L1",
+              "time": {
+                "range": {
+                  "end": "2024-12-24T08:54:31.481Z",
+                  "start": "2024-12-24T08:45:31.481Z"
                 }
               },
-              "authorization": {
-                "type": "QR",
-                "token": "XYZ2",
-                "valid_to": "",
-                "valid_from": ""
+              "type": "end",
+              "contact": {
+                "email": "abcd.efgh@gmail.com",
+                "phone": "9886098860"
               },
-              "parent_stop_id": "L1"
+              "location": {
+                "gps": "12.342769,77.9129423",
+                "city": {
+                  "name": "Bengaluru"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "address": "My house or building name, street name",
+                "country": {
+                  "code": "IND"
+                },
+                "area_code": "636806"
+              },
+              "instructions": {
+                "name": "Proof of delivery",
+                "images": [
+                  "https://image1_url.png"
+                ],
+                "long_desc": "Proof of delivery details",
+                "short_desc": "Proof of delivery details"
+              },
+              "parent_stop_id": ""
             }
           ],
+          "customer": {
+            "person": {
+              "name": "xyz"
+            },
+            "contact": {
+              "email": "xyz.efgh@gmail.com",
+              "phone": "9886098860"
+            }
+          },
           "tracking": false
         }
       ]
-    },
-    "update_target": "fulfillment"
+    }
   }
 }
