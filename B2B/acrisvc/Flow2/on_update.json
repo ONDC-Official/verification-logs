@@ -1,6 +1,13 @@
 {
     "context": {
+        "ttl": "PT30S",
+        "action": "on_update",
+        "bap_id": "mock.ondc.org/api",
+        "bpp_id": "acrisvc.com",
         "domain": "ONDC:LOG10",
+        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
+        "bpp_uri": "https://acrisvc.com",
+        "version": "2.0.0",
         "location": {
             "city": {
                 "code": "std:080"
@@ -9,29 +16,13 @@
                 "code": "IND"
             }
         },
-        "action": "on_update",
-        "version": "2.0.0",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
-        "transaction_id": "2403b6b2-3f6c-40e4-b471-c6f893075825",
-        "message_id": "48dadb8b-228c-482b-94e6-ae9960911806",
-        "timestamp": "2025-01-28T16:27:07.575Z",
-        "ttl": "PT30S",
-        "bpp_uri": "https://acrisvc.com",
-        "bpp_id": "acrisvc.com"
+        "timestamp": "2025-02-09T10:59:31.279Z",
+        "message_id": "019778c9-2cb4-4290-a58f-434c55c71c9c",
+        "transaction_id": "cc6bb3cd-108b-469d-b096-eff5e548a8b7"
     },
     "message": {
         "order": {
             "id": "O2",
-            "status": "Accepted",
-            "provider": {
-                "id": "P1",
-                "locations": [
-                    {
-                        "id": "L1"
-                    }
-                ]
-            },
             "items": [
                 {
                     "id": "EXPRESS",
@@ -39,7 +30,7 @@
                         {
                             "list": [
                                 {
-                                    "value": "",
+                                    "value": "Road",
                                     "descriptor": {
                                         "code": "Delivery_Mode"
                                     }
@@ -71,7 +62,7 @@
                     "time": {
                         "label": "TAT",
                         "duration": "P8D",
-                        "timestamp": "2025-02-05"
+                        "timestamp": "2025-02-17"
                     },
                     "price": {
                         "value": "2085",
@@ -93,43 +84,139 @@
                 }
             ],
             "quote": {
+                "ttl": "PT15M",
                 "price": {
-                    "currency": "INR",
-                    "value": "2085"
+                    "value": "2085",
+                    "currency": "INR"
                 },
                 "breakup": [
                     {
                         "item": {
                             "id": "I1"
                         },
-                        "title": "delivery",
                         "price": {
-                            "currency": "INR",
-                            "value": "2085"
-                        }
+                            "value": "2085",
+                            "currency": "INR"
+                        },
+                        "title": "delivery"
                     },
                     {
                         "item": {
                             "id": "I1"
                         },
-                        "title": "tax",
                         "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "tax"
                     },
                     {
                         "item": {
                             "id": "I1"
                         },
-                        "title": "insurance",
                         "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "insurance"
                     }
                 ]
             },
+            "status": "Accepted",
+            "billing": {
+                "city": "Bengaluru",
+                "name": "ONDC sellerapp",
+                "time": {
+                    "timestamp": "2025-02-09T10:59:02.213Z"
+                },
+                "email": "abcd.efgh@gmail.com",
+                "phone": "9886098860",
+                "state": "Karnataka",
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "address": "My house or building name"
+            },
+            "payments": [
+                {
+                    "id": "P1",
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "BAP",
+                                    "descriptor": {
+                                        "code": "Counterparty"
+                                    }
+                                },
+                                {
+                                    "value": "UPI",
+                                    "descriptor": {
+                                        "code": "Mode"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxx",
+                                    "descriptor": {
+                                        "code": "Beneficiary_Name"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxx",
+                                    "descriptor": {
+                                        "code": "Bank_Account_No"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxxxx",
+                                    "descriptor": {
+                                        "code": "Ifsc_Code"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxxxx",
+                                    "descriptor": {
+                                        "code": "UPI_Address"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "Settlement_Details"
+                            }
+                        },
+                        {
+                            "list": [
+                                {
+                                    "value": "2085",
+                                    "descriptor": {
+                                        "code": "Amount"
+                                    }
+                                },
+                                {
+                                    "value": "ON-FULFILLMENT",
+                                    "descriptor": {
+                                        "code": "Type"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "Collection_Details"
+                            }
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT",
+                    "params": {
+                        "amount": "2085",
+                        "currency": "INR",
+                        "bank_account_number": "xxxxxxxx",
+                        "virtual_payment_address": "xxx@xxxx"
+                    },
+                    "collected_by": "BPP"
+                }
+            ],
+            "provider": {
+                "id": "P1",
+                "locations": []
+            },
+            "updated_at": "2023-10-17T21:13:00.601Z",
             "fulfillments": [
                 {
                     "id": "1",
@@ -137,7 +224,13 @@
                         {
                             "list": [
                                 {
-                                    "value": "1209878992826353",
+                                    "value": "yes",
+                                    "descriptor": {
+                                        "code": "Ready_To_Ship"
+                                    }
+                                },
+                                {
+                                    "value": "1227262193237777",
                                     "descriptor": {
                                         "code": "AWB_No"
                                     }
@@ -149,15 +242,15 @@
                                     }
                                 },
                                 {
-                                    "value": "1209878992826353",
+                                    "value": "94395859020203",
                                     "descriptor": {
-                                        "code": "Transporter_Id"
+                                        "code": "Invoice_Number"
                                     }
                                 },
                                 {
-                                    "value": "1209567899003",
+                                    "value": "387757382938",
                                     "descriptor": {
-                                        "code": "Doc_Way_Bill_No"
+                                        "code": "Eway_Bill_No"
                                     }
                                 }
                             ],
@@ -264,97 +357,7 @@
                     },
                     "tracking": false
                 }
-            ],
-            "billing": {
-                "city": "Bengaluru",
-                "name": "ONDC sellerapp",
-                "time": {
-                    "timestamp": "2025-01-28T16:26:51.810Z"
-                },
-                "email": "abcd.efgh@gmail.com",
-                "phone": "9886098860",
-                "state": "Karnataka",
-                "tax_id": "XXXXXXXXXXXXXXX",
-                "address": "My house or building name"
-            },
-            "payments": [
-                {
-                    "id": "P1",
-                    "collected_by": "BPP",
-                    "params": {
-                        "amount": "2085",
-                        "currency": "INR",
-                        "bank_account_number": "xxxxxxxx",
-                        "virtual_payment_address": "xxx@xxxx"
-                    },
-                    "type": "ON-FULFILLMENT",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "Settlement_Details"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "Counterparty"
-                                    },
-                                    "value": "BAP"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Mode"
-                                    },
-                                    "value": "UPI"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Beneficiary_Name"
-                                    },
-                                    "value": "xxxxx"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Bank_Account_No"
-                                    },
-                                    "value": "xxxxx"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Ifsc_Code"
-                                    },
-                                    "value": "xxxxxxx"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "UPI_Address"
-                                    },
-                                    "value": "xxxxxxx"
-                                }
-                            ]
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Collection_Details"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "Amount"
-                                    },
-                                    "value": "2085"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Type"
-                                    },
-                                    "value": "ON-FULFILLMENT"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "updated_at": "2023-10-17T21:13:00.601Z"
+            ]
         }
     }
 }
