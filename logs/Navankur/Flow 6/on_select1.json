@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
@@ -11,14 +11,14 @@
         },
         "action": "on_select",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "e930668a-0d65-446d-bd67-3bb226682999",
-        "message_id": "0110a39f-97a6-483e-bcf5-89a8b72d0637",
-        "timestamp": "2025-02-03T10:18:45.776Z",
-        "ttl": "PT30S",
+        "transaction_id": "69d8cc44-6090-49df-8a4b-d7b75fe4872e",
+        "message_id": "c6de3d53-9d58-4ff2-a282-e5af2a04e900",
+        "timestamp": "2025-02-14T12:29:32.634Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
@@ -33,19 +33,15 @@
             "items": [
                 {
                     "fulfillment_ids": [
-                        "1"
+                        "1",
+                        "2"
                     ],
                     "id": "6776841d49c82277c6c4ab8e",
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 10
                         }
                     },
-                    "add_ons": [
-                        {
-                            "id": "78787723"
-                        }
-                    ],
                     "tags": [
                         {
                             "descriptor": {
@@ -54,15 +50,15 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "ITEM_REQ"
+                                        "code": "PACKAGING_REQ"
                                     },
-                                    "value": "free text on Item Customization"
+                                    "value": "No special packaging & shipment needed"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "PACKAGING_REQ"
+                                        "code": "ITEM_REQ"
                                     },
-                                    "value": "free text on packaging Customization"
+                                    "value": "na"
                                 }
                             ]
                         }
@@ -80,30 +76,51 @@
                         "descriptor": {
                             "code": "Serviceable"
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "NaN"
+                    "value": "10"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
                         "@ondc/org/item_quantity": {
-                            "count": 200
+                            "count": 10
                         },
                         "title": "Basmati Rice",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "20000"
+                            "value": "10"
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "100"
+                                "value": "1"
                             }
                         }
                     },

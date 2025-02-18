@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
@@ -11,18 +11,18 @@
         },
         "action": "on_confirm",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "8ef4d69e-1413-4b64-baa3-7a8e754270df",
-        "message_id": "1edb510b-681a-4d46-9a3b-e13d7f27df23",
-        "timestamp": "2025-02-03T05:55:30.350Z",
-        "ttl": "PT30S",
+        "transaction_id": "266b7df3-89eb-4c3c-9d05-193a49349aaf",
+        "message_id": "e9d92719-7476-4804-8b66-e4821847b1d0",
+        "timestamp": "2025-02-14T12:06:49.959Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "948463a1-a0c3-40d5-9222-255788728134",
+            "id": "RAP-0000314",
             "state": "Created",
             "provider": {
                 "id": "P9080",
@@ -37,27 +37,48 @@
                 {
                     "id": "6776841d49c82277c6c4ab8e",
                     "fulfillment_ids": [
-                        "1"
+                        "1",
+                        "2"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 10
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packaging & shipment needed"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "na"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "billing": {
-                "name": "ONDC buyer",
-                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
-                "state": {
-                    "name": "Karnataka"
-                },
+                "name": "Satyapal",
+                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                "phone": "8016906022",
+                "tax_id": "09AAFCR8735H1ZY",
                 "city": {
-                    "name": "Bengaluru"
+                    "name": "Singapore"
                 },
-                "tax_id": "XXXXXXXXXXXXXXX",
-                "email": "nobody@nomail.com",
-                "phone": "9886098860"
+                "state": {
+                    "name": "Singapore"
+                }
             },
             "fulfillments": [
                 {
@@ -82,7 +103,7 @@
                             },
                             "time": {
                                 "range": {
-                                    "start": "2025-02-03T05:55:29.881Z",
+                                    "start": "2025-02-14T12:06:49.775Z",
                                     "end": "2023-02-13T10:30:00.000Z"
                                 }
                             },
@@ -91,54 +112,76 @@
                                 "short_desc": "Pickup Confirmation Code"
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022",
+                                "email": "satyapal@navankur.org"
                             }
                         },
                         {
                             "type": "end",
                             "location": {
-                                "gps": "12.974002,77.613458",
-                                "address": "My House #, My buildin",
+                                "gps": "1.331209,103.946171",
+                                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
                                 "city": {
-                                    "name": "Bengaluru"
+                                    "name": "Singapore"
                                 },
                                 "country": {
-                                    "code": "IND"
+                                    "code": "SGP"
                                 },
-                                "area_code": "560001",
+                                "area_code": "465654",
                                 "state": {
-                                    "name": "Karnataka"
+                                    "name": "Singapore"
                                 }
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022"
                             }
                         }
                     ],
-                    "rateable": true
+                    "rateable": true,
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore "
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "20000"
+                    "value": "10"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
                         "@ondc/org/item_quantity": {
-                            "count": 200
+                            "count": 10
                         },
                         "title": "Basmati Rice",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "20000"
+                            "value": "10"
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "100"
+                                "value": "1"
                             }
                         }
                     },
@@ -175,7 +218,7 @@
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
-                            "value": ""
+                            "value": 0
                         }
                     },
                     {
@@ -184,7 +227,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "100"
+                            "value": "0"
                         }
                     }
                 ],
@@ -241,11 +284,11 @@
                 {
                     "params": {
                         "currency": "INR",
-                        "amount": "20000"
+                        "amount": "10.00"
                     },
                     "status": "NOT-PAID",
-                    "type": "ON-FULFILLMENT",
-                    "collected_by": "BPP",
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
                     "@ondc/org/buyer_app_finder_fee_amount": "0",
                     "@ondc/org/settlement_basis": "delivery",
@@ -282,7 +325,7 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "09AAFCR8735H1ZY"
                         }
                     ]
                 },
@@ -301,7 +344,7 @@
                             "descriptor": {
                                 "code": "max_liability_cap"
                             },
-                            "value": "20000"
+                            "value": "10"
                         },
                         {
                             "descriptor": {
@@ -337,8 +380,8 @@
                     ]
                 }
             ],
-            "created_at": "2025-02-03T05:55:29.881Z",
-            "updated_at": "2025-02-03T05:55:30.351Z"
+            "created_at": "2025-02-14T12:06:49.775Z",
+            "updated_at": "2025-02-14T12:06:49.959Z"
         }
     }
 }

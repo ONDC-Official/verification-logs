@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
@@ -11,14 +11,14 @@
         },
         "action": "on_init",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "8ef4d69e-1413-4b64-baa3-7a8e754270df",
-        "message_id": "36acb369-21b3-4ea1-bec7-07c5bead1e37",
-        "timestamp": "2025-02-03T05:33:27.372Z",
-        "ttl": "PT30S",
+        "transaction_id": "266b7df3-89eb-4c3c-9d05-193a49349aaf",
+        "message_id": "ddb4a75f-6aa9-4998-8da4-4d282c24c180",
+        "timestamp": "2025-02-14T12:05:27.903Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
@@ -32,11 +32,12 @@
                 {
                     "id": "6776841d49c82277c6c4ab8e",
                     "fulfillment_ids": [
-                        "1"
+                        "1",
+                        "2"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 10
                         }
                     },
                     "add_ons": [
@@ -52,15 +53,15 @@
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "ITEM_REQ"
+                                        "code": "PACKAGING_REQ"
                                     },
-                                    "value": "free text on Item Customization"
+                                    "value": "No special packaging & shipment needed"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "PACKAGING_REQ"
+                                        "code": "ITEM_REQ"
                                     },
-                                    "value": "free text on packaging Customization"
+                                    "value": "na"
                                 }
                             ]
                         }
@@ -68,17 +69,16 @@
                 }
             ],
             "billing": {
-                "name": "ONDC buyer",
-                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+                "name": "Satyapal",
+                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                "phone": "8016906022",
+                "tax_id": "09AAFCR8735H1ZY",
                 "state": {
-                    "name": "Karnataka"
+                    "name": "Singapore"
                 },
                 "city": {
-                    "name": "Bengaluru"
-                },
-                "tax_id": "XXXXXXXXXXXXXXX",
-                "email": "nobody@nomail.com",
-                "phone": "9886098860"
+                    "name": "Singapore"
+                }
             },
             "fulfillments": [
                 {
@@ -92,22 +92,43 @@
                         {
                             "type": "end",
                             "location": {
-                                "gps": "12.974002,77.613458",
-                                "address": "My House #, My buildin",
+                                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                                "gps": "1.331209,103.946171",
+                                "area_code": "465654",
+                                "state": {
+                                    "name": "Singapore"
+                                },
                                 "city": {
-                                    "name": "Bengaluru"
+                                    "name": "Singapore"
                                 },
                                 "country": {
-                                    "code": "IND"
-                                },
-                                "area_code": "560001",
-                                "state": {
-                                    "name": "Karnataka"
+                                    "code": "SGP"
                                 }
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022"
                             }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore "
+                                }
+                            ]
                         }
                     ]
                 }
@@ -115,24 +136,24 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "20000"
+                    "value": "10"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
                         "@ondc/org/item_quantity": {
-                            "count": 200
+                            "count": 10
                         },
                         "title": "Basmati Rice",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "20000"
+                            "value": "10"
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "100"
+                                "value": "1"
                             }
                         }
                     },
@@ -169,7 +190,7 @@
                         "@ondc/org/title_type": "discount",
                         "price": {
                             "currency": "INR",
-                            "value": ""
+                            "value": 0
                         }
                     },
                     {
@@ -178,7 +199,7 @@
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "100"
+                            "value": "0"
                         }
                     }
                 ],
@@ -233,11 +254,11 @@
             ],
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT",
+                    "type": "PRE-FULFILLMENT",
                     "collected_by": "BAP",
-                    "uri": "plink_Pmt7akXEt39JKt",
+                    "uri": "",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "10",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
                     "@ondc/org/settlement_basis": "delivery",
                     "@ondc/org/settlement_window": "P1D",
                     "@ondc/org/withholding_amount": "10.00",
@@ -252,33 +273,6 @@
                             "beneficiary_name": "Satyapal",
                             "bank_name": "State Bank of India",
                             "branch_name": "Kharagpur"
-                        }
-                    ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BPP_payment"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "signature"
-                                    },
-                                    "value": "2e95972c2bab4e499e0a62ab60d8856b4b234d57c1e1b8d294357aa929178d9a"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "dsa"
-                                    },
-                                    "value": "sha256"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ttl"
-                                    },
-                                    "value": "PT30M"
-                                }
-                            ]
                         }
                     ]
                 }
@@ -299,7 +293,7 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "09AAFCR8735H1ZY"
                         }
                     ]
                 },
@@ -318,7 +312,7 @@
                             "descriptor": {
                                 "code": "max_liability_cap"
                             },
-                            "value": "20000"
+                            "value": "10"
                         },
                         {
                             "descriptor": {
