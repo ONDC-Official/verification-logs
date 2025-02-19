@@ -1,7 +1,7 @@
 {
     "logReport": {
         "Flow Error": {
-            "0": "Incorrect Flow as per context/timestamps - (select,on_select,search,on_search,init,on_init,confirm,on_confirm,update,on_update,status,on_status)"
+            "0": "Incorrect Flow as per context/timestamps - (select,on_select,init,on_init,confirm,on_confirm,update,on_update,status,on_status,search,on_search)"
         },
         "Schema": {
             "schemaErr0": "/select/1/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
@@ -10,19 +10,19 @@
             "schemaErr3": "/on_select/0/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
             "schemaErr4": "/on_select/1/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
             "schemaErr5": "/on_select/1/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
-            "schemaErr6": "/on_select/1/message/order/payments/0 must have required property 'collected_by'",
-            "schemaErr7": "/on_select/2/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
-            "schemaErr8": "/on_select/2/context/message_id Message ID for on_action API should be same as action API: \"c6de3d53-9d58-4ff2-a282-e5af2a04e900\"",
-            "schemaErr9": "/on_select/2/context/message_id Message ID for on_action API should be same as action API: \"237ed2a2-fc44-4804-aa27-584e54807a7a\"",
-            "schemaErr10": "/on_select/2/context/message_id must match a schema in anyOf",
-            "schemaErr11": "/on_select/2/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
-            "schemaErr12": "/on_select/2/message/order/fulfillments/0/state/descriptor/code must be equal to one of the allowed values (Serviceable,Non-serviceable)",
-            "schemaErr13": "/on_select/2/message/order/payments/0 must have required property 'collected_by'",
-            "schemaErr14": "/on_select/3/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
-            "schemaErr15": "/on_select/3/context/message_id Message ID for on_action API should be same as action API: \"c6de3d53-9d58-4ff2-a282-e5af2a04e900\"",
-            "schemaErr16": "/on_select/3/context/message_id Message ID for on_action API should be same as action API: \"237ed2a2-fc44-4804-aa27-584e54807a7a\"",
-            "schemaErr17": "/on_select/3/context/message_id must match a schema in anyOf",
-            "schemaErr18": "/on_select/3/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
+            "schemaErr6": "/on_select/1/message/order/fulfillments/0/state/descriptor/code must be equal to one of the allowed values (Serviceable,Non-serviceable)",
+            "schemaErr7": "/on_select/1/message/order/payments/0 must have required property 'collected_by'",
+            "schemaErr8": "/on_select/2/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
+            "schemaErr9": "/on_select/2/context/message_id Message ID for on_action API should be same as action API: \"c6de3d53-9d58-4ff2-a282-e5af2a04e900\"",
+            "schemaErr10": "/on_select/2/context/message_id Message ID for on_action API should be same as action API: \"af72116c-0078-4765-bcb4-f00335e85ebf\"",
+            "schemaErr11": "/on_select/2/context/message_id must match a schema in anyOf",
+            "schemaErr12": "/on_select/2/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
+            "schemaErr13": "/on_select/3/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
+            "schemaErr14": "/on_select/3/context/message_id Message ID for on_action API should be same as action API: \"c6de3d53-9d58-4ff2-a282-e5af2a04e900\"",
+            "schemaErr15": "/on_select/3/context/message_id Message ID for on_action API should be same as action API: \"af72116c-0078-4765-bcb4-f00335e85ebf\"",
+            "schemaErr16": "/on_select/3/context/message_id must match a schema in anyOf",
+            "schemaErr17": "/on_select/3/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
+            "schemaErr18": "/on_select/3/message/order/payments/0 must have required property 'collected_by'",
             "schemaErr19": "/init/0/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
             "schemaErr20": "/on_init/0/context/transaction_id Transaction ID should be same across the transaction: \"69d8cc44-6090-49df-8a4b-d7b75fe4872e\"",
             "schemaErr21": "/on_init/0/message/order/quote/breakup/4/price/value must be string",
@@ -82,21 +82,27 @@
                 "deliveryQuoteErr": "Delivery charges should be provided in quote/breakup when fulfillment is 'Serviceable'"
             },
             "on_select_1": {
+                "fullfntTagErr": "Delivery terms (INCOTERMS) are required for exports in /fulfillments/tags"
+            },
+            "on_select_2": {
+                "deliveryQuoteErr": "Delivery charges should be provided in quote/breakup when fulfillment is 'Serviceable'"
+            },
+            "on_select_3": {
                 "fullfntTagErr": "Delivery terms (INCOTERMS) are required for exports in /fulfillments/tags",
                 "deliveryQuoteErr": "Delivery charges should be provided in quote/breakup when fulfillment is 'Serviceable'"
             },
-            "on_select_2": {
-                "fullfntTagErr": "Delivery terms (INCOTERMS) are required for exports in /fulfillments/tags"
+            "init_0": {
+                "item-0-DiffErr": "In /items, 'quantity' mismatch from /on_select for item with id 6776841d49c82277c6c4ab8e"
             },
-            "on_select_3": {
-                "deliveryQuoteErr": "Delivery charges should be provided in quote/breakup when fulfillment is 'Serviceable'"
+            "on_init_0": {
+                "feeTypeErr": "Buyer Finder Fee amount mismatches from /search"
             },
-            "search_0": {
-                "RGC-end-Err": "Reverse Geocoding for `end` failed. Area Code 465654 not matching with 1.331209,103.946171 Lat-Long pair.",
-                "areaCodeErr": "STD code could not be validated from the gps location"
+            "confirm_0": {
+                "item-0-DiffErr": "In /items, 'quantity' mismatch from /on_select for item with id 6776841d49c82277c6c4ab8e",
+                "feeTypeErr": "Buyer Finder Fee amount mismatches from /search"
             },
-            "on_search_0": {
-                "missingPRVDRTags-0-err": "seller_terms are required in /providers/tags"
+            "on_confirm_0": {
+                "feeTypeErr": "Buyer Finder Fee amount mismatches from /search"
             },
             "on_status_3": {
                 "pickupTimeErr": "Pickup timestamp (fulfillments/start/time/timestamp) cannot change for fulfillment state - Out-for-delivery"
@@ -104,6 +110,13 @@
             "on_status_4": {
                 "deliveryTimeErr": "Delivery timestamp (fulfillments/end/time/timestamp) is required for fulfillment state - Order-delivered",
                 "pickupTimeErr": "Pickup timestamp (fulfillments/start/time/timestamp) cannot change for fulfillment state - Order-delivered"
+            },
+            "search_0": {
+                "RGC-end-Err": "Reverse Geocoding for `end` failed. Area Code 465654 not matching with 1.331209,103.946171 Lat-Long pair.",
+                "areaCodeErr": "STD code could not be validated from the gps location"
+            },
+            "on_search_0": {
+                "missingPRVDRTags-0-err": "seller_terms are required in /providers/tags"
             }
         }
     }

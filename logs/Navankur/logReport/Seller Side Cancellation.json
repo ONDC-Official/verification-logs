@@ -1,17 +1,37 @@
 {
     "logReport": {
+        "Flow Error": {
+            "0": "Incorrect Flow as per context/timestamps - (on_status,search,on_search,select,on_select,init,on_init,confirm,on_confirm,update,on_update,on_cancel)"
+        },
         "Schema": {
             "schemaErr0": "/on_select/0/message/order/fulfillments/0/@ondc~1org~1category must be equal to one of the allowed values (Express Delivery,Standard Delivery,Immediate Delivery,Same Day Delivery,Next Day Delivery,Takeaway)",
             "schemaErr1": "/on_init/0/message/order/quote/breakup/4/price/value must be string",
             "schemaErr2": "/confirm/0/message/order/quote/price/value must be equal to constant (10)",
             "schemaErr3": "/confirm/0/message/order/payments/0/@ondc~1org~1withholding_amount must be equal to constant (10.00)",
-            "schemaErr4": "/on_confirm/0/message/order/quote/breakup/4/price/value must be string",
-            "schemaErr5": "/on_confirm/0/message/order/payments/0/@ondc~1org~1buyer_app_finder_fee_amount must be equal to constant (0.0)",
-            "schemaErr6": "/on_status/0/message/order/payments/0/@ondc~1org~1buyer_app_finder_fee_amount must be equal to constant (0.0)",
-            "schemaErr7": "/on_status/0/message/order/payments/0/@ondc~1org~1withholding_amount must be equal to constant (0)"
+            "schemaErr4": "/on_confirm/0 must pass \"isFutureDated\" keyword validation",
+            "schemaErr5": "/on_confirm/0/message/order/quote/breakup/4/price/value must be string",
+            "schemaErr6": "/on_confirm/0/message/order/payments/0/@ondc~1org~1buyer_app_finder_fee_amount must be equal to constant (0.0)",
+            "schemaErr7": "/update/0/message/order/payments/0 must have required property 'uri'",
+            "schemaErr8": "/update/0/message/order/payments/0 must have required property 'tl_method'",
+            "schemaErr9": "/on_status/0/context/transaction_id Transaction ID should be same across the transaction: \"e7d00744-79f1-4069-8d91-ca47a4eb9557\"",
+            "schemaErr10": "/on_status/0/message/order/id must be equal to constant (RAP-0000393)",
+            "schemaErr11": "/on_status/0/message/order/payments/0/@ondc~1org~1buyer_app_finder_fee_amount must be equal to constant (0.0)",
+            "schemaErr12": "/on_status/0/message/order/payments/0/@ondc~1org~1withholding_amount must be equal to constant (0)",
+            "schemaErr13": "/on_status/0/message/order/created_at order/created_at should remain same as in /confirm - \"2025-02-19T11:51:41.921Z\"",
+            "schemaErr14": "/on_cancel/0/message/order/items/0 must have required property 'payment_ids'",
+            "schemaErr15": "/on_cancel/0/message/order/quote/breakup/1/@ondc~1org~1item_quantity/count must be integer",
+            "schemaErr16": "/on_cancel/0/message/order/payments/0 must have required property '@ondc/org/settlement_basis'",
+            "schemaErr17": "/on_cancel/0/message/order/payments/0 must have required property '@ondc/org/settlement_window'",
+            "schemaErr18": "/on_cancel/0/message/order/payments/0 must have required property '@ondc/org/withholding_amount'"
         },
         "Context": {
             "on_init_0": {
+                "msgIdErr": "Message Id cannot be same for different sets of APIs"
+            },
+            "on_update_0": {
+                "msgIdErr": "Message Id cannot be same for different sets of APIs"
+            },
+            "on_cancel_0": {
                 "msgIdErr": "Message Id cannot be same for different sets of APIs"
             }
         },
@@ -25,6 +45,9 @@
             },
             "on_select_0": {
                 "deliveryQuoteErr": "Delivery charges should be provided in quote/breakup when fulfillment is 'Serviceable'"
+            },
+            "on_cancel_0": {
+                "cancelledByErr1": "In case of seller cancellation, cancellation/cancelled_by should be bpp_id"
             }
         }
     }
