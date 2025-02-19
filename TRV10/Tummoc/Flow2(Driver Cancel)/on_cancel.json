@@ -13,12 +13,12 @@
                 "code": "IND"
             }
         },
-        "transaction_id": "28729084-96f6-4406-b96c-919dcee90df7",
-        "message_id": "8b75274d-ce3f-4dc0-9b75-a69c781901ee",
-        "timestamp": "2025-02-19T10:12:45.733Z",
+        "transaction_id": "beac5cfc-d2a7-44c6-beb3-c721e5bee6f5",
+        "message_id": "8c0960f2-340f-45af-8880-6956a53da229",
+        "timestamp": "2025-02-19T10:39:52.600Z",
         "version": "2.0.1",
         "ttl": "PT10M",
-        "action": "on_init"
+        "action": "on_cancel"
     },
     "message": {
         "order": {
@@ -27,7 +27,7 @@
             },
             "fulfillments": [
                 {
-                    "id": "f7514ce8-5027-4c99-90c0-65e58cee29af",
+                    "id": "1b309100-499d-498e-863c-6e2371d0d572",
                     "stops": [
                         {
                             "location": {
@@ -37,6 +37,15 @@
                             "instructions": {
                                 "short_desc": "Information about location",
                                 "long_desc": "Information about location"
+                            },
+                            "authorization": {
+                                "token": "123456",
+                                "type": "OTP",
+                                "valid_to": "2025-02-19T11:38:52.346Z",
+                                "status": "UNCLAIMED"
+                            },
+                            "time": {
+                                "duration": "PT2H"
                             }
                         },
                         {
@@ -84,6 +93,11 @@
                         "person": {
                             "name": "Maaz"
                         }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "RIDE_CANCELLED"
+                        }
                     }
                 }
             ],
@@ -95,7 +109,7 @@
                         "name": "Auto Ride"
                     },
                     "fulfillment_ids": [
-                        "f7514ce8-5027-4c99-90c0-65e58cee29af"
+                        "1b309100-499d-498e-863c-6e2371d0d572"
                     ],
                     "price": {
                         "currency": "INR",
@@ -104,8 +118,8 @@
                         "maximum_value": "230"
                     },
                     "location_ids": [
-                        "8837644e-7ea8-4d1f-942f-f0e976f6c9b1",
-                        "ab41bce4-7622-4914-9eac-8e9bacbc5c1d"
+                        "6bfe72aa-c1e3-40c4-9e49-06ab8a5318f5",
+                        "bb9beb81-de75-49ad-9096-33c50e4e86e1"
                     ],
                     "tags": [
                         {
@@ -188,14 +202,14 @@
                         }
                     ],
                     "payment_ids": [
-                        "8be01f2a-1b67-4085-a24f-147a89d387f1"
+                        "295f2fb5-47ab-4cdd-a6fe-b0c436b1c14a"
                     ]
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "210.00"
+                    "value": "0.00"
                 },
                 "breakup": [
                     {
@@ -210,6 +224,20 @@
                         "price": {
                             "currency": "INR",
                             "value": "30"
+                        }
+                    },
+                    {
+                        "title": "CANCELLATION_CHARGES",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "REFUND",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-210.00"
                         }
                     }
                 ],
@@ -355,14 +383,26 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "2.10"
+                                    "value": "0"
                                 }
                             ]
                         }
                     ],
-                    "id": "8be01f2a-1b67-4085-a24f-147a89d387f1"
+                    "id": "295f2fb5-47ab-4cdd-a6fe-b0c436b1c14a"
                 }
-            ]
+            ],
+            "id": "a074cd6a-d5b6-4967-a76f-a44c53f9ae72",
+            "status": "CANCELLED",
+            "created_at": "2025-02-19T10:38:52.347Z",
+            "updated_at": "2025-02-19T10:39:52.600Z",
+            "cancellation": {
+                "cancelled_by": "PROVIDER",
+                "reason": {
+                    "descriptor": {
+                        "code": "011"
+                    }
+                }
+            }
         }
     }
 }
