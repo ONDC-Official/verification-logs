@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
@@ -11,47 +11,41 @@
         },
         "action": "on_update",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "b67446c8-6e88-4d0b-a2e5-05da08e55b34",
-        "message_id": "ca29cc39-4d01-493e-b608-49c6f1189360",
-        "timestamp": "2025-01-14T12:43:04.079Z",
-        "ttl": "PT30S",
+        "transaction_id": "f6489c28-6265-418c-80ed-30a609aa7b7c",
+        "message_id": "caa0914b-ec73-4290-8884-f211ca20d9fb",
+        "timestamp": "2025-02-14T12:48:12.338Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "f71d669d-f1c8-424b-bbf6-54aa5d35eed1",
-            "state": "Created",
+            "id": "RAP-0000321",
+            "state": "Accepted",
             "provider": {
-                "id": "P9876"
+                "id": "P9080"
             },
             "items": [
                 {
                     "id": "6776841d49c82277c6c4ab8e",
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 10
                         }
                     }
                 }
             ],
             "payments": [
                 {
-                    "status": "PAID",
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "BPP",
                     "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/buyer_app_finder_fee_amount": "3.0",
                     "@ondc/org/settlement_details": [
                         {
                             "settlement_counterparty": "seller-app",
                             "settlement_phase": "sale-amount",
-                            "settlement_type": "neft",
+                            "settlement_type": "upi",
                             "upi_address": "",
                             "settlement_bank_account_no": "32476977544",
                             "settlement_ifsc_code": "SBIN0000202",
@@ -60,13 +54,14 @@
                             "branch_name": "Kharagpur"
                         }
                     ],
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP",
+                    "status": "PAID",
                     "params": {
                         "currency": "INR",
-                        "amount": "20000",
-                        "transaction_id": "764ee7d0-b36f-4dfa-bed7-ba4fc02e84d4"
-                    },
-                    "tl_method": "http/get",
-                    "uri": "https://ondc.transaction.com/payment"
+                        "transaction_id": "f6489c28-6265-418c-80ed-30a609aa7b7c",
+                        "amount": "10.00"
+                    }
                 }
             ]
         }

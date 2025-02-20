@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
@@ -11,68 +11,17 @@
         },
         "action": "select",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "de8c725a-f71f-4739-8add-6ec7cee4216a",
-        "message_id": "d9fe3e55-ad24-4082-b913-768f5cde0fd1",
-        "timestamp": "2025-01-15T11:12:12.414Z",
-        "ttl": "P1D",
+        "transaction_id": "40a3e07f-3e0f-4c23-9ae9-5e373adf8b96",
+        "message_id": "4e08922b-2220-4616-94b7-ef8bccdfebaf",
+        "timestamp": "2025-02-14T12:20:33.743Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "P1D"
     },
     "message": {
         "order": {
-            "provider": {
-                "id": "P9876",
-                "locations": [
-                    {
-                        "id": "67580ba80f5cad8920d74a81"
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "items": [
-                {
-                    "id": "6776841d49c82277c6c4ab8e",
-                    "location_ids": [
-                        "67580ba80f5cad8920d74a81"
-                    ],
-                    "fulfillment_ids": [
-                        "1"
-                    ],
-                    "quantity": {
-                        "selected": {
-                            "count": 200
-                        }
-                    },
-                    "add_ons": [
-                        {
-                            "id": "78787723"
-                        }
-                    ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_TERMS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "ITEM_REQ"
-                                    },
-                                    "value": "free text on Item Customization"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "PACKAGING_REQ"
-                                    },
-                                    "value": "free text on packaging Customization"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
             "fulfillments": [
                 {
                     "id": "1",
@@ -81,28 +30,97 @@
                         {
                             "type": "end",
                             "location": {
-                                "gps": "12.974002,77.613458",
-                                "area_code": "560001",
+                                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                                "gps": "1.331209,103.946171",
+                                "area_code": "465654",
+                                "state": {
+                                    "name": "Singapore"
+                                },
                                 "city": {
-                                    "name": "Bengaluru"
+                                    "name": "Singapore"
                                 },
                                 "country": {
-                                    "code": "IND"
-                                },
-                                "state": {
-                                    "name": "Karnataka"
+                                    "code": "SGP"
                                 }
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022"
                             }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore "
+                                }
+                            ]
                         }
                     ]
                 }
             ],
+            "items": [
+                {
+                    "id": "6776841d49c82277c6c4ab8e",
+                    "location_ids": [
+                        "67580ba80f5cad8920d74a81"
+                    ],
+                    "fulfillment_ids": [
+                        "1",
+                        "2"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 1000
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packaging & shipment needed"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "na"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "P9080",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ],
+                "ttl": "P1D"
+            },
             "payments": [
                 {
-                    "type": "ON-FULFILLMENT"
+                    "type": "PRE-FULFILLMENT"
                 }
             ],
             "tags": [
@@ -121,8 +139,20 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "09AAFCR8735H1ZY"
                         }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "COMM_CHANNEL"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "chat_url"
+                            },
+                            "value": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/chat"                        }
                     ]
                 }
             ]

@@ -1,34 +1,84 @@
 {
     "context": {
         "domain": "ONDC:RET10",
-        "country": "IND",
-        "city": "std:044",
+        "location": {
+            "city": {
+                "code": "std:999"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
         "action": "search",
-        "core_version": "1.2.0",
-        "bap_id": "preprod.bap.kanivin.com",
-        "bap_uri": "https://preprod.bap.kanivin.com",
-        "transaction_id": "55415da8-d271-42d3-a568-7d12d92c4ad9",
-        "message_id": "55efcafd-2cbc-4bb9-ac3d-9cb0b6882269",
-        "timestamp": "2025-01-14T12:18:56.314731307Z"
+        "version": "2.0.2",
+        "transaction_id": "f6489c28-6265-418c-80ed-30a609aa7b7c",
+        "message_id": "d3b1722e-1cff-4a1b-b691-2e891fefafc9",
+        "timestamp": "2025-02-14T12:43:45.306Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
+        "ttl": "PT30S"
     },
     "message": {
         "intent": {
             "item": {
                 "descriptor": {
-                    "name": "coffee"
+                    "name": "basmati rice"
                 }
             },
             "fulfillment": {
                 "type": "Delivery",
-                "end": {
-                    "location": {
-                        "gps": "13.024222, 77.596356"
+                "stops": [
+                    {
+                        "type": "end",
+                        "location": {
+                            "gps": "1.331209,103.946171",
+                            "area_code": "465654"
+                        }
                     }
-                }
+                ]
             },
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "finder_fee_type"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "finder_fee_amount"
+                            },
+                            "value": "0.0"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "09AAFCR8735H1ZY"
+                        }
+                    ]
+                }
+            ],
             "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3"
+                "type": "ON-FULFILLMENT"
             }
         }
     }
