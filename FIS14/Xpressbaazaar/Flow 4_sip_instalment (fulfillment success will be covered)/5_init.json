@@ -1,0 +1,147 @@
+{
+    "context": {
+        "domain": "ONDC:FIS14",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "version": "2.0.0",
+        "action": "init",
+        "transaction_id": "c21b89fd-a549-4642-bc04-1b9424745060",
+        "message_id": "7e6e213b-1e72-4690-b60d-e0f28a805482",
+        "timestamp": "2025-02-04T11:06:31.087Z",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "ttl": "PT10M",
+        "bpp_id": "preprod.xpressbaazaar.com",
+        "bpp_uri": "https://preprod.xpressbaazaar.com/investment"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "xyz_mf"
+            },
+            "items": [
+                {
+                    "id": "a6e64494-b941-4aa8-b504-95a84cdae5d2",
+                    "quantity": {
+                        "selected": {
+                            "measure": {
+                                "value": "3000",
+                                "unit": "INR"
+                            }
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "646f5692-d28b-42d8-942a-9ed18d8d2842"
+                    ]
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "646f5692-d28b-42d8-942a-9ed18d8d2842",
+                    "type": "SIP",
+                    "agent": {
+                        "organization": {
+                            "creds": [
+                                {
+                                    "id": "ARN-6666",
+                                    "type": "ARN"
+                                },
+                                {
+                                    "type": "SUB_BROKER_ARN",
+                                    "id": "ARN-9790"
+                                }
+                            ]
+                        },
+                        "person": {
+                            "id": "EUIN-9790"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "id": "ICRPW1232K",
+                            "creds": [
+                                {
+                                    "id": "115.245.207.90",
+                                    "type": "IP_ADDRESS"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "phone": "7900379776",
+                            "email": "ak56@gmail.com"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "time": {
+                                "schedule": {
+                                    "frequency": "R6/2025-03-15/P1M"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "tags": [
+                {
+                    "display": false,
+                    "descriptor": {
+                        "name": "BAP Terms of Engagement",
+                        "code": "BAP_TERMS"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "name": "Static Terms (Transaction Level)",
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+                        },
+                        {
+                            "descriptor": {
+                                "name": "Offline Contract",
+                                "code": "OFFLINE_CONTRACT"
+                            },
+                            "value": "true"
+                        }
+                    ]
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "3000",
+                        "currency": "INR",
+                        "source_bank_code": "123",
+                        "source_bank_account_number": "1234567812345678",
+                        "source_bank_account_name": "Yassi sengar"
+                    },
+                    "type": "PRE_FULFILLMENT",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "name": "Payment Method",
+                                "code": "PAYMENT_METHOD"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MODE"
+                                    },
+                                    "value": "MANDATE_REGISTRATION"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
