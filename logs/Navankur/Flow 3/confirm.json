@@ -9,11 +9,11 @@
                 "code": "IND"
             }
         },
-        "action": "confirm",
+        "action": "init",
         "version": "2.0.2",
-        "transaction_id": "69866b0d-c56e-4719-b9a6-9332e39de1b7",
-        "message_id": "7d46b909-a349-4720-8848-2afb4c88ff8b",
-        "timestamp": "2025-02-14T12:12:23.292Z",
+        "transaction_id": "b0a0e27f-0796-4b17-9f1b-b0da53d94df2",
+        "message_id": "c17cf7f3-c85f-447e-95c6-41a570468a09",
+        "timestamp": "2025-02-19T09:37:38.000Z",
         "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
         "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
@@ -22,17 +22,13 @@
     },
     "message": {
         "order": {
-            "billing": {
-                "name": "Satyapal",
-                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
-                "phone": "8016906022",
-                "tax_id": "09AAFCR8735H1ZY",
-                "city": {
-                    "name": "Singapore"
-                },
-                "state": {
-                    "name": "Singapore"
-                }
+            "provider": {
+                "id": "P9080",
+                "locations": [
+                    {
+                        "id": "67580ba80f5cad8920d74a81"
+                    }
+                ]
             },
             "fulfillments": [
                 {
@@ -57,15 +53,9 @@
                             },
                             "contact": {
                                 "phone": "8016906022"
-                            },
-                            "customer": {
-                                "person": {
-                                    "name": "10"
-                                }
                             }
                         }
                     ],
-                    "tracking": false,
                     "tags": [
                         {
                             "descriptor": {
@@ -89,16 +79,6 @@
                     ]
                 }
             ],
-            "id": "RAP-0000315",
-            "state": "Created",
-            "provider": {
-                "id": "P9080",
-                "locations": [
-                    {
-                        "id": "67580ba80f5cad8920d74a81"
-                    }
-                ]
-            },
             "items": [
                 {
                     "id": "6776841d49c82277c6c4ab8e",
@@ -108,7 +88,7 @@
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": 10
                         }
                     },
                     "tags": [
@@ -127,103 +107,31 @@
                                     "descriptor": {
                                         "code": "ITEM_REQ"
                                     },
-                                    "value": "NA"
+                                    "value": "na"
                                 }
                             ]
                         }
                     ]
                 }
             ],
+            "billing": {
+                "name": "Satyapal",
+                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                "phone": "8016906022",
+                "tax_id": "09AAFCR8735H1ZY",
+                "state": {
+                    "name": "Singapore"
+                },
+                "city": {
+                    "name": "Singapore"
+                }
+            },
             "payments": [
                 {
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
                     "type": "PRE-FULFILLMENT",
-                    "collected_by": "BAP",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "0",
-                    "status": "NOT-PAID",
-                    "params": {
-                        "currency": "INR",
-                        "amount": "1.00"
-                    }
+                    "collected_by": "BAP"
                 }
             ],
-            "quote": {
-                "breakup": [
-                    {
-                        "title": "Basmati Rice",
-                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "1.00"
-                        },
-                        "@ondc/org/item_quantity": {
-                            "count": 1
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "1.00"
-                            }
-                        }
-                    },
-                    {
-                        "title": "Delivery charges",
-                        "@ondc/org/item_id": "F1",
-                        "@ondc/org/title_type": "delivery",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "title": "Packing charges",
-                        "@ondc/org/item_id": "F1",
-                        "@ondc/org/title_type": "packing",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "title": "Tax",
-                        "@ondc/org/item_id": "I1",
-                        "@ondc/org/title_type": "tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "title": "Discount",
-                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "title": "Convenience Fee",
-                        "@ondc/org/item_id": "F1",
-                        "@ondc/org/title_type": "misc",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                ],
-                "price": {
-                    "currency": "INR",
-                    "value": "1.00"
-                },
-                "ttl": "P1D"
-            },
-            "created_at": "2025-02-14T12:12:23.292Z",
-            "updated_at": "2025-02-14T12:12:23.292Z",
             "tags": [
                 {
                     "descriptor": {
@@ -243,103 +151,6 @@
                             "value": "09AAFCR8735H1ZY"
                         }
                     ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "max_liability"
-                            },
-                            "value": "1"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "max_liability_cap"
-                            },
-                            "value": "1"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "mandatory_arbitration"
-                            },
-                            "value": "true"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "court_jurisdiction"
-                            },
-                            "value": "Jaunpur"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "delay_interest"
-                            },
-                            "value": "0"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bap_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "accept_bpp_terms"
-                            },
-                            "value": "Y"
-                        }
-                    ]
-                }
-            ],
-            "cancellation_terms": [
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Pending"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    "reason_required": false
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Packed"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    "reason_required": false
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Out-for-delivery"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    "reason_required": false
                 }
             ]
         }
