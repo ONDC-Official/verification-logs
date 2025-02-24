@@ -1,0 +1,190 @@
+{
+    "context": {
+        "bap_id": "ondc.preprod.highwaydelite.com",
+        "bap_uri": "https://ondc.preprod.highwaydelite.com/ride-hailing",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "transaction_id": "ace382b2-2f0a-4c92-8860-d38b2dbaeeb7",
+        "message_id": "messageId2234",
+        "timestamp": "2025-02-21T08:32:46.194Z",
+        "domain": "ONDC:RET10",
+        "core_version": "2.0.0",
+        "ttl": "PT10M",
+        "action": "on_issue_status"
+    },
+    "message": {
+        "update_target": {
+            "path": "issue.actions",
+            "actions": "APPENDED"
+        },
+        "issue": {
+            "id": "ISSUE-1",
+            "level": "ISSUE",
+            "status": "PROCESSING",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING-NP",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "TRANSACTION-COUNTERPARTY-NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                }
+            ],
+            "source_id": "Source1",
+            "complainant_id": "complaintant-ID1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "description": {
+                "code": "ITM004",
+                "short_desc": "Issue with product quality",
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                },
+                "images": [
+                    "http://buyerapp.com/addtional-details/img1.png",
+                    "http://buyerapp.com/addtional-details/img2.png"
+                ]
+            },
+            "last_action_id": "Processingresponse123",
+            "actions": [
+                {
+                    "id": "A1",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2025-02-21T06:42:08.120Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "0",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "OPEN"
+                    },
+                    "updated_at": "2025-02-21T06:42:28.634Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "0",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Request more info description",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-02-21T06:43:16.091Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "AR5",
+                    "description": {
+                        "name": "INFO001",
+                        "code": "INFO-PROVIDED",
+                        "images": [
+                            "http://buyerapp.com/addtional-details/img1.png",
+                            "http://buyerapp.com/addtional-details/img2.png"
+                        ]
+                    },
+                    "updated_at": "2026-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "Processingresponse123",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing the info provided"
+                    },
+                    "updated_at": "2025-02-21T07:57:41.681Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                }
+            ],
+            "resolutions": false,
+            "created_at": "2025-02-21T06:42:08.120Z",
+            "updated_at": "2025-02-21T06:42:08.120Z"
+        }
+    }
+}
