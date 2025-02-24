@@ -14,14 +14,16 @@
             }
         },
         "transaction_id": "2606e732-1dc5-431e-b55a-9f92caa334cf",
-        "message_id": "34c501cf-4b1f-4237-bfde-06240cb77ad2",
-        "timestamp": "2025-02-24T10:20:12.850Z",
+        "message_id": "52f6c8ad-2d71-4daa-8d80-87b9b951ec85",
+        "timestamp": "2025-02-24T10:34:29.062Z",
         "version": "2.0.1",
         "ttl": "PT30S",
-        "action": "on_init"
+        "action": "on_cancel"
     },
     "message": {
         "order": {
+            "id": "TORDERMTC32881148",
+            "status": "CANCELLED",
             "items": [
                 {
                     "id": "1",
@@ -222,8 +224,19 @@
                     ]
                 },
                 {
-                    "id": "2",
+                    "id": "F5",
                     "type": "TICKET",
+                    "stops": [
+                        {
+                            "type": "START",
+                            "authorization": {
+                                "type": "QR",
+                                "token": "aMOPw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GINAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMmavWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRsgI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==",
+                                "valid_to": "2025-02-24T23:59:59.999Z",
+                                "status": "UNCLAIMED"
+                            }
+                        }
+                    ],
                     "tags": [
                         {
                             "descriptor": {
@@ -235,6 +248,19 @@
                                         "code": "PARENT_ID"
                                     },
                                     "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "TKM45789"
                                 }
                             ]
                         }
@@ -282,6 +308,32 @@
                         }
                     },
                     {
+                        "title": "REFUND",
+                        "item": {
+                            "id": "1",
+                            "price": {
+                                "currency": "INR",
+                                "value": "-9"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "-9"
+                        }
+                    },
+                    {
+                        "title": "CANCELLATION_CHARGES",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
                         "title": "TOLL",
                         "price": {
                             "currency": "INR",
@@ -299,14 +351,17 @@
             },
             "payments": [
                 {
-                    "id": "TMTC38284027",
+                    "id": "TKM3521853789",
                     "collected_by": "BAP",
-                    "status": "NOT-PAID",
+                    "status": "PAID",
                     "type": "PRE-ORDER",
                     "params": {
                         "bank_code": "XXXXXXXX",
                         "bank_account_number": "xxxxxxxxxxxxxx",
-                        "virtual_payment_address": "xxxx@okicic"
+                        "virtual_payment_address": "xxxx@okicic",
+                        "transaction_id": "77456TYH41223",
+                        "currency": "INR",
+                        "amount": "9.0"
                     },
                     "tags": [
                         {
@@ -387,7 +442,18 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "cancellation": {
+                "cancelled_by": "CONSUMER",
+                "reason": {
+                    "descriptor": {
+                        "code": "7",
+                        "short_desc": "Cancelled by the consumer"
+                    }
+                }
+            },
+            "created_at": "2025-02-24T10:34:29.062Z",
+            "updated_at": "2025-02-24T10:34:29.062Z"
         }
     }
 }
