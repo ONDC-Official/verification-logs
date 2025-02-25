@@ -1,89 +1,89 @@
 {
     "context": {
-      "location": {
-        "country": {
-          "code": "IND"
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:02712"
+            }
         },
-        "city": {
-          "code": "std:02712"
-        }
-      },
-      "domain": "ONDC:TRV11",
-      "timestamp": "2025-02-20T16:29:05.337Z",
-      "bap_id": "katch.co.in",
-      "transaction_id": "8b8aa179-ed82-4679-8d57-3ffeb9748c3a",
-      "message_id": "fab368fa-dc4f-481f-8ea0-df95d9eb35f8",
-      "version": "2.0.1",
-      "action": "search",
-      "bap_uri": "https://katch.co.in/ondc/",
-      "bpp_id": "katch.co.in",
-      "bpp_uri": "https://katch.co.in/ondc/",
-      "ttl": "PT30S"
+        "domain": "ONDC:TRV11",
+        "timestamp": "2025-02-25T11:08:03.452Z",
+        "bap_id": "localhost",
+        "transaction_id": "06d8d4b3-5254-4014-a3ac-114f213991b4",
+        "message_id": "2a251ce9-fd02-4a2e-8d1a-bfa1727c5e8f",
+        "version": "2.0.1",
+        "action": "search",
+        "bap_uri": "http:\/\/localhost\/katch_project\/ondc\/on_search",
+        "bpp_id": "localhost",
+        "bpp_uri": "http:\/\/localhost\/katch_project\/ondc\/",
+        "ttl": "PT30S"
     },
     "message": {
-      "intent": {
-        "fulfillment": {
-          "stops": [
-            {
-              "type": "START",
-              "location": {
-                "descriptor": {
-                  "code": "STA0318"
+        "intent": {
+            "fulfillment": {
+                "stops": [
+                    {
+                        "type": "START",
+                        "location": {
+                            "descriptor": {
+                                "code": "STA0318"
+                            }
+                        }
+                    },
+                    {
+                        "type": "END",
+                        "location": {
+                            "descriptor": {
+                                "code": "STA0316"
+                            }
+                        }
+                    }
+                ],
+                "vehicle": {
+                    "category": "BUS"
                 }
-              }
             },
-            {
-              "type": "END",
-              "location": {
-                "descriptor": {
-                  "code": "STA0316"
-                }
-              }
+            "payment": {
+                "collected_by": "BAP",
+                "tags": [
+                    {
+                        "descriptor": {
+                            "code": "BUYER_FINDER_FEES"
+                        },
+                        "display": false,
+                        "list": [
+                            {
+                                "descriptor": {
+                                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                },
+                                "value": "0"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptor": {
+                            "code": "SETTLEMENT_TERMS"
+                        },
+                        "display": false,
+                        "list": [
+                            {
+                                "descriptor": {
+                                    "code": "DELAY_INTEREST"
+                                },
+                                "value": "0"
+                            },
+                            {
+                                "descriptor": {
+                                    "code": "STATIC_TERMS"
+                                },
+                                "value": "http:\/\/localhost\/katch_project\/terms_condition"
+                            }
+                        ]
+                    }
+                ]
             }
-          ],
-          "vehicle": {
-            "category": "BUS"
-          }
-        },
-        "payment": {
-          "collected_by": "BAP",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BUYER_FINDER_FEES"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                  },
-                  "value": "0.00"
-                }
-              ]
-            },
-            {
-              "descriptor": {
-                "code": "SETTLEMENT_TERMS"
-              },
-              "display": false,
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "DELAY_INTEREST"
-                  },
-                  "value": "0.00"
-                },
-                {
-                  "descriptor": {
-                    "code": "STATIC_TERMS"
-                  },
-                  "value": "https://katch.co.in/terms_condition"
-                }
-              ]
-            }
-          ]
         }
-      }
     }
-  }
+}

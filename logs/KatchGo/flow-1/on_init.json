@@ -1,568 +1,547 @@
 {
-  "from": "server",
-  "message": {
     "context": {
-      "location": {
-        "country": {
-          "code": "IND"
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:02712"
+            }
         },
-        "city": {
-          "code": "std:02712"
-        }
-      },
-      "domain": "ONDC:TRV11",
-      "action": "on_init",
-      "ttl": "PT2S",
-      "timestamp": "2025-02-20T16:36:10.717Z",
-      "bap_id": "katch.co.in",
-      "bap_uri": "https://katch.co.in/ondc/",
-      "transaction_id": "8b8aa179-ed82-4679-8d57-3ffeb9748c3a",
-      "message_id": "04d69092-854e-4429-abd0-dd911d4ee9ea",
-      "version": "2.0.1",
-      "bpp_id": "katch.co.in",
-      "bpp_uri": "https://katch.co.in/ondc/"
+        "domain": "ONDC:TRV11",
+        "action": "on_init",
+        "ttl": "PT2S",
+        "timestamp": "2025-02-25T11:32:18.064Z",
+        "bap_id": "localhost",
+        "bap_uri": "http:\/\/localhost\/katch_project\/ondc\/on_select",
+        "transaction_id": "06d8d4b3-5254-4014-a3ac-114f213991b4",
+        "message_id": "4259f374-345f-40d2-b417-c567f32d55c9",
+        "version": "2.0.1",
+        "bpp_id": "localhost",
+        "bpp_uri": "http:\/\/localhost\/katch_project\/ondc\/"
     },
     "message": {
-      "order": {
-        "items": [
-          {
-            "id": "ITEM1",
-            "descriptor": {
-              "name": "singleJourneyTicket",
-              "code": "SJT"
-            },
-            "price": {
-              "currency": "INR",
-              "value": "25"
-            },
-            "quantity": {
-              "selected": {
-                "count": "5"
-              }
-            },
-            "time": {
-              "label": "Validity",
-              "duration": "P1D"
-            },
-            "fulfillment_ids": [
-              "ROUTE117",
-              "KAT248880788171",
-              "KAT24888077381"
-            ]
-          }
-        ],
-        "provider": {
-          "id": "PROVIDER21",
-          "descriptor": {
-            "name": "Yogi Bus Service"
-          }
-        },
-        "fulfillments": [
-          {
-            "id": "ROUTE117",
-            "type": "TRIP",
-            "vehicle": {
-              "category": "BUS"
-            },
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "ROUTE_INFO"
-                },
-                "display": false,
-                "list": [
-                  {
+        "order": {
+            "items": [
+                {
+                    "id": "ITEM1",
                     "descriptor": {
-                      "code": "ROUTE_ID"
+                        "name": "singleJourneyTicket",
+                        "code": "SJT"
                     },
-                    "value": "117"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "ROUTE_DIRECTION"
+                    "price": {
+                        "currency": "INR",
+                        "value": "5"
                     },
-                    "value": "UP"
-                  }
-                ]
-              }
-            ],
-            "stops": [
-              {
-                "type": "START",
-                "id": "318",
-                "location": {
-                  "descriptor": {
-                    "name": "Mansa",
-                    "code": "STA0318"
-                  },
-                  "gps": "0.000000,0.000000"
+                    "quantity": {
+                        "maximum": {
+                            "count": 5
+                        },
+                        "minimum": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1D"
+                    },
+                    "fulfillment_ids": [
+                        "ROUTE117"
+                    ]
                 }
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "317",
-                "location": {
-                  "descriptor": {
-                    "name": "Jakatnaka",
-                    "code": "STA0317"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "318"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "316",
-                "location": {
-                  "descriptor": {
-                    "name": "Rajpura",
-                    "code": "STA0316"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "317"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "315",
-                "location": {
-                  "descriptor": {
-                    "name": "DHOLAKUVA",
-                    "code": "STA0315"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "316"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "314",
-                "location": {
-                  "descriptor": {
-                    "name": "Limbodara",
-                    "code": "STA0314"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "315"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "313",
-                "location": {
-                  "descriptor": {
-                    "name": "KALYANPURA",
-                    "code": "STA0313"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "314"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "312",
-                "location": {
-                  "descriptor": {
-                    "name": "PRATAPPURA",
-                    "code": "STA0312"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "313"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "311",
-                "location": {
-                  "descriptor": {
-                    "name": "RAMPURA",
-                    "code": "STA0311"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "312"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "310",
-                "location": {
-                  "descriptor": {
-                    "name": "Balva Chokdi",
-                    "code": "STA0310"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "311"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "309",
-                "location": {
-                  "descriptor": {
-                    "name": "TAHUKO HOTEL",
-                    "code": "STA0309"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "310"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "308",
-                "location": {
-                  "descriptor": {
-                    "name": "VASANIYA",
-                    "code": "STA0308"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "309"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "307",
-                "location": {
-                  "descriptor": {
-                    "name": "BAPU CLG",
-                    "code": "STA0307"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "308"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "305",
-                "location": {
-                  "descriptor": {
-                    "name": "RANDHEJA PATIYA",
-                    "code": "STA0305"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "307"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "280",
-                "location": {
-                  "descriptor": {
-                    "name": "RANDHEJA CHOWKDI",
-                    "code": "STA0280"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "305"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "303",
-                "location": {
-                  "descriptor": {
-                    "name": "HOTEL GHAUNGHAT Gandhinagar",
-                    "code": "STA0303"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "280"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "302",
-                "location": {
-                  "descriptor": {
-                    "name": "K-7",
-                    "code": "STA0302"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "303"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "301",
-                "location": {
-                  "descriptor": {
-                    "name": "VIDEOCON",
-                    "code": "STA0301"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "302"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "297",
-                "location": {
-                  "descriptor": {
-                    "name": "JAY PRAKASH",
-                    "code": "STA0297"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "301"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "296",
-                "location": {
-                  "descriptor": {
-                    "name": "KH-6",
-                    "code": "STA0296"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "297"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "289",
-                "location": {
-                  "descriptor": {
-                    "name": "GH-6 Gandhinagar",
-                    "code": "STA0289"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "296"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "290",
-                "location": {
-                  "descriptor": {
-                    "name": "GH-5.5 Gandhinagar",
-                    "code": "STA0290"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "289"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "292",
-                "location": {
-                  "descriptor": {
-                    "name": "GH-4.5 Gandhinagar",
-                    "code": "STA0292"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "290"
-              },
-              {
-                "type": "INTERMEDIATE_STOP",
-                "id": "293",
-                "location": {
-                  "descriptor": {
-                    "name": "GH-4 Gandhinagar",
-                    "code": "STA0293"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "292"
-              },
-              {
-                "type": "END",
-                "id": "269",
-                "location": {
-                  "descriptor": {
-                    "name": "PATHIKA Gandhinagar",
-                    "code": "STA0269"
-                  },
-                  "gps": "0.000000,0.000000"
-                },
-                "parent_stop_id": "293"
-              }
-            ]
-          },
-          {
-            "id": "KAT24888077381",
-            "type": "TICKET",
-            "tags": [
-              {
+            ],
+            "provider": {
+                "id": "PROVIDER21",
                 "descriptor": {
-                  "code": "INFO"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "PARENT_ID"
-                    },
-                    "value": "ROUTE117"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "KAT248880788171",
-            "type": "TICKET",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "INFO"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "PARENT_ID"
-                    },
-                    "value": "ROUTE117"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "cancellation_terms": [
-          {
-            "cancel_by": {
-              "duration": "PT0M"
+                    "name": "Yogi Bus Service"
+                }
             },
-            "cancellation_fee": {
-              "percentage": "100"
-            }
-          }
-        ],
-        "billing": {
-          "name": "Akshat Patel",
-          "email": "akshatpateltest@gmail.com",
-          "phone": "+91-9409178785"
-        },
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "25"
-          },
-          "breakup": [
-            {
-              "title": "BASE_FARE",
-              "item": {
-                "id": "ITEM1",
+            "fulfillments": [
+                {
+                    "id": "ROUTE117",
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "BUS"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_ID"
+                                    },
+                                    "value": "117"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_DIRECTION"
+                                    },
+                                    "value": "UP"
+                                }
+                            ]
+                        }
+                    ],
+                    "stops": [
+                        {
+                            "type": "START",
+                            "id": "318",
+                            "location": {
+                                "descriptor": {
+                                    "name": "Mansa",
+                                    "code": "STA0318"
+                                },
+                                "gps": "0.000000,0.000000"
+                            }
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "317",
+                            "location": {
+                                "descriptor": {
+                                    "name": "Jakatnaka",
+                                    "code": "STA0317"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "318"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "316",
+                            "location": {
+                                "descriptor": {
+                                    "name": "Rajpura",
+                                    "code": "STA0316"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "317"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "315",
+                            "location": {
+                                "descriptor": {
+                                    "name": "DHOLAKUVA",
+                                    "code": "STA0315"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "316"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "314",
+                            "location": {
+                                "descriptor": {
+                                    "name": "Limbodara",
+                                    "code": "STA0314"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "315"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "313",
+                            "location": {
+                                "descriptor": {
+                                    "name": "KALYANPURA",
+                                    "code": "STA0313"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "314"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "312",
+                            "location": {
+                                "descriptor": {
+                                    "name": "PRATAPPURA",
+                                    "code": "STA0312"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "313"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "311",
+                            "location": {
+                                "descriptor": {
+                                    "name": "RAMPURA",
+                                    "code": "STA0311"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "312"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "310",
+                            "location": {
+                                "descriptor": {
+                                    "name": "Balva Chokdi",
+                                    "code": "STA0310"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "311"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "309",
+                            "location": {
+                                "descriptor": {
+                                    "name": "TAHUKO HOTEL",
+                                    "code": "STA0309"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "310"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "308",
+                            "location": {
+                                "descriptor": {
+                                    "name": "VASANIYA",
+                                    "code": "STA0308"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "309"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "307",
+                            "location": {
+                                "descriptor": {
+                                    "name": "BAPU CLG",
+                                    "code": "STA0307"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "308"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "305",
+                            "location": {
+                                "descriptor": {
+                                    "name": "RANDHEJA PATIYA",
+                                    "code": "STA0305"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "307"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "280",
+                            "location": {
+                                "descriptor": {
+                                    "name": "RANDHEJA CHOWKDI",
+                                    "code": "STA0280"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "305"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "303",
+                            "location": {
+                                "descriptor": {
+                                    "name": "HOTEL GHAUNGHAT Gandhinagar",
+                                    "code": "STA0303"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "280"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "302",
+                            "location": {
+                                "descriptor": {
+                                    "name": "K-7",
+                                    "code": "STA0302"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "303"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "301",
+                            "location": {
+                                "descriptor": {
+                                    "name": "VIDEOCON",
+                                    "code": "STA0301"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "302"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "297",
+                            "location": {
+                                "descriptor": {
+                                    "name": "JAY PRAKASH",
+                                    "code": "STA0297"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "301"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "296",
+                            "location": {
+                                "descriptor": {
+                                    "name": "KH-6",
+                                    "code": "STA0296"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "297"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "289",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-6 Gandhinagar",
+                                    "code": "STA0289"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "296"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "290",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-5.5 Gandhinagar",
+                                    "code": "STA0290"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "289"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "292",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4.5 Gandhinagar",
+                                    "code": "STA0292"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "290"
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "293",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4 Gandhinagar",
+                                    "code": "STA0293"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "292"
+                        },
+                        {
+                            "type": "END",
+                            "id": "269",
+                            "location": {
+                                "descriptor": {
+                                    "name": "PATHIKA Gandhinagar",
+                                    "code": "STA0269"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "293"
+                        }
+                    ]
+                },
+                {
+                    "id": "ONDC_06d8d4b3-5254-4014-a3ac-114f213991b4",
+                    "type": "TICKET",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PARENT_ID"
+                                    },
+                                    "value": "ROUTE117"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "cancel_by": {
+                        "duration": "PT0M"
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Akshat Patel",
+                "email": "akshatpateltest@gmail.com",
+                "phone": "+91-9409178785"
+            },
+            "quote": {
                 "price": {
-                  "currency": "INR",
-                  "value": "5"
+                    "value": "25",
+                    "currency": "INR"
                 },
-                "quantity": {
-                  "selected": {
-                    "count": "5"
-                  }
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "ITEM1",
+                            "price": {
+                                "currency": "INR",
+                                "value": "5"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 5
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "25"
+                        }
+                    },
+                    {
+                        "title": "OFFER",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "title": "TOLL",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ]
+            },
+            "payments": [
+                {
+                    "id": "pay_4810daa20f78f167",
+                    "params": {
+                        "bank_code": "SBIN0000301",
+                        "bank_account_number": "38086195642",
+                        "virtual_payment_address": "9409178785@paytm"
+                    },
+                    "status": "NOT-PAID",
+                    "type": "PRE-ORDER",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Ahmedabad"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "http:\/\/localhost\/katch_project\/terms_condition"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "25"
+                                }
+                            ]
+                        }
+                    ],
+                    "collected_by": "BAP"
                 }
-              },
-              "price": {
-                "currency": "INR",
-                "value": "25"
-              }
-            },
-            {
-              "title": "OFFER",
-              "price": {
-                "currency": "INR",
-                "value": "0"
-              }
-            },
-            {
-              "title": "TOLL",
-              "price": {
-                "currency": "INR",
-                "value": "0"
-              }
-            }
-          ]
-        },
-        "payments": [
-          {
-            "id": "pay_Dic5d5fd55QSSDF",
-            "params": {
-              "bank_code": "SBIN0000301",
-              "bank_account_number": "38086195642",
-              "virtual_payment_address": "9409178785@paytm"
-            },
-            "status": "NOT-PAID",
-            "type": "PRE-ORDER",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "BUYER_FINDER_FEES"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                    },
-                    "value": "0"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_TYPE"
-                    },
-                    "value": "percent"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "SETTLEMENT_TERMS"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_WINDOW"
-                    },
-                    "value": "PT60M"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_BASIS"
-                    },
-                    "value": "Delivery"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_TYPE"
-                    },
-                    "value": "UPI"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "DELAY_INTEREST"
-                    },
-                    "value": "2.5"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "MANDATORY_ARBITRATION"
-                    },
-                    "value": "TRUE"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "COURT_JURISDICTION"
-                    },
-                    "value": "Ahmedabad"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "STATIC_TERMS"
-                    },
-                    "value": "https://api.transit-solutions.com/booking/terms"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_AMOUNT"
-                    },
-                    "value": "25"
-                  }
-                ]
-              }
-            ],
-            "collected_by": "BAP"
-          }
-        ]
-      }
+            ]
+        }
     }
-  }
 }
