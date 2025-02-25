@@ -1,0 +1,188 @@
+{
+    "context": {
+        "domain": "ONDC:LOG10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "init",
+        "version": "2.0.0",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
+        "transaction_id": "53dde43d-38a7-4900-867e-5b2763436634",
+        "message_id": "bc79577b-e745-49b2-878b-b314887cfd7f",
+        "timestamp": "2025-02-24T06:22:19.244Z",
+        "ttl": "PT30S",
+        "bpp_uri": "https://acrisvc.com",
+        "bpp_id": "mock.ondc.org/api"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P1"
+            },
+            "items": [
+                {
+                    "id": "EXPRESS",
+                    "category_ids": [
+                        "C1"
+                    ],
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "descriptor": {
+                        "code": "P2H2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "P7D"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "gps": "12.4535445,77.9283792",
+                                "area_code": "560041",
+                                "address": "My building #, My street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "12.342769,77.9129423",
+                                "area_code": "636806",
+                                "address": "My house or building name, street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "ONDC sellerapp",
+                "address": "My house or building name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com",
+                "time": {
+                    "timestamp": "2025-02-24T06:22:19.244Z"
+                }
+            },
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "type": "ON-FULFILLMENT",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "Settlement_Details"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Counterparty"
+                                    },
+                                    "value": "BAP"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Mode"
+                                    },
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Beneficiary_Name"
+                                    },
+                                    "value": "xxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Bank_Account_No"
+                                    },
+                                    "value": "xxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Ifsc_Code"
+                                    },
+                                    "value": "xxxxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "UPI_Address"
+                                    },
+                                    "value": "xxxxxxx"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Collection_Details"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Amount"
+                                    },
+                                    "value": "20000"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Type"
+                                    },
+                                    "value": "ON-FULFILLMENT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "xinput": {
+                "form": {
+                    "url": "https://lsp.com/xxx/kyc",
+                    "mime_type": "text/html",
+                    "submission_id": "xxxx44567789999"
+                },
+                "required": true
+            }
+        }
+    }
+}
