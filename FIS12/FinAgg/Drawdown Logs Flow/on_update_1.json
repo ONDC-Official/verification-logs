@@ -11,21 +11,18 @@
     },
     "version": "2.3.0",
     "action": "on_update",
-    "bap_id": "ondcuat.finagg.in",
-    "bap_uri": "https://ondcuat.finagg.in/finAggMobileAPI/ondcBuyer/",
-    "bpp_id": "ondcuat.finagg.in",
-    "bpp_uri": "https://ondcuat.finagg.in/",
+    "bap_id": "ondcpreprod.finagg.in",
+    "bap_uri": "https://ondcpreprod.finagg.in/finAggMobileAPI/ondcBuyer/",
+    "bpp_id": "ondcpreprod.finagg.in",
+    "bpp_uri": "https://ondcpreprod.finagg.in/",
     "transaction_id": "de8d65b8-0b93-4237-9e0c-25add8985a97",
-    "message_id": "6000fef1-1527-4e97-ba8c-d19884f71661",
-    "timestamp": "2025-02-17T13:37:14.473Z",
+    "message_id": "40d3296b-a2dd-41b8-93c1-568a0e440a39",
+    "timestamp": "2025-02-26T13:37:15.123Z",
     "ttl": "PT30M"
   },
   "message": {
     "order": {
       "id": "123",
-      "ref_order_ids": [
-        "123"
-      ],
       "status": "ACTIVE",
       "provider": {
         "id": "109735",
@@ -33,7 +30,7 @@
           "images": [
             {
               "size_type": "sm",
-              "url": "https://www.helpage.com/content/dam/helpage/india/assets/images/header/logo.png"
+              "url": "https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png"
             }
           ],
           "long_desc": "Helpage Finlease ltd, India.",
@@ -137,14 +134,42 @@
         },
         "breakup": [
           {
-            "title": "PRINCIPAL_AMOUNT",
+            "title": "WOKRKING_CAPITAL_LIMIT",
             "price": {
               "value": "500000",
               "currency": "INR"
             }
           },
           {
-            "title": "INTEREST_AMOUNT",
+            "title": "CURRENT_UTLIZATION",
+            "price": {
+              "value": "500000",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "PROCESSING_FEE",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "INSURANCE_CHARGES",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OTHER_UPFRONT_CHARGES",
+            "price": {
+              "value": "0",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OTHER_CHARGES",
             "price": {
               "value": "0",
               "currency": "INR"
@@ -155,7 +180,7 @@
       },
       "items": [
         {
-          "id": "fe6e20e3-d889-4ae2-91ed-8cc155e78030",
+          "id": "f6cd795c-5108-4d9b-bfda-7e9ddefinagg",
           "parent_item_id": "finagg18-ea25-4479-8386-c9dd422d9f1d",
           "descriptor": {
             "code": "LOAN",
@@ -165,7 +190,8 @@
             "101123"
           ],
           "fulfillment_ids": [
-            "4790"
+            "4790",
+            "4791"
           ],
           "price": {
             "currency": "INR",
@@ -180,10 +206,46 @@
               "list": [
                 {
                   "descriptor": {
+                    "code": "WORKING_CAPITAL_LIMIT",
+                    "name": "Working capital limit"
+                  },
+                  "value": "500000 INR"
+                },
+                {
+                  "descriptor": {
                     "code": "INTEREST_RATE",
                     "name": "Interest Rate"
                   },
                   "value": "14.0 %"
+                },
+                {
+                  "descriptor": {
+                    "code": "PROCESSING_FEE",
+                    "name": "Processing Fee"
+                  },
+                  "value": "0 INR"
+                },
+                {
+                  "descriptor": {
+                    "code": "INSURANCE_CHARGES",
+                    "name": "Insurance Charges"
+                  },
+                  "value": "0 INR"
+                },
+                {
+                  "descriptor": {
+                    "code": "OTHER_UPFRONT_CHARGES",
+                    "name": "Other up front charges",
+                    "short_desc": "Other up front charges"
+                  },
+                  "value": "0 INR"
+                },
+                {
+                  "descriptor": {
+                    "code": "TERM",
+                    "name": "Loan Term"
+                  },
+                  "value": "P24M"
                 },
                 {
                   "descriptor": {
@@ -192,6 +254,42 @@
                     "short_desc": "Repayment Frequency by borrower"
                   },
                   "value": "P1M"
+                },
+                {
+                  "descriptor": {
+                    "code": "RATE_ANNUALISED_PENAL_CHARGES",
+                    "name": "Rate Annualised penal charges"
+                  },
+                  "value": "0 %"
+                },
+                {
+                  "descriptor": {
+                    "code": "OTHER_CHARGES",
+                    "name": "Other Charges"
+                  },
+                  "value": "0 INR"
+                },
+                {
+                  "descriptor": {
+                    "code": "COOL_OFF_PERIOD",
+                    "name": "Cooling off",
+                    "short_desc": "Look up period during which borrower shouldn't be charged any penalty on repayment loan."
+                  },
+                  "value": "P12D"
+                },
+                {
+                  "descriptor": {
+                    "code": "KYC_MODE",
+                    "name": "KYC Mode"
+                  },
+                  "value": "ONLINE"
+                },
+                {
+                  "descriptor": {
+                    "code": "CO_APPLICANT",
+                    "name": "Co Applicant"
+                  },
+                  "value": "REQUIRED"
                 }
               ],
               "display": true
@@ -204,13 +302,66 @@
               "list": [
                 {
                   "descriptor": {
-                    "code": "DRADOWN_APPROVAL",
-                    "name": "Drawdown Approval"
+                    "code": "INDIVIDUAL_KYC",
+                    "name": "Indvidual KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUSINESS_KYC",
+                    "name": "Business KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "PERSONAL_DISCUSSION",
+                    "name": "Personal Discussion"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "PHYSICAL_VERIFICATION",
+                    "name": "Physical Verification"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "ENACH",
+                    "name": "Enach"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "PROCESSING_FEE",
+                    "name": "Processing Fees"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "ESIGN",
+                    "name": "Esign"
                   },
                   "value": "COMPLETED"
                 }
               ],
               "display": true
+            },
+            {
+              "descriptor": {
+                "code": "LINKED_ORDER_IDS",
+                "name": "Linked Order IDs"
+              },
+              "list": [
+                {
+                  "value": "f6cd795c-5108-4d9b-bfda-7e9ddefinagg"
+                }
+              ]
             }
           ]
         }
@@ -218,63 +369,25 @@
       "payments": [
         {
           "id": "2001",
-          "params": {
-            "transaction_id": "4001",
-            "amount": "500000",
-            "currency": "INR",
-            "bank_account_number": "50200080954769",
-            "bank_code": "HDFC0002387"
-          },
-          "time": {
-            "timestamp": "2025-02-17T13:37:14.473Z"
-          },
-          "collected_by": "MERCHANT",
-          "type": "ON-ORDER",
-          "status": "PAID"
-        },
-        {
-          "id": "3001",
           "collected_by": "BPP",
-          "type": "POST-FULFILLMENT",
           "params": {
-            "amount": "20400",
-            "currency": "INR",
-            "bank_account_number": "462737494749482",
-            "bank_code": "SBI0000482",
-            "source_bank_account_number": "462737494749482",
-            "source_bank_code": "SBI0000482"
+            "amount": "500000",
+            "currency": "INR"
           },
-          "status": "NOT-PAID",
-          "time": {
-            "range": {
-              "start": "2025-02-17T00:00:00.000Z",
-              "end": "2025-05-17T00:00:00.000Z"
-            }
+          "status": "PAID",
+          "type": "PRE-ORDER"
+        }
+      ],
+      "documents": [
+        {
+          "descriptor": {
+            "code": "LOAN_AGREEMENT",
+            "name": "Loan Agreement Document",
+            "short_desc": "Download your Loan Agreement document here",
+            "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
           },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "BREAKUP",
-                "name": "Repayment Breakup"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "PRINCIPAL_AMOUNT",
-                    "name": "Principal Amount"
-                  },
-                  "value": "500000"
-                },
-                {
-                  "descriptor": {
-                    "code": "INTEREST_AMOUNT",
-                    "name": "Interest Amount"
-                  },
-                  "value": "0.00"
-                }
-              ]
-            }
-          ]
+          "mime_type": "application/pdf",
+          "url": "https://lender.com/loan/loan-agreement/O1.pdf"
         }
       ],
       "tags": [
@@ -392,11 +505,13 @@
           "id": "4790",
           "customer": {
             "person": {
+              "dob": "1998-09-12",
+              "gender": "Male",
               "name": "NIPUN KOHLI",
               "creds": [
                 {
-                  "type": "OTP",
-                  "id": "12345"
+                  "id": "AMWPK9539Q",
+                  "type": "PAN"
                 }
               ]
             },
@@ -404,11 +519,79 @@
               "email": "ranjith@finagg.in",
               "phone": "7654345678"
             }
-          }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "CHECKLISTS",
+                "name": "Applicant Checklists"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "KYC",
+                    "name": "KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "E_SIGN",
+                    "name": "E Sign Required"
+                  },
+                  "value": "COMPLETED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4791",
+          "customer": {
+            "person": {
+              "dob": "1998-09-12",
+              "gender": "Male",
+              "name": "MOHD IMRAN",
+              "creds": [
+                {
+                  "id": "AFWPI7790E",
+                  "type": "PAN"
+                }
+              ]
+            },
+            "contact": {
+              "email": "ranjithkumart17@gmail.com",
+              "phone": "9345678765"
+            }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "CHECKLISTS",
+                "name": "Applicant Checklists"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "KYC",
+                    "name": "KYC"
+                  },
+                  "value": "COMPLETED"
+                },
+                {
+                  "descriptor": {
+                    "code": "E_SIGN",
+                    "name": "E Sign Required"
+                  },
+                  "value": "COMPLETED"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "created_at": "2025-02-17T13:37:14.473Z",
-      "updated_at": "2025-02-17T13:37:14.473Z"
+      "created_at": "2025-02-26T13:37:15.123Z",
+      "updated_at": "2025-02-26T13:37:15.123Z"
     }
   }
 }
