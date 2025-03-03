@@ -1,0 +1,160 @@
+{
+     "context": {
+       "action": "confirm",
+       "bap_id": "ondc-bob.azurewebsites.net",
+       "bap_uri": "https://ondc-bob.azurewebsites.net",
+       "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+       "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+       "domain": "ONDC:TRV10",
+       "location": {
+         "city": {
+           "code": "std:080"
+         },
+         "country": {
+           "code": "IND"
+         }
+       },
+       "message_id": "cd2d82f0-ee81-4abd-a41e-0455a8e958d8",
+       "timestamp": "2025-02-11T16:48:22.246Z",
+       "transaction_id": "d588ac9d-9d08-4409-b26e-41460ec22bca",
+       "ttl": "PT30S",
+       "version": "2.0.1"
+     },
+     "message": {
+       "order": {
+         "billing": {
+           "name": "John Doe"
+         },
+         "fulfillments": [
+           {
+             "customer": {
+               "contact": {
+                 "phone": "9876543210"
+               },
+               "person": {
+                 "name": "John Doe"
+               }
+             },
+             "id": "5b6f4e65-8aed-486a-84cd-551a6c00c8da",
+             "type": "DELIVERY",
+             "stops": [
+               {
+                 "location": {
+                   "gps": "12.935549, 77.605885"
+                 },
+                 "type": "START",
+                 "instructions": {
+                   "short_desc": "Pick up from main gate",
+                   "long_desc": "Building is located near the coffee shop"
+                 }
+               },
+               {
+                 "location": {
+                   "gps": "12.935010, 77.573460"
+                 },
+                 "type": "END"
+               }
+             ],
+             "vehicle": {
+               "category": "CAB",
+               "variant": "SUV",
+               "energy_type": "CNG"
+             }
+           }
+         ],
+         "items": [
+           {
+             "id": "I1"
+           }
+         ],
+         "payments": [
+           {
+             "collected_by": "BPP",
+             "id": "21892e16-1d4f-482f-861c-967c9f96b4e6",
+             "params": {
+               "bank_account_number": "default_account_number",
+               "bank_code": "default_bank_code",
+               "virtual_payment_address": "default_vpa"
+             },
+             "status": "NOT-PAID",
+             "type": "ON-FULFILLMENT",
+             "tags": [
+               {
+                 "descriptor": {
+                   "code": "BUYER_FINDER_FEES"
+                 },
+                 "display": false,
+                 "list": [
+                   {
+                     "descriptor": {
+                       "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                     },
+                     "value": "1"
+                   }
+                 ]
+               },
+               {
+                 "descriptor": {
+                   "code": "SETTLEMENT_TERMS"
+                 },
+                 "display": false,
+                 "list": [
+                   {
+                     "descriptor": {
+                       "code": "SETTLEMENT_WINDOW"
+                     },
+                     "value": "PT60M"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "SETTLEMENT_BASIS"
+                     },
+                     "value": "DELIVERY"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "SETTLEMENT_TYPE"
+                     },
+                     "value": "UPI"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "MANDATORY_ARBITRATION"
+                     },
+                     "value": "true"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "COURT_JURISDICTION"
+                     },
+                     "value": "New Delhi"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "DELAY_INTEREST"
+                     },
+                     "value": "5"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "STATIC_TERMS"
+                     },
+                     "value": "https://example-test-bpp.com/static-terms.txt"
+                   },
+                   {
+                     "descriptor": {
+                       "code": "SETTLEMENT_AMOUNT"
+                     },
+                     "value": "2.10"
+                   }
+                 ]
+               }
+             ]
+           }
+         ],
+         "provider": {
+           "id": "OD_101"
+         }
+       }
+     }
+   }
