@@ -1,6 +1,13 @@
 {
     "context": {
+        "ttl": "PT30S",
+        "action": "update",
+        "bap_id": "mock.ondc.org/api",
+        "bpp_id": "acrisvc.com",
         "domain": "ONDC:LOG10",
+        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
+        "bpp_uri": "https://acrisvc.com",
+        "version": "2.0.0",
         "location": {
             "city": {
                 "code": "std:080"
@@ -9,25 +16,170 @@
                 "code": "IND"
             }
         },
-        "action": "update",
-        "version": "2.0.0",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
-        "transaction_id": "53dde43d-38a7-4900-867e-5b2763436634",
-        "message_id": "45ab2bcb-0651-421f-a458-3bd6844f4a9c",
-        "timestamp": "2025-02-24T06:24:47.775Z",
-        "ttl": "PT30S",
-        "bpp_uri": "https://acrisvc.com",
-        "bpp_id": "acrisvc.com"
+        "timestamp": "2025-03-04T06:15:07.918Z",
+        "message_id": "dfa7329b-e5f4-4f1b-af2d-8476ac9a0bc5",
+        "transaction_id": "c360a3df-f1af-4eb8-9d32-a333763ca8d8"
     },
     "message": {
-        "update_target": "fulfillment",
         "order": {
             "id": "O2",
-            "status": "Accepted",
-            "provider": {
-                "id": "P1"
-            },
+            "tags": [
+                {
+                    "list": [
+                        {
+                            "value": "kilogram",
+                            "descriptor": {
+                                "code": "Unit"
+                            }
+                        },
+                        {
+                            "value": "5",
+                            "descriptor": {
+                                "code": "Value"
+                            }
+                        }
+                    ],
+                    "descriptor": {
+                        "code": "Package_Weight"
+                    }
+                },
+                {
+                    "list": [
+                        {
+                            "value": "centimeter",
+                            "descriptor": {
+                                "code": "Unit"
+                            }
+                        },
+                        {
+                            "value": "100",
+                            "descriptor": {
+                                "code": "Length"
+                            }
+                        },
+                        {
+                            "value": "100",
+                            "descriptor": {
+                                "code": "Breadth"
+                            }
+                        },
+                        {
+                            "value": "100",
+                            "descriptor": {
+                                "code": "Height"
+                            }
+                        },
+                        {
+                            "value": "10",
+                            "descriptor": {
+                                "code": "Count"
+                            }
+                        }
+                    ],
+                    "descriptor": {
+                        "code": "Package_Dimensions"
+                    }
+                },
+                {
+                    "list": [
+                        {
+                            "value": "centimeter",
+                            "descriptor": {
+                                "code": "Unit"
+                            }
+                        },
+                        {
+                            "value": "100",
+                            "descriptor": {
+                                "code": "Length"
+                            }
+                        },
+                        {
+                            "value": "100",
+                            "descriptor": {
+                                "code": "Breadth"
+                            }
+                        },
+                        {
+                            "value": "100",
+                            "descriptor": {
+                                "code": "Height"
+                            }
+                        },
+                        {
+                            "value": "5",
+                            "descriptor": {
+                                "code": "Count"
+                            }
+                        }
+                    ],
+                    "descriptor": {
+                        "code": "Package_Dimensions"
+                    }
+                },
+                {
+                    "list": [
+                        {
+                            "value": "Grocery",
+                            "descriptor": {
+                                "code": "Category"
+                            }
+                        },
+                        {
+                            "value": "true",
+                            "descriptor": {
+                                "code": "Dangerous_Goods"
+                            }
+                        },
+                        {
+                            "value": "true",
+                            "descriptor": {
+                                "code": "Stackable"
+                            }
+                        },
+                        {
+                            "value": "50000",
+                            "descriptor": {
+                                "code": "Shipment_Value"
+                            }
+                        }
+                    ],
+                    "descriptor": {
+                        "code": "Package_Details"
+                    }
+                },
+                {
+                    "list": [
+                        {
+                            "value": "true",
+                            "descriptor": {
+                                "code": "Temp_Control"
+                            }
+                        },
+                        {
+                            "value": "Celsius",
+                            "descriptor": {
+                                "code": "Temp_Unit"
+                            }
+                        },
+                        {
+                            "value": "0",
+                            "descriptor": {
+                                "code": "Temp_Min"
+                            }
+                        },
+                        {
+                            "value": "4",
+                            "descriptor": {
+                                "code": "Temp_Max"
+                            }
+                        }
+                    ],
+                    "descriptor": {
+                        "code": "Cold_Logistics"
+                    }
+                }
+            ],
             "items": [
                 {
                     "id": "EXPRESS",
@@ -67,7 +219,7 @@
                     "time": {
                         "label": "TAT",
                         "duration": "P7D",
-                        "timestamp": "2025-03-03"
+                        "timestamp": "2025-03-11"
                     },
                     "price": {
                         "value": "2085",
@@ -88,250 +240,98 @@
                     ]
                 }
             ],
+            "status": "Accepted",
+            "provider": {
+                "id": "P1"
+            },
+            "updated_at": "2025-03-04T06:15:07.918Z",
             "fulfillments": [
                 {
                     "id": "1",
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "yes",
+                                    "descriptor": {
+                                        "code": "Ready_To_Ship"
+                                    }
+                                },
+                                {
+                                    "value": "1227262193237777",
+                                    "descriptor": {
+                                        "code": "AWB_No"
+                                    }
+                                },
+                                {
+                                    "value": "387757382938",
+                                    "descriptor": {
+                                        "code": "Eway_Bill_No"
+                                    }
+                                },
+                                {
+                                    "value": "94395859020203",
+                                    "descriptor": {
+                                        "code": "Invoice_Number"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "Delivery_Terms"
+                            }
+                        }
+                    ],
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
                             "code": "Pending"
                         }
                     },
-                    "tracking": false,
                     "stops": [
                         {
                             "id": "L1",
-                            "parent_stop_id": "",
                             "type": "start",
                             "instructions": {
                                 "code": "AWB_No",
-                                "short_desc": "value of PCC",
                                 "long_desc": "QR code will be attached to package",
+                                "short_desc": "value of PCC",
                                 "additional_desc": {
-                                    "content_type": "text/html",
-                                    "url": "https://shipping/label/image.htm"
+                                    "url": "https://shipping/label/image.htm",
+                                    "content_type": "text/html"
                                 }
                             },
                             "authorization": {
                                 "type": "QR",
                                 "token": "XYZ2",
-                                "valid_from": "",
-                                "valid_to": ""
-                            }
+                                "valid_to": "",
+                                "valid_from": ""
+                            },
+                            "parent_stop_id": ""
                         },
                         {
                             "id": "L2",
-                            "parent_stop_id": "L1",
                             "type": "end",
+                            "instructions": {
+                                "long_desc": "drop package at security gate",
+                                "short_desc": "",
+                                "additional_desc": {
+                                    "url": "URL for instructions",
+                                    "content_type": "text/html"
+                                }
+                            },
                             "authorization": {
                                 "type": "QR",
                                 "token": "XYZ2",
-                                "valid_from": "",
-                                "valid_to": ""
+                                "valid_to": "",
+                                "valid_from": ""
                             },
-                            "instructions": {
-                                "short_desc": "",
-                                "long_desc": "drop package at security gate",
-                                "additional_desc": {
-                                    "content_type": "text/html",
-                                    "url": "URL for instructions"
-                                }
-                            }
+                            "parent_stop_id": "L1"
                         }
                     ],
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "Delivery_Terms"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "Ready_To_Ship"
-                                    },
-                                    "value": "yes"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "AWB_No"
-                                    },
-                                    "value": "1227262193237777"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Eway_Bill_No"
-                                    },
-                                    "value": "387757382938"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "Invoice_Number"
-                                    },
-                                    "value": "94395859020203"
-                                }
-                            ]
-                        }
-                    ]
+                    "tracking": false
                 }
-            ],
-            "tags": [
-                {
-                    "descriptor": {
-                        "code": "Package_Weight"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "Unit"
-                            },
-                            "value": "kilogram"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Value"
-                            },
-                            "value": "5"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "Package_Dimensions"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "Unit"
-                            },
-                            "value": "centimeter"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Length"
-                            },
-                            "value": "100"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Breadth"
-                            },
-                            "value": "100"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Height"
-                            },
-                            "value": "100"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Count"
-                            },
-                            "value": "10"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "Package_Dimensions"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "Unit"
-                            },
-                            "value": "centimeter"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Length"
-                            },
-                            "value": "100"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Breadth"
-                            },
-                            "value": "100"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Height"
-                            },
-                            "value": "100"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Count"
-                            },
-                            "value": "5"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "Package_Details"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "Category"
-                            },
-                            "value": "Grocery"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Dangerous_Goods"
-                            },
-                            "value": "true"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Stackable"
-                            },
-                            "value": "true"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Shipment_Value"
-                            },
-                            "value": "50000"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "Cold_Logistics"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "Temp_Control"
-                            },
-                            "value": "true"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Temp_Unit"
-                            },
-                            "value": "Celsius"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Temp_Min"
-                            },
-                            "value": "0"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "Temp_Max"
-                            },
-                            "value": "4"
-                        }
-                    ]
-                }
-            ],
-            "updated_at": "2025-02-24T06:24:47.775Z"
-        }
+            ]
+        },
+        "update_target": "fulfillment"
     }
 }
