@@ -12,10 +12,10 @@
                 "code": "std:0261"
             }
         },
-        "transaction_id": "9b8c7875-7cb0-4d2b-8043-de3e869756b1",
-        "message_id": "13f8e9f7-c27b-41e8-a684-4db0018a8782",
-        "timestamp": "2025-02-28T07:32:37.936Z",
-        "domain": "ONDC:TRV13",
+        "transaction_id": "1d7af6c4-06ab-4439-8c04-b8c02e677806",
+        "message_id": "1e344cc7-3b3f-4c3a-993e-3f178e077bc7",
+        "timestamp": "2025-03-05T11:53:29.654Z",
+        "domain": "ONDC:RET10",
         "core_version": "2.0.0",
         "ttl": "PT30S",
         "action": "on_issue_status"
@@ -31,8 +31,8 @@
             "id": "ISSUE-1",
             "status": "PROCESSING",
             "level": "ISSUE",
-            "created_at": "2025-02-26T07:31:01.950Z",
-            "updated_at": "2025-02-28T02:31:01.950Z",
+            "created_at": "2025-03-03T11:52:07.618Z",
+            "updated_at": "2025-03-05T11:52:57.073Z",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -41,39 +41,42 @@
             },
             "refs": [
                 {
-                    "ref_id": "RAP-0000515",
+                    "ref_id": "RAP-0000530",
                     "ref_type": "ORDER"
-                },
+                }
+            ],
+            "actors": [
                 {
-                    "ref_id": "PR00023",
-                    "ref_type": "ITEM",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "message.order.items"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "quantity.selected.count"
-                                    },
-                                    "value": "2"
-                                }
-                            ]
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
                         }
-                    ]
+                    }
                 },
                 {
-                    "ref_id": "AS00059",
-                    "ref_type": "PROVIDER"
-                },
-                {
-                    "ref_id": "F1",
-                    "ref_type": "FULFILLMENt"
-                },
-                {
-                    "ref_id": "9b8c7875-7cb0-4d2b-8043-de3e869756b1",
-                    "ref_type": "TRANSACTION"
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
                 }
             ],
             "source_id": "CUST1",
@@ -94,31 +97,72 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "M1",
+            "last_action_id": "G1",
             "actions": [
                 {
-                    "id": "A1",
                     "description": {
                         "code": "OPEN",
-                        "short_desc": "Complaint created"
+                        "short_desc": "OPEN"
                     },
-                    "updated_at": "2023-01-15T10:00:00.469Z",
-                    "action_by": "NP1",
                     "actor_details": {
-                        "name": "Sam Manuel"
-                    }
+                        "name": "Manjeet QA"
+                    },
+                    "id": "G1",
+                    "updated_at": "2025-03-05T11:49:40.249Z",
+                    "action_by": "NP2",
+                    "_id": "67c83a5436c85667b9d932ed"
                 },
                 {
-                    "id": "A2",
                     "description": {
                         "code": "PROCESSING",
-                        "short_desc": "Complaint created"
+                        "short_desc": "Manjeet is best qa"
                     },
-                    "updated_at": "2023-01-15T10:00:10.469Z",
-                    "action_by": "NP1",
                     "actor_details": {
-                        "name": "Sam Manuel"
-                    }
+                        "name": "CHAMPIONS TROPHY"
+                    },
+                    "id": "A2",
+                    "updated_at": "2025-03-05T11:50:27.835Z",
+                    "action_by": "khetisauda.com",
+                    "_id": "67c83a8336c85667b9d93396"
+                },
+                {
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Please provide the image"
+                    },
+                    "actor_details": {
+                        "name": "CHAMPIONS TROPHY"
+                    },
+                    "id": "A2",
+                    "updated_at": "2025-03-05T11:51:19.876Z",
+                    "action_by": "khetisauda.com",
+                    "_id": "67c83ab736c85667b9d9350a"
+                },
+                {
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "OPEN"
+                    },
+                    "actor_details": {
+                        "name": "Manjeet QA"
+                    },
+                    "id": "G1",
+                    "updated_at": "2025-03-05T11:52:07.616Z",
+                    "action_by": "NP2",
+                    "_id": "67c83ae736c85667b9d93552"
+                },
+                {
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "We have received the image"
+                    },
+                    "actor_details": {
+                        "name": "CHAMPIONS TROPHY"
+                    },
+                    "id": "A5",
+                    "updated_at": "2025-03-05T11:52:57.073Z",
+                    "action_by": "khetisauda.com",
+                    "_id": "67c83b1936c85667b9d93637"
                 }
             ]
         }

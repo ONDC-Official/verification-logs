@@ -12,10 +12,10 @@
                 "code": "std:0261"
             }
         },
-        "transaction_id": "4b246bfe-cf93-4ce1-8501-29c66b150b1f",
-        "message_id": "f7ffa587-e2fa-4388-af30-92c78ae96b1b",
-        "timestamp": "2025-02-28T07:46:31.081Z",
-        "domain": "ONDC:TRV13",
+        "transaction_id": "6a980a08-21e8-42cb-9e38-30dcb28dba99",
+        "message_id": "4cf6f0aa-b518-4e99-acd4-579966311277",
+        "timestamp": "2025-03-05T12:09:40.222Z",
+        "domain": "ONDC:RET10",
         "core_version": "2.0.0",
         "ttl": "PT10M",
         "action": "issue"
@@ -24,7 +24,7 @@
         "issue": {
             "id": "ISSUE-1",
             "level": "ISSUE",
-            "status": "OPEN",
+            "status": "RESOLVED",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -33,39 +33,42 @@
             },
             "refs": [
                 {
-                    "ref_id": "RAP-0000398",
+                    "ref_id": "RAP-0000525",
                     "ref_type": "ORDER"
-                },
+                }
+            ],
+            "actors": [
                 {
-                    "ref_id": "PR00023",
-                    "ref_type": "ITEM",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "message.order.items"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "quantity.selected.count"
-                                    },
-                                    "value": "2"
-                                }
-                            ]
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
                         }
-                    ]
+                    }
                 },
                 {
-                    "ref_id": "AS00059",
-                    "ref_type": "PROVIDER"
-                },
-                {
-                    "ref_id": "F1",
-                    "ref_type": "FULFILLMENt"
-                },
-                {
-                    "ref_id": "4b246bfe-cf93-4ce1-8501-29c66b150b1f",
-                    "ref_type": "TRANSACTION"
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
                 }
             ],
             "source_id": "CUST1",
@@ -83,53 +86,53 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "M1",
+            "last_action_id": "H1",
             "actions": [
                 {
                     "description": {
                         "code": "OPEN",
-                        "short_desc": "first issue form buyer"
+                        "short_desc": "OPEN"
                     },
                     "actor_details": {
-                        "name": "tiwari sweets"
+                        "name": "vidya sagar"
                     },
-                    "id": "M1",
-                    "updated_at": "2025-02-28T07:43:12.658Z",
+                    "id": "H1",
+                    "updated_at": "2025-03-05T12:07:53.817Z",
                     "action_by": "NP2",
-                    "_id": "67c16910935e9fafa524ff41"
+                    "_id": "67c83e99646ae800b7c156f0"
                 },
                 {
                     "description": {
                         "code": "PROCESSING",
-                        "short_desc": "Please share the more details"
+                        "short_desc": "Issue is in processing"
                     },
                     "actor_details": {
                         "name": "Satya Traders"
                     },
                     "id": "A2",
-                    "updated_at": "2025-02-28T07:44:06.462Z",
+                    "updated_at": "2025-03-05T12:08:43.262Z",
                     "action_by": "khetisauda.com",
-                    "_id": "67c16946935e9fafa524ff75"
+                    "_id": "67c83ecb646ae800b7c15706"
                 },
                 {
                     "id": "A2",
                     "description": {
                         "code": "RESOLVED",
-                        "short_desc": "We have provided the resolution please check it"
+                        "short_desc": "Issue is in processing"
                     },
-                    "updated_at": "2025-02-28T07:45:31.999Z",
+                    "updated_at": "2025-03-05T12:09:04.988Z",
                     "action_by": "khetisauda.com",
                     "actor_details": {
                         "name": "Satya Traders"
                     },
-                    "_id": "67c1699b935e9fafa524ff88"
+                    "_id": "67c83ee0646ae800b7c1570e"
                 },
                 {
                     "id": "NP2-GRO",
                     "type": "COUNTERPARTY-NP-GRO",
                     "info": {
                         "org": {
-                            "name": "khetisauda.com::ONDC:RET10"
+                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
                         },
                         "contact": {
                             "phone": "8851929554",
@@ -141,20 +144,20 @@
                     }
                 },
                 {
-                    "id": "M1",
+                    "id": "H1",
                     "description": {
                         "code": "ESCALATED",
-                        "short_desc": "escalated issue form buyer"
+                        "short_desc": "OPEN"
                     },
-                    "updated_at": "2025-02-28T07:46:31.080Z",
+                    "updated_at": "2025-03-05T12:09:40.222Z",
                     "action_by": "NP2",
                     "actor_details": {
-                        "name": "tiwari sweets"
+                        "name": "vidya sagar"
                     }
                 }
             ],
-            "created_at": "2025-02-26T07:46:31.081Z",
-            "updated_at": "2025-02-28T02:46:31.081Z"
+            "created_at": "2025-03-03T12:09:40.223Z",
+            "updated_at": "2025-03-05T07:09:40.223Z"
         }
     }
 }
