@@ -1,0 +1,332 @@
+{
+    "context": {
+        "ttl": "PT30S",
+        "action": "on_init",
+        "bap_id": "mock.ondc.org/api",
+        "bpp_id": "acrisvc.com",
+        "domain": "ONDC:LOG10",
+        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
+        "bpp_uri": "https://acrisvc.com",
+        "version": "2.0.0",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "timestamp": "2025-02-09T10:59:02.803Z",
+        "message_id": "98c2e9c1-2157-4348-a8b2-1c7d304f1544",
+        "transaction_id": "cc6bb3cd-108b-469d-b096-eff5e548a8b7"
+    },
+    "message": {
+        "order": {
+            "tags": [
+                {
+                    "code": "BPP_Terms",
+                    "list": [
+                        {
+                            "code": "Max_Liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "Max_Liability_Cap",
+                            "value": "10000"
+                        },
+                        {
+                            "code": "Mandatory_Arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "Court_Jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "Delay_Interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "Static_Terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "EXPRESS",
+                    "time": {
+                        "label": "TAT",
+                        "duration": "P8D"
+                    },
+                    "descriptor": {
+                        "code": "P2H2P"
+                    },
+                    "category_ids": [
+                        "C1"
+                    ],
+                    "fulfillment_ids": [
+                        "1"
+                    ]
+                }
+            ],
+            "quote": {
+                "ttl": "PT15M",
+                "price": {
+                    "value": "2085",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "value": "2085",
+                            "currency": "INR"
+                        },
+                        "title": "delivery"
+                    },
+                    {
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "tax"
+                    },
+                    {
+                        "item": {
+                            "id": "I1"
+                        },
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "title": "insurance"
+                    }
+                ]
+            },
+            "xinput": {
+                "form": {
+                    "url": "https://lsp.com/xxx/kyc",
+                    "status": "success",
+                    "mime_type": "text/html",
+                    "submission_id": "xxxx44567789999"
+                },
+                "required": true
+            },
+            "payments": [
+                {
+                    "id": "P1",
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "BAP",
+                                    "descriptor": {
+                                        "code": "Counterparty"
+                                    }
+                                },
+                                {
+                                    "value": "UPI",
+                                    "descriptor": {
+                                        "code": "Mode"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxx",
+                                    "descriptor": {
+                                        "code": "Beneficiary_Name"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxx",
+                                    "descriptor": {
+                                        "code": "Bank_Account_No"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxxxx",
+                                    "descriptor": {
+                                        "code": "Ifsc_Code"
+                                    }
+                                },
+                                {
+                                    "value": "xxxxxxx",
+                                    "descriptor": {
+                                        "code": "UPI_Address"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "Settlement_Details"
+                            }
+                        },
+                        {
+                            "list": [
+                                {
+                                    "value": "2085",
+                                    "descriptor": {
+                                        "code": "Amount"
+                                    }
+                                },
+                                {
+                                    "value": "ON-FULFILLMENT",
+                                    "descriptor": {
+                                        "code": "Type"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "Collection_Details"
+                            }
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT",
+                    "params": {
+                        "amount": "2085",
+                        "currency": "INR",
+                        "bank_account_number": "xxxxxxxx",
+                        "virtual_payment_address": "xxx@xxxx"
+                    },
+                    "collected_by": "BPP"
+                }
+            ],
+             "provider": {
+                "id": "P1",
+                "locations": []
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "start",
+                            "contact": {
+                                "email": "abcd.efgh@gmail.com",
+                                "phone": "9886098860"
+                            },
+                            "location": {
+                                "gps": "12.4535445,77.9283792",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "address": "My building #, My street name",
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "560041"
+                            }
+                        },
+                        {
+                            "type": "end",
+                            "contact": {
+                                "email": "abcd.efgh@gmail.com",
+                                "phone": "9886098860"
+                            },
+                            "location": {
+                                "gps": "12.342769,77.9129423",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "address": "My house or building name, street name",
+                                "country": {
+                                    "code": "IND"
+                                },
+                                "area_code": "636806"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": "Order is placed but not yet processed"
+                        }
+                    }
+                },
+                {
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-pickup",
+                            "short_desc": "Order is ready for pickup by the delivery partner."
+                        }
+                    }
+                },
+                {
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "In-transit",
+                            "short_desc": "Order is being transported to the destination."
+                        }
+                    }
+                },
+                {
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "1000.00",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "At-destination-hub",
+                            "short_desc": "Order has arrived at the local delivery hub."
+                        }
+                    }
+                },
+                {
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "4000.00",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "Delivery Partner will deliver the order to the customer shortly. "
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
