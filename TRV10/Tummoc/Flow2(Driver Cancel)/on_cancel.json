@@ -1,0 +1,424 @@
+{
+    "context": {
+        "bap_id": "ondc.tummoc.in",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/direct/ondc",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:TRV10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "transaction_id": "e6c63d91-46c2-46b7-9633-f255683f0b37",
+        "message_id": "5ac70856-1d4b-414d-b432-8c4821c16ea6",
+        "timestamp": "2025-02-25T07:16:31.303Z",
+        "version": "2.0.1",
+        "ttl": "PT10M",
+        "action": "on_cancel"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "OD_101"
+            },
+            "fulfillments": [
+                {
+                    "id": "a9d8cfb6-05ca-4071-987a-1516c9754c74",
+                    "stops": [
+                        {
+                            "location": {
+                                "gps": "13.013520, 13.013520"
+                            },
+                            "type": "START",
+                            "instructions": {
+                                "short_desc": "Information about location",
+                                "long_desc": "Information about location"
+                            },
+                            "authorization": {
+                                "token": "123456",
+                                "type": "OTP",
+                                "status": "UNCLAIMED",
+                                "valid_to": "2025-02-25T08:15:45.808Z"
+                            },
+                            "time": {
+                                "duration": "PT2H"
+                            }
+                        },
+                        {
+                            "location": {
+                                "gps": "12.996425, 77.668290"
+                            },
+                            "type": "END"
+                        }
+                    ],
+                    "type": "DELIVERY",
+                    "vehicle": {
+                        "category": "CAB",
+                        "variant": "SUV",
+                        "energy_type": "CNG",
+                        "make": "Land Rover",
+                        "model": "Defender",
+                        "registration": "DL 3CBW 0403"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO",
+                                "name": "Route Information"
+                            },
+                            "display": true,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ENCODED_POLYLINE",
+                                        "name": "Path"
+                                    },
+                                    "value": "c`lnAsj}xMjTyXjTyXjTwX"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "WAYPOINTS",
+                                        "name": "Waypoints"
+                                    },
+                                    "value": "[{\"gps\":\"13.010101, 77.651784\"},{\"gps\":\"13.006682, 77.655910\"},{\"gps\":\"13.003263, 77.660037\"},{\"gps\":\"12.999844, 77.664163\"}]"
+                                }
+                            ]
+                        }
+                    ],
+                    "customer": {
+                        "contact": {
+                            "phone": "8789012316"
+                        },
+                        "person": {
+                            "name": "Maaz"
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "RIDE_CANCELLED"
+                        }
+                    },
+                    "agent": {
+                        "contact": {
+                            "phone": "8976543210"
+                        },
+                        "person": {
+                            "name": "Jake Peralta"
+                        }
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "id": "I1",
+                    "descriptor": {
+                        "code": "RIDE",
+                        "name": "Cab Ride"
+                    },
+                    "fulfillment_ids": [
+                        "a9d8cfb6-05ca-4071-987a-1516c9754c74"
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "210.00",
+                        "minimum_value": "190",
+                        "maximum_value": "230"
+                    },
+                    "location_ids": [
+                        "19c4d139-741b-4a5a-ab83-6c472f6db796",
+                        "e8ea2677-77c5-42b6-8339-9a4dffda85e2"
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "FARE_POLICY",
+                                "name": "Daytime Charges"
+                            },
+                            "display": true,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "MIN_FARE"
+                                    },
+                                    "value": "30"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MIN_FARE_DISTANCE_KM"
+                                    },
+                                    "value": "2"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PER_KM_CHARGE"
+                                    },
+                                    "value": "15"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "PICKUP_CHARGE"
+                                    },
+                                    "value": "10"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "WAITING_CHARGE_PER_MIN"
+                                    },
+                                    "value": "2"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NIGHT_CHARGE_MULTIPLIER"
+                                    },
+                                    "value": "1.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NIGHT_SHIFT_START_TIME"
+                                    },
+                                    "value": "22:00:00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NIGHT_SHIFT_END_TIME"
+                                    },
+                                    "value": "05:00:00"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "INFO",
+                                "name": "General Information"
+                            },
+                            "display": true,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                                    },
+                                    "value": "2.93"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                                    },
+                                    "value": "29.34"
+                                }
+                            ]
+                        }
+                    ],
+                    "payment_ids": [
+                        "9b238dcb-0658-48aa-a2e3-634e34589c28"
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0.00"
+                },
+                "breakup": [
+                    {
+                        "title": "DISTANCE_FARE",
+                        "price": {
+                            "currency": "INR",
+                            "value": "180.00"
+                        }
+                    },
+                    {
+                        "title": "BASE_FARE",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
+                        }
+                    },
+                    {
+                        "title": "CANCELLATION_CHARGES",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "title": "REFUND",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-210.00"
+                        }
+                    }
+                ],
+                "ttl": "PT200S"
+            },
+            "billing": {
+                "name": "Maaz",
+                "phone": "8789012316",
+                "email": "maazdgr6@gmail.com"
+            },
+            "cancellation_terms": [
+                {
+                    "cancellation_fee": {
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_CONFIRMED"
+                        }
+                    },
+                    "reason_required": true
+                },
+                {
+                    "cancellation_fee": {
+                        "percentage": "0"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ASSIGNED"
+                        }
+                    },
+                    "reason_required": true
+                },
+                {
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "30"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ENROUTE_PICKUP"
+                        }
+                    },
+                    "reason_required": true
+                },
+                {
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_ARRIVED_PICKUP"
+                        }
+                    },
+                    "reason_required": true
+                },
+                {
+                    "cancellation_fee": {
+                        "percentage": "100"
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "RIDE_STARTED"
+                        }
+                    },
+                    "reason_required": true
+                }
+            ],
+            "payments": [
+                {
+                    "type": "ON-FULFILLMENT",
+                    "status": "NOT-PAID",
+                    "collected_by": "BPP",
+                    "params": {
+                        "bank_account_number": "918789012316",
+                        "bank_code": "ICIC0001422",
+                        "virtual_payment_address": "87890@okicic"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "DELIVERY"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "neft"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "2.5"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://example-test-bpp.com/static-terms.txt"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "2.10"
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "9b238dcb-0658-48aa-a2e3-634e34589c28"
+                }
+            ],
+            "id": "55af7b88-4d8f-46fc-aad7-ad4de293f090",
+            "status": "CANCELLED",
+            "created_at": "2025-02-25T07:14:13.271Z",
+            "updated_at": "2025-02-25T07:16:31.303Z",
+            "cancellation": {
+                "cancelled_by": "PROVIDER",
+                "reason": {
+                    "descriptor": {
+                        "code": "011"
+                    }
+                }
+            }
+        }
+    }
+}
