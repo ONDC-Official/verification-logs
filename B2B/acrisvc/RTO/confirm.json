@@ -1,0 +1,417 @@
+{
+    "context": {
+        "domain": "ONDC:LOG10",
+        "location": {
+            "city": {
+                "code": "std:080"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "action": "confirm",
+        "version": "2.0.0",
+        "bap_id": "mock.ondc.org/api",
+        "bap_uri": "https://mock.ondc.org/api/logistics/bap",
+        "transaction_id": "93d9066b-0268-45a7-8ea0-c53d8af2ba7b",
+        "message_id": "68bf65b6-af66-4a69-825d-343e9e0340ea",
+        "timestamp": "2025-03-06T12:54:43.375Z",
+        "ttl": "PT30S",
+        "bpp_uri": "https://acrisvc.com",
+        "bpp_id": "mock.ondc.org/api"
+    },
+    "message": {
+        "order": {
+            "id": "O2",
+            "status": "Created",
+            "provider": {
+                "id": "P1",
+                "locations": []
+            },
+            "items": [
+                {
+                    "id": "EXPRESS",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "category_ids": [
+                        "C1"
+                    ],
+                    "descriptor": {
+                        "code": "P2H2P"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "stops": [
+                        {
+                            "type": "start",
+                            "location": {
+                                "gps": "12.4535445,77.9283792",
+                                "area_code": "560041",
+                                "address": "My building #, My street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            },
+                            "id": "L1",
+                            "parent_stop_id": ""
+                        },
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "12.342769,77.9129423",
+                                "area_code": "636806",
+                                "address": "My house or building name, street name",
+                                "city": {
+                                    "name": "Bengaluru"
+                                },
+                                "state": {
+                                    "name": "Karnataka"
+                                },
+                                "country": {
+                                    "code": "IND"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "abcd.efgh@gmail.com"
+                            },
+                            "id": "L1",
+                            "parent_stop_id": ""
+                        }
+                    ],
+                    "agent": {
+                        "person": {
+                            "name": "Ramu"
+                        }
+                    },
+                    "customer": {
+                        "person": {
+                            "name": "xyz"
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "xyz.efgh@gmail.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "Delivery_Terms"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "RTO_Action"
+                                    },
+                                    "value": "no"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "2085"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "id": "I1"
+                        },
+                        "title": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2085"
+                        }
+                    },
+                    {
+                        "item": {
+                            "id": "I1"
+                        },
+                        "title": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "item": {
+                            "id": "I1"
+                        },
+                        "title": "insurance",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "billing": {
+                "name": "ONDC sellerapp",
+                "address": "My house or building name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com",
+                "time": {
+                    "timestamp": "2025-03-06T12:54:36.729Z"
+                }
+            },
+            "payments": [
+                {
+                    "id": "P1",
+                    "collected_by": "BPP",
+                    "params": {
+                        "amount": "2085",
+                        "currency": "INR",
+                        "bank_account_number": "xxxxxxxx",
+                        "virtual_payment_address": "xxx@xxxx"
+                    },
+                    "type": "ON-FULFILLMENT",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "Settlement_Details"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Counterparty"
+                                    },
+                                    "value": "BAP"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Mode"
+                                    },
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Beneficiary_Name"
+                                    },
+                                    "value": "xxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Bank_Account_No"
+                                    },
+                                    "value": "xxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Ifsc_Code"
+                                    },
+                                    "value": "xxxxxxx"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "UPI_Address"
+                                    },
+                                    "value": "xxxxxxx"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Collection_Details"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "Amount"
+                                    },
+                                    "value": "2085"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "Type"
+                                    },
+                                    "value": "ON-FULFILLMENT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "Package_Weight"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Unit"
+                            },
+                            "value": "kilogram"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Value"
+                            },
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Package_Dimensions"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Unit"
+                            },
+                            "value": "centimeter"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Length"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Breadth"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Height"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Count"
+                            },
+                            "value": "10"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Package_Dimensions"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Unit"
+                            },
+                            "value": "centimeter"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Length"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Breadth"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Height"
+                            },
+                            "value": "100"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Count"
+                            },
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Package_Details"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Category"
+                            },
+                            "value": "Grocery"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Dangerous_Goods"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Stackable"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Shipment_Value"
+                            },
+                            "value": "50000"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "Cold_Logistics"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "Temp_Control"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Temp_Unit"
+                            },
+                            "value": "Celsius"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Temp_Min"
+                            },
+                            "value": "0"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "Temp_Max"
+                            },
+                            "value": "4"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2025-03-06T12:54:43.375Z",
+            "updated_at": "2025-03-06T12:54:43.375Z"
+        }
+    }
+}
