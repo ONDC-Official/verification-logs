@@ -1,0 +1,411 @@
+{
+  "context": {
+    "action": "on_cancel",
+    "bap_id": "backend.choosecabs.com",
+    "bap_uri": "https://backend.choosecabs.com/api/trv10",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:022"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "f0db67ce-e78d-4fee-93c3-41bf909ef5c5",
+    "timestamp": "2025-01-21T14:56:38.125Z",
+    "transaction_id": "ba86c95f-db8d-4700-aca0-a61cc2f7bbdc",
+    "ttl": "PT10M",
+    "version": "2.0.1"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "OD_101"
+      },
+      "fulfillments": [
+        {
+          "id": "d062e8d3-8b95-4045-9d93-7921e8d106f7",
+          "stops": [
+            {
+              "location": {
+                "gps": "13.102163,77.593917"
+              },
+              "type": "START",
+              "instructions": {
+                "short_desc": "Information about location",
+                "long_desc": "Information about location"
+              },
+              "authorization": {
+                "token": "123456",
+                "type": "OTP",
+                "valid_to": "2025-01-21T15:56:34.128Z",
+                "status": "UNCLAIMED"
+              },
+              "time": {
+                "duration": "PT2H"
+              }
+            },
+            {
+              "location": {
+                "gps": "13.195290,77.652733"
+              },
+              "type": "END"
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "TWO_WHEELER",
+            "variant": "TWO_WHEELER",
+            "energy_type": "DIESEL"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "}saoAojtxMksBohAmsBqhAmsBohA"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"13.120788, 77.605680\"},{\"gps\":\"13.139414, 77.617443\"},{\"gps\":\"13.158039, 77.629207\"},{\"gps\":\"13.176665, 77.640970\"}]"
+                }
+              ]
+            }
+          ],
+          "customer": {
+            "contact": {
+              "phone": "9326983598"
+            },
+            "person": {
+              "name": "Dilshad"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "RIDE_CANCELLED"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "I3",
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Two Wheeler"
+          },
+          "fulfillment_ids": [
+            "d062e8d3-8b95-4045-9d93-7921e8d106f7"
+          ],
+          "price": {
+            "currency": "INR",
+            "value": "210.00",
+            "minimum_value": "190",
+            "maximum_value": "230"
+          },
+          "location_ids": [
+            "f2c4ca57-2452-4ea3-8835-2ffe0cb097a3",
+            "48e84b26-6bbb-497c-89f6-2b4f99450313"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "12.16"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "121.57"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "c4fc357d-926d-46a4-a6be-1dd9c8fd57c2"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "0.00"
+        },
+        "breakup": [
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "180.00"
+            }
+          },
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "title": "REFUND",
+            "price": {
+              "currency": "INR",
+              "value": "-210.00"
+            }
+          }
+        ],
+        "ttl": "PT200S"
+      },
+      "billing": {
+        "name": "Dilshad"
+      },
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_CONFIRMED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "bank_account_number": "885216975249454",
+            "bank_code": "IFDC88892",
+            "virtual_payment_address": "9988199772@okicic"
+          },
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "DELIVERY"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://example-test-bpp.com/static-terms.txt"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT",
+          "id": "c4fc357d-926d-46a4-a6be-1dd9c8fd57c2"
+        }
+      ],
+      "id": "528479bb-4e41-4321-8d86-db5a2286ffaa",
+      "status": "CANCELLED",
+      "created_at": "2025-01-21T14:56:34.128Z",
+      "updated_at": "2025-01-21T14:56:38.125Z",
+      "cancellation": {
+        "cancelled_by": "PROVIDER",
+        "reason": {
+          "descriptor": {
+            "code": "011"
+          }
+        }
+      }
+    }
+  }
+}

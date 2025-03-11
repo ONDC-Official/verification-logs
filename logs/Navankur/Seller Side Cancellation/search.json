@@ -3,7 +3,7 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
@@ -11,23 +11,31 @@
         },
         "action": "search",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "842b4188-75f3-49e9-9c8e-364a1a5b805a",
-        "message_id": "4582a34b-bb27-4f23-944c-e6c6ea48b3e4",
-        "timestamp": "2025-01-14T10:52:00.857Z",
+        "transaction_id": "4b246bfe-cf93-4ce1-8501-29c66b150b1f",
+        "message_id": "b8d353ca-1a69-448a-adba-a8a00a6b7efc",
+        "timestamp": "2025-02-20T10:14:08.584Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "ttl": "PT30S"
     },
     "message": {
         "intent": {
-            "category": {
-                "id": "RET10-*"
+            "item": {
+                "descriptor": {
+                    "name": "basmati rice"
+                }
             },
             "fulfillment": {
-                "type": "Delivery"
-            },
-            "payment": {
-                "type": "ON-FULFILLMENT"
+                "type": "Delivery",
+                "stops": [
+                    {
+                        "type": "end",
+                        "location": {
+                            "gps": "1.331209,103.946171",
+                            "area_code": "465654"
+                        }
+                    }
+                ]
             },
             "tags": [
                 {
@@ -45,7 +53,7 @@
                             "descriptor": {
                                 "code": "finder_fee_amount"
                             },
-                            "value": "10"
+                            "value": "0.0"
                         }
                     ]
                 },
@@ -64,11 +72,14 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
+                            "value": "09AAFCR8735H1ZY"
                         }
                     ]
                 }
-            ]
+            ],
+            "payment": {
+                "type": "ON-FULFILLMENT"
+            }
         }
     }
 }
