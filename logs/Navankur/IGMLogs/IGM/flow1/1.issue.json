@@ -12,27 +12,19 @@
                 "code": "std:0261"
             }
         },
-        "transaction_id": "777f9ad5-7401-4d9c-9888-5d86b33f291b",
-        "message_id": "40295c41-a6c7-42a3-8064-b31a7ed637fe",
-        "timestamp": "2025-03-07T12:42:17.517Z",
+        "transaction_id": "bf40bd53-cb10-4d24-ae41-afd287b904a0",
+        "message_id": "08755b17-19f9-4bda-8b96-6e7f1ff043fd",
+        "timestamp": "2025-03-17T07:20:19.878Z",
         "domain": "ONDC:RET10",
         "core_version": "2.0.0",
-        "ttl": "PT30S",
-        "action": "on_issue"
+        "ttl": "PT10M",
+        "action": "issue"
     },
     "message": {
-        "upated_target": [
-            {
-                "path": "issue.actions",
-                "action": "APPENDED"
-            }
-        ],
         "issue": {
             "id": "ISSUE-1",
-            "status": "PROCESSING",
             "level": "ISSUE",
-            "created_at": "2025-03-07T12:42:17.517Z",
-            "updated_at": "2025-03-07T12:42:17.517Z",
+            "status": "OPEN",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -41,7 +33,7 @@
             },
             "refs": [
                 {
-                    "ref_id": "RAP-0000504",
+                    "ref_id": "RAP-0000538",
                     "ref_type": "ORDER"
                 }
             ],
@@ -51,7 +43,7 @@
                     "type": "CONSUMER",
                     "info": {
                         "org": {
-                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDCRET10"
+                            "name": "buyerapp.com::ONDC:RET10"
                         },
                         "person": {
                             "name": "Sam Manuel"
@@ -67,7 +59,7 @@
                     "type": "INTERFACING_NP",
                     "info": {
                         "org": {
-                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
+                            "name": "buyerapp.com::ONDC:RET10"
                         },
                         "contact": {
                             "phone": "9450394039",
@@ -81,9 +73,6 @@
             ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
-            "respondent_ids": [
-                "NP1"
-            ],
             "description": {
                 "code": "ORD01",
                 "short_desc": "Issue with product quality",
@@ -97,35 +86,23 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "A2",
+            "last_action_id": "A1",
             "actions": [
                 {
+                    "id": "A1",
                     "description": {
                         "code": "OPEN",
-                        "short_desc": "OPEN"
+                        "short_desc": "first action from buyer"
                     },
+                    "updated_at": "2025-03-17T07:20:19.878Z",
+                    "action_by": "NP1",
                     "actor_details": {
-                        "name": "Ram Manuel"
-                    },
-                    "id": "A1",
-                    "updated_at": "2025-03-07T12:41:46.086Z",
-                    "action_by": "NP2",
-                    "_id": "67cae98a2e5fb0b1ff37d414"
-                },
-                {
-                    "id": "A2",
-                    "description": {
-                        "code": "PROCESSING",
-                        "short_desc": "Issue is in processing"
-                    },
-                    "updated_at": "2025-03-07T12:42:17.517Z",
-                    "action_by": "khetisauda.com",
-                    "actor_details": {
-                        "name": "Satya Traders"
-                    },
-                    "_id": "67cae9a92e5fb0b1ff37d493"
+                        "name": "hitesh agarwal"
+                    }
                 }
-            ]
+            ],
+            "created_at": "2025-03-15T07:19:26.234Z",
+            "updated_at": "2025-03-17T02:20:19.879Z"
         }
     }
 }

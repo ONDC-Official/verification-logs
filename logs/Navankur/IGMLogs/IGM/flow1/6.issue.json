@@ -12,27 +12,19 @@
                 "code": "std:0261"
             }
         },
-        "transaction_id": "266b7df3-89eb-4c3c-9d05-193a49349aaf",
-        "message_id": "23790969-2466-4a01-aa62-92c9b3c7e98e",
-        "timestamp": "2025-03-07T12:50:33.498Z",
+        "transaction_id": "bf40bd53-cb10-4d24-ae41-afd287b904a0",
+        "message_id": "2c338b8f-2918-4961-87f4-d121d5bd445e",
+        "timestamp": "2025-03-17T07:24:12.043Z",
         "domain": "ONDC:RET10",
         "core_version": "2.0.0",
-        "ttl": "PT30S",
-        "action": "on_issue"
+        "ttl": "PT10M",
+        "action": "issue"
     },
     "message": {
-        "upated_target": [
-            {
-                "path": "issue.actions",
-                "action": "APPENDED"
-            }
-        ],
         "issue": {
             "id": "ISSUE-1",
-            "status": "PROCESSING",
             "level": "ISSUE",
-            "created_at": "2025-03-07T12:50:33.498Z",
-            "updated_at": "2025-03-07T12:50:33.498Z",
+            "status": "INFO_REQUESTED",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -41,7 +33,7 @@
             },
             "refs": [
                 {
-                    "ref_id": "RAP-0000314",
+                    "ref_id": "RAP-0000538",
                     "ref_type": "ORDER"
                 }
             ],
@@ -81,9 +73,6 @@
             ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
-            "respondent_ids": [
-                "NP1"
-            ],
             "description": {
                 "code": "ORD01",
                 "short_desc": "Issue with product quality",
@@ -97,35 +86,65 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "A2",
+            "last_action_id": "A4",
             "actions": [
                 {
                     "description": {
                         "code": "OPEN",
-                        "short_desc": "hello from buyer"
+                        "short_desc": "first action from buyer"
                     },
                     "actor_details": {
-                        "name": "Sam Manuel"
+                        "name": "hitesh agarwal"
                     },
                     "id": "A1",
-                    "updated_at": "2025-03-07T12:50:01.381Z",
-                    "action_by": "NP2",
-                    "_id": "67caeb792e5fb0b1ff37d626"
+                    "updated_at": "2025-03-17T07:20:19.878Z",
+                    "action_by": "NP1",
+                    "_id": "67d7cd34913b8ab13732be65"
                 },
                 {
-                    "id": "A2",
                     "description": {
                         "code": "PROCESSING",
-                        "short_desc": "issue recived"
+                        "short_desc": "Complaint is created"
                     },
-                    "updated_at": "2025-03-07T12:50:33.498Z",
+                    "actor_details": {
+                        "name": "Satya Traders"
+                    },
+                    "id": "A2",
+                    "updated_at": "2025-03-17T07:21:28.551Z",
+                    "action_by": "khetisauda.com",
+                    "_id": "67d7cd78913b8ab13732beda"
+                },
+                {
+                    "id": "A3",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide the product image"
+                    },
+                    "updated_at": "2025-03-17T07:22:08.915Z",
                     "action_by": "khetisauda.com",
                     "actor_details": {
                         "name": "Satya Traders"
                     },
-                    "_id": "67caeb992e5fb0b1ff37d668"
+                    "_id": "67d7cda0913b8ab13732bee4"
+                },
+                {
+                    "id": "A4",
+                    "description": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "info provided from buyer",
+                        "images": [
+                            "https://ondc-bucket-radiant.s3.ap-south-1.amazonaws.com/OnBoarding/f2e2aeaa-41ce-409d-9897-e2125ad24531_Dark%20berries.jpg"
+                        ]
+                    },
+                    "updated_at": "2025-03-17T07:24:12.043Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "hitesh agarwal"
+                    }
                 }
-            ]
+            ],
+            "created_at": "2025-03-15T07:19:26.234Z",
+            "updated_at": "2025-03-17T02:24:12.044Z"
         }
     }
 }
