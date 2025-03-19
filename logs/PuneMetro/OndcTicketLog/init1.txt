@@ -1,0 +1,108 @@
+"init_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1742398953\",expires=\"1742402553\",headers=\"(created) (expires) digest\",signature=\"0qLfY2TQBB6y8YLXV3gippEQdA3iIsuq7OwgqE8aE50koHmUypAEr4F2jeEwyTe0EPral6v1Q0b476JQtjiQAQ==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:TRV11",
+          "location": {
+            "country": {
+              "code": "IND"
+            },
+            "city": {
+              "code": "std:020"
+            }
+          },
+          "timestamp": "2025-03-19T15:42:33.497Z",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "transaction_id": "0bb1eedf-962d-43b5-9d9e-40006e9a4e2a",
+          "message_id": "e25744d8-dba2-4d90-83f1-f2244c8c5ba0",
+          "version": "2.0.0",
+          "action": "init",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "ttl": "PT10M",
+          "bpp_id": "uatondc.paycraftsol.net",
+          "bpp_uri": "https://uatondc.paycraftsol.net/ondc/transitPune"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "P1"
+            },
+            "items": [
+              {
+                "id": "I40-PIM-BHO",
+                "quantity": {
+                  "selected": {
+                    "count": 1
+                  }
+                }
+              }
+            ],
+            "billing": {
+              "name": "John Doe",
+              "email": "john.doe@example.com",
+              "phone": "+91-9897867564"
+            },
+            "payments": [
+              {
+                "collected_by": "BAP",
+                "status": "NOT-PAID",
+                "type": "PRE-ORDER",
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES"
+                    },
+                    "display": false,
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                        },
+                        "value": "1"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES_TYPE"
+                        },
+                        "value": "percent"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_TERMS"
+                    },
+                    "display": false,
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_TYPE"
+                        },
+                        "value": "UPI"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "DELAY_INTEREST"
+                        },
+                        "value": "5"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "STATIC_TERMS"
+                        },
+                        "value": "https://api.example-bap.com/booking/terms"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_AMOUNT"
+                        },
+                        "value": "19.80"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
