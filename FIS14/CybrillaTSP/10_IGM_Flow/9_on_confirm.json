@@ -9,19 +9,20 @@
         "code": "IND"
       }
     },
-    "action": "on_init",
+    "action": "on_confirm",
     "version": "2.0.0",
     "bap_id": "cybrillaondctsppp.i.s.finprim.com",
     "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "dcf2f0b9-903b-49e0-ac41-7bedf64835a8",
-    "message_id": "3d3739de-e14f-4027-b4c1-3ddc198478ce",
-    "timestamp": "2025-03-12T07:54:02.185Z",
+    "transaction_id": "52b36b2a-78cd-4a29-9b5d-79bd8473d8a3",
+    "message_id": "952b208a-6657-4da8-9d08-5e312c34b928",
+    "timestamp": "2025-03-19T12:09:11.605Z",
     "ttl": "PT10M"
   },
   "message": {
     "order": {
+      "id": "2749851f-e2e4-4fd5-b63c-91d774d81c55",
       "provider": {
         "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f",
         "descriptor": {
@@ -136,22 +137,24 @@
                     "name": "Application Form",
                     "code": "APPLICATION_FORM"
                   },
-                  "value": "3a96559d-0455-4611-aef1-6ea80b51b7d6"
+                  "value": "521d92e2-c86d-4e63-b32f-ea181a7f7337"
                 }
               ]
             }
           ],
           "payment_ids": [
-            "8144e3f6-9ed8-4099-81e1-870673699e0a"
+            "95f16fba-3000-43e2-808c-4dc35afb36e0"
           ]
         }
       ],
+      "fulfillments": [],
+      "status": "ACCEPTED",
       "tags": [
         {
           "display": false,
           "descriptor": {
-            "name": "BPP Terms of Engagement",
-            "code": "BPP_TERMS"
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
           },
           "list": [
             {
@@ -159,7 +162,7 @@
                 "name": "Static Terms (Transaction Level)",
                 "code": "STATIC_TERMS"
               },
-              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+              "value": "https://test.static.term.com"
             },
             {
               "descriptor": {
@@ -171,12 +174,22 @@
           ]
         }
       ],
-      "id": "7f1f6f6a-0788-43d7-afa7-7e4c37e92269",
-      "status": "CREATED",
-      "fulfillments": [],
+      "created_at": "2025-03-19T12:09:11.605Z",
+      "updated_at": "2025-03-19T12:09:11.605Z",
+      "xinput": {
+        "form": {
+          "id": "application_form"
+        },
+        "form_response": {
+          "submission_id": "521d92e2-c86d-4e63-b32f-ea181a7f7337",
+          "status": "SUCCESS"
+        }
+      },
       "payments": [
         {
+          "id": "95f16fba-3000-43e2-808c-4dc35afb36e0",
           "collected_by": "BPP",
+          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=9500.00&transaction_id=52b36b2a-78cd-4a29-9b5d-79bd8473d8a3&label=LUMPSUM_PAYMENT",
           "params": {
             "amount": "9500.00",
             "currency": "INR",
@@ -184,6 +197,8 @@
             "source_bank_account_number": "98765432101193",
             "source_bank_account_name": "Tony Soprano"
           },
+          "type": "PRE-FULFILLMENT",
+          "status": "NOT-PAID",
           "tags": [
             {
               "display": true,
@@ -200,14 +215,18 @@
                 }
               ]
             }
-          ],
-          "id": "8144e3f6-9ed8-4099-81e1-870673699e0a",
-          "status": "NOT-PAID",
-          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=9500.00&transaction_id=dcf2f0b9-903b-49e0-ac41-7bedf64835a8&label=LUMPSUM_PAYMENT"
+          ]
         }
       ],
-      "created_at": "2025-03-12T07:54:02.171Z",
-      "updated_at": "2025-03-12T07:54:02.184Z"
+      "cancellation_terms": [
+        {
+          "reason_required": true,
+          "external_ref": {
+            "url": "https://api.sellerapp.com/cterms?id=214werw3w4",
+            "mimetype": "text/html"
+          }
+        }
+      ]
     }
   }
 }
