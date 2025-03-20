@@ -1,55 +1,84 @@
 {
     "context": {
+        "bap_id": "ondc.tummoc.in",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/direct/ondc",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "domain": "ONDC:TRV10",
         "location": {
+            "city": {
+                "code": "std:080"
+            },
             "country": {
                 "code": "IND"
-            },
-            "city": {
-                "code": "std:011"
             }
         },
-        "domain": "ONDC:TRV11",
-        "action": "confirm",
+        "transaction_id": "5f3ec6b4-17ec-406d-b569-d15efaafb214",
+        "message_id": "0e21577e-de90-49d0-b8bd-682ccfebe7bc",
+        "timestamp": "2025-03-10T06:32:22.479Z",
         "version": "2.0.1",
-        "bap_id": "ondc-mobility-pre-prod.pelocal.net",
-        "bap_uri": "https://ondc-mobility-pre-prod.pelocal.net/metro/",
-        "bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
-        "bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc",
-        "transaction_id": "5b9bfd81-20ef-40d9-9713-aad632d3f6a7",
-        "message_id": "ab7aab59-b790-445b-82ae-338ba68b1f25",
-        "timestamp": "2025-02-13T10:42:31.893Z",
-        "ttl": "PT30S"
+        "ttl": "PT30S",
+        "action": "init"
     },
     "message": {
         "order": {
+            "provider": {
+                "id": "OD_101"
+            },
             "items": [
                 {
-                    "id": "DMRC_133_123_SJT",
-                    "quantity": {
-                        "selected": {
-                            "count": 2
+                    "id": "I1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "customer": {
+                        "contact": {
+                            "phone": "8789012316"
+                        },
+                        "person": {
+                            "name": "Maaz"
                         }
+                    },
+                    "id": "0a83d2f9-bb34-490a-b512-ec0af0fbcc13",
+                    "stops": [
+                        {
+                            "location": {
+                                "gps": "12.954660, 77.707520"
+                            },
+                            "type": "START",
+                            "instructions": {
+                                "short_desc": "Information about location",
+                                "long_desc": "Information about location"
+                            }
+                        },
+                        {
+                            "location": {
+                                "gps": "12.930404, 77.678404"
+                            },
+                            "type": "END"
+                        }
+                    ],
+                    "vehicle": {
+                        "category": "CAB",
+                        "variant": "SUV",
+                        "energy_type": "CNG"
                     }
                 }
             ],
-            "provider": {
-                "id": "DMRC_5001_1001"
-            },
             "billing": {
-                "name": "Vimal Lal V",
-                "email": "test@pelocal.com",
-                "phone": "+91-9995269889"
+                "name": "Maaz",
+                "phone": "8789012316",
+                "email": "maazdgr6@gmail.com"
             },
             "payments": [
                 {
-                    "id": "PA1",
-                    "collected_by": "BAP",
-                    "status": "PAID",
-                    "type": "PRE-ORDER",
+                    "type": "ON-FULFILLMENT",
+                    "status": "NOT-PAID",
+                    "collected_by": "BPP",
                     "params": {
-                        "transaction_id": "eda490a2-aa6c-4490-9baf-d1b4eca54457",
-                        "currency": "INR",
-                        "amount": "80"
+                        "bank_account_number": "918789012316",
+                        "bank_code": "ICIC0001422"
                     },
                     "tags": [
                         {
@@ -62,7 +91,7 @@
                                     "descriptor": {
                                         "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                     },
-                                    "value": "0.00"
+                                    "value": "1"
                                 }
                             ]
                         },
@@ -74,21 +103,21 @@
                             "list": [
                                 {
                                     "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "neft"
+                                },
+                                {
+                                    "descriptor": {
                                         "code": "SETTLEMENT_WINDOW"
                                     },
-                                    "value": "P1D"
+                                    "value": "PT60M"
                                 },
                                 {
                                     "descriptor": {
                                         "code": "SETTLEMENT_BASIS"
                                     },
-                                    "value": "INVOICE_RECEIPT"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "UPI"
+                                    "value": "Delivery"
                                 },
                                 {
                                     "descriptor": {
@@ -106,7 +135,7 @@
                                     "descriptor": {
                                         "code": "DELAY_INTEREST"
                                     },
-                                    "value": "0.00"
+                                    "value": "2.5"
                                 },
                                 {
                                     "descriptor": {
@@ -118,7 +147,7 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "80"
+                                    "value": "2.10"
                                 }
                             ]
                         }

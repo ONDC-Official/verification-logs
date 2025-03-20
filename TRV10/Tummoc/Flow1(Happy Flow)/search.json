@@ -1,32 +1,43 @@
 {
     "context": {
+        "bap_id": "ondc.tummoc.in",
+        "bap_uri": "https://stage-dev-api.tummoc.in/ticket/direct/ondc",
         "location": {
             "country": {
                 "code": "IND"
             },
             "city": {
-                "code": "std:011"
+                "code": "std:080"
             }
         },
-        "domain": "ONDC:TRV11",
-        "timestamp": "2025-02-13T10:39:47.721Z",
-        "bap_id": "ondc-mobility-pre-prod.pelocal.net",
-        "transaction_id": "5b9bfd81-20ef-40d9-9713-aad632d3f6a7",
-        "message_id": "4057de37-5e7e-4de2-9a01-fd769a7bf632",
+        "transaction_id": "5f3ec6b4-17ec-406d-b569-d15efaafb214",
+        "message_id": "64687e2d-66f3-442f-9652-0ebd5ae8b216",
+        "timestamp": "2025-03-10T06:31:43.161Z",
+        "domain": "ONDC:TRV10",
         "version": "2.0.1",
-        "action": "search",
-        "bap_uri": "https://ondc-mobility-pre-prod.pelocal.net/metro/",
-        "ttl": "PT30S"
+        "ttl": "PT30S",
+        "action": "search"
     },
     "message": {
         "intent": {
             "fulfillment": {
-                "vehicle": {
-                    "category": "METRO"
-                }
+                "stops": [
+                    {
+                        "location": {
+                            "gps": "12.954660, 77.707520"
+                        },
+                        "type": "START"
+                    },
+                    {
+                        "location": {
+                            "gps": "12.930404, 77.678404"
+                        },
+                        "type": "END"
+                    }
+                ]
             },
             "payment": {
-                "collected_by": "BAP",
+                "collected_by": "BPP",
                 "tags": [
                     {
                         "descriptor": {
@@ -38,7 +49,7 @@
                                 "descriptor": {
                                     "code": "BUYER_FINDER_FEES_PERCENTAGE"
                                 },
-                                "value": "0.00"
+                                "value": "1"
                             }
                         ]
                     },
@@ -52,13 +63,13 @@
                                 "descriptor": {
                                     "code": "DELAY_INTEREST"
                                 },
-                                "value": "0.00"
+                                "value": "5"
                             },
                             {
                                 "descriptor": {
                                     "code": "STATIC_TERMS"
                                 },
-                                "value": "https://api.example-bap.com/booking/terms"
+                                "value": "https://example-test-bap.com/static-terms.txt"
                             }
                         ]
                     }
