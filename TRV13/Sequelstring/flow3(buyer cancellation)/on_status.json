@@ -1,0 +1,313 @@
+{
+  "context": {
+    "domain": "ONDC:TRV13",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:080"
+      }
+    },
+    "version": "2.0.0",
+    "action": "on_status",
+    "transaction_id": "519cbaa8-81fb-4eb4-912a-750e21d8109c",
+    "message_id": "d1c73cef-e12a-43de-8a49-65a93eda85b9",
+    "timestamp": "2025-01-23T17:41:35.107Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+  },
+  "message": {
+    "order": {
+      "id": "559fe236-2955-4fd1-a1ee-e630f85aa01e",
+      "status": "COMPLETE",
+      "provider": {
+        "id": "hotel_chain_123"
+      },
+      "items": [
+        {
+          "id": "a5d0ad30-e733-4ee7-a825-30a2fa5b391d",
+          "location_ids": ["L1"],
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "add_ons": [
+            {
+              "id": "Half-Board"
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "2662.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "a5d0ad30-e733-4ee7-a825-30a2fa5b391d",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "2000.00"
+              },
+              "add_ons": [
+                {
+                  "id": "Half-Board",
+                  "price": {
+                    "currency": "INR",
+                    "value": "200.00"
+                  }
+                }
+              ]
+            },
+            "title": "Deluxe Room accommodation with Breakfast Included",
+            "price": {
+              "currency": "INR",
+              "value": "2200.00"
+            }
+          },
+          {
+            "title": "Service Tax @ 9%",
+            "price": {
+              "currency": "INR",
+              "value": "198.00"
+            }
+          },
+          {
+            "title": "GST @ 12%",
+            "price": {
+              "currency": "INR",
+              "value": "264.00"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "billing": {
+        "name": "Nirdosh Chauhan",
+        "address": "Dwarka, Delhi-110075",
+        "state": {
+          "name": "Delhi"
+        },
+        "city": {
+          "name": "Delhi"
+        },
+        "organization": {
+          "descriptor": {
+            "name": "ONDC"
+          },
+          "address": "ONDC, Delhi-110049"
+        },
+        "email": "email@ondc.org",
+        "phone": "1704380085",
+        "tax_id": "GSTIN1234567890"
+      },
+      "fulfillments": [
+        {
+          "id": "27102e6b-f220-4922-8f49-855f55492a66",
+          "customer": {
+            "person": {
+              "name": "Shani Pandey",
+              "age": "23",
+              "dob": "2000-14-10",
+              "gender": "M",
+              "creds": [
+                {
+                  "id": "12312413",
+                  "type": "AADHAAR"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "+91-9988776655",
+              "email": "ashu@gmail.com"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "67dc0a35-aaae-4a6c-b3ba-d79812c5e672",
+          "type": "PART-PAYMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "LINKED-PAYMENTS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "pymnt-0qna2jw5s"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "pymnt-gm4o2zp9c"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ],
+          "status": "NOT-PAID"
+        },
+        {
+          "id": "pymnt-0qna2jw5s",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ADV-DEPOSIT"
+              }
+            }
+          ],
+          "params": {
+            "currency": "INR",
+            "amount": "901.8856",
+            "bank_code": "HDFC0005678",
+            "bank_account_number": "987654321098",
+            "virtual_payment_address": "sellerapp@hdfc",
+            "transaction_id": "eca5f0ea-807a-42a1-aea1-c28d62640c32"
+          },
+          "collected_by": "BAP",
+          "status": "PAID"
+        },
+        {
+          "id": "pymnt-gm4o2zp9c",
+          "type": "ON-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FINAL-PAYMENT"
+              }
+            }
+          ],
+          "params": {
+            "amount": "1760.1144",
+            "currency": "INR",
+            "bank_code": "SBIN0001234",
+            "bank_account_number": "123456789012",
+            "virtual_payment_address": "buyerapp@upi",
+            "transaction_id": "e1238d78-d365-4f6e-8077-9c90338351ac"
+          },
+          "collected_by": "BPP",
+          "status": "PAID",
+          "time": {
+            "timestamp": "2025-01-23T17:41:35.107Z"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": ""
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS_NEW"
+              },
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "descriptor": {
+                "code": "EFFECTIVE_DATE"
+              },
+              "value": "2024-04-01T18:30:00.000Z"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "BUYER_FINDER_FEES"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "MAX_LIABILITY"
+              },
+              "value": "2"
+            },
+            {
+              "descriptor": {
+                "code": "MAX_LIABILITY_CAP"
+              },
+              "value": "1000.00"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "false"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "1.5"
+            },
+            {
+              "descriptor": {
+                "code": "TAX_NUMBER"
+              },
+              "value": "GSTIN1234567890"
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-01-23T17:41:35.107Z",
+      "updated_at": "2025-01-23T17:41:35.107Z",
+      "documents": [
+        {
+          "descriptor": {
+            "code": "BOOKING_CONFIRMATION"
+          },
+          "url": "https://confirmation-O1.ondc.hotelbpp.com"
+        },
+        {
+          "descriptor": {
+            "code": "INVOICE"
+          },
+          "url": "https://invoice-O1.ondc.hotelbpp.com"
+        }
+      ]
+    }
+  }
+}
