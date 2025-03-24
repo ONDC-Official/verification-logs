@@ -15,20 +15,20 @@
     "bap_uri": "https://pre-prod-ondc-buyer-api.chartr.in/api/v1/ondc/buyer",
     "bpp_id": "pre-prod-ondc-ticketing-api-delhi.transportstack.in",
     "bpp_uri": "https://pre-prod-ondc-ticketing-api-delhi.transportstack.in/",
-    "transaction_id": "be8c497e-ec6f-4860-a6dd-6e99adacdd43",
-    "message_id": "1099f33f-e811-41d4-9716-2f1b931ea835",
-    "timestamp": "2025-01-27T09:59:21.107Z",
+    "transaction_id": "e0663675-d82b-4276-b9ba-05cf42f589f4",
+    "message_id": "264d040a-f7fe-4755-b3cc-e62cc47dd8a4",
+    "timestamp": "2025-03-24T13:31:12.463Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "01",
+      "id": "9ac1ae3a-ac79-4882-b90a-35743101cba1",
       "status": "ACTIVE",
       "items": [
         {
-          "id": "I5",
+          "id": "I35",
           "descriptor": {
-            "name": "534UP",
+            "name": "604DOWN",
             "code": "SJT",
             "images": [
               {
@@ -38,11 +38,12 @@
             ]
           },
           "fulfillment_ids": [
-            "F3"
+            "F18",
+            "F19"
           ],
           "price": {
             "currency": "INR",
-            "value": "5.0"
+            "value": "10.00"
           },
           "quantity": {
             "selected": {
@@ -51,7 +52,7 @@
           },
           "time": {
             "label": "Validity",
-            "duration": "PT2D"
+            "duration": "PT1D"
           }
         }
       ],
@@ -69,40 +70,81 @@
       },
       "fulfillments": [
         {
-          "id": "F3",
+          "id": "F18",
           "type": "TRIP",
           "stops": [
             {
               "type": "START",
               "location": {
                 "descriptor": {
-                  "name": "Kalkaji Mandir",
-                  "code": "KALKAJI_MANDIR"
+                  "name": "G Block",
+                  "code": "G_BLOCK"
                 },
                 "gps": "0.000000, 0.000000"
               },
-              "id": "1",
-              "authorization": {
-                "type": "VEHICLE_NUMBER",
-                "status": "CLAIMED"
-              }
+              "id": "1"
             },
             {
-              "type": "END",
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 1"
+              },
               "location": {
                 "descriptor": {
-                  "name": "Nehru Place",
-                  "code": "NEHRU_PLACE"
+                  "name": "Udyog Bhawan",
+                  "code": "UDYOG_BHAWAN"
                 },
                 "gps": "0.000000, 0.000000"
               },
               "id": "2",
               "parent_stop_id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Rail Bhawan Metro Station / Krishi Bhawan",
+                  "code": "RAIL_BHAWAN_METRO_STATION_KRISHI_BHAWAN"
+                },
+                "gps": "0.000000, 0.000000"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 3"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "Red Cross Road",
+                  "code": "RED_CROSS_ROAD"
+                },
+                "gps": "0.000000, 0.000000"
+              },
+              "id": "4",
+              "parent_stop_id": "3"
+            },
+            {
+              "type": "END",
+              "location": {
+                "descriptor": {
+                  "name": "Aakashwani Bhawan",
+                  "code": "AAKASHWANI_BHAWAN"
+                },
+                "gps": "0.000000, 0.000000"
+              },
+              "id": "5",
+              "parent_stop_id": "4"
             }
           ],
           "vehicle": {
             "category": "BUS",
-            "variant": "nac",
+            "variant": "ac",
             "registration": "DL1PD5604"
           },
           "tags": [
@@ -115,28 +157,26 @@
                   "descriptor": {
                     "code": "ROUTE_ID"
                   },
-                  "value": "1824"
+                  "value": "5710"
                 },
                 {
                   "descriptor": {
                     "code": "ROUTE_DIRECTION"
                   },
-                  "value": "KALKAJI_MANDIR to NEHRU_PLACE"
+                  "value": "DOWN"
                 }
               ]
             }
           ]
         },
         {
-          "id": "F4",
+          "id": "F19",
           "type": "TICKET",
           "stops": [
             {
               "type": "START",
               "authorization": {
-                "type": "QR",
-                "token": "eyJidXNfbnVtYmVyIjogIkRMMVBEMTQ3OCIsICJidXNfcm91dGUiOiAiNTM0VVAiLCAic3RhcnRfc3RvcCI6ICJLYWxrYWppIE1hbmRpciIsICJlbmRfc3RvcCI6ICJOZWhydSBQbGFjZSIsICJib29raW5nX3RpbWUiOiAiMjAyNS0wMS0yN1QxNToxNjowMiIsICJ2YWxpZGl0eSI6ICIyMDI1LTAxLTI4VDAzOjAwOjAwIiwgInRpY2tldF9pZCI6ICJUMjcwMTIwMjViZDg0NjNhNjViIiwgImZhcmVfcGVyX3RpY2tldCI6IDUuMCwgInRpY2tldF9jb3VudCI6IDEsICJidXNfYWdlbmN5IjogImRpbXRzIn0=",
-                "valid_to": "2025-01-28T03:00:00Z",
+                "type": "VEHICLE_NUMBER",
                 "status": "CLAIMED"
               }
             }
@@ -151,7 +191,7 @@
                   "descriptor": {
                     "code": "PARENT_ID"
                   },
-                  "value": "F3"
+                  "value": "F18"
                 }
               ]
             },
@@ -164,7 +204,7 @@
                   "descriptor": {
                     "code": "NUMBER"
                   },
-                  "value": "T27012025bd8463a65b"
+                  "value": "T2403202599dac5dbbf"
                 }
               ]
             }
@@ -183,17 +223,17 @@
       ],
       "quote": {
         "price": {
-          "value": "4.5",
+          "value": "9.00",
           "currency": "INR"
         },
         "breakup": [
           {
             "title": "BASE_FARE",
             "item": {
-              "id": "I5",
+              "id": "I35",
               "price": {
                 "currency": "INR",
-                "value": "5.0"
+                "value": "10.00"
               },
               "quantity": {
                 "selected": {
@@ -203,7 +243,7 @@
             },
             "price": {
               "currency": "INR",
-              "value": "5.0"
+              "value": "10.00"
             }
           },
           {
@@ -217,7 +257,7 @@
             "title": "OFFER",
             "price": {
               "currency": "INR",
-              "value": "0.5"
+              "value": "1.00"
             }
           }
         ]
@@ -229,9 +269,9 @@
           "status": "PAID",
           "type": "PRE-ORDER",
           "params": {
-            "transaction_id": "2501271516UP7XCL",
+            "transaction_id": "2503241849S0FJT8",
             "currency": "INR",
-            "amount": "4.5",
+            "amount": "9.00",
             "bank_code": "CNRB0019126",
             "bank_account_number": "110039418119",
             "virtual_payment_address": "dummy5020@cnrb"
@@ -309,15 +349,15 @@
                   "descriptor": {
                     "code": "SETTLEMENT_AMOUNT"
                   },
-                  "value": "4.5"
+                  "value": "9.00"
                 }
               ]
             }
           ]
         }
       ],
-      "created_at": "2025-01-27T15:16:02Z",
-      "updated_at": "2025-01-27T15:16:02Z"
+      "created_at": "2025-03-24T18:49:49Z",
+      "updated_at": "2025-03-24T18:49:49Z"
     }
   }
 }
