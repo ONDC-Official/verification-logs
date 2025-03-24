@@ -1,43 +1,179 @@
 {
   "context": {
+    "domain": "ONDC:RET10",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "action": "on_issue",
+    "core_version": "2.0.0",
     "bap_id": "ondc.preprod.highwaydelite.com",
     "bap_uri": "https://ondc.preprod.highwaydelite.com/ride-hailing",
     "bpp_id": "ondc.preprod.highwaydelite.com",
     "bpp_uri": "https://ondc.preprod.highwaydelite.com/ride-hailing",
-    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
     "transaction_id": "T3",
-    "message_id": "4dccf928-ecf4-4055-96b9-36c0fb0c934c",
-    "timestamp": "2025-03-24T06:58:15.802Z",
-    "domain": "ONDC:RET10",
-    "core_version": "2.0.0",
+    "message_id": "258cd8d7-60f7-43cc-9ba7-033dbe565021",
     "ttl": "PT10M",
-    "action": "issue"
+    "timestamp": "2025-03-24T06:59:47.150Z"
   },
   "message": {
     "issue": {
       "id": "ISSUE-1",
+      "status": "RESOLVED",
       "level": "GRIEVANCE",
-      "status": "OPEN",
+      "created_at": "2025-03-22T06:19:54.068Z",
+      "updated_at": "2025-03-24T06:59:47.150Z",
       "expected_response_time": { "duration": "PT2H" },
       "expected_resolution_time": { "duration": "P1D" },
       "refs": [
         { "ref_id": "O1", "ref_type": "ORDER" },
-        {
-          "ref_id": "P1",
-          "ref_type": "PROVIDER",
-          "tags": [
-            {
-              "descriptor": { "code": "message.order.items" },
-              "list": [
-                {
-                  "descriptor": { "code": "quantity.selected.count" },
-                  "value": "2"
-                }
-              ]
-            }
-          ]
-        },
+        { "ref_id": "P1", "ref_type": "PROVIDER" },
         { "ref_id": "T123", "ref_type": "TRANSACTION" }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": ["ondc.preprod.highwaydelite.com"],
+      "description": {
+        "code": "ORD001",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ]
+      },
+      "last_action_id": "A5df4-2287-48c8-aea0-b181c37c0d34",
+      "actions": [
+        {
+          "id": "A9835-bd80-4479-9b29-56068a7964c6",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Seller not  visible",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:20:31.166Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "Ac274-8474-418f-b705-04c420b457c6",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Checking the issue",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:21:21.020Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" }
+        },
+        {
+          "id": "Ac274-8474-418f-b705-04c420b457c6",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "now visible",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:41:00.348Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" },
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS"
+        },
+        {
+          "id": "Ae8d6-aebd-42d1-bef2-c3c0161d31f2",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "will check ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:43:32.171Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" },
+          "ref_id": "RESOLUTIONS",
+          "ref_type": "R1"
+        },
+        {
+          "id": "Ae8d6-aebd-42d1-bef2-c3c0161d31f2",
+          "description": {
+            "code": "RESOLVED",
+            "short_desc": "complainant resolved , seller would now be visible",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:47:10.276Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" },
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS"
+        },
+        {
+          "id": "A82d2-ff3f-40a4-995b-6a77b3d371d9",
+          "description": {
+            "code": "RESOLUTION_REJECTED",
+            "short_desc": "still not visible, escalating issue",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:52:27.167Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" },
+          "ref_id": "RESOLUTIONS",
+          "ref_type": "R1"
+        },
+        {
+          "id": "A59f8-72eb-489a-b1df-1d42ac4201e5",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "checking",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:54:07.937Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" }
+        },
+        {
+          "id": "A59f8-72eb-489a-b1df-1d42ac4201e5",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "Resolution Proposed",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:56:26.959Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" },
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS"
+        },
+        {
+          "id": "A5df4-2287-48c8-aea0-b181c37c0d34",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "Will check once enabled",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:58:15.799Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" },
+          "ref_id": "RESOLUTIONS",
+          "ref_type": "R2"
+        },
+        {
+          "id": "A5df4-2287-48c8-aea0-b181c37c0d34",
+          "description": {
+            "code": "RESOLVED",
+            "short_desc": "Resolution provided, complaint resolved",
+            "name": " "
+          },
+          "updated_at": "2025-03-24T06:59:47.150Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" },
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS"
+        }
       ],
       "actors": [
         {
@@ -86,133 +222,6 @@
           }
         }
       ],
-      "source_id": "CUST1",
-      "complainant_id": "NP1",
-      "description": {
-        "code": "ORD001",
-        "short_desc": "Issue with product quality",
-        "long_desc": "Product quality is not correct. facing issues while using the product",
-        "additional_desc": {
-          "url": "https://buyerapp.com/additonal-details/desc.txt",
-          "content_type": "text/plain"
-        },
-        "images": [
-          "http://buyerapp.com/addtional-details/img1.png",
-          "http://buyerapp.com/addtional-details/img2.png"
-        ]
-      },
-      "last_action_id": "6",
-      "actions": [
-        {
-          "id": "A9835-bd80-4479-9b29-56068a7964c6",
-          "description": {
-            "code": "OPEN",
-            "short_desc": "Seller not  visible"
-          },
-          "updated_at": "2025-03-24T06:20:31.166Z",
-          "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" }
-        },
-        {
-          "id": "Ac274-8474-418f-b705-04c420b457c6",
-          "description": {
-            "code": "PROCESSING",
-            "short_desc": "Checking the issue",
-            "name": " "
-          },
-          "updated_at": "2025-03-24T06:21:21.020Z",
-          "action_by": "COUNTERPARTY_NP",
-          "actor_details": { "name": "John Doe" }
-        },
-        {
-          "id": "Ac274-8474-418f-b705-04c420b457c6",
-          "description": {
-            "code": "RESOLUTION_PROPOSED",
-            "short_desc": "now visible",
-            "name": " "
-          },
-          "updated_at": "2025-03-24T06:41:00.348Z",
-          "action_by": "COUNTERPARTY_NP",
-          "actor_details": { "name": "John Doe" },
-          "ref_id": "R1",
-          "ref_type": "RESOLUTIONS"
-        },
-        {
-          "id": "Ae8d6-aebd-42d1-bef2-c3c0161d31f2",
-          "description": {
-            "code": "RESOLUTION_ACCEPTED",
-            "short_desc": "will check "
-          },
-          "updated_at": "2025-03-24T06:43:32.171Z",
-          "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" },
-          "ref_id": "RESOLUTIONS",
-          "ref_type": "R1"
-        },
-        {
-          "id": "Ae8d6-aebd-42d1-bef2-c3c0161d31f2",
-          "description": {
-            "code": "RESOLVED",
-            "short_desc": "complainant resolved , seller would now be visible",
-            "name": " "
-          },
-          "updated_at": "2025-03-24T06:47:10.276Z",
-          "action_by": "COUNTERPARTY_NP",
-          "actor_details": { "name": "John Doe" },
-          "ref_id": "R1",
-          "ref_type": "RESOLUTIONS"
-        },
-        {
-          "id": "A82d2-ff3f-40a4-995b-6a77b3d371d9",
-          "description": {
-            "code": "RESOLUTION_REJECTED",
-            "short_desc": "still not visible, escalating issue"
-          },
-          "updated_at": "2025-03-24T06:52:27.167Z",
-          "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" },
-          "ref_id": "RESOLUTIONS",
-          "ref_type": "R1"
-        },
-        {
-          "id": "A59f8-72eb-489a-b1df-1d42ac4201e5",
-          "description": {
-            "code": "PROCESSING",
-            "short_desc": "checking",
-            "name": " "
-          },
-          "updated_at": "2025-03-24T06:54:07.937Z",
-          "action_by": "COUNTERPARTY_NP",
-          "actor_details": { "name": "John Doe" }
-        },
-        {
-          "id": "A59f8-72eb-489a-b1df-1d42ac4201e5",
-          "description": {
-            "code": "RESOLUTION_PROPOSED",
-            "short_desc": "Resolution Proposed",
-            "name": " "
-          },
-          "updated_at": "2025-03-24T06:56:26.959Z",
-          "action_by": "COUNTERPARTY_NP",
-          "actor_details": { "name": "John Doe" },
-          "ref_id": "R2",
-          "ref_type": "RESOLUTIONS"
-        },
-        {
-          "id": "6",
-          "description": {
-            "code": "RESOLUTION_ACCEPTED",
-            "short_desc": "Will check once enabled"
-          },
-          "updated_at": "2025-03-24T06:58:15.799Z",
-          "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" },
-          "ref_id": "RESOLUTIONS",
-          "ref_type": "R2"
-        }
-      ],
-      "created_at": "2025-03-22T06:19:54.068Z",
-      "updated_at": "2025-03-24T01:58:15.804Z",
       "resolutions": [
         {
           "id": "R1",
@@ -221,7 +230,8 @@
             "short_desc": "Error in ingestion, seller would be visible through the next ingestion."
           },
           "updated_at": "2024-08-14T09:57:58.841Z",
-          "proposed_by": "ondc.preprod.highwaydelite.com"
+          "proposed_by": "ondc.preprod.highwaydelite.com",
+          "tags": []
         },
         {
           "id": "R2",
@@ -230,9 +240,11 @@
             "short_desc": "Error in interface, seller would be visible now."
           },
           "updated_at": "2025-03-24T06:54:08.049Z",
-          "proposed_by": "ondc.preprod.highwaydelite.com"
+          "proposed_by": "ondc.preprod.highwaydelite.com",
+          "tags": []
         }
       ]
-    }
+    },
+    "updated_target": [{ "path": "issue.actions", "action": "APPENDED" }]
   }
 }

@@ -1,30 +1,137 @@
 {
   "context": {
+    "domain": "ONDC:RET10",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "action": "on_issue",
+    "core_version": "2.0.0",
     "bap_id": "ondc.preprod.highwaydelite.com",
     "bap_uri": "https://ondc.preprod.highwaydelite.com/ride-hailing",
-    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
-    "transaction_id": "f90b40d8-098e-4600-a08f-98aab13f8cf7",
-    "message_id": "07122276-632b-4c1a-b7f7-c8a422817fe7",
-    "timestamp": "2025-03-17T05:36:21.238Z",
-    "domain": "ONDC:RET10",
-    "core_version": "2.0.0",
+    "bpp_id": "ondc.preprod.highwaydelite.com",
+    "bpp_uri": "https://ondc.preprod.highwaydelite.com/ride-hailing",
+    "transaction_id": "T3",
+    "message_id": "015c2655-05b0-4350-a88a-217398f36773",
     "ttl": "PT10M",
-    "action": "on_issue"
+    "timestamp": "2025-03-24T06:54:07.937Z"
   },
   "message": {
-    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
     "issue": {
-      "id": "78510536-acbf-4d3c-a95d-b8be87ab954b",
-      "level": "GREVIENCE",
-      "status": "PROCESSING",
+      "id": "ISSUE-1",
+      "status": "OPEN",
+      "level": "GRIEVANCE",
+      "created_at": "2025-03-22T06:19:54.068Z",
+      "updated_at": "2025-03-24T06:54:07.937Z",
       "expected_response_time": { "duration": "PT2H" },
       "expected_resolution_time": { "duration": "P1D" },
       "refs": [
+        { "ref_id": "O1", "ref_type": "ORDER" },
+        { "ref_id": "P1", "ref_type": "PROVIDER" },
+        { "ref_id": "T123", "ref_type": "TRANSACTION" }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": ["ondc.preprod.highwaydelite.com"],
+      "description": {
+        "code": "ORD001",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ]
+      },
+      "last_action_id": "A82d2-ff3f-40a4-995b-6a77b3d371d9",
+      "actions": [
         {
-          "ref_id": "bb79becc-e416-4964-bea4-ec96ab74f34e",
-          "ref_type": "ORDER"
+          "id": "A9835-bd80-4479-9b29-56068a7964c6",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Seller not  visible",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:20:31.166Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "Ac274-8474-418f-b705-04c420b457c6",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Checking the issue",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:21:21.020Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" }
+        },
+        {
+          "id": "Ac274-8474-418f-b705-04c420b457c6",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "now visible",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:41:00.348Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" },
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS"
+        },
+        {
+          "id": "Ae8d6-aebd-42d1-bef2-c3c0161d31f2",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "will check ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:43:32.171Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" },
+          "ref_id": "RESOLUTIONS",
+          "ref_type": "R1"
+        },
+        {
+          "id": "Ae8d6-aebd-42d1-bef2-c3c0161d31f2",
+          "description": {
+            "code": "RESOLVED",
+            "short_desc": "complainant resolved , seller would now be visible",
+            "name": " ",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:47:10.276Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" },
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS"
+        },
+        {
+          "id": "A82d2-ff3f-40a4-995b-6a77b3d371d9",
+          "description": {
+            "code": "RESOLUTION_REJECTED",
+            "short_desc": "still not visible, escalating issue",
+            "images": []
+          },
+          "updated_at": "2025-03-24T06:52:27.167Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" },
+          "ref_id": "RESOLUTIONS",
+          "ref_type": "R1"
+        },
+        {
+          "id": "A82d2-ff3f-40a4-995b-6a77b3d371d9",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "checking",
+            "name": " "
+          },
+          "updated_at": "2025-03-24T06:54:07.937Z",
+          "action_by": "COUNTERPARTY_NP",
+          "actor_details": { "name": "John Doe" }
         }
       ],
       "actors": [
@@ -32,177 +139,61 @@
           "id": "CUST1",
           "type": "CONSUMER",
           "info": {
-            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:TRV11" },
-            "person": { "name": "Highway Delite" },
-            "contact": {
-              "phone": "2341234123",
-              "email": "support@highwaydelite.com"
-            }
+            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "person": { "name": "Sam Manuel" },
+            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" }
           }
         },
         {
-          "id": "ondc.preprod.highwaydelite.com",
+          "id": "NP1",
           "type": "INTERFACING_NP",
           "info": {
-            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:TRV11" },
-            "person": { "name": "Highway Delite" },
+            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "person": { "name": "John Doe" },
             "contact": {
               "phone": "9450394039",
-              "email": "support@highwayDelite.com"
-            }
-          }
-        },
-        {
-          "id": "NP2",
-          "type": "TRANSACTION-COUNTERPARTY-NP",
-          "info": {
-            "org": { "name": "sellerapp.com::ONDC:RET10" },
-            "person": { "name": "Jane Doe" },
-            "contact": {
-              "phone": "9450394140",
-              "email": "respondentapp@respond.com"
+              "email": "buyerapp@interface.com"
             }
           }
         },
         {
           "id": "ondc.preprod.highwaydelite.com",
-          "type": "INERFACING_NP_GRO",
+          "type": "COUNTERPARTY_NP",
           "info": {
-            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:TRV11" },
+            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:RET10" },
+            "person": { "name": "GRIEVANCE Redressal Office" },
             "contact": {
               "phone": "9450394039",
               "email": "support@highwayDelite.com"
-            },
-            "person": { "name": "GREVIENCE Redressal Office" }
+            }
           }
         },
         {
-          "id": "NP2",
-          "type": "TRANSACTION-COUNTERPARTY-NP",
+          "id": "ondc.preprod.highwaydelite.com-GRO",
+          "type": "COUNTERPARTY_NP_GRO",
           "info": {
-            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:RET10" },
+            "person": { "name": "GRIEVANCE Redressal Office" },
             "contact": {
-              "phone": "9450394140",
-              "email": "respondentapp@respond.com"
-            },
-            "person": { "name": "Jane Doe" }
+              "phone": "9450394039",
+              "email": "support@highwayDelite.com"
+            }
           }
-        }
-      ],
-      "source_id": "CUST1",
-      "complainant_id": "ondc.preprod.highwaydelite.com",
-      "respondent_ids": ["NP2"],
-      "description": {
-        "code": "FULFILLMENT",
-        "short_desc": "Issue ",
-        "long_desc": "Problem description",
-        "additional_desc": { "url": "NA", "content_type": "text/plain" }
-      },
-      "last_action_id": "3",
-      "actions": [
-        {
-          "id": "A0d26-dbd3-4fcb-b7fc-6bc87fba0802",
-          "description": { "code": "OPEN", "short_desc": "Complaint created" },
-          "updated_at": "2025-03-17T05:21:52.348Z",
-          "action_by": "ondc.preprod.highwaydelite.com",
-          "actor_details": { "name": "Highway Delite" }
-        },
-        {
-          "id": "0",
-          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
-          "updated_at": "2025-03-17T05:22:37.941Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" }
-        },
-        {
-          "id": "1",
-          "description": {
-            "code": "RESOLUTION_PROPOSED",
-            "short_desc": "NONE"
-          },
-          "updated_at": "2025-03-17T05:25:33.057Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" },
-          "ref_id": "R_PARENT",
-          "ref_type": "RESOLUTIONS"
-        },
-        {
-          "id": "new-action-1742189203568",
-          "description": {
-            "code": "RESOLUTION_REJECTED",
-            "short_desc": "Rejected resolution, escalating Issue Level"
-          },
-          "updated_at": "2025-03-17T05:26:43.568Z",
-          "action_by": "ondc.preprod.highwaydelite.com",
-          "actor_details": { "name": "You" }
-        },
-        {
-            "id": "2",
-            "description": { "code": "PROCESSING", "short_desc": "OPEN" },
-            "updated_at": "2025-03-17T05:29:28.688Z",
-            "action_by": "NP2",
-            "actor_details": { "name": "Sam Manuel Gro" }
-          },
-        {
-          "id": "3",
-          "description": { "code": "RESOLUTION_PROPOSED" },
-          "updated_at": "2025-03-17T05:36:21.238Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel Gro" },
-          "ref_id": "R_PARENT",
-          "ref_type": "RESOLUTIONS"
         }
       ],
       "resolutions": [
         {
-          "id": "R_PARENT",
-          "descriptor": {
-            "code": "PARENT",
-            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
-          },
-          "updated_at": "2024-08-14T09:57:58.841Z",
-          "proposed_by": "NP2"
-        },
-        {
           "id": "R1",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
           "descriptor": {
-            "code": "REFUND",
-            "short_desc": "Providing refund for the item"
+            "code": "NOW-VISIBLE",
+            "short_desc": "Error in ingestion, seller would be visible through the next ingestion."
           },
           "updated_at": "2024-08-14T09:57:58.841Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": { "code": "RESOLUTION_DETAILS" },
-              "list": [
-                { "descriptor": { "code": "ITEM" }, "value": "I1" },
-                { "descriptor": { "code": "REFUND_AMOUNT" }, "value": "200" }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "R2",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": {
-            "code": "REPLACEMENT",
-            "short_desc": "Providing replacement of the item"
-          },
-          "updated_at": "2024-08-14T09:57:58.841Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": { "code": "RESOLUTION_DETAILS" },
-              "list": [{ "descriptor": { "code": "ITEM" }, "value": "I1" }]
-            }
-          ]
+          "proposed_by": "ondc.preprod.highwaydelite.com",
+          "tags": []
         }
-      ],
-      "created_at": "2025-03-17T05:21:52.293Z",
-      "updated_at": "2025-03-17T05:26:43.703Z"
-    }
+      ]
+    },
+    "updated_target": [{ "path": "issue.actions", "action": "APPENDED" }]
   }
 }
