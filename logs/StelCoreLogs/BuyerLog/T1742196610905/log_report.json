@@ -1,0 +1,66 @@
+{
+    "Flow Error": {
+        "0": "Incorrect Flow as per context/timestamps - (select,on_select,init,on_init,confirm,on_confirm)"
+    },
+    "Schema": {
+        "schemaErr0": "/select/0/message/order must have required property 'tags'",
+        "schemaErr1": "/select/0/message/order must NOT have additional properties (offers)",
+        "schemaErr2": "/select/1/message/order must have required property 'tags'",
+        "schemaErr3": "/select/1/message/order must NOT have additional properties (offers)",
+        "schemaErr4": "/on_select/0/message/order/payments/0/collected_by must be equal to one of the allowed values (BAP,BPP)",
+        "schemaErr5": "/on_select/1/context/transaction_id Transaction ID should be same across the transaction: \"T1742194569343\"",
+        "schemaErr6": "/on_select/1/context/message_id Message ID for on_action API should be same as action API: \"M1742194569343\"",
+        "schemaErr7": "/on_select/1/message/order/payments/0/collected_by must be equal to one of the allowed values (BAP,BPP)",
+        "schemaErr8": "/init/0/context/transaction_id Transaction ID should be same across the transaction: \"T1742194569343\"",
+        "schemaErr9": "/init/0/message/order must have required property 'tags'",
+        "schemaErr10": "/init/0/message/order/provider/locations/0/id must be equal to constant (022)",
+        "schemaErr11": "/init/0/message/order/payments/0/collected_by must be equal to one of the allowed values (BAP,BPP)",
+        "schemaErr12": "/on_init/0/context/transaction_id Transaction ID should be same across the transaction: \"T1742194569343\"",
+        "schemaErr13": "/on_init/0/message/order must have required property 'provider_location'",
+        "schemaErr14": "/on_init/0/message/order must NOT have additional properties (cancellation_terms)",
+        "schemaErr15": "/on_init/0/message/order/provider must NOT have additional properties (locations)",
+        "schemaErr16": "/on_init/0/message/order/payments/0/collected_by must be equal to one of the allowed values (BAP,BPP)",
+        "schemaErr17": "/on_init/0/message/order/tags must NOT have fewer than 2 items",
+        "schemaErr18": "/confirm/0/context/transaction_id Transaction ID should be same across the transaction: \"T1742194569343\"",
+        "schemaErr19": "/confirm/0/message/order/provider/locations mismatch from /init",
+        "schemaErr20": "/confirm/0/message/order/quote/price/value must be equal to constant (65)",
+        "schemaErr21": "/confirm/0/message/order/payments/0/collected_by must be equal to one of the allowed values (BAP,BPP)",
+        "schemaErr22": "/confirm/0/message/order/payments/0/@ondc~1org~1settlement_details/0/settlement_type must be equal to one of the allowed values (upi,neft,rtgs)",
+        "schemaErr23": "/confirm/0/message/order/tags must NOT have fewer than 3 items",
+        "schemaErr24": "/on_confirm/0/context/transaction_id Transaction ID should be same across the transaction: \"T1742194569343\"",
+        "schemaErr25": "/on_confirm/0/message/order must NOT have additional properties (cancellation_terms)",
+        "schemaErr26": "/on_confirm/0/message/order/payments/0/collected_by must be equal to one of the allowed values (BAP,BPP)",
+        "schemaErr27": "/on_confirm/0/message/order/payments/0/@ondc~1org~1settlement_details/0/settlement_type must be equal to one of the allowed values (upi,neft,rtgs)",
+        "schemaErr28": "/on_confirm/0/message/order/tags must NOT have fewer than 3 items"
+    },
+    "Context": {
+        "on_select_0": {
+            "tmpstmpErr": "Timestamp mismatch for /on_select "
+        },
+        "on_select_1": {
+            "tmpstmpErr": "context/timestamp difference between on_select and select should be within 30 seconds"
+        },
+        "on_confirm_0": {
+            "tmpstmpErr": "context/timestamp difference between on_confirm and confirm should be within 5 seconds"
+        }
+    },
+    "Message": {
+        "select_0": {
+            "prvdrErr": "Provider with id 'a31882a2-3cd2-44ed-8685-3fd628a0f2da' does not exist in the catalog provided in /on_search",
+            "itemErr0": "Item Id '4e5e605c-bc1e-4812-8a66-e8369824c75f' does not exist in /on_search"
+        },
+        "select_1": {
+            "prvdrErr": "Provider with id 'a31882a2-3cd2-44ed-8685-3fd628a0f2da' does not exist in the catalog provided in /on_search",
+            "itemErr0": "Item Id '4e5e605c-bc1e-4812-8a66-e8369824c75f' does not exist in /on_search"
+        },
+        "on_select_1": {
+            "fullfntTagErr": "Delivery terms (INCOTERMS) are required for exports in /fulfillments/tags"
+        },
+        "confirm_0": {
+            "feeTypeErr": "Buyer Finder Fee amount mismatches from /search"
+        },
+        "on_confirm_0": {
+            "feeTypeErr": "Buyer Finder Fee amount mismatches from /search"
+        }
+    }
+}
