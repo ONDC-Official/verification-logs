@@ -1,16 +1,16 @@
 {
     "context": {
-        "action": "on_confirm",
+        "action": "on_cancel",
         "bap_id": "ondc-mobility-pre-prod.pelocal.net/intercity-bus",
         "bap_uri": "https://ondc-mobility-pre-prod.pelocal.net/intercity-bus",
         "domain": "ONDC:TRV12",
-        "message_id": "bfec1c46-39b1-4d67-b108-8c4bee7fedea",
-        "timestamp": "2025-03-20T10:40:00.032Z",
-        "transaction_id": "46e24b98-3b1f-4447-9c85-86d07e6e1b2a",
+        "message_id": "6d1de7e0-af62-4bb2-b14f-1e450ae610c1",
+        "timestamp": "2025-03-26T05:23:14.229Z",
+        "transaction_id": "40b756a6-768a-4648-a43b-b7ca6aa1b426",
         "ttl": "PT30S",
         "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
         "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-        "version": "2.0.1",
+        "version": "2.0.0",
         "location": {
             "city": {
                 "code": "std:011"
@@ -75,7 +75,7 @@
                             },
                             "time": {
                                 "label": "DATE_TIME",
-                                "timestamp": "2025-03-20T06:30:00.000Z"
+                                "timestamp": "2025-03-26T06:30:00.000Z"
                             },
                             "authorization": {
                                 "type": "QR",
@@ -94,7 +94,7 @@
                             },
                             "time": {
                                 "label": "DATE_TIME",
-                                "timestamp": "2025-03-20T15:30:00.000Z"
+                                "timestamp": "2025-03-26T15:30:00.000Z"
                             }
                         }
                     ],
@@ -296,7 +296,7 @@
             ],
             "quote": {
                 "price": {
-                    "value": "901",
+                    "value": "10",
                     "currency": "INR"
                 },
                 "breakup": [
@@ -357,6 +357,20 @@
                             "currency": "INR",
                             "value": "19"
                         }
+                    },
+                    {
+                        "title": "CANCELLATION_CHARGES",
+                        "price": {
+                            "value": "10",
+                            "currency": "INR"
+                        }
+                    },
+                    {
+                        "title": "REFUND",
+                        "price": {
+                            "value": "-891",
+                            "currency": "INR"
+                        }
                     }
                 ]
             },
@@ -372,7 +386,7 @@
             ],
             "payments": [
                 {
-                    "id": "90127781-68f9-48c3-b9ae-df02d505cca4",
+                    "id": "1ae02df3-7dc1-41f1-8f47-5b8f56bbcdb1",
                     "collected_by": "BAP",
                     "status": "PAID",
                     "type": "PRE-ORDER",
@@ -388,7 +402,64 @@
                                     },
                                     "value": "0.00"
                                 }
-                            ]
+                            ],
+                            "display": false
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "true"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "New Delhi"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0.00"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://www.abc.com/settlement-terms/"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "901.00"
+                                }
+                            ],
+                            "display": false
                         }
                     ],
                     "params": {
@@ -397,12 +468,18 @@
                         "virtual_payment_address": "9988199772@okicic",
                         "amount": "901",
                         "currency": "INR",
-                        "transaction_id": "46e24b98-3b1f-4447-9c85-86d07e6e1b2a"
+                        "transaction_id": "40b756a6-768a-4648-a43b-b7ca6aa1b426"
                     }
                 }
             ],
-            "id": "ca53cc38-4a4a-492c-beda-baef35e1f7c4",
-            "status": "ACTIVE"
+            "id": "a222d119-90fd-488e-8c7d-69fa416dfce0",
+            "status": "CANCELLED",
+            "cancellation": {
+                "cancelled_by": "CONSUMER",
+                "time": "2025-03-26T05:23:14.229Z"
+            },
+            "created_at": "2025-03-26T05:23:14.229Z",
+            "updated_at": "2025-03-26T05:23:14.229Z"
         }
     }
 }
