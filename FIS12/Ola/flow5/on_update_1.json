@@ -1,5 +1,5 @@
 {
-      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1742980639\",expires=\"1742984239\",headers=\"(created) (expires) digest\",signature=\"lvQffyhlDGQECfR6lIwhQH0kR+Xw+Fw18Gr6GzhCYWme8wRW9MT8Ypkz/6W2u6ngmMLI2MycYZOK1N41UdhxDQ==\"",
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/staging/mock/seller|6b0eae97-22a9-4bd7-aa7b-afee86c4e85c|ed25519\",algorithm=\"ed25519\",created=\"1742980815\",expires=\"1742984415\",headers=\"(created) (expires) digest\",signature=\"d+822TzDiE4tV2166dw5J7eDzPDV4KOe+P3XIDGCyEQlPdpmc36R6upA8PM4zib2+ckH2cs6YuNycsijsUAIAA==\"",
       "request": {
         "context": {
           "domain": "ONDC:FIS12",
@@ -12,15 +12,15 @@
             }
           },
           "transaction_id": "075426DE15AE529B70C064BB46E5092405339E1554C7EAAD88A119A406812221",
-          "message_id": "ondc_loan_disbursal-7t5FvEYfxm",
-          "action": "on_confirm",
-          "timestamp": "2025-03-26T09:17:19.010Z",
+          "message_id": "ondc_loan_missed_emi_payment-Cxx9y4i8lC",
+          "action": "on_update",
+          "timestamp": "2025-03-26T09:20:15.085Z",
           "version": "2.0.1",
           "bap_uri": "https://afm-ui-stg.olacabs.com/afmui/los/return/ondc_credit/",
           "bap_id": "afm-ui-stg.olacabs.com",
-          "ttl": "PT30M",
-          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+          "ttl": "PT10M",
+          "bpp_id": "pramaan.ondc.org/beta/staging/mock/seller",
+          "bpp_uri": "https://pramaan.ondc.org/beta/staging/mock/seller"
         },
         "message": {
           "order": {
@@ -288,7 +288,7 @@
               "id": "bac5acbf-5a6a-40cd-b922-f1278b541df4",
               "price": {
                 "currency": "INR",
-                "value": "442300"
+                "value": "443800.00"
               },
               "breakup": [
                 {
@@ -339,6 +339,13 @@
                     "value": "0",
                     "currency": "INR"
                   }
+                },
+                {
+                  "title": "LATE_FEE_AMOUNT",
+                  "price": {
+                    "value": "1500",
+                    "currency": "INR"
+                  }
                 }
               ],
               "ttl": "P29D"
@@ -355,13 +362,30 @@
                 },
                 "state": {
                   "descriptor": {
-                    "code": "INITIATED",
-                    "name": "Loan Initiated"
+                    "code": "DISBURSED",
+                    "name": "Loan Disbursed"
                   }
                 }
               }
             ],
             "payments": [
+              {
+                "id": "2",
+                "type": "POST_FULFILLMENT",
+                "params": {
+                  "amount": "89960",
+                  "currency": "INR"
+                },
+                "status": "NOT-PAID",
+                "time": {
+                  "label": "MISSED_EMI_PAYMENT",
+                  "range": {
+                    "start": "2025-05-01T09:16:10.214Z",
+                    "end": "2025-05-31T09:16:10.214Z"
+                  }
+                },
+                "url": "https://pramaan.ondc.org/beta/staging/mock/seller/toPaymentUtility?amount=89960&order_id=bac5acbf-5a6a-40cd-b922-f1278b541df4&payment_id=2&label=MISSED_EMI_PAYMENT"
+              },
               {
                 "id": "b5ce194d-ad97-45ed-8d36-fe8894a0ba95",
                 "type": "ON_ORDER",
@@ -463,7 +487,7 @@
                   "amount": "88460.00",
                   "currency": "INR"
                 },
-                "status": "NOT-PAID",
+                "status": "DELAYED",
                 "time": {
                   "label": "INSTALLMENT",
                   "range": {

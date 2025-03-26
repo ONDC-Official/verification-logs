@@ -1,4 +1,5 @@
 {
+	"request": {
   "message": {
     "order": {
       "provider": {
@@ -262,7 +263,7 @@
         }
       ],
       "quote": {
-        "id": "f2af7aee-c760-4928-91d3-f2332da3bb8b",
+        "id": "d6faffb6-e2bb-4170-a48c-715f4c8fab5b",
         "price": {
           "currency": "INR",
           "value": "442300"
@@ -316,6 +317,27 @@
               "value": "0",
               "currency": "INR"
             }
+          },
+          {
+            "title": "PRE_PAYMENT_CHARGE",
+            "price": {
+              "value": "4500",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OUTSTANDING_PRINCIPAL",
+            "price": {
+              "value": "30000",
+              "currency": "INR"
+            }
+          },
+          {
+            "title": "OUTSTANDING_INTEREST",
+            "price": {
+              "value": "6000",
+              "currency": "INR"
+            }
           }
         ],
         "ttl": "P29D"
@@ -332,15 +354,28 @@
           },
           "state": {
             "descriptor": {
-              "code": "INITIATED",
-              "name": "Loan Initiated"
+              "code": "DISBURSED",
+              "name": "Loan Disbursed"
             }
           }
         }
       ],
       "payments": [
         {
-          "id": "a1f11d0c-46a6-41ee-b609-b17523fa7a93",
+          "id": "561ce394-9466-4616-b47c-94e01b9768c6",
+          "url": "https://pramaan.ondc.org/beta/staging/mock/seller/toPaymentUtility?amount=30000&order_id=d6faffb6-e2bb-4170-a48c-715f4c8fab5b&label=PRE_PART_PAYMENT",
+          "params": {
+            "amount": "30000",
+            "currency": "INR"
+          },
+          "status": "NOT-PAID",
+          "time": {
+            "label": "PRE_PART_PAYMENT"
+          },
+          "type": "POST_FULFILLMENT"
+        },
+        {
+          "id": "5dac4b36-91db-42eb-96cc-56d51ae16dc8",
           "type": "ON_ORDER",
           "status": "NOT-PAID",
           "collected_by": "BPP",
@@ -428,8 +463,8 @@
           "time": {
             "label": "INSTALLMENT",
             "range": {
-              "start": "2025-04-01T07:56:47.308Z",
-              "end": "2025-04-30T07:56:47.308Z"
+              "start": "2025-04-01T10:15:28.103Z",
+              "end": "2025-04-30T10:15:28.103Z"
             }
           }
         },
@@ -444,8 +479,8 @@
           "time": {
             "label": "INSTALLMENT",
             "range": {
-              "start": "2025-05-01T07:56:47.308Z",
-              "end": "2025-05-31T07:56:47.308Z"
+              "start": "2025-05-01T10:15:28.103Z",
+              "end": "2025-05-31T10:15:28.103Z"
             }
           }
         },
@@ -460,8 +495,8 @@
           "time": {
             "label": "INSTALLMENT",
             "range": {
-              "start": "2025-06-01T07:56:47.308Z",
-              "end": "2025-06-30T07:56:47.308Z"
+              "start": "2025-06-01T10:15:28.103Z",
+              "end": "2025-06-30T10:15:28.103Z"
             }
           }
         },
@@ -476,8 +511,8 @@
           "time": {
             "label": "INSTALLMENT",
             "range": {
-              "start": "2025-07-01T07:56:47.308Z",
-              "end": "2025-07-31T07:56:47.308Z"
+              "start": "2025-07-01T10:15:28.103Z",
+              "end": "2025-07-31T10:15:28.103Z"
             }
           }
         },
@@ -492,8 +527,8 @@
           "time": {
             "label": "INSTALLMENT",
             "range": {
-              "start": "2025-08-01T07:56:47.308Z",
-              "end": "2025-08-31T07:56:47.308Z"
+              "start": "2025-08-01T10:15:28.103Z",
+              "end": "2025-08-31T10:15:28.103Z"
             }
           }
         }
@@ -540,7 +575,7 @@
           "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/agreement.pdf"
         }
       ],
-      "id": "f2af7aee-c760-4928-91d3-f2332da3bb8b"
+      "id": "d6faffb6-e2bb-4170-a48c-715f4c8fab5b"
     }
   },
   "context": {
@@ -553,10 +588,10 @@
         "code": "*"
       }
     },
-    "transaction_id": "E475A42D533F08B2932FDACA1624571FB9BDF078584A87A856AA7FD0912BA881",
-    "message_id": "ondc_loan_disbursal_update-TRYIfkiIgU",
+    "transaction_id": "9E6C6E952B5930E1ADC42143E30A1747DBDFB11EB6DA9FCBD8F4ABF943FCAACC",
+    "message_id": "ondc_loan_pre_part_payment-eqU5v4SBmw",
     "action": "on_update",
-    "timestamp": "2025-03-03T08:14:34.565Z",
+    "timestamp": "2025-03-26T10:19:51.083Z",
     "version": "2.0.1",
     "bap_uri": "https://afm-ui-stg.olacabs.com/afmui/los/return/ondc_credit/",
     "bap_id": "afm-ui-stg.olacabs.com",
@@ -564,4 +599,9 @@
     "bpp_id": "pramaan.ondc.org/beta/staging/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/staging/mock/seller"
   }
+},
+	"response":{
+        "status": "success",
+        "statusCode": 200
+      }
 }
