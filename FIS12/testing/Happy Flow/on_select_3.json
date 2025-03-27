@@ -8,17 +8,17 @@
           "code": "*"
         }
       },
-      "timestamp": "2024-08-06T06:19:46.325Z",
+      "timestamp": "2024-08-06T06:24:24.543Z",
       "version": "2.1.0",
-      "ttl": "PT10M",
-      "action": "on_update",
+      "ttl": "PT30M",
+      "action": "on_select",
       "domain": "ONDC:FIS12",
-      "transaction_id": "48de217b-5400-4528-bfe3-ddb8cb286a32",
-      "message_id": "294ad408-3417-4612-aece-27cfaa07847c",
+      "transaction_id": "9a067489-de71-417a-a902-96e084ac07d4",
+      "message_id": "30a9996c-fb5b-4f7d-a5d2-241b017219a8",
       "bap_id": "preprod.ondc.indipe.in",
-      "bap_uri": "https://preprod.ondc.indipe.in/bl/api/v1/business-buyer-app",
       "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-      "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+      "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+      "bap_uri": "https://preprod.ondc.indipe.in/bl/api/v1/business-buyer-app/second-select"
     },
     "message": {
       "order": {
@@ -140,7 +140,7 @@
         },
         "items": [
           {
-            "id": "a600a7ae-83e8-4e3c-ad6c-fedaee5596b3",
+            "id": "e7963d92-b728-47a8-b03c-0f543516705e",
             "descriptor": {
               "code": "INVOICE_BASED_LOAN",
               "name": "Invoice Based Loan"
@@ -320,14 +320,38 @@
                 "display": true
               }
             ],
-            "parent_item_id": "519c5433-a88a-41a0-bc9d-7cefa9b5f3d6"
+            "parent_item_id": "519c5433-a88a-41a0-bc9d-7cefa9b5f3d6",
+            "xinput": {
+              "head": {
+                "descriptor": {
+                  "name": "Customer Information"
+                },
+                "index": {
+                  "min": 0,
+                  "cur": 1,
+                  "max": 1
+                },
+                "headings": [
+                  "Set Loan Amount",
+                  "Individual KYC"
+                ]
+              },
+              "form": {
+                "id": "f4767fff-7eee-4f20-8fa7-f6dc0d8b38fc",
+                "mime_type": "application/html",
+                "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/f4767fff-7eee-4f20-8fa7-f6dc0d8b38fc",
+                "resubmit": false,
+                "multiple_sumbissions": false
+              },
+              "required": true
+            }
           }
         ],
         "quote": {
-          "id": "3cfac02e-0279-4e0b-a4b1-ef929c0d0b8d",
+          "id": "6fbf2483-3153-4f80-9442-d112668933f4",
           "price": {
             "currency": "INR",
-            "value": "443800.00"
+            "value": "442300"
           },
           "breakup": [
             {
@@ -378,248 +402,10 @@
                 "value": "0",
                 "currency": "INR"
               }
-            },
-            {
-              "title": "LATE_FEE_AMOUNT",
-              "price": {
-                "value": "1500",
-                "currency": "INR"
-              }
             }
           ],
           "ttl": "P29D"
-        },
-        "fulfillments": [
-          {
-            "customer": {
-              "organization": {
-                "address": "Industrial Park, Bangalore",
-                "state": {
-                  "name": "Karnataka"
-                },
-                "city": {
-                  "name": "Bangalore",
-                  "code": "560045"
-                },
-                "contact": {
-                  "phone": "8800669286",
-                  "email": "alpha.manufacturing@gmail.com"
-                }
-              }
-            },
-            "state": {
-              "descriptor": {
-                "code": "DISBURSED",
-                "name": "Loan Disbursed"
-              }
-            }
-          }
-        ],
-        "payments": [
-          {
-            "id": "2",
-            "type": "POST_FULFILLMENT",
-            "params": {
-              "amount": "89960",
-              "currency": "INR"
-            },
-            "status": "PAID",
-            "time": {
-              "label": "MISSED_EMI_PAYMENT",
-              "range": {
-                "start": "2024-10-01T06:18:29.536Z",
-                "end": "2024-10-31T06:18:29.536Z"
-              }
-            }
-          },
-          {
-            "id": "648d831d-4f0f-4601-9d6a-24b2d167a851",
-            "type": "ON_ORDER",
-            "status": "NOT-PAID",
-            "collected_by": "BPP",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "BUYER_FINDER_FEES"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_TYPE"
-                    },
-                    "value": "percent-annualized"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                    },
-                    "value": "1"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "SETTLEMENT_TERMS"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_WINDOW"
-                    },
-                    "value": "PT60M"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_BASIS"
-                    },
-                    "value": "INVOICE_RECEIPT"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "MANDATORY_ARBITRATION"
-                    },
-                    "value": "TRUE"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "COURT_JURISDICTION"
-                    },
-                    "value": "New Delhi"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "STATIC_TERMS"
-                    },
-                    "value": "https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OFFLINE_CONTRACT"
-                    },
-                    "value": "true"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "SETTLEMENT_AMOUNT"
-                    },
-                    "value": "1666.67"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "1",
-            "type": "POST_FULFILLMENT",
-            "params": {
-              "amount": "88460.00",
-              "currency": "INR"
-            },
-            "status": "NOT-PAID",
-            "time": {
-              "label": "INSTALLMENT",
-              "range": {
-                "start": "2024-09-01T06:18:29.536Z",
-                "end": "2024-09-30T06:18:29.536Z"
-              }
-            }
-          },
-          {
-            "id": "2",
-            "type": "POST_FULFILLMENT",
-            "params": {
-              "amount": "88460.00",
-              "currency": "INR"
-            },
-            "status": "DEFERRED",
-            "time": {
-              "label": "INSTALLMENT",
-              "range": {
-                "start": "2024-10-01T06:18:29.536Z",
-                "end": "2024-10-31T06:18:29.536Z"
-              }
-            }
-          },
-          {
-            "id": "3",
-            "type": "POST_FULFILLMENT",
-            "params": {
-              "amount": "88460.00",
-              "currency": "INR"
-            },
-            "status": "NOT-PAID",
-            "time": {
-              "label": "INSTALLMENT",
-              "range": {
-                "start": "2024-11-01T06:18:29.536Z",
-                "end": "2024-11-30T06:18:29.536Z"
-              }
-            }
-          },
-          {
-            "id": "4",
-            "type": "POST_FULFILLMENT",
-            "params": {
-              "amount": "88460.00",
-              "currency": "INR"
-            },
-            "status": "NOT-PAID",
-            "time": {
-              "label": "INSTALLMENT",
-              "range": {
-                "start": "2024-12-01T06:18:29.536Z",
-                "end": "2024-12-31T06:18:29.536Z"
-              }
-            }
-          },
-          {
-            "id": "5",
-            "type": "POST_FULFILLMENT",
-            "params": {
-              "amount": "88460.00",
-              "currency": "INR"
-            },
-            "status": "NOT-PAID",
-            "time": {
-              "label": "INSTALLMENT",
-              "range": {
-                "start": "2024-01-01T06:18:29.536Z",
-                "end": "2024-01-31T06:18:29.536Z"
-              }
-            }
-          }
-        ],
-        "cancellation_terms": [
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "SANCTIONED"
-              }
-            },
-            "external_ref": {
-              "mimetype": "text/html",
-              "url": "https://bpp.credit.becknprotocol.org/tnc.html"
-            },
-            "cancellation_fee": {
-              "percentage": "3%"
-            }
-          }
-        ],
-        "documents": [
-          {
-            "descriptor": {
-              "code": "LOAN_AGREEMENT",
-              "name": "Loan Agreement Document",
-              "short_desc": "Download your Loan Agreement document here",
-              "long_desc": "A Loan Agreement Document is a legal contract outlining terms such as loan amount, interest rate, repayment schedule, and collateral, binding a lender and borrower in a formal financial arrangement."
-            },
-            "mime_type": "application/pdf",
-            "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/document/agreement.pdf"
-          }
-        ],
-        "id": "3cfac02e-0279-4e0b-a4b1-ef929c0d0b8d"
+        }
       }
     }
   }
