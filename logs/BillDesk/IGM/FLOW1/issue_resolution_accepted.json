@@ -1,0 +1,269 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:0512"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "issue",
+    "bap_id": "onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1",
+    "bap_uri": "https://onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1",
+    "transaction_id": "T4",
+    "message_id": "T4M3",
+    "timestamp": "2025-03-25T08:23:02.292Z",
+    "ttl": "PT30S",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "core_version": "2.0.0"
+  },
+  "message": {
+    "issue": {
+      "id": "44fed674-d325-422b-a1e3-c1eeef2e04b2",
+      "status": "PROCESSING",
+      "level": "ISSUE",
+      "created_at": "2025-03-25T08:16:46.693Z",
+      "updated_at": "2025-03-25T08:23:02.292Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "PT2H"
+      },
+      "refs": [
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        }
+      ],
+      "actors": [
+        {
+          "id": "36db2579-5a8c-4c7c-ac1b-fc542cb5bf91",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "Billdesk"
+            },
+            "person": {
+              "name": "pawan"
+            },
+            "contact": {
+              "phone": "8900000000",
+              "email": "pikapin@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "37d26484-bbf2-4185-a255-49c57ced9ead",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1::ONDC:RET10"
+            },
+            "person": {
+              "name": "billdesk-buyer"
+            },
+            "contact": {
+              "phone": "8908793333",
+              "email": "bdtest@buyer.com"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Jane Doe"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            }
+          }
+        }
+      ],
+      "source_id": "36db2579-5a8c-4c7c-ac1b-fc542cb5bf91",
+      "complainant_id": "37d26484-bbf2-4185-a255-49c57ced9ead",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "description": {
+        "code": "ITM001",
+        "short_desc": "Issue with product quality",
+        "long_desc": "product quality is not correct. facing issues while using the product",
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ]
+      },
+      "last_action_id": "2b543994-acd9-4820-b729-e995df61ff8d",
+      "actions": [
+        {
+          "id": "3f547fa5-e9e8-4ca5-ae06-f04247b63dde",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-03-25T08:16:46.724Z",
+          "action_by": "37d26484-bbf2-4185-a255-49c57ced9ead",
+          "actor_details": {
+            "name": "billdesk-buyer"
+          }
+        },
+        {
+          "id": "T4A1",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the complaint"
+          },
+          "updated_at": "2025-03-25T08:17:23.813Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "T4A2",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO0001",
+            "short_desc": "Requesting info"
+          },
+          "updated_at": "2025-03-25T08:20:47.919Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "485db310-89c7-4758-8805-cf11e0e18fd3",
+          "ref_id": "T4A2",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Providing requested information",
+            "images": [
+              "http://buyerapp.com/addtional-details/img3.png",
+              "http://buyerapp.com/addtional-details/img4.png"
+            ]
+          },
+          "updated_at": "2025-03-25T08:21:27.277Z",
+          "action_by": "37d26484-bbf2-4185-a255-49c57ced9ead",
+          "actor_details": {
+            "name": "Pawan"
+          }
+        },
+        {
+          "id": "T4A3",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the info"
+          },
+          "updated_at": "2025-03-25T08:22:09.879Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "T4A4",
+          "ref_id": "R_PARENT",
+          "ref_type": "RESOLUTIONS",
+          "description": {
+            "code": "RESOLUTION_PROPOSED"
+          },
+          "updated_at": "2025-03-25T08:23:02.315Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "2b543994-acd9-4820-b729-e995df61ff8d",
+          "ref_id": "R2",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "Accepting the replacement resolution"
+          },
+          "updated_at": "2025-03-25T08:23:40.060Z",
+          "action_by": "37d26484-bbf2-4185-a255-49c57ced9ead",
+          "actor_details": {
+            "name": "Pawan"
+          }
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2025-03-25T08:23:02.352Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2025-03-25T08:23:02.355Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "updated_at": "2025-03-25T08:23:02.356Z",
+          "proposed_by": "NP2"
+        }
+      ]
+    },
+    "updated_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ]
+  }
+}
