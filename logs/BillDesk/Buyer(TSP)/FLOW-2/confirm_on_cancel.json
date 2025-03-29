@@ -1,0 +1,296 @@
+{
+  "context": {
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_cancel",
+    "version": "2.0.0",
+    "timestamp": "2025-03-27T08:24:28.805Z",
+    "ttl": "PT10M",
+    "bap_id": "onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1",
+    "bap_uri": "https://onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1",
+    "transaction_id": "c54425b3-3d24-496a-b661-d0a49f0dd650",
+    "message_id": "18bea9bf-14fe-4894-86c9-29f1f8beae96",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+  },
+  "message": {
+    "order": {
+      "id": "552ad661-b8ab-4e95-b15a-a1a4c178a293",
+      "status": "CANCELLED",
+      "items": [
+        {
+          "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+          "category_ids": [
+            "C2"
+          ],
+          "descriptor": {
+            "code": "SJT",
+            "name": "Single Journey Ticket"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "23"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "fulfillment_ids": [
+            "725f1f4d-1ad1-4715-b8eb-718bfe988d0f"
+          ],
+          "time": {
+            "label": "Validity",
+            "duration": "PT5M"
+          }
+        }
+      ],
+      "provider": {
+        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "descriptor": {
+          "name": "ONDC Metro Limited",
+          "images": [
+            {
+              "url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2025-03-27T05:30:00.000Z",
+            "end": "2025-03-27T23:30:00.000Z"
+          }
+        }
+      },
+      "fulfillments": [
+        {
+          "id": "725f1f4d-1ad1-4715-b8eb-718bfe988d0f",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "descriptor": {
+                  "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                  "code": "NBAA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1",
+              "parent_stop_id": null,
+              "instructions": {
+                "name": "Stop 1"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "descriptor": {
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "2",
+              "parent_stop_id": "1",
+              "instructions": {
+                "name": "Stop 2"
+              }
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
+          }
+        }
+      ],
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2025-03-27T08:24:28.804Z"
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://sequelstringsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ],
+          "display": false
+        }
+      ],
+      "billing": {
+        "name": "John Doe",
+        "email": "johndoe@mail.com",
+        "phone": "+91-9897867564"
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "10"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "23"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "23"
+            }
+          },
+          {
+            "title": "REFUND",
+            "item": {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "-23"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "-23"
+            }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "item": null,
+            "price": {
+              "currency": "INR",
+              "value": "10"
+            }
+          }
+        ]
+      },
+      "payments": [
+        {
+          "id": "75072f5c-dfb3-44d3-8147-3cfa39719351",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "c54425b3-3d24-496a-b661-d0a49f0dd650",
+            "currency": "INR",
+            "amount": "23.00",
+            "bank_code": "SBI5448270",
+            "bank_account_number": "562391273445",
+            "virtual_payment_address": "8667777799@oksbi"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "0.12"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "P30D"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "NEFT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
