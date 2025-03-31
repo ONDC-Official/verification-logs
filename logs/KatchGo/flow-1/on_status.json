@@ -9,21 +9,21 @@
             }
         },
         "domain": "ONDC:TRV11",
-        "action": "on_cancel",
-        "ttl": "PT2S",
-        "timestamp": "2025-03-28T16:31:11.051Z",
+        "action": "on_status",
+        "version": "2.0.1",
         "bap_id": "katch.co.in",
         "bap_uri": "https://katch.co.in/ondc/",
-        "transaction_id": "3ba5d788-5d7a-4116-b7db-454df41bd44d",
-        "message_id": "676bc8ff-6fe8-4dcb-abf2-2e2f6beda325",
-        "version": "2.0.1",
         "bpp_id": "katch.co.in",
-        "bpp_uri": "https://katch.co.in/ondc/"
+        "bpp_uri": "https://katch.co.in/ondc/",
+        "transaction_id": "3ba5d788-5d7a-4116-b7db-454df41bd44d",
+        "message_id": "7a6ef4ce-fae6-48ed-983e-c5e928781f57",
+        "timestamp": "2025-03-28T16:31:10.429Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "ORDER_3ba5d788-5d7a-4116-b7db-454df41bd44d",
-            "status": "CANCELLED",
+            "status": "ACTIVE",
             "items": [
                 {
                     "id": "ITEM_757_765",
@@ -37,7 +37,7 @@
                     },
                     "quantity": {
                         "selected": {
-                            "count": 1
+                            "count": "1"
                         }
                     },
                     "time": {
@@ -110,7 +110,7 @@
                             "parent_stop_id": "1669"
                         },
                         {
-                            "type": "INTERMEDIATE_STOP",
+                            "type": "END",
                             "id": "1672",
                             "location": {
                                 "descriptor": {
@@ -120,96 +120,23 @@
                                 "gps": "0.000000,0.000000"
                             },
                             "parent_stop_id": "1671"
-                        },
-                        {
-                            "type": "INTERMEDIATE_STOP",
-                            "id": "1760",
-                            "location": {
-                                "descriptor": {
-                                    "name": "GH-55",
-                                    "code": "STA1760"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "1672"
-                        },
-                        {
-                            "type": "INTERMEDIATE_STOP",
-                            "id": "1674",
-                            "location": {
-                                "descriptor": {
-                                    "name": "GH-6",
-                                    "code": "STA1674"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "1760"
-                        },
-                        {
-                            "type": "INTERMEDIATE_STOP",
-                            "id": "1742",
-                            "location": {
-                                "descriptor": {
-                                    "name": "24 CHOWKDI",
-                                    "code": "STA1742"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "1674"
-                        },
-                        {
-                            "type": "INTERMEDIATE_STOP",
-                            "id": "1743",
-                            "location": {
-                                "descriptor": {
-                                    "name": "SAIBABA",
-                                    "code": "STA1743"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "1742"
-                        },
-                        {
-                            "type": "INTERMEDIATE_STOP",
-                            "id": "296",
-                            "location": {
-                                "descriptor": {
-                                    "name": "KH-6",
-                                    "code": "STA0296"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "1743"
-                        },
-                        {
-                            "type": "INTERMEDIATE_STOP",
-                            "id": "297",
-                            "location": {
-                                "descriptor": {
-                                    "name": "JAY PRAKASH",
-                                    "code": "STA0297"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "296"
-                        },
-                        {
-                            "type": "END",
-                            "id": "1746",
-                            "location": {
-                                "descriptor": {
-                                    "name": "POLYTECHNIC",
-                                    "code": "STA1746"
-                                },
-                                "gps": "0.000000,0.000000"
-                            },
-                            "parent_stop_id": "297"
                         }
                     ]
                 },
                 {
                     "id": "ONDC_3ba5d788-5d7a-4116-b7db-454df41bd44d",
                     "type": "TICKET",
+                    "stops": [
+                        {
+                            "type": "START",
+                            "authorization": {
+                                "type": "QR",
+                                "token": "5yFOmPb2Mg51N18Dg4de86gV4EnOsx7vdabqGIEfA+a4xF7ve5wdNa62X3xBBMO0qp6IrUxb6rWranAp5wMxeF4p9cWoVjkIJw1M0T5zHU0JqidXc4R+MqmeqE92xCuCikNydgi/gHn55HA1nhLbbgogkpET3WqtyH77Zu6G8nhFZsvjGCWQaNuVwwr1jByTfTN3QA6MlQZ/aoh85sR6FNW74LaL9txqmWJLnxAKBwcHlUJy4Nu33jjGy/HNoqIm",
+                                "valid_to": "2025-03-28T16:31:10.428Z",
+                                "status": "UNCLAIMED"
+                            }
+                        }
+                    ],
                     "tags": [
                         {
                             "descriptor": {
@@ -221,6 +148,19 @@
                                         "code": "PARENT_ID"
                                     },
                                     "value": "ROUTE757"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "ONDC_3ba5d788-5d7a-4116-b7db-454df41bd44d"
                                 }
                             ]
                         }
@@ -237,10 +177,15 @@
                     }
                 }
             ],
+            "billing": {
+                "name": "AKSHAT Patel",
+                "email": "test@gmail.com",
+                "phone": "+91-6354495098"
+            },
             "quote": {
                 "price": {
-                    "currency": "INR",
-                    "value": "0"
+                    "value": "5",
+                    "currency": "INR"
                 },
                 "breakup": [
                     {
@@ -249,7 +194,7 @@
                             "id": "ITEM_757_765",
                             "price": {
                                 "currency": "INR",
-                                "value": "5.00"
+                                "value": "5"
                             },
                             "quantity": {
                                 "selected": {
@@ -260,32 +205,6 @@
                         "price": {
                             "currency": "INR",
                             "value": "5"
-                        }
-                    },
-                    {
-                        "title": "REFUND",
-                        "item": {
-                            "id": "ITEM_757_765",
-                            "price": {
-                                "currency": "INR",
-                                "value": "-5.00"
-                            },
-                            "quantity": {
-                                "selected": {
-                                    "count": 1
-                                }
-                            }
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "-5"
-                        }
-                    },
-                    {
-                        "title": "CANCELLATION_CHARGES",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
                         }
                     },
                     {
@@ -303,11 +222,6 @@
                         }
                     }
                 ]
-            },
-            "billing": {
-                "name": "AKSHAT Patel",
-                "email": "test@gmail.com",
-                "phone": "+91-6354495098"
             },
             "payments": [
                 {
@@ -395,7 +309,7 @@
                                     "descriptor": {
                                         "code": "SETTLEMENT_AMOUNT"
                                     },
-                                    "value": "0"
+                                    "value": "5"
                                 }
                             ]
                         }
@@ -403,16 +317,8 @@
                     "collected_by": "BAP"
                 }
             ],
-            "cancellation": {
-                "cancelled_by": "CONSUMER",
-                "reason": {
-                    "descriptor": {
-                        "code": "000"
-                    }
-                }
-            },
             "created_at": "2025-03-28T16:30:30.158Z",
-            "updated_at": "2025-03-28T16:31:11.051Z"
+            "updated_at": "2025-03-28T16:31:10.429Z"
         }
     }
 }
