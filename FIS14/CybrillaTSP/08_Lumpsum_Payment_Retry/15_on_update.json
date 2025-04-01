@@ -9,19 +9,20 @@
         "code": "IND"
       }
     },
-    "action": "on_select",
+    "action": "on_update",
     "version": "2.0.0",
     "bap_id": "cybrillaondctsppp.i.s.finprim.com",
     "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "08dc8f11-5cf0-419f-b3eb-31cd8d8ba76d",
-    "message_id": "db8aab24-2229-409f-8020-88e669a37b9b",
-    "timestamp": "2025-04-01T15:36:58.742Z",
-    "ttl": "PT10M"
+    "transaction_id": "9cccee05-c5da-49ab-a78c-160d9d05857e",
+    "message_id": "ab6bd181-f299-453f-8d29-504f6bef6555",
+    "timestamp": "2025-04-01T12:24:24.961Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "id": "3ebb4f9f-7cce-4fdd-b320-cedb4cd9f009",
       "provider": {
         "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f",
         "descriptor": {
@@ -36,17 +37,23 @@
             "code": "SCHEME_PLAN",
             "name": "ONDC Mid Cap Fund - Regular - Growth"
           },
+          "fulfillment_ids": [
+            "2516afde-5ca1-4298-81c8-1ab272ff8be1"
+          ],
           "quantity": {
             "selected": {
               "measure": {
                 "value": "8500.00",
                 "unit": "INR"
               }
+            },
+            "allocated": {
+              "measure": {
+                "value": "68",
+                "unit": "MF_UNITS"
+              }
             }
           },
-          "fulfillment_ids": [
-            "3faa37d0-7a2f-40df-8095-8939ff9e57c5"
-          ],
           "tags": [
             {
               "display": true,
@@ -123,28 +130,66 @@
                   "value": "PAYOUT"
                 }
               ]
+            },
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Checklists",
+                "code": "CHECKLISTS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Application Form",
+                    "code": "APPLICATION_FORM"
+                  },
+                  "value": "d26e698c-14e0-40c7-a0ad-ebfda1151922"
+                }
+              ]
             }
-          ]
+          ],
+          "payment_ids": [
+            "89cfbe71-bcdd-48db-b71a-3d9e63fb2969",
+            "d98624cc-fd9a-44f0-8297-f4390d2b6689"
+          ],
+          "time": {
+            "label": "NAV Date",
+            "timestamp": "2025-04-01T12:24:24.961Z"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "125.00",
+            "listed_value": "125.00"
+          }
         }
       ],
       "fulfillments": [
         {
-          "id": "3faa37d0-7a2f-40df-8095-8939ff9e57c5",
+          "id": "2516afde-5ca1-4298-81c8-1ab272ff8be1",
           "type": "LUMPSUM",
           "customer": {
             "person": {
               "id": "pan:ABCPD3751E",
               "creds": [
                 {
-                  "id": "QTUQW12HY2Z4F",
-                  "type": "FOLIO"
+                  "id": "127.0.0.1",
+                  "type": "IP_ADDRESS"
                 }
               ]
+            },
+            "contact": {
+              "phone": "9012893471"
             }
           },
           "agent": {
             "person": {
-              "id": "euin:E123456"
+              "id": "euin:E123456",
+              "creds": [
+                {
+                  "id": "123456789",
+                  "type": "FOLIO"
+                }
+              ]
             },
             "organization": {
               "creds": [
@@ -237,110 +282,62 @@
                 }
               ]
             }
-          ]
+          ],
+          "state": {
+            "descriptor": {
+              "code": "SUCCESSFUL",
+              "name": "Successful"
+            }
+          }
         }
       ],
-      "xinput": {
-        "head": {
-          "index": {
-            "min": 0,
-            "cur": 0,
-            "max": 0
-          },
-          "headings": [
-            "APPLICATION_FORM"
-          ]
+      "status": "COMPLETED",
+      "quote": {
+        "id": "57780b0b-696a-4481-856b-8404504ad301",
+        "price": {
+          "currency": "INR",
+          "value": "8500.00"
         },
-        "form": {
-          "id": "27d76078-81c7-47da-a8a4-3212def6f997",
-          "mime_type": "text/html",
-          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/27d76078-81c7-47da-a8a4-3212def6f997"
-        },
-        "required": false
+        "breakup": [
+          {
+            "item": {
+              "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+              "fulfillment_ids": [
+                "2516afde-5ca1-4298-81c8-1ab272ff8be1"
+              ]
+            },
+            "title": "Investment",
+            "price": {
+              "currency": "INR",
+              "value": "8500.00"
+            }
+          }
+        ]
       },
-      "payments": [
-        {
-          "collected_by": "BPP",
-          "type": "PRE_FULFILLMENT",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "PAYMENT_METHOD",
-                "name": "Payment Method"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "MODE"
-                  },
-                  "value": "NETBANKING"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "collected_by": "BPP",
-          "type": "PRE_FULFILLMENT",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "PAYMENT_METHOD",
-                "name": "Payment Method"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "MODE"
-                  },
-                  "value": "UPI_PG"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "collected_by": "BPP",
-          "type": "PRE_FULFILLMENT",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "PAYMENT_METHOD",
-                "name": "Payment Method"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "MODE"
-                  },
-                  "value": "UPI_URI"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "collected_by": "BPP",
-          "type": "PRE_FULFILLMENT",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "PAYMENT_METHOD",
-                "name": "Payment Method"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "MODE"
-                  },
-                  "value": "UPI_COLLECT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
       "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://test.static.term.com"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
         {
           "display": false,
           "descriptor": {
@@ -365,28 +362,79 @@
           ]
         }
       ],
-      "quote": {
-        "id": "fbbac507-f6d8-4fec-b377-adcc8221d7c5",
-        "price": {
-          "currency": "INR",
-          "value": "8500.00"
-        },
-        "breakup": [
-          {
-            "item": {
-              "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
-              "fulfillment_ids": [
-                "3faa37d0-7a2f-40df-8095-8939ff9e57c5"
+      "created_at": "2025-04-01T12:01:42.939Z",
+      "updated_at": "2025-04-01T12:24:24.961Z",
+      "payments": [
+        {
+          "id": "89cfbe71-bcdd-48db-b71a-3d9e63fb2969",
+          "collected_by": "BPP",
+          "params": {
+            "amount": "8500.00",
+            "currency": "INR",
+            "source_bank_code": "UTIB0000801",
+            "source_bank_account_number": "98765432101193",
+            "source_bank_account_name": "Tony Soprano",
+            "transaction_id": "51ffa19a-156b-469e-9178-5262003c0a85"
+          },
+          "status": "PAID",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Payment Method",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI_PG"
+                }
               ]
-            },
-            "title": "Investment",
-            "price": {
-              "currency": "INR",
-              "value": "8500.00"
             }
+          ]
+        },
+        {
+          "collected_by": "BPP",
+          "params": {
+            "amount": "8500.00",
+            "currency": "INR",
+            "source_bank_code": "UTIB0000801",
+            "source_bank_account_number": "98765432101193",
+            "source_bank_account_name": "Tony Soprano",
+            "transaction_id": "4e944668-0475-4fa0-a3de-4fef2bb651ea"
+          },
+          "type": "PRE-FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "name": "Payment Method",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI_URI"
+                }
+              ]
+            }
+          ],
+          "id": "d98624cc-fd9a-44f0-8297-f4390d2b6689",
+          "status": "PAID"
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "reason_required": true,
+          "external_ref": {
+            "url": "https://api.sellerapp.com/cterms?id=214werw3w4",
+            "mimetype": "text/html"
           }
-        ]
-      }
+        }
+      ]
     }
   }
 }

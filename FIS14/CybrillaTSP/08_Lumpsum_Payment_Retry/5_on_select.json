@@ -15,9 +15,9 @@
     "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "52eea60c-388f-430a-9c46-ba6a98a8d316",
-    "message_id": "295ea1c9-38d1-480d-ba8b-461f8c03d224",
-    "timestamp": "2025-04-01T10:58:53.445Z",
+    "transaction_id": "9cccee05-c5da-49ab-a78c-160d9d05857e",
+    "message_id": "15975faf-5d2b-4b1c-8668-091d5a6e6005",
+    "timestamp": "2025-04-01T12:01:09.054Z",
     "ttl": "PT10M"
   },
   "message": {
@@ -37,7 +37,7 @@
             "name": "ONDC Mid Cap Fund - Regular - Growth"
           },
           "fulfillment_ids": [
-            "78bcb2b7-39c6-4ec0-8700-d571e310c8bb"
+            "2516afde-5ca1-4298-81c8-1ab272ff8be1"
           ],
           "quantity": {
             "selected": {
@@ -136,31 +136,77 @@
                     "name": "Application Form",
                     "code": "APPLICATION_FORM"
                   },
-                  "value": "PENDING"
+                  "value": "d26e698c-14e0-40c7-a0ad-ebfda1151922"
                 }
               ]
             }
           ]
         }
       ],
-      "fulfillments": [],
-      "xinput": {
-        "head": {
-          "index": {
-            "min": 0,
-            "cur": 0,
-            "max": 0
+      "fulfillments": [
+        {
+          "id": "2516afde-5ca1-4298-81c8-1ab272ff8be1",
+          "type": "LUMPSUM",
+          "customer": {
+            "person": {
+              "id": "pan:ABCPD3751E"
+            }
           },
-          "headings": [
-            "APPLICATION_FORM"
+          "agent": {
+            "person": {
+              "id": "euin:E123456"
+            },
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-995799",
+                  "type": "ARN"
+                }
+              ]
+            }
+          },
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Thresholds",
+                "code": "THRESHOLDS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "AMOUNT_MIN",
+                    "name": "Amount Minimum"
+                  },
+                  "value": "1000"
+                },
+                {
+                  "descriptor": {
+                    "code": "AMOUNT_MAX",
+                    "name": "Amount Maximum"
+                  },
+                  "value": "10000"
+                },
+                {
+                  "descriptor": {
+                    "code": "AMOUNT_MULTIPLES",
+                    "name": "Amount Multiples"
+                  },
+                  "value": "1"
+                }
+              ]
+            }
           ]
-        },
+        }
+      ],
+      "xinput": {
         "form": {
-          "id": "f3497bbc-6a20-4d72-803f-416872660ea6",
-          "mime_type": "text/html",
-          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/form/f3497bbc-6a20-4d72-803f-416872660ea6"
+          "id": "917483f3-034c-4619-bf6f-e09ea9e83a69"
         },
-        "required": true
+        "form_response": {
+          "status": "SUCCESS",
+          "submission_id": "d26e698c-14e0-40c7-a0ad-ebfda1151922"
+        }
       },
       "tags": [
         {
@@ -186,7 +232,115 @@
             }
           ]
         }
-      ]
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "code": "PAYMENT_METHOD",
+                "name": "Payment Method"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "NETBANKING"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collected_by": "BPP",
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "code": "PAYMENT_METHOD",
+                "name": "Payment Method"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI_PG"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collected_by": "BPP",
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "code": "PAYMENT_METHOD",
+                "name": "Payment Method"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI_URI"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collected_by": "BPP",
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "code": "PAYMENT_METHOD",
+                "name": "Payment Method"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI_COLLECT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "id": "57780b0b-696a-4481-856b-8404504ad301",
+        "price": {
+          "currency": "INR",
+          "value": "8500.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+              "fulfillment_ids": [
+                "2516afde-5ca1-4298-81c8-1ab272ff8be1"
+              ]
+            },
+            "title": "Investment",
+            "price": {
+              "currency": "INR",
+              "value": "8500.00"
+            }
+          }
+        ]
+      }
     }
   }
 }

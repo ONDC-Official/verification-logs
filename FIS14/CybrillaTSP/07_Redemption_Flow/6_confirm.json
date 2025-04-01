@@ -9,19 +9,20 @@
         "code": "IND"
       }
     },
-    "action": "select",
+    "action": "confirm",
     "version": "2.0.0",
     "bap_id": "cybrillaondctsppp.i.s.finprim.com",
     "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "52eea60c-388f-430a-9c46-ba6a98a8d316",
-    "message_id": "604b5efb-9bc5-4ab5-87a3-4fc3c9a41e8f",
-    "timestamp": "2025-04-01T10:58:53.937Z",
+    "transaction_id": "4eaf5000-0ed3-4e87-8fa7-2249ed89d6da",
+    "message_id": "31d2f94f-34cb-4c3e-bc85-db694b7b857d",
+    "timestamp": "2025-04-01T16:16:21.401Z",
     "ttl": "PT10M"
   },
   "message": {
     "order": {
+      "id": "24c3bed2-105d-40ac-8d16-27fe72a0ed0e",
       "provider": {
         "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
       },
@@ -31,23 +32,36 @@
           "quantity": {
             "selected": {
               "measure": {
-                "value": "8500.00",
+                "value": "90.00",
                 "unit": "INR"
               }
             }
           },
           "fulfillment_ids": [
-            "78bcb2b7-39c6-4ec0-8700-d571e310c8bb"
+            "cf7c39ce-0757-471c-a0d6-6c52ad8d0932"
           ]
         }
       ],
       "fulfillments": [
         {
-          "id": "78bcb2b7-39c6-4ec0-8700-d571e310c8bb",
-          "type": "LUMPSUM",
+          "id": "cf7c39ce-0757-471c-a0d6-6c52ad8d0932",
+          "type": "REDEMPTION",
           "customer": {
             "person": {
-              "id": "pan:ABCPD3751E"
+              "id": "pan:ABCPD3751E",
+              "creds": [
+                {
+                  "id": "127.0.0.1",
+                  "type": "IP_ADDRESS"
+                },
+                {
+                  "id": "QTUQW12HY2Z4F",
+                  "type": "FOLIO"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "9012893471"
             }
           },
           "agent": {
@@ -62,17 +76,26 @@
                 }
               ]
             }
-          }
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "name": "Payout Bank Account",
+                "code": "PAYOUT_BANK_ACCOUNT"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Identifier",
+                    "code": "IDENTIFIER"
+                  },
+                  "value": "98765432101193"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "xinput": {
-        "form": {
-          "id": "f3497bbc-6a20-4d72-803f-416872660ea6"
-        },
-        "form_response": {
-          "submission_id": "33538784-e58e-4ca5-a697-f4ae560b5158"
-        }
-      },
       "tags": [
         {
           "display": false,
@@ -87,6 +110,29 @@
                 "code": "STATIC_TERMS"
               },
               "value": "https://test.static.term.com"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
             },
             {
               "descriptor": {

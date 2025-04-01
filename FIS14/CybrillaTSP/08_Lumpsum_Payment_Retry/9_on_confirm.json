@@ -9,20 +9,20 @@
         "code": "IND"
       }
     },
-    "action": "on_update",
+    "action": "on_confirm",
     "version": "2.0.0",
     "bap_id": "cybrillaondctsppp.i.s.finprim.com",
     "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "52b36b2a-78cd-4a29-9b5d-79bd8473d8a3",
-    "message_id": "7b73744e-46a3-4766-ba4b-6db564679679",
-    "timestamp": "2025-03-19T12:35:20.669Z",
-    "ttl": "PT30S"
+    "transaction_id": "9cccee05-c5da-49ab-a78c-160d9d05857e",
+    "message_id": "52b86287-6b6a-4910-8b18-238c3939b0e5",
+    "timestamp": "2025-04-01T12:01:42.940Z",
+    "ttl": "PT10M"
   },
   "message": {
     "order": {
-      "id": "2749851f-e2e4-4fd5-b63c-91d774d81c55",
+      "id": "3ebb4f9f-7cce-4fdd-b320-cedb4cd9f009",
       "provider": {
         "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f",
         "descriptor": {
@@ -38,19 +38,13 @@
             "name": "ONDC Mid Cap Fund - Regular - Growth"
           },
           "fulfillment_ids": [
-            "704839e5-78ff-4e08-a02e-8bef1ac436a1"
+            "2516afde-5ca1-4298-81c8-1ab272ff8be1"
           ],
           "quantity": {
             "selected": {
               "measure": {
-                "value": "9500.00",
+                "value": "8500.00",
                 "unit": "INR"
-              }
-            },
-            "allocated": {
-              "measure": {
-                "value": "76",
-                "unit": "MF_UNITS"
               }
             }
           },
@@ -143,27 +137,110 @@
                     "name": "Application Form",
                     "code": "APPLICATION_FORM"
                   },
-                  "value": "521d92e2-c86d-4e63-b32f-ea181a7f7337"
+                  "value": "d26e698c-14e0-40c7-a0ad-ebfda1151922"
                 }
               ]
             }
           ],
           "payment_ids": [
-            "95f16fba-3000-43e2-808c-4dc35afb36e0"
-          ],
-          "time": {
-            "label": "NAV Date",
-            "timestamp": "2025-03-19T12:35:20.669Z"
+            "89cfbe71-bcdd-48db-b71a-3d9e63fb2969"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "2516afde-5ca1-4298-81c8-1ab272ff8be1",
+          "type": "LUMPSUM",
+          "customer": {
+            "person": {
+              "id": "pan:ABCPD3751E",
+              "creds": [
+                {
+                  "id": "127.0.0.1",
+                  "type": "IP_ADDRESS"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "9012893471"
+            }
           },
-          "price": {
-            "currency": "INR",
-            "value": "125.00",
-            "listed_value": "125.00"
+          "agent": {
+            "person": {
+              "id": "euin:E123456"
+            },
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-995799",
+                  "type": "ARN"
+                }
+              ]
+            }
+          },
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Thresholds",
+                "code": "THRESHOLDS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "AMOUNT_MIN",
+                    "name": "Amount Minimum"
+                  },
+                  "value": "1000"
+                },
+                {
+                  "descriptor": {
+                    "code": "AMOUNT_MAX",
+                    "name": "Amount Maximum"
+                  },
+                  "value": "10000"
+                },
+                {
+                  "descriptor": {
+                    "code": "AMOUNT_MULTIPLES",
+                    "name": "Amount Multiples"
+                  },
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "state": {
+            "descriptor": {
+              "code": "PENDING",
+              "name": "Pending"
+            }
           }
         }
       ],
-      "fulfillments": [],
-      "status": "COMPLETED",
+      "status": "ACCEPTED",
+      "quote": {
+        "id": "57780b0b-696a-4481-856b-8404504ad301",
+        "price": {
+          "currency": "INR",
+          "value": "8500.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+              "fulfillment_ids": [
+                "2516afde-5ca1-4298-81c8-1ab272ff8be1"
+              ]
+            },
+            "title": "Investment",
+            "price": {
+              "currency": "INR",
+              "value": "8500.00"
+            }
+          }
+        ]
+      },
       "tags": [
         {
           "display": false,
@@ -187,32 +264,45 @@
               "value": "true"
             }
           ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
         }
       ],
-      "created_at": "2025-03-19T12:09:11.605Z",
-      "updated_at": "2025-03-19T12:35:20.669Z",
-      "xinput": {
-        "form": {
-          "id": "application_form"
-        },
-        "form_response": {
-          "submission_id": "521d92e2-c86d-4e63-b32f-ea181a7f7337",
-          "status": "SUCCESS"
-        }
-      },
+      "created_at": "2025-04-01T12:01:42.939Z",
+      "updated_at": "2025-04-01T12:01:42.939Z",
       "payments": [
         {
-          "id": "95f16fba-3000-43e2-808c-4dc35afb36e0",
+          "id": "89cfbe71-bcdd-48db-b71a-3d9e63fb2969",
           "collected_by": "BPP",
-          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=9500.00&transaction_id=52b36b2a-78cd-4a29-9b5d-79bd8473d8a3&label=LUMPSUM_PAYMENT",
+          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=8500.00&transaction_id=9cccee05-c5da-49ab-a78c-160d9d05857e&label=LUMPSUM_PAYMENT",
           "params": {
-            "amount": "9500.00",
+            "amount": "8500.00",
             "currency": "INR",
             "source_bank_code": "UTIB0000801",
             "source_bank_account_number": "98765432101193",
             "source_bank_account_name": "Tony Soprano"
           },
-          "type": "PRE-FULFILLMENT",
           "status": "NOT-PAID",
           "tags": [
             {
