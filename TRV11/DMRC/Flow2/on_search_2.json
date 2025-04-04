@@ -1,0 +1,215 @@
+{
+	"context": {
+		"domain": "ONDC:TRV11",
+		"location": {
+			"country": {
+				"code": "IND"
+			},
+			"city": {
+				"code": "std:011"
+			}
+		},
+		"version": "2.0.0",
+		"action": "on_search",
+		"transaction_id": "169c0f7c-4777-4efb-9581-18e33c61f7f7",
+		"message_id": "f847840f-2dcf-46d3-bf1e-ca4910c44dcb",
+		"timestamp": "2025-03-19T07:52:42.999Z",
+		"bap_uri": "https://preprodondc.dimts.in/api/DelhiMetro",
+		"bap_id": "preprodondc.dimts.in",
+		"ttl": "PT30S",
+		"bpp_id": "ondc-preprod.sequelstring.com/seller/dmrc",
+		"bpp_uri": "https://ondc-preprod.sequelstring.com/seller/dmrc"
+	},
+	"message": {
+		"catalog": {
+			"descriptor": {
+				"name": "Delhi Metro Rail Corporation",
+				"images": [
+					{
+						"url": "https://delhimetrorail.com/static/media/logo-passenger.d3afd408.svg"
+					}
+				]
+			},
+			"providers": [
+				{
+					"id": "DMRC_5001_1001",
+					"categories": [
+						{
+							"descriptor": {
+								"code": "TICKET",
+								"name": "Ticket"
+							},
+							"id": "C2"
+						}
+					],
+					"items": [
+						{
+							"id": "DMRC_4_167_SJT",
+							"category_ids": [
+								"C2"
+							],
+							"descriptor": {
+								"code": "SJT",
+								"name": "Single Journey Ticket"
+							},
+							"price": {
+								"currency": "INR",
+								"value": "40"
+							},
+							"quantity": {
+								"maximum": {
+									"count": 8
+								},
+								"minimum": {
+									"count": 1
+								}
+							},
+							"time": {
+								"label": "Validity",
+								"duration": "PT60M"
+							},
+							"fulfillment_ids": [
+								"a30d873e-21f3-4ef5-862b-4ada2d493181"
+							]
+						}
+					],
+					"time": {
+						"range": {
+							"start": "2025-03-19T00:00:00.000Z",
+							"end": "2025-03-19T17:30:00.000Z"
+						}
+					},
+					"descriptor": {
+						"name": "Delhi Metro Rail Corporation",
+						"images": [
+							{
+								"url": "https://delhimetrorail.com/static/media/logo-passenger.d3afd408.svg"
+							}
+						]
+					},
+					"fulfillments": [
+						{
+							"id": "a30d873e-21f3-4ef5-862b-4ada2d493181",
+							"type": "TRIP",
+							"stops": [
+								{
+									"location": {
+										"descriptor": {
+											"code": "4",
+											"name": "Shastri Park"
+										},
+										"gps": "28.668451, 77.250404"
+									},
+									"id": "1",
+									"type": "START"
+								},
+								{
+									"location": {
+										"descriptor": {
+											"code": "167",
+											"name": "Kashmere Gate Metro "
+										},
+										"gps": "28.667879, 77.228012"
+									},
+									"id": "2",
+									"parent_stop_id": "1",
+									"type": "END"
+								}
+							],
+							"vehicle": {
+								"category": "METRO"
+							}
+						}
+					],
+					"payments": [
+						{
+							"collected_by": "BAP",
+							"tags": [
+								{
+									"descriptor": {
+										"code": "BUYER_FINDER_FEES"
+									},
+									"display": false,
+									"list": [
+										{
+											"descriptor": {
+												"code": "BUYER_FINDER_FEES_PERCENTAGE"
+											},
+											"value": "0"
+										},
+										{
+											"descriptor": {
+												"code": "BUYER_FINDER_FEES_TYPE"
+											},
+											"value": "percent"
+										}
+									]
+								},
+								{
+									"descriptor": {
+										"code": "SETTLEMENT_TERMS"
+									},
+									"display": false,
+									"list": [
+										{
+											"descriptor": {
+												"code": "SETTLEMENT_WINDOW"
+											},
+											"value": "P1D"
+										},
+										{
+											"descriptor": {
+												"code": "SETTLEMENT_BASIS"
+											},
+											"value": "INVOICE_RECEIPT"
+										},
+										{
+											"descriptor": {
+												"code": "MANDATORY_ARBITRATION"
+											},
+											"value": "true"
+										},
+										{
+											"descriptor": {
+												"code": "COURT_JURISDICTION"
+											},
+											"value": "New Delhi"
+										},
+										{
+											"descriptor": {
+												"code": "STATIC_TERMS"
+											},
+											"value": "https://delhimetrorail.com/faq-tickets-fare"
+										},
+										{
+											"descriptor": {
+												"code": "DELAY_INTEREST"
+											},
+											"value": "5"
+										}
+									]
+								}
+							]
+						}
+					],
+					"tags": [
+						{
+							"descriptor": {
+								"code": "SCHEDULED_INFO"
+							},
+							"display": false,
+							"list": [
+								{
+									"descriptor": {
+										"code": "GTFS"
+									},
+									"value": "https://otd.delhi.gov.in/data/staticDMRC/"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	}
+}
