@@ -1,0 +1,324 @@
+{
+    "context": {
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:02712"
+            }
+        },
+        "domain": "ONDC:TRV11",
+        "action": "on_confirm",
+        "ttl": "PT2S",
+        "timestamp": "2025-04-03T18:17:32.098Z",
+        "bap_id": "katch.co.in",
+        "bap_uri": "https://katch.co.in/ondc/",
+        "transaction_id": "e950a3da-56d3-4429-8e48-f6965ec69fb3",
+        "message_id": "758cb3bc-5488-413c-be2d-5d0754a4629f",
+        "version": "2.0.1",
+        "bpp_id": "katch.co.in",
+        "bpp_uri": "https://katch.co.in/ondc/"
+    },
+    "message": {
+        "order": {
+            "id": "ORDER_e950a3da-56d3-4429-8e48-f6965ec69fb3",
+            "status": "ACTIVE",
+            "items": [
+                {
+                    "id": "ITEM_757_313",
+                    "descriptor": {
+                        "name": "singleJourneyTicket",
+                        "code": "SJT"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "5.00"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1D"
+                    },
+                    "fulfillment_ids": [
+                        "ROUTE757",
+                        "ONDC_e950a3da-56d3-4429-8e48-f6965ec69fb3"
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "PROVIDER21",
+                "descriptor": {
+                    "name": "Yogi Bus Service"
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "ROUTE757",
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "BUS"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_ID"
+                                    },
+                                    "value": "757"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_DIRECTION"
+                                    },
+                                    "value": "UP"
+                                }
+                            ]
+                        }
+                    ],
+                    "stops": [
+                        {
+                            "type": "START",
+                            "id": "1669",
+                            "location": {
+                                "descriptor": {
+                                    "name": "PATHIKA",
+                                    "code": "STA1669"
+                                },
+                                "gps": "0.000000,0.000000"
+                            }
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "1671",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4.5",
+                                    "code": "STA1671"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "1669"
+                        },
+                        {
+                            "type": "END",
+                            "id": "1672",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-5",
+                                    "code": "STA1672"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "1671"
+                        }
+                    ]
+                },
+                {
+                    "id": "ONDC_e950a3da-56d3-4429-8e48-f6965ec69fb3",
+                    "type": "TICKET",
+                    "stops": [
+                        {
+                            "type": "START",
+                            "authorization": {
+                                "type": "QR",
+                                "token": "5yFOmPb2Mg51N18Dg4de86gV4EnOsx7vdabqGIEfA+bSKJyRYpt3eBVK3KS/AfNs1XMKxqH9KvC5h2faYhEhuP1veh5nu1tNxbsUhanzK/JkVavfNFbS+bqqwLshHxEF2l5p7od2Hkd4Wbm8ttnXlyxXqr+gd/B9PyRKJ/tvJp5oUVKIeWPyiWdrX0RoYT6H+3s2zTt8NaFzKkPmV+CLOJYpSN1i38NB/jrISCP/bYJnKTkR1tCxiWf9Rdfi8mA9",
+                                "valid_to": "2025-04-03T18:17:32.094Z",
+                                "status": "UNCLAIMED"
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PARENT_ID"
+                                    },
+                                    "value": "ROUTE757"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "TICKET_INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "NUMBER"
+                                    },
+                                    "value": "ONDC_e950a3da-56d3-4429-8e48-f6965ec69fb3"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "cancel_by": {
+                        "duration": "PT0M"
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100"
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "5",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "ITEM_757_313",
+                            "price": {
+                                "currency": "INR",
+                                "value": "5"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "5"
+                        }
+                    },
+                    {
+                        "title": "OFFER",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "title": "TOLL",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ]
+            },
+            "billing": {
+                "name": "AKSHAT Patel",
+                "email": "test@gmail.com",
+                "phone": "+91-6354495098"
+            },
+            "payments": [
+                {
+                    "id": "pay_d49a06238ca8523b",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "5.0",
+                        "transaction_id": "T2504031817042089742298",
+                        "bank_code": "SBIN0000301",
+                        "bank_account_number": "38086195642",
+                        "virtual_payment_address": "9409178785@paytm"
+                    },
+                    "status": "PAID",
+                    "type": "PRE-ORDER",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "BUYER_FINDER_FEES_TYPE"
+                                    },
+                                    "value": "percent"
+                                }
+                            ]
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TERMS"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_WINDOW"
+                                    },
+                                    "value": "PT60M"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_BASIS"
+                                    },
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "DELAY_INTEREST"
+                                    },
+                                    "value": "0"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "MANDATORY_ARBITRATION"
+                                    },
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "COURT_JURISDICTION"
+                                    },
+                                    "value": "Ahmedabad"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "STATIC_TERMS"
+                                    },
+                                    "value": "https://katch.co.in/terms_condition"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_AMOUNT"
+                                    },
+                                    "value": "5"
+                                }
+                            ]
+                        }
+                    ],
+                    "collected_by": "BAP"
+                }
+            ],
+            "created_at": "2025-04-03T18:17:32.098Z",
+            "updated_at": "2025-04-03T18:17:32.098Z"
+        }
+    }
+}

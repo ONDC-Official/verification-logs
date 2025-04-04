@@ -1,0 +1,187 @@
+{
+    "context": {
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:02712"
+            }
+        },
+        "domain": "ONDC:TRV11",
+        "action": "on_select",
+        "version": "2.0.1",
+        "bap_id": "katch.co.in",
+        "bap_uri": "https://katch.co.in/ondc/",
+        "bpp_id": "katch.co.in",
+        "bpp_uri": "https://katch.co.in/ondc/",
+        "transaction_id": "e950a3da-56d3-4429-8e48-f6965ec69fb3",
+        "message_id": "6d6f996d-33eb-4317-8bd2-6d8af98ec253",
+        "timestamp": "2025-04-03T18:16:59.558Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "ITEM_757_313",
+                    "descriptor": {
+                        "name": "singleJourneyTicket",
+                        "code": "SJT"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "5"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1D"
+                    },
+                    "fulfillment_ids": [
+                        "ROUTE757",
+                        "ONDC_e950a3da-56d3-4429-8e48-f6965ec69fb3"
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "PROVIDER21",
+                "descriptor": {
+                    "name": "Yogi Bus Service"
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "ROUTE757",
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "BUS"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_ID"
+                                    },
+                                    "value": "757"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_DIRECTION"
+                                    },
+                                    "value": "UP"
+                                }
+                            ]
+                        }
+                    ],
+                    "stops": [
+                        {
+                            "type": "START",
+                            "id": "1669",
+                            "location": {
+                                "descriptor": {
+                                    "name": "PATHIKA",
+                                    "code": "STA1669"
+                                },
+                                "gps": "0.000000,0.000000"
+                            }
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "1671",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4.5",
+                                    "code": "STA1671"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "1669"
+                        },
+                        {
+                            "type": "END",
+                            "id": "1672",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-5",
+                                    "code": "STA1672"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "1671"
+                        }
+                    ]
+                },
+                {
+                    "id": "ONDC_e950a3da-56d3-4429-8e48-f6965ec69fb3",
+                    "type": "TICKET",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PARENT_ID"
+                                    },
+                                    "value": "ROUTE757"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "5",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "ITEM_757_313",
+                            "price": {
+                                "currency": "INR",
+                                "value": "5"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "5"
+                        }
+                    },
+                    {
+                        "title": "OFFER",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "title": "TOLL",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
