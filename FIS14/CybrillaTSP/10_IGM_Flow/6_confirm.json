@@ -1,0 +1,167 @@
+{
+  "context": {
+    "domain": "ONDC:FIS14",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "confirm",
+    "version": "2.0.0",
+    "bap_id": "cybrillaondctsppp.i.s.finprim.com",
+    "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "08dc8f11-5cf0-419f-b3eb-31cd8d8ba76d",
+    "message_id": "4c2e7500-d335-417b-a965-d9000abcb9f2",
+    "timestamp": "2025-04-01T15:37:28.135Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "id": "816bb842-33a9-4b47-8b5d-5f1c2053a76e",
+      "provider": {
+        "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f"
+      },
+      "items": [
+        {
+          "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "8500.00",
+                "unit": "INR"
+              }
+            }
+          },
+          "fulfillment_ids": [
+            "3faa37d0-7a2f-40df-8095-8939ff9e57c5"
+          ],
+          "payment_ids": [
+            "18bfbf21-068e-4f53-9878-e23361cbce9b"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "3faa37d0-7a2f-40df-8095-8939ff9e57c5",
+          "type": "LUMPSUM",
+          "customer": {
+            "person": {
+              "id": "pan:ABCPD3751E",
+              "creds": [
+                {
+                  "id": "127.0.0.1",
+                  "type": "IP_ADDRESS"
+                },
+                {
+                  "id": "QTUQW12HY2Z4F",
+                  "type": "FOLIO"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "9012893471"
+            }
+          },
+          "agent": {
+            "person": {
+              "id": "euin:E123456"
+            },
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-995799",
+                  "type": "ARN"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "id": "18bfbf21-068e-4f53-9878-e23361cbce9b",
+          "collected_by": "BPP",
+          "params": {
+            "amount": "8500.00",
+            "currency": "INR",
+            "source_bank_code": "UTIB0000801",
+            "source_bank_account_number": "98765432101193",
+            "source_bank_account_name": "Tony Soprano"
+          },
+          "type": "PRE-FULFILLMENT",
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Payment Method",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "UPI_PG"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://test.static.term.com"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
