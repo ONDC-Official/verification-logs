@@ -9,24 +9,22 @@
             }
         },
         "domain": "ONDC:TRV11",
-        "action": "on_confirm",
+        "action": "on_init",
         "ttl": "PT2S",
-        "timestamp": "2025-04-07T13:04:11.616Z",
+        "timestamp": "2025-04-08T17:55:54.592Z",
         "bap_id": "katch.co.in",
         "bap_uri": "https://katch.co.in/ondc/",
-        "transaction_id": "df33a445-2c85-4893-a517-fe9c175ce269",
-        "message_id": "6aa8ae73-17a6-4806-b73a-481bfa32f059",
+        "transaction_id": "912ed671-6632-440e-b102-aa63134885c6",
+        "message_id": "4c29ddb2-6064-487c-ae62-68e0d8d05929",
         "version": "2.0.1",
         "bpp_id": "katch.co.in",
         "bpp_uri": "https://katch.co.in/ondc/"
     },
     "message": {
         "order": {
-            "id": "ORDER_df33a445-2c85-4893-a517-fe9c175ce269",
-            "status": "ACTIVE",
             "items": [
                 {
-                    "id": "ITEM_581_476",
+                    "id": "ITEM_581_677",
                     "descriptor": {
                         "name": "singleJourneyTicket",
                         "code": "SJT"
@@ -46,7 +44,7 @@
                     },
                     "fulfillment_ids": [
                         "ROUTE581",
-                        "ONDC_df33a445-2c85-4893-a517-fe9c175ce269"
+                        "ONDC_912ed671-6632-440e-b102-aa63134885c6"
                     ]
                 }
             ],
@@ -98,7 +96,7 @@
                             }
                         },
                         {
-                            "type": "END",
+                            "type": "INTERMEDIATE_STOP",
                             "id": "293",
                             "location": {
                                 "descriptor": {
@@ -108,23 +106,24 @@
                                 "gps": "0.000000,0.000000"
                             },
                             "parent_stop_id": "269"
+                        },
+                        {
+                            "type": "END",
+                            "id": "292",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4.5 Gandhinagar",
+                                    "code": "STA0292"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "293"
                         }
                     ]
                 },
                 {
-                    "id": "ONDC_df33a445-2c85-4893-a517-fe9c175ce269",
+                    "id": "ONDC_912ed671-6632-440e-b102-aa63134885c6",
                     "type": "TICKET",
-                    "stops": [
-                        {
-                            "type": "START",
-                            "authorization": {
-                                "type": "QR",
-                                "token": "5yFOmPb2Mg51N18Dg4de86gV4EnOsx7vdabqGIEfA+YbyF6z9XasRTkCc2XQWI/4HDDfD2CJagRpzJ33BBUMkdns5XQ7ZZft3VGPEUB5U9Vd5MSOJwMuRAjpR9nrthbi4HLe6S8mXDDdcygZJPATdBVwBUw53hy3mVv0vuczT9WUWLF6PoKjvPh2kluYpmtfkccaeSgwUcLuAMgyLEqJNGgCLSt6tc1vm5caW5OOOJlO6MRYh56HYyWziol5dCV1tEFQdb2Ns82dUovLZnJs4A==",
-                                "valid_to": "2025-04-07T13:04:11.613Z",
-                                "status": "UNCLAIMED"
-                            }
-                        }
-                    ],
                     "tags": [
                         {
                             "descriptor": {
@@ -136,19 +135,6 @@
                                         "code": "PARENT_ID"
                                     },
                                     "value": "ROUTE581"
-                                }
-                            ]
-                        },
-                        {
-                            "descriptor": {
-                                "code": "TICKET_INFO"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "NUMBER"
-                                    },
-                                    "value": "ONDC_df33a445-2c85-4893-a517-fe9c175ce269"
                                 }
                             ]
                         }
@@ -165,6 +151,11 @@
                     }
                 }
             ],
+            "billing": {
+                "name": "AKSHAT Patel",
+                "email": "test@gmail.com",
+                "phone": "+91-6354495098"
+            },
             "quote": {
                 "price": {
                     "value": "5",
@@ -174,7 +165,7 @@
                     {
                         "title": "BASE_FARE",
                         "item": {
-                            "id": "ITEM_581_476",
+                            "id": "ITEM_581_677",
                             "price": {
                                 "currency": "INR",
                                 "value": "5"
@@ -206,23 +197,15 @@
                     }
                 ]
             },
-            "billing": {
-                "name": "AKSHAT Patel",
-                "email": "test@gmail.com",
-                "phone": "+91-6354495098"
-            },
             "payments": [
                 {
-                    "id": "pay_623d5d0153745227",
+                    "id": "pay_831c61db809d38cc",
                     "params": {
-                        "currency": "INR",
-                        "amount": "5.0",
-                        "transaction_id": "T2504071303482732390320",
                         "bank_code": "SBIN0000301",
                         "bank_account_number": "38086195642",
                         "virtual_payment_address": "9409178785@paytm"
                     },
-                    "status": "PAID",
+                    "status": "NOT-PAID",
                     "type": "PRE-ORDER",
                     "tags": [
                         {
@@ -259,15 +242,15 @@
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "SETTLEMENT_TYPE"
-                                    },
-                                    "value": "UPI"
-                                },
-                                {
-                                    "descriptor": {
                                         "code": "SETTLEMENT_BASIS"
                                     },
                                     "value": "Delivery"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "SETTLEMENT_TYPE"
+                                    },
+                                    "value": "UPI"
                                 },
                                 {
                                     "descriptor": {
@@ -304,9 +287,7 @@
                     ],
                     "collected_by": "BAP"
                 }
-            ],
-            "created_at": "2025-04-07T13:04:11.616Z",
-            "updated_at": "2025-04-07T13:04:11.616Z"
+            ]
         }
     }
 }
