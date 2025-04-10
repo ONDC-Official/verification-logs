@@ -1,0 +1,187 @@
+{
+    "context": {
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:02712"
+            }
+        },
+        "domain": "ONDC:TRV11",
+        "action": "on_select",
+        "version": "2.0.1",
+        "bap_id": "katch.co.in",
+        "bap_uri": "https://katch.co.in/ondc/",
+        "bpp_id": "katch.co.in",
+        "bpp_uri": "https://katch.co.in/ondc/",
+        "transaction_id": "912ed671-6632-440e-b102-aa63134885c6",
+        "message_id": "06ff83a6-b2aa-437d-8a53-601b4289fab1",
+        "timestamp": "2025-04-08T17:55:50.870Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "items": [
+                {
+                    "id": "ITEM_581_677",
+                    "descriptor": {
+                        "name": "singleJourneyTicket",
+                        "code": "SJT"
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "5"
+                    },
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1D"
+                    },
+                    "fulfillment_ids": [
+                        "ROUTE581",
+                        "ONDC_912ed671-6632-440e-b102-aa63134885c6"
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "PROVIDER21",
+                "descriptor": {
+                    "name": "Yogi Bus Service"
+                }
+            },
+            "fulfillments": [
+                {
+                    "id": "ROUTE581",
+                    "type": "TRIP",
+                    "vehicle": {
+                        "category": "BUS"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "ROUTE_INFO"
+                            },
+                            "display": false,
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_ID"
+                                    },
+                                    "value": "581"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ROUTE_DIRECTION"
+                                    },
+                                    "value": "UP"
+                                }
+                            ]
+                        }
+                    ],
+                    "stops": [
+                        {
+                            "type": "START",
+                            "id": "269",
+                            "location": {
+                                "descriptor": {
+                                    "name": "PATHIKA Gandhinagar",
+                                    "code": "STA0269"
+                                },
+                                "gps": "0.000000,0.000000"
+                            }
+                        },
+                        {
+                            "type": "INTERMEDIATE_STOP",
+                            "id": "293",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4 Gandhinagar",
+                                    "code": "STA0293"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "269"
+                        },
+                        {
+                            "type": "END",
+                            "id": "292",
+                            "location": {
+                                "descriptor": {
+                                    "name": "GH-4.5 Gandhinagar",
+                                    "code": "STA0292"
+                                },
+                                "gps": "0.000000,0.000000"
+                            },
+                            "parent_stop_id": "293"
+                        }
+                    ]
+                },
+                {
+                    "id": "ONDC_912ed671-6632-440e-b102-aa63134885c6",
+                    "type": "TICKET",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "INFO"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PARENT_ID"
+                                    },
+                                    "value": "ROUTE581"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "5",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "ITEM_581_677",
+                            "price": {
+                                "currency": "INR",
+                                "value": "5"
+                            },
+                            "quantity": {
+                                "selected": {
+                                    "count": 1
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "5"
+                        }
+                    },
+                    {
+                        "title": "OFFER",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "title": "TOLL",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
