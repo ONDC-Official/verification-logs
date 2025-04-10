@@ -1,10 +1,10 @@
 {
     "context": {
-      "action": "on_select",
+      "action": "on_init",
       "bap_id": "api.trasitco.in",
       "bap_uri": "https://api.trasitco.in/api/trv10",
       "bpp_id": "pramaan.ondc.org",
-      "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+      "bpp_uri": "https://pramaan.ondc.org/prod/seller",
       "domain": "ONDC:TRV10",
       "location": {
         "city": {
@@ -15,26 +15,86 @@
         }
       },
       "message_id": "8926b747-0362-4fcc-b795-0994a6287700",
-      "timestamp": "2025-03-31T13:49:26.132Z",
+      "timestamp": "2025-03-31T14:11:32.859Z",
       "transaction_id": "870782be-6757-43f1-945c-8eeaf9536259",
       "ttl": "PT15M",
       "version": "2.0.0"
     },
     "message": {
       "order": {
+        "cancellation_terms": [
+          {
+            "cancellation_fee": {
+              "percentage": "0"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ASSIGNED"
+              }
+            },
+            "reason_required": true
+          },
+          {
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "30"
+              }
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ENROUTE_PICKUP"
+              }
+            },
+            "reason_required": true
+          },
+          {
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "50"
+              }
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ARRIVED_PICKUP"
+              }
+            },
+            "reason_required": true
+          },
+          {
+            "cancellation_fee": {
+              "percentage": "100"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_STARTED"
+              }
+            },
+            "reason_required": true
+          }
+        ],
         "fulfillments": [
           {
             "id": "F1",
+            "customer": {
+              "contact": {
+                "phone": "9876556789"
+              },
+              "person": {
+                "name": "Joe Adams"
+              }
+            },
             "stops": [
               {
                 "location": {
-                  "gps": "13.008935,77.644408"
+                  "gps": "13.008935, 77.644408"
                 },
                 "type": "START"
               },
               {
                 "location": {
-                  "gps": "12.971186,77.586812"
+                  "gps": "12.971186, 77.586812"
                 },
                 "type": "END"
               }
@@ -59,7 +119,7 @@
                       "code": "WAYPOINTS",
                       "name": "Waypoints"
                     },
-                    "value": "[{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"}]"
+                    "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
                   }
                 ]
               }
@@ -83,6 +143,9 @@
             "location_ids": [
               "L1",
               "L3"
+            ],
+            "payment_ids": [
+              "PA1"
             ],
             "price": {
               "currency": "INR",
@@ -172,6 +235,91 @@
             ]
           }
         ],
+        "payments": [
+          {
+            "collected_by": "BPP",
+            "id": "PA1",
+            "params": {
+              "bank_account_number": "xxxxxxxxxxxxxx",
+              "bank_code": "XXXXXXXX",
+              "virtual_payment_address": "9988199772@okicic"
+            },
+            "status": "NOT-PAID",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES"
+                },
+                "display": true,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                    },
+                    "value": "5"
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_TERMS"
+                },
+                "display": true,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "DELAY_INTEREST"
+                    },
+                    "value": "2.5"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_TYPE"
+                    },
+                    "value": "UPI"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_WINDOW"
+                    },
+                    "value": "PT2D"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_BASIS"
+                    },
+                    "value": "DELIVERY"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "MANDATORY_ARBITRATION"
+                    },
+                    "value": "true"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "COURT_JURISDICTION"
+                    },
+                    "value": "New Delhi"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "STATIC_TERMS"
+                    },
+                    "value": "https://example-test-bpp.com/static-terms.txt"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_AMOUNT"
+                    },
+                    "value": "10.50"
+                  }
+                ]
+              }
+            ],
+            "type": "ON-FULFILLMENT"
+          }
+        ],
         "provider": {
           "id": "P1"
         },
@@ -201,4 +349,3 @@
       }
     }
   }
-  
