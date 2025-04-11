@@ -1,0 +1,95 @@
+{
+  "context": {
+    "action": "search",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.0/buyer",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "8b92ab96-1f57-4d55-a6ab-077e469ec2b7",
+    "timestamp": "2025-04-07T12:13:00.468Z",
+    "transaction_id": "4642e2b1-eba6-4848-b981-fc8574b522b2",
+    "ttl": "PT30S",
+    "version": "2.0.0",
+    "bpp_id": "https://dev-automation.ondc.org/seller",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.0/seller"
+  },
+  "message": {
+    "intent": {
+      "fulfillment": {
+        "stops": [
+          {
+            "type": "START",
+            "location": {
+              "descriptor": {
+                "code": "MOCK_STATION_std:011_1"
+              }
+            }
+          },
+          {
+            "type": "END",
+            "location": {
+              "descriptor": {
+                "code": "MOCK_STATION_std:011_2"
+              }
+            }
+          }
+        ],
+        "vehicle": {
+          "category": "BUS"
+        }
+      },
+      "payment": {
+        "collected_by": "BAP",
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "percent-annualized"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "context": {
+    "action": "init",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.0/buyer",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "264c95c2-ab5e-46d8-9501-dbaa39cf1aa3",
+    "timestamp": "2025-04-07T11:49:54.401Z",
+    "transaction_id": "32e03fe0-c8f7-44fc-83e5-47e9b68098ee",
+    "ttl": "PT30S",
+    "version": "2.0.0",
+    "bpp_id": "dev-automation.ondc.org",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.0/seller"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "I1",
+          "quantity": {
+            "selected": {
+              "count": 5
+            }
+          }
+        }
+      ],
+      "provider": {
+        "id": "P1"
+      },
+      "billing": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+91-9897867564"
+      },
+      "payments": [
+        {
+          "collected_by": "BAP",
+          "status": "NOT-PAID",
+          "type": "PRE-ORDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "119"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "NEFT"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bap.com/booking/terms"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
