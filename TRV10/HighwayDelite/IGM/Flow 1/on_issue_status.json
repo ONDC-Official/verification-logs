@@ -1,0 +1,153 @@
+{
+  "context": {
+    "bap_id": "ondc.preprod.highwaydelite.com",
+    "bap_uri": "https://ondc.preprod.highwaydelite.com/ride-hailing",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "transaction_id": "93eec69e-90f1-48f6-af5f-6683b5a625a2",
+    "message_id": "1b49dd56-9596-456b-9d72-fd53705be515",
+    "timestamp": "2025-03-26T11:49:31.607Z",
+    "domain": "ONDC:RET10",
+    "core_version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue_status"
+  },
+  "message": {
+    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
+    "issue": {
+      "id": "38ee7550-4b64-43cc-83f2-3e5eed39d772",
+      "level": "ISSUE",
+      "status": "OPEN",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        {
+          "ref_id": "bb79becc-e416-4964-bea4-ec96ab74f34e",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:RET10" },
+            "person": { "name": "Highway Delite" },
+            "contact": {
+              "phone": "2341234123",
+              "email": "support@highwaydelite.com"
+            }
+          }
+        },
+        {
+          "id": "ondc.preprod.highwaydelite.com",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": { "name": "ondc.preprod.highwaydelite.com::ONDC:RET10" },
+            "person": { "name": "Highway Delite" },
+            "contact": {
+              "phone": "9450394039",
+              "email": "support@highwayDelite.com"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "person": { "name": "Jane Doe" },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "ondc.preprod.highwaydelite.com",
+      "respondent_ids": ["NP2"],
+      "description": {
+        "code": "ORDER",
+        "short_desc": "Issue ",
+        "long_desc": "Problem description\n",
+        "additional_desc": { "url": "https://example.com", "content_type": "text/plain" }
+      },
+      "last_action_id": "3",
+      "actions": [
+        {
+          "id": "Ad28b-2a01-47b9-af5d-fc0ad42870f2",
+          "description": { "code": "OPEN", "short_desc": "Complaint created" },
+          "updated_at": "2025-03-26T11:07:37.602Z",
+          "action_by": "ondc.preprod.highwaydelite.com",
+          "actor_details": { "name": "Highway Delite" }
+        },
+        {
+          "id": "1",
+          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
+          "updated_at": "2025-03-26T11:09:02.163Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "0",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "short_desc": "OPEN",
+            "name": "INFO0002"
+          },
+          "updated_at": "2025-03-26T11:10:32.847Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "Adbb4-3873-4409-abda-05d5436dd31c",
+          "description": { "code": "INFO_PROVIDED", "short_desc": "info" },
+          "updated_at": "2025-03-26T11:14:19.363Z",
+          "action_by": "ondc.preprod.highwaydelite.com",
+          "actor_details": { "name": "Sam Jay" }
+        },
+        {
+          "id": "3",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the info provided"
+          },
+          "updated_at": "2025-03-26T11:38:27.650Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        }
+      ],
+      "created_at": "2025-03-26T11:07:37.602Z",
+      "updated_at": "2025-03-26T11:14:19.537Z"
+    }
+  }
+}
