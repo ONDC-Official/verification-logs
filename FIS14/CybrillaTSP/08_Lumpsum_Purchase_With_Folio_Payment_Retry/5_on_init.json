@@ -9,20 +9,19 @@
         "code": "IND"
       }
     },
-    "action": "on_update",
+    "action": "on_init",
     "version": "2.0.0",
     "bap_id": "cybrillaondctsppp.i.s.finprim.com",
     "bap_uri": "https://cybrillaondctsppp.i.s.finprim.com/ondc_callback",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-    "transaction_id": "3a046f93-60d1-4662-8bf2-de0d4505b6cf",
-    "message_id": "e9eb6b1a-8f39-44e5-9d6f-e82bf4a3d4be",
-    "timestamp": "2025-04-08T11:47:08.496Z",
+    "transaction_id": "ccc30e00-8ee8-4b66-a692-6621a133c67b",
+    "message_id": "5b079f21-1aae-4737-a8e3-ae997350292a",
+    "timestamp": "2025-04-14T13:43:10.911Z",
     "ttl": "PT10M"
   },
   "message": {
     "order": {
-      "id": "d885145e-d196-4e99-b938-7ab4263efaeb",
       "provider": {
         "id": "c0250b65-3755-4f57-94ee-b0087cd09e4f",
         "descriptor": {
@@ -46,7 +45,7 @@
             }
           },
           "fulfillment_ids": [
-            "0807245b-f791-4e7a-babc-ec341e628951"
+            "b2e4560d-5173-485c-a074-986b301f3463"
           ],
           "tags": [
             {
@@ -127,20 +126,69 @@
             }
           ],
           "payment_ids": [
-            "1aafdc00-ae72-42d2-96fb-5dc70f401ef4"
+            "896e1deb-5f72-456c-8602-66390c591773"
           ]
         }
       ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "id": "c8ffcda6-5245-4347-bee7-db99b36083af",
+        "price": {
+          "currency": "INR",
+          "value": "8500.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
+              "fulfillment_ids": [
+                "b2e4560d-5173-485c-a074-986b301f3463"
+              ]
+            },
+            "title": "Investment",
+            "price": {
+              "currency": "INR",
+              "value": "8500.00"
+            }
+          }
+        ]
+      },
+      "id": "fa069a7f-9b3b-4283-95c4-8b3a5fd9d60c",
+      "status": "CREATED",
       "fulfillments": [
         {
-          "id": "0807245b-f791-4e7a-babc-ec341e628951",
+          "id": "b2e4560d-5173-485c-a074-986b301f3463",
           "type": "LUMPSUM",
           "customer": {
             "person": {
-              "id": "pan:ABCPD3751E",
+              "id": "pan:ABCPA3751A",
               "creds": [
                 {
-                  "id": "127.0.0.1",
+                  "id": "10.0.128.12",
                   "type": "IP_ADDRESS"
                 },
                 {
@@ -248,91 +296,11 @@
                 }
               ]
             }
-          ],
-          "state": {
-            "descriptor": {
-              "code": "PENDING",
-              "name": "Pending"
-            }
-          }
-        }
-      ],
-      "status": "ACCEPTED",
-      "quote": {
-        "id": "a4ae1000-7ae3-4c2e-b09f-b88e6027227a",
-        "price": {
-          "currency": "INR",
-          "value": "8500.00"
-        },
-        "breakup": [
-          {
-            "item": {
-              "id": "925d55cf-d811-4f93-8a2b-e357124b1e60",
-              "fulfillment_ids": [
-                "0807245b-f791-4e7a-babc-ec341e628951"
-              ]
-            },
-            "title": "Investment",
-            "price": {
-              "currency": "INR",
-              "value": "8500.00"
-            }
-          }
-        ]
-      },
-      "tags": [
-        {
-          "display": false,
-          "descriptor": {
-            "name": "BAP Terms of Engagement",
-            "code": "BAP_TERMS"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "name": "Static Terms (Transaction Level)",
-                "code": "STATIC_TERMS"
-              },
-              "value": "https://test.static.term.com"
-            },
-            {
-              "descriptor": {
-                "name": "Offline Contract",
-                "code": "OFFLINE_CONTRACT"
-              },
-              "value": "true"
-            }
-          ]
-        },
-        {
-          "display": false,
-          "descriptor": {
-            "name": "BPP Terms of Engagement",
-            "code": "BPP_TERMS"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "name": "Static Terms (Transaction Level)",
-                "code": "STATIC_TERMS"
-              },
-              "value": "https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1"
-            },
-            {
-              "descriptor": {
-                "name": "Offline Contract",
-                "code": "OFFLINE_CONTRACT"
-              },
-              "value": "true"
-            }
           ]
         }
       ],
-      "created_at": "2025-04-08T11:46:23.019Z",
-      "updated_at": "2025-04-08T11:46:23.019Z",
       "payments": [
         {
-          "id": "1aafdc00-ae72-42d2-96fb-5dc70f401ef4",
           "collected_by": "BPP",
           "params": {
             "amount": "8500.00",
@@ -342,7 +310,6 @@
             "source_bank_account_name": "Tony Soprano"
           },
           "type": "PRE-FULFILLMENT",
-          "status": "FAILED",
           "tags": [
             {
               "display": true,
@@ -359,18 +326,14 @@
                 }
               ]
             }
-          ]
+          ],
+          "id": "896e1deb-5f72-456c-8602-66390c591773",
+          "status": "NOT-PAID",
+          "url": "https://pramaan.ondc.org/beta/preprod/mock/seller/toPaymentUtility?amount=8500.00&transaction_id=ccc30e00-8ee8-4b66-a692-6621a133c67b&label=LUMPSUM_PAYMENT"
         }
       ],
-      "cancellation_terms": [
-        {
-          "reason_required": true,
-          "external_ref": {
-            "url": "https://api.sellerapp.com/cterms?id=214werw3w4",
-            "mimetype": "text/html"
-          }
-        }
-      ]
+      "created_at": "2025-04-14T13:43:10.911Z",
+      "updated_at": "2025-04-14T13:43:10.911Z"
     }
   }
 }
