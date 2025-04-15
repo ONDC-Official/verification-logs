@@ -1,48 +1,36 @@
 {
     "context": {
+        "ttl": "PT30S",
+        "action": "issue",
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+        "bpp_id": "allcargogati.shipfast.co.in",
         "domain": "ONDC:LOG10",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+        "bpp_uri": "https://allcargogati.shipfast.co.in",
         "location": {
-            "country": {
-                "code": "IND"
-            },
             "city": {
                 "code": "*"
+            },
+            "country": {
+                "code": "IND"
             }
         },
-        "action": "on_issue",
+        "timestamp": "2025-04-14T23:50:56.920Z",
+        "message_id": "bfa17f15-c80f-4917-871d-e99c746dda83",
         "core_version": "2.0.0",
-        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
-        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
-        "bpp_id": "allcargogati.shipfast.co.in",
-        "bpp_uri": "https://allcargogati.shipfast.co.in",
-        "transaction_id": "acec014f-b3f3-4bf4-8624-d9e15415668b",
-        "message_id": "4ca1246f-c6e2-4b46-b7cc-e585ab9cd769",
-        "timestamp": "2025-04-08T10:00:00.000Z",
-        "ttl": "PT30S"
+        "transaction_id": "b7f3835e-770d-42bd-8b12-b0cd6d5fd74d"
     },
     "message": {
-        "updated_target": [
-            {
-                "path": "issue.actions",
-                "action": "APPENDED"
-            }
-        ],
         "issue": {
-            "id": "ISSUE-1",
-            "status": "RESOLVED",
-            "level": "ISSUE",
-            "created_at": "2025-04-08T10:02:00.000Z",
-            "updated_at": "2025-04-08T10:35:00.000Z",
-            "expected_response_time": {
-                "duration": "PT2H"
-            },
-            "expected_resolution_time": {
-                "duration": "P1D"
-            },
+            "id": "7bae38b2-78b8-492d-a980-a77815ca7f58",
             "refs": [
                 {
                     "ref_id": "O1",
                     "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "T1",
+                    "ref_type": "TRANSACTION"
                 },
                 {
                     "ref_id": "P1",
@@ -72,10 +60,10 @@
                     ]
                 }
             ],
+            "level": "GRIEVANCE",
             "actors": [
                 {
-                    "id": "158f038d-adbe-4007-9aad-bd558cc6117c",
-                    "type": "CONSUMER",
+                    "id": "CUST1",
                     "info": {
                         "org": {
                             "name": "igm-mock-service.ondc.org/igm-protocol-server-staging/ondc::ONDC:LOG10"
@@ -84,14 +72,14 @@
                             "name": "Sam Manuel"
                         },
                         "contact": {
-                            "phone": "9879879870",
-                            "email": "sam@yahoo.com"
+                            "email": "sam@yahoo.com",
+                            "phone": "9879879870"
                         }
-                    }
+                    },
+                    "type": "CONSUMER"
                 },
                 {
-                    "id": "94a6a7c7-5bba-446c-b2ca-b62fe3808bb4",
-                    "type": "INTERFACING_NP",
+                    "id": "NP1",
                     "info": {
                         "org": {
                             "name": "igm-mock-service.ondc.org/igm-protocol-server-staging/ondc::ONDC:LOG10"
@@ -100,130 +88,136 @@
                             "name": "John Doe"
                         },
                         "contact": {
-                            "phone": "9450394039",
-                            "email": "buyerapp@interface.com"
+                            "email": "buyerapp@interface.com",
+                            "phone": "9450394039"
                         }
-                    }
+                    },
+                    "type": "INTERFACING_NP"
                 },
                 {
-                    "id": "392ba53e-0610-411d-a6a0-85077ad74f63",
-                    "type": "COUNTERPARTY_NP",
+                    "id": "17c211ec-54bf-4c68-961c-505b6a6ec176",
                     "info": {
                         "org": {
-                            "name": "allcargogati.shipfast.co.in::ONDC:LOG10"
+                            "name": "allcargogati.shipfast.co.in::LOG10"
                         },
                         "person": {
                             "name": "Gati"
                         },
                         "contact": {
-                            "phone": "1234567890",
-                            "email": "gati@gmail.com"
+                            "email": "gati@gmail.com",
+                            "phone": "1234567890"
                         }
+                    },
+                    "type": "COUNTERPARTY_NP"
+                },
+                {
+                    "id": "92a81b03-5665-4a74-9ad7-6b5c1889becc",
+                    "info": {
+                        "org": {
+                            "name": "allcargogati.shipfast.co.in::LOG10"
+                        },
+                        "person": {
+                            "name": "Gati"
+                        },
+                        "contact": {
+                            "email": "customerservices@allcargologistics.com",
+                            "phone": "18601234284"
+                        }
+                    },
+                    "type": "COUNTERPARTY_NP_GRO"
+                }
+            ],
+            "status": "OPEN",
+            "actions": [
+                {
+                    "id": "b3f328a8-f5e2-4384-80a3-c2a1b32ac272",
+                    "action_by": "NP1",
+                    "updated_at": "2025-04-15T04:50:56.916Z",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "OPEN"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "9934f85f-25fe-4543-a439-df4f11f799e0",
+                    "action_by": "17c211ec-54bf-4c68-961c-505b6a6ec176",
+                    "updated_at": "2025-04-15T04:50:59.339Z",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "issue processing"
+                    },
+                    "actor_details": {
+                        "name": "Gati"
+                    }
+                },
+                {
+                    "id": "e44600c4-3504-4234-a5b1-5d22d809696e",
+                    "action_by": "17c211ec-54bf-4c68-961c-505b6a6ec176",
+                    "updated_at": "2025-04-15T04:53:02.442Z",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "Resolution proposed"
+                    },
+                    "actor_details": {
+                        "name": "Gati"
+                    }
+                },
+                {
+                    "id": "063dc36b-0b3f-4426-9adb-3634fdab79e8",
+                    "action_by": "NP1",
+                    "updated_at": "2025-04-15T04:54:37.388Z",
+                    "description": {
+                        "code": "RESOLUTION_ACCEPTED",
+                        "short_desc": "RESOLUTION_ACCEPTED"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "1a1ac776-af44-400f-a04c-7ebb80d4af67",
+                    "action_by": "17c211ec-54bf-4c68-961c-505b6a6ec176",
+                    "updated_at": "2025-04-15T04:54:39.077Z",
+                    "description": {
+                        "code": "RESOLVED",
+                        "name": "NO-ACTION",
+                        "short_desc": "issue resolved"
+                    },
+                    "actor_details": {
+                        "name": "Gati"
+                    }
+                },
+                {
+                    "id": "a4b634fd-5ce5-4350-8bcf-9494b6fa361a",
+                    "action_by": "NP1",
+                    "updated_at": "2025-04-15T04:56:56.218Z",
+                    "description": {
+                        "code": "ESCALATED",
+                        "short_desc": "ESCALATED"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
                     }
                 }
             ],
-            "source_id": "158f038d-adbe-4007-9aad-bd558cc6117c",
-            "complainant_id": "94a6a7c7-5bba-446c-b2ca-b62fe3808bb4",
-            "respondent_ids": [
-                "392ba53e-0610-411d-a6a0-85077ad74f63"
-            ],
+            "source_id": "CUST1",
+            "created_at": "2025-04-14T23:50:56.920Z",
+            "updated_at": "2025-04-14T23:56:56.220Z",
             "description": {
-                "code": "ITM004",
-                "short_desc": "Issue with product quality",
+                "code": "ORD001",
+                "images": [
+                    "http://buyerapp.com/addtional-details/img1.png"
+                ],
                 "long_desc": "Product quality is not correct. facing issues while using the product",
+                "short_desc": "Issue with product quality",
                 "additional_desc": {
                     "url": "https://buyerapp.com/additonal-details/desc.txt",
                     "content_type": "text/plain"
                 }
             },
-            "last_action_id": "cb1b10f6-5b48-404f-8156-1ea797696a4e",
-            "actions": [
-                {
-                    "id": "f15e7849-2332-475c-a8cd-34daa5bc8fbd",
-                    "description": {
-                        "code": "OPEN",
-                        "short_desc": "Complaint created"
-                    },
-                    "updated_at": "2025-04-08T10:02:00.000Z",
-                    "action_by": "158f038d-adbe-4007-9aad-bd558cc6117c",
-                    "actor_details": {
-                        "name": "Sam Manuel"
-                    }
-                },
-                {
-                    "id": "5d179f65-3cd3-495c-be9e-1116e609c9a2",
-                    "description": {
-                        "code": "PROCESSING",
-                        "short_desc": "issue processing"
-                    },
-                    "updated_at": "2025-04-08T10:05:00.000Z",
-                    "action_by": "392ba53e-0610-411d-a6a0-85077ad74f63",
-                    "actor_details": {
-                        "name": ""
-                    }
-                },
-                {
-                    "id": "80a41bc6-47f5-4f20-8bdb-4b2b0a2f3070",
-                    "description": {
-                        "code": "INFO_REQUESTED",
-                        "short_desc": "Provide images"
-                    },
-                    "updated_at": "2025-04-08T10:05:00.000Z",
-                    "action_by": "392ba53e-0610-411d-a6a0-85077ad74f63",
-                    "actor_details": {
-                        "name": "Gati"
-                    }
-                },
-                {
-                    "id": "ca12eca1-8851-4ba4-a2bb-af5c09955fec",
-                    "description": {
-                        "code": "INFO_PROVIDED",
-                        "short_desc": "Provide images"
-                    },
-                    "updated_at": "2025-04-08T10:12:00.000Z",
-                    "action_by": "158f038d-adbe-4007-9aad-bd558cc6117c",
-                    "actor_details": {
-                        "name": "Sam Manuel"
-                    }
-                },
-                {
-                    "id": "431143da-db44-49a2-b6e3-6cb665234316",
-                    "description": {
-                        "code": "RESOLUTION_PROPOSED",
-                        "short_desc": "issue resolution proposed"
-                    },
-                    "updated_at": "2025-04-08T10:15:00.000Z",
-                    "action_by": "392ba53e-0610-411d-a6a0-85077ad74f63",
-                    "actor_details": {
-                        "name": "Gati"
-                    }
-                },
-                {
-                    "id": "daf87d0e-aef6-4242-af30-09b2afb2d3f6",
-                    "description": {
-                        "code": "RESOLUTION_ACCEPTED",
-                        "short_desc": "issue resolution accepted"
-                    },
-                    "updated_at": "2025-04-08T10:25:00.000Z",
-                    "action_by": "94a6a7c7-5bba-446c-b2ca-b62fe3808bb4",
-                    "actor_details": {
-                        "name": "Sam Manuel"
-                    }
-                },
-                {
-                    "id": "cb1b10f6-5b48-404f-8156-1ea797696a4e",
-                    "description": {
-                        "code": "RESOLVED",
-                        "short_desc": "issue resolved",
-                        "name": "NO-ACTION"
-                    },
-                    "updated_at": "2025-04-08T10:35:00.000Z",
-                    "action_by": "8aad0ee5-2dc1-45a7-982b-e2d95ca6fb2f",
-                    "actor_details": {
-                        "name": "Gati"
-                    }
-                }
-            ],
             "resolutions": [
                 {
                     "id": "R_PARENT",
@@ -256,7 +250,15 @@
                     "updated_at": "2025-04-08T10:15:00.000Z",
                     "proposed_by": "392ba53e-0610-411d-a6a0-85077ad74f63"
                 }
-            ]
+            ],
+            "complainant_id": "NP1",
+            "last_action_id": "a4b634fd-5ce5-4350-8bcf-9494b6fa361a",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            }
         }
     }
 }
