@@ -1,7 +1,7 @@
 {
   "context": {
     "domain": "ONDC:TRV13",
-    "action": "issue",
+    "action": "on_issue",
     "location": {
       "country": {
         "code": "IND"
@@ -16,20 +16,20 @@
     "bpp_id": "commonstaging.ipms247.com",
     "bpp_uri": "https://commonstaging.ipms247.com/b2bservice/ondc/v1/",
     "transaction_id": "TXN5155908670288_20250408_3",
-    "message_id": "MSG6668372683930_20250408_9",
+    "message_id": "MSG_20250414_143009_010_IGM_TRV13_RESOLVED_BCD890_7k8l9m0n",
     "timestamp": "2025-04-14T14:30:00.000Z",
     "ttl": "PT30S"
   },
   "message": {
-    "update_target": [
+    "updated_target": [
       {
-        "path": "issue.actions[?(@.id==’A12’)]",
+        "path": "issue.actions",
         "action": "APPENDED"
       }
     ],
     "issue": {
       "id": "ISSUE-20250414_143000_1",
-      "status": "CLOSED",
+      "status": "RESOLVED",
       "level": "ISSUE",
       "created_at": "2025-04-14T14:30:00.000Z",
       "updated_at": "2025-04-14T14:30:00.000Z",
@@ -50,7 +50,7 @@
         },
         {
           "ref_id": "Ful_Ref_9511297127025500",
-          "ref_type": "FULFILLMENT"
+          "ref_type": "FULFILMENT"
         },
         {
           "ref_id": "I1",
@@ -102,7 +102,23 @@
               "email": "respondentapp@respond.com"
             },
             "person": {
-              "name": "Jane Doe"
+              "name": "Mark Doe"
+            }
+          }
+        },
+        {
+          "id": "commonstaging.ipms247.com-GRO",
+          "type": "COUNTERPARTY_NP_GRO",
+          "info": {
+            "org": {
+              "name": "commonstaging.ipms247.com::ONDC:TRV13"
+            },
+            "contact": {
+              "phone": "9999994039",
+              "email": "sellerapp@interface.com"
+            },
+            "person": {
+              "name": "Grievance Officer SNP"
             }
           }
         }
@@ -123,19 +139,13 @@
           "url": "https://buyerapp.com/additonal-details/desc.txt",
           "content_type": "text/plain"
         },
-        "images": [
-          {
-            "url": "http://buyerapp.com/addtional-details/img1.png",
-            "size_type": "xs"
-          }
-        ],
         "media": [
           {
             "url": "https://transitsolutions.in/logos/logo.icon"
           }
         ]
       },
-      "last_action_id": "A9",
+      "last_action_id": "A8",
       "actions": [
         {
           "id": "A1",
@@ -158,7 +168,7 @@
           "updated_at": "2025-04-14T14:30:00.000Z",
           "action_by": "commonstaging.ipms247.com",
           "actor_details": {
-            "name": "Sam Manuel"
+            "name": "Mark Doe"
           }
         },
         {
@@ -169,9 +179,9 @@
             "short_desc": "Please provide invoice"
           },
           "updated_at": "2025-04-14T14:30:00.000Z",
-          "action_by": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+          "action_by": "commonstaging.ipms247.com",
           "actor_details": {
-            "name": "Sam Manuel"
+            "name": "Mark Doe"
           }
         },
         {
@@ -191,12 +201,12 @@
           "id": "A5",
           "description": {
             "code": "PROCESSING",
-            "short_desc": "Complaint created"
+            "short_desc": "Processing the complaint information"
           },
           "updated_at": "2025-04-14T14:30:00.000Z",
           "action_by": "commonstaging.ipms247.com",
           "actor_details": {
-            "name": "Sam Manuel"
+            "name": "Mark Doe"
           }
         },
         {
@@ -204,12 +214,13 @@
           "ref_id": "R_PARENT",
           "ref_type": "RESOLUTIONS",
           "description": {
-            "code": "RESOLUTION_PROPOSED"
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
           },
           "updated_at": "2025-04-14T14:30:00.000Z",
           "action_by": "commonstaging.ipms247.com",
           "actor_details": {
-            "name": "Sam Manuel"
+            "name": "Mark Doe"
           }
         },
         {
@@ -217,7 +228,8 @@
           "ref_id": "R1",
           "ref_type": "RESOLUTIONS",
           "description": {
-            "code": "RESOLUTION_ACCEPTED"
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
           },
           "updated_at": "2025-04-14T14:30:00.000Z",
           "action_by": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
@@ -227,45 +239,18 @@
         },
         {
           "id": "A8",
-          "ref_id": "R2",
+          "ref_id": "R1",
           "ref_type": "RESOLUTIONS",
           "description": {
             "code": "RESOLVED",
-            "name": "REPLACEMENT",
+            "name": "REFUND",
             "short_desc": "We will refund amount"
           },
           "updated_at": "2025-04-14T14:30:00.000Z",
           "action_by": "commonstaging.ipms247.com",
           "actor_details": {
-            "name": "Sam Manuel"
+            "name": "Mark Doe"
           }
-        },
-        {
-          "id": "A9",
-          "description": {
-            "code": "CLOSED",
-            "short_desc": "Closing the complaint"
-          },
-          "updated_at": "2025-04-14T14:30:00.000Z",
-          "action_by": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
-          "actor_details": {
-            "name": "Sam Manuel"
-          },
-          "tags": [
-            {
-              "descriptor": {
-                "code": "CLOSURE_DETAILS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "RATING"
-                  },
-                  "value": "THUMBS_UP"
-                }
-              ]
-            }
-          ]
         }
       ],
       "resolutions": [
