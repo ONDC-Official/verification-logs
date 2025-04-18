@@ -1,0 +1,310 @@
+{
+  "context": {
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:022"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_cancel",
+    "version": "2.0.0",
+    "timestamp": "2025-04-01T03:27:59.027Z",
+    "ttl": "PT30S",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "transaction_id": "8f969a18-2368-4783-893e-f4efe2a2689b",
+    "message_id": "3e284aa3-a822-4eff-be99-f3e31606c764",
+    "bpp_id": "onuat.billdesk.com/ONDC/BPP/Metro/MetroAuth1",
+    "bpp_uri": "https://onuat.billdesk.com/ONDC/BPP/Metro/MetroAuth1"
+  },
+  "message": {
+    "order": {
+      "id": "f9df480f-2fde-4482-8a74-070bb6dfeba0",
+      "provider": {
+        "id": "transit-solutions",
+        "descriptor": {
+          "name": "Transit Solutions",
+          "images": [
+            {
+              "url": "https://transitsolutions.in/logos/logo.ico"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2025-09-14T05:30:00.000Z",
+            "end": "2025-09-14T23:30:00.000Z"
+          }
+        }
+      },
+      "payments": [
+        {
+          "id": "4cfa964e-285c-4a03-8e3d-80d4822c921d",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "0d841fca-9bea-4f3f-a9d1-2587fc98d32f",
+            "currency": "INR",
+            "amount": "20.00",
+            "bank_code": "123",
+            "bank_account_number": "123456789",
+            "virtual_payment_address": "9988199772@okicic"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "P30D"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "INVOICE_RECEIPT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "TRUE"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "Mumbai"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "0"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://api.example-bap.com/booking/terms"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "f85fdf2d45b796f74a5084dc4ce0fe16",
+          "category_ids": [
+            "ticket"
+          ],
+          "descriptor": {
+            "name": "single journey ticket",
+            "code": "SJT"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "20.00"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "fulfillment_ids": [
+            "ed0ca25328b4b5ab779883a59349021d"
+          ],
+          "time": {
+            "label": "validity",
+            "duration": "P2D"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "ed0ca25328b4b5ab779883a59349021d",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "descriptor": {
+                  "name": "Azad Nagar",
+                  "code": "Azad Nagar"
+                },
+                "gps": "26.509252,80.248194"
+              },
+              "id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "location": {
+                "descriptor": {
+                  "name": "D N Nagar",
+                  "code": "D N Nagar"
+                },
+                "gps": "26.491634,80.284502"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            },
+            {
+              "type": "END",
+              "location": {
+                "descriptor": {
+                  "name": "Versova",
+                  "code": "Versova"
+                },
+                "gps": "26.449923,80.331871"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "12"
+                }
+              ],
+              "display": false
+            }
+          ]
+        }
+      ],
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2025-04-01T03:27:59.027Z"
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://transitsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "billing": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+91-9897867564"
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "0.00"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "f85fdf2d45b796f74a5084dc4ce0fe16",
+              "price": {
+                "currency": "INR",
+                "value": "20.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "20.00"
+            }
+          },
+          {
+            "title": "REFUND",
+            "item": {
+              "id": "f85fdf2d45b796f74a5084dc4ce0fe16",
+              "price": {
+                "currency": "INR",
+                "value": "-20.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "-20.00"
+            }
+          },
+          {
+            "title": "CANCELLATION_CHARGES",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ]
+      },
+      "status": "SOFT_CANCEL",
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
