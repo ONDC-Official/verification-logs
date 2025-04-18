@@ -1,0 +1,240 @@
+{
+  "context": {
+    "domain": "ONDC:FIS14",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "on_status",
+    "transaction_id": "11144684-54e0-4955-93ce-bac181b8b2c5",
+    "message_id": "97240849-dd15-4a4b-b8cc-257439c6820d",
+    "timestamp": "2025-04-16T05:59:35.099Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT10M",
+    "bpp_id": "preprod.xpressbaazaar.com",
+    "bpp_uri": "https://preprod.xpressbaazaar.com/investment"
+  },
+  "message": {
+    "order": {
+      "id": "muXxs-55ddfc62-83e1-4878-b4eb-b232513cb93e",
+      "status": "COMPLETED",
+      "provider": {
+        "id": "xyz_mf",
+        "descriptor": {
+          "name": "XYZ bank"
+        }
+      },
+      "items": [
+        {
+          "id": "a6e64494-b941-4aa8-b504-95a84cdae5d2",
+          "parent_item_id": "3",
+          "descriptor": {
+            "name": "xyz Mid Cap Fund - Regular Plan - Growth",
+            "code": "SCHEME_PLAN"
+          },
+          "fulfillment_ids": ["646f5692-d28b-42d8-942a-9ed18d8d2842"],
+          "payment_ids": ["pmt_-41c9b5f7-6248-4253-aab4-7efc6194d109"],
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "3000",
+                "unit": "INR"
+              }
+            }
+          },
+          "tags": [
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Plan Information",
+                "code": "PLAN_INFORMATION"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Consumer Terms & Conditions",
+                    "code": "CONSUMER_TNC"
+                  },
+                  "value": "https://preprod.xpressbaazaar.com/legal/ondc:fis14/consumer_tnc.html"
+                }
+              ]
+            },
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Plan Identifiers",
+                "code": "PLAN_IDENTIFIERS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "ISIN",
+                    "code": "ISIN"
+                  },
+                  "value": "ISIN123213213"
+                },
+                {
+                  "descriptor": {
+                    "name": "RTA Identifier",
+                    "code": "RTA_IDENTIFIER"
+                  },
+                  "value": "C02G"
+                },
+                {
+                  "descriptor": {
+                    "name": "AMFI Identifier",
+                    "code": "AMFI_IDENTIFIER"
+                  },
+                  "value": "12345"
+                }
+              ]
+            },
+            {
+              "display": true,
+              "descriptor": {
+                "name": "Plan Options",
+                "code": "PLAN_OPTIONS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "name": "Plan",
+                    "code": "PLAN"
+                  },
+                  "value": "REGULAR"
+                },
+                {
+                  "descriptor": {
+                    "name": "Option",
+                    "code": "OPTION"
+                  },
+                  "value": "IDCW"
+                },
+                {
+                  "descriptor": {
+                    "name": "IDCW Option",
+                    "code": "IDCW_OPTION"
+                  },
+                  "value": "PAYOUT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "646f5692-d28b-42d8-942a-9ed18d8d2842",
+          "type": "SIP_INSTALMENT",
+          "agent": {
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-6666",
+                  "type": "ARN"
+                },
+                {
+                  "type": "SUB_BROKER_ARN",
+                  "id": "ARN-9790"
+                }
+              ]
+            },
+            "person": {
+              "id": "EUIN-9790"
+            }
+          },
+          "customer": {
+            "person": {
+              "id": "ICRPW1232K",
+              "creds": [
+                {
+                  "id": "115.245.207.90",
+                  "type": "IP_ADDRESS"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "7900379776"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "INITIATED",
+              "name": "initiated"
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "id": "pmt_-41c9b5f7-6248-4253-aab4-7efc6194d109",
+          "params": {
+            "amount": "3000",
+            "currency": "INR",
+            "source_bank_code": "123",
+            "source_bank_account_number": "1234567812345678",
+            "source_bank_account_name": "Yassi sengar",
+            "transaction_id": "00d40700-6d72-4a0a-9275-012db7069aac"
+          },
+          "status": "PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "name": "Payment Method",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "MANDATE_DEBIT"
+                }
+              ]
+            }
+          ],
+          "type": "PRE_FULFILLMENT"
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "reason_required": true,
+          "external_ref": {
+            "url": "https://preprod.xpressbaazaar.com/investment/cancellation_terms",
+            "mimetype": "text/html"
+          }
+        }
+      ],
+      "quote": {
+        "id": "q1",
+        "price": {
+          "currency": "INR",
+          "value": "3000"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "a6e64494-b941-4aa8-b504-95a84cdae5d2",
+              "fulfillment_ids": ["646f5692-d28b-42d8-942a-9ed18d8d2842"]
+            },
+            "title": "Investment",
+            "price": {
+              "currency": "INR",
+              "value": "3000"
+            }
+          }
+        ]
+      },
+      "created_at": "2025-04-16T05:55:23.272Z",
+      "updated_at": "2025-04-16T05:59:35.099Z",
+      "ref_order_ids": ["tUqHv-53eecba1-1b26-49cd-bd78-f1cd3158b285"]
+    }
+  }
+}
