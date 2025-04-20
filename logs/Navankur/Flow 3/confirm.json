@@ -3,27 +3,25 @@
         "domain": "ONDC:RET10",
         "location": {
             "city": {
-                "code": "std:080"
+                "code": "std:999"
             },
             "country": {
                 "code": "IND"
             }
         },
-        "action": "confirm",
+        "action": "init",
         "version": "2.0.2",
-        "bap_id": "mock.ondc.org/api",
-        "bap_uri": "https://mock.ondc.org/api/retail/bap",
-        "transaction_id": "ae2def16-e21e-4035-85a9-4ba7f1ab4322",
-        "message_id": "29587a28-bd54-4058-bced-5e2100455087",
-        "timestamp": "2025-02-03T06:24:59.292Z",
-        "ttl": "PT30S",
+        "transaction_id": "b0a0e27f-0796-4b17-9f1b-b0da53d94df2",
+        "message_id": "c17cf7f3-c85f-447e-95c6-41a570468a09",
+        "timestamp": "2025-02-19T09:37:38.000Z",
+        "bap_id": "ondc-preprod-b2b-ref.rapidor.co",
+        "bap_uri": "https://ondc-preprod-b2b-ref.rapidor.co/v1/ondc/buyer",
         "bpp_id": "preprod-ondc.khetisauda.com",
-        "bpp_uri": "https://preprod-ondc.khetisauda.com"
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "bbbff51a-7705-4c75-89d9-b42cf6ba4f0d",
-            "state": "Created",
             "provider": {
                 "id": "P9080",
                 "locations": [
@@ -36,174 +34,102 @@
                 {
                     "id": "F1",
                     "type": "Delivery",
-                    "tracking": false,
                     "stops": [
                         {
                             "type": "end",
                             "location": {
-                                "gps": "12.974002,77.613458",
-                                "address": "My House #, My buildin",
+                                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                                "gps": "1.331209,103.946171",
+                                "area_code": "465654",
+                                "state": {
+                                    "name": "Singapore"
+                                },
                                 "city": {
-                                    "name": "Bengaluru"
+                                    "name": "Singapore"
                                 },
                                 "country": {
-                                    "code": "IND"
-                                },
-                                "area_code": "560001",
-                                "state": {
-                                    "name": "Karnataka"
+                                    "code": "SGP"
                                 }
                             },
                             "contact": {
-                                "phone": "9886098860"
+                                "phone": "8016906022"
                             }
-                        }
-                    ]
-                }
-            ],
-            "payments": [
-                {
-                    "type": "PRE-FULFILLMENT",
-                    "collected_by": "BAP",
-                    "uri": "plink_Pmt7akXEt39JKt",
-                    "@ondc/org/buyer_app_finder_fee_type": "percent",
-                    "@ondc/org/buyer_app_finder_fee_amount": "10",
-                    "@ondc/org/settlement_basis": "delivery",
-                    "@ondc/org/settlement_window": "P1D",
-                    "@ondc/org/withholding_amount": "10.00",
-                    "@ondc/org/settlement_details": [
-                        {
-                            "settlement_counterparty": "buyer-app",
-                            "settlement_phase": "sale-amount",
-                            "settlement_type": "upi",
-                            "upi_address": "gft@oksbi",
-                            "settlement_bank_account_no": "XXXXXXXXXX",
-                            "settlement_ifsc_code": "XXXXXXXXX",
-                            "beneficiary_name": "xxxxx",
-                            "bank_name": "xxxx",
-                            "branch_name": "xxxx"
                         }
                     ],
                     "tags": [
                         {
                             "descriptor": {
-                                "code": "BPP_payment"
+                                "code": "DELIVERY_TERMS"
                             },
                             "list": [
                                 {
                                     "descriptor": {
-                                        "code": "signature"
+                                        "code": "INCOTERMS"
                                     },
-                                    "value": "2e95972c2bab4e499e0a62ab60d8856b4b234d57c1e1b8d294357aa929178d9a"
+                                    "value": "CIF"
                                 },
                                 {
                                     "descriptor": {
-                                        "code": "dsa"
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
                                     },
-                                    "value": "sha256"
-                                },
-                                {
-                                    "descriptor": {
-                                        "code": "ttl"
-                                    },
-                                    "value": "PT30M"
+                                    "value": "Singapore "
                                 }
                             ]
                         }
-                    ],
-                    "params": {
-                        "currency": "INR",
-                        "amount": "20000",
-                        "transaction_id": "3937",
-                        "bank_code": "xxxxxxxxx",
-                        "bank_account_number": "xxxxxxxxxxxx"
-                    },
-                    "status": "NOT-PAID"
+                    ]
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "20000"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
-                        "@ondc/org/item_quantity": {
-                            "count": 200
-                        },
-                        "title": "Basmati Rice",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "20000"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "100"
-                            }
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "delivery",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Packing charges",
-                        "@ondc/org/title_type": "packing",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "I1",
-                        "title": "Tax",
-                        "@ondc/org/title_type": "tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "6776841d49c82277c6c4ab8e",
-                        "title": "Discount",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": ""
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Convenience Fee",
-                        "@ondc/org/title_type": "misc",
-                        "price": {
-                            "currency": "INR",
-                            "value": "100"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
             "items": [
                 {
                     "id": "6776841d49c82277c6c4ab8e",
                     "fulfillment_ids": [
-                        "1"
+                        "1",
+                        "2"
                     ],
                     "quantity": {
                         "selected": {
-                            "count": 200
+                            "count": 10
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "PACKAGING_REQ"
+                                    },
+                                    "value": "No special packaging & shipment needed"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM_REQ"
+                                    },
+                                    "value": "na"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "Satyapal",
+                "address": "10, 804, 53 Tanah Merah Kechil Ave, Singapore, Singapore, 465654",
+                "phone": "8016906022",
+                "tax_id": "09AAFCR8735H1ZY",
+                "state": {
+                    "name": "Singapore"
+                },
+                "city": {
+                    "name": "Singapore"
+                }
+            },
+            "payments": [
+                {
+                    "type": "PRE-FULFILLMENT",
+                    "collected_by": "BAP"
                 }
             ],
             "tags": [
@@ -222,76 +148,11 @@
                             "descriptor": {
                                 "code": "buyer_id_no"
                             },
-                            "value": "xxxxxxxxxxxxxxx"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bpp_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "max_liability"
-                            },
-                            "value": "1"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "max_liability_cap"
-                            },
-                            "value": "20000"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "mandatory_arbitration"
-                            },
-                            "value": "true"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "court_jurisdiction"
-                            },
-                            "value": "Jaunpur"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "delay_interest"
-                            },
-                            "value": "0"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "bap_terms"
-                    },
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "accept_bpp_terms"
-                            },
-                            "value": "Y"
+                            "value": "09AAFCR8735H1ZY"
                         }
                     ]
                 }
-            ],
-            "billing": {
-                "name": "ONDC buyer",
-                "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
-                "state": {
-                    "name": "Karnataka"
-                },
-                "city": {
-                    "name": "Bengaluru"
-                },
-                "tax_id": "XXXXXXXXXXXXXXX",
-                "email": "nobody@nomail.com",
-                "phone": "9886098860"
-            },
-            "created_at": "2025-02-03T06:24:59.292Z",
-            "updated_at": "2025-02-03T06:24:59.292Z"
+            ]
         }
     }
 }
