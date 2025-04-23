@@ -1,0 +1,191 @@
+{
+    "context": {
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "preprod-ondc.khetisauda.com",
+        "bpp_uri": "https://preprod-ondc.khetisauda.com",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:0261"
+            }
+        },
+        "transaction_id": "7b04175c-7042-4924-ba99-234f7decf591",
+        "message_id": "43b9fcec-1c39-475d-912d-b57e12dd8849",
+        "timestamp": "2025-03-20T09:57:48.910Z",
+        "domain": "ONDC:RET10",
+        "core_version": "2.0.0",
+        "ttl": "PT30S",
+        "action": "on_issue_status"
+    },
+    "message": {
+        "upated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
+        "issue": {
+            "id": "ISSUE-1",
+            "status": "PROCESSING",
+            "level": "ISSUE",
+            "created_at": "2025-03-18T09:52:41.648Z",
+            "updated_at": "2025-03-20T09:57:48.910Z",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "RAP-0000517",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "6776841d49c82277c6c4ab8e",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ref_id": "P9080",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "7b04175c-7042-4924-ba99-234f7decf591",
+                    "ref_type": "TRANSACTION"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                   "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "preprod-ondc.khetisauda.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "6757575756",
+                            "email": "satyapalgupta38@gmail.com"
+                        },
+                        "person": {
+                            "name": "Satyapal Gupta"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "description": {
+                "code": "ORD001",
+                "short_desc": "Issue with product quality",
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                },
+                "images": [
+                    "http://buyerapp.com/addtional-details/img1.png",
+                    "http://buyerapp.com/addtional-details/img2.png"
+                ]
+            },
+            "last_action_id": "A1",
+            "actions": [
+                {
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "first action from buyer"
+                    },
+                    "actor_details": {
+                        "name": "jennirfer lopez"
+                    },
+                    "id": "A1",
+                    "updated_at": "2025-03-20T09:54:22.091Z",
+                    "action_by": "NP1",
+                    "_id": "67dbe5cefee997cd2aaee835"
+                },
+                {
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "complain is created"
+                    },
+                    "actor_details": {
+                        "name": "Satya Traders"
+                    },
+                    "id": "A2",
+                    "updated_at": "2025-03-20T09:56:10.424Z",
+                    "action_by": "khetisauda.com",
+                    "_id": "67dbe63afee997cd2aaee8c1"
+                },
+                {
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "please provide the product image"
+                    },
+                    "actor_details": {
+                        "name": "Satya Traders"
+                    },
+                    "id": "A3",
+                    "updated_at": "2025-03-20T09:57:48.910Z",
+                    "action_by": "khetisauda.com",
+                    "_id": "67dbe69cfee997cd2aaee8d5"
+                }
+            ]
+        }
+    }
+}
