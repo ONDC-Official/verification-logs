@@ -11,12 +11,12 @@
     },
     "action": "on_search",
     "version": "2.0.0",
-    "timestamp": "2025-03-27T08:21:26.333Z",
+    "timestamp": "2025-04-21T13:08:17.071Z",
     "ttl": "PT30S",
     "bap_id": "onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1",
     "bap_uri": "https://onuat.billdesk.com/ONDC/BAP/BDApp/BDAPPTEST1",
-    "transaction_id": "c54425b3-3d24-496a-b661-d0a49f0dd650",
-    "message_id": "e35d3c07-a9d3-4030-af59-4fc6b55efed8",
+    "transaction_id": "5e2f77c6-ab6f-404e-beaa-44fac54b5164",
+    "message_id": "cf68ee54-44b2-41b6-812e-1494f90156e7",
     "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
     "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
   },
@@ -33,6 +33,28 @@
       "providers": [
         {
           "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+          "categories": [
+            {
+              "id": "C1",
+              "descriptor": {
+                "name": "Travel Pass",
+                "code": "PASS"
+              }
+            },
+            {
+              "id": "C2",
+              "descriptor": {
+                "name": "Ticket",
+                "code": "TICKET"
+              }
+            }
+          ],
+          "time": {
+            "range": {
+              "start": "2025-04-21T05:30:00.000Z",
+              "end": "2025-04-21T23:30:00.000Z"
+            }
+          },
           "descriptor": {
             "name": "ONDC Metro Limited",
             "images": [
@@ -41,6 +63,202 @@
               }
             ]
           },
+          "items": [
+            {
+              "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
+              "category_ids": [
+                "C1"
+              ],
+              "descriptor": {
+                "name": "Journey Pass",
+                "code": "PASS"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "500"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": 10
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "fulfillment_ids": [
+                "cb00c571-c44d-4886-bd79-9f788fd354e1"
+              ],
+              "time": {
+                "label": "Validity",
+                "duration": "PT5M"
+              }
+            },
+            {
+              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+              "category_ids": [
+                "C2"
+              ],
+              "descriptor": {
+                "name": "Single Journey Ticket",
+                "code": "SJT"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "23"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": 10
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "fulfillment_ids": [
+                "d0bf82b3-321f-467f-98fb-280d7e712c62"
+              ],
+              "time": {
+                "label": "Validity",
+                "duration": "PT5M"
+              }
+            },
+            {
+              "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
+              "category_ids": [
+                "C2"
+              ],
+              "descriptor": {
+                "name": "Return Journey Ticket",
+                "code": "RJT"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "46"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": 10
+                },
+                "minimum": {
+                  "count": 1
+                }
+              },
+              "fulfillment_ids": [
+                "d0bf82b3-321f-467f-98fb-280d7e712c62"
+              ],
+              "time": {
+                "label": "Validity",
+                "duration": "PT5M"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "d0bf82b3-321f-467f-98fb-280d7e712c62",
+              "type": "TRIP",
+              "stops": [
+                {
+                  "type": "START",
+                  "location": {
+                    "descriptor": {
+                      "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                      "code": "NBAA"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "1",
+                  "parent_stop_id": null,
+                  "instructions": {
+                    "name": "Stop 1",
+                    "short_desc": null
+                  }
+                },
+                {
+                  "type": "END",
+                  "location": {
+                    "descriptor": {
+                      "name": "HINDON RIVER",
+                      "code": "HDNR"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "2",
+                  "parent_stop_id": "1",
+                  "instructions": {
+                    "name": "Stop 2",
+                    "short_desc": null
+                  }
+                }
+              ],
+              "vehicle": {
+                "category": "METRO"
+              },
+              "tags": null
+            },
+            {
+              "id": "cb00c571-c44d-4886-bd79-9f788fd354e1",
+              "type": "TRIP",
+              "stops": [
+                {
+                  "type": "START",
+                  "location": {
+                    "descriptor": {
+                      "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                      "code": "NBAA"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "1",
+                  "parent_stop_id": null,
+                  "instructions": {
+                    "name": "Stop 1",
+                    "short_desc": null
+                  }
+                },
+                {
+                  "type": "END",
+                  "location": {
+                    "descriptor": {
+                      "name": "HINDON RIVER",
+                      "code": "HDNR"
+                    },
+                    "gps": "28.744676, 77.138332"
+                  },
+                  "id": "2",
+                  "parent_stop_id": "1",
+                  "instructions": {
+                    "name": "Stop 2",
+                    "short_desc": null
+                  }
+                }
+              ],
+              "vehicle": {
+                "category": "METRO"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "TRIP_DETAILS"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "AVAILABLE_TRIPS"
+                      },
+                      "value": "30"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "UTILIZED_TRIPS"
+                      },
+                      "value": "0"
+                    }
+                  ],
+                  "display": false
+                }
+              ]
+            }
+          ],
           "payments": [
             {
               "collected_by": "BAP",
@@ -110,216 +328,6 @@
                   ]
                 }
               ]
-            }
-          ],
-          "time": {
-            "range": {
-              "start": "2025-03-27T05:30:00.000Z",
-              "end": "2025-03-27T23:30:00.000Z"
-            }
-          },
-          "categories": [
-            {
-              "descriptor": {
-                "name": "Travel Pass",
-                "code": "PASS"
-              },
-              "id": "C1"
-            },
-            {
-              "descriptor": {
-                "name": "Ticket",
-                "code": "TICKET"
-              },
-              "id": "C2"
-            }
-          ],
-          "items": [
-            {
-              "id": "f71683e6-38c4-42c7-b7fe-e02e9b9d8389",
-              "category_ids": [
-                "C1"
-              ],
-              "descriptor": {
-                "name": "Journey Pass",
-                "code": "PASS"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "500"
-              },
-              "quantity": {
-                "maximum": {
-                  "count": 10
-                },
-                "minimum": {
-                  "count": 1
-                }
-              },
-              "time": {
-                "label": "Validity",
-                "duration": "PT5M"
-              },
-              "fulfillment_ids": [
-                "d10d8502-4db0-4e91-a411-cc91f019f714"
-              ]
-            },
-            {
-              "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
-              "category_ids": [
-                "C2"
-              ],
-              "descriptor": {
-                "name": "Single Journey Ticket",
-                "code": "SJT"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "23"
-              },
-              "quantity": {
-                "maximum": {
-                  "count": 10
-                },
-                "minimum": {
-                  "count": 1
-                }
-              },
-              "time": {
-                "label": "Validity",
-                "duration": "PT5M"
-              },
-              "fulfillment_ids": [
-                "404acad7-9aba-4663-b8cd-f0550bac5e85"
-              ]
-            },
-            {
-              "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
-              "category_ids": [
-                "C2"
-              ],
-              "descriptor": {
-                "name": "Return Journey Ticket",
-                "code": "RJT"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "46"
-              },
-              "quantity": {
-                "maximum": {
-                  "count": 10
-                },
-                "minimum": {
-                  "count": 1
-                }
-              },
-              "time": {
-                "label": "Validity",
-                "duration": "PT5M"
-              },
-              "fulfillment_ids": [
-                "404acad7-9aba-4663-b8cd-f0550bac5e85"
-              ]
-            }
-          ],
-          "fulfillments": [
-            {
-              "id": "404acad7-9aba-4663-b8cd-f0550bac5e85",
-              "type": "TRIP",
-              "stops": [
-                {
-                  "type": "START",
-                  "instructions": {
-                    "name": "Stop 1"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "SHAHEED STHAL ( NEW BUS ADDA)",
-                      "code": "NBAA"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "1"
-                },
-                {
-                  "type": "END",
-                  "instructions": {
-                    "name": "Stop 2"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "HINDON RIVER",
-                      "code": "HDNR"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "2",
-                  "parent_stop_id": "1"
-                }
-              ],
-              "vehicle": {
-                "category": "METRO"
-              }
-            },
-            {
-              "id": "d10d8502-4db0-4e91-a411-cc91f019f714",
-              "type": "TRIP",
-              "stops": [
-                {
-                  "type": "START",
-                  "instructions": {
-                    "name": "Stop 1"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "SHAHEED STHAL ( NEW BUS ADDA)",
-                      "code": "NBAA"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "1"
-                },
-                {
-                  "type": "END",
-                  "instructions": {
-                    "name": "Stop 2"
-                  },
-                  "location": {
-                    "descriptor": {
-                      "name": "HINDON RIVER",
-                      "code": "HDNR"
-                    },
-                    "gps": "28.744676, 77.138332"
-                  },
-                  "id": "2",
-                  "parent_stop_id": "1"
-                }
-              ],
-              "tags": [
-                {
-                  "descriptor": {
-                    "code": "TRIP_DETAILS"
-                  },
-                  "list": [
-                    {
-                      "descriptor": {
-                        "code": "AVAILABLE_TRIPS"
-                      },
-                      "value": "30"
-                    },
-                    {
-                      "descriptor": {
-                        "code": "UTILIZED_TRIPS"
-                      },
-                      "value": "0"
-                    }
-                  ]
-                }
-              ],
-              "vehicle": {
-                "category": "METRO"
-              }
             }
           ],
           "tags": [
