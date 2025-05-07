@@ -1,0 +1,147 @@
+{
+  "context": {
+    "action": "on_search",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "staging-mobility-ondc.baayu.app",
+    "bpp_uri": "https://staging-mobility-ondc.baayu.app/seller",
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:0361"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "dba62cc6-9136-4f77-8986-caa61c2f6c3f",
+    "timestamp": "2025-01-13T08:07:01.315Z",
+    "transaction_id": "da3fc51f-72cf-41f7-9417-4ddd6220c9c4",
+    "ttl": "PT30M",
+    "version": "2.0.1"
+  },
+  "message": {
+    "catalog": {
+      "descriptor": {
+        "name": "Panda Ride Hailing"
+      },
+      "providers": [
+        {
+          "fulfillments": [
+            {
+              "id": "e5599fb0-4cd3-41cd-b074-de9cfbe2eafe",
+              "stops": [
+                {
+                  "location": {
+                    "gps": "24.771200,93.935400"
+                  },
+                  "type": "END"
+                },
+                {
+                  "location": {
+                    "gps": "24.778400,93.936500"
+                  },
+                  "type": "START"
+                }
+              ],
+              "type": "DELIVERY",
+              "vehicle": {
+                "category": "TWO_WHEELER",
+                "energy_type": "ELECTRIC",
+                "variant": "TWO_WHEELER"
+              }
+            }
+          ],
+          "id": "Baayu",
+          "items": [
+            {
+              "descriptor": {
+                "code": "RIDE",
+                "name": "Bike Taxi"
+              },
+              "fulfillment_ids": [
+                "e5599fb0-4cd3-41cd-b074-de9cfbe2eafe"
+              ],
+              "id": "663484504ba1d9a3c08f5afb",
+              "price": {
+                "currency": "INR",
+                "value": "24.85"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "COURT_JURISDICTION"
+                      },
+                      "value": "Guwahati"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "2.5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MANDATORY_ARBITRATION"
+                      },
+                      "value": "true"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "DELIVERY"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_TYPE"
+                      },
+                      "value": "UPI"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "P60M"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://api.example-bap.com/booking/terms"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
