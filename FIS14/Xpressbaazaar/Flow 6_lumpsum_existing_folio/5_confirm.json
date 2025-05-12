@@ -1,0 +1,166 @@
+{
+  "context": {
+    "domain": "ONDC:FIS14",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "version": "2.0.0",
+    "action": "confirm",
+    "transaction_id": "cfaed900-9409-4922-89b0-6c3a115b36a0",
+    "message_id": "ca0c9d76-755c-4680-b15a-0ccced25089b",
+    "timestamp": "2025-04-16T07:03:00.705Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT10M",
+    "bpp_id": "preprod.xpressbaazaar.com",
+    "bpp_uri": "https://preprod.xpressbaazaar.com/investment"
+  },
+  "message": {
+    "order": {
+      "id": "thOMv-f69ce3e9-d189-498d-b4c2-81cb8ee9b211",
+      "provider": {
+        "id": "xyz_mf"
+      },
+      "items": [
+        {
+          "id": "a6e64494-b941-4aa8-b504-95a84cdae5d2",
+          "quantity": {
+            "selected": {
+              "measure": {
+                "value": "3000",
+                "unit": "INR"
+              }
+            }
+          },
+          "fulfillment_ids": ["8f4d2eb3-551a-480f-80c8-3d713b4840c9"],
+          "payment_ids": ["pmt_-88a6f508-384c-4813-b57a-91373e86420a"]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "8f4d2eb3-551a-480f-80c8-3d713b4840c9",
+          "type": "LUMPSUM",
+          "agent": {
+            "organization": {
+              "creds": [
+                {
+                  "id": "ARN-6666",
+                  "type": "ARN"
+                },
+                {
+                  "type": "SUB_BROKER_ARN",
+                  "id": "ARN-9790"
+                }
+              ]
+            },
+            "person": {
+              "id": "EUIN-9790"
+            }
+          },
+          "customer": {
+            "person": {
+              "id": "ICRPW1232K",
+              "creds": [
+                {
+                  "id": "115.245.207.90",
+                  "type": "IP_ADDRESS"
+                },
+                {
+                  "id": "9799",
+                  "type": "FOLIO"
+                }
+              ]
+            },
+            "contact": {
+              "phone": "8887579999"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "display": false,
+          "descriptor": {
+            "name": "BPP Terms of Engagement",
+            "code": "BPP_TERMS"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "name": "Static Terms (Transaction Level)",
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://preprod.xpressbaazaar.com/legal/ondc:fis14/static_terms?v=0.1"
+            },
+            {
+              "descriptor": {
+                "name": "Offline Contract",
+                "code": "OFFLINE_CONTRACT"
+              },
+              "value": "true"
+            }
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "amount": "3000",
+            "currency": "INR",
+            "source_bank_code": "123",
+            "source_bank_account_number": "1234567812345678",
+            "source_bank_account_name": "Shubhankar Agarwal"
+          },
+          "type": "PRE_FULFILLMENT",
+          "tags": [
+            {
+              "descriptor": {
+                "name": "Payment Method",
+                "code": "PAYMENT_METHOD"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MODE"
+                  },
+                  "value": "MANDATE_REGISTRATION"
+                }
+              ]
+            }
+          ],
+          "id": "pmt_-88a6f508-384c-4813-b57a-91373e86420a",
+          "status": "NOT-PAID"
+        }
+      ]
+    }
+  }
+}
