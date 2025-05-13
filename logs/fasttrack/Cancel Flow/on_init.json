@@ -9,15 +9,15 @@
             }
           },
           "domain": "ONDC:TRV11",
-          "action": "on_cancel",
+          "action": "on_init",
           "version": "2.0.0",
           "bap_id": "preprod.ftdev.in",
           "bap_uri": "https://preprod.ftdev.in/metro/v1/",
           "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
           "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
           "transaction_id": "27e972d7-9e53-46b6-a985-60e73b40c2c9",
-          "message_id": "6517238d-3eb9-4991-b6e9-1e2134cab094",
-          "timestamp": "2025-05-13T07:05:26.500Z",
+          "message_id": "405733e1-eb03-4c0c-a5c6-89d24829eceb",
+          "timestamp": "2025-05-13T07:03:06.104Z",
           "ttl": "PT10M"
         },
         "message": {
@@ -368,7 +368,7 @@
             "quote": {
               "price": {
                 "currency": "INR",
-                "value": "10"
+                "value": "105.00"
               },
               "breakup": [
                 {
@@ -388,32 +388,6 @@
                   "price": {
                     "currency": "INR",
                     "value": "105"
-                  }
-                },
-                {
-                  "title": "REFUND",
-                  "item": {
-                    "id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
-                    "price": {
-                      "currency": "INR",
-                      "value": "-35"
-                    },
-                    "quantity": {
-                      "selected": {
-                        "count": 3
-                      }
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "-105"
-                  }
-                },
-                {
-                  "title": "CANCELLATION_CHARGES",
-                  "price": {
-                    "currency": "INR",
-                    "value": "10"
                   }
                 }
               ]
@@ -449,18 +423,10 @@
             },
             "payments": [
               {
-                "id": "64394089",
+                "id": "37385c77-0772-4ddf-9b4d-2483b746570e",
                 "collected_by": "BAP",
-                "status": "PAID",
+                "status": "NOT-PAID",
                 "type": "PRE-ORDER",
-                "params": {
-                  "transaction_id": "TRV1120250513947766",
-                  "currency": "INR",
-                  "amount": "105.00",
-                  "bank_code": "SBI5448270",
-                  "bank_account_number": "562391273445",
-                  "virtual_payment_address": "8667777799@oksbi"
-                },
                 "tags": [
                   {
                     "descriptor": {
@@ -492,19 +458,13 @@
                         "descriptor": {
                           "code": "SETTLEMENT_WINDOW"
                         },
-                        "value": "P1D"
+                        "value": "P30D"
                       },
                       {
                         "descriptor": {
                           "code": "SETTLEMENT_BASIS"
                         },
-                        "value": "Delivery"
-                      },
-                      {
-                        "descriptor": {
-                          "code": "SETTLEMENT_TYPE"
-                        },
-                        "value": "UPI"
+                        "value": "INVOICE_RECEIPT"
                       },
                       {
                         "descriptor": {
@@ -520,33 +480,38 @@
                       },
                       {
                         "descriptor": {
+                          "code": "STATIC_TERMS"
+                        },
+                        "value": "https://api.example-bpp.com/booking/terms"
+                      },
+                      {
+                        "descriptor": {
                           "code": "DELAY_INTEREST"
                         },
                         "value": "3"
                       },
                       {
                         "descriptor": {
-                          "code": "STATIC_TERMS"
+                          "code": "SETTLEMENT_TYPE"
                         },
-                        "value": "https://api.example-bap.com/booking/terms"
+                        "value": "UPI"
                       },
                       {
                         "descriptor": {
                           "code": "SETTLEMENT_AMOUNT"
                         },
-                        "value": "10"
+                        "value": "102.9"
                       }
                     ]
                   }
-                ]
+                ],
+                "params": {
+                  "bank_code": "SBI5448270",
+                  "bank_account_number": "562391273445",
+                  "virtual_payment_address": "8667777799@oksbi"
+                }
               }
-            ],
-            "id": "06ff8878-64c8-4cd4-9a91-aa545bd5ea65",
-            "status": "CANCELLED",
-            "cancellation": {
-              "cancelled_by": "CONSUMER",
-              "time": "2025-05-13T07:05:26.500Z"
-            }
+            ]
           }
         }
       }
