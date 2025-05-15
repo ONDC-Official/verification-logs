@@ -1,31 +1,31 @@
 {
   "context": {
-    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
-    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "bpp_id": "ondc.vistar.solutions",
+    "domain": "ONDC:FIS10",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "action": "on_issue",
     "bpp_uri": "https://ondc.vistar.solutions/v1/bpp",
-    "location": {
-      "country": {
-        "code": "IND"
-      },
-      "city": {
-        "code": "*"
-      }
-    },
-    "transaction_id": "txn_id_1001_10020",
-    "message_id": "95c0e2bb-f877-42b9-8407-4f2e179ea7e2",
-    "timestamp": "2025-04-26T13:57:30.643Z",
-    "domain": "ONDC:RET10",
-    "core_version": "2.0.0",
-    "ttl": "PT30S",
-    "action": "on_issue"
+    "bpp_id": "ondc.vistar.solutions",
+    "version": "2.0.0",
+    "message_id": "msg_id",
+    "timestamp": "2025-05-15T10:39:52.184Z",
+    "transaction_id": "issue_resubmission_2",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc"
   },
+
   "message": {
-    "updated_target": [{ "path": "issue.actions", "action": "APPENDED" }],
+    "upated_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
     "issue": {
-      "id": "ISSUE-1",
-      "level": "GRIEVANCE",
-      "status": "PROCESSING",
+      "id": "ISSUE-2",
+      "status": "RESOLVED",
+      "level": "ISSUE",
+      "created_at": "2025-05-15T09:41:48.176Z",
+      "updated_at": "2025-05-15T10:48:48.817Z",
       "expected_response_time": {
         "duration": "PT2H"
       },
@@ -34,90 +34,81 @@
       },
       "refs": [
         {
-          "ref_id": "12312331313131233",
+          "ref_id": "order_2",
           "ref_type": "ORDER"
         },
         {
-          "ref_id": "23123131",
-          "ref_type": "ITEM",
           "tags": [
             {
-              "descriptor": {
-                "code": "message.order.items"
-              },
               "list": [
                 {
+                  "value": "2",
                   "descriptor": {
                     "code": "quantity.selected.count"
-                  },
-                  "value": "2"
+                  }
                 }
-              ]
+              ],
+              "descriptor": {
+                "code": "message.order.items"
+              }
             }
-          ]
+          ],
+          "ref_id": "item_2",
+          "ref_type": "ITEM"
         },
         {
-          "ref_id": "331313",
-          "ref_type": "PROVIDER"
-        },
-        {
-          "ref_id": "12313123",
+          "ref_id": "ful_2",
           "ref_type": "FULFILMENT"
-        },
-        {
-          "ref_id": "1233123213123",
-          "ref_type": "TRANSACTION"
         }
       ],
-      "actors": [
+      "actor_info": [
         {
           "id": "CUST1",
-          "type": "CONSUMER",
           "info": {
-            "org": { "name": "buyerapp.com::ONDC:RET10" },
-            "person": { "name": "Sam Manuel" },
-            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" }
-          }
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "email": "sam@yahoo.com",
+              "phone": "9879879870"
+            }
+          },
+          "type": "CONSUMER"
         },
         {
           "id": "NP1",
-          "type": "INTERFACING_NP",
           "info": {
-            "org": { "name": "ondc.vistar.solutions::ONDC:RET10" },
-            "contact": {
-              "phone": "9450394039",
-              "email": "buyerapp@interface.com"
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
             },
-            "person": { "name": "John Doe" }
-          }
+            "person": {
+              "name": "John Doe"
+            },
+            "contact": {
+              "email": "buyerapp@interface.com",
+              "phone": "9450394039"
+            }
+          },
+          "type": "INTERFACING_NP"
         },
         {
           "id": "NP2",
-          "type": "COUNTERPARTY_NP",
           "info": {
             "org": {
-              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+              "name": "ondc.vistar.solutions::ONDC:FIS10"
+            },
+            "person": {
+              "name": "Vivek Bansal"
             },
             "contact": {
-              "phone": "9450394140",
-              "email": "support@vistar.solutions"
-            },
-            "person": { "name": "Jane Doe" }
-          }
-        },
-        {
-          "id": "NP3",
-          "type": "COUNTERPARTY_NP_GRO",
-          "info": {
-            "org": {
-              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
-            },
-            "contact": {
-              "phone": "9450394140",
-              "email": "support@vistar.solutions"
-            },
-            "person": { "name": "Jane Doe" }
-          }
+              "email": "vivek@vistar.solutions",
+              "phone": "9967971282"
+            }
+          },
+          "type": "TRANSACTION-COUNTERPARTY-NP"
         }
       ],
       "source_id": "CUST1",
@@ -125,237 +116,379 @@
       "respondent_ids": ["NP2"],
       "description": {
         "code": "ORD001",
-        "short_desc": "Issue with product quality",
+        "images": [
+          {
+            "url": "http://buyerapp.com/addtional-details/img1.png"
+          }
+        ],
         "long_desc": "Product quality is not correct. facing issues while using the product",
+        "short_desc": "Issue with product quality",
         "additional_desc": {
           "url": "https://buyerapp.com/additonal-details/desc.txt",
           "content_type": "text/plain"
-        },
-        "images": [
-          {
-            "url": "https://images.unsplash.com/photo-1593941707882-a56bbc8df8c9?q=80&w=2072&auto=format&fit=crop",
-            "size_type": "xs"
-          }
-        ]
+        }
       },
-      "last_action_id": "A11",
-      "actions": [
+      "last_action_id": "ca0bd1a6-b844-45bc-a42e-63c41dab8167",
+      "action": [
         {
-          "id": "action_id",
-          "description": { "code": "OPEN", "short_desc": "OPEN" },
-          "updated_at": "2025-04-26T09:36:35.011Z",
+          "id": "A1",
           "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" }
+          "updated_at": "2025-05-15T09:41:47.784Z",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "OPEN"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "6cdc18cb-55f8-47b8-baf3-ca1b166a92c1",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T09:41:48.176Z",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
+        },
+        {
+          "id": "499b1caf-f22d-45e8-91a1-ff15711d2a11",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T09:44:01.873Z",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO001",
+            "short_desc": "Please provide product images"
+          },
+          "actor_details": {
+            "name": "Jane Doe"
+          }
         },
         {
           "id": "A2",
-          "description": {
-            "code": "PROCESSING",
-            "short_desc": "Complaint under review"
-          },
-          "updated_at": "2025-04-26T12:16:57.133Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
-        },
-        {
-          "id": "A3",
-          "description": {
-            "code": "RESOLUTION_PROPOSED",
-            "short_desc": "Return option provided"
-          },
-          "updated_at": "2025-04-26T12:20:00.000Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
-        },
-        {
-          "id": "A4",
-          "description": {
-            "code": "RESOLUTION_REJECTED",
-            "short_desc": "Resolution Not Accepted By Buyer App"
-          },
-          "updated_at": "2025-04-26T13:36:06.421Z",
           "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" }
-        },
-        {
-          "id": "A5",
+          "updated_at": "2025-05-15T09:45:57.434Z",
           "description": {
-            "code": "PROCESSING",
-            "short_desc": "Processing the complaint information"
+            "code": "INFO_PROVIDED",
+            "images": [
+              {
+                "url": "https://placedog.net/300/500"
+              }
+            ],
+            "short_desc": "images"
           },
-          "updated_at": "2025-04-26T13:40:00.000Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
-        },
-        {
-          "id": "A6",
-          "description": {
-            "code": "RESOLUTION_PROPOSED",
-            "short_desc": "New Resulutions Provided"
-          },
-          "updated_at": "2025-04-26T13:48:54.483Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
-        },
-        {
-          "id": "A7",
-          "description": {
-            "code": "RESOLUTION_REJECTED",
-            "short_desc": "Escalated to GRO"
-          },
-          "updated_at": "2025-04-26T13:54:05.882Z",
-          "action_by": "NP1",
           "actor_details": {
             "name": "Sam Manuel"
-          },
-          "ref_id": "R2",
-          "ref_type": "RESOLUTIONS"
-        },
-        {
-          "id": "A8",
-          "description": {
-            "code": "PROCESSING",
-            "short_desc": "Processing the complaint information"
-          },
-          "updated_at": "2025-04-26T13:55:12.343Z",
-          "action_by": "NP2",
-          "actor_details": {
-            "name": "Jane Doe"
           }
         },
         {
-          "id": "A9",
+          "id": "a409f7d2-0314-49b5-aabb-c8997ecea08c",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T09:45:57.623Z",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing issue"
+          },
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
+        },
+        {
+          "id": "825ff679-6dff-46a8-8d8f-e1f08566807a",
+          "ref_id": "e8ab4c47-f08b-4094-b0a3-7b00b1909ba6",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T10:12:18.808Z",
           "description": {
             "code": "RESOLUTION_PROPOSED",
-            "short_desc": "Providing replacement for the item"
+            "short_desc": "RESOLUTION_PROPOSED"
           },
-          "updated_at": "2025-04-26T13:56:10.643Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
         },
         {
-          "id": "A10",
-          "description": {
-            "code": "RESOLUTION_ACCEPTED",
-            "short_desc": "Resulation Accepted"
-          },
-          "updated_at": "2025-04-26T13:57:10.643Z",
+          "id": "A3",
           "action_by": "NP1",
+          "updated_at": "2025-05-15T10:13:13.964Z",
+          "description": {
+            "code": "RESOLUTION_REJECTED",
+            "images": [
+              {
+                "url": "https://placedog.net/300/500"
+              }
+            ],
+            "short_desc": "images"
+          },
           "actor_details": {
             "name": "Sam Manuel"
-          },
-          "ref_id": "R2",
-          "ref_type": "RESOLUTIONS"
+          }
         },
         {
-          "id": "A11",
+          "id": "555ec155-c433-4590-97b3-27e943083089",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T10:13:14.171Z",
           "description": {
-            "code": "RESOLVED",
-            "short_desc": "Complaint resolved."
+            "code": "PROCESSING",
+            "short_desc": "Processing issue"
           },
-          "updated_at": "2025-04-26T13:57:30.643Z",
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
+        },
+        {
+          "id": "A4",
+          "action_by": "NP1",
+          "updated_at": "2025-05-15T10:14:43.406Z",
+          "description": {
+            "code": "ESCALATED",
+            "images": [
+              {
+                "url": "https://placedog.net/300/500"
+              }
+            ],
+            "short_desc": "images"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "2aa6bc4c-bfa1-4dc4-82c8-b7ed54c3003e",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T10:14:43.523Z",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing issue"
+          },
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
+        },
+        {
+          "id": "29766cb1-f9f2-439e-8d9e-140608a469ee",
+          "ref_id": "ba3ca0c3-4171-4f19-b32b-f2ed91b71dff",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T10:38:42.007Z",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "RESOLUTION_PROPOSED"
+          },
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
+        },
+        {
+          "id": "A5",
+          "ref_id": "e971186c-836b-4e60-84a9-1cf3a8f42f0b",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "NP1",
+          "updated_at": "2025-05-15T10:39:51.936Z",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "images": [
+              {
+                "url": "https://placedog.net/300/500"
+              }
+            ],
+            "short_desc": "images"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "ca0bd1a6-b844-45bc-a42e-63c41dab8167",
+          "ref_id": {
+            "id": "e971186c-836b-4e60-84a9-1cf3a8f42f0b",
+            "tags": [
+              {
+                "list": [
+                  {
+                    "value": "item_2",
+                    "descriptor": {
+                      "code": "ITEM"
+                    }
+                  },
+                  {
+                    "descriptor": {
+                      "code": "REFUND"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "code": "RESOLUTION_DETAILS"
+                }
+              }
+            ],
+            "ref_id": "ba3ca0c3-4171-4f19-b32b-f2ed91b71dff",
+            "ref_type": "PARENT",
+            "descriptor": {
+              "code": "REFUND",
+              "short_desc": "Providing REFUND for the item"
+            },
+            "updated_at": "2025-05-15T10:38:42.007Z",
+            "proposed_by": "NP2"
+          },
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLVED",
+            "name": "REFUND",
+            "short_desc": "Providing REFUND"
+          },
+          "updated_at": "2025-05-15T10:48:48.817Z",
           "action_by": "NP2",
           "actor_details": {
-            "name": "Jane Doe"
-          },
-          "ref_id": "R2",
-          "ref_type": "RESOLUTIONS"
+            "name": "Vivek Bansal"
+          }
         }
       ],
-      "created_at": "2025-04-24T12:16:27.376Z",
-      "updated_at": "2025-04-26T13:57:30.643Z",
       "resolutions": [
         {
-          "id": "R1",
+          "id": "e8ab4c47-f08b-4094-b0a3-7b00b1909ba6",
           "descriptor": {
-            "code": "RETURN",
-            "short_desc": "Providing Return for this Item"
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
           },
-          "updated_at": "2025-04-26T12:20:00.000Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "RESOLUTION_DETAILS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "ITEM"
-                  },
-                  "value": "23123131"
-                },
-                {
-                  "descriptor": {
-                    "code": "RETURN_PROCESS"
-                  },
-                  "value": "PICKUP_SCHEDULED"
-                }
-              ]
-            }
-          ]
+          "updated_at": "2025-05-15T10:12:18.808Z",
+          "proposed_by": "NP2"
         },
         {
-          "id": "R2",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": {
-            "code": "REPLACEMENT",
-            "short_desc": "Providing replacement for the item"
-          },
-          "updated_at": "2025-04-26T13:48:54.483Z",
-          "proposed_by": "NP2",
+          "id": "c426b471-ddec-4ca6-b61f-4ea534ed9cf1",
           "tags": [
             {
-              "descriptor": {
-                "code": "RESOLUTION_DETAILS"
-              },
               "list": [
                 {
+                  "value": "item_2",
                   "descriptor": {
                     "code": "ITEM"
-                  },
-                  "value": "I1"
-                },
-                {
-                  "descriptor": {
-                    "code": "REPLACEMENT"
                   }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "R3",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": {
-            "code": "REFUND",
-            "short_desc": "Providing refund for the item"
-          },
-          "updated_at": "2025-04-26T13:48:54.483Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": {
-                "code": "RESOLUTION_DETAILS"
-              },
-              "list": [
-                {
-                  "descriptor": {
-                    "code": "ITEM"
-                  },
-                  "value": "I1"
                 },
                 {
                   "descriptor": {
                     "code": "REFUND"
                   }
                 }
-              ]
+              ],
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              }
             }
-          ]
+          ],
+          "ref_id": "e8ab4c47-f08b-4094-b0a3-7b00b1909ba6",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing REFUND for the item"
+          },
+          "updated_at": "2025-05-15T10:12:18.808Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "adb5d9f4-635b-4f09-91da-7af3a127e6f4",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "item_2",
+                  "descriptor": {
+                    "code": "ITEM"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "REPLACEMENT"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              }
+            }
+          ],
+          "ref_id": "e8ab4c47-f08b-4094-b0a3-7b00b1909ba6",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing REPLACEMENT for the item"
+          },
+          "updated_at": "2025-05-15T10:12:18.808Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "ba3ca0c3-4171-4f19-b32b-f2ed91b71dff",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2025-05-15T10:38:42.007Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "e971186c-836b-4e60-84a9-1cf3a8f42f0b",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "item_2",
+                  "descriptor": {
+                    "code": "ITEM"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              }
+            }
+          ],
+          "ref_id": "ba3ca0c3-4171-4f19-b32b-f2ed91b71dff",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing REFUND for the item"
+          },
+          "updated_at": "2025-05-15T10:38:42.007Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "9b616545-7b35-47bd-a42b-c5e276f1e8f9",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "item_2",
+                  "descriptor": {
+                    "code": "ITEM"
+                  }
+                },
+                {
+                  "descriptor": {
+                    "code": "REPLACEMENT"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              }
+            }
+          ],
+          "ref_id": "ba3ca0c3-4171-4f19-b32b-f2ed91b71dff",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing REPLACEMENT for the item"
+          },
+          "updated_at": "2025-05-15T10:38:42.007Z",
+          "proposed_by": "NP2"
         }
       ]
     }

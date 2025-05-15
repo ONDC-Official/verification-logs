@@ -5,80 +5,34 @@
     "bpp_id": "ondc.vistar.solutions",
     "bpp_uri": "https://ondc.vistar.solutions/v1/bpp",
     "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
-    "transaction_id": "txn_id_1001_10015",
-    "message_id": "77272b45-c06c-48ab-a1c1-5d45e1c5c553",
-    "timestamp": "2025-04-26T10:30:42.237Z",
+    "transaction_id": "txn_id_correct8",
+    "message_id": "msg_id",
+    "timestamp": "2025-05-15T08:03:32.083Z",
     "domain": "ONDC:FIS10",
     "version": "2.0.0",
-    "ttl": "PT30S",
+    "ttl": "PT10M",
     "action": "issue"
   },
   "message": {
     "issue": {
-      "id": "ISSUE-1",
+      "id": "issue_resubmission_1",
       "level": "ISSUE",
       "status": "OPEN",
       "expected_response_time": { "duration": "PT2H" },
       "expected_resolution_time": { "duration": "P1D" },
       "refs": [
-        { "ref_id": "423432423", "ref_type": "ORDER" },
+        { "ref_id": "order_id", "ref_type": "ORDER" },
         {
-          "ref_id": "423432423",
+          "ref_id": "item_id",
           "ref_type": "ITEM",
           "tags": [
             {
               "descriptor": { "code": "message.order.items" },
-              "list": [
-                {
-                  "descriptor": { "code": "quantity.selected.count" },
-                  "value": "2"
-                }
-              ]
+              "list": [{ "descriptor": { "code": "quantity.selected.count" }, "value": "2" }]
             }
           ]
         },
-        { "ref_id": "4234234234", "ref_type": "PROVIDER" },
-        { "ref_id": "32424", "ref_type": "FULFILMENT" },
-        { "ref_id": "324234234", "ref_type": "TRANSACTION" }
-      ],
-      "actors": [
-        {
-          "id": "CUST1",
-          "type": "CONSUMER",
-          "info": {
-            "org": {
-              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:FIS10"
-            },
-            "person": { "name": "Sam Manuel" },
-            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" }
-          }
-        },
-        {
-          "id": "NP1",
-          "type": "INTERFACING_NP",
-          "info": {
-            "org": {
-              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:FIS10"
-            },
-            "contact": {
-              "phone": "9450394039",
-              "email": "buyerapp@interface.com"
-            },
-            "person": { "name": "John Doe" }
-          }
-        },
-        {
-          "id": "NP2",
-          "type": "COUNTERPARTY_NP",
-          "info": {
-            "org": { "name": "ondc.vistar.solutions::ONDC:FIS10" },
-            "contact": {
-              "phone": "9450394140",
-              "email": "support@vistar.solutions"
-            },
-            "person": { "name": "Jane Doe" }
-          }
-        }
+        { "ref_id": "Ful_id", "ref_type": "FULFILMENT" }
       ],
       "source_id": "CUST1",
       "complainant_id": "NP1",
@@ -86,155 +40,139 @@
         "code": "ORD001",
         "short_desc": "Issue with product quality",
         "long_desc": "Product quality is not correct. facing issues while using the product",
-        "additional_desc": {
-          "url": "https://buyerapp.com/additonal-details/desc.txt",
-          "content_type": "text/plain"
-        },
-        "images": [
-          {
-            "url": "http://buyerapp.com/addtional-details/img1.png",
-            "size_type": "xs"
-          }
-        ]
+        "additional_desc": { "url": "https://buyerapp.com/additonal-details/desc.txt", "content_type": "text/plain" },
+        "images": [{ "url": "http://buyerapp.com/addtional-details/img1.png" }]
       },
-      "last_action_id": "A5_1",
+      "last_action_id": "action_id3",
       "actions": [
         {
-          "id": "A1",
+          "id": "action_id",
+          "action_by": "NP1",
+          "updated_at": "2025-05-15T06:19:47.557Z",
           "description": {
             "code": "OPEN",
-            "name": "OPEN001",
-            "short_desc": "Complaint registered"
+            "short_desc": "OPEN"
           },
-          "updated_at": "2025-04-26T09:36:00.000Z",
-          "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
         },
         {
-          "id": "A2",
+          "id": "c77b5ccc-b08c-4681-abd1-d3d0db7607d6",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T06:19:47.697Z",
           "description": {
             "code": "PROCESSING",
-            "name": "PROCESS001",
-            "short_desc": "Complaint under review"
+            "short_desc": "Complaint created"
           },
-          "updated_at": "2025-04-26T09:50:00.000Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
         },
         {
-          "id": "A3_1",
+          "id": "2ef2dc94-feb9-4759-8a65-526936db3405",
+          "action_by": "NP2",
+          "updated_at": "2025-05-15T06:33:42.171Z",
           "description": {
             "code": "INFO_REQUESTED",
             "name": "INFO001",
             "short_desc": "Please provide product images"
           },
-          "updated_at": "2025-04-26T10:00:00.469Z",
-          "action_by": "NP2",
-          "actor_details": { "name": "Jane Doe" }
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
         },
         {
-          "id": "action_id",
+          "id": "action_id2",
+          "action_by": "NP1",
+          "updated_at": "2025-05-15T06:38:00.893Z",
           "description": {
-            "code": "OPEN",
-            "short_desc": "Info provided from buyer app",
+            "code": "INFO_PROVIDED",
             "images": [
               {
-                "url": "https://placehold.co/600x400"
+                "url": "https://placedog.net/300/500"
               }
-            ]
+            ],
+            "short_desc": "OPEN"
           },
-          "updated_at": "2025-04-26T10:01:45.182Z",
-          "action_by": "NP1",
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
         },
         {
-          "id": "A5",
+          "id": "36d38784-57ab-4038-9ab0-564ba0b6b929",
           "description": {
             "code": "PROCESSING",
-            "short_desc": "Seller app processing the info"
+            "short_desc": "Complaint created"
           },
-          "updated_at": "2025-04-26T10:02:30.000Z",
+          "updated_at": "2025-05-15T01:38:00.894Z",
           "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": {
+            "name": "Vivek Bansal"
+          }
         },
         {
-          "id": "A6",
-          "ref_id": "R_PARENT",
+          "id": "b7ad86e9-6802-4e54-8ad1-868f66985e2f",
+          "ref_id": "517a6d34-28b2-4bbc-a820-e7bd42d07f75",
           "ref_type": "RESOLUTIONS",
-          "description": {
-            "code": "RESOLUTION_PROPOSED",
-            "short_desc": "RESOLUTION_PROPOSED"
-          },
-          "updated_at": "2025-04-26T10:15:00.469Z",
+          "description": { "code": "RESOLUTION_PROPOSED", "short_desc": "RESOLUTION_PROPOSED" },
+          "updated_at": "2025-05-15T07:39:35.665Z",
           "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": { "name": "Vivek Bansal" }
         },
         {
-          "id": "A5_1",
+          "id": "action_id3",
           "description": {
             "code": "RESOLUTION_ACCEPTED",
-            "short_desc": "RESOLUTION_ACCEPTED",
-            "images": [{ "url": "https://placehold.co/600x400" }]
+            "short_desc": "OPEN",
+            "images": [{ "url": "https://placedog.net/300/500" }]
           },
-          "updated_at": "2025-04-26T10:30:42.233Z",
+          "updated_at": "2025-05-15T07:48:49.997Z",
           "action_by": "NP1",
           "actor_details": { "name": "Sam Manuel" },
-          "ref_id": "R2",
+          "ref_id": "3c70443c-116d-4b4c-b7d0-7415887eb6e4",
           "ref_type": "RESOLUTIONS"
         }
       ],
-      "created_at": "2025-04-24T09:35:56.194Z",
-      "updated_at": "2025-04-26T05:30:42.238Z",
+      "created_at": "2025-05-13T06:19:16.570Z",
+      "updated_at": "2025-05-15T03:03:32.083Z",
       "resolutions": [
-        {
-          "id": "R_PARENT",
-          "descriptor": {
-            "code": "PARENT",
-            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+        [
+          {
+            "id": "517a6d34-28b2-4bbc-a820-e7bd42d07f75",
+            "descriptor": { "code": "PARENT", "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE" },
+            "updated_at": "2025-05-15T07:39:35.665Z",
+            "proposed_by": "NP2"
           },
-          "updated_at": "2025-04-26T10:14:00.000Z",
-          "proposed_by": "NP2"
-        },
-        {
-          "id": "R1",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": {
-            "code": "REFUND",
-            "short_desc": "Providing refund for the item"
+          {
+            "id": "3c70443c-116d-4b4c-b7d0-7415887eb6e4",
+            "ref_id": "517a6d34-28b2-4bbc-a820-e7bd42d07f75",
+            "ref_type": "PARENT",
+            "descriptor": { "code": "REFUND", "short_desc": "Providing REFUND for the item" },
+            "updated_at": "2025-05-15T07:39:35.665Z",
+            "proposed_by": "NP2",
+            "tags": [
+              {
+                "descriptor": { "code": "RESOLUTION_DETAILS" },
+                "list": [{ "descriptor": { "code": "ITEM" }, "value": "item_id" }, { "descriptor": { "code": "REFUND" } }]
+              }
+            ]
           },
-          "updated_at": "2025-04-26T10:14:00.000Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": { "code": "RESOLUTION_DETAILS" },
-              "list": [
-                { "descriptor": { "code": "ITEM" }, "value": "I1" },
-                { "descriptor": { "code": "REFUND" } }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "R2",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": {
-            "code": "REPLACEMENT",
-            "short_desc": "Providing replacement for the item"
-          },
-          "updated_at": "2025-04-26T10:14:00.000Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": { "code": "RESOLUTION_DETAILS" },
-              "list": [
-                { "descriptor": { "code": "ITEM" }, "value": "I1" },
-                { "descriptor": { "code": "REPLACEMENT" } }
-              ]
-            }
-          ]
-        }
+          {
+            "id": "47090e4b-768e-440b-950a-e26bfcbcaba5",
+            "ref_id": "517a6d34-28b2-4bbc-a820-e7bd42d07f75",
+            "ref_type": "PARENT",
+            "descriptor": { "code": "REPLACEMENT", "short_desc": "Providing REPLACEMENT for the item" },
+            "updated_at": "2025-05-15T07:39:35.665Z",
+            "proposed_by": "NP2",
+            "tags": [
+              {
+                "descriptor": { "code": "RESOLUTION_DETAILS" },
+                "list": [{ "descriptor": { "code": "ITEM" }, "value": "item_id" }, { "descriptor": { "code": "REPLACEMENT" } }]
+              }
+            ]
+          }
+        ]
       ]
     }
   }
