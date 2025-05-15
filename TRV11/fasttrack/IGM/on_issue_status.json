@@ -2,15 +2,21 @@
     "context": {
         "bap_id": "preprod.ftdev.in",
         "bap_uri": "https://preprod.ftdev.in/",
-        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
-        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
-        "country": "IND",
-        "city": "std:011",
-        "transaction_id": "164c3928-5155-45fb-b731-ba3b35a38f88",
-        "message_id": "MEc5edabc6-52be-44af-8b65-2a762abebede",
-        "timestamp": "2025-05-09T13:35:50.519Z",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:011"
+            }
+        },
+        "transaction_id": "779654bb-19ac-4144-8fe6-233e6f8e7127",
+        "message_id": "ME781f10d2-6fa9-47af-9713-ebb71ed7d0f2",
+        "timestamp": "2025-05-15T12:59:30.049Z",
         "domain": "ONDC:TRV11",
-        "core_version": "2.0.0",
+        "version": "2.0.0",
         "ttl": "PT10M",
         "action": "on_issue_status"
     },
@@ -20,7 +26,7 @@
             "actions": "APPENDED"
         },
         "issue": {
-            "id": "ISTRV1120250509490487",
+            "id": "ISTRV1120250515700919",
             "level": "ISSUE",
             "status": "PROCESSING",
             "expected_response_time": {
@@ -31,7 +37,7 @@
             },
             "refs": [
                 {
-                    "ref_id": "5bd7f8a5-2bd9-4394-a402-e79e45b25b87",
+                    "ref_id": "98836ff6-ff67-4d14-a1e0-f5f1281200d8",
                     "ref_type": "ORDER"
                 },
                 {
@@ -39,7 +45,7 @@
                     "ref_type": "PROVIDER"
                 },
                 {
-                    "ref_id": "d4168731-45b0-488f-9574-06005b8d18d9",
+                    "ref_id": "263e813b-d9c7-4803-bc42-f61b862c6050",
                     "ref_type": "FULFILMENT"
                 },
                 {
@@ -55,7 +61,7 @@
                                     "descriptor": {
                                         "code": "quantity.selected.count"
                                     },
-                                    "value": "1"
+                                    "value": "3"
                                 }
                             ]
                         }
@@ -110,17 +116,33 @@
                             "name": "Jane Doe"
                         }
                     }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
                 }
             ],
             "source_id": "656243",
-            "complainant_id": "NP1",
+            "complainant_id": "preprod.ftdev.in",
             "respondent_ids": [
                 "NP2"
             ],
             "description": {
-                "code": "ORD101",
-                "short_desc": "Ticket Issue",
-                "long_desc": "Qr code is not working",
+                "code": "FLM017",
+                "short_desc": "Generated ticket not working at the ticketing gate/validation error",
+                "long_desc": "Ticket not working",
                 "additional_desc": {
                     "url": "https://buyerapp.com/additonal-details/desc.txt",
                     "content_type": "text/plain"
@@ -137,7 +159,7 @@
                     }
                 ]
             },
-            "last_action_id": "A2",
+            "last_action_id": "A5",
             "actions": [
                 {
                     "id": "A1",
@@ -145,7 +167,7 @@
                         "code": "OPEN",
                         "short_desc": "Complaint created"
                     },
-                    "updated_at": "2025-05-09T13:30:34.596Z",
+                    "updated_at": "2025-05-15T12:49:44.900Z",
                     "action_by": "NP1",
                     "actor_details": {
                         "name": "preprod.ftdev.in"
@@ -157,15 +179,58 @@
                         "code": "PROCESSING",
                         "short_desc": "Complaint created"
                     },
-                    "updated_at": "2025-05-09T13:32:36.075Z",
+                    "updated_at": "2025-05-15T12:52:38.955Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A3",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide Image",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-05-15T12:53:43.269Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A4",
+                    "descriptor": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Info provided from buyer app",
+                        "media": [
+                            {
+                                "url": "https://ft-asset.s3-ap-south-1.amazonaws.com/ondc/issue/fcbcb060-42cd-4f7c-ae13-8bf6d921ea85.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2025-05-15T12:55:02.517Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "preprod.ftdev.in"
+                    }
+                },
+                {
+                    "id": "A5",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Seller app processing the info"
+                    },
+                    "updated_at": "2025-05-15T12:57:05.247Z",
                     "action_by": "NP2",
                     "actor_details": {
                         "name": "Sam Manuel"
                     }
                 }
             ],
-            "created_at": "2025-05-09T13:30:34.596Z",
-            "updated_at": "2025-05-09T13:30:34.596Z"
+            "created_at": "2025-05-15T12:55:02.517Z",
+            "updated_at": "2025-05-15T12:55:02.517Z"
         }
     }
 }
