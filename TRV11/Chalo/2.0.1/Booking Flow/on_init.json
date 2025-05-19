@@ -11,12 +11,12 @@
     "domain": "ONDC:TRV11",
     "action": "on_init",
     "ttl": "PT2S",
-    "timestamp": "2025-03-31T10:59:51.378Z",
+    "timestamp": "2025-05-19T11:39:46.809Z",
     "version": "2.0.1",
     "bap_id": "preprod-ondc.chalo.com",
     "bap_uri": "https://preprod-ondc.chalo.com/ondc/buyer/v1",
-    "transaction_id": "aa208115-9b73-42b4-af82-dd8b04628ad2",
-    "message_id": "b55572a6-fccf-479b-beb8-e6d131a8993a",
+    "transaction_id": "d066b25f-cb54-447a-8b0b-9ace56a9c595",
+    "message_id": "0272adcf-ceb2-4ab1-a243-c8dd2381c13f",
     "bpp_id": "preprod-ondc.chalo.com",
     "bpp_uri": "https://preprod-ondc.chalo.com/ondc/seller/v1"
   },
@@ -31,7 +31,7 @@
           },
           "price": {
             "currency": "INR",
-            "value": "10.0"
+            "value": "9.0"
           },
           "quantity": {
             "selected": {
@@ -40,13 +40,13 @@
           },
           "time": {
             "label": "Validity",
-            "duration": "PT1D"
+            "duration": "P1D"
           },
           "fulfillment_ids": [
             "tzeFoyMI",
-            "6f97a613-97c6-438f-aa72-7e84965473ed",
-            "20f8bf19-462f-4c10-9af5-2c53280f9cc5",
-            "07bdaa7d-14ee-430a-ad46-a2d92bd8abb6"
+            "5f1dd132-3212-45fa-8047-72dcc7be1b1c",
+            "f3734048-8d0b-46f1-8160-2a410dbbb8f0",
+            "db4810c9-e703-453d-9fc3-55af80970004"
           ]
         }
       ],
@@ -148,13 +148,25 @@
               "type": "INTERMEDIATE_STOP",
               "location": {
                 "descriptor": {
+                  "name": "Sohojog Nagar",
+                  "code": "SvkuPDld"
+                },
+                "gps": "21.484566, 83.982415"
+              },
+              "id": "SvkuPDld",
+              "parent_stop_id": "EwRWTqlC"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "location": {
+                "descriptor": {
                   "name": "Budharaja Temple",
                   "code": "nysHmswi"
                 },
                 "gps": "21.483020, 83.981229"
               },
               "id": "nysHmswi",
-              "parent_stop_id": "EwRWTqlC"
+              "parent_stop_id": "SvkuPDld"
             },
             {
               "type": "INTERMEDIATE_STOP",
@@ -257,7 +269,7 @@
           ]
         },
         {
-          "id": "6f97a613-97c6-438f-aa72-7e84965473ed",
+          "id": "5f1dd132-3212-45fa-8047-72dcc7be1b1c",
           "type": "TICKET",
           "tags": [
             {
@@ -277,7 +289,7 @@
           ]
         },
         {
-          "id": "20f8bf19-462f-4c10-9af5-2c53280f9cc5",
+          "id": "f3734048-8d0b-46f1-8160-2a410dbbb8f0",
           "type": "TICKET",
           "tags": [
             {
@@ -297,7 +309,7 @@
           ]
         },
         {
-          "id": "07bdaa7d-14ee-430a-ad46-a2d92bd8abb6",
+          "id": "db4810c9-e703-453d-9fc3-55af80970004",
           "type": "TICKET",
           "tags": [
             {
@@ -320,12 +332,12 @@
       "billing": {
         "name": "John Doe",
         "email": "abcd@example.com",
-        "phone": "7042069315"
+        "phone": "9492047326"
       },
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "30.0"
+          "value": "27.0"
         },
         "breakup": [
           {
@@ -334,7 +346,7 @@
               "id": "1SOxfHRvu-adult-tzeFoyMI",
               "price": {
                 "currency": "INR",
-                "value": "10.0"
+                "value": "9.0"
               },
               "quantity": {
                 "selected": {
@@ -344,14 +356,14 @@
             },
             "price": {
               "currency": "INR",
-              "value": "30.0"
+              "value": "27.0"
             }
           }
         ]
       },
       "payments": [
         {
-          "id": "950c90c5-d715-45ba-9658-80e7f00fb642",
+          "id": "e4790210-091f-472c-8519-5e228640648b",
           "params": {
             "bank_code": "HDFC110222",
             "bank_account_number": "389472308403812",
@@ -390,7 +402,7 @@
                   "descriptor": {
                     "code": "SETTLEMENT_WINDOW"
                   },
-                  "value": "PT60M"
+                  "value": "P1D"
                 },
                 {
                   "descriptor": {
@@ -402,13 +414,13 @@
                   "descriptor": {
                     "code": "SETTLEMENT_TYPE"
                   },
-                  "value": "UPI"
+                  "value": "NEFT"
                 },
                 {
                   "descriptor": {
                     "code": "DELAY_INTEREST"
                   },
-                  "value": "5"
+                  "value": "0"
                 },
                 {
                   "descriptor": {
@@ -427,11 +439,27 @@
                     "code": "COURT_JURISDICTION"
                   },
                   "value": "Cuttack"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "27.0"
                 }
               ]
             }
           ],
           "collected_by": "BAP"
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "cancel_by": {
+            "duration": "PT60M"
+          },
+          "cancellation_fee": {
+            "percentage": "0"
+          }
         }
       ]
     }
