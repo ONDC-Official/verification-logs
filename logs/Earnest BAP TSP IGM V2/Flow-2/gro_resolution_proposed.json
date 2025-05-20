@@ -1,0 +1,156 @@
+{
+  "context": {
+    "bap_id": "staging.meribachat.in/bap/catalogue",
+    "bap_uri": "https://staging.meribachat.in/bap/catalogue",
+    "bpp_id": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "location": { "country": { "code": "IND" }, "city": { "code": "std:080" } },
+    "transaction_id": "23a247aa-6790-483c-b83b-3ea078aee128",
+    "message_id": "36a7793c-af5e-4c4c-9141-a4aa5a850cf3",
+    "timestamp": "2025-05-20T11:03:30.498Z",
+    "domain": "ONDC:FIS10",
+    "version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue"
+  },
+  "message": {
+    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
+    "issue": {
+      "id": "46314c83-c1c4-4fd7-a6ac-c501c037e9e5",
+      "level": "GRIEVANCE",
+      "status": "PROCESSING",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "1193661e-d3a2-4887-b460-cf75f867be46", "ref_type": "ORDER" },
+        {
+          "tags": [
+            {
+              "list": [{ "value": "1", "descriptor": { "code": "quantity.selected.count" } }],
+              "descriptor": { "code": "message.order.items" }
+            }
+          ],
+          "ref_id": "4a08b783-3e48-4541-a24b-5a967c696677",
+          "ref_type": "ITEM"
+        }
+      ],
+      "actors": [
+        {
+          "id": "8b55b999-1584-4678-92fd-9d0340ebc927",
+          "info": {
+            "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
+            "person": { "name": "Test" },
+            "contact": { "email": "test@bap.com", "phone": "9999999999" }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "NP1",
+          "info": {
+            "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
+            "person": { "name": "Test" },
+            "contact": { "email": "test@bap.com", "phone": "9999999999" }
+          },
+          "type": "INTERFACING_NP"
+        },
+        {
+          "id": "NP2",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "person": { "name": "Jane Doe" },
+            "contact": { "email": "respondentapp@respond.com", "phone": "9450394140" }
+          },
+          "type": "COUNTERPARTY_NP"
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "contact": { "phone": "9450394140", "email": "respondentapp@respond.com" },
+            "person": { "name": "Jane Doe" }
+          }
+        }
+      ],
+      "source_id": "NP1",
+      "complainant_id": "NP1",
+      "respondent_ids": ["NP2"],
+      "last_action_id": "A#",
+      "actions": [
+        {
+          "id": "79e81122-6af9-439b-a470-967f7eaba4a2",
+          "action_by": "NP1",
+          "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
+          "updated_at": "2025-05-20T11:00:23.276Z",
+          "actor_details": { "name": "Test" }
+        },
+        {
+          "id": "A1",
+          "action_by": "NP2",
+          "updated_at": "2025-05-20T11:00:48.266Z",
+          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "A2",
+          "action_by": "NP2",
+          "updated_at": "2025-05-20T11:01:21.643Z",
+          "description": { "code": "RESOLUTION_PROPOSED", "short_desc": "OPEN" },
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "47b36960-ac1c-4ea6-9aaa-13bfeee7a652",
+          "descriptor": { "code": "ESCALATED", "short_desc": "Not Happy with Options" },
+          "updated_at": "2025-05-20T11:01:49.722Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Test" }
+        },
+        {
+          "id": "A3",
+          "description": { "code": "RESOLUTION_PROPOSED", "short_desc": "OPEN" },
+          "updated_at": "2025-05-20T11:03:30.498Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REFUND", "short_desc": "Providing refund for the item" },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                { "descriptor": { "code": "ITEM" }, "value": "I1" },
+                { "descriptor": { "code": "REFUND_AMOUNT" }, "value": "200" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "CANCEL", "short_desc": "Cancelling the order/item" },
+          "updated_at": "2024-08-14T10:00:00.000Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                { "descriptor": { "code": "ITEM" }, "value": "I1" },
+                { "descriptor": { "code": "CANCEL_REASON" }, "value": "Customer requested cancellation" }
+              ]
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-05-20T11:00:23.276Z",
+      "updated_at": "2025-05-20T11:01:49.722Z"
+    }
+  }
+}
