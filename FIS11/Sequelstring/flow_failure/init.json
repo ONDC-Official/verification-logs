@@ -1,0 +1,108 @@
+{
+    "context": {
+        "domain": "ONDC:FIS11",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "version": "2.0.0",
+        "action": "init",
+        "transaction_id": "3e7d9f67-11ab-48bc-b808-b3ab27c9325d",
+        "message_id": "aa940586-75da-4108-8e96-49a6cd94fdb2",
+        "timestamp": "2025-05-13T08:55:12.386Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/protocol"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P1"
+            },
+            "items": [
+                {
+                    "id": "I2",
+                    "price": {
+                        "currency": "INR",
+                        "value": "0"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "ONLINE",
+                    "customer": {
+                        "person": {
+                            "creds": [
+                                {
+                                    "id": "00129812901",
+                                    "type": "CARD_IDENTIFIER"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BAP",
+                    "type": "PRE_ORDER",
+                    "status": "NOT-PAID"
+                }
+            ],
+            "billing": {
+                "name": "John Doe",
+                "email": "john.doe@example.com",
+                "phone": "+91-9897867564"
+            },
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "BPP_TERMS",
+                        "name": "BPP Terms of Engagement"
+                    },
+                    "display": false,
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_TYPE"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BASIS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_WINDOW"
+                            },
+                            "value": "P30D"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
