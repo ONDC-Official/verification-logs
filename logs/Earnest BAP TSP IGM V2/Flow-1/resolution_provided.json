@@ -1,0 +1,161 @@
+{
+  "context": {
+    "bap_id": "staging.meribachat.in/bap/catalogue",
+    "bap_uri": "https://staging.meribachat.in/bap/catalogue",
+    "bpp_id": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "location": { "country": { "code": "IND" }, "city": { "code": "std:080" } },
+    "transaction_id": "3e97df95-ce47-4e6f-82ef-4a2177340329",
+    "message_id": "8417e6f5-d97c-49a2-b163-00ec6c0ce69e",
+    "timestamp": "2025-05-20T08:25:13.916Z",
+    "domain": "ONDC:FIS10",
+    "version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue"
+  },
+  "message": {
+    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
+    "issue": {
+      "id": "37f18897-d9aa-4156-9b0c-de0e3cdb7c84",
+      "level": "ISSUE",
+      "status": "PROCESSING",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "1fd253e8-f23d-458a-94d4-03308f4e41d6", "ref_type": "ORDER" },
+        {
+          "tags": [
+            {
+              "list": [{ "value": "1", "descriptor": { "code": "quantity.selected.count" } }],
+              "descriptor": { "code": "message.order.items" }
+            }
+          ],
+          "ref_id": "e6236f29-3df2-40ef-b43f-bf667accca1f",
+          "ref_type": "ITEM"
+        }
+      ],
+      "actors": [
+        {
+          "id": "8b55b999-1584-4678-92fd-9d0340ebc927",
+          "info": {
+            "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
+            "person": { "name": "Test" },
+            "contact": { "email": "test@bap.com", "phone": "9999999999" }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "NP1",
+          "info": {
+            "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
+            "person": { "name": "Test" },
+            "contact": { "email": "test@bap.com", "phone": "9999999999" }
+          },
+          "type": "INTERFACING_NP"
+        },
+        {
+          "id": "NP2",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "person": { "name": "Jane Doe" },
+            "contact": { "email": "respondentapp@respond.com", "phone": "9450394140" }
+          },
+          "type": "COUNTERPARTY_NP"
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "contact": { "phone": "9450394140", "email": "respondentapp@respond.com" },
+            "person": { "name": "Jane Doe" }
+          }
+        }
+      ],
+      "source_id": "NP1",
+      "complainant_id": "NP1",
+      "respondent_ids": ["NP2"],
+      "last_action_id": "A4",
+      "actions": [
+        {
+          "id": "84953d63-e3b2-468d-b955-97fe1f07513a",
+          "action_by": "NP1",
+          "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
+          "updated_at": "2025-05-20T08:08:21.153Z",
+          "actor_details": { "name": "Test" }
+        },
+        {
+          "id": "A1",
+          "action_by": "NP2",
+          "updated_at": "2025-05-20T08:09:09.327Z",
+          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "A2",
+          "action_by": "NP2",
+          "updated_at": "2025-05-20T08:10:14.920Z",
+          "description": { "code": "INFO_REQUESTED", "short_desc": "OPEN" },
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "7e51d7cc-4172-4374-8854-8e2c9cb4c5a7",
+          "descriptor": {
+            "code": "INFORMATION_PROVIDED",
+            "short_desc": "Look at this image",
+            "images": [{ "url": "https://placedog.net/300/500", "size_type": "xs" }]
+          },
+          "updated_at": "2025-05-20T08:18:50.845Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Test" }
+        },
+        {
+          "id": "A3",
+          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
+          "updated_at": "2025-05-20T08:20:16.357Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "A4",
+          "description": { "code": "RESOLUTION_PROPOSED", "short_desc": "OPEN" },
+          "updated_at": "2025-05-20T08:25:13.916Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REFUND", "short_desc": "Providing refund for the item" },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                { "descriptor": { "code": "ITEM" }, "value": "I1" },
+                { "descriptor": { "code": "REFUND_AMOUNT" }, "value": "200" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REPLACEMENT", "short_desc": "Providing replacement of the item" },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            { "descriptor": { "code": "RESOLUTION_DETAILS" }, "list": [{ "descriptor": { "code": "ITEM" }, "value": "I1" }] }
+          ]
+        }
+      ],
+      "created_at": "2025-05-20T08:08:21.153Z",
+      "updated_at": "2025-05-20T08:18:50.845Z"
+    }
+  }
+}

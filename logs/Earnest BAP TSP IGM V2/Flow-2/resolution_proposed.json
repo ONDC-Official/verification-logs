@@ -1,0 +1,127 @@
+{
+  "context": {
+    "bap_id": "staging.meribachat.in/bap/catalogue",
+    "bap_uri": "https://staging.meribachat.in/bap/catalogue",
+    "bpp_id": "ondc.vistar.solutions",
+    "bpp_uri": "https://ondc.vistar.solutions/v1/bpp",
+    "location": { "country": { "code": "IND" }, "city": { "code": "std:080" } },
+    "transaction_id": "23a247aa-6790-483c-b83b-3ea078aee128",
+    "message_id": "b83d3404-eed6-4502-b501-024e8530f06a",
+    "timestamp": "2025-05-20T11:01:21.644Z",
+    "domain": "ONDC:FIS10",
+    "version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue"
+  },
+  "message": {
+    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
+    "issue": {
+      "id": "46314c83-c1c4-4fd7-a6ac-c501c037e9e5",
+      "level": "ISSUE",
+      "status": "PROCESSING",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "1193661e-d3a2-4887-b460-cf75f867be46", "ref_type": "ORDER" },
+        {
+          "ref_id": "4a08b783-3e48-4541-a24b-5a967c696677",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": { "code": "message.order.items" },
+              "list": [{ "descriptor": { "code": "quantity.selected.count" }, "value": "1" }]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "8b55b999-1584-4678-92fd-9d0340ebc927",
+          "type": "CONSUMER",
+          "info": {
+            "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
+            "person": { "name": "Test" },
+            "contact": { "phone": "9999999999", "email": "test@bap.com" }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
+            "person": { "name": "Test" },
+            "contact": { "phone": "9999999999", "email": "test@bap.com" }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "contact": { "phone": "9450394140", "email": "respondentapp@respond.com" },
+            "person": { "name": "Jane Doe" }
+          }
+        }
+      ],
+      "source_id": "8b55b999-1584-4678-92fd-9d0340ebc927",
+      "complainant_id": "NP1",
+      "respondent_ids": ["NP2"],
+      "last_action_id": "A2",
+      "actions": [
+        {
+          "id": "79e81122-6af9-439b-a470-967f7eaba4a2",
+          "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
+          "updated_at": "2025-05-20T11:00:23.276Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Test" }
+        },
+        {
+          "id": "A1",
+          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
+          "updated_at": "2025-05-20T11:00:48.266Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "A2",
+          "description": { "code": "RESOLUTION_PROPOSED", "short_desc": "OPEN" },
+          "updated_at": "2025-05-20T11:01:21.643Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REFUND", "short_desc": "Providing refund for the item" },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                { "descriptor": { "code": "ITEM" }, "value": "I1" },
+                { "descriptor": { "code": "REFUND_AMOUNT" }, "value": "200" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REPLACEMENT", "short_desc": "Providing replacement of the item" },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            { "descriptor": { "code": "RESOLUTION_DETAILS" }, "list": [{ "descriptor": { "code": "ITEM" }, "value": "I1" }] }
+          ]
+        }
+      ],
+      "created_at": "2025-05-20T11:00:23.276Z",
+      "updated_at": "2025-05-20T11:00:23.276Z"
+    }
+  }
+}
