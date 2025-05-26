@@ -1,0 +1,255 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "issue",
+    "country": "IND",
+    "city": "std:080,",
+    "core_version": "1.2.0",
+     "bap_id": "proapi.easemytrip.com/busservice/api/Buyer/",
+      "bap_uri": "https://proapi.easemytrip.com/busservice/api/Buyer/",
+      "bpp_id": "proapi.easemytrip.com/busapi",
+      "bpp_uri": "https://proapi.easemytrip.com/busapi",
+    "transaction_id": "5c408e36-2bcf-4fe2-8a68-6c7d3010c19e",
+    "message_id": "2780dcd4-0fef-492e-bdd1-82b450eb91et",
+    "timestamp": "2025-03-15T08:00:14.478Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": [
+      {
+        "path": "issue.actions[?(@.id==’A12’)]",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "1524578962",
+      "status": "CLOSED",
+      "level": "ISSUE",
+       "created_at": "2025-03-15T08:00:14.478Z",
+        "updated_at": "2025-03-15T08:00:14.478Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "proapi.easemytrip.com/busservice/api/Buyer/::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "proapi.easemytrip.com/busservice/api/Buyer/::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "care@easemytrip.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "https://buyerapp.com/additonal-details/desc.txt"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "tect@easemytrip.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        }
+              ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "descriptor": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "http://proapi.easemytrip.com/addtional-details/img1.png",
+            "size_type": "xs"
+          }
+        ],
+        "media": [
+          {
+            "url": "http://proapi.easemytrip.com/addtional-details/img1.png"
+          }
+        ]
+      },
+      "last_action_id": "A12",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-03-15T08:00:14.478Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+
+        {
+          "id": "A12",
+          "descriptor": {
+            "code": "CLOSED",
+            "short_desc": "Closing the complaint"
+          },
+          "updated_at": "2025-03-15T08:00:14.478Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "CLOSURE_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "RATING"
+                  },
+                  "value": "THUMBS_UP"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2025-03-15T08:00:14.478Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2025-03-15T08:00:14.478Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  },
+                  "value": "200"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "updated_at": "2025-03-15T08:00:14.478Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
