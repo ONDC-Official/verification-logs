@@ -1,0 +1,210 @@
+{
+  "context": {
+    "bap_id": "dev-booking.tripxoxo.com",
+    "bap_uri": "https://dev-booking.tripxoxo.com",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-staging",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "transaction_id": "bd2af6b9-64d0-4642-909c-3f50fd6bbbaf",
+    "message_id": "6dcb0879-ffa9-412d-a370-f50af8708850",
+    "timestamp": "2025-05-26T10:34:15.503Z",
+    "domain": "ONDC:RET10",
+    "core_version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue"
+  },
+  "message": {
+    "update_target": {
+      "path": "issue.actions",
+      "actions": "APPENDED"
+    },
+    "issue": {
+      "id": "6cd162e9-e4b9-479d-b8cb-fe01434a2b5c",
+      "level": "ISSUE",
+      "status": "PROCESSING",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "02dc3586-124c-4727-82d3-aedd7d01c019",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "682b0a4666e30e85ba97df57",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "682b0ed166e30e85ba97df67",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "682b0ed166e30e85ba97df65",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "b323afba-8a9e-464a-86bc-2537dd9de6b0",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "dev-booking.tripxoxo.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Test Vishnu"
+            },
+            "contact": {
+              "phone": "+91-9061915199",
+              "email": "sureshvishnut@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "dev-booking.tripxoxo.com",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "dev-booking.tripxoxo.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "b323afba-8a9e-464a-86bc-2537dd9de6b0",
+      "complainant_id": "dev-booking.tripxoxo.com",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "description": {
+        "code": "ITM004",
+        "short_desc": "cancel child ticket",
+        "long_desc": "please cancel the child ticket",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "https://trip-dev.s3.amazonaws.com/tripxoxo_dev/documents/image_4_0wmBJ61.png",
+            "size_type": "xs"
+          }
+        ]
+      },
+      "last_action_id": "A3_2",
+      "actions": [
+        {
+          "id": "A1",
+          "description": {
+            "code": "open",
+            "short_desc": "Complaint Created"
+          },
+          "updated_at": "2025-05-26 10:23:14.331581+00:00",
+          "action_by": "dev-booking.tripxoxo.com",
+          "actor_details": {
+            "name": "Test Vishnu"
+          }
+        },
+        {
+          "id": "A2",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-05-26T10:28:02.963Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-05-26T10:32:05.803Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3_1",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "short_desc": "Please provide product images",
+            "name": "INFO0001"
+          },
+          "updated_at": "2025-05-26T10:33:35.015Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3_2",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "short_desc": "Please provide invoice",
+            "name": "INFO0002"
+          },
+          "updated_at": "2025-05-26T10:34:15.502Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "created_at": "2025-05-26T10:23:14.331Z",
+      "updated_at": "2025-05-26T10:23:14.331Z"
+    }
+  }
+}
