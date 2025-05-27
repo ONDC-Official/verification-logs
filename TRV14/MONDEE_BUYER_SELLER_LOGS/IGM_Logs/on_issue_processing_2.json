@@ -16,8 +16,8 @@
         "bpp_id": "preprodseller.ondc.mondee.com",
         "bpp_uri": "https://preprodseller.ondc.mondee.com",
         "transaction_id": "999920k-2d7f-416f-aa69-cae77284e00e",
-        "message_id": "888820k-2d7f-416f-aa69-cae77284e00e",
-        "timestamp": "2025-05-22T10:00:01.000Z",
+        "message_id": "888810k-2d7f-416f-aa69-cae77284e00e",
+        "timestamp": "2025-05-27T10:09:01.000Z",
         "ttl": "PT30S",
         "core_version": "2.0.0"
     },
@@ -32,8 +32,8 @@
             "id": "ISSUE-1",
             "status": "PROCESSING",
             "level": "ISSUE",
-            "created_at": "2025-05-22T10:05:00.000Z",
-            "updated_at": "2025-05-22T10:06:00.000Z",
+            "created_at": "2025-05-27T10:00:00.000Z",
+            "updated_at": "2025-05-27T10:09:01.000Z",
             "expected_response_time": {
                 "duration": "PT30M"
             },
@@ -76,23 +76,23 @@
                     }
                 },
                 {
-                    "id": "NP1",
+                    "id": "preprodbuyer.ondc.mondee.com",
                     "type": "INTERFACING_NP",
                     "info": {
                         "org": {
                             "name": "preprodbuyer.ondc.mondee.com::ONDC:TRV14"
                         },
                         "person": {
-                            "name": "John Doe"
+                            "name": "Vikash Kumar"
                         },
                         "contact": {
-                            "phone": "9450394039",
+                            "phone": "9450394038",
                             "email": "buyerapp@interface.com"
                         }
                     }
                 },
                 {
-                    "id": "NP2",
+                    "id": "preprodseller.ondc.mondee.com",
                     "type": "COUNTERPARTY_NP",
                     "info": {
                         "org": {
@@ -103,15 +103,34 @@
                         },
                         "contact": {
                             "phone": "9450394039",
-                            "email": "sellerapp@seller.com"
+                            "email": "sellerrapp@seller.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2_GRO",
+                    "type": "COUNTERPARTY_NP_GRO",
+                    "info": {
+                        "org": {
+                            "name": "preprodseller.ondc.mondee.com::ONDC:TRV14"
+                        },
+                        "person": {
+                            "name": "Joseph"
+                        },
+                        "contact": {
+                            "phone": "9988776655",
+                            "email": "joseph@seller.com"
                         }
                     }
                 }
             ],
             "source_id": "CUST1",
-            "complainant_id": "NP1",
+            "complainant_id": "preprodbuyer.ondc.mondee.com",
             "respondent_ids": [
-                "NP2"
+                "preprodseller.ondc.mondee.com"
+            ],
+            "resolver_ids": [
+                "preprodseller.ondc.mondee.com"
             ],
             "description": {
                 "code": "FLM115",
@@ -122,7 +141,7 @@
                 "short_desc": "Cancel ticket",
                 "long_desc": "Cancel ticket"
             },
-            "last_action_id": "A2",
+            "last_action_id": "A5",
             "actions": [
                 {
                     "id": "A1",
@@ -134,26 +153,74 @@
                         "code": "OPEN",
                         "short_desc": "Complaint created"
                     },
-                    "updated_at": "2025-05-22T10:00:00.000Z",
-                    "action_by": "NP1",
+                    "updated_at": "2025-05-27T10:00:00.000Z",
+                    "action_by": "preprodbuyer.ondc.mondee.com",
                     "actor_details": {
-                        "name": "John Doe"
+                        "name": "Vikash Kumar"
                     }
                 },
                 {
                     "id": "A2",
                     "description": {
                         "code": "PROCESSING",
-                        "short_desc": "Complaint is being processed"
+                        "short_desc": "Complaint created"
                     },
                     "descriptor": {
                         "code": "PROCESSING",
-                        "short_desc": "Complaint is being processed"
+                        "short_desc": "Complaint created"
                     },
-                    "updated_at": "2025-05-22T10:07:00.000Z",
-                    "action_by": "NP2",
+                    "updated_at": "2025-05-27T10:06:00.000Z",
+                    "action_by": "preprodseller.ondc.mondee.com",
                     "actor_details": {
-                        "name": "Jane Doe"
+                        "name": "John Doe"
+                    }
+                },
+                {
+                    "id": "A3",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide invoice"
+                    },
+                    "descriptor": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide invoice"
+                    },
+                    "updated_at": "2025-05-27T10:07:00.000Z",
+                    "action_by": "preprodseller.ondc.mondee.com",
+                    "actor_details": {
+                        "name": "John Doe"
+                    }
+                },
+                {
+                    "id": "A4",
+                    "description": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Responded with invoice"
+                    },
+                    "descriptor": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Responded with invoice"
+                    },
+                    "updated_at": "2025-05-27T10:08:01.000Z",
+                    "action_by": "preprodbuyer.ondc.mondee.com",
+                    "actor_details": {
+                        "name": "Vikash Kumar"
+                    }
+                },
+                {
+                    "id": "A5",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing the complaint information"
+                    },
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing the complaint information"
+                    },
+                    "updated_at": "2025-05-27T10:09:01.000Z",
+                    "action_by": "preprodseller.ondc.mondee.com",
+                    "actor_details": {
+                        "name": "John Doe"
                     }
                 }
             ]

@@ -1,18 +1,25 @@
 {
     "context": {
-        "domain": "ONDC:RET14",
-        "country": "IND",
-        "city": "std:080",
-        "action": "on_issue_status",
-        "core_version": "2.0.0",
+        "domain": "ONDC:TRV14",
+        "action": "on_issue",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "std:080"
+            }
+        },
+        "version": "2.1.0",
         "bap_id": "preprodbuyer.ondc.mondee.com",
         "bap_uri": "https://preprodbuyer.ondc.mondee.com",
         "bpp_id": "preprodseller.ondc.mondee.com",
         "bpp_uri": "https://preprodseller.ondc.mondee.com",
         "transaction_id": "999920k-2d7f-416f-aa69-cae77284e00e",
-        "message_id": "888820k-2d7f-416f-aa69-cae77284e00e",
-        "timestamp": "2025-05-27T10:07:01.000Z",
-        "ttl": "PT30S"
+        "message_id": "888810k-2d7f-416f-aa69-cae77284e00e",
+        "timestamp": "2025-05-27T10:10:01.000Z",
+        "ttl": "PT30S",
+        "core_version": "2.0.0"
     },
     "message": {
         "update_target": [
@@ -26,7 +33,7 @@
             "status": "PROCESSING",
             "level": "ISSUE",
             "created_at": "2025-05-27T10:00:00.000Z",
-            "updated_at": "2025-05-27T10:07:00.000Z",
+            "updated_at": "2025-05-27T10:10:01.000Z",
             "expected_response_time": {
                 "duration": "PT30M"
             },
@@ -96,7 +103,23 @@
                         },
                         "contact": {
                             "phone": "9450394039",
-                            "email": "sellerapp@seller.com"
+                            "email": "sellerrapp@seller.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2_GRO",
+                    "type": "COUNTERPARTY_NP_GRO",
+                    "info": {
+                        "org": {
+                            "name": "preprodseller.ondc.mondee.com::ONDC:TRV14"
+                        },
+                        "person": {
+                            "name": "Joseph"
+                        },
+                        "contact": {
+                            "phone": "9988776655",
+                            "email": "joseph@seller.com"
                         }
                     }
                 }
@@ -104,6 +127,9 @@
             "source_id": "CUST1",
             "complainant_id": "preprodbuyer.ondc.mondee.com",
             "respondent_ids": [
+                "preprodseller.ondc.mondee.com"
+            ],
+            "resolver_ids": [
                 "preprodseller.ondc.mondee.com"
             ],
             "description": {
@@ -115,7 +141,7 @@
                 "short_desc": "Cancel ticket",
                 "long_desc": "Cancel ticket"
             },
-            "last_action_id": "A3",
+            "last_action_id": "A6",
             "actions": [
                 {
                     "id": "A1",
@@ -164,6 +190,98 @@
                     "actor_details": {
                         "name": "John Doe"
                     }
+                },
+                {
+                    "id": "A4",
+                    "description": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Responded with invoice"
+                    },
+                    "descriptor": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Responded with invoice"
+                    },
+                    "updated_at": "2025-05-27T10:08:01.000Z",
+                    "action_by": "preprodbuyer.ondc.mondee.com",
+                    "actor_details": {
+                        "name": "Vikash Kumar"
+                    }
+                },
+                {
+                    "id": "A5",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing the complaint information"
+                    },
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing the complaint information"
+                    },
+                    "updated_at": "2025-05-27T10:09:01.000Z",
+                    "action_by": "preprodseller.ondc.mondee.com",
+                    "actor_details": {
+                        "name": "John Doe"
+                    }
+                },
+                {
+                    "id": "A6",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "RESOLUTIONS",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+                    },
+					"descriptor": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+                    },
+                    "updated_at": "2025-05-27T10:10:01.000Z",
+                    "action_by": "preprodseller.ondc.mondee.com",
+                    "actor_details": {
+                        "name": "John Doe"
+                    }
+                }
+            ],
+            "resolutions": [
+                {
+                    "id": "R_PARENT",
+                    "descriptor": {
+                        "code": "PARENT",
+                        "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+                    },
+                    "updated_at": "2025-05-27T10:10:01.000Z",
+                    "proposed_by": "preprodseller.ondc.mondee.com"
+                },
+                {
+                    "id": "R1",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "Providing refund for the item"
+                    },
+                    "updated_at": "2025-05-27T10:10:01.000Z",
+                    "proposed_by": "preprodseller.ondc.mondee.com",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM"
+                                    },
+                                    "value": "3e4da92eb213408289739e8821aa8ffa"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "REFUND"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
