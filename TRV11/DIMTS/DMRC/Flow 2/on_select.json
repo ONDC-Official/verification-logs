@@ -1,0 +1,163 @@
+{
+	"context": {
+		"location": {
+			"country": {
+				"code": "IND"
+			},
+			"city": {
+				"code": "std:011"
+			}
+		},
+		"domain": "ONDC:TRV11",
+		"action": "on_select",
+		"version": "2.0.0",
+		"transaction_id": "490c50ec-8041-4d46-a374-f142b3228c4e",
+		"message_id": "24680c45-a07b-4d3d-baaa-7216a18aee67",
+		"timestamp": "2025-05-13T09:27:22.555Z",
+		"bap_uri": "https://preprodondc.dimts.in/api/DelhiMetro",
+		"bap_id": "preprodondc.dimts.in",
+		"ttl": "PT10M",
+		"bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+		"bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+	},
+	"message": {
+		"order": {
+			"provider": {
+				"id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+				"descriptor": {
+					"name": "ONDC Metro Limited",
+					"images": [
+						{
+							"url": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+						}
+					]
+				},
+				"time": {
+					"range": {
+						"start": "2025-05-13T05:30:00.000Z",
+						"end": "2025-05-13T23:30:00.000Z"
+					}
+				}
+			},
+			"items": [
+				{
+					"id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+					"category_ids": [
+						"C2"
+					],
+					"descriptor": {
+						"name": "Single Journey Ticket",
+						"code": "SJT"
+					},
+					"price": {
+						"currency": "INR",
+						"value": "23"
+					},
+					"quantity": {
+						"selected": {
+							"count": 1
+						}
+					},
+					"time": {
+						"label": "Validity",
+						"duration": "PT5M"
+					},
+					"fulfillment_ids": [
+						"656bc1c3-3fa7-4c86-951f-37d8fce61edd"
+					]
+				}
+			],
+			"fulfillments": [
+				{
+					"id": "656bc1c3-3fa7-4c86-951f-37d8fce61edd",
+					"type": "TRIP",
+					"stops": [
+						{
+							"type": "START",
+							"instructions": {
+								"name": "Stop 1"
+							},
+							"location": {
+								"descriptor": {
+									"name": "ARTHALA",
+									"code": "ATHA"
+								},
+								"gps": "28.744676, 77.138332"
+							},
+							"id": "1"
+						},
+						{
+							"type": "END",
+							"instructions": {
+								"name": "Stop 2"
+							},
+							"location": {
+								"descriptor": {
+									"name": "MOHAN NAGAR",
+									"code": "MNGM"
+								},
+								"gps": "28.744676, 77.138332"
+							},
+							"id": "2",
+							"parent_stop_id": "1"
+						}
+					],
+					"vehicle": {
+						"category": "METRO"
+					}
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "23.00"
+				},
+				"breakup": [
+					{
+						"title": "BASE_FARE",
+						"item": {
+							"id": "18eba05f-5d26-4fbf-b1c5-5346d62e17b0",
+							"price": {
+								"currency": "INR",
+								"value": "23"
+							},
+							"quantity": {
+								"selected": {
+									"count": 1
+								}
+							}
+						},
+						"price": {
+							"currency": "INR",
+							"value": "23"
+						}
+					}
+				]
+			},
+			"tags": [
+				{
+					"descriptor": {
+						"code": "SCHEDULED_INFO"
+					},
+					"display": false,
+					"list": [
+						{
+							"descriptor": {
+								"code": "GTFS"
+							},
+							"value": "https://metro-transit/gtfs-realtime"
+						}
+					]
+				}
+			],
+			"cancellation_terms": [
+				{
+					"external_ref": {
+						"mimetype": "text/html",
+						"url": "https://sequelstringsolutions.com/mf/tnc.html"
+					}
+				}
+			]
+		}
+	}
+}
