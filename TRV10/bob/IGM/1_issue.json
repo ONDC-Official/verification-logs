@@ -1,0 +1,68 @@
+{
+  "context": {
+    "action": "issue",
+    "transaction_id": "df2f343e-1471-4e7d-ae96-258bd57ef405",
+    "message_id": "6a57a99a-5500-4608-a200-2d60158f9fa3"
+  },
+  "issue": {
+    "id": "f91bf1df-6afd-4e62-a885-40ad2680ad03",
+    "level": "ISSUE",
+    "status": "OPEN",
+    "source_id": "John Doe",
+    "complainant_id": "ondc-bob.azurewebsites.net",
+    "descriptor": {
+      "code": "FLM011",
+      "short_desc": "Driver Behavior",
+      "long_desc": "Driver was rude and drove recklessly",
+      "additional_desc": {
+        "url": "https://example.com/complaint/123",
+        "content_type": "text/plain"
+      },
+      "images": ["https://example.com/images/evidence1.jpg"],
+      "media": []
+    },
+    "refs": [
+      { "ref_id": "O1", "ref_type": "ORDER" },
+      { "ref_id": "F1", "ref_type": "FULFILMENT" },
+      { "ref_id": "P1", "ref_type": "PROVIDER" },
+      {
+        "ref_id": "I1",
+        "ref_type": "ITEM",
+        "tags": [
+          {
+            "descriptor": { "code": "message.order.items" },
+            "list": [
+              {
+                "descriptor": { "code": "quantity.selected.count" },
+                "value": "1"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actors": [
+      {
+        "id": "John Doe",
+        "type": "CONSUMER",
+        "info": {
+          "org": { "name": "ondc-bob.azurewebsites.net::ONDC:TRV10" },
+          "person": { "name": "John Doe" },
+          "contact": { "phone": "9876543210", "email": "john.doe@example.com" }
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "A1",
+        "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
+        "updated_at": "2025-05-27T09:38:05.830Z",
+        "action_by": "John Doe",
+        "actor_details": { "name": "John Doe" }
+      }
+    ],
+    "expected_resolution_time": { "duration": "P1D" },
+    "expected_response_time": { "duration": "PT2H" },
+    "last_action_id": "A1"
+  }
+}
