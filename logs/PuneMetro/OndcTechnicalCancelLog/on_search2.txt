@@ -1,0 +1,265 @@
+{
+        "context": {
+          "domain": "ONDC:TRV11",
+          "location": {
+            "country": {
+              "code": "IND"
+            },
+            "city": {
+              "code": "std:020"
+            }
+          },
+          "timestamp": "2025-05-16T11:01:14.152Z",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "transaction_id": "3c1485e9-340e-47ad-9198-8406e84db9b0",
+          "message_id": "24bca3b4-c7a9-441a-b54e-b04e39062507",
+          "version": "2.0.0",
+          "action": "on_search",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "ttl": "PT30S",
+          "bpp_id": "uatondc.paycraftsol.net",
+          "bpp_uri": "https://uatondc.paycraftsol.net/ondc/transitPune"
+        },
+        "message": {
+          "catalog": {
+            "descriptor": {
+              "name": "Pune Metro",
+              "images": [
+                {
+                  "url": "https://www.punemetrorail.org/"
+                }
+              ]
+            },
+            "providers": [
+              {
+                "id": "P1",
+                "categories": [
+                  {
+                    "id": "C1",
+                    "descriptor": {
+                      "name": "TICKET",
+                      "code": "TICKET"
+                    }
+                  }
+                ],
+                "time": {
+                  "range": {
+                    "start": "2025-05-16T09:30:00.000Z",
+                    "end": "2025-05-16T20:30:00.000Z"
+                  }
+                },
+                "descriptor": {
+                  "name": "PMRPUATTEST5",
+                  "images": [
+                    {
+                      "url": "https://punemetrorail.org/assets/images/logo.png"
+                    }
+                  ]
+                },
+                "items": [
+                  {
+                    "id": "I3-PIM-KWA",
+                    "category_ids": [
+                      "C1"
+                    ],
+                    "descriptor": {
+                      "name": "GROUP TICKET",
+                      "code": "GRP"
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "0.0"
+                    },
+                    "quantity": {
+                      "maximum": {
+                        "count": 1
+                      },
+                      "minimum": {
+                        "count": 1
+                      }
+                    },
+                    "fulfillment_ids": [
+                      "F1"
+                    ],
+                    "time": {
+                      "label": "Validity",
+                      "duration": "P1D"
+                    }
+                  },
+                  {
+                    "id": "I1-PIM-KWA",
+                    "category_ids": [
+                      "C1"
+                    ],
+                    "descriptor": {
+                      "name": "SJT",
+                      "code": "SJT"
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "8.5"
+                    },
+                    "quantity": {
+                      "maximum": {
+                        "count": 200
+                      },
+                      "minimum": {
+                        "count": 1
+                      }
+                    },
+                    "fulfillment_ids": [
+                      "F1"
+                    ],
+                    "time": {
+                      "label": "Validity",
+                      "duration": "P1D"
+                    }
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "F1",
+                    "type": "TRIP",
+                    "stops": [
+                      {
+                        "id": "101",
+                        "type": "START",
+                        "location": {
+                          "descriptor": {
+                            "name": "PCMC",
+                            "code": "PIM"
+                          },
+                          "gps": "18.628968, 73.803495"
+                        }
+                      },
+                      {
+                        "id": "102",
+                        "type": "INTERMEDIATE_STOP",
+                        "location": {
+                          "descriptor": {
+                            "name": "SANT TUKARAM NAGAR",
+                            "code": "STG"
+                          },
+                          "gps": "18.614202, 73.816131"
+                        }
+                      },
+                      {
+                        "id": "103",
+                        "type": "INTERMEDIATE_STOP",
+                        "location": {
+                          "descriptor": {
+                            "name": "NASHIK PHATA",
+                            "code": "BHO"
+                          },
+                          "gps": "18.609142, 73.820228"
+                        }
+                      },
+                      {
+                        "id": "104",
+                        "type": "END",
+                        "location": {
+                          "descriptor": {
+                            "name": "KASARWADI",
+                            "code": "KWA"
+                          },
+                          "gps": "18.599347, 73.827451"
+                        }
+                      }
+                    ],
+                    "vehicle": {
+                      "category": "METRO"
+                    }
+                  }
+                ],
+                "payments": [
+                  {
+                    "collected_by": "BAP",
+                    "tags": [
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES"
+                        },
+                        "display": false,
+                        "list": [
+                          {
+                            "descriptor": {
+                              "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                            },
+                            "value": "1"
+                          },
+                          {
+                            "descriptor": {
+                              "code": "BUYER_FINDER_FEES_TYPE"
+                            },
+                            "value": "percent"
+                          }
+                        ]
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_TERMS"
+                        },
+                        "display": false,
+                        "list": [
+                          {
+                            "descriptor": {
+                              "code": "DELAY_INTEREST"
+                            },
+                            "value": "5"
+                          },
+                          {
+                            "descriptor": {
+                              "code": "STATIC_TERMS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                          },
+                          {
+                            "descriptor": {
+                              "code": "SETTLEMENT_WINDOW"
+                            },
+                            "value": "P30D"
+                          },
+                          {
+                            "descriptor": {
+                              "code": "INVOICE_RECEIPT"
+                            },
+                            "value": "INVOICE_RECEIPT"
+                          },
+                          {
+                            "descriptor": {
+                              "code": "MANDATORY_ARBITRATION"
+                            },
+                            "value": "TRUE"
+                          },
+                          {
+                            "descriptor": {
+                              "code": "COURT_JURISDICTION"
+                            },
+                            "value": "PUNE"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "SCHEDULED_INFO"
+                    },
+                    "display": false,
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "GTFS"
+                        },
+                        "value": "https://metro-transit/gtfs-realtime"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
