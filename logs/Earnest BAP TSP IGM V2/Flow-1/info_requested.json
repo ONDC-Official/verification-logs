@@ -1,97 +1,103 @@
 {
   "context": {
+    "domain": "ONDC:FIS10",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "action": "on_issue",
+    "version": "2.0.0",
     "bap_id": "staging.meribachat.in/bap/catalogue",
     "bap_uri": "https://staging.meribachat.in/bap/catalogue",
-    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "bpp_id": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:080" } },
-    "transaction_id": "3e97df95-ce47-4e6f-82ef-4a2177340329",
-    "message_id": "19d385f5-c2d2-416d-b2c7-58a7f4a22847",
-    "timestamp": "2025-05-20T08:10:14.920Z",
-    "domain": "ONDC:FIS10",
-    "version": "2.0.0",
-    "ttl": "PT10M",
-    "action": "on_issue"
+    "bpp_id": "ondc.vistar.solutions",
+    "bpp_uri": "https://ondc.vistar.solutions/v1/bpp",
+    "transaction_id": "6598cd22-0a8b-47ec-b962-374a1fadabd2",
+    "message_id": "7b8c97b3-aad0-413e-ae28-edc572b1c907",
+    "timestamp": "2025-06-02T09:01:59.915Z"
   },
   "message": {
-    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
     "issue": {
-      "id": "37f18897-d9aa-4156-9b0c-de0e3cdb7c84",
-      "level": "ISSUE",
+      "id": "bf447f06-82be-45fb-9961-46ebcb22825f",
       "status": "PROCESSING",
+      "level": "ISSUE",
+      "created_at": "2025-06-02T09:00:21.038Z",
+      "updated_at": "2025-06-02T09:01:59.915Z",
       "expected_response_time": { "duration": "PT2H" },
       "expected_resolution_time": { "duration": "P1D" },
       "refs": [
-        { "ref_id": "1fd253e8-f23d-458a-94d4-03308f4e41d6", "ref_type": "ORDER" },
+        { "ref_id": "21f897de-6825-4282-b35b-ed1dffe433b0", "ref_type": "ORDER" },
+        { "ref_id": "48e5d0f1-6255-4f22-8b06-ed16951aa4ec", "ref_type": "PROVIDER" },
+        { "ref_id": "f2ecb744-a36f-4756-a17d-aa102c222824", "ref_type": "FULFILLMENT" },
         {
-          "ref_id": "e6236f29-3df2-40ef-b43f-bf667accca1f",
-          "ref_type": "ITEM",
           "tags": [
             {
-              "descriptor": { "code": "message.order.items" },
-              "list": [{ "descriptor": { "code": "quantity.selected.count" }, "value": "1" }]
+              "list": [{ "value": "1", "descriptor": { "code": "quantity.selected.count" } }],
+              "descriptor": { "code": "message.order.items" }
             }
-          ]
+          ],
+          "ref_id": "4a08b783-3e48-4541-a24b-5a967c696677",
+          "ref_type": "ITEM"
         }
       ],
       "actors": [
         {
           "id": "8b55b999-1584-4678-92fd-9d0340ebc927",
-          "type": "CONSUMER",
           "info": {
             "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
             "person": { "name": "Test" },
-            "contact": { "phone": "9999999999", "email": "test@bap.com" }
-          }
+            "contact": { "email": "test@bap.com", "phone": "9999999999" }
+          },
+          "type": "CONSUMER"
         },
         {
           "id": "NP1",
-          "type": "INTERFACING_NP",
           "info": {
             "org": { "name": "staging.meribachat.in/bap/catalogue::ONDC:FIS10" },
             "person": { "name": "Test" },
-            "contact": { "phone": "9999999999", "email": "test@bap.com" }
-          }
+            "contact": { "email": "test@bap.com", "phone": "9999999999" }
+          },
+          "type": "INTERFACING_NP"
         },
         {
           "id": "NP2",
-          "type": "COUNTERPARTY_NP",
           "info": {
-            "org": { "name": "sellerapp.com::ONDC:RET10" },
-            "contact": { "phone": "9450394140", "email": "respondentapp@respond.com" },
-            "person": { "name": "Jane Doe" }
-          }
+            "org": { "name": "ondc.vistar.solutions::ONDC:FIS10" },
+            "person": { "name": "Vivek Bansal" },
+            "contact": { "email": "vivek@vistar.solutions", "phone": "9967971282" }
+          },
+          "type": "COUNTERPARTY_NP"
         }
       ],
       "source_id": "8b55b999-1584-4678-92fd-9d0340ebc927",
       "complainant_id": "NP1",
       "respondent_ids": ["NP2"],
-      "last_action_id": "A2",
+      "descriptor": {
+        "code": "ORD001",
+        "long_desc": "TIRUHGBWIUOR WORU GOWR G",
+        "short_desc": "ORI: Noriw ghwroei ughwretoiu ghwe"
+      },
+      "last_action_id": "2ef2dc94-feb9-4759-8a65-526936db3400",
       "actions": [
         {
-          "id": "84953d63-e3b2-468d-b955-97fe1f07513a",
-          "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
-          "updated_at": "2025-05-20T08:08:21.153Z",
+          "id": "ebefc382-a47a-4ce5-a13b-398f0c86b796",
           "action_by": "NP1",
+          "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
+          "updated_at": "2025-06-02T09:00:20.631Z",
           "actor_details": { "name": "Test" }
         },
         {
-          "id": "A1",
-          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
-          "updated_at": "2025-05-20T08:09:09.327Z",
+          "id": "10f90f8d-dc79-4299-a027-c83b23f47cdc",
           "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" }
+          "descriptor": { "code": "PROCESSING", "short_desc": "Complaint created" },
+          "updated_at": "2025-06-02T09:00:21.038Z",
+          "actor_details": { "name": "Vivek Bansal" }
         },
         {
-          "id": "A2",
-          "description": { "code": "INFO_REQUESTED", "short_desc": "OPEN" },
-          "updated_at": "2025-05-20T08:10:14.920Z",
+          "id": "2ef2dc94-feb9-4759-8a65-526936db3400",
+          "descriptor": { "code": "INFO_REQUESTED", "short_desc": "Please provide product images", "name": "INFO001" },
+          "updated_at": "2025-06-02T09:01:59.915Z",
           "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": { "name": "Jane Doe" }
         }
-      ],
-      "created_at": "2025-05-20T08:08:21.153Z",
-      "updated_at": "2025-05-20T08:08:21.153Z"
-    }
+      ]
+    },
+    "update_target": [{ "path": "issue.actions", "action": "APPENDED" }]
   }
 }

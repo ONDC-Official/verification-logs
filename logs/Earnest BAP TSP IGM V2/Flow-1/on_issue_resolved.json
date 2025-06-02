@@ -1,45 +1,40 @@
 {
   "context": {
-    "bap_id": "staging.meribachat.in/bap/catalogue",
-    "bap_uri": "https://staging.meribachat.in/bap/catalogue",
-    "bpp_id": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "location": { "country": { "code": "IND" }, "city": { "code": "std:080" } },
-    "transaction_id": "3e97df95-ce47-4e6f-82ef-4a2177340329",
-    "message_id": "8c954ad2-9eb6-4419-837e-412ecfd55458",
-    "timestamp": "2025-05-20T08:27:58.476Z",
     "domain": "ONDC:FIS10",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "action": "on_issue",
+    "bpp_uri": "https://ondc.vistar.solutions/v1/bpp",
+    "bpp_id": "ondc.vistar.solutions",
     "version": "2.0.0",
-    "ttl": "PT10M",
-    "action": "on_issue"
+    "message_id": "74a8871c-41ba-46ee-aa2a-28b862fd5e85",
+    "timestamp": "2025-06-02T09:05:09.855Z",
+    "transaction_id": "6598cd22-0a8b-47ec-b962-374a1fadabd2",
+    "bap_id": "staging.meribachat.in/bap/catalogue",
+    "bap_uri": "https://staging.meribachat.in/bap/catalogue"
   },
   "message": {
-    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
+    "update_target": [{ "path": "issue.actions", "action": "APPENDED" }],
     "issue": {
-      "id": "37f18897-d9aa-4156-9b0c-de0e3cdb7c84",
+      "id": "bf447f06-82be-45fb-9961-46ebcb22825f",
+      "status": "RESOLVED",
       "level": "ISSUE",
-      "status": "CLOSED",
+      "created_at": "2025-06-02T09:00:21.038Z",
+      "updated_at": "2025-06-02T09:05:09.855Z",
       "expected_response_time": { "duration": "PT2H" },
       "expected_resolution_time": { "duration": "P1D" },
       "refs": [
-        { "ref_id": "1fd253e8-f23d-458a-94d4-03308f4e41d6", "ref_type": "ORDER" },
+        { "ref_id": "21f897de-6825-4282-b35b-ed1dffe433b0", "ref_type": "ORDER" },
+        { "ref_id": "48e5d0f1-6255-4f22-8b06-ed16951aa4ec", "ref_type": "PROVIDER" },
+        { "ref_id": "f2ecb744-a36f-4756-a17d-aa102c222824", "ref_type": "FULFILLMENT" },
         {
-          "ref_id": "ca54b667-4d4a-4405-8521-6f08f8c5e821",
-          "ref_type": "PROVIDER"
-        },
-        {
-          "ref_id": "f0fe3d5f-621f-4134-b474-58973b6a0b32",
-          "ref_type": "FULFILMENT"
-        },
-        {
-          "ref_id": "e6236f29-3df2-40ef-b43f-bf667accca1f",
-          "ref_type": "ITEM",
           "tags": [
             {
-              "descriptor": { "code": "message.order.items" },
-              "list": [{ "descriptor": { "code": "quantity.selected.count" }, "value": "1" }]
+              "list": [{ "value": "1", "descriptor": { "code": "quantity.selected.count" } }],
+              "descriptor": { "code": "message.order.items" }
             }
-          ]
+          ],
+          "ref_id": "4a08b783-3e48-4541-a24b-5a967c696677",
+          "ref_type": "ITEM"
         }
       ],
       "actors": [
@@ -64,113 +59,165 @@
         {
           "id": "NP2",
           "info": {
-            "org": { "name": "sellerapp.com::ONDC:RET10" },
-            "person": { "name": "Jane Doe" },
-            "contact": { "email": "respondentapp@respond.com", "phone": "9450394140" }
+            "org": { "name": "ondc.vistar.solutions::ONDC:FIS10" },
+            "person": { "name": "Vivek Bansal" },
+            "contact": { "email": "vivek@vistar.solutions", "phone": "9967971282" }
           },
           "type": "COUNTERPARTY_NP"
         }
       ],
-      "source_id": "NP1",
+      "source_id": "8b55b999-1584-4678-92fd-9d0340ebc927",
       "complainant_id": "NP1",
       "respondent_ids": ["NP2"],
-      "last_action_id": "A5",
+      "descriptor": {
+        "code": "ORD001",
+        "long_desc": "TIRUHGBWIUOR WORU GOWR G",
+        "short_desc": "ORI: Noriw ghwroei ughwretoiu ghwe"
+      },
+      "last_action_id": "935ba822-a690-437f-b784-aa10b258e5fb",
       "actions": [
         {
-          "id": "84953d63-e3b2-468d-b955-97fe1f07513a",
+          "id": "ebefc382-a47a-4ce5-a13b-398f0c86b796",
           "action_by": "NP1",
           "descriptor": { "code": "OPEN", "short_desc": "Complaint created" },
-          "updated_at": "2025-05-20T08:08:21.153Z",
+          "updated_at": "2025-06-02T09:00:20.631Z",
           "actor_details": { "name": "Test" }
         },
         {
-          "id": "A1",
+          "id": "10f90f8d-dc79-4299-a027-c83b23f47cdc",
           "action_by": "NP2",
-          "updated_at": "2025-05-20T08:09:09.327Z",
-          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
-          "actor_details": { "name": "Sam Manuel" }
+          "descriptor": { "code": "PROCESSING", "short_desc": "Complaint created" },
+          "updated_at": "2025-06-02T09:00:21.038Z",
+          "actor_details": { "name": "Vivek Bansal" }
         },
         {
-          "id": "A2",
+          "id": "2ef2dc94-feb9-4759-8a65-526936db3400",
           "action_by": "NP2",
-          "updated_at": "2025-05-20T08:10:14.920Z",
-          "description": { "code": "INFO_REQUESTED", "short_desc": "OPEN" },
-          "actor_details": { "name": "Sam Manuel" }
+          "descriptor": { "code": "INFO_REQUESTED", "name": "INFO001", "short_desc": "Please provide product images" },
+          "updated_at": "2025-06-02T09:01:59.915Z",
+          "actor_details": { "name": "Jane Doe" }
         },
         {
-          "id": "7e51d7cc-4172-4374-8854-8e2c9cb4c5a7",
+          "id": "a0c562ce-a2d3-4503-ad5c-5559c35ab4a6",
           "action_by": "NP1",
           "descriptor": {
-            "code": "INFORMATION_PROVIDED",
+            "code": "INFO_PROVIDED",
             "images": [{ "url": "https://placedog.net/300/500", "size_type": "xs" }],
-            "short_desc": "Look at this image"
+            "short_desc": "BAD TOOLS"
           },
-          "updated_at": "2025-05-20T08:18:50.845Z",
+          "updated_at": "2025-06-02T09:02:45.764Z",
           "actor_details": { "name": "Test" }
         },
         {
-          "id": "A3",
+          "id": "762ad2e9-89f9-4a06-aff2-9ecd7d7f37fc",
+          "descriptor": { "code": "PROCESSING", "short_desc": "Processing issue" },
+          "updated_at": "2025-06-02T09:02:45.927Z",
           "action_by": "NP2",
-          "updated_at": "2025-05-20T08:20:16.357Z",
-          "description": { "code": "PROCESSING", "short_desc": "OPEN" },
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": { "name": "Vivek Bansal" }
         },
         {
-          "id": "A4",
-          "action_by": "NP2",
-          "updated_at": "2025-05-20T08:25:13.916Z",
-          "description": { "code": "RESOLUTION_PROPOSED", "short_desc": "OPEN" },
-          "actor_details": { "name": "Sam Manuel" }
-        },
-        {
-          "id": "3a5fc673-f3e6-4324-93c6-7514af9194ab",
-          "ref_id": "R1",
+          "id": "84ca991c-0196-4a41-a62e-d95d87e82c1a",
+          "ref_id": "128803c3-0180-4f98-9372-eee24afbf48b",
           "ref_type": "RESOLUTIONS",
-          "descriptor": { "code": "RESOLUTION_ACCEPTED" },
-          "updated_at": "2025-05-20T08:26:45.934Z",
+          "action_by": "NP2",
+          "descriptor": { "code": "RESOLUTION_PROPOSED", "short_desc": "RESOLUTION_PROPOSED" },
+          "updated_at": "2025-06-02T09:04:16.386Z",
+          "actor_details": { "name": "Vivek Bansal" }
+        },
+        {
+          "id": "67539de6-53c1-4c82-843d-f9db4df5c137",
+          "ref_id": "b7c8d1d9-9b97-4d37-a6d1-eb92b62f4672",
+          "ref_type": "RESOLUTIONS",
           "action_by": "NP1",
+          "descriptor": { "code": "RESOLUTION_ACCEPTED", "short_desc": "RESOLUTION_ACCEPTED" },
+          "updated_at": "2025-06-02T09:05:09.676Z",
           "actor_details": { "name": "Test" }
         },
         {
-          "id": "A5",
-          "description": { "code": "RESOLVED", "short_desc": "OPEN" },
-          "updated_at": "2025-05-20T08:27:58.474Z",
+          "id": "935ba822-a690-437f-b784-aa10b258e5fb",
+          "ref_id": {
+            "id": "b7c8d1d9-9b97-4d37-a6d1-eb92b62f4672",
+            "tags": [
+              {
+                "list": [
+                  { "value": "4a08b783-3e48-4541-a24b-5a967c696677", "descriptor": { "code": "ITEM" } },
+                  { "descriptor": { "code": "REPLACEMENT" } }
+                ],
+                "descriptor": { "code": "RESOLUTION_DETAILS" }
+              }
+            ],
+            "ref_id": "128803c3-0180-4f98-9372-eee24afbf48b",
+            "ref_type": "PARENT",
+            "descriptor": { "code": "REPLACEMENT", "short_desc": "Providing REPLACEMENT for the item" },
+            "updated_at": "2025-06-02T09:04:16.386Z",
+            "proposed_by": "NP2"
+          },
+          "ref_type": "RESOLUTIONS",
+          "descriptor": { "code": "RESOLVED", "name": "REPLACEMENT", "short_desc": "Providing REPLACEMENT" },
+          "updated_at": "2025-06-02T09:05:09.855Z",
           "action_by": "NP2",
-          "actor_details": { "name": "Sam Manuel" }
+          "actor_details": { "name": "Vivek Bansal" }
         }
       ],
       "resolutions": [
         {
-          "id": "R1",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": { "code": "REFUND", "short_desc": "Providing refund for the item" },
-          "updated_at": "2024-08-14T09:57:58.841Z",
-          "proposed_by": "NP2",
-          "tags": [
-            {
-              "descriptor": { "code": "RESOLUTION_DETAILS" },
-              "list": [
-                { "descriptor": { "code": "ITEM" }, "value": "I1" },
-                { "descriptor": { "code": "REFUND_AMOUNT" }, "value": "200" }
-              ]
-            }
-          ]
+          "id": "128803c3-0180-4f98-9372-eee24afbf48b",
+          "descriptor": { "code": "PARENT", "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE" },
+          "updated_at": "2025-06-02T09:04:16.386Z",
+          "proposed_by": "NP2"
         },
         {
-          "id": "R2",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
-          "descriptor": { "code": "REPLACEMENT", "short_desc": "Providing replacement of the item" },
-          "updated_at": "2024-08-14T09:57:58.841Z",
-          "proposed_by": "NP2",
+          "id": "2155f442-31fa-421c-bd07-97cefab91c88",
           "tags": [
-            { "descriptor": { "code": "RESOLUTION_DETAILS" }, "list": [{ "descriptor": { "code": "ITEM" }, "value": "I1" }] }
-          ]
+            {
+              "list": [
+                { "value": "4a08b783-3e48-4541-a24b-5a967c696677", "descriptor": { "code": "ITEM" } },
+                { "descriptor": { "code": "REFUND" } }
+              ],
+              "descriptor": { "code": "RESOLUTION_DETAILS" }
+            }
+          ],
+          "ref_id": "128803c3-0180-4f98-9372-eee24afbf48b",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REFUND", "short_desc": "Providing REFUND for the item" },
+          "updated_at": "2025-06-02T09:04:16.386Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "b7c8d1d9-9b97-4d37-a6d1-eb92b62f4672",
+          "tags": [
+            {
+              "list": [
+                { "value": "4a08b783-3e48-4541-a24b-5a967c696677", "descriptor": { "code": "ITEM" } },
+                { "descriptor": { "code": "REPLACEMENT" } }
+              ],
+              "descriptor": { "code": "RESOLUTION_DETAILS" }
+            }
+          ],
+          "ref_id": "128803c3-0180-4f98-9372-eee24afbf48b",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "REPLACEMENT", "short_desc": "Providing REPLACEMENT for the item" },
+          "updated_at": "2025-06-02T09:04:16.386Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "11ad6a4c-7300-4281-a7be-c90e9a199e05",
+          "tags": [
+            {
+              "list": [
+                { "value": "4a08b783-3e48-4541-a24b-5a967c696677", "descriptor": { "code": "ITEM" } },
+                { "descriptor": { "code": "NO_ACTION" } }
+              ],
+              "descriptor": { "code": "RESOLUTION_DETAILS" }
+            }
+          ],
+          "ref_id": "128803c3-0180-4f98-9372-eee24afbf48b",
+          "ref_type": "PARENT",
+          "descriptor": { "code": "NO_ACTION", "short_desc": "Providing NO_ACTION for the item" },
+          "updated_at": "2025-06-02T09:04:16.386Z",
+          "proposed_by": "NP2"
         }
-      ],
-      "created_at": "2025-05-20T08:08:21.153Z",
-      "updated_at": "2025-05-20T08:26:45.934Z"
+      ]
     }
   }
 }
