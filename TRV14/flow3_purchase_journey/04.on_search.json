@@ -1,0 +1,883 @@
+{
+    "context": {
+      "domain": "ONDC:TRV14",
+      "location": {
+        "country": {
+          "code": "IND"
+        },
+        "city": {
+          "code": "*"
+        }
+      },
+      "version": "2.0.0",
+      "action": "on_search",
+      "transaction_id": "85646784-6109-4660-a6c4-f06d2b1118ce",
+      "message_id": "805fb50b-2db0-4644-9a35-cfa5964ef99d",
+      "timestamp": "2025-05-29T06:56:52.240Z",
+      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+      "bap_id": "ondc.sequelstring.com/buyer/protocol",
+      "ttl": "PT30S",
+      "bpp_id": "ondc.sequelstring.com/seller/protocol",
+      "bpp_uri": "https://ondc.sequelstring.com/protocol"
+    },
+    "message": {
+      "catalog": {
+        "descriptor": {
+          "name": "India tourism",
+          "short_desc": "Entry Pass",
+          "long_desc": "Online ticket booking service",
+          "images": [
+            {
+              "url": "https://api.unreserved-entry-pass.com/logos/logo.ico",
+              "size_type": "xs"
+            }
+          ]
+        },
+        "providers": [
+          {
+            "id": "P1",
+            "descriptor": {
+              "name": "India tourism",
+              "short_desc": "Online Ticket Booking Service",
+              "images": [
+                {
+                  "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                  "size_type": "xs"
+                }
+              ]
+            },
+            "categories": [
+              {
+                "descriptor": {
+                  "name": "Culture & Heritage",
+                  "code": "CULTURE_HERITAGE"
+                },
+                "id": "C1"
+              },
+              {
+                "descriptor": {
+                  "name": "Standard"
+                },
+                "parent_category_id": "C1",
+                "id": "C2"
+              },
+              {
+                "descriptor": {
+                  "name": "Premium"
+                },
+                "parent_category_id": "C1",
+                "id": "C3"
+              }
+            ],
+            "time": {
+              "range": {
+                "start": "2024-06-14T05:30:00.000Z",
+                "end": "2024-06-14T23:30:00.000Z"
+              }
+            },
+            "locations": [
+              {
+                "id": "L1",
+                "gps": "28.524596, 77.185577",
+                "descriptor": {
+                  "name": "Qutab Minar",
+                  "short_desc": "Seth Sarai, Mehrauli, New Delhi, Delhi. The Qutb Minar, also spelled Qutub Minar and Qutab Minar, is a minaret and \"victory tower\" that forms part of the Qutb complex",
+                  "additional_desc": {
+                    "url": "https://api.unreserved-entry-pass.com/sites/additional-info",
+                    "content_type": "text/plain"
+                  },
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/images/location.png",
+                      "size_type": "md"
+                    }
+                  ]
+                },
+                "rating": "5"
+              },
+              {
+                "id": "L2",
+                "gps": "28.5244946, 77.1855177",
+                "descriptor": {
+                  "name": "Red Fort",
+                  "short_desc": "Red Fort, Mughal fort in Old Delhi, India. It was built by Shah Jahān in the mid-17th century and remains a major tourist attraction.",
+                  "additional_desc": {
+                    "url": "https://api.unreserved-entry-pass.com/sites/additional-info",
+                    "content_type": "text/plain"
+                  },
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/images/location.png",
+                      "size_type": "md"
+                    }
+                  ]
+                },
+                "rating": "4"
+              }
+            ],
+            "payments": [
+              {
+                "collected_by": "BAP"
+              }
+            ],
+            "items": [
+              {
+                "id": "I0",
+                "descriptor": {
+                  "name": "Parent Item for Culture & Heritage",
+                  "code": "ABSTRACT",
+                  "short_desc": "Ticket for Qutab Minar",
+                  "long_desc": "This ticket grants entry to the Qutab Minar.",
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                      "size_type": "xs"
+                    }
+                  ]
+                },
+                "location_ids": [
+                  "L1"
+                ],
+                "category_ids": [
+                  "C1",
+                  "C2"
+                ],
+                "time": {
+                  "label": "VALIDITY",
+                  "duration": "P2D"
+                },
+                "fulfillment_ids": [
+                  "F1",
+                  "F2"
+                ],
+                "cancellation_terms": [
+                  {
+                    "cancellation_fee": {
+                      "percentage": "10"
+                    },
+                    "fulfillment_state": {
+                      "descriptor": {
+                        "code": "CONFIRMED"
+                      }
+                    },
+                    "cancel_by": {
+                      "label": "DURATION",
+                      "duration": "PT1H30M"
+                    },
+                    "cancellation_eligible": true
+                  },
+                  {
+                    "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.unreserved-entry-pass.com/beckn/tnc.html"
+                    },
+                    "cancellation_eligible": true
+                  }
+                ],
+                "replacement_terms": [
+                  {
+                    "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.unreserved-entry-pass/beckn/replacement.html"
+                    }
+                  }
+                ],
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "INCLUSIONS"
+                    },
+                    "list": [
+                      {
+                        "value": "water"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "EXCLUSIONS"
+                    },
+                    "list": [
+                      {
+                        "value": "out side food"
+                      },
+                      {
+                        "value": "photography"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I1",
+                "descriptor": {
+                  "name": "Adult-Ticket Culture & Heritage Item",
+                  "code": "ENTRY_PASS",
+                  "short_desc": "Ticket for Qutab Minar",
+                  "long_desc": "This ticket grants entry to the Qutab Minar.",
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                      "size_type": "xs"
+                    }
+                  ]
+                },
+                "parent_item_id": "I0",
+                "location_ids": [
+                  "L1"
+                ],
+                "category_ids": [
+                  "C1",
+                  "C2"
+                ],
+                "price": {
+                  "currency": "INR",
+                  "value": "350"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 6
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                },
+                "time": {
+                  "label": "VALIDITY",
+                  "duration": "P2D"
+                },
+                "fulfillment_ids": [
+                  "F1",
+                  "F2"
+                ],
+                "add_ons": [
+                  {
+                    "id": "A1",
+                    "descriptor": {
+                      "name": "Audio Assistance"
+                    },
+                    "quantity": {
+                      "available": {
+                        "count": 1
+                      }
+                    },
+                    "price": {
+                      "value": "100",
+                      "currency": "INR"
+                    }
+                  }
+                ],
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "FARE_POLICY"
+                    },
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "MIN_AGE"
+                        },
+                        "value": "18"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MAX_AGE"
+                        },
+                        "value": "70"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "GENDER"
+                        },
+                        "value": "MALE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "NATIONALITY"
+                        },
+                        "value": "INDIAN"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I2",
+                "descriptor": {
+                  "name": "Child-Ticket Culture & Heritage Item",
+                  "code": "ENTRY_PASS",
+                  "short_desc": "Ticket for Qutab Minar",
+                  "long_desc": "This ticket grants entry to the Qutab Minar.",
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                      "size_type": "xs"
+                    }
+                  ]
+                },
+                "parent_item_id": "I0",
+                "location_ids": [
+                  "L1"
+                ],
+                "category_ids": [
+                  "C1",
+                  "C2"
+                ],
+                "price": {
+                  "currency": "INR",
+                  "value": "150"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 4
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                },
+                "time": {
+                  "label": "VALIDITY",
+                  "duration": "P2D"
+                },
+                "fulfillment_ids": [
+                  "F1",
+                  "F2"
+                ],
+                "add_ons": [
+                  {
+                    "id": "A1",
+                    "descriptor": {
+                      "name": "Audio Assistance"
+                    },
+                    "quantity": {
+                      "available": {
+                        "count": 1
+                      }
+                    },
+                    "price": {
+                      "value": "100",
+                      "currency": "INR"
+                    }
+                  }
+                ],
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "FARE_POLICY"
+                    },
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "MIN_AGE"
+                        },
+                        "value": "1"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MAX_AGE"
+                        },
+                        "value": "70"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "GENDER"
+                        },
+                        "value": "MALE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "NATIONALITY"
+                        },
+                        "value": "INDIAN"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I3",
+                "descriptor": {
+                  "name": "Adult-Ticket Culture & Heritage Item",
+                  "code": "ENTRY_PASS",
+                  "short_desc": "Ticket for Qutab Minar",
+                  "long_desc": "This ticket grants entry to the Qutab Minar.",
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                      "size_type": "xs"
+                    }
+                  ]
+                },
+                "location_ids": [
+                  "L1"
+                ],
+                "category_ids": [
+                  "C1",
+                  "C3"
+                ],
+                "price": {
+                  "currency": "INR",
+                  "value": "400"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 6
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                },
+                "time": {
+                  "label": "VALIDITY",
+                  "duration": "P2D"
+                },
+                "fulfillment_ids": [
+                  "F1",
+                  "F2"
+                ],
+                "add_ons": [
+                  {
+                    "id": "A1",
+                    "descriptor": {
+                      "name": "Audio Assistance"
+                    },
+                    "quantity": {
+                      "available": {
+                        "count": 1
+                      }
+                    },
+                    "price": {
+                      "value": "100",
+                      "currency": "INR"
+                    }
+                  }
+                ],
+                "cancellation_terms": [
+                  {
+                    "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.unreserved-entry-pass.com/beckn/tnc.html"
+                    },
+                    "cancellation_eligible": true
+                  },
+                  {
+                    "cancellation_fee": {
+                      "percentage": "10"
+                    },
+                    "cancel_by": {
+                      "label": "TIMESTAMP",
+                      "timestamp": "2024-07-26T04:43:16.000Z"
+                    },
+                    "cancellation_eligible": true
+                  }
+                ],
+                "replacement_terms": [
+                  {
+                    "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.unreserved-entry-pass/beckn/replacement.html"
+                    }
+                  }
+                ],
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "FARE_POLICY"
+                    },
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "MIN_AGE"
+                        },
+                        "value": "18"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MAX_AGE"
+                        },
+                        "value": "70"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "GENDER"
+                        },
+                        "value": "MALE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "NATIONALITY"
+                        },
+                        "value": "INDIAN"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INCLUSIONS"
+                    },
+                    "list": [
+                      {
+                        "value": "water"
+                      },
+                      {
+                        "value": "guide_tour"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "EXCLUSIONS"
+                    },
+                    "list": [
+                      {
+                        "value": "out side food"
+                      },
+                      {
+                        "value": "photography"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I4",
+                "descriptor": {
+                  "name": "Child-Ticket Culture & Heritage Item",
+                  "code": "ENTRY_PASS",
+                  "short_desc": "Ticket for Qutab Minar",
+                  "long_desc": "This ticket grants entry to the Qutab Minar.",
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                      "size_type": "xs"
+                    }
+                  ]
+                },
+                "location_ids": [
+                  "L1"
+                ],
+                "category_ids": [
+                  "C1",
+                  "C3"
+                ],
+                "price": {
+                  "currency": "INR",
+                  "value": "250"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 4
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                },
+                "time": {
+                  "label": "VALIDITY",
+                  "duration": "P2D"
+                },
+                "fulfillment_ids": [
+                  "F1",
+                  "F2"
+                ],
+                "add_ons": [
+                  {
+                    "id": "A1",
+                    "descriptor": {
+                      "name": "Audio Assistance"
+                    },
+                    "quantity": {
+                      "available": {
+                        "count": 1
+                      }
+                    },
+                    "price": {
+                      "value": "100",
+                      "currency": "INR"
+                    }
+                  }
+                ],
+                "cancellation_terms": [
+                  {
+                    "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.unreserved-entry-pass.com/beckn/tnc.html"
+                    },
+                    "cancellation_eligible": true
+                  }
+                ],
+                "replacement_terms": [
+                  {
+                    "external_ref": {
+                      "mimetype": "text/html",
+                      "url": "https://api.unreserved-entry-pass/beckn/replacement.html"
+                    }
+                  }
+                ],
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "FARE_POLICY"
+                    },
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "MIN_AGE"
+                        },
+                        "value": "1"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MAX_AGE"
+                        },
+                        "value": "70"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "GENDER"
+                        },
+                        "value": "MALE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "NATIONALITY"
+                        },
+                        "value": "INDIAN"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "INCLUSIONS"
+                    },
+                    "list": [
+                      {
+                        "value": "water"
+                      },
+                      {
+                        "value": "guide_tour"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "EXCLUSIONS"
+                    },
+                    "list": [
+                      {
+                        "value": "out side food"
+                      },
+                      {
+                        "value": "photography"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I5",
+                "descriptor": {
+                  "name": "Add on item",
+                  "code": "ADD_ON",
+                  "images": [
+                    {
+                      "url": "https://api.unreserved-entry-pass.com/sites/default/files/event/logo/event_logo_2.png",
+                      "size_type": "xs"
+                    }
+                  ]
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "100"
+                },
+                "quantity": {
+                  "maximum": {
+                    "count": 3
+                  },
+                  "minimum": {
+                    "count": 1
+                  }
+                }
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "F1",
+                "type": "VISIT",
+                "stops": [
+                  {
+                    "type": "START",
+                    "instructions": {
+                      "additional_desc": {
+                        "url": "https://api.unreserved-entry-pass.com/sites/additional-info",
+                        "content_type": "text/plain"
+                      }
+                    },
+                    "time": {
+                      "timestamp": "2024-06-28T05:00:16.000Z"
+                    }
+                  }
+                ],
+                "agent": {
+                  "organization": {
+                    "contact": {
+                      "phone": "+91-9999999999",
+                      "email": "john.doe@example.com"
+                    }
+                  }
+                },
+                "vehicle": {
+                  "category": "SITE"
+                }
+              },
+              {
+                "id": "F2",
+                "type": "VISIT",
+                "stops": [
+                  {
+                    "type": "START",
+                    "instructions": {
+                      "additional_desc": {
+                        "url": "https://api.unreserved-entry-pass.com/sites/additional-info",
+                        "content_type": "text/plain"
+                      }
+                    },
+                    "time": {
+                      "range": {
+                        "start": "2024-06-14T05:30:00.000Z",
+                        "end": "2024-06-14T05:45:00.000Z"
+                      }
+                    }
+                  }
+                ],
+                "agent": {
+                  "organization": {
+                    "contact": {
+                      "phone": "+91-9999999999",
+                      "email": "john.doe@example.com"
+                    }
+                  }
+                },
+                "vehicle": {
+                  "category": "SITE"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BAP_TERMS",
+              "name": "BAP Terms of Engagement"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "percent"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_BASIS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              },
+              {
+                "descriptor": {
+                  "code": "SETTLEMENT_WINDOW"
+                },
+                "value": "P30D"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "BPP_TERMS",
+              "name": "BPP Terms of Engagement"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
+              },
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_TYPE"
+                },
+                "value": "percent"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              },
+              {
+                "descriptor": {
+                  "code": "MANDATORY_ARBITRATION"
+                },
+                "value": "true"
+              },
+              {
+                "descriptor": {
+                  "code": "COURT_JURISDICTION"
+                },
+                "value": "New Delhi"
+              },
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5 %"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "PAGINATION",
+              "name": "Pagination"
+            },
+            "display": true,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "PAGINATION_ID"
+                },
+                "value": "P1"
+              },
+              {
+                "descriptor": {
+                  "code": "MAX_PAGE_NUMBER"
+                },
+                "value": "2"
+              },
+              {
+                "descriptor": {
+                  "code": "CURRENT_PAGE_NUMBER"
+                },
+                "value": 2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
