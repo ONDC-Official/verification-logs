@@ -1,0 +1,397 @@
+{
+  "context": {
+    "action": "on_update",
+    "bap_id": "ondc-buyer-preprod.tripivo.co.in",
+    "bap_uri": "https://mobility-staging.ondc.org/api/ondc/",
+    "bpp_uri": "https://pramaan.ondc.org/beta/staging/mock/seller",
+    "bpp_id": "pramaan.ondc.org/beta/staging/mock/seller",
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:0124"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "4ef9bb58-67e8-4f81-85c7-bedb883b6bc9",
+    "timestamp": "2025-06-11T11:33:37.982Z",
+    "transaction_id": "9e8b7c6d-e5f4-3210-98ab-cdef12345678",
+    "ttl": "PT50S",
+    "version": "2.0.1"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "OD_101"
+      },
+      "fulfillments": [
+        {
+          "id": "fa191f5e-fe7b-4ced-bf32-6f754c799dee",
+          "stops": [
+            {
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "type": "START",
+              "instructions": {
+                "short_desc": "Information about location",
+                "long_desc": "Information about location"
+              },
+              "authorization": {
+                "token": "123456",
+                "type": "OTP",
+                "status": "UNCLAIMED",
+                "valid_to": "2025-06-11T12:33:37.981Z"
+              }
+            },
+            {
+              "location": {
+                "gps": "12.971186, 77.586812"
+              },
+              "type": "END"
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "CAB",
+            "variant": "SUV",
+            "energy_type": "CNG",
+            "make": "Land Rover",
+            "model": "Defender",
+            "registration": "DL 3CBW 0403"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "uijnAqtyxMdn@~fAdn@~fAdn@~fA"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"13.001385, 77.632889\"},{\"gps\":\"12.993835, 77.621370\"},{\"gps\":\"12.986286, 77.609850\"},{\"gps\":\"12.978736, 77.598331\"}]"
+                }
+              ]
+            }
+          ],
+          "customer": {
+            "contact": {
+              "phone": "9876556789"
+            },
+            "person": {
+              "name": "Joe Adams"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "agent": {
+            "contact": {
+              "phone": "8976543210"
+            },
+            "person": {
+              "name": "Jake Peralta"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "I1",
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Cab Ride"
+          },
+          "fulfillment_ids": [
+            "fa191f5e-fe7b-4ced-bf32-6f754c799dee"
+          ],
+          "price": {
+            "currency": "INR",
+            "value": "210.00",
+            "minimum_value": "190",
+            "maximum_value": "230"
+          },
+          "location_ids": [
+            "2b1a409b-7e4d-4ca7-b065-abba0854357e",
+            "f3f6a140-6a8f-45b1-bbbb-08c2e627edac"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "7.52"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "75.21"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "de66709e-a7ad-4865-b281-9678913a35ab"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "210.00"
+        },
+        "breakup": [
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "180.00"
+            }
+          },
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        ],
+        "ttl": "PT200S"
+      },
+      "billing": {
+        "name": "Joe Adams"
+      },
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_CONFIRMED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "bank_code": "XXXXXXXX",
+            "virtual_payment_address": "9988199772@okicic"
+          },
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "DELIVERY"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://example-test-bpp.com/static-terms.txt"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "2.10"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT",
+          "id": "de66709e-a7ad-4865-b281-9678913a35ab"
+        }
+      ],
+      "id": "2c732472-5e42-4d42-8fe5-285b868e02ab",
+      "status": "ACTIVE",
+      "created_at": "2025-06-11T11:33:21.969Z",
+      "updated_at": "2025-06-11T11:33:37.982Z"
+    }
+  }
+}
