@@ -1,0 +1,215 @@
+{
+  "context": {
+    "action": "on_select",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV10/2.1.0/buyer",
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "1bbeeebb-6283-4df1-acf0-cdc638511644",
+    "timestamp": "2025-04-09T11:11:02.046Z",
+    "transaction_id": "8297bbfd-d470-4b0b-81d1-eea31092c0e3",
+    "ttl": "PT30S",
+    "version": "2.1.0",
+    "bpp_id": "dev-automation.ondc.org",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV10/2.1.0/seller"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "id": "F1",
+          "stops": [
+            {
+              "location": {
+                "gps": "23.456789, -98.765432"
+              },
+              "type": "START",
+              "time": {
+                "timestamp": "2025-10-09T11:10:44.110Z"
+              },
+              "instructions": {
+                "short_desc": "short description of the location",
+                "long_desc": "long description of the location"
+              }
+            },
+            {
+              "location": {
+                "gps": "12.971186, 77.586812"
+              },
+              "type": "END",
+              "instructions": {
+                "short_desc": "short description of the location",
+                "long_desc": "long description of the location"
+              }
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "variant": "AUTO_RICKSHAW"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "_p~iF~ps|U_ulLnnqC_mqNvxq`@"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"12.909982, 77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982,77.611822\"},{\"gps\":\"12.909982, 77.611822\"}]"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Auto Ride"
+          },
+          "fulfillment_ids": [
+            "F1"
+          ],
+          "id": "I1",
+          "location_ids": [
+            "L1",
+            "L3"
+          ],
+          "price": {
+            "currency": "INR",
+            "maximum_value": "176",
+            "minimum_value": "136",
+            "value": "146"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "661"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "provider": {
+        "id": "P1"
+      },
+      "quote": {
+        "breakup": [
+          {
+            "price": {
+              "currency": "INR",
+              "value": "30"
+            },
+            "title": "BASE_FARE"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "116"
+            },
+            "title": "DISTANCE_FARE"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "146"
+        },
+        "ttl": "PT200S"
+      }
+    }
+  }
+}

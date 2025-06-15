@@ -1,0 +1,575 @@
+{
+  "context": {
+    "action": "on_cancel",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.1/buyer",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "971137c4-d580-4b6f-959e-deae61adc546",
+    "timestamp": "2025-04-09T09:07:06.983Z",
+    "transaction_id": "13e9dcf7-6d96-42e5-84f1-8a2e81431844",
+    "ttl": "PT30S",
+    "version": "2.0.1",
+    "bpp_id": "dev-automation.ondc.org",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.1/seller"
+  },
+  "message": {
+    "order": {
+      "id": "kr8e820b4eh",
+      "items": [
+        {
+          "id": "I1",
+          "category_ids": [
+            "C1"
+          ],
+          "descriptor": {
+            "name": "Single Journey Ticket",
+            "code": "SJT"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "60"
+          },
+          "quantity": {
+            "selected": {
+              "count": 5
+            }
+          },
+          "fulfillment_ids": [
+            "F1",
+            "Fsoi2tyy",
+            "Fp38ua14",
+            "Fxitfyig",
+            "Fi55vips",
+            "F3dn7ayn"
+          ],
+          "time": {
+            "label": "Validity",
+            "duration": "P2D",
+            "timestamp": "2021-03-23T11:01:40.065Z"
+          }
+        }
+      ],
+      "provider": {
+        "id": "P1",
+        "descriptor": {
+          "name": "ONDC Metro Rail Limited",
+          "images": [
+            {
+              "url": "https://delhimetrorail.com/logos/logo.ico"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2023-09-14T05:30:00.000Z",
+            "end": "2023-09-14T23:30:00.000Z"
+          }
+        }
+      },
+      "payments": [
+        {
+          "id": "xtkun5r2e6l",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "34cc9b0b-6887-4c63-8397-2f4fcf03e50d",
+            "currency": "INR",
+            "amount": "300.00",
+            "bank_code": "XXXXXXXX",
+            "bank_account_number": "xxxxxxxxxxxxxx"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "NEFT"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.abc.com/settlement-terms/"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "59"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "F1",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_1",
+                  "name": "MOCK_STATION_std:011_1"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_2",
+                  "name": "MOCK_STATION_std:011_2"
+                },
+                "gps": "28.738416, 77.139132"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 3"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_3",
+                  "name": "MOCK_STATION_std:011_3"
+                },
+                "gps": "28.738876, 77.119932"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 4"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_4",
+                  "name": "MOCK_STATION_std:011_4"
+                },
+                "gps": "28.738411, 77.131132"
+              },
+              "id": "4",
+              "parent_stop_id": "3"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 5"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_5",
+                  "name": "MOCK_STATION_std:011_5"
+                },
+                "gps": "28.738176, 77.139932"
+              },
+              "id": "5",
+              "parent_stop_id": "4"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 6",
+                "short_desc": "Change for Pink Line"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_6",
+                  "name": "MOCK_STATION_std:011_6"
+                },
+                "gps": "28.738426, 77.139932"
+              },
+              "id": "6",
+              "parent_stop_id": "5"
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 7"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_7",
+                  "name": "MOCK_STATION_std:011_7"
+                },
+                "gps": "28.718476, 77.129932"
+              },
+              "id": "7",
+              "parent_stop_id": "6"
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 8"
+              },
+              "location": {
+                "descriptor": {
+                  "code": "MOCK_STATION_std:011_8",
+                  "name": "MOCK_STATION_std:011_8"
+                },
+                "gps": "28.738576, 77.139532"
+              },
+              "id": "8",
+              "parent_stop_id": "7"
+            }
+          ],
+          "type": "TRIP",
+          "vehicle": {
+            "category": "METRO"
+          }
+        },
+        {
+          "id": "Fsoi2tyy",
+          "type": "TICKET",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PARENT_ID"
+                  },
+                  "value": "F1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "jac1do46"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "QR",
+                "token": "j+KKz6wHhDUx8J8xr1w790AOdHcFu6Dw7p6GXxXNc/c=",
+                "valid_to": "2024-07-23T23:59:59.999Z",
+                "status": "UNCLAIMED"
+              }
+            }
+          ]
+        },
+        {
+          "id": "Fp38ua14",
+          "type": "TICKET",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PARENT_ID"
+                  },
+                  "value": "F1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "y3vn7gbq"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "QR",
+                "token": "vqvyMqlFx3al5W5/kUloGpx/jPdkOuTY9G57IyigAYs=",
+                "valid_to": "2024-07-23T23:59:59.999Z",
+                "status": "UNCLAIMED"
+              }
+            }
+          ]
+        },
+        {
+          "id": "Fxitfyig",
+          "type": "TICKET",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PARENT_ID"
+                  },
+                  "value": "F1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "xbecpogp"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "QR",
+                "token": "Y5U/iI+Z631UZya6bMe/cvrV4MHw1jAzBXk1Yq47OXY=",
+                "valid_to": "2024-07-23T23:59:59.999Z",
+                "status": "UNCLAIMED"
+              }
+            }
+          ]
+        },
+        {
+          "id": "Fi55vips",
+          "type": "TICKET",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PARENT_ID"
+                  },
+                  "value": "F1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "fmdi4m9o"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "QR",
+                "token": "uzOYL2bSjI+9Ve1UOuvJbRc8hxPtk/3WHm6Tz0hk0YA=",
+                "valid_to": "2024-07-23T23:59:59.999Z",
+                "status": "UNCLAIMED"
+              }
+            }
+          ]
+        },
+        {
+          "id": "F3dn7ayn",
+          "type": "TICKET",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "PARENT_ID"
+                  },
+                  "value": "F1"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "zai3f9yq"
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "type": "START",
+              "authorization": {
+                "type": "QR",
+                "token": "WOeJCWEG2FuQpHo90ETQUCsoX7RRpbV+JklzbssyeBw=",
+                "valid_to": "2024-07-23T23:59:59.999Z",
+                "status": "UNCLAIMED"
+              }
+            }
+          ]
+        }
+      ],
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2021-03-23T10:00:00.065Z"
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://transitsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "SCHEDULED_INFO"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "GTFS"
+              },
+              "value": "https://metro-transit/gtfs-realtime"
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+91-9897867564"
+      },
+      "quote": {
+        "price": {
+          "value": "300.00",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "I1",
+              "price": {
+                "currency": "INR",
+                "value": "60"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 5
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "300.00"
+            }
+          }
+        ]
+      },
+      "status": "CANCELLATION_INITIATED",
+      "created_at": "2025-04-09T09:05:06.690Z",
+      "updated_at": "2025-04-09T09:07:06.987Z"
+    }
+  }
+}
