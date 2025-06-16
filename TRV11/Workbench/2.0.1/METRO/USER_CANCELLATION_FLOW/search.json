@@ -1,0 +1,88 @@
+{
+  "context": {
+    "action": "search",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:TRV11/2.0.1/buyer",
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:011"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "af18f86f-d3f1-43cd-8232-f3e656b8df8b",
+    "timestamp": "2025-04-09T08:59:32.264Z",
+    "transaction_id": "5ec610c8-14bd-403d-992b-e8d6d23391ab",
+    "ttl": "PT30S",
+    "version": "2.0.1",
+    "bpp_id": "https://dev-automation.ondc.org/seller"
+  },
+  "message": {
+    "intent": {
+      "fulfillment": {
+        "stops": [
+          {
+            "type": "START",
+            "location": {
+              "descriptor": {
+                "code": "MOCK_STATION_std:011_1"
+              }
+            }
+          },
+          {
+            "type": "END",
+            "location": {
+              "descriptor": {
+                "code": "MOCK_STATION_std:011_7"
+              }
+            }
+          }
+        ],
+        "vehicle": {
+          "category": "METRO"
+        }
+      },
+      "payment": {
+        "collected_by": "BAP",
+        "tags": [
+          {
+            "descriptor": {
+              "code": "BUYER_FINDER_FEES"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                },
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "descriptor": {
+              "code": "SETTLEMENT_TERMS"
+            },
+            "display": false,
+            "list": [
+              {
+                "descriptor": {
+                  "code": "DELAY_INTEREST"
+                },
+                "value": "2.5"
+              },
+              {
+                "descriptor": {
+                  "code": "STATIC_TERMS"
+                },
+                "value": "https://api.example-bap.com/booking/terms"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
