@@ -1,0 +1,291 @@
+{
+        "context": {
+          "domain": "ONDC:TRV11",
+          "location": {
+            "country": {
+              "code": "IND"
+            },
+            "city": {
+              "code": "std:020"
+            }
+          },
+          "timestamp": "2025-05-16T11:01:43.209Z",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "transaction_id": "3c1485e9-340e-47ad-9198-8406e84db9b0",
+          "message_id": "3e9613fa-c4ba-403f-8a80-437854864103",
+          "version": "2.0.0",
+          "action": "on_init",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "ttl": "PT30S",
+          "bpp_id": "uatondc.paycraftsol.net",
+          "bpp_uri": "https://uatondc.paycraftsol.net/ondc/transitPune"
+        },
+        "message": {
+          "order": {
+            "items": [
+              {
+                "id": "I1-PIM-KWA",
+                "category_ids": [
+                  "C1"
+                ],
+                "descriptor": {
+                  "name": "SJT",
+                  "code": "SJT"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "8.5"
+                },
+                "quantity": {
+                  "selected": {
+                    "count": 1
+                  }
+                },
+                "fulfillment_ids": [
+                  "F1"
+                ],
+                "time": {
+                  "label": "Validity",
+                  "duration": "P1D"
+                }
+              }
+            ],
+            "provider": {
+              "id": "P1",
+              "descriptor": {
+                "name": "PMRPUATTEST5",
+                "images": [
+                  {
+                    "url": "https://punemetrorail.org/assets/images/logo.png"
+                  }
+                ]
+              },
+              "time": {
+                "range": {
+                  "start": "2025-05-16T09:30:00.000Z",
+                  "end": "2025-05-16T20:30:00.000Z"
+                }
+              }
+            },
+            "fulfillments": [
+              {
+                "id": "F1",
+                "type": "TRIP",
+                "stops": [
+                  {
+                    "id": "101",
+                    "type": "START",
+                    "location": {
+                      "descriptor": {
+                        "name": "PCMC",
+                        "code": "PIM"
+                      },
+                      "gps": "18.628968, 73.803495"
+                    }
+                  },
+                  {
+                    "id": "102",
+                    "type": "INTERMEDIATE_STOP",
+                    "location": {
+                      "descriptor": {
+                        "name": "SANT TUKARAM NAGAR",
+                        "code": "STG"
+                      },
+                      "gps": "18.614202, 73.816131"
+                    }
+                  },
+                  {
+                    "id": "103",
+                    "type": "INTERMEDIATE_STOP",
+                    "location": {
+                      "descriptor": {
+                        "name": "NASHIK PHATA",
+                        "code": "BHO"
+                      },
+                      "gps": "18.609142, 73.820228"
+                    }
+                  },
+                  {
+                    "id": "104",
+                    "type": "END",
+                    "location": {
+                      "descriptor": {
+                        "name": "KASARWADI",
+                        "code": "KWA"
+                      },
+                      "gps": "18.599347, 73.827451"
+                    }
+                  }
+                ],
+                "vehicle": {
+                  "category": "METRO"
+                }
+              }
+            ],
+            "billing": {
+              "name": "John Doe",
+              "email": "john.doe@example.com",
+              "phone": "+91-9897867564"
+            },
+            "quote": {
+              "price": {
+                "value": "8.5",
+                "currency": "INR"
+              },
+              "breakup": [
+                {
+                  "title": "BASE_FARE",
+                  "item": {
+                    "id": "I1-PIM-KWA",
+                    "price": {
+                      "currency": "INR",
+                      "value": "8.5"
+                    },
+                    "quantity": {
+                      "selected": {
+                        "count": 1
+                      }
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "8.5"
+                  }
+                }
+              ]
+            },
+            "payments": [
+              {
+                "id": "b2f08181-75bd-479e-a3c5-270a60e4cc94",
+                "collected_by": "BAP",
+                "status": "NOT-PAID",
+                "type": "PRE-ORDER",
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "BUYER_FINDER_FEES"
+                    },
+                    "display": false,
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                        },
+                        "value": "1"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "BUYER_FINDER_FEES_TYPE"
+                        },
+                        "value": "percent"
+                      }
+                    ]
+                  },
+                  {
+                    "descriptor": {
+                      "code": "SETTLEMENT_TERMS"
+                    },
+                    "display": false,
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_TYPE"
+                        },
+                        "value": "UPI"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "DELAY_INTEREST"
+                        },
+                        "value": "5"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "STATIC_TERMS"
+                        },
+                        "value": "https://api.example-bap.com/booking/terms"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_WINDOW"
+                        },
+                        "value": "P30D"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MANDATORY_ARBITRATION"
+                        },
+                        "value": "TRUE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "COURT_JURISDICTION"
+                        },
+                        "value": "PUNE"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_AMOUNT"
+                        },
+                        "value": "0.99"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_BASIS"
+                        },
+                        "value": "INVOICE_RECEIPT"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "SETTLEMENT_WINDOW"
+                        },
+                        "value": "P30D"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "MANDATORY_ARBITRATION"
+                        },
+                        "value": "true"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "COURT_JURISDICTION"
+                        },
+                        "value": "New Delhi"
+                      }
+                    ]
+                  }
+                ],
+                "params": {
+                  "bank_code": "123456",
+                  "bank_account_number": "9876543210"
+                }
+              }
+            ],
+            "cancellation_terms": [
+              {
+                "external_ref": {
+                  "mimetype": "text/html",
+                  "url": "https://www.punemetrorail.org/fare_chart.aspx"
+                }
+              }
+            ],
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "SCHEDULED_INFO"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "GTFS"
+                    },
+                    "value": "https://metro-transit/gtfs-realtime"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
