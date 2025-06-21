@@ -1,0 +1,155 @@
+{
+  "context": {
+    "action": "init",
+    "bap_id": "staging.transitco.in",
+    "bap_uri": "https://staging.transitco.in/api/ondc",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "message_id": "f4e7df1e-caeb-4ada-b283-a4680d3f4b41",
+    "timestamp": "2025-06-19T21:54:43.716Z",
+    "transaction_id": "b472b596-921c-485c-8327-367b79002f36",
+    "ttl": "PT15M",
+    "version": "2.0.1"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "name": "Dhruv Gupta"
+      },
+      "fulfillments": [
+        {
+          "customer": {
+            "contact": {
+              "phone": "9999499825"
+            },
+            "person": {
+              "name": "Dhruv Gupta"
+            }
+          },
+          "id": "F1",
+          "type": "DELIVERY",
+          "stops": [
+            {
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "type": "START"
+            },
+            {
+              "location": {
+                "gps": "12.971186, 77.586812"
+              },
+              "type": "END"
+            }
+          ],
+          "vehicle": {
+            "category": "AUTO_RICKSHAW",
+            "variant": "AUTO_RICKSHAW",
+            "energy_type": "CNG"
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "I1"
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "params": {
+            "bank_account_number": "xxxxxxxxxxxxxx",
+            "bank_code": "XXXXXXXX",
+            "virtual_payment_address": "9999499825@okicic"
+          },
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "5"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "DELIVERY"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "UPI"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://example-test-bpp.com/static-terms.txt"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "10.50"
+                }
+              ]
+            }
+          ],
+          "type": "ON-FULFILLMENT"
+        }
+      ],
+      "provider": {
+        "id": "OD_101"
+      }
+    }
+  }
+}
