@@ -1,0 +1,178 @@
+{
+    "context": {
+        "ttl": "PT30S",
+        "action": "on_issue",
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+        "bpp_id": "allcargogati.shipfast.co.in",
+        "domain": "ONDC:LOG10",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+        "bpp_uri": "https://allcargogati.shipfast.co.in",
+        "location": {
+            "city": {
+                "code": "*"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "timestamp": "2025-04-14T23:50:30.920Z",
+        "message_id": "48ceb346-b304-4c4c-ae1f-b8dcdc69cfdc",
+        "core_version": "2.0.0",
+        "transaction_id": "b7f3835e-770d-42bd-8b12-b0cd6d5fd74d"
+    },
+    "message": {
+        "issue": {
+            "id": "7bae38b2-78b8-492d-a980-a77815ca7f58",
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "T1",
+                    "ref_type": "TRANSACTION"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "I1",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "level": "ISSUE",
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "info": {
+                        "org": {
+                            "name": "allcargogati.shipfast.co.in::ONDC:LOG10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "email": "sam@yahoo.com",
+                            "phone": "9879879870"
+                        }
+                    },
+                    "type": "CONSUMER"
+                },
+                {
+                    "id": "NP1",
+                    "info": {
+                        "org": {
+                            "name": "allcargogati.shipfast.co.in::ONDC:LOG10"
+                        },
+                        "person": {
+                            "name": "Gati"
+                        },
+                        "contact": {
+                            "email": "gati@gmail.com",
+                            "phone": "1234567890"
+                        }
+                    },
+                    "type": "INTERFACING_NP"
+                },
+                {
+                    "id": "17c211ec-54bf-4c68-961c-505b6a6ec176",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-staging/ondc::ONDC:LOG10"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        },
+                        "contact": {
+                            "email": "buyerapp@interface.com",
+                            "phone": "9450394039"
+                        }
+                    },
+                    "type": "COUNTERPARTY_NP"
+                }
+            ],
+            "status": "PROCESSING",
+            "actions": [
+                {
+                    "id": "b3f328a8-f5e2-4384-80a3-c2a1b32ac272",
+                    "action_by": "NP1",
+                    "updated_at": "2025-04-15T04:50:56.916Z",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "OPEN"
+                    },
+                    "actor_details": {
+                        "name": "Gati"
+                    }
+                },
+                {
+                    "id": "9934f85f-25fe-4543-a439-df4f11f799e0",
+                    "action_by": "17c211ec-54bf-4c68-961c-505b6a6ec176",
+                    "updated_at": "2025-04-15T04:50:59.339Z",
+                    "description": {
+                        "code": "PROCESSING",
+                        "name": null,
+                        "short_desc": "issue processing"
+                    },
+                    "actor_details": {
+                        "name": "John Doe"
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "created_at": "2025-04-14T23:50:56.920Z",
+            "updated_at": "2025-04-15T04:50:59.339Z",
+            "description": {
+                "code": "ORD001",
+                "images": [
+                    {
+                        "url" : "http://buyerapp.com/addtional-details/img1.png"
+                    }
+                ],
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "short_desc": "Issue with product quality",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                }
+            },
+            "complainant_id": "NP1",
+            "last_action_id": "9934f85f-25fe-4543-a439-df4f11f799e0",
+            "respondent_ids": [
+                "17c211ec-54bf-4c68-961c-505b6a6ec176"
+            ],
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            }
+        },
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ]
+    }
+}

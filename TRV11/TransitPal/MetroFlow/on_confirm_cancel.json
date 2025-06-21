@@ -1,0 +1,291 @@
+{
+  "context": {
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:011"
+      }
+    },
+    "domain": "ONDC:TRV11",
+    "action": "on_cancel",
+    "transaction_id": "ac7af50c-a05a-4b87-8870-33a78f90b63c",
+    "message_id": "ffa62104-e32d-4860-a626-0b853a4adc86",
+    "bap_id": "pre-prod-api.transitpal.io",
+    "bap_uri": "https://pre-prod-api.transitpal.io/bap/beckn",
+    "timestamp": "2025-05-06T08:23:39.446Z",
+    "version": "2.0.1",
+    "ttl": "PT30S",
+    "bpp_id": "ondc-ref-app.sequelstring.com/preprod/mock/seller",
+    "bpp_uri": "https://ondc-ref-app.sequelstring.com/preprod/mock/seller"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "d67f585a-c0bc-4fd7-b7dd-b2ddfc0dd948",
+        "descriptor": {
+          "name": "ONDC Ref App Metro Limited",
+          "images": [
+            {
+              "url": "https://www.sequelstring.com/_next/image?url=%2Fimages%2Flogo.webp&w=256&q=100"
+            }
+          ]
+        },
+        "time": {
+          "range": {
+            "start": "2025-05-06T05:30:00.000Z",
+            "end": "2025-05-06T23:30:00.000Z"
+          }
+        }
+      },
+      "items": [
+        {
+          "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
+          "category_ids": [
+            "C2"
+          ],
+          "descriptor": {
+            "name": "Return Journey Ticket",
+            "code": "RJT"
+          },
+          "price": {
+            "currency": "INR",
+            "value": "52"
+          },
+          "quantity": {
+            "selected": {
+              "count": 1
+            }
+          },
+          "time": {
+            "label": "Validity",
+            "duration": "PT5M"
+          },
+          "fulfillment_ids": [
+            "d8bd862b-6085-4954-a486-bfaec0a57f3f"
+          ]
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "d8bd862b-6085-4954-a486-bfaec0a57f3f",
+          "type": "TRIP",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "name": "Stop 1"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "SHAHEED STHAL ( NEW BUS ADDA)",
+                  "code": "NBAA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "1",
+              "authorization": {
+                "type": "QR",
+                "token": "*****************************************************************",
+                "valid_to": "2025-05-06T09:10:20.208Z",
+                "status": "UNCLAIMED"
+              }
+            },
+            {
+              "type": "INTERMEDIATE_STOP",
+              "instructions": {
+                "name": "Stop 2"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "HINDON RIVER",
+                  "code": "HDNR"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "2",
+              "parent_stop_id": "1"
+            },
+            {
+              "type": "END",
+              "instructions": {
+                "name": "Stop 3"
+              },
+              "location": {
+                "descriptor": {
+                  "name": "ARTHALA",
+                  "code": "ATHA"
+                },
+                "gps": "28.744676, 77.138332"
+              },
+              "id": "3",
+              "parent_stop_id": "2"
+            }
+          ],
+          "vehicle": {
+            "category": "METRO"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "TICKET_INFO"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "NUMBER"
+                  },
+                  "value": "58e04636-ce79-4f2f-906a-eabbd860876d"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "52.00"
+        },
+        "breakup": [
+          {
+            "title": "BASE_FARE",
+            "item": {
+              "id": "6fa73d13-f062-4870-9acf-bde318ca2bc8",
+              "price": {
+                "currency": "INR",
+                "value": "52"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 1
+                }
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "52"
+            }
+          }
+        ]
+      },
+      "cancellation_terms": [
+        {
+          "external_ref": {
+            "mimetype": "text/html",
+            "url": "https://sequelstringsolutions.com/mf/tnc.html"
+          }
+        }
+      ],
+      "billing": {
+        "name": "iliyas",
+        "phone": "+91-9182189384",
+        "email": "iliyas.shaik@kiwimesh.com"
+      },
+      "payments": [
+        {
+          "id": "65e812bb-5717-4aae-8108-b3a992e0b7c2",
+          "collected_by": "BAP",
+          "status": "PAID",
+          "type": "PRE-ORDER",
+          "params": {
+            "transaction_id": "156732bd-559d-4099-802a-af6346d6816c",
+            "currency": "INR",
+            "amount": "52",
+            "bank_code": "***********",
+            "bank_account_number": "***********",
+            "virtual_payment_address": "***********"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                  },
+                  "value": "1"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES_TYPE"
+                  },
+                  "value": "percent-annualized"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TERMS"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TYPE"
+                  },
+                  "value": "neft"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_WINDOW"
+                  },
+                  "value": "PT60M"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_BASIS"
+                  },
+                  "value": "Delivery"
+                },
+                {
+                  "descriptor": {
+                    "code": "MANDATORY_ARBITRATION"
+                  },
+                  "value": "true"
+                },
+                {
+                  "descriptor": {
+                    "code": "COURT_JURISDICTION"
+                  },
+                  "value": "New Delhi"
+                },
+                {
+                  "descriptor": {
+                    "code": "DELAY_INTEREST"
+                  },
+                  "value": "2.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "STATIC_TERMS"
+                  },
+                  "value": "https://www.abc.com/settlement-terms/"
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_AMOUNT"
+                  },
+                  "value": "70"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "af9f1a15-5609-43d8-988a-062e6fe833b0",
+      "status": "CANCELLED",
+      "created_at": "2024-08-09T06:36:48.127Z",
+      "updated_at": "2024-08-09T06:39:29.150Z",
+      "cancellation": {
+        "cancelled_by": "CONSUMER",
+        "time": "2024-08-09T06:39:29.150Z"
+      }
+    }
+  }
+}
