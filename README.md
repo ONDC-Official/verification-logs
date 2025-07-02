@@ -19,13 +19,14 @@ Follow the steps below to submit your logs for **protocol compliance verificatio
 4. Create a **Pull Request (PR)** from your forked repo to the ONDC repo.
 5. Once the PR is **approved and merged**, verification comments will be provided in a **GitHub Issue tagged to your entity**.
 
-## Windows Users – Cloning Issue Notice
+## Windows Users – Cloning Issues
 
-If you're facing issues while cloning the repository on **Windows OS** (e.g., trailing spaces or file path errors), you may try the following solutions:
+## Encountering Issues?
+If you encounter any issues while working with this repository—such as cloning errors on **Windows OS** (e.g., due to file path length limitations or trailing space conflicts)—we kindly request that you **raise a GitHub issue**. 
+[Submit an Issue](https://github.com/ONDC-Official/v1.2.0-logs/issues)
 
-### Recommended Workarounds:
-1. **Use a different operating system** such as Linux or macOS.
-2. **Use WSL (Windows Subsystem for Linux)** to bypass Windows file system limitations.
-
->  [Learn how to install and use WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+### Recommended Solutions:
+1. Use a different operating system, such as **Linux** or **macOS**.
+2. Use **WSL (Windows Subsystem for Linux)** to bypass Windows-specific file system limitations.  
+   > [Learn how to install and use WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
