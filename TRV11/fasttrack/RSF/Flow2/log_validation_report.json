@@ -1,0 +1,516 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_report": {
+                "schemaErr0": "/message/settlement/orders/0/provider must have required property 'id'",
+                "schemaErr1": "/message/settlement/orders/0/provider must have required property 'amount'"
+            },
+            "on_recon": {
+                "schemaErr0": "/message/orders/0/settlements/0/status must be equal to one of the allowed values (PENDING,SETTLED,TO_BE_INITIATED)",
+                "schemaErr1": "/message/orders/0/settlements/0/amount/value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr2": "/message/orders/0/settlements/0/amount/diff_value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr3": "/message/orders/0/settlements/0/commission/diff_value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr4": "/message/orders/0/settlements/0/withholding_amount/value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr5": "/message/orders/0/settlements/0/withholding_amount/diff_value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr6": "/message/orders/0/settlements/0/tcs/diff_value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr7": "/message/orders/0/settlements/0/tds/value must match pattern \"^\\d+\\.\\d{2}$\"",
+                "schemaErr8": "/message/orders/0/settlements/0/tds/diff_value must match pattern \"^\\d+\\.\\d{2}$\""
+            }
+        },
+        "bpp_id": "rsf-mock-service.ondc.org",
+        "bap_id": "BUYER_APP_SUBSCRIBER_ID",
+        "domain": "ONDC:TRV11",
+        "payload": {
+            "settle": {
+                "context": {
+                    "domain": "ONDC:NTS10",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "version": "2.0.0",
+                    "action": "settle",
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:41:11.759Z",
+                    "ttl": "P2D"
+                },
+                "message": {
+                    "collector_app_id": "buyer-app-preprod-v2.ondc.org",
+                    "receiver_app_id": "preprod.ftdev.in",
+                    "settlement": {
+                        "type": "NP-NP",
+                        "id": "SE20250509688320",
+                        "orders": [
+                            {
+                                "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                                "inter_participant": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "29"
+                                    }
+                                },
+                                "collector": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "28.42"
+                                    }
+                                },
+                                "self": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "28.42"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "on_settle": {
+                "context": {
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:42:35.096Z",
+                    "domain": "ONDC:NTS10",
+                    "version": "2.0.0",
+                    "ttl": "P1D",
+                    "action": "on_settle"
+                },
+                "message": {
+                    "collector_app_id": "preprod.ftdev.in",
+                    "receiver_app_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "settlement": {
+                        "type": "NP-NP",
+                        "id": "SE20250509688320",
+                        "orders": [
+                            {
+                                "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                                "inter_participant": {
+                                    "amount": {
+                                        "value": "29",
+                                        "currency": "INR"
+                                    },
+                                    "settled_amount": {
+                                        "value": "29",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "1238683618634",
+                                    "error": {
+                                        "code": "70024",
+                                        "message": "Interparticipant value mismatch"
+                                    }
+                                },
+                                "collector": {
+                                    "amount": {
+                                        "value": "28.42",
+                                        "currency": "INR"
+                                    }
+                                },
+                                "self": {
+                                    "amount": {
+                                        "value": "28.42",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "1238683618634",
+                                    "error": {
+                                        "code": "70024",
+                                        "message": "Interparticipant value mismatch"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "report": {
+                "context": {
+                    "domain": "ONDC:NTS10",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "version": "2.0.0",
+                    "action": "report",
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "3deb27e0-577a-4297-a986-e5a4aa054885",
+                    "timestamp": "2025-05-09T12:42:35.135Z",
+                    "ttl": "P2D"
+                },
+                "message": {
+                    "ref_transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "ref_message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23"
+                }
+            },
+            "on_report": {
+                "context": {
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:44:38.065Z",
+                    "domain": "ONDC:NTS10",
+                    "version": "2.0.0",
+                    "ttl": "P1D",
+                    "action": "on_report"
+                },
+                "message": {
+                    "collector_app_id": "preprod.ftdev.in",
+                    "receiver_app_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "settlement": {
+                        "type": "NP-NP",
+                        "id": "SE20250509688320",
+                        "orders": [
+                            {
+                                "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                                "inter_participant": {
+                                    "amount": {
+                                        "value": "29",
+                                        "currency": "INR"
+                                    },
+                                    "settled_amount": {
+                                        "value": "29",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "1238683618634",
+                                    "error": {
+                                        "code": "70024",
+                                        "message": "Interparticipant value mismatch"
+                                    }
+                                },
+                                "collector": {
+                                    "amount": {
+                                        "value": "28.42",
+                                        "currency": "INR"
+                                    },
+                                    "reference_no": "1238683618634"
+                                },
+                                "self": {
+                                    "amount": {
+                                        "value": "28.42",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "1238683618634",
+                                    "error": {
+                                        "code": "70024",
+                                        "message": "Interparticipant value mismatch"
+                                    }
+                                },
+                                "provider": {
+                                    "status": "NOT_SETTLED",
+                                    "reference_no": "1238683618634",
+                                    "error": {
+                                        "code": "70024",
+                                        "message": "Interparticipant value mismatch"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "recon": {
+                "context": {
+                    "domain": "ONDC:NTS10",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "version": "2.0.0",
+                    "action": "recon",
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:47:35.926Z",
+                    "ttl": "P2D"
+                },
+                "message": {
+                    "orders": [
+                        {
+                            "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                            "amount": {
+                                "currency": "INR",
+                                "value": "29"
+                            },
+                            "settlements": [
+                                {
+                                    "id": "SE20250509688320",
+                                    "payment_id": "TRV1120250509161011",
+                                    "status": "PENDING",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "29"
+                                    },
+                                    "commission": {
+                                        "currency": "INR",
+                                        "value": "0.58"
+                                    },
+                                    "withholding_amount": {
+                                        "currency": "INR",
+                                        "value": "0"
+                                    },
+                                    "tcs": {
+                                        "currency": "INR",
+                                        "value": "0.58"
+                                    },
+                                    "tds": {
+                                        "currency": "INR",
+                                        "value": "0"
+                                    },
+                                    "updated_at": "2025-05-09T12:47:35.926Z"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "on_recon": {
+                "context": {
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:48:38.938Z",
+                    "domain": "ONDC:NTS10",
+                    "version": "2.0.0",
+                    "ttl": "P1D",
+                    "action": "on_recon"
+                },
+                "message": {
+                    "orders": [
+                        {
+                            "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                            "amount": {
+                                "value": "29",
+                                "currency": "INR"
+                            },
+                            "recon_accord": false,
+                            "settlements": [
+                                {
+                                    "id": "SE20250509688320",
+                                    "payment_id": "TRV1120250509161011",
+                                    "status": "NOT_SETTLED",
+                                    "amount": {
+                                        "value": "29",
+                                        "currency": "INR",
+                                        "diff_value": "0"
+                                    },
+                                    "commission": {
+                                        "value": "0.58",
+                                        "currency": "INR",
+                                        "diff_value": "0"
+                                    },
+                                    "withholding_amount": {
+                                        "value": "0",
+                                        "currency": "INR",
+                                        "diff_value": "0"
+                                    },
+                                    "tcs": {
+                                        "value": "0.58",
+                                        "currency": "INR",
+                                        "diff_value": "0"
+                                    },
+                                    "tds": {
+                                        "value": "0",
+                                        "currency": "INR",
+                                        "diff_value": "0"
+                                    },
+                                    "updated_at": "2025-05-09T12:47:35.926Z",
+                                    "due_date": "2025-05-11"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "final_settle": {
+                "context": {
+                    "domain": "ONDC:NTS10",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "version": "2.0.0",
+                    "action": "settle",
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:41:11.759Z",
+                    "ttl": "P2D"
+                },
+                "message": {
+                    "collector_app_id": "preprod.ftdev.in",
+                    "receiver_app_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "settlement": {
+                        "type": "NP-NP",
+                        "id": "SE20250509142425",
+                        "orders": [
+                            {
+                                "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                                "inter_participant": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "29"
+                                    }
+                                },
+                                "collector": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "28.42"
+                                    }
+                                },
+                                "self": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "28.42"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "final_on_settle": {
+                "context": {
+                    "bap_id": "preprod.ftdev.in",
+                    "bap_uri": "https://preprod.ftdev.in/",
+                    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "transaction_id": "15985123-de83-417d-a37d-947e30aff9c6",
+                    "message_id": "6cd2d991-efdd-4cfb-b425-da022a482d23",
+                    "timestamp": "2025-05-09T12:52:23.491Z",
+                    "domain": "ONDC:NTS10",
+                    "version": "2.0.0",
+                    "ttl": "P1D",
+                    "action": "on_settle"
+                },
+                "message": {
+                    "collector_app_id": "preprod.ftdev.in",
+                    "receiver_app_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                    "settlement": {
+                        "type": "NP-NP",
+                        "id": "SE20250509142425",
+                        "orders": [
+                            {
+                                "id": "8d0e41fa-7341-4062-b4aa-27ffa98ad916",
+                                "inter_participant": {
+                                    "amount": {
+                                        "value": "29",
+                                        "currency": "INR"
+                                    },
+                                    "settled_amount": {
+                                        "value": "29",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "1238683618634"
+                                },
+                                "collector": {
+                                    "amount": {
+                                        "value": "28.42",
+                                        "currency": "INR"
+                                    }
+                                },
+                                "self": {
+                                    "amount": {
+                                        "value": "28.42",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "1238683618634"
+                                },
+                                "provider": {
+                                    "status": "NOT_SETTLED",
+                                    "reference_no": "1238683618634",
+                                    "error": {
+                                        "code": "70024",
+                                        "message": "Interparticipant value mismatch"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "reportTimestamp": "2025-05-16T07:06:44.146Z"
+    },
+    "signature": "BE39uAX+Q2CmbuojhwDTw4anDIwRJ/W0gZS1ToC84mVXG6iTw8ptJFs41s5RO4MW+6tdRgaIMBBJm/1TfwTyAw==",
+    "signTimestamp": "2025-05-16T07:06:44.147Z"
+}

@@ -1,0 +1,96 @@
+{
+  "context": {
+    "domain": "ONDC:FIS10",
+    "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+    "action": "on_issue",
+    "bpp_uri": "https://ondc.vistar.solutions/v1/bpp",
+    "bpp_id": "ondc.vistar.solutions",
+    "version": "2.0.0",
+    "message_id": "msg_id",
+    "timestamp": "2025-05-15T09:41:48.176Z",
+    "transaction_id": "issue_resubmission_2",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc"
+  },
+  "message": {
+    "upated_target": [{ "path": "issue.actions", "action": "APPENDED" }],
+    "issue": {
+      "id": "ISSUE-2",
+      "status": "PROCESSING",
+      "level": "ISSUE",
+      "updated_at": "2025-05-15T09:41:48.176Z",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "order_2", "ref_type": "ORDER" },
+        {
+          "ref_id": "item_2",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": { "code": "message.order.items" },
+              "list": [{ "descriptor": { "code": "quantity.selected.count" }, "value": "2" }]
+            }
+          ]
+        },
+        { "ref_id": "ful_2", "ref_type": "FULFILMENT" }
+      ],
+      "actor_info": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "person": { "name": "Sam Manuel" },
+            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "contact": { "phone": "9450394039", "email": "buyerapp@interface.com" },
+            "person": { "name": "John Doe" }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "TRANSACTION-COUNTERPARTY-NP",
+          "info": {
+            "org": { "name": "ondc.vistar.solutions::ONDC:FIS10" },
+            "contact": { "phone": "9967971282", "email": "vivek@vistar.solutions" },
+            "person": { "name": "Vivek Bansal" }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": ["NP2"],
+      "description": {
+        "code": "ORD001",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": { "url": "https://buyerapp.com/additonal-details/desc.txt", "content_type": "text/plain" },
+        "images": [{ "url": "http://buyerapp.com/addtional-details/img1.png" }]
+      },
+      "last_action_id": "6cdc18cb-55f8-47b8-baf3-ca1b166a92c1",
+      "actions": [
+        {
+          "id": "A1",
+          "description": { "code": "OPEN", "short_desc": "OPEN" },
+          "updated_at": "2025-05-15T09:41:47.784Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "6cdc18cb-55f8-47b8-baf3-ca1b166a92c1",
+          "description": { "code": "PROCESSING", "short_desc": "Complaint created" },
+          "updated_at": "2025-05-15T09:41:48.176Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Vivek Bansal" }
+        }
+      ]
+    }
+  }
+}
