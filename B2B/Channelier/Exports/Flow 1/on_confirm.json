@@ -1,0 +1,327 @@
+{
+    "context": {
+        "domain": "ONDC:RET14",
+        "location": {
+            "city": {
+                "code": "UN:SIN"
+            },
+            "country": {
+                "code": "SGP"
+            }
+        },
+        "action": "on_confirm",
+        "version": "2.0.2",
+        "bap_id": "buyerapp.com",
+        "bap_uri": "http://localhost:3000",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc/",
+        "transaction_id": "036a9187-3c9c-4d52-a689-83c9f5d01899",
+        "message_id": "fdfbceef-4c0f-565a-b5a6-ca3cf528ddb7",
+        "timestamp": "2025-07-03T06:14:05.592Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "CU0",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ],
+                "rateable": true
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Domestic-custom-cleared"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "100"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "Channelier Electronics Pvt Ltd",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "images": []
+                        }
+                    },
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "1.380621746811, 103.7463643843",
+                                "address": "My House #, My buildin",
+                                "area_code": "680230",
+                                "state": {
+                                    "name": ""
+                                },
+                                "city": {
+                                    "name": "Jurong East"
+                                },
+                                "country": {
+                                    "code": "SGP"
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "buyer@xyz.com"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-07-03T06:15:10.385Z",
+                                    "end": "2025-07-03T08:15:05.385Z"
+                                }
+                            }
+                        },
+                        {
+                            "type": "start",
+                            "location": {
+                                "id": "L1",
+                                "descriptor": {
+                                    "name": "Channelier Electronics Pvt Ltd"
+                                },
+                                "gps": "28.545449,77.026877"
+                            },
+                            "contact": {
+                                "phone": "9999999999",
+                                "email": "techpvec2@gmail.com"
+                            },
+                            "time": {
+                                "range": {
+                                    "start": "2025-07-03T06:15:05.385Z",
+                                    "end": "2025-07-03T08:15:05.385Z"
+                                }
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore"
+                                }
+                            ]
+                        }
+                    ],
+                    "rateable": true
+                }
+            ],
+            "items": [
+                {
+                    "id": "CU0I10",
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    },
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "tags": []
+                }
+            ],
+            "payments": [
+                {
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "0.0",
+                    "@ondc/org/settlement_details": [
+                        {
+                            "settlement_counterparty": "buyer-app",
+                            "settlement_phase": "sale-amount",
+                            "settlement_type": "neft",
+                            "settlement_bank_account_no": "1234567890",
+                            "settlement_ifsc_code": "HDFC0000102",
+                            "beneficiary_name": "Thomson",
+                            "bank_name": "Test Bank"
+                        }
+                    ],
+                    "type": "ON-FULFILLMENT",
+                    "collected_by": "BPP",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P5D",
+                    "@ondc/org/withholding_amount": "0",
+                    "status": "NOT-PAID",
+                    "params": {
+                        "currency": "INR",
+                        "amount": "347.62"
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "72246.46"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "CU0I10",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "72200.00"
+                            }
+                        },
+                        "title": "Apple iPhone 15 (128 GB) - Black",
+                        "price": {
+                            "currency": "INR",
+                            "value": "72200.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "46.46"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "state": "Created",
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "23FZZAF2408R2Z4"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "max_liability"
+                            },
+                            "value": "2"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "10000"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "mandatory_arbitration"
+                            },
+                            "value": "false"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Mumbai"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "1000"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bap_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "accept_bpp_terms"
+                            },
+                            "value": "Y"
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "ONDC buyer",
+                "address": "B005 aaspire heights, Jurong East, SGP, 680230",
+                "state": {
+                    "name": "Jurong East"
+                },
+                "city": {
+                    "name": "Jurong East"
+                },
+                "email": "nobody@nomail.com",
+                "phone": "9886098860",
+                "tax_id": "XXXXXXXXXXXXXXX"
+            },
+            "id": "RAP-0055956",
+            "created_at": "2024-07-22T09:34:19.589Z",
+            "updated_at": "2025-07-03T06:14:05.591Z"
+        }
+    }
+}
