@@ -1,0 +1,295 @@
+{
+    "context": {
+      "domain": "ONDC:TRV10",
+      "location": {
+        "country": {
+          "code": "IND"
+        },
+        "city": {
+          "code": "std:123"
+        }
+      },
+      "version": "2.1.0",
+      "action": "on_select",
+      "transaction_id": "577c4bfd-2fb8-4f63-8545-5b490824a53f",
+      "message_id": "92f4063e-8753-4c54-aad6-ba9834be42bb",
+      "timestamp": "2025-05-13T11:41:28.055Z",
+      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+  
+      "bap_id": "ondc.sequelstring.com/buyer/protocol",
+      "ttl": "PT10M",
+      "bpp_id": "ondc.sequelstring.com/seller/protocol",
+      "bpp_uri":"https://ondc.sequelstring.com/protocol"
+  
+    },
+    "message": {
+      "order": {
+        "cancellation_Terms": [
+          {
+            "cancellation_fee": {
+              "percentage": "0"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ASSIGNED"
+              }
+            },
+            "reason_required": true
+          },
+          {
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "30"
+              }
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ENROUTE_PICKUP"
+              }
+            },
+            "reason_required": true
+          },
+          {
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "50"
+              }
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_ARRIVED_PICKUP"
+              }
+            },
+            "reason_required": true
+          },
+          {
+            "cancellation_fee": {
+              "percentage": "100"
+            },
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "RIDE_STARTED"
+              }
+            },
+            "reason_required": true
+          }
+        ],
+        "provider": {
+          "id": "OD_101"
+        },
+        "fulfillments": [
+          {
+            "id": "ed38efd5-7b33-4217-ab29-c95f386f8749",
+            "stops": [
+              {
+                "type": "START",
+                "instructions": {
+                  "short_desc": "Information about location",
+                  "long_desc": "Information about location"
+                },
+                "location": {
+                  "gps": "13.008935, 77.644408"
+                }
+              }
+            ],
+            "type": "DELIVERY",
+            "vehicle": {
+              "category": "CAB",
+              "variant": "SUV"
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "ROUTE_INFO",
+                  "name": "Route Information"
+                },
+                "display": true,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "ENCODED_POLYLINE",
+                      "name": "Path"
+                    },
+                    "value": "uso~@a}bzJdd{Nn~w}Add{Np~w}Abd{Nn~w}A"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "WAYPOINTS",
+                      "name": "Waypoints"
+                    },
+                    "value": "[{\"gps\":\"10.407148, 62.115526\"},{\"gps\":\"7.805361, 46.586645\"},{\"gps\":\"5.203574, 31.057763\"},{\"gps\":\"2.601787, 15.528882\"}]"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "items": [
+          {
+            "id": "I1",
+            "descriptor": {
+              "code": "RIDE",
+              "name": "Cab Ride"
+            },
+            "fulfillment_ids": [
+              "ed38efd5-7b33-4217-ab29-c95f386f8749"
+            ],
+            "category_ids": "C4",
+            "price": {
+              "currency": "INR",
+              "value": "210.00",
+              "minimum_value": "190",
+              "maximum_value": "230"
+            },
+            "location_ids": [
+              "b592b0d0-96ad-4c7d-8a7d-e34004c43ad0",
+              "bf93f3be-8222-4231-81a3-0a8e6f4e06d6"
+            ],
+            "add_ons": [
+              {
+                "id": "A1",
+                "price": {
+                  "currency": "INR",
+                  "value": "20"
+                },
+                "quantity": {
+                  "selected": {
+                    "count": 3
+                  },
+                  "unitized": {
+                    "measure": {
+                      "value": "10",
+                      "unit": "KILOMETERS"
+                    }
+                  }
+                },
+                "descriptor": {
+                  "name": "distance",
+                  "code": "DISTANCE"
+                }
+              }
+            ],
+            "tags": [
+              null,
+              {
+                "descriptor": {
+                  "code": "FARE_POLICY",
+                  "name": "Daytime Charges"
+                },
+                "display": true,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "MIN_FARE"
+                    },
+                    "value": "30"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "BUYER_ADDITIONAL_AMOUNT"
+                    },
+                    "value": "20"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "MIN_FARE_DISTANCE_KM"
+                    },
+                    "value": "2"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "PER_KM_CHARGE"
+                    },
+                    "value": "15"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "PICKUP_CHARGE"
+                    },
+                    "value": "10"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "WAITING_CHARGE_PER_MIN"
+                    },
+                    "value": "2"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "NIGHT_CHARGE_MULTIPLIER"
+                    },
+                    "value": "1.5"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "NIGHT_SHIFT_START_TIME"
+                    },
+                    "value": "22:00:00"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "NIGHT_SHIFT_END_TIME"
+                    },
+                    "value": "05:00:00"
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "INFO",
+                  "name": "General Information"
+                },
+                "display": true,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                    },
+                    "value": "0.00"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                    },
+                    "value": "0.00"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "330.00"
+          },
+          "breakup": [
+            {
+              "title": "DISTANCE_FARE",
+              "price": {
+                "currency": "INR",
+                "value": "180.00"
+              }
+            },
+            {
+              "title": "BASE_FARE",
+              "price": {
+                "currency": "INR",
+                "value": "30"
+              }
+            },
+            {
+              "title": "ADD_ON",
+              "price": {
+                "currency": "INR",
+                "value": "60.00"
+              }
+            }
+          ],
+          "ttl": "PT200S"
+        }
+      }
+    }
+  }
