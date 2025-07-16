@@ -1,0 +1,596 @@
+{
+  "context": {
+    "domain": "ONDC:TRV10",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:123"
+      }
+    },
+    "version": "2.1.0",
+    "action": "on_search",
+    "transaction_id": "fa43c73f-c62b-4eb9-986a-a7066dd1d8c9",
+    "message_id": "d822d908-33cb-4327-a275-b8dfc8505e35",
+    "timestamp": "2025-05-23T08:27:48.216Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+  
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri":"https://ondc.sequelstring.com/protocol"
+  
+  },
+  "message": {
+    "catalog": {
+      "descriptor": {
+        "name": "ONDC Pramaan Ride Services"
+      },
+      "providers": [
+        {
+          "id": "OD_101",
+          "categories": [
+            {
+              "id": "C4",
+              "descriptor": {
+                "code": "CAB",
+                "name": "Cab Ride"
+              }
+            },
+            {
+              "id": "C4",
+              "descriptor": {
+                "code": "AUTO_RICKSHAW",
+                "name": "Auto Ride"
+              }
+            },
+            {
+              "id": "C4",
+              "descriptor": {
+                "code": "ON_DEMAND_RENTAL",
+                "name": "Rental"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "cee4a7f2-7bb6-492e-a7e2-5d7c0aa4f602",
+              "stops": [
+                {
+                  "type": "START",
+                  "instructions": {
+                    "short_desc": "Information about location",
+                    "long_desc": "Information about location"
+                  },
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  },
+                  "time": {
+                    "timestamp": "2025-05-23T08:27:48.213Z"
+                  }
+                }
+              ],
+              "type": "DELIVERY",
+              "vehicle": {
+                "category": "CAB",
+                "variant": "SUV"
+              }
+            },
+            {
+              "id": "416dfd9f-13ee-4dd7-873b-3daef0e1f8d9",
+              "stops": [
+                {
+                  "type": "START",
+                  "instructions": {
+                    "short_desc": "Information about location",
+                    "long_desc": "Information about location"
+                  },
+                  "location": {
+                    "gps": "13.008935, 77.644408"
+                  },
+                  "time": {
+                    "timestamp": "2025-05-23T08:27:48.213Z"
+                  }
+                }
+              ],
+              "type": "DELIVERY",
+              "vehicle": {
+                "category": "AUTO_RICKSHAW",
+                "variant": "AUTO_RICKSHAW"
+              }
+            }
+          ],
+          "items": [
+            {
+              "id": "I1",
+              "descriptor": {
+                "code": "RIDE",
+                "name": "Cab Ride"
+              },
+              "fulfillment_ids": [
+                "cee4a7f2-7bb6-492e-a7e2-5d7c0aa4f602"
+              ],
+              "category_ids": [
+                "C1"
+              ],
+              "price": {
+                "currency": "INR",
+                "value": "210.00",
+                "minimum_value": "190",
+                "maximum_value": "230"
+              },
+              "location_ids": [
+                "7736d51c-154a-4795-8881-3b03747f1a4d",
+                "bbaa7c23-bc63-4217-b1b3-2daac99e4489"
+              ],
+              "cancellation_terms": [
+                {
+                  "cancellation_fee": {
+                    "percentage": "0"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_CONFIRMED"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "percentage": "0"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ASSIGNED"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "amount": {
+                      "currency": "INR",
+                      "value": "30"
+                    }
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ENROUTE_PICKUP"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "amount": {
+                      "currency": "INR",
+                      "value": "50"
+                    }
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ARRIVED_PICKUP"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "percentage": "100"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_STARTED"
+                    }
+                  },
+                  "reason_required": true
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "price": {
+                    "currency": "INR",
+                    "value": "20"
+                  },
+                  "quantity": {
+                    "allocated": {
+                      "count": 1
+                    },
+                    "maximum": {
+                      "count": 10
+                    },
+                    "minimum": {
+                      "count": 1
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "HOURS"
+                      }
+                    }
+                  },
+                  "descriptor": {
+                    "name": "time",
+                    "code": "TIME"
+                  }
+                }
+              ],
+              "tags": {
+                "descriptor": {
+                  "code": "FEATURE_LIST",
+                  "name": "Feature list"
+                },
+                "list": [
+                  {
+                    "value": "AC"
+                  },
+                  {
+                    "value": "LOW_PRICE"
+                  },
+                  {
+                    "value": "FREE_WIFI"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "I2",
+              "descriptor": {
+                "code": "RIDE",
+                "name": "Auto Ride"
+              },
+              "fulfillment_ids": [
+                "416dfd9f-13ee-4dd7-873b-3daef0e1f8d9"
+              ],
+              "category_ids": [
+                "C2"
+              ],
+              "price": {
+                "currency": "INR",
+                "value": "210.00",
+                "minimum_value": "190",
+                "maximum_value": "230"
+              },
+              "location_ids": [
+                "bdf8e345-ddec-4953-892c-1df5346a94d4",
+                "4b4d02a5-7f91-4005-99d3-f0fe5c5e8092"
+              ],
+              "cancellation_terms": [
+                {
+                  "cancellation_fee": {
+                    "percentage": "0"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_CONFIRMED"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "percentage": "0"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ASSIGNED"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "amount": {
+                      "currency": "INR",
+                      "value": "30"
+                    }
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ENROUTE_PICKUP"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "amount": {
+                      "currency": "INR",
+                      "value": "50"
+                    }
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ARRIVED_PICKUP"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "percentage": "100"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_STARTED"
+                    }
+                  },
+                  "reason_required": true
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "price": {
+                    "currency": "INR",
+                    "value": "20"
+                  },
+                  "quantity": {
+                    "allocated": {
+                      "count": 1
+                    },
+                    "maximum": {
+                      "count": 10
+                    },
+                    "minimum": {
+                      "count": 1
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "10",
+                        "unit": "KILOMETERS"
+                      }
+                    }
+                  },
+                  "descriptor": {
+                    "name": "distance",
+                    "code": "DISTANCE"
+                  }
+                }
+              ],
+              "tags": {
+                "descriptor": {
+                  "code": "FEATURE_LIST",
+                  "name": "Feature list"
+                },
+                "list": [
+                  {
+                    "value": "NON_AC"
+                  },
+                  {
+                    "value": "LOW_PRICE"
+                  },
+                  {
+                    "value": "DOORSTEP_PICK_UP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "I3",
+              "descriptor": {
+                "code": "RIDE",
+                "name": "Rental"
+              },
+              "fulfillment_ids": [],
+              "category_ids": [
+                "C3"
+              ],
+              "price": {
+                "currency": "INR",
+                "value": "210.00",
+                "minimum_value": "190",
+                "maximum_value": "230"
+              },
+              "location_ids": [
+                "6dc9cadd-f5e8-4e69-8e8a-ee8d93c5a92a",
+                "13548c30-3df1-4998-98fe-efcdcdd70f75"
+              ],
+              "cancellation_terms": [
+                {
+                  "cancellation_fee": {
+                    "percentage": "0"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_CONFIRMED"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "percentage": "0"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ASSIGNED"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "amount": {
+                      "currency": "INR",
+                      "value": "30"
+                    }
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ENROUTE_PICKUP"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "amount": {
+                      "currency": "INR",
+                      "value": "50"
+                    }
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_ARRIVED_PICKUP"
+                    }
+                  },
+                  "reason_required": true
+                },
+                {
+                  "cancellation_fee": {
+                    "percentage": "100"
+                  },
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "RIDE_STARTED"
+                    }
+                  },
+                  "reason_required": true
+                }
+              ],
+              "add_ons": [
+                {
+                  "id": "A1",
+                  "price": {
+                    "currency": "INR",
+                    "value": "20"
+                  },
+                  "quantity": {
+                    "allocated": {
+                      "count": 1
+                    },
+                    "maximum": {
+                      "count": 10
+                    },
+                    "minimum": {
+                      "count": 1
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "10",
+                        "unit": "KILOMETERS"
+                      }
+                    }
+                  },
+                  "descriptor": {
+                    "name": "distance",
+                    "code": "DISTANCE"
+                  }
+                }
+              ],
+              "tags": {
+                "descriptor": {
+                  "code": "FEATURE_LIST",
+                  "name": "Feature list"
+                },
+                "list": [
+                  {
+                    "value": "NON_AC"
+                  },
+                  {
+                    "value": "LOW_PRICE"
+                  },
+                  {
+                    "value": "DOORSTEP_PICK_UP"
+                  }
+                ]
+              }
+            }
+          ],
+          "locations": [
+            {
+              "gps": "13.008935,77.644408",
+              "id": "7736d51c-154a-4795-8881-3b03747f1a4d"
+            },
+            {
+              "gps": "13.008935,77.644418",
+              "id": "bbaa7c23-bc63-4217-b1b3-2daac99e4489"
+            },
+            {
+              "gps": "13.008935,77.644428",
+              "id": "bdf8e345-ddec-4953-892c-1df5346a94d4"
+            },
+            {
+              "gps": "13.008935,77.644388",
+              "id": "4b4d02a5-7f91-4005-99d3-f0fe5c5e8092"
+            },
+            {
+              "gps": "13.008935,77.644438",
+              "id": "6dc9cadd-f5e8-4e69-8e8a-ee8d93c5a92a"
+            },
+            {
+              "gps": "13.008935,77.644378",
+              "id": "13548c30-3df1-4998-98fe-efcdcdd70f75"
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BPP"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BPP_TERMS",
+            "name": "ONDC Ride Services"
+          },
+          "list": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_WINDOW"
+              },
+              "value": "PT60M"
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BASIS"
+              },
+              "value": "DELIVERY"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TYPE"
+              },
+              "value": "UPI"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "2.5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://example-test-bpp.com/static-terms.txt"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
