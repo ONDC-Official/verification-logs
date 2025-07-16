@@ -11,15 +11,14 @@
         },
         "version": "2.0.0",
         "action": "confirm",
-        "transaction_id": "066deefc-287f-47f8-b83e-f4b686b60595",
-        "message_id": "e820b834-a946-450b-a852-9c3c759b45f6",
-        "timestamp": "2025-05-13T05:59:49.087Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "transaction_id": "643aadaf-8d88-42c7-8acc-b2adc9fa7662",
+        "message_id": "822725c3-2478-48b9-84f9-8e5a6834752a",
+        "timestamp": "2025-07-16T11:36:45.413Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protcol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/protocol",
-        "city_code": "*"
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
     },
     "message": {
         "order": {
@@ -28,9 +27,9 @@
             },
             "items": [
                 {
-                    "id": "I2",
+                    "id": "I1",
                     "price": {
-                        "value": "0"
+                        "value": "200"
                     }
                 }
             ],
@@ -56,6 +55,99 @@
                 }
             ],
             "tags": [
+                {
+                    "descriptor": {
+                        "code": "BPP_TERMS",
+                        "name": "BPP Terms of Engagement"
+                    },
+                    "display": false,
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_TYPE"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "MANDATORY_ARBITRATION"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "COURT_JURISDICTION"
+                            },
+                            "value": "New Delhi"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "DELAY_INTEREST"
+                            },
+                            "value": "2.5 %"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_AMOUNT"
+                            },
+                            "value": "7 INR"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TYPE"
+                            },
+                            "value": "upi"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BANK_CODE"
+                            },
+                            "value": "XXXXXXXX"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
+                            },
+                            "value": "xxxxxxxxxxxxxx"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_AMOUNT"
+                            },
+                            "value": "7 INR"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TYPE"
+                            },
+                            "value": "upi"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BANK_CODE"
+                            },
+                            "value": "XXXXXXXX"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
+                            },
+                            "value": "xxxxxxxxxxxxxx"
+                        }
+                    ]
+                },
                 {
                     "descriptor": {
                         "code": "BAP_TERMS",
@@ -100,7 +192,20 @@
                 "name": "John Doe",
                 "email": "john.doe@example.com",
                 "phone": "+91-9897867564"
-            }
+            },
+            "payments": [
+                {
+                    "collected_by": "BAP",
+                    "type": "PRE_ORDER",
+                    "status": "PAID",
+                    "id": "PAYMENT_ID",
+                    "params": {
+                        "transaction_id": "624e52a0-17b3-4510-8c90-f9a526c029f5",
+                        "currency": "INR",
+                        "amount": "200"
+                    }
+                }
+            ]
         }
     }
 }
