@@ -1,0 +1,94 @@
+{
+  "context": {
+    "domain": "ONDC:TRV10",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "std:123"
+      }
+    },
+    "version": "2.1.0",
+    "action": "search",
+    "transaction_id": "26974df2-9a15-4b23-97d3-66d9061200cc",
+    "message_id": "3d133f74-4a69-492b-b0a7-b2d3d6983a57",
+    "timestamp": "2025-05-23T04:00:32.191Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+  
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT30M"
+  },
+  "message": {
+    "intent": {
+      "category": {
+        "descriptor": {
+          "code": "ON_DEMAND_TRIP"
+        }
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://example-test-bap.com/static-terms.txt"
+            }
+          ]
+        }
+      ],
+      "fulfillment": {
+        "stops": [
+          {
+            "location": {
+              "gps": "13.008935, 77.644408"
+            },
+            "type": "START",
+            "instructions": {
+              "short_desc": "short description of the location",
+              "long_desc": "long description of the location"
+            },
+            "id": "1"
+          },
+          {
+            "location": {
+              "gps": "12.981224, 77.615816"
+            },
+            "type": "INTERMEDIATE_STOP",
+            "id": "2",
+            "parent_stop_id": "1"
+          },
+          {
+            "location": {
+              "gps": "12.971186, 77.586812"
+            },
+            "type": "END",
+            "id": "3",
+            "parent_stop_id": "2"
+          }
+        ]
+      },
+      "payment": {
+        "collected_by": "BPP"
+      }
+    }
+  }
+}

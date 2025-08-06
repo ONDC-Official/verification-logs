@@ -1,0 +1,594 @@
+{
+  "context": {
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "version": "2.1.0",
+    "action": "on_status",
+    "transaction_id": "36a0824c-b9a6-4e47-b8e8-851dd7e2073e",
+    "message_id": "41967f4a-d5b9-4502-8421-7b8441b79c72",
+    "timestamp": "2025-05-13T13:03:20.940Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+  
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri":"https://ondc.sequelstring.com/protocol"
+  
+  },
+  "message": {
+    "order": {
+      "cancellation_Terms": [
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "provider": {
+        "id": "OD_101"
+      },
+      "fulfillments": [
+        {
+          "id": "206a99ec-4bff-4002-a157-798975ce4340",
+          "stops": [
+            {
+              "type": "START",
+              "instructions": {
+                "short_desc": "Information about location",
+                "long_desc": "Information about location"
+              },
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "time": {
+                "timestamp": "2024-11-07T00:32:19.000Z"
+              },
+              "authorization": {
+                "token": "12345006",
+                "type": "OTP",
+                "valid_to": "2025-05-13T14:01:53.894Z",
+                "status": "CLAIMED"
+              },
+              "vehicle": {
+                "make": "Bajaj",
+                "model": "Compact RE",
+                "registration": "KA-01-AD-9876"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "13.008935, 77.644408"
+              },
+              "time": {
+                "timestamp": "2024-11-07T00:32:19.000Z"
+              },
+              "vehicle": {
+                "make": "Bajaj",
+                "model": "Compact RE",
+                "registration": "KA-01-AD-9876"
+              }
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "CAB",
+            "variant": "SUV"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "{xknAq|{xM??????"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"13.008935, 77.644408\"},{\"gps\":\"13.008935, 77.644408\"},{\"gps\":\"13.008935, 77.644408\"},{\"gps\":\"13.008935, 77.644408\"}]"
+                }
+              ]
+            }
+          ],
+          "customer": {
+            "contact": {
+              "phone": "9876543210"
+            },
+            "person": {
+              "name": "Nirdosh Chauhan"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "name": "Your ride has ended",
+              "code": "RIDE_ENDED"
+            }
+          },
+          "agent": {
+            "contact": {
+              "phone": "9856798567"
+            },
+            "person": {
+              "name": "Jason Roy"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "I1",
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Cab Ride"
+          },
+          "fulfillment_ids": [
+            "206a99ec-4bff-4002-a157-798975ce4340"
+          ],
+          "category_ids": [
+            "C1"
+          ],
+          "price": {
+            "currency": "INR",
+            "value": "210.00",
+            "minimum_value": "190",
+            "maximum_value": "230"
+          },
+          "location_ids": [
+            "050d3f2d-1578-4e06-a015-9b4d8fdf584a",
+            "00c699cc-7592-407c-a970-929090639eb5"
+          ],
+          "tags": [
+            [
+              {
+                "descriptor": {
+                  "code": "DISABILITY_VIS",
+                  "name": "Vision Impairment"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "VIS_LEVEL",
+                      "name": "Level of Disability",
+                      "short_desc": "Disability of Blind and low vision"
+                    }
+                  },
+                  {
+                    "descriptor": {
+                      "code": "VIS_SCREEN_READER_USAGE",
+                      "name": "Screen Reader Usage",
+                      "short_desc": "Screen Reader Usage"
+                    }
+                  },
+                  {
+                    "descriptor": {
+                      "code": "VIS_CANE_USAGE",
+                      "name": "Cane Usage",
+                      "short_desc": "Cane Usage"
+                    }
+                  },
+                  {
+                    "descriptor": {
+                      "code": "VIS_SPECIAL_REQUIREMENT",
+                      "name": "special requirement",
+                      "short_desc": "Custom description"
+                    }
+                  }
+                ]
+              },
+              {
+                "descriptor": {
+                  "code": "DISABILITY_DWARFISM",
+                  "name": "Dwarfism"
+                },
+                "display": false,
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "DWARFISM_SPECIAL_REQUIREMENT",
+                      "name": "Dwarfism",
+                      "short_desc": "Custom description"
+                    }
+                  }
+                ]
+              }
+            ],
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_ADDITIONAL_AMOUNT"
+                  },
+                  "value": "20"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "0.00"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "0.00"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "e88df622-eb42-47c2-a5cb-bb3e37233ea0"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "210.00"
+        },
+        "breakup": [
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "180.00"
+            }
+          },
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        ],
+        "ttl": "PT200S"
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BPP_TERMS",
+            "name": "BPP Terms of Engagement"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_WINDOW"
+              },
+              "value": "PT60M"
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BASIS"
+              },
+              "value": "DELIVERY"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TYPE"
+              },
+              "value": "UPI"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "2.5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://example-test-bpp.com/static-terms.txt"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_AMOUNT"
+              },
+              "value": "1.46"
+            }
+          ]
+        },
+        {
+          "descriptor": {
+            "name": "BAP Terms of Engagement",
+            "code": "BAP_TERMS"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_WINDOW"
+              },
+              "value": "PT60M"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BASIS"
+              },
+              "value": "DELIVERY"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TYPE"
+              },
+              "value": "UPI"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://example-test-bpp.com/static-terms.txt"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BANK_CODE"
+              },
+              "value": "ICICI654120"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
+              },
+              "value": "8756124435696"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_VIRTUAL_PAYMENT_ADDRESS"
+              },
+              "value": "9876543210@okicic"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_AMOUNT"
+              },
+              "value": "1.46"
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_CONFIRMED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT",
+          "id": "e88df622-eb42-47c2-a5cb-bb3e37233ea0"
+        }
+      ],
+      "id": "f66eb262-5fc6-49b5-a677-52a2d67fa9d1",
+      "status": "ACTIVE",
+      "created_at": "2025-05-13T13:01:53.894Z",
+      "updated_at": "2025-05-13T13:01:53.894Z"
+    }
+  }
+}
