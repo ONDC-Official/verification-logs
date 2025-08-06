@@ -1,0 +1,249 @@
+{
+    "context": {
+        "domain": "ONDC:RET14",
+        "location": {
+            "city": {
+                "code": "UN:SIN"
+            },
+            "country": {
+                "code": "SGP"
+            }
+        },
+        "action": "on_select",
+        "version": "2.0.2",
+        "bap_id": "buyerapp.com",
+        "bap_uri": "http://localhost:3000",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc/",
+        "transaction_id": "036a9187-3c9c-4d52-a689-83c9f5d01899",
+        "message_id": "fdfbceef-4c0f-494d-b5a6-ca3cf528ddb7",
+        "timestamp": "2025-07-03T06:05:30.724Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "CU0"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "PT24H",
+                    "@ondc/org/provider_name": "Channelier Electronics Pvt Ltd",
+                    "tracking": false,
+                    "stops": [
+                        {
+                            "type": "end",
+                            "location": {
+                                "gps": "1.380621746811, 103.7463643843",
+                                "address": "My House #, My buildin",
+                                "city": {
+                                    "name": "Jurong East"
+                                },
+                                "country": {
+                                    "code": "SGP"
+                                },
+                                "area_code": "680230",
+                                "state": {
+                                    "name": ""
+                                }
+                            },
+                            "contact": {
+                                "phone": "9886098860",
+                                "email": "buyer@xyz.com"
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "DELIVERY_TERMS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "INCOTERMS"
+                                    },
+                                    "value": "CIF"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "NAMED_PLACE_OF_DELIVERY"
+                                    },
+                                    "value": "Singapore"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "CU0I10",
+                    "fulfillment_ids": [
+                        "1"
+                    ],
+                    "quantity": {
+                        "selected": {
+                            "count": 1
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "collected_by": "BPP",
+                    "type": "ON-FULFILLMENT",
+                    "@ondc/org/settlement_basis": "delivery",
+                    "@ondc/org/settlement_window": "P5D",
+                    "@ondc/org/withholding_amount": "0",
+                    "@ondc/org/buyer_app_finder_fee_type": "percent",
+                    "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                    "@ondc/org/settlement_details": []
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "72246.46"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "CU0I10",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "72200.00"
+                            }
+                        },
+                        "title": "Apple iPhone 15 (128 GB) - Black",
+                        "price": {
+                            "currency": "INR",
+                            "value": "72200.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "46.46"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "buyer_id"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_code"
+                            },
+                            "value": "gst"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "buyer_id_no"
+                            },
+                            "value": "23FZZAF2408R2Z4"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "bpp_terms"
+                    },
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "max_liability"
+                            },
+                            "value": "2"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "max_liability_cap"
+                            },
+                            "value": "10000"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "mandatory_arbitration"
+                            },
+                            "value": "false"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "court_jurisdiction"
+                            },
+                            "value": "Mumbai"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "delay_interest"
+                            },
+                            "value": "1000"
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "ONDC buyer",
+                "address": "B005 aaspire heights, Jurong East, SGP, 680230",
+                "state": {
+                    "name": "Jurong East"
+                },
+                "city": {
+                    "name": "Jurong East"
+                },
+                "tax_id": "XXXXXXXXXXXXXXX",
+                "email": "nobody@nomail.com",
+                "phone": "9886098860"
+            },
+            "provider_location": {
+                "id": "L1"
+            }
+        }
+    }
+}
