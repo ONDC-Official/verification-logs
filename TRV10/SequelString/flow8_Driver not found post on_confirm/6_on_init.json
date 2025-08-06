@@ -1,0 +1,435 @@
+{
+  "context": {
+    "domain": "ONDC:TRV10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "version": "2.1.0",
+    "action": "on_init",
+    "transaction_id": "21c2b85f-5f99-446e-8d9d-38aee870a939",
+    "message_id": "0f1eff77-33b0-4d20-a893-871127337f02",
+    "timestamp": "2025-05-13T10:04:59.584Z",
+    "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+  
+    "bap_id": "ondc.sequelstring.com/buyer/protocol",
+    "ttl": "PT10M",
+    "bpp_id": "ondc.sequelstring.com/seller/protocol",
+    "bpp_uri":"https://ondc.sequelstring.com/protocol"
+  
+  },
+  "message": {
+    "order": {
+      "cancellation_Terms": [
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "provider": {
+        "id": "OD_101"
+      },
+      "fulfillments": [
+        {
+          "id": "f4a02431-505a-4633-ae63-3be98de9a777",
+          "stops": [
+            {
+              "type": "START",
+              "location": {
+                "gps": "13.008935,77.644408"
+              },
+              "instructions": {
+                "short_desc": "Information about location",
+                "long_desc": "Information about location"
+              }
+            },
+            {
+              "type": "END",
+              "location": {
+                "gps": "12.971186,77.586812"
+              }
+            }
+          ],
+          "type": "DELIVERY",
+          "vehicle": {
+            "category": "CAB",
+            "variant": "SUV"
+          },
+          "tags": [
+            {
+              "descriptor": {
+                "code": "ROUTE_INFO",
+                "name": "Route Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ENCODED_POLYLINE",
+                    "name": "Path"
+                  },
+                  "value": "uijnAqtyxMdn@~fAdn@~fAdn@~fA"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAYPOINTS",
+                    "name": "Waypoints"
+                  },
+                  "value": "[{\"gps\":\"13.001385, 77.632889\"},{\"gps\":\"12.993835, 77.621370\"},{\"gps\":\"12.986286, 77.609850\"},{\"gps\":\"12.978736, 77.598331\"}]"
+                }
+              ]
+            }
+          ],
+          "customer": {
+            "contact": {
+              "phone": "9876543210"
+            },
+            "person": {
+              "name": "Nirdosh Chauhan"
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "id": "I1",
+          "descriptor": {
+            "code": "RIDE",
+            "name": "Cab Ride"
+          },
+          "fulfillment_ids": [
+            "f4a02431-505a-4633-ae63-3be98de9a777"
+          ],
+          "category_ids": [
+            "C1"
+          ],
+          "price": {
+            "currency": "INR",
+            "value": "210.00",
+            "minimum_value": "190",
+            "maximum_value": "230"
+          },
+          "location_ids": [
+            "c6aab7d1-d8fc-4f7e-8ecf-59dfc9b7b458",
+            "f4d9370e-fb93-40a4-b5a2-5692ba4f5aea"
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "FEATURE_LIST",
+                "name": "Feature list"
+              },
+              "list": [
+                {
+                  "value": "AC"
+                },
+                {
+                  "value": "LOW_PRICE"
+                },
+                {
+                  "value": "FREE_WIFI"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "FARE_POLICY",
+                "name": "Daytime Charges"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE"
+                  },
+                  "value": "30"
+                },
+                {
+                  "descriptor": {
+                    "code": "BUYER_ADDITIONAL_AMOUNT"
+                  },
+                  "value": "20"
+                },
+                {
+                  "descriptor": {
+                    "code": "MIN_FARE_DISTANCE_KM"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "PER_KM_CHARGE"
+                  },
+                  "value": "15"
+                },
+                {
+                  "descriptor": {
+                    "code": "PICKUP_CHARGE"
+                  },
+                  "value": "10"
+                },
+                {
+                  "descriptor": {
+                    "code": "WAITING_CHARGE_PER_MIN"
+                  },
+                  "value": "2"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_CHARGE_MULTIPLIER"
+                  },
+                  "value": "1.5"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_START_TIME"
+                  },
+                  "value": "22:00:00"
+                },
+                {
+                  "descriptor": {
+                    "code": "NIGHT_SHIFT_END_TIME"
+                  },
+                  "value": "05:00:00"
+                }
+              ]
+            },
+            {
+              "descriptor": {
+                "code": "INFO",
+                "name": "General Information"
+              },
+              "display": true,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "DISTANCE_TO_NEAREST_DRIVER_METER"
+                  },
+                  "value": "7.52"
+                },
+                {
+                  "descriptor": {
+                    "code": "ETA_TO_NEAREST_DRIVER_MIN"
+                  },
+                  "value": "75.21"
+                }
+              ]
+            }
+          ],
+          "payment_ids": [
+            "4fd7a8f4-5372-4b56-bb06-006d8ffc6a87"
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "210.00"
+        },
+        "breakup": [
+          {
+            "title": "DISTANCE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "180.00"
+            }
+          },
+          {
+            "title": "BASE_FARE",
+            "price": {
+              "currency": "INR",
+              "value": "30"
+            }
+          }
+        ],
+        "ttl": "PT200S"
+      },
+      "tags": [
+        {
+          "descriptor": {
+            "code": "BPP_TERMS",
+            "name": "BPP Terms of Engagement"
+          },
+          "display": false,
+          "list": [
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_WINDOW"
+              },
+              "value": "PT60M"
+            },
+            {
+              "descriptor": {
+                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+              },
+              "value": "1"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_BASIS"
+              },
+              "value": "DELIVERY"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_TYPE"
+              },
+              "value": "UPI"
+            },
+            {
+              "descriptor": {
+                "code": "MANDATORY_ARBITRATION"
+              },
+              "value": "true"
+            },
+            {
+              "descriptor": {
+                "code": "COURT_JURISDICTION"
+              },
+              "value": "New Delhi"
+            },
+            {
+              "descriptor": {
+                "code": "DELAY_INTEREST"
+              },
+              "value": "2.5"
+            },
+            {
+              "descriptor": {
+                "code": "STATIC_TERMS"
+              },
+              "value": "https://example-test-bpp.com/static-terms.txt"
+            },
+            {
+              "descriptor": {
+                "code": "SETTLEMENT_AMOUNT"
+              },
+              "value": "1.46"
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_CONFIRMED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "0"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ASSIGNED"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "30"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ENROUTE_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_ARRIVED_PICKUP"
+            }
+          },
+          "reason_required": true
+        },
+        {
+          "cancellation_fee": {
+            "percentage": "100"
+          },
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "RIDE_STARTED"
+            }
+          },
+          "reason_required": true
+        }
+      ],
+      "payments": [
+        {
+          "collected_by": "BPP",
+          "status": "NOT-PAID",
+          "type": "ON-FULFILLMENT",
+          "id": "4fd7a8f4-5372-4b56-bb06-006d8ffc6a87"
+        }
+      ]
+    }
+  }
+}
