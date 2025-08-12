@@ -11,57 +11,76 @@
         },
         "version": "2.0.0",
         "action": "on_init",
-        "transaction_id": "3e7d9f67-11ab-48bc-b808-b3ab27c9325d",
-        "message_id": "87dfcab9-8241-4beb-b769-effb9213597d",
-        "timestamp": "2025-05-13T08:55:12.406Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "transaction_id": "92a0aa0d-fbb9-4af0-986d-8f252880d301",
+        "message_id": "468742e1-8e60-4a26-becf-22778b0cf06b",
+        "timestamp": "2025-08-12T06:02:54.129Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protcol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/protocol"
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "P1",
+                "id": "0de9e4a5-9570-430e-891c-acea59f30bda",
                 "descriptor": {
-                    "name": "Sequelstring Metro Limited",
+                    "name": "Delhi Metro Rail Limited",
                     "images": [
                         {
-                            "url": "https://www.sequelstring.com/_next/image?url=%2Fimages%2Flogo.webp&w=256&q=100"
+                            "url": "https://delhimetrorail.com/logos/logo.ico"
                         }
                     ]
                 }
             },
             "items": [
                 {
-                    "id": "I2",
+                    "id": "b8959268-b64d-470a-9c0c-576bd565558a",
                     "category_ids": [
                         "C1",
                         "C3"
                     ],
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1Y"
+                    },
                     "descriptor": {
                         "name": "Metro Balance Check",
                         "code": "BALANCE_CHECK",
                         "images": [
                             {
-                                "url": "https://www.sequelstring.com/_next/image?url=%2Fimages%2Flogo.webp&w=256&q=100"
+                                "url": "https://delhimetrorail.com/logos/logo.ico"
                             }
                         ]
                     },
+                    "fulfillment_ids": [
+                        "F1"
+                    ],
                     "price": {
                         "currency": "INR",
                         "value": "0"
-                    },
-                    "fulfillment_ids": [
-                        "F1"
-                    ]
+                    }
                 }
             ],
             "fulfillments": [
                 {
                     "id": "F1",
                     "type": "ONLINE",
+                    "customer": {
+                        "person": {
+                            "name": "John Doe",
+                            "creds": [
+                                {
+                                    "id": "00129812901",
+                                    "type": "CARD_IDENTIFIER"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "email": "john.doe@example.com",
+                            "phone": "+91-9897867564"
+                        }
+                    },
                     "stops": [
                         {
                             "instructions": {
@@ -70,26 +89,11 @@
                                 "long_desc": "description about how to use?"
                             }
                         }
-                    ],
-                    "customer": {
-                        "contact": {
-                            "email": "joe.adam@abc.org",
-                            "phone": "+91-9999999999"
-                        },
-                        "person": {
-                            "name": "Joe Adam",
-                            "creds": [
-                                {
-                                    "id": "00129812901",
-                                    "type": "CARD_IDENTIFIER"
-                                }
-                            ]
-                        }
-                    }
+                    ]
                 }
             ],
             "quote": {
-                "id": "Q1",
+                "id": "0cee157e-6a20-452b-b9ab-39ab2e5ca315",
                 "price": {
                     "value": "0.00",
                     "currency": "INR"
@@ -98,7 +102,7 @@
                     {
                         "title": "BASE_FARE",
                         "item": {
-                            "id": "I2",
+                            "id": "b8959268-b64d-470a-9c0c-576bd565558a",
                             "price": {
                                 "currency": "INR",
                                 "value": "0"
@@ -130,10 +134,10 @@
             },
             "payments": [
                 {
+                    "id": "6a44cd55-77f9-47ad-b007-31cce238b4e8",
                     "collected_by": "BAP",
                     "type": "PRE_ORDER",
-                    "status": "NOT-PAID",
-                    "id": "PAYMENT_ID"
+                    "status": "NOT-PAID"
                 }
             ],
             "billing": {
@@ -169,6 +173,18 @@
                         },
                         {
                             "descriptor": {
+                                "code": "MANDATORY_ARBITRATION"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "COURT_JURISDICTION"
+                            },
+                            "value": "New Delhi"
+                        },
+                        {
+                            "descriptor": {
                                 "code": "DELAY_INTEREST"
                             },
                             "value": "2.5 %"
@@ -177,7 +193,7 @@
                             "descriptor": {
                                 "code": "SETTLEMENT_AMOUNT"
                             },
-                            "value": "7 INR"
+                            "value": "0 INR"
                         },
                         {
                             "descriptor": {
@@ -189,13 +205,13 @@
                             "descriptor": {
                                 "code": "SETTLEMENT_BANK_CODE"
                             },
-                            "value": "XXXXXXXX"
+                            "value": "ICIC0000456"
                         },
                         {
                             "descriptor": {
                                 "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
                             },
-                            "value": "xxxxxxxxxxxxxx"
+                            "value": "786102345678"
                         }
                     ]
                 }

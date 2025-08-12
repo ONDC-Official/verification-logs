@@ -11,10 +11,10 @@
         },
         "version": "2.0.0",
         "action": "on_confirm",
-        "transaction_id": "643aadaf-8d88-42c7-8acc-b2adc9fa7662",
-        "message_id": "822725c3-2478-48b9-84f9-8e5a6834752a",
-        "timestamp": "2025-07-16T11:36:45.947Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protcol",
+        "transaction_id": "fa765dcc-fa35-4016-b71c-a0faa109d6bf",
+        "message_id": "e1b26a3c-4ebb-4b89-8b6a-4c0ae4698174",
+        "timestamp": "2025-08-12T06:00:18.659Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT30S",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
@@ -22,10 +22,10 @@
     },
     "message": {
         "order": {
-            "id": "d9ca3639-6d96-4890-a890-63b4fe6dc2c7",
-            "status": "ACTIVE",
+            "id": "c0ad826c-5ba3-42c4-b6ba-0f6835b502e6",
+            "status": "COMPLETE",
             "provider": {
-                "id": "P1",
+                "id": "0de9e4a5-9570-430e-891c-acea59f30bda",
                 "descriptor": {
                     "name": "Delhi Metro Rail Limited",
                     "images": [
@@ -37,36 +37,48 @@
             },
             "items": [
                 {
-                    "id": "I1",
+                    "id": "b8959268-b64d-470a-9c0c-576bd565558a",
                     "category_ids": [
-                        "C1"
+                        "C1",
+                        "C3"
                     ],
                     "descriptor": {
-                        "name": "Metro Card Recharge",
-                        "code": "RECHARGE",
+                        "name": "Metro Balance Check",
+                        "code": "BALANCE_CHECK",
                         "images": [
                             {
                                 "url": "https://delhimetrorail.com/logos/logo.ico"
                             }
                         ]
                     },
-                    "price": {
-                        "currency": "INR",
-                        "value": "200"
-                    },
-                    "time": {
-                        "label": "Validity",
-                        "duration": "P1Y"
-                    },
                     "fulfillment_ids": [
                         "F1"
-                    ]
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "0"
+                    }
                 }
             ],
             "fulfillments": [
                 {
                     "id": "F1",
                     "type": "ONLINE",
+                    "customer": {
+                        "person": {
+                            "name": "John Doe",
+                            "creds": [
+                                {
+                                    "id": "00129812901",
+                                    "type": "CARD_IDENTIFIER"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "email": "john.doe@example.com",
+                            "phone": "+91-9897867564"
+                        }
+                    },
                     "stops": [
                         {
                             "instructions": {
@@ -76,21 +88,6 @@
                             }
                         }
                     ],
-                    "customer": {
-                        "contact": {
-                            "email": "joe.adam@abc.org",
-                            "phone": "+91-9999999999"
-                        },
-                        "person": {
-                            "name": "Joe Adam",
-                            "creds": [
-                                {
-                                    "id": "00129812901",
-                                    "type": "CARD_IDENTIFIER"
-                                }
-                            ]
-                        }
-                    },
                     "state": {
                         "descriptor": {
                             "code": "COMPLETED",
@@ -100,64 +97,64 @@
                 }
             ],
             "quote": {
-                "id": "Q1",
+                "id": "05e22359-ec93-4fb8-bd11-d31246e9c194",
                 "price": {
-                    "value": "200.00",
+                    "value": "0.00",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "title": "BASE_FARE",
+                        "title": "CURRENT_BALANCE",
                         "item": {
-                            "id": "I1",
+                            "id": "b8959268-b64d-470a-9c0c-576bd565558a",
                             "price": {
                                 "currency": "INR",
-                                "value": "200"
+                                "value": "1000"
                             }
-                        }
-                    },
-                    {
-                        "title": "CONVENIENCE_FEE",
-                        "price": {
-                            "currency": "INR",
-                            "value": "10"
-                        }
-                    },
-                    {
-                        "title": "TAX",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    },
-                    {
-                        "title": "OFFER",
-                        "price": {
-                            "currency": "INR",
-                            "value": "-10"
                         }
                     }
                 ]
             },
-            "payments": [
-                {
-                    "collected_by": "BAP",
-                    "type": "PRE_ORDER",
-                    "status": "PAID",
-                    "id": "PAYMENT_ID",
-                    "params": {
-                        "transaction_id": "624e52a0-17b3-4510-8c90-f9a526c029f5",
-                        "currency": "INR",
-                        "amount": "200"
-                    }
-                }
-            ],
-            "billing": {
-                "name": "John Doe",
-                "email": "john.doe@example.com",
-                "phone": "+91-9897867564"
-            },
             "tags": [
+                {
+                    "descriptor": {
+                        "code": "BAP_TERMS",
+                        "name": "BAP Terms of Engagement"
+                    },
+                    "display": false,
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_TYPE"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BASIS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_WINDOW"
+                            },
+                            "value": "P30D"
+                        }
+                    ]
+                },
                 {
                     "descriptor": {
                         "code": "BPP_TERMS",
@@ -205,7 +202,7 @@
                             "descriptor": {
                                 "code": "SETTLEMENT_AMOUNT"
                             },
-                            "value": "7 INR"
+                            "value": "0 INR"
                         },
                         {
                             "descriptor": {
@@ -217,82 +214,24 @@
                             "descriptor": {
                                 "code": "SETTLEMENT_BANK_CODE"
                             },
-                            "value": "XXXXXXXX"
+                            "value": "ICIC0000456"
                         },
                         {
                             "descriptor": {
                                 "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
                             },
-                            "value": "xxxxxxxxxxxxxx"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_AMOUNT"
-                            },
-                            "value": "7 INR"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_TYPE"
-                            },
-                            "value": "upi"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_BANK_CODE"
-                            },
-                            "value": "XXXXXXXX"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
-                            },
-                            "value": "xxxxxxxxxxxxxx"
-                        }
-                    ]
-                },
-                {
-                    "descriptor": {
-                        "code": "BAP_TERMS",
-                        "name": "BAP Terms of Engagement"
-                    },
-                    "display": false,
-                    "list": [
-                        {
-                            "descriptor": {
-                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
-                            },
-                            "value": "1"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "BUYER_FINDER_FEES_TYPE"
-                            },
-                            "value": "percent"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "STATIC_TERMS"
-                            },
-                            "value": "https://api.example-bap.com/booking/terms"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_BASIS"
-                            },
-                            "value": "https://api.example-bap.com/booking/terms"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_WINDOW"
-                            },
-                            "value": "P30D"
+                            "value": "786102345678"
                         }
                     ]
                 }
             ],
-            "created_at": "2025-07-16T11:36:45.946Z",
-            "updated_at": "2025-07-16T11:36:45.946Z"
+            "billing": {
+                "name": "John Doe",
+                "email": "john.doe@example.com",
+                "phone": "+91-9897867564"
+            },
+            "created_at": "2025-08-12T06:00:18.659Z",
+            "updated_at": "2025-08-12T06:00:18.659Z"
         }
     }
 }

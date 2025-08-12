@@ -11,10 +11,10 @@
         },
         "version": "2.0.0",
         "action": "on_init",
-        "transaction_id": "643aadaf-8d88-42c7-8acc-b2adc9fa7662",
-        "message_id": "0262f1bd-f08a-4aa7-920a-405f95f87018",
-        "timestamp": "2025-07-16T11:36:21.493Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protcol",
+        "transaction_id": "fa765dcc-fa35-4016-b71c-a0faa109d6bf",
+        "message_id": "829e5b07-b04e-47d7-96f3-0df44512c145",
+        "timestamp": "2025-08-12T06:00:07.677Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "ttl": "PT10M",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
@@ -23,7 +23,7 @@
     "message": {
         "order": {
             "provider": {
-                "id": "P1",
+                "id": "0de9e4a5-9570-430e-891c-acea59f30bda",
                 "descriptor": {
                     "name": "Delhi Metro Rail Limited",
                     "images": [
@@ -35,36 +35,52 @@
             },
             "items": [
                 {
-                    "id": "I1",
+                    "id": "b8959268-b64d-470a-9c0c-576bd565558a",
                     "category_ids": [
-                        "C1"
+                        "C1",
+                        "C3"
                     ],
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1Y"
+                    },
                     "descriptor": {
-                        "name": "Metro Card Recharge",
-                        "code": "RECHARGE",
+                        "name": "Metro Balance Check",
+                        "code": "BALANCE_CHECK",
                         "images": [
                             {
                                 "url": "https://delhimetrorail.com/logos/logo.ico"
                             }
                         ]
                     },
-                    "price": {
-                        "currency": "INR",
-                        "value": "200"
-                    },
-                    "time": {
-                        "label": "Validity",
-                        "duration": "P1Y"
-                    },
                     "fulfillment_ids": [
                         "F1"
-                    ]
+                    ],
+                    "price": {
+                        "currency": "INR",
+                        "value": "0"
+                    }
                 }
             ],
             "fulfillments": [
                 {
                     "id": "F1",
                     "type": "ONLINE",
+                    "customer": {
+                        "person": {
+                            "name": "John Doe",
+                            "creds": [
+                                {
+                                    "id": "00129812901",
+                                    "type": "CARD_IDENTIFIER"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "email": "john.doe@example.com",
+                            "phone": "+91-9897867564"
+                        }
+                    },
                     "stops": [
                         {
                             "instructions": {
@@ -73,38 +89,23 @@
                                 "long_desc": "description about how to use?"
                             }
                         }
-                    ],
-                    "customer": {
-                        "contact": {
-                            "email": "joe.adam@abc.org",
-                            "phone": "+91-9999999999"
-                        },
-                        "person": {
-                            "name": "Joe Adam",
-                            "creds": [
-                                {
-                                    "id": "00129812901",
-                                    "type": "CARD_IDENTIFIER"
-                                }
-                            ]
-                        }
-                    }
+                    ]
                 }
             ],
             "quote": {
-                "id": "Q1",
+                "id": "05e22359-ec93-4fb8-bd11-d31246e9c194",
                 "price": {
-                    "value": "200.00",
+                    "value": "0.00",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
                         "title": "BASE_FARE",
                         "item": {
-                            "id": "I1",
+                            "id": "b8959268-b64d-470a-9c0c-576bd565558a",
                             "price": {
                                 "currency": "INR",
-                                "value": "200"
+                                "value": "0"
                             }
                         }
                     },
@@ -133,10 +134,10 @@
             },
             "payments": [
                 {
+                    "id": "3fa944e8-72c5-46a4-8c91-8bc0c569afc7",
                     "collected_by": "BAP",
                     "type": "PRE_ORDER",
-                    "status": "NOT-PAID",
-                    "id": "PAYMENT_ID"
+                    "status": "NOT-PAID"
                 }
             ],
             "billing": {
@@ -192,7 +193,7 @@
                             "descriptor": {
                                 "code": "SETTLEMENT_AMOUNT"
                             },
-                            "value": "7 INR"
+                            "value": "0 INR"
                         },
                         {
                             "descriptor": {
@@ -204,37 +205,13 @@
                             "descriptor": {
                                 "code": "SETTLEMENT_BANK_CODE"
                             },
-                            "value": "XXXXXXXX"
+                            "value": "ICIC0000456"
                         },
                         {
                             "descriptor": {
                                 "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
                             },
-                            "value": "xxxxxxxxxxxxxx"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_AMOUNT"
-                            },
-                            "value": "7 INR"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_TYPE"
-                            },
-                            "value": "upi"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_BANK_CODE"
-                            },
-                            "value": "XXXXXXXX"
-                        },
-                        {
-                            "descriptor": {
-                                "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
-                            },
-                            "value": "xxxxxxxxxxxxxx"
+                            "value": "786102345678"
                         }
                     ]
                 }
