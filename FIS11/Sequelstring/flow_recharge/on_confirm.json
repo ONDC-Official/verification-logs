@@ -1,0 +1,275 @@
+{
+    "context": {
+        "domain": "ONDC:FIS11",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "version": "2.0.0",
+        "action": "on_confirm",
+        "transaction_id": "c5f999ff-e8ba-496e-ae78-8a1d433cb597",
+        "message_id": "b2e46106-bc0e-45f1-a072-a11446d279f9",
+        "timestamp": "2025-08-12T05:53:53.174Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+    },
+    "message": {
+        "order": {
+            "id": "14c5b762-2f7c-496b-84c9-086a3c1352cf",
+            "status": "ACTIVE",
+            "provider": {
+                "id": "0de9e4a5-9570-430e-891c-acea59f30bda",
+                "descriptor": {
+                    "name": "Delhi Metro Rail Limited",
+                    "images": [
+                        {
+                            "url": "https://delhimetrorail.com/logos/logo.ico"
+                        }
+                    ]
+                }
+            },
+            "items": [
+                {
+                    "id": "f132ef5a-9069-4132-8832-d722aab42fe1",
+                    "category_ids": [
+                        "C1",
+                        "C2"
+                    ],
+                    "descriptor": {
+                        "name": "Metro Card Recharge",
+                        "code": "RECHARGE",
+                        "images": [
+                            {
+                                "url": "https://delhimetrorail.com/logos/logo.ico"
+                            }
+                        ]
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "100"
+                    },
+                    "time": {
+                        "label": "Validity",
+                        "duration": "P1Y"
+                    },
+                    "fulfillment_ids": [
+                        "F1"
+                    ]
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "ONLINE",
+                    "customer": {
+                        "person": {
+                            "name": "John Doe",
+                            "creds": [
+                                {
+                                    "id": "00129812901",
+                                    "type": "CARD_IDENTIFIER"
+                                }
+                            ]
+                        },
+                        "contact": {
+                            "email": "john.doe@example.com",
+                            "phone": "+91-9897867564"
+                        }
+                    },
+                    "stops": [
+                        {
+                            "instructions": {
+                                "name": "How to use?",
+                                "short_desc": "short description about how to use?",
+                                "long_desc": "description about how to use?"
+                            }
+                        }
+                    ],
+                    "state": {
+                        "descriptor": {
+                            "code": "COMPLETED",
+                            "name": "completed"
+                        }
+                    }
+                }
+            ],
+            "payments": [
+                {
+                    "id": "760434d3-d335-4928-a00f-c62281bad807",
+                    "collected_by": "BAP",
+                    "type": "PRE_ORDER",
+                    "status": "PAID",
+                    "params": {
+                        "transaction_id": "595d1004-cf12-4706-afa4-9d6257e79273",
+                        "currency": "INR",
+                        "amount": "100"
+                    }
+                }
+            ],
+            "quote": {
+                "id": "74172d2a-bb53-4337-9dcd-5fc75107d2f5",
+                "price": {
+                    "value": "100.00",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "title": "BASE_FARE",
+                        "item": {
+                            "id": "f132ef5a-9069-4132-8832-d722aab42fe1",
+                            "price": {
+                                "currency": "INR",
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "title": "CONVENIENCE_FEE",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10"
+                        }
+                    },
+                    {
+                        "title": "TAX",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "title": "OFFER",
+                        "price": {
+                            "currency": "INR",
+                            "value": "-10"
+                        }
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "descriptor": {
+                        "code": "BAP_TERMS",
+                        "name": "BAP Terms of Engagement"
+                    },
+                    "display": false,
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_TYPE"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BASIS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_WINDOW"
+                            },
+                            "value": "P30D"
+                        }
+                    ]
+                },
+                {
+                    "descriptor": {
+                        "code": "BPP_TERMS",
+                        "name": "BPP Terms of Engagement"
+                    },
+                    "display": false,
+                    "list": [
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                            },
+                            "value": "1"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "BUYER_FINDER_FEES_TYPE"
+                            },
+                            "value": "percent"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "STATIC_TERMS"
+                            },
+                            "value": "https://api.example-bap.com/booking/terms"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "MANDATORY_ARBITRATION"
+                            },
+                            "value": "true"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "COURT_JURISDICTION"
+                            },
+                            "value": "New Delhi"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "DELAY_INTEREST"
+                            },
+                            "value": "2.5 %"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_AMOUNT"
+                            },
+                            "value": "99 INR"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_TYPE"
+                            },
+                            "value": "upi"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BANK_CODE"
+                            },
+                            "value": "ICIC0000456"
+                        },
+                        {
+                            "descriptor": {
+                                "code": "SETTLEMENT_BANK_ACCOUNT_NUMBER"
+                            },
+                            "value": "786102345678"
+                        }
+                    ]
+                }
+            ],
+            "billing": {
+                "name": "John Doe",
+                "email": "john.doe@example.com",
+                "phone": "+91-9897867564"
+            },
+            "created_at": "2025-08-12T05:53:53.174Z",
+            "updated_at": "2025-08-12T05:53:53.174Z"
+        }
+    }
+}
