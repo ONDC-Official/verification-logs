@@ -1,0 +1,228 @@
+{
+  "context": {
+    "domain": "ONDC:AGR11",
+    "action": "on_confirm",
+    "version": "2.0.0",
+    "timestamp": "2025-08-22T06:10:57.560Z",
+    "ttl": "P30S",
+    "location": {
+      "city": {
+        "code": "std:0471"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "bap_id": "buyerapp.com",
+    "bap_uri": "https://mock.ondc.org/api/agri/bap/",
+    "bpp_id": "keralakrishihub.vassarlabs.com",
+    "bpp_uri": "http://internal-prod-backend/api/ondc",
+    "transaction_id": "T1",
+    "message_id": "M3"
+  },
+  "message": {
+    "order": {
+      "id": "b3d6c24a-167e-46d6-8f85-29a02edd17dc",
+      "status": "Created",
+      "items": [
+        {
+          "id": "3ce96a18-a733-4e3c-be6b-3449d9a3ec49",
+          "quantity": {
+            "selected": {
+              "count": 100
+            }
+          },
+          "category_ids": [
+            "AGR11-1001"
+          ],
+          "location_ids": [
+            "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
+          ]
+        }
+      ],
+      "billing": {
+        "name": "ONDC buyer",
+        "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+        "email": "nobody@nomail.com",
+        "phone": "9886098860",
+        "state": {
+          "name": "Karnataka"
+        },
+        "city": {
+          "name": "Bengaluru"
+        },
+        "tax_id": "XXXXXXXXXXXXXXX"
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "Delivery",
+          "rateable": true,
+          "state": {
+            "descriptor": {
+              "code": "Placed"
+            }
+          },
+          "stops": [
+            {
+              "location": {
+                "gps": "12.974002,77.613458",
+                "address": "Farm 14 Near Village",
+                "area_code": "560001",
+                "city": {
+                  "name": "Bengaluru"
+                },
+                "state": {
+                  "name": "Karnataka"
+                },
+                "country": {
+                  "code": "IND"
+                },
+                "areaCode": "560001"
+              },
+              "type": "end",
+              "time": {
+                "label": "confirmed",
+                "range": {
+                  "start": "2024-06-09T22:00:00.000Z",
+                  "end": "2024-06-10T02:00:00.000Z"
+                }
+              },
+              "instructions": {
+                "name": "Special Instructions",
+                "short_desc": "Customer Special Instructions"
+              },
+              "contact": {
+                "phone": "9886098860",
+                "email": "random@gmail.com"
+              },
+              "person": {
+                "name": "Ramu"
+              },
+              "authorization": {
+                "type": "OTP",
+                "token": "0660",
+                "valid_from": "2025-08-22T06:10:57.563Z",
+                "valid_to": "2026-08-22T06:10:57.563Z",
+                "status": "valid"
+              }
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "25000.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "id": "3ce96a18-a733-4e3c-be6b-3449d9a3ec49",
+              "price": {
+                "currency": "INR",
+                "value": "250.00"
+              },
+              "quantity": {
+                "selected": {
+                  "count": 100
+                }
+              }
+            },
+            "title": "Paddy",
+            "price": {
+              "currency": "INR",
+              "value": "25000.00"
+            },
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "TITLE"
+                },
+                "list": [
+                  {
+                    "value": "item",
+                    "descriptor": {
+                      "code": "type"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "ttl": "PT10M"
+      },
+      "payments": [
+        {
+          "id": "PY2",
+          "collected_by": "BAP",
+          "params": {
+            "amount": "25000.00",
+            "currency": "INR",
+            "bank_account_number": "xxxxxxxx",
+            "virtual_payment_address": "xxx@xxxx"
+          },
+          "type": "ON-FULFILLMENT",
+          "status": "NOT-PAID",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "Settlement_Details"
+              },
+              "list": [
+                {
+                  "value": "BPP",
+                  "descriptor": {
+                    "code": "Counterparty"
+                  }
+                },
+                {
+                  "value": "UPI",
+                  "descriptor": {
+                    "code": "Mode"
+                  }
+                },
+                {
+                  "value": "xxxxx",
+                  "descriptor": {
+                    "code": "Beneficiary_Name"
+                  }
+                },
+                {
+                  "value": "xxxxx",
+                  "descriptor": {
+                    "code": "Bank_Account_No"
+                  }
+                },
+                {
+                  "value": "xxxxxxx",
+                  "descriptor": {
+                    "code": "Ifsc_Code"
+                  }
+                },
+                {
+                  "value": "xxxxxxx",
+                  "descriptor": {
+                    "code": "UPI_Address"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "provider": {
+        "id": "1ffa48ed-391a-48e7-9f04-6e85e47bb8b7",
+        "locations": [
+          {
+            "id": "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
+          }
+        ],
+        "rateable": true
+      },
+      "created_at": "2024-06-10T22:00:46.000Z",
+      "updated_at": "2025-08-22T06:10:57.560Z"
+    }
+  }
+}
