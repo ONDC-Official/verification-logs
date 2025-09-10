@@ -1,0 +1,75 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "update",
+    "version": "2.0.2",
+    "bap_id": "stageenv-uv.ycnwan.com",
+    "bap_uri": "https://stageenv-uv.ycnwan.com/bap",
+    "bpp_id": "mock.ondc.org/api",
+    "bpp_uri": "https://mock.ondc.org/api/retail/bpp",
+    "transaction_id": "41379f0f-bfc8-4ca3-8f5d-6be34c78c550",
+    "message_id": "21d9d8b4-723b-44b4-a205-16626cbbfe4f",
+    "timestamp": "2025-08-25T11:59:02.130Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": "payments",
+    "order": {
+      "id": "O1",
+      "state": "Accepted",
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "I1",
+          "quantity": {
+            "selected": {
+              "count": 200
+            }
+          }
+        }
+      ],
+      "payments": [
+        {
+          "uri": "https://ondc.transaction.com/payment",
+          "tl_method": "http/get",
+          "params": {
+            "currency": "INR",
+            "transaction_id": "3937",
+            "amount": "53600"
+          },
+          "status": "PAID",
+          "type": "PRE-FULFILLMENT",
+          "collected_by": "BAP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "10.00",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX",
+              "beneficiary_name": "xxxxx",
+              "bank_name": "xxxx",
+              "branch_name": "xxxx"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
