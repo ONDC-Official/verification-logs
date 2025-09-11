@@ -1,0 +1,392 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "issue",
+    "country": "IND",
+    "city": "std:080,",
+    "core_version": "1.2.0",
+    "bap_id": "stageenv-uv.ycnwan.com",
+    "bap_uri": "https://stageenv-uv.ycnwan.com/bap",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "transaction_id": "13cce674-5575-49d9-8a4d-9ad6bd40d727",
+    "message_id": "3f86e720-cc33-4c85-9f4d-b3934023aa91",
+    "timestamp": "2025-09-11T05:33:34.992Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "ISSUE-1",
+      "status": "PROCESSING",
+      "level": "ISSUE",
+      "created_at": "2023-01-15T10:00:00.469Z",
+      "updated_at": "2023-01-15T10:00:00.469Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2-GRO",
+          "type": "COUNTERPARTY_NP_GRO",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9999994039",
+              "email": "sellerapp@interface.com"
+            },
+            "person": {
+              "name": "Grievance Officer BNP"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "resolver_ids": [
+        "NP2"
+      ],
+      "descriptor": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "http://buyerapp.com/addtional-details/img1.png",
+            "size_type": "xs"
+          }
+        ],
+        "media": [
+          {
+            "url": "https://transitsolutions.in/logos/logo.icon"
+          }
+        ]
+      },
+      "last_action_id": "A10",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A2",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3_1",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO001",
+            "short_desc": "Please provide product image"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3_2",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO002",
+            "short_desc": "Please provide invoice"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A4",
+          "ref_id": "A3_1",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Responded with images",
+            "images": [
+              {
+                "url": "http://buyerapp.com/addtional-details/img1.png",
+                "size_type": "xs"
+              },
+              {
+                "url": "http://buyerapp.com/addtional-details/img2.png",
+                "size_type": "xs"
+              }
+            ]
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A5",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A6",
+          "ref_id": "A3_2",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO002",
+            "short_desc": "Please provide invoice"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A7",
+          "ref_id": "A6",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Provided invoice",
+            "media": [
+              {
+                "url": "https://buyerapp.com/resources/invoiceord1.pdf"
+              }
+            ]
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A8",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the complaint information"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A9",
+          "ref_id": "R_PARENT",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLUTION_PROPOSED"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A10",
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLUTION_ACCEPTED"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  },
+                  "value": "200"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "updated_at": "2024-08-14T09:57:58.841Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

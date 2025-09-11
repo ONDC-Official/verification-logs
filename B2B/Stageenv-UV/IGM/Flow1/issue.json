@@ -1,0 +1,136 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "issue",
+    "country": "IND",
+    "city": "std:080,",
+    "core_version": "1.2.0",
+    "bap_id": "stageenv-uv.ycnwan.com",
+    "bap_uri": "https://stageenv-uv.ycnwan.com/bap",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "transaction_id": "13cce674-5575-49d9-8a4d-9ad6bd40d727",
+    "message_id": "f3bdd550-ff37-4193-8504-5bf691d7bcd8",
+    "timestamp": "2025-09-11T04:55:08.168Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "issue": {
+      "id": "ISSUE-1",
+      "status": "OPEN",
+      "level": "ISSUE",
+      "created_at": "2025-09-11T04:55:08.168Z",
+      "updated_at": "2025-09-11T04:55:08.168Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "descriptor": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "https://transitsolutions.in/logos/logo.icon",
+            "size_type": "xs"
+          }
+        ],
+        "media": [
+          {
+            "url": "https://transitsolutions.in/logos/logo.icon"
+          }
+        ]
+      },
+      "last_action_id": "A1",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ]
+    }
+  }
+}
