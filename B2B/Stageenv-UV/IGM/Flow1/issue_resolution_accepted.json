@@ -5,14 +5,14 @@
     "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
     "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
     "country": "IND",
-    "city": "std:080",
-    "transaction_id": "13cce674-5575-49d9-8a4d-9ad6bd40d727",
-    "message_id": "3f86e720-cc33-4c85-9f4d-b3934023aa91",
-    "timestamp": "2025-09-11T05:50:50.288Z",
+    "city": "std:080,",
+    "transaction_id": "dcfb9770-c80c-4faf-a6e4-0bc86b40844f",
+    "message_id": "f23dad25-97cf-4fff-815d-1394a55922dc",
+    "timestamp": "2025-09-13T10:13:08.453Z",
     "domain": "ONDC:RET10",
     "core_version": "1.2.0",
     "ttl": "PT30S",
-    "action": "on_issue"
+    "action": "issue"
   },
   "message": {
     "update_target": [
@@ -70,7 +70,7 @@
           "type": "CONSUMER",
           "info": {
             "org": {
-              "name": "buyerapp.com::ONDC:RET10"
+              "name": "stageenv-uv.ycnwan.com::ONDC:RET10"
             },
             "person": {
               "name": "Sam Manuel"
@@ -86,7 +86,7 @@
           "type": "INTERFACING_NP",
           "info": {
             "org": {
-              "name": "buyerapp.com::ONDC:RET10"
+              "name": "stageenv-uv.ycnwan.com::ONDC:RET10"
             },
             "contact": {
               "phone": "9450394039",
@@ -102,7 +102,23 @@
           "type": "COUNTERPARTY_NP",
           "info": {
             "org": {
-              "name": "sellerapp.com::ONDC:RET10"
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
             },
             "contact": {
               "phone": "9450394140",
@@ -147,7 +163,7 @@
             "code": "OPEN",
             "short_desc": "Complaint created"
           },
-          "updated_at": "2023-01-15T10:00:00.469Z",
+          "updated_at": "2025-09-13T09:24:19.462Z",
           "action_by": "NP1",
           "actor_details": {
             "name": "Sam Manuel"
@@ -159,7 +175,7 @@
             "code": "PROCESSING",
             "short_desc": "Complaint created"
           },
-          "updated_at": "2023-01-15T10:00:00.469Z",
+          "updated_at": "2025-09-13T09:24:19.462Z",
           "action_by": "NP2",
           "actor_details": {
             "name": "Sam Manuel"
@@ -169,11 +185,11 @@
           "id": "A3_1",
           "descriptor": {
             "code": "INFO_REQUESTED",
-            "name": "INFO001",
+            "name": "INFO01",
             "short_desc": "Please provide product image"
           },
-          "updated_at": "2023-01-15T10:00:00.469Z",
-          "action_by": "NP1",
+          "updated_at": "2025-09-13T09:24:19.462Z",
+          "action_by": "NP2",
           "actor_details": {
             "name": "Sam Manuel"
           }
@@ -185,8 +201,8 @@
             "name": "INFO002",
             "short_desc": "Please provide invoice"
           },
-          "updated_at": "2023-01-15T10:00:00.469Z",
-          "action_by": "NP1",
+          "updated_at": "2025-09-13T09:24:19.462Z",
+          "action_by": "NP2",
           "actor_details": {
             "name": "Sam Manuel"
           }
@@ -196,7 +212,7 @@
           "ref_id": "A3_1",
           "descriptor": {
             "code": "INFO_PROVIDED",
-            "short_desc": "Responded with images",
+            "short_desc": "Info provided from buyer app",
             "images": [
               {
                 "url": "http://buyerapp.com/addtional-details/img1.png",
@@ -208,51 +224,7 @@
               }
             ]
           },
-          "updated_at": "2023-01-15T10:00:00.469Z",
-          "action_by": "NP1",
-          "actor_details": {
-            "name": "Sam Manuel"
-          }
-        },
-        {
-          "id": "A5",
-          "descriptor": {
-            "code": "PROCESSING",
-            "short_desc": "Complaint created"
-          },
-          "updated_at": "2023-01-15T10:00:00.469Z",
-          "action_by": "NP1",
-          "actor_details": {
-            "name": "Sam Manuel"
-          }
-        },
-        {
-          "id": "A6",
-          "ref_id": "A3_2",
-          "descriptor": {
-            "code": "INFO_REQUESTED",
-            "name": "INFO002",
-            "short_desc": "Please provide invoice"
-          },
-          "updated_at": "2023-01-15T10:00:00.469Z",
-          "action_by": "NP2",
-          "actor_details": {
-            "name": "Sam Manuel"
-          }
-        },
-        {
-          "id": "A7",
-          "ref_id": "A6",
-          "descriptor": {
-            "code": "INFO_PROVIDED",
-            "short_desc": "Provided invoice",
-            "media": [
-              {
-                "url": "https://buyerapp.com/resources/invoiceord1.pdf"
-              }
-            ]
-          },
-          "updated_at": "2023-01-15T10:00:00.469Z",
+          "updated_at": "2025-09-13T09:24:19.462Z",
           "action_by": "NP1",
           "actor_details": {
             "name": "Sam Manuel"
@@ -262,21 +234,33 @@
           "id": "Action-1",
           "descriptor": {
             "code": "PROCESSING",
-            "short_desc": "Opened for Processing"
+            "short_desc": "OPEN"
           },
-          "updated_at": "2025-09-11T05:48:01.904Z",
+          "updated_at": "2025-09-13T09:36:14.574Z",
           "action_by": "NP2",
           "actor_details": {
             "name": "Sam Manuel"
           }
         },
         {
-          "id": "Action-2",
+          "id": "Action-1",
           "descriptor": {
-            "code": "PROCESSING",
-            "short_desc": "Opened for Processing"
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "OPEN"
           },
-          "updated_at": "2025-09-11T05:50:50.288Z",
+          "updated_at": "2025-09-13T09:44:59.330Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "Action-1",
+          "descriptor": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-09-13T10:13:08.453Z",
           "action_by": "NP2",
           "actor_details": {
             "name": "Sam Manuel"
@@ -343,8 +327,8 @@
           ]
         }
       ],
-      "created_at": "2023-01-15T10:00:00.469Z",
-      "updated_at": "2025-09-11T05:50:50.288Z"
+      "created_at": "2025-09-13T09:24:19.462Z",
+      "updated_at": "2025-09-13T09:44:59.330Z"
     }
   }
 }
