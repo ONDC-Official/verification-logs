@@ -3,7 +3,7 @@
     "domain": "ONDC:AGR11",
     "location": {
       "city": {
-        "code": "std:0471"
+        "code": "std:040"
       },
       "country": {
         "code": "IND"
@@ -15,35 +15,42 @@
     "bap_uri": "https://mock.ondc.org/api/agri/bap/",
     "bpp_id": "keralakrishihub.vassarlabs.com",
     "bpp_uri": "https://keralakrishihub.vassarlabs.com/ondc",
-    "transaction_id": "T1",
-    "message_id": "M3",
-    "timestamp": "2024-06-10T22:00:40.000Z",
-    "ttl": "P30S"
+    "transaction_id": "55e0fd85-0b97-488e-8caf-cf104524deaa",
+    "message_id": "51d6411b-8617-4af3-998e-feb956e698ad",
+    "timestamp": "2025-09-15T05:04:51.911Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "O1",
-      "status": "Created",
       "provider": {
         "id": "1ffa48ed-391a-48e7-9f04-6e85e47bb8b7",
         "locations": [
           {
-            "id": "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
+            "id": "std:0484"
           }
         ]
       },
       "items": [
         {
           "id": "3ce96a18-a733-4e3c-be6b-3449d9a3ec49",
+          "location_ids": [
+            "std:0471"
+          ],
           "category_ids": [
             "AGR11-1001"
           ],
-          "location_ids": [
-            "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
-          ],
+          "price": {
+            "currency": "INR",
+            "offered_value": "250.00"
+          },
           "quantity": {
             "selected": {
-              "count": 100
+              "count": 100,
+              "measure": {
+                "unit": "kg",
+                "value": "1"
+              }
             }
           }
         }
@@ -64,12 +71,11 @@
       "fulfillments": [
         {
           "id": "F1",
-          "type": "Delivery",
           "stops": [
             {
               "type": "end",
               "location": {
-                "gps": "12.974002,77.613458",
+                "gps": "9.03979902044,76.586240638",
                 "address": "Farm 14 Near Village",
                 "city": {
                   "name": "Bengaluru"
@@ -78,6 +84,7 @@
                   "code": "IND"
                 },
                 "area_code": "560001",
+                "district": "Bangalore Urban",
                 "state": {
                   "name": "Karnataka"
                 }
@@ -88,8 +95,8 @@
               "time": {
                 "label": "confirmed",
                 "range": {
-                  "start": "2024-06-09T22:00:00.000Z",
-                  "end": "2024-06-10T02:00:00.000Z"
+                  "start": "2025-09-10T05:23:26.003Z",
+                  "end": "2025-09-29T18:30:00.000Z"
                 }
               },
               "person": {
@@ -108,7 +115,6 @@
           "currency": "INR",
           "value": "25000.00"
         },
-        "ttl": "PT10M",
         "breakup": [
           {
             "title": "Paddy",
@@ -120,7 +126,11 @@
               "id": "3ce96a18-a733-4e3c-be6b-3449d9a3ec49",
               "quantity": {
                 "selected": {
-                  "count": 100
+                  "count": 100,
+                  "measure": {
+                    "unit": "kg",
+                    "value": "1"
+                  }
                 }
               },
               "price": {
@@ -144,20 +154,19 @@
               }
             ]
           }
-        ]
+        ],
+        "ttl": "P1D"
       },
       "payments": [
         {
-          "id": "PY2",
+          "id": "PY1",
           "collected_by": "BAP",
           "params": {
-            "amount": "25000.00",
-            "currency": "INR",
-            "bank_account_number": "xxxxxxxx",
-            "virtual_payment_address": "xxx@xxxx"
+            "amount": "25000.0",
+            "currency": "INR"
           },
+          "type": "ON_FULLFILLMENT",
           "status": "NOT-PAID",
-          "type": "ON-FULFILLMENT",
           "tags": [
             {
               "descriptor": {
@@ -165,48 +174,24 @@
               },
               "list": [
                 {
+                  "value": "SELF",
                   "descriptor": {
                     "code": "Counterparty"
-                  },
-                  "value": "BPP"
+                  }
                 },
                 {
+                  "value": "OFFLINE",
                   "descriptor": {
                     "code": "Mode"
-                  },
-                  "value": "UPI"
-                },
-                {
-                  "descriptor": {
-                    "code": "Beneficiary_Name"
-                  },
-                  "value": "xxxxx"
-                },
-                {
-                  "descriptor": {
-                    "code": "Bank_Account_No"
-                  },
-                  "value": "xxxxx"
-                },
-                {
-                  "descriptor": {
-                    "code": "Ifsc_Code"
-                  },
-                  "value": "xxxxxxx"
-                },
-                {
-                  "descriptor": {
-                    "code": "UPI_Address"
-                  },
-                  "value": "xxxxxxx"
+                  }
                 }
               ]
             }
           ]
         }
       ],
-      "created_at": "2024-06-10T22:00:46.000Z",
-      "updated_at": "2024-06-10T22:00:46.000Z"
+      "created_at": "2025-09-10T22:00:46.000Z",
+      "updated_at": "2025-09-10T22:00:46.000Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "context": {
-    "domain": "ONDC:SRV18",
+    "domain": "ONDC:AGR11",
     "action": "on_init",
     "version": "2.0.0",
-    "timestamp": "2025-08-22T06:08:52.113Z",
+    "timestamp": "2025-09-15T05:54:50.142Z",
     "ttl": "P30S",
     "location": {
       "city": {
@@ -14,11 +14,11 @@
       }
     },
     "bap_id": "buyerapp.com",
-    "bap_uri": "https://mock.ondc.org/api/services/bap/",
+    "bap_uri": "https://mock.ondc.org/api/agri/bap/",
     "bpp_id": "keralakrishihub.vassarlabs.com",
     "bpp_uri": "https://keralakrishihub.vassarlabs.com/ondc",
-    "transaction_id": "T4",
-    "message_id": "M4"
+    "transaction_id": "55e0fd85-0b97-488e-8caf-cf104524deaa",
+    "message_id": "405deee4-d8b9-4a84-aff7-fdae708068f4"
   },
   "message": {
     "order": {
@@ -31,14 +31,18 @@
           },
           "quantity": {
             "selected": {
-              "count": 100
+              "count": 100,
+              "measure": {
+                "value": "1",
+                "unit": "kg"
+              }
             }
           },
           "category_ids": [
-            "AGR11-*"
+            "AGR11-1001"
           ],
           "location_ids": [
-            "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
+            "std:0471"
           ]
         }
       ],
@@ -61,9 +65,8 @@
           "stops": [
             {
               "location": {
-                "gps": "12.974002,77.613458",
+                "gps": "9.03979902044,76.586240638",
                 "address": "Farm 14 Near Village",
-                "area_code": "560001",
                 "city": {
                   "name": "Bengaluru"
                 },
@@ -73,14 +76,15 @@
                 "country": {
                   "code": "IND"
                 },
+                "district": "Bangalore Urban",
                 "area_code": "560001"
               },
               "type": "end",
               "time": {
                 "label": "confirmed",
                 "range": {
-                  "start": "2024-06-09T22:00:00.000Z",
-                  "end": "2024-06-10T02:00:00.000Z"
+                  "start": "2025-09-10T05:23:26.003Z",
+                  "end": "2025-09-29T18:30:00.000Z"
                 }
               },
               "contact": {
@@ -105,7 +109,11 @@
               },
               "quantity": {
                 "selected": {
-                  "count": 100
+                  "count": 100,
+                  "measure": {
+                    "value": "1",
+                    "unit": "kg"
+                  }
                 }
               }
             },
@@ -139,11 +147,9 @@
           "collected_by": "BAP",
           "params": {
             "amount": "25000.0",
-            "currency": "INR",
-            "bank_account_number": "123456789",
-            "virtual_payment_address": "987654321@vpa"
+            "currency": "INR"
           },
-          "type": "ON-FULFILLMENT",
+          "type": "ON_FULLFILLMENT",
           "status": "NOT-PAID",
           "tags": [
             {
@@ -152,27 +158,15 @@
               },
               "list": [
                 {
-                  "value": "BAP",
+                  "value": "SELF",
                   "descriptor": {
                     "code": "Counterparty"
                   }
                 },
                 {
-                  "value": "UPI",
+                  "value": "OFFLINE",
                   "descriptor": {
                     "code": "Mode"
-                  }
-                },
-                {
-                  "value": "123456789",
-                  "descriptor": {
-                    "code": "Bank_Account_no"
-                  }
-                },
-                {
-                  "value": "987654321@vpa",
-                  "descriptor": {
-                    "code": "UPI_Address"
                   }
                 }
               ]
@@ -181,10 +175,10 @@
         }
       ],
       "provider": {
-        "id": "4d2d5bca-1539-4f8c-822b-cb353a14353c",
+        "id": "1ffa48ed-391a-48e7-9f04-6e85e47bb8b7",
         "locations": [
           {
-            "id": "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
+            "id": "std:0484"
           }
         ]
       },
@@ -195,15 +189,21 @@
           },
           "list": [
             {
-              "value": "mandi_licence",
+              "value": "mandi_licence_no",
               "descriptor": {
-                "code": "BUYER_ID_CODE"
+                "code": "MANDI_LICENCE"
               }
             },
             {
-              "value": "xxxxxxxxxxxxxxx",
+              "value": "registration_number",
               "descriptor": {
-                "code": "BUYER_ID_NO"
+                "code": "REGISTRATION_ID"
+              }
+            },
+            {
+              "value": "unified_license_no",
+              "descriptor": {
+                "code": "UNIFIED_LICENSE"
               }
             }
           ]
@@ -211,7 +211,7 @@
       ],
       "locations": [
         {
-          "id": "30cb43a4-4a06-4115-b0f8-faa3f2d326fd"
+          "id": "std:0471"
         }
       ]
     }
