@@ -1,0 +1,141 @@
+{
+  "context": {
+    "bap_id": "stageenv-uv.ycnwan.com",
+    "bap_uri": "https://stageenv-uv.ycnwan.com/bap",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "country": "IND",
+    "city": "std:080,",
+    "transaction_id": "4e788fa4-7234-43af-ad4f-b761df3fc64f",
+    "message_id": "cb14235c-ea47-468d-af15-5085ea3d9af2",
+    "timestamp": "2025-09-17T09:41:05.690Z",
+    "domain": "ONDC:RET10",
+    "core_version": "1.2.0",
+    "ttl": "PT30S",
+    "action": "on_issue"
+  },
+  "message": {
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "ISSUE-2",
+      "level": "ISSUE",
+      "status": "PROCESSING",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "T10",
+          "ref_type": "TRANSACTION"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        }
+      ],
+      "actors": [
+        {
+          "id": "SELLER1",
+          "type": "PROVIDER",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "stageenv-uv.ycnwan.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "SELLER1",
+      "complainant_id": "NP1",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "descriptor": {
+        "code": "VIS001",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "short_desc": "Seller not visible on interface",
+        "images": [
+          {
+            "url": "http://buyerapp.com/addtional-details/img1.png",
+            "size_type": "xs"
+          }
+        ]
+      },
+      "last_action_id": "0",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-09-17T09:27:59.886Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "0",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Checking the issue raised"
+          },
+          "updated_at": "2025-09-17T09:41:05.690Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "created_at": "2025-09-17T09:27:59.886Z",
+      "updated_at": "2025-09-17T09:41:05.690Z"
+    }
+  }
+}
