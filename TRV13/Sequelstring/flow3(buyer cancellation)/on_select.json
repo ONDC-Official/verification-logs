@@ -1,0 +1,173 @@
+{
+    "context": {
+      "domain": "ONDC:TRV13",
+      "location": {
+        "country": {
+          "code": "IND"
+        },
+        "city": {
+          "code": "std:080"
+        }
+      },
+      "version": "2.0.0",
+      "action": "on_select",
+      "transaction_id": "519cbaa8-81fb-4eb4-912a-750e21d8109c",
+      "message_id": "8eb5d57d-b38d-446f-8f4c-47621b532038",
+      "timestamp": "2025-01-23T17:40:21.732Z",
+      "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+      "bap_id": "ondc.sequelstring.com/buyer/protocol",
+      "ttl": "PT30S",
+      "bpp_id": "ondc.sequelstring.com/seller/protocol",
+      "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "hotel_chain_123"
+        },
+        "items": [
+          {
+            "id": "a5d0ad30-e733-4ee7-a825-30a2fa5b391d",
+            "add_ons": [
+              {
+                "id": "Half-Board"
+              }
+            ],
+            "payment_ids": [
+              "67dc0a35-aaae-4a6c-b3ba-d79812c5e672"
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "2662.00"
+          },
+          "breakup": [
+            {
+              "item": {
+                "id": "a5d0ad30-e733-4ee7-a825-30a2fa5b391d",
+                "quantity": {
+                  "selected": {
+                    "count": 1
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "2000.00"
+                },
+                "add_ons": [
+                  {
+                    "id": "Half-Board",
+                    "price": {
+                      "currency": "INR",
+                      "value": "200.00"
+                    }
+                  }
+                ]
+              },
+              "title": "Deluxe Room accommodation with Breakfast Included",
+              "price": {
+                "currency": "INR",
+                "value": "2200.00"
+              }
+            },
+            {
+              "title": "Service Tax @ 9%",
+              "price": {
+                "currency": "INR",
+                "value": "198.00"
+              }
+            },
+            {
+              "title": "GST @ 12%",
+              "price": {
+                "currency": "INR",
+                "value": "264.00"
+              }
+            }
+          ],
+          "ttl": "P1D"
+        },
+        "payments": [
+          {
+            "id": "6968c4df-b35b-4841-9eea-de6140a987e9",
+            "type": "PRE-ORDER",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "FULL-PAYMENT"
+                }
+              }
+            ]
+          },
+          {
+            "id": "cfb80e79-9fb2-4a67-affa-f045a73ac072",
+            "type": "ON-FULFILLMENT",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "FULL-PAYMENT"
+                }
+              }
+            ]
+          },
+          {
+            "id": "67dc0a35-aaae-4a6c-b3ba-d79812c5e672",
+            "type": "PART-PAYMENT",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "LINKED-PAYMENTS"
+                },
+                "list": [
+                  {
+                    "descriptor": {
+                      "code": "pymnt-0qna2jw5s"
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "pymnt-gm4o2zp9c"
+                    },
+                    "value": "2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pymnt-0qna2jw5s",
+            "type": "PRE-ORDER",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "ADV-DEPOSIT"
+                }
+              }
+            ],
+            "params": {
+              "currency": "INR",
+              "amount": "901.8856"
+            }
+          },
+          {
+            "id": "pymnt-gm4o2zp9c",
+            "type": "ON-FULFILLMENT",
+            "tags": [
+              {
+                "descriptor": {
+                  "code": "FINAL-PAYMENT"
+                }
+              }
+            ],
+            "params": {
+              "amount": "1760.1144",
+              "currency": "INR"
+            }
+          }
+        ]
+      }
+    }
+}
