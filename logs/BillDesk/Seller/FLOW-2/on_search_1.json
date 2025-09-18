@@ -1,0 +1,203 @@
+{
+  "context": {
+    "domain": "ONDC:TRV11",
+    "location": {
+      "city": {
+        "code": "std:022"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_search",
+    "version": "2.0.0",
+    "timestamp": "2025-04-21T09:27:20.108Z",
+    "ttl": "PT30S",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "transaction_id": "8fc1e501-d1bc-482d-8127-27007181539d",
+    "message_id": "365aebb9-ed08-4b13-83f3-6156e01892d6",
+    "bpp_id": "onuat.billdesk.com/ONDC/BPP/Metro/MetroAuth1",
+    "bpp_uri": "https://onuat.billdesk.com/ONDC/BPP/Metro/MetroAuth1"
+  },
+  "message": {
+    "catalog": {
+      "descriptor": {
+        "name": "Transit Solutions",
+        "images": [
+          {
+            "url": "https://transitsolutions.in/logos/logo.ico"
+          }
+        ]
+      },
+      "providers": [
+        {
+          "id": "transit-solutions",
+          "categories": [
+            {
+              "id": "ticket",
+              "descriptor": {
+                "name": "ticket",
+                "code": "TICKET"
+              }
+            },
+            {
+              "id": "pass",
+              "descriptor": {
+                "name": "pass",
+                "code": "PASS"
+              }
+            }
+          ],
+          "time": {
+            "range": {
+              "start": "2025-09-14T05:30:00.000Z",
+              "end": "2025-09-14T23:30:00.000Z"
+            }
+          },
+          "descriptor": {
+            "name": "Transit Solutions",
+            "images": [
+              {
+                "url": "https://transitsolutions.in/logos/logo.ico"
+              }
+            ]
+          },
+          "fulfillments": [
+            {
+              "id": "179f412ffcb44c5afd5059d8f075be2b",
+              "type": "ROUTE",
+              "stops": [
+                {
+                  "type": "START",
+                  "location": {
+                    "descriptor": {
+                      "name": "Versova",
+                      "code": "Versova"
+                    },
+                    "gps": "26.509252,80.248194"
+                  },
+                  "id": "1"
+                },
+                {
+                  "type": "INTERMEDIATE_STOP",
+                  "location": {
+                    "descriptor": {
+                      "name": "D N Nagar",
+                      "code": "D_N_Nagar"
+                    },
+                    "gps": "26.491634,80.284502"
+                  },
+                  "id": "2",
+                  "parent_stop_id": "1"
+                },
+                {
+                  "type": "END",
+                  "location": {
+                    "descriptor": {
+                      "name": "Azad Nagar",
+                      "code": "Azad_Nagar"
+                    },
+                    "gps": "26.449923,80.331871"
+                  },
+                  "id": "3",
+                  "parent_stop_id": "2"
+                }
+              ],
+              "vehicle": {
+                "category": "METRO"
+              }
+            }
+          ],
+          "payments": [
+            {
+              "collected_by": "BAP",
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "BUYER_FINDER_FEES"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_PERCENTAGE"
+                      },
+                      "value": "1"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "BUYER_FINDER_FEES_TYPE"
+                      },
+                      "value": "percent"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "SETTLEMENT_TERMS"
+                  },
+                  "display": false,
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "DELAY_INTEREST"
+                      },
+                      "value": "5"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "STATIC_TERMS"
+                      },
+                      "value": "https://api.example-bap.com/booking/terms"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_WINDOW"
+                      },
+                      "value": "P30D"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "SETTLEMENT_BASIS"
+                      },
+                      "value": "INVOICE_RECEIPT"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "MANDATORY_ARBITRATION"
+                      },
+                      "value": "TRUE"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "COURT_JURISDICTION"
+                      },
+                      "value": "Mumbai"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "descriptor": {
+                "code": "SCHEDULED_INFO"
+              },
+              "display": false,
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "GTFS"
+                  },
+                  "value": "https://metro-transit/gtfs-realtime"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
